@@ -1,0 +1,8 @@
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.Properties.Resources.resources
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.csproj.GenerateResource.cache
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.csproj.AssemblyReference.cache
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.AssemblyInfoInputs.cache
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.AssemblyInfo.cs
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.csproj.CoreCompileInputs.cache
+C:\Users\drcarver\Desktop\netgore\NetGore\NetGore\obj\Debug\net8.0\NetGore.sourcelink.json
