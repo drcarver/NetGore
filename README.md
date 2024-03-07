@@ -1,2 +1,4 @@
-# NetGore
-C# RPG
+NetGore
+=======
+
+NetGore game engine + demo game
