@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -101,8 +102,8 @@ namespace NetGore.Tests.NetGore
                 string actual;
                 var successful = TryParse(binder, command + " " + expected, out actual);
 
-                Assert.IsTrue(successful);
-                Assert.AreEqual(expected, actual);
+                ClassicAssert.IsTrue(successful);
+                ClassicAssert.AreEqual(expected, actual);
             }
 
             public void TestParseInvalid(StringCommandParserTests binder, string command, params object[] objs)
@@ -110,7 +111,7 @@ namespace NetGore.Tests.NetGore
                 var expected = Implode(objs);
                 string actual;
                 var successful = TryParse(binder, command + " " + expected, out actual);
-                Assert.IsFalse(successful);
+                ClassicAssert.IsFalse(successful);
             }
         }
     }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 // ReSharper disable AccessToModifiedClosure
@@ -48,7 +50,7 @@ namespace NetGore.Tests.NetGore
             {
                 var entity = new TestEntity();
                 spatial.Add(entity);
-                Assert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
+                ClassicAssert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
             }
         }
 
@@ -67,12 +69,12 @@ namespace NetGore.Tests.NetGore
 
                 foreach (var entity in entities)
                 {
-                    Assert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
+                    ClassicAssert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
                 }
 
                 var found = spatial.GetMany(new Rectangle(min.X, min.Y, diff.X, diff.Y));
 
-                Assert.AreEqual(count, found.Count());
+                ClassicAssert.AreEqual(count, found.Count());
             }
         }
 
@@ -83,12 +85,12 @@ namespace NetGore.Tests.NetGore
             {
                 var entity = new TestEntity();
                 spatial.Add(entity);
-                Assert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
+                ClassicAssert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
 
                 entity.Position = new Vector2(128, 128);
-                Assert.IsTrue(spatial.Contains(new Vector2(128, 128)), "Current spatial: " + spatial);
-                Assert.IsFalse(spatial.Contains(new Vector2(256, 128)), "Current spatial: " + spatial);
-                Assert.IsFalse(spatial.Contains(new Vector2(128, 256)), "Current spatial: " + spatial);
+                ClassicAssert.IsTrue(spatial.Contains(new Vector2(128, 128)), "Current spatial: " + spatial);
+                ClassicAssert.IsFalse(spatial.Contains(new Vector2(256, 128)), "Current spatial: " + spatial);
+                ClassicAssert.IsFalse(spatial.Contains(new Vector2(128, 256)), "Current spatial: " + spatial);
             }
         }
 
@@ -109,8 +111,8 @@ namespace NetGore.Tests.NetGore
                     entities.Add(e);
                     spatial.Add(e);
 
-                    Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                    Assert.IsTrue(spatial.Contains(e.Position, x => x == e));
+                    ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                    ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e));
                 }
 
                 for (var i = 0; i < 40; i++)
@@ -126,8 +128,8 @@ namespace NetGore.Tests.NetGore
 
                         e.Move(v);
 
-                        Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                        Assert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
                     }
                 }
             }
@@ -150,8 +152,8 @@ namespace NetGore.Tests.NetGore
                     entities.Add(e);
                     spatial.Add(e);
 
-                    Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                    Assert.IsTrue(spatial.Contains(e.Position, x => x == e));
+                    ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                    ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e));
                 }
 
                 for (var i = 0; i < 40; i++)
@@ -173,8 +175,8 @@ namespace NetGore.Tests.NetGore
 
                         e.Position = newPos;
 
-                        Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                        Assert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
                     }
                 }
             }
@@ -197,8 +199,8 @@ namespace NetGore.Tests.NetGore
                     entities.Add(e);
                     spatial.Add(e);
 
-                    Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                    Assert.IsTrue(spatial.Contains(e.Position, x => x == e));
+                    ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                    ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e));
                 }
 
                 for (var i = 0; i < 40; i++)
@@ -233,8 +235,8 @@ namespace NetGore.Tests.NetGore
                             e.Move(v);
                         }
 
-                        Assert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
-                        Assert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.CollectionContains(e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
+                        ClassicAssert.IsTrue(spatial.Contains(e.Position, x => x == e), "Spatial: {0}, i: {1}", spatial.GetType().Name, i);
                     }
                 }
             }
@@ -247,10 +249,10 @@ namespace NetGore.Tests.NetGore
             {
                 var entity = new TestEntity();
                 spatial.Add(entity);
-                Assert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
+                ClassicAssert.IsTrue(spatial.CollectionContains(entity), "Current spatial: " + spatial);
 
                 spatial.Remove(entity);
-                Assert.IsFalse(spatial.CollectionContains(entity), "Current spatial: " + spatial);
+                ClassicAssert.IsFalse(spatial.CollectionContains(entity), "Current spatial: " + spatial);
             }
         }
 

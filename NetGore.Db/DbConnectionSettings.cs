@@ -2,7 +2,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+
 using log4net;
+
+using NetGore.Core;
 using NetGore.IO;
 
 namespace NetGore.Db

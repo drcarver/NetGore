@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.IO
 {
@@ -19,26 +20,26 @@ namespace NetGore.Tests.IO
         /// <param name="v">The second.</param>
         static void AssertEquality(IList<object> l, IList<object> v)
         {
-            Assert.AreEqual(l.Count, v.Count);
-            Assert.AreEqual(((IList)l).Count, ((IList)v).Count);
-            Assert.AreEqual(((ICollection)l).Count, ((ICollection)v).Count);
+            ClassicAssert.AreEqual(l.Count, v.Count);
+            ClassicAssert.AreEqual(((IList)l).Count, ((IList)v).Count);
+            ClassicAssert.AreEqual(((ICollection)l).Count, ((ICollection)v).Count);
 
             if (l.Count > 0)
             {
                 for (var i = 0; i < l.Count; i++)
                 {
-                    Assert.AreSame(l[i], v[i]);
-                    Assert.AreSame(((IList)l)[i], ((IList)v)[i]);
+                    ClassicAssert.AreSame(l[i], v[i]);
+                    ClassicAssert.AreSame(((IList)l)[i], ((IList)v)[i]);
 
-                    Assert.AreEqual(l.IndexOf(l[i]), v.IndexOf(v[i]));
-                    Assert.AreEqual(((IList)l).IndexOf(l[i]), ((IList)v).IndexOf(v[i]));
+                    ClassicAssert.AreEqual(l.IndexOf(l[i]), v.IndexOf(v[i]));
+                    ClassicAssert.AreEqual(((IList)l).IndexOf(l[i]), ((IList)v).IndexOf(v[i]));
 
-                    Assert.AreEqual(l.Contains(l[i]), v.Contains(v[i]));
-                    Assert.AreEqual(((IList)l).Contains(l[i]), ((IList)v).Contains(v[i]));
+                    ClassicAssert.AreEqual(l.Contains(l[i]), v.Contains(v[i]));
+                    ClassicAssert.AreEqual(((IList)l).Contains(l[i]), ((IList)v).Contains(v[i]));
                 }
 
-                Assert.AreEqual(l.First(), v.First());
-                Assert.AreEqual(l.Last(), v.Last());
+                ClassicAssert.AreEqual(l.First(), v.First());
+                ClassicAssert.AreEqual(l.Last(), v.Last());
             }
         }
 

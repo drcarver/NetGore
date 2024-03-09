@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable MemberCanBePrivate.Local
 // ReSharper disable RedundantTypeArgumentsOfMethod
@@ -39,7 +40,7 @@ namespace NetGore.Tests.NetGore.IO
 
             setValue(pi, o, value);
 
-            Assert.AreEqual(value, pi.Get(o));
+            ClassicAssert.AreEqual(value, pi.Get(o));
         }
 
         #region Unit tests
@@ -74,8 +75,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new InternalTestClass();
             var pi = CreatePI<int, InternalTestClass>("Int");
             pi.Set(o, 50);
-            Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -96,8 +97,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new NonPublicWithNestedPublic.PublicNested();
             var pi = CreatePI<int, NonPublicWithNestedPublic.PublicNested>("Int");
             pi.Set(o, 50);
-            Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -112,8 +113,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new PrivateTestClassPrivateGetterSetter();
             var pi = CreatePI<int, PrivateTestClassPrivateGetterSetter>("Int");
             pi.Set(o, 50);
-            //Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            //ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -122,8 +123,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new PrivateTestClassPrivateGetter();
             var pi = CreatePI<int, PrivateTestClassPrivateGetter>("Int");
             pi.Set(o, 50);
-            //Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            //ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -132,8 +133,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new PrivateTestClassPrivateSetter();
             var pi = CreatePI<int, PrivateTestClassPrivateSetter>("Int");
             pi.Set(o, 50);
-            Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -142,8 +143,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new PrivateTestClass();
             var pi = CreatePI<int, PrivateTestClass>("Int");
             pi.Set(o, 50);
-            Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]
@@ -152,8 +153,8 @@ namespace NetGore.Tests.NetGore.IO
             var o = new ProtectedTestClass();
             var pi = CreatePI<int, ProtectedTestClass>("Int");
             pi.Set(o, 50);
-            Assert.AreEqual(50, o.Int);
-            Assert.AreEqual(50, pi.Get(o));
+            ClassicAssert.AreEqual(50, o.Int);
+            ClassicAssert.AreEqual(50, pi.Get(o));
         }
 
         [Test]

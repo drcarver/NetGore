@@ -3,6 +3,7 @@ using System.Linq;
 using NetGore.Graphics.ParticleEngine;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable UnusedMember.Local
 
@@ -29,8 +30,8 @@ namespace NetGore.Tests.Graphics.ParticleEngine
             var a = new TestModifier { SerializedValue = 10, NonSerializedValue = 20 };
             var b = (TestModifier)a.DeepCopy();
 
-            Assert.AreEqual(a.SerializedValue, b.SerializedValue);
-            Assert.AreNotEqual(a.NonSerializedValue, b.NonSerializedValue);
+            ClassicAssert.AreEqual(a.SerializedValue, b.SerializedValue);
+            ClassicAssert.AreNotEqual(a.NonSerializedValue, b.NonSerializedValue);
         }
 
         #endregion

@@ -6,6 +6,8 @@ using NetGore.IO;
 using NetGore.IO.PropertySync;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 // ReSharper disable UnusedMember.Local
@@ -23,7 +25,7 @@ namespace NetGore.Tests.NetGore.IO
             // Set the value and ensure it was set correctly
             var cSrc = new TestClass();
             property.SetValue(cSrc, value, null);
-            Assert.AreEqual(value, property.GetValue(cSrc, null));
+            ClassicAssert.AreEqual(value, property.GetValue(cSrc, null));
 
             // Serialize
             var bs = new BitStream();
@@ -35,7 +37,7 @@ namespace NetGore.Tests.NetGore.IO
             cDest.Deserialize(bs);
 
             // Check
-            Assert.AreEqual(value, property.GetValue(cDest, null));
+            ClassicAssert.AreEqual(value, property.GetValue(cDest, null));
         }
 
         static void TestSyncNullable(string propertyName, object value)
@@ -46,7 +48,7 @@ namespace NetGore.Tests.NetGore.IO
             // Set the value and ensure it was set correctly
             var cSrc = new NullableTestClass();
             property.SetValue(cSrc, value, null);
-            Assert.AreEqual(value, property.GetValue(cSrc, null));
+            ClassicAssert.AreEqual(value, property.GetValue(cSrc, null));
 
             // Serialize
             var bs = new BitStream();
@@ -58,7 +60,7 @@ namespace NetGore.Tests.NetGore.IO
             cDest.Deserialize(bs);
 
             // Check
-            Assert.AreEqual(value, property.GetValue(cDest, null));
+            ClassicAssert.AreEqual(value, property.GetValue(cDest, null));
         }
 
         #region Unit tests

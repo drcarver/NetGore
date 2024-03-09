@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.Collections
 {
@@ -22,8 +23,8 @@ namespace NetGore.Tests.NetGore.Collections
             for (var i = 0; i < 20; i++)
             {
                 var key = c.Add(i.ToString());
-                Assert.IsTrue(key < 5 || key >= 10, "key: " + key);
-                Assert.AreEqual(c[key], i.ToString());
+                ClassicAssert.IsTrue(key < 5 || key >= 10, "key: " + key);
+                ClassicAssert.AreEqual(c[key], i.ToString());
             }
         }
 
@@ -33,7 +34,7 @@ namespace NetGore.Tests.NetGore.Collections
             var c = CyclingObjectArray.CreateUsingByteKey<string>();
             var i = c.NextFreeKey();
             var j = c.NextFreeKey();
-            Assert.AreNotEqual(i, j);
+            ClassicAssert.AreNotEqual(i, j);
         }
 
         [Test]
@@ -42,7 +43,7 @@ namespace NetGore.Tests.NetGore.Collections
             var c = CyclingObjectArray.CreateUsingByteKey<string>();
             var i = c.NextFreeKey();
             var j = c.NextFreeKey();
-            Assert.AreEqual(i, j - 1);
+            ClassicAssert.AreEqual(i, j - 1);
         }
 
         [Test]
@@ -55,7 +56,7 @@ namespace NetGore.Tests.NetGore.Collections
 
             while ((curr = c.NextFreeKey()) != start)
             {
-                Assert.AreEqual(expected, curr);
+                ClassicAssert.AreEqual(expected, curr);
                 expected++;
                 if (expected > c.MaxIndex)
                     expected = c.MinIndex;
@@ -77,14 +78,14 @@ namespace NetGore.Tests.NetGore.Collections
             for (var i = c.MinIndex; i < c.MaxIndex; i++)
             {
                 var key = c.NextFreeKey();
-                Assert.IsFalse(c.IsSet(key));
-                Assert.IsNull(c[key]);
+                ClassicAssert.IsFalse(c.IsSet(key));
+                ClassicAssert.IsNull(c[key]);
             }
 
             foreach (var k in usedKeys)
             {
-                Assert.IsTrue(c.IsSet(k));
-                Assert.IsNotNull(c[k]);
+                ClassicAssert.IsTrue(c.IsSet(k));
+                ClassicAssert.IsNotNull(c[k]);
             }
         }
 

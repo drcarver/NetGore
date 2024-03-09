@@ -1,7 +1,8 @@
-using System;
 using System.ComponentModel;
-using System.Linq;
+
 using NetGore.Audio;
+using NetGore.Core;
+
 using SFML.Graphics;
 
 namespace NetGore.World
@@ -10,7 +11,12 @@ namespace NetGore.World
     /// The base class of all entities, which are physical objects that reside in the virtual world, and can interact
     /// with other entities.
     /// </summary>
-    public abstract class Entity : ISpatial, IAudioEmitter, IDisposable
+    /// <remarks>
+    /// Initializes a new instance of the <see cref="Entity"/> class.
+    /// </remarks>
+    /// <param name="position">The initial world position.</param>
+    /// <param name="size">The initial size.</param>
+    public abstract class Entity(Vector2 position, Vector2 size) : ISpatial, IAudioEmitter, IDisposable
     {
         const string _entityCategoryString = "Entity";
 
@@ -22,15 +28,14 @@ namespace NetGore.World
 
         bool _isDisposed;
 
-        Vector2 _position;
-        Vector2 _size;
+        Vector2 _position = position;
+        Vector2 _size = size;
 
 #if !TOPDOWN
         Entity _standingOn;
 #endif
 
         Vector2 _velocity;
-        float _weight = 1.0f;
 
         /// <summary>
         /// Notifies listeners that the Entity is being disposed. This event is raised before any actual
@@ -84,18 +89,12 @@ namespace NetGore.World
         /// <summary>
         /// Gets if this <see cref="ISpatial"/> can ever be moved with <see cref="ISpatial.TryMove"/>.
         /// </summary>
-        bool ISpatial.SupportsMove
-        {
-            get { return true; }
-        }
+        bool ISpatial.SupportsMove => true;
 
         /// <summary>
         /// Gets if this <see cref="ISpatial"/> can ever be resized with <see cref="ISpatial.TryResize"/>.
         /// </summary>
-        bool ISpatial.SupportsResize
-        {
-            get { return true; }
-        }
+        bool ISpatial.SupportsResize => true;
 
         /// <summary>
         /// Initializes the <see cref="Entity"/> class.
@@ -129,21 +128,9 @@ namespace NetGore.World
 
             _isDisposed = true;
 
-            if (Disposed != null)
-                Disposed.Raise(this, EventArgs.Empty);
+            Disposed?.Raise(this, EventArgs.Empty);
 
             HandleDispose(false);
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Entity"/> class.
-        /// </summary>
-        /// <param name="position">The initial world position.</param>
-        /// <param name="size">The initial size.</param>
-        protected Entity(Vector2 position, Vector2 size)
-        {
-            _position = position;
-            _size = size;
         }
 
         /// <summary>
@@ -161,10 +148,7 @@ namespace NetGore.World
         /// Gets the position of the center of the Entity.
         /// </summary>
         [Browsable(false)]
-        public Vector2 Center
-        {
-            get { return Position + (Size / 2); }
-        }
+        public Vector2 Center => Position + (Size / 2);
 
         /// <summary>
         /// When overridden in the derived class, gets if this <see cref="Entity"/> will collide against
@@ -177,10 +161,7 @@ namespace NetGore.World
         /// Gets if this Entity has been disposed, or is in the process of being disposed.
         /// </summary>
         [Browsable(false)]
-        public bool IsDisposed
-        {
-            get { return _isDisposed; }
-        }
+        public bool IsDisposed => _isDisposed;
 
         /// <summary>
         /// Gets if this <see cref="Entity"/> is currently on the ground. For top-down, this will always return true.
@@ -203,7 +184,7 @@ namespace NetGore.World
         /// not standing on anything (are not on the ground). If using a top-down perspective, this value is always null.
         /// </summary>
         [Browsable(false)]
-        public Entity StandingOn
+        public Entity? StandingOn
         {
             get
             {
@@ -239,10 +220,7 @@ namespace NetGore.World
         /// </summary>
         /// <returns>A <see cref="Rectangle"/> that represents the world area that this <see cref="ISpatial"/>
         /// occupies.</returns>
-        public Rectangle ToRectangle()
-        {
-            return SpatialHelper.ToRectangle(this);
-        }
+        public Rectangle ToRectangle() => SpatialHelper.ToRectangle(this);
 
         /// <summary>
         /// Gets or sets the position of the top-left corner of the entity.
@@ -264,10 +242,7 @@ namespace NetGore.World
         /// value will be set to the current position.
         /// </summary>
         [Browsable(false)]
-        public Vector2 LastPosition
-        {
-            get { return _lastPosition; }
-        }
+        public Vector2 LastPosition => _lastPosition;
 
         /// <summary>
         /// Gets or sets the size of the Entity.
@@ -286,19 +261,13 @@ namespace NetGore.World
         /// Gets the world coordinates of the bottom-right corner of this <see cref="ISpatial"/>.
         /// </summary>
         [Browsable(false)]
-        public Vector2 Max
-        {
-            get { return Position + Size; }
-        }
+        public Vector2 Max => Position + Size;
 
         /// <summary>
         /// Gets the velocity of the Entity.
         /// </summary>
         [Browsable(false)]
-        public Vector2 Velocity
-        {
-            get { return _velocity; }
-        }
+        public Vector2 Velocity => _velocity;
 
         /// <summary>
         /// Gets or sets the weight of the Entity (used in gravity calculations).
@@ -308,11 +277,7 @@ namespace NetGore.World
         [Description("The weight of the Entity. Higher the weight, the greater the effects of the gravity, where 0 is unaffected by gravity.")]
         [DefaultValue(0.0f)]
         [Browsable(true)]
-        public virtual float Weight
-        {
-            get { return _weight; }
-            set { _weight = value; }
-        }
+        public virtual float Weight { get; set; } = 1.0f;   
 
         /// <summary>
         /// Handles when another Entity collides into us. Not synonymous CollideInto since the
@@ -389,10 +354,7 @@ namespace NetGore.World
         /// Resizes the <see cref="Entity"/>.
         /// </summary>
         /// <param name="newSize">The new size of this <see cref="Entity"/>.</param>
-        protected virtual void Resize(Vector2 newSize)
-        {
-            SetSizeRaw(newSize);
-        }
+        protected virtual void Resize(Vector2 newSize) => SetSizeRaw(newSize);
 
         /// <summary>
         /// Sets the <see cref="Entity"/>'s <see cref="Position"/> directly without any chance to be overridden.
@@ -410,8 +372,7 @@ namespace NetGore.World
 
             // Notify listeners
             OnMoved(oldPos);
-            if (Moved != null)
-                Moved.Raise(this, EventArgsHelper.Create(oldPos));
+            Moved?.Raise(this, EventArgsHelper.Create(oldPos));
         }
 
         /// <summary>
@@ -430,28 +391,21 @@ namespace NetGore.World
 
             // Notify listeners
             OnResized(oldSize);
-            if (Resized != null)
-                Resized.Raise(this, EventArgsHelper.Create(oldSize));
+            Resized?.Raise(this, EventArgsHelper.Create(oldSize));
         }
 
         /// <summary>
         /// Sets the velocity of the <see cref="Entity"/>.
         /// </summary>
         /// <param name="newVelocity">The new velocity.</param>
-        public virtual void SetVelocity(Vector2 newVelocity)
-        {
-            _velocity = newVelocity;
-        }
+        public virtual void SetVelocity(Vector2 newVelocity) => _velocity = newVelocity;
 
         /// <summary>
         /// Sets the <see cref="Entity"/>'s <see cref="Velocity"/> directly without any chance to be overridden.
         /// This should only be used for synchronization.
         /// </summary>
         /// <param name="newVelocity">The new <see cref="Velocity"/> value.</param>
-        protected internal void SetVelocityRaw(Vector2 newVelocity)
-        {
-            _velocity = newVelocity;
-        }
+        protected internal void SetVelocityRaw(Vector2 newVelocity) => _velocity = newVelocity;
 
         /// <summary>
         /// Sets the <see cref="Entity"/>'s <see cref="Weight"/> directly without any chance to be overridden.
@@ -460,7 +414,7 @@ namespace NetGore.World
         /// <param name="newWeight">The new <see cref="Weight"/> value.</param>
         protected internal void SetWeightRaw(float newWeight)
         {
-            _weight = newWeight;
+            Weight = newWeight;
         }
 
         /// <summary>
@@ -471,7 +425,9 @@ namespace NetGore.World
         {
             // Do not update if we're already at the specified position
             if (newPosition == Position)
+            {
                 return;
+            }
 
             // Assume they are not on the ground after teleporting
             StandingOn = null;
@@ -545,8 +501,7 @@ namespace NetGore.World
             _isDisposed = true;
 
             // Notify listeners that the Entity is being disposed
-            if (Disposed != null)
-                Disposed.Raise(this, EventArgs.Empty);
+            Disposed?.Raise(this, EventArgs.Empty);
 
             // Handle the disposing
             HandleDispose(true);

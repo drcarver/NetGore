@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable RedundantCast
 
@@ -20,11 +21,11 @@ namespace NetGore.Tests.NetGore
 
             object outFalse;
             StringParser.TryParse(Parser.Invariant.ToString(false), type, out outFalse);
-            Assert.AreEqual((bool)false, (bool)outFalse);
+            ClassicAssert.AreEqual((bool)false, (bool)outFalse);
 
             object outTrue;
             StringParser.TryParse(Parser.Invariant.ToString(true), type, out outTrue);
-            Assert.AreEqual((bool)true, (bool)outTrue);
+            ClassicAssert.AreEqual((bool)true, (bool)outTrue);
         }
 
         [Test]
@@ -41,16 +42,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((byte)i, (byte)o);
+                ClassicAssert.AreEqual((byte)i, (byte)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((byte)min, (byte)outMin);
+            ClassicAssert.AreEqual((byte)min, (byte)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((byte)min, (byte)outMax);
+            ClassicAssert.AreEqual((byte)min, (byte)outMax);
         }
 
         [Test]
@@ -67,7 +68,7 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((double)i, (double)o);
+                ClassicAssert.AreEqual((double)i, (double)o);
             }
         }
 
@@ -85,7 +86,7 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((float)i, (float)o);
+                ClassicAssert.AreEqual((float)i, (float)o);
             }
         }
 
@@ -103,16 +104,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((int)i, (int)o);
+                ClassicAssert.AreEqual((int)i, (int)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((int)min, (int)outMin);
+            ClassicAssert.AreEqual((int)min, (int)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((int)min, (int)outMax);
+            ClassicAssert.AreEqual((int)min, (int)outMax);
         }
 
         [Test]
@@ -129,16 +130,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((sbyte)i, (sbyte)o);
+                ClassicAssert.AreEqual((sbyte)i, (sbyte)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((sbyte)min, (sbyte)outMin);
+            ClassicAssert.AreEqual((sbyte)min, (sbyte)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((sbyte)min, (sbyte)outMax);
+            ClassicAssert.AreEqual((sbyte)min, (sbyte)outMax);
         }
 
         [Test]
@@ -155,16 +156,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((short)i, (short)o);
+                ClassicAssert.AreEqual((short)i, (short)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((short)min, (short)outMin);
+            ClassicAssert.AreEqual((short)min, (short)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((short)min, (short)outMax);
+            ClassicAssert.AreEqual((short)min, (short)outMax);
         }
 
         [Test]
@@ -181,16 +182,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((uint)i, (uint)o);
+                ClassicAssert.AreEqual((uint)i, (uint)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((uint)min, (uint)outMin);
+            ClassicAssert.AreEqual((uint)min, (uint)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((uint)min, (uint)outMax);
+            ClassicAssert.AreEqual((uint)min, (uint)outMax);
         }
 
         [Test]
@@ -207,16 +208,16 @@ namespace NetGore.Tests.NetGore
                 var s = Parser.Invariant.ToString(i);
                 object o;
                 StringParser.TryParse(s, type, out o);
-                Assert.AreEqual((ushort)i, (ushort)o);
+                ClassicAssert.AreEqual((ushort)i, (ushort)o);
             }
 
             object outMin;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMin);
-            Assert.AreEqual((ushort)min, (ushort)outMin);
+            ClassicAssert.AreEqual((ushort)min, (ushort)outMin);
 
             object outMax;
             StringParser.TryParse(Parser.Invariant.ToString(min), type, out outMax);
-            Assert.AreEqual((ushort)min, (ushort)outMax);
+            ClassicAssert.AreEqual((ushort)min, (ushort)outMax);
         }
 
         #endregion

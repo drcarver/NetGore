@@ -5,6 +5,8 @@ using System.Linq;
 using NetGore.IO;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 // ReSharper disable MemberCanBePrivate.Local
@@ -29,35 +31,35 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
-            Assert.AreNotEqual(src.SkipA, dest.SkipA);
-            Assert.AreNotEqual(src.SkipB, dest.SkipB);
-            Assert.AreEqual(src.SkipC, dest.SkipC);
+            ClassicAssert.AreNotEqual(src.SkipA, dest.SkipA);
+            ClassicAssert.AreNotEqual(src.SkipB, dest.SkipB);
+            ClassicAssert.AreEqual(src.SkipC, dest.SkipC);
 
             src.A = false;
             src.D = 100;
@@ -77,35 +79,35 @@ namespace NetGore.Tests.NetGore
             reader = new BitStream(buffer);
             dest.Deserialize(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
-            Assert.AreNotEqual(src.SkipA, dest.SkipA);
-            Assert.AreNotEqual(src.SkipB, dest.SkipB);
-            Assert.AreEqual(src.SkipC, dest.SkipC);
+            ClassicAssert.AreNotEqual(src.SkipA, dest.SkipA);
+            ClassicAssert.AreNotEqual(src.SkipB, dest.SkipB);
+            ClassicAssert.AreEqual(src.SkipC, dest.SkipC);
         }
 
         [Test]
@@ -119,35 +121,35 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
-            Assert.AreNotEqual(src.SkipA, dest.SkipA);
-            Assert.AreNotEqual(src.SkipB, dest.SkipB);
-            Assert.AreEqual(src.SkipC, dest.SkipC);
+            ClassicAssert.AreNotEqual(src.SkipA, dest.SkipA);
+            ClassicAssert.AreNotEqual(src.SkipB, dest.SkipB);
+            ClassicAssert.AreEqual(src.SkipC, dest.SkipC);
 
             src.A = false;
             src.D = 100;
@@ -170,35 +172,35 @@ namespace NetGore.Tests.NetGore
             reader = new BitStream(buffer);
             dest.Deserialize(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
-            Assert.AreNotEqual(src.SkipA, dest.SkipA);
-            Assert.AreNotEqual(src.SkipB, dest.SkipB);
-            Assert.AreNotEqual(src.SkipC, dest.SkipC);
+            ClassicAssert.AreNotEqual(src.SkipA, dest.SkipA);
+            ClassicAssert.AreNotEqual(src.SkipB, dest.SkipB);
+            ClassicAssert.AreNotEqual(src.SkipC, dest.SkipC);
         }
 
         [Test]
@@ -242,31 +244,31 @@ namespace NetGore.Tests.NetGore
                 var src = sources[i];
                 var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-                Assert.AreEqual(src.Position, dest.Position);
-                Assert.AreEqual(src.Size, dest.Size);
-                Assert.AreEqual(src.Velocity, dest.Velocity);
-                Assert.AreEqual(src.Weight, dest.Weight);
-                Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-                Assert.AreEqual(src.Center, dest.Center);
+                ClassicAssert.AreEqual(src.Position, dest.Position);
+                ClassicAssert.AreEqual(src.Size, dest.Size);
+                ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+                ClassicAssert.AreEqual(src.Weight, dest.Weight);
+                ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+                ClassicAssert.AreEqual(src.Center, dest.Center);
 
-                Assert.AreEqual(src.A, dest.A, "Index: " + i);
-                Assert.AreEqual(src.B, dest.B, "Index: " + i);
-                Assert.AreEqual(src.C, dest.C, "Index: " + i);
-                Assert.AreEqual(src.D, dest.D, "Index: " + i);
-                Assert.AreEqual(src.E, dest.E, "Index: " + i);
-                Assert.AreEqual(src.F, dest.F, "Index: " + i);
-                Assert.AreEqual(src.G, dest.G, "Index: " + i);
-                Assert.AreEqual(src.H, dest.H, "Index: " + i);
-                Assert.AreEqual(src.I, dest.I, "Index: " + i);
-                Assert.AreEqual(src.J, dest.J, "Index: " + i);
-                Assert.AreEqual(src.K, dest.K, "Index: " + i);
-                Assert.AreEqual(src.L, dest.L, "Index: " + i);
-                Assert.AreEqual(src.M, dest.M, "Index: " + i);
-                Assert.AreEqual(src.N, dest.N, "Index: " + i);
-                Assert.AreEqual(src.O, dest.O, "Index: " + i);
-                Assert.AreEqual(src.P, dest.P, "Index: " + i);
-                Assert.AreEqual(src.Q, dest.Q, "Index: " + i);
-                Assert.AreEqual(src.R, dest.R, "Index: " + i);
+                ClassicAssert.AreEqual(src.A, dest.A, "Index: " + i);
+                ClassicAssert.AreEqual(src.B, dest.B, "Index: " + i);
+                ClassicAssert.AreEqual(src.C, dest.C, "Index: " + i);
+                ClassicAssert.AreEqual(src.D, dest.D, "Index: " + i);
+                ClassicAssert.AreEqual(src.E, dest.E, "Index: " + i);
+                ClassicAssert.AreEqual(src.F, dest.F, "Index: " + i);
+                ClassicAssert.AreEqual(src.G, dest.G, "Index: " + i);
+                ClassicAssert.AreEqual(src.H, dest.H, "Index: " + i);
+                ClassicAssert.AreEqual(src.I, dest.I, "Index: " + i);
+                ClassicAssert.AreEqual(src.J, dest.J, "Index: " + i);
+                ClassicAssert.AreEqual(src.K, dest.K, "Index: " + i);
+                ClassicAssert.AreEqual(src.L, dest.L, "Index: " + i);
+                ClassicAssert.AreEqual(src.M, dest.M, "Index: " + i);
+                ClassicAssert.AreEqual(src.N, dest.N, "Index: " + i);
+                ClassicAssert.AreEqual(src.O, dest.O, "Index: " + i);
+                ClassicAssert.AreEqual(src.P, dest.P, "Index: " + i);
+                ClassicAssert.AreEqual(src.Q, dest.Q, "Index: " + i);
+                ClassicAssert.AreEqual(src.R, dest.R, "Index: " + i);
             }
         }
 
@@ -303,31 +305,31 @@ namespace NetGore.Tests.NetGore
                     var src = sources[i];
                     var dest = (DE)_dynamicEntityFactoryBase.Read(r);
 
-                    Assert.AreEqual(src.Position, dest.Position);
-                    Assert.AreEqual(src.Size, dest.Size);
-                    Assert.AreEqual(src.Velocity, dest.Velocity);
-                    Assert.AreEqual(src.Weight, dest.Weight);
-                    Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-                    Assert.AreEqual(src.Center, dest.Center);
+                    ClassicAssert.AreEqual(src.Position, dest.Position);
+                    ClassicAssert.AreEqual(src.Size, dest.Size);
+                    ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+                    ClassicAssert.AreEqual(src.Weight, dest.Weight);
+                    ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+                    ClassicAssert.AreEqual(src.Center, dest.Center);
 
-                    Assert.AreEqual(src.A, dest.A, "Index: " + i);
-                    Assert.AreEqual(src.B, dest.B, "Index: " + i);
-                    Assert.AreEqual(src.C, dest.C, "Index: " + i);
-                    Assert.AreEqual(src.D, dest.D, "Index: " + i);
-                    Assert.AreEqual(src.E, dest.E, "Index: " + i);
-                    Assert.AreEqual(src.F, dest.F, "Index: " + i);
-                    Assert.AreEqual(src.G, dest.G, "Index: " + i);
-                    Assert.AreEqual(Math.Round(src.H), Math.Round(dest.H), "Index: " + i);
-                    Assert.AreEqual(src.I, dest.I, "Index: " + i);
-                    Assert.AreEqual(src.J, dest.J, "Index: " + i);
-                    Assert.AreEqual(Math.Round(src.K), Math.Round(dest.K), "Index: " + i);
-                    Assert.AreEqual(src.L.Round(), dest.L.Round(), "Index: " + i);
-                    Assert.AreEqual(src.M, dest.M, "Index: " + i);
-                    Assert.AreEqual(src.N, dest.N, "Index: " + i);
-                    Assert.AreEqual(src.O, dest.O, "Index: " + i);
-                    Assert.AreEqual(src.P, dest.P, "Index: " + i);
-                    Assert.AreEqual(src.Q.Round(), dest.Q.Round(), "Index: " + i);
-                    Assert.AreEqual(src.R.Round(), dest.R.Round(), "Index: " + i);
+                    ClassicAssert.AreEqual(src.A, dest.A, "Index: " + i);
+                    ClassicAssert.AreEqual(src.B, dest.B, "Index: " + i);
+                    ClassicAssert.AreEqual(src.C, dest.C, "Index: " + i);
+                    ClassicAssert.AreEqual(src.D, dest.D, "Index: " + i);
+                    ClassicAssert.AreEqual(src.E, dest.E, "Index: " + i);
+                    ClassicAssert.AreEqual(src.F, dest.F, "Index: " + i);
+                    ClassicAssert.AreEqual(src.G, dest.G, "Index: " + i);
+                    ClassicAssert.AreEqual(Math.Round(src.H), Math.Round(dest.H), "Index: " + i);
+                    ClassicAssert.AreEqual(src.I, dest.I, "Index: " + i);
+                    ClassicAssert.AreEqual(src.J, dest.J, "Index: " + i);
+                    ClassicAssert.AreEqual(Math.Round(src.K), Math.Round(dest.K), "Index: " + i);
+                    ClassicAssert.AreEqual(src.L.Round(), dest.L.Round(), "Index: " + i);
+                    ClassicAssert.AreEqual(src.M, dest.M, "Index: " + i);
+                    ClassicAssert.AreEqual(src.N, dest.N, "Index: " + i);
+                    ClassicAssert.AreEqual(src.O, dest.O, "Index: " + i);
+                    ClassicAssert.AreEqual(src.P, dest.P, "Index: " + i);
+                    ClassicAssert.AreEqual(src.Q.Round(), dest.Q.Round(), "Index: " + i);
+                    ClassicAssert.AreEqual(src.R.Round(), dest.R.Round(), "Index: " + i);
                 }
             }
             finally
@@ -348,12 +350,12 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
         }
 
         [Test]
@@ -367,31 +369,31 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
             src.A = false;
             src.D = 100;
@@ -409,31 +411,31 @@ namespace NetGore.Tests.NetGore
             reader = new BitStream(buffer);
             dest.Deserialize(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
         }
 
         [Test]
@@ -447,31 +449,31 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
 
             src.Position = new Vector2(10981, -123);
             src.SetVelocity(new Vector2(0.114f, 10.181f));
@@ -484,31 +486,31 @@ namespace NetGore.Tests.NetGore
             reader = new BitStream(buffer);
             dest.DeserializePositionAndVelocity(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
         }
 
         [Test]
@@ -522,31 +524,31 @@ namespace NetGore.Tests.NetGore
             var reader = new BitStream(buffer);
             var dest = (DE)_dynamicEntityFactoryBase.Read(reader);
 
-            Assert.AreEqual(src.Position, dest.Position);
-            Assert.AreEqual(src.Size, dest.Size);
-            Assert.AreEqual(src.Velocity, dest.Velocity);
-            Assert.AreEqual(src.Weight, dest.Weight);
-            Assert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
-            Assert.AreEqual(src.Center, dest.Center);
+            ClassicAssert.AreEqual(src.Position, dest.Position);
+            ClassicAssert.AreEqual(src.Size, dest.Size);
+            ClassicAssert.AreEqual(src.Velocity, dest.Velocity);
+            ClassicAssert.AreEqual(src.Weight, dest.Weight);
+            ClassicAssert.AreEqual(src.MapEntityIndex, dest.MapEntityIndex);
+            ClassicAssert.AreEqual(src.Center, dest.Center);
 
-            Assert.AreEqual(src.A, dest.A);
-            Assert.AreEqual(src.B, dest.B);
-            Assert.AreEqual(src.C, dest.C);
-            Assert.AreEqual(src.D, dest.D);
-            Assert.AreEqual(src.E, dest.E);
-            Assert.AreEqual(src.F, dest.F);
-            Assert.AreEqual(src.G, dest.G);
-            Assert.AreEqual(src.H, dest.H);
-            Assert.AreEqual(src.I, dest.I);
-            Assert.AreEqual(src.J, dest.J);
-            Assert.AreEqual(src.K, dest.K);
-            Assert.AreEqual(src.L, dest.L);
-            Assert.AreEqual(src.M, dest.M);
-            Assert.AreEqual(src.N, dest.N);
-            Assert.AreEqual(src.O, dest.O);
-            Assert.AreEqual(src.P, dest.P);
-            Assert.AreEqual(src.Q, dest.Q);
-            Assert.AreEqual(src.R, dest.R);
+            ClassicAssert.AreEqual(src.A, dest.A);
+            ClassicAssert.AreEqual(src.B, dest.B);
+            ClassicAssert.AreEqual(src.C, dest.C);
+            ClassicAssert.AreEqual(src.D, dest.D);
+            ClassicAssert.AreEqual(src.E, dest.E);
+            ClassicAssert.AreEqual(src.F, dest.F);
+            ClassicAssert.AreEqual(src.G, dest.G);
+            ClassicAssert.AreEqual(src.H, dest.H);
+            ClassicAssert.AreEqual(src.I, dest.I);
+            ClassicAssert.AreEqual(src.J, dest.J);
+            ClassicAssert.AreEqual(src.K, dest.K);
+            ClassicAssert.AreEqual(src.L, dest.L);
+            ClassicAssert.AreEqual(src.M, dest.M);
+            ClassicAssert.AreEqual(src.N, dest.N);
+            ClassicAssert.AreEqual(src.O, dest.O);
+            ClassicAssert.AreEqual(src.P, dest.P);
+            ClassicAssert.AreEqual(src.Q, dest.Q);
+            ClassicAssert.AreEqual(src.R, dest.R);
         }
 
         #endregion

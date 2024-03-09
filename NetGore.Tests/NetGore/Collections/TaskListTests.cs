@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.Collections
 {
@@ -18,7 +19,7 @@ namespace NetGore.Tests.NetGore.Collections
                 return false;
             });
 
-            Assert.IsTrue(taskListItems.ContainSameElements(expected));
+            ClassicAssert.IsTrue(taskListItems.ContainSameElements(expected));
         }
 
         #region Unit tests

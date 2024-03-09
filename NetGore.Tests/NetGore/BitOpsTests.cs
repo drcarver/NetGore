@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.IO
 {
@@ -15,7 +16,7 @@ namespace NetGore.Tests.IO
             for (uint i = 0; i < 1200; i++)
             {
                 var req = BitOps.RequiredBits(i);
-                Assert.Greater(1 << req, i, "i: " + i);
+                ClassicAssert.Greater(1 << req, i, "i: " + i);
             }
         }
 
@@ -43,11 +44,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -67,11 +68,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -91,11 +92,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -115,11 +116,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -139,11 +140,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -163,11 +164,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -187,11 +188,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
 
@@ -211,11 +212,11 @@ namespace NetGore.Tests.IO
                 }
 
                 var details = string.Format(errDetails, value, value.GetType());
-                Assert.AreEqual(BitOps.CountBits(value), bitsSet, details);
+                ClassicAssert.AreEqual(BitOps.CountBits(value), bitsSet, details);
                 for (var i = 0; i <= numBits; i++)
                 {
                     if (i != bitsSet)
-                        Assert.AreNotEqual(BitOps.CountBits(value), i, details);
+                        ClassicAssert.AreNotEqual(BitOps.CountBits(value), i, details);
                 }
             }
         }
@@ -223,17 +224,17 @@ namespace NetGore.Tests.IO
         [Test]
         public void NextPowerOf2Test()
         {
-            Assert.AreEqual(16, BitOps.NextPowerOf2(16));
-            Assert.AreEqual(16, BitOps.NextPowerOf2(15));
-            Assert.AreEqual(2, BitOps.NextPowerOf2(2));
-            Assert.AreEqual(4, BitOps.NextPowerOf2(3));
-            Assert.AreEqual(128, BitOps.NextPowerOf2(65));
+            ClassicAssert.AreEqual(16, BitOps.NextPowerOf2(16));
+            ClassicAssert.AreEqual(16, BitOps.NextPowerOf2(15));
+            ClassicAssert.AreEqual(2, BitOps.NextPowerOf2(2));
+            ClassicAssert.AreEqual(4, BitOps.NextPowerOf2(3));
+            ClassicAssert.AreEqual(128, BitOps.NextPowerOf2(65));
 
-            Assert.AreEqual(16, BitOps.NextPowerOf2((uint)16));
-            Assert.AreEqual(16, BitOps.NextPowerOf2((uint)15));
-            Assert.AreEqual(2, BitOps.NextPowerOf2((uint)2));
-            Assert.AreEqual(4, BitOps.NextPowerOf2((uint)3));
-            Assert.AreEqual(128, BitOps.NextPowerOf2((uint)65));
+            ClassicAssert.AreEqual(16, BitOps.NextPowerOf2((uint)16));
+            ClassicAssert.AreEqual(16, BitOps.NextPowerOf2((uint)15));
+            ClassicAssert.AreEqual(2, BitOps.NextPowerOf2((uint)2));
+            ClassicAssert.AreEqual(4, BitOps.NextPowerOf2((uint)3));
+            ClassicAssert.AreEqual(128, BitOps.NextPowerOf2((uint)65));
         }
 
         [Test]
@@ -244,49 +245,49 @@ namespace NetGore.Tests.IO
             for (var i = 1; i < 7; i++)
             {
                 var value = (sbyte)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 8; i++)
             {
                 var value = (byte)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 15; i++)
             {
                 var value = (short)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 16; i++)
             {
                 var value = (ushort)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 31; i++)
             {
                 var value = (int)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 32; i++)
             {
                 var value = (uint)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 63; i++)
             {
                 var value = (long)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
 
             for (var i = 1; i < 64; i++)
             {
                 var value = (ulong)Math.Pow(2, i);
-                Assert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
+                ClassicAssert.IsTrue(BitOps.IsPowerOf2(value), string.Format(errDetails, i, value, value.GetType()));
             }
         }
 

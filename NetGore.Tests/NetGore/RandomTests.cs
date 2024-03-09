@@ -2,6 +2,7 @@
 using System.Linq;
 using NetGore.Extensions;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -19,9 +20,9 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 20; i++)
             {
                 var f = r.NextFloat();
-                Assert.AreNotEqual(last, f);
-                Assert.Less(f, 1f);
-                Assert.GreaterOrEqual(f, 0f);
+                ClassicAssert.AreNotEqual(last, f);
+                ClassicAssert.Less(f, 1f);
+                ClassicAssert.GreaterOrEqual(f, 0f);
                 last = f;
             }
         }

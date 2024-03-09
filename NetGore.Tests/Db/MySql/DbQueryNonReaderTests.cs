@@ -1,16 +1,12 @@
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
+
 using NetGore.Db;
-using NUnit.Framework;
 
 namespace NetGore.Tests.Db.MySql
 {
     [TestFixture]
     public class DbQueryNonReaderTests
     {
-        #region Unit tests
-
         [Test]
         public void SelectTest()
         {
@@ -28,8 +24,6 @@ namespace NetGore.Tests.Db.MySql
             }
         }
 
-        #endregion
-
         class MyNonReader : DbQueryNonReader<QueryTestValues>
         {
             const string _commandText = "SELECT @a + @b + @c";
@@ -43,21 +37,11 @@ namespace NetGore.Tests.Db.MySql
             /// </summary>
             /// <returns>IEnumerable of all the DbParameters needed for this class to perform database queries. If null,
             /// no parameters will be used.</returns>
-            protected override IEnumerable<DbParameter> InitializeParameters()
-            {
-                return CreateParameters("a", "b", "c");
-            }
+            protected override IEnumerable<DbParameter> InitializeParameters() => CreateParameters("a", "b", "c");
 
-            /// <summary>
-            /// When overridden in the derived class, sets the database parameters based on the specified item.
-            /// </summary>
-            /// <param name="p">Collection of database parameters to set the values for.</param>
-            /// <param name="item">Item used to execute the query.</param>
             protected override void SetParameters(DbParameterValues p, QueryTestValues item)
             {
-                p["a"] = item.A;
-                p["b"] = item.B;
-                p["c"] = item.C;
+                throw new NotImplementedException();
             }
         }
     }

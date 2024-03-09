@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -18,7 +19,7 @@ namespace NetGore.Tests.NetGore
 
             for (var i = 0; i < expected.Count; i++)
             {
-                Assert.AreEqual(expected[i], unsorted[i]);
+                ClassicAssert.AreEqual(expected[i], unsorted[i]);
             }
         }
 

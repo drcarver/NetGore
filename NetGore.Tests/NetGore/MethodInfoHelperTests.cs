@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -47,81 +48,81 @@ namespace NetGore.Tests.NetGore
         public void FindInstanceMethodsWithAttribute2Test()
         {
             var methods = MethodInfoHelper.FindInstanceMethodsWithAttribute<Att>(_types, x => true);
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsFalse(HasAnyStaticMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasAnyStaticMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void FindInstanceMethodsWithAttributeTest()
         {
             var methods = MethodInfoHelper.FindInstanceMethodsWithAttribute<Att>(_types);
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsFalse(HasAnyStaticMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasAnyStaticMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void FindMethodsWithAttribute2Test()
         {
             var methods = MethodInfoHelper.FindMethodsWithAttribute<Att>(_types, x => true);
-            Assert.IsTrue(HasAllStaticMethods(methods));
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllStaticMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void FindMethodsWithAttributeTest()
         {
             var methods = MethodInfoHelper.FindMethodsWithAttribute<Att>(_types);
-            Assert.IsTrue(HasAllStaticMethods(methods));
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllStaticMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void FindStaticMethodsWithAttribute2Test()
         {
             var methods = MethodInfoHelper.FindStaticMethodsWithAttribute<Att>(_types, x => true);
-            Assert.IsTrue(HasAllStaticMethods(methods));
-            Assert.IsFalse(HasAnyInstanceMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllStaticMethods(methods));
+            ClassicAssert.IsFalse(HasAnyInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void FindStaticMethodsWithAttributeTest()
         {
             var methods = MethodInfoHelper.FindStaticMethodsWithAttribute<Att>(_types);
-            Assert.IsTrue(HasAllStaticMethods(methods));
-            Assert.IsFalse(HasAnyInstanceMethods(methods));
-            Assert.IsFalse(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllStaticMethods(methods));
+            ClassicAssert.IsFalse(HasAnyInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void GetInstanceMethodsTest()
         {
             var methods = MethodInfoHelper.GetInstanceMethods(_types);
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsFalse(HasAnyStaticMethods(methods));
-            Assert.IsTrue(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsFalse(HasAnyStaticMethods(methods));
+            ClassicAssert.IsTrue(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void GetMethodsTest()
         {
             var methods = MethodInfoHelper.GetMethods(_types);
-            Assert.IsTrue(HasAllInstanceMethods(methods));
-            Assert.IsTrue(HasAnyStaticMethods(methods));
-            Assert.IsTrue(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllInstanceMethods(methods));
+            ClassicAssert.IsTrue(HasAnyStaticMethods(methods));
+            ClassicAssert.IsTrue(HasNonAttributeMethods(methods));
         }
 
         [Test]
         public void GetStaticMethodsTest()
         {
             var methods = MethodInfoHelper.GetStaticMethods(_types);
-            Assert.IsTrue(HasAllStaticMethods(methods));
-            Assert.IsFalse(HasAnyInstanceMethods(methods));
-            Assert.IsTrue(HasNonAttributeMethods(methods));
+            ClassicAssert.IsTrue(HasAllStaticMethods(methods));
+            ClassicAssert.IsFalse(HasAnyInstanceMethods(methods));
+            ClassicAssert.IsTrue(HasNonAttributeMethods(methods));
         }
 
         #endregion

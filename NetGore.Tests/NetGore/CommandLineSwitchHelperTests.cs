@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -16,7 +17,7 @@ namespace NetGore.Tests.NetGore
         {
             var values = CommandLineSwitchHelper.GetCommandsUsingEnum<TestEnum>(_defaultTestArgs).ToDictionary(x => x.Key,
                 x => x.Value);
-            Assert.AreEqual("asdfa", values[TestEnum.c].First());
+            ClassicAssert.AreEqual("asdfa", values[TestEnum.c].First());
         }
 
         [Test]
@@ -24,7 +25,7 @@ namespace NetGore.Tests.NetGore
         {
             var values = CommandLineSwitchHelper.GetCommandsUsingEnum<TestEnum>(_defaultTestArgs).ToDictionary(x => x.Key,
                 x => x.Value);
-            Assert.IsEmpty(values[TestEnum.d]);
+            ClassicAssert.IsEmpty(values[TestEnum.d]);
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace NetGore.Tests.NetGore
         {
             var values = CommandLineSwitchHelper.GetCommandsUsingEnum<TestEnum>(_defaultTestArgs).ToDictionary(x => x.Key,
                 x => x.Value);
-            Assert.AreEqual(3, values.Count);
+            ClassicAssert.AreEqual(3, values.Count);
         }
 
         [Test]
@@ -40,43 +41,43 @@ namespace NetGore.Tests.NetGore
         {
             var values = CommandLineSwitchHelper.GetCommandsUsingEnum<TestEnum>(_defaultTestArgs).ToDictionary(x => x.Key,
                 x => x.Value);
-            Assert.AreEqual("50", values[TestEnum.a].First());
+            ClassicAssert.AreEqual("50", values[TestEnum.a].First());
         }
 
         [Test]
         public void MainKeyTest()
         {
             var values = CommandLineSwitchHelper.GetCommands(_defaultTestArgs).ToDictionary(x => x.Key, x => x.Value);
-            Assert.AreEqual("my main value", values[CommandLineSwitchHelper.PrimaryKeyName].First());
+            ClassicAssert.AreEqual("my main value", values[CommandLineSwitchHelper.PrimaryKeyName].First());
         }
 
         [Test]
         public void SimpleSwitch1ValueTest()
         {
             var values = CommandLineSwitchHelper.GetCommands(_defaultTestArgs).ToDictionary(x => x.Key, x => x.Value);
-            Assert.AreEqual("50", values["a"].First());
+            ClassicAssert.AreEqual("50", values["a"].First());
         }
 
         [Test]
         public void SimpleSwitch2ValueTest()
         {
             var values = CommandLineSwitchHelper.GetCommands(_defaultTestArgs).ToDictionary(x => x.Key, x => x.Value);
-            Assert.AreEqual("20", values["b"][0]);
-            Assert.AreEqual("asdf", values["b"][1]);
+            ClassicAssert.AreEqual("20", values["b"][0]);
+            ClassicAssert.AreEqual("asdf", values["b"][1]);
         }
 
         [Test]
         public void SimpleSwitchExtraPrefixesTest()
         {
             var values = CommandLineSwitchHelper.GetCommands(_defaultTestArgs).ToDictionary(x => x.Key, x => x.Value);
-            Assert.AreEqual("asdfa", values["c"].First());
+            ClassicAssert.AreEqual("asdfa", values["c"].First());
         }
 
         [Test]
         public void SimpleSwitchNoValueTest()
         {
             var values = CommandLineSwitchHelper.GetCommands(_defaultTestArgs).ToDictionary(x => x.Key, x => x.Value);
-            Assert.IsEmpty(values["d"]);
+            ClassicAssert.IsEmpty(values["d"]);
         }
 
         #endregion

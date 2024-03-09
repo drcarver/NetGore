@@ -2,6 +2,7 @@
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.IO
 {
@@ -23,8 +24,8 @@ namespace NetGore.Tests.NetGore.IO
 
             b.ReadState(bs);
 
-            Assert.AreEqual(a.A, b.A);
-            Assert.AreEqual(a.B, b.B);
+            ClassicAssert.AreEqual(a.A, b.A);
+            ClassicAssert.AreEqual(a.B, b.B);
         }
 
         [Test]
@@ -40,8 +41,8 @@ namespace NetGore.Tests.NetGore.IO
 
             b.ReadState(bs);
 
-            Assert.AreEqual(a.A, b.A);
-            Assert.AreEqual(a.B, b.B);
+            ClassicAssert.AreEqual(a.A, b.A);
+            ClassicAssert.AreEqual(a.B, b.B);
         }
 
         #endregion

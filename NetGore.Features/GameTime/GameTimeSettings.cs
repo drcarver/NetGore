@@ -13,7 +13,7 @@ namespace NetGore.Features.GameTime
         /// <summary>
         /// The settings instance.
         /// </summary>
-        static GameTimeSettings _instance;
+        static GameTimeSettings? _instance;
 
         readonly DateTime _baseTime;
         readonly float _gameTimeMultiplier;
@@ -40,7 +40,7 @@ namespace NetGore.Features.GameTime
             {
                 throw new ArgumentException(
                     "Night must begin on one day, and morning must begin on another day, just like in real life.",
-                    "nightStartHour");
+                    nameof(nightStartHour));
             }
 
             _nightStartHour = nightStartHour;
@@ -57,20 +57,14 @@ namespace NetGore.Features.GameTime
         /// is only logical that the value is always less than the current time. To make the game time persist, this
         /// value should be set to a constant date (such as the first day of year 2010).
         /// </summary>
-        public DateTime BaseTime
-        {
-            get { return _baseTime; }
-        }
+        public DateTime BaseTime => _baseTime;
 
         /// <summary>
         /// Gets how much faster the game-time moves than real-world time. A value of 1.0f represents that a
         /// minute in game-time is equal to a minute in real-world time, and 2.0f represents that the game-time
         /// progresses twice as fast as real-world time.
         /// </summary>
-        public float GameTimeMultiplier
-        {
-            get { return _gameTimeMultiplier; }
-        }
+        public float GameTimeMultiplier => _gameTimeMultiplier;
 
         /// <summary>
         /// Gets the <see cref="GameTimeSettings"/> instance.
@@ -89,36 +83,24 @@ namespace NetGore.Features.GameTime
         /// ambient R, G, or B value is already less than this value, the map's ambient value will be used instead
         /// for the respective color. That is, this value will not make a map lighter than it already is.
         /// </summary>
-        public byte MinAmbient
-        {
-            get { return _minAmbient; }
-        }
+        public byte MinAmbient => _minAmbient;
 
         /// <summary>
         /// Gets the lowest value that the light multiplier will reach. Note that 0 means that it will be pitch black.
         /// Having below 0 will mean that absolute darkness will last longer, and that we will move into and out
         /// of absolute darkness quicker.
         /// </summary>
-        public virtual float MinAmbientMultiplier
-        {
-            get { return _minAmbientMultiplier; }
-        }
+        public virtual float MinAmbientMultiplier => _minAmbientMultiplier;
 
         /// <summary>
         /// Gets the hour at which night time ends and the sun has fully risen again (the world is back to full brightness).
         /// </summary>
-        public virtual int NightEndHour
-        {
-            get { return _nightEndHour; }
-        }
+        public virtual int NightEndHour => _nightEndHour;
 
         /// <summary>
         /// Gets the hour at which night time starts and sun begins to go down (the world starts getting darker).
         /// </summary>
-        public virtual int NightStartHour
-        {
-            get { return _nightStartHour; }
-        }
+        public virtual int NightStartHour => _nightStartHour;
 
         /// <summary>
         /// Applies the night multiplier to a <see cref="Color"/> to get the new ambient light value.
@@ -156,12 +138,9 @@ namespace NetGore.Features.GameTime
             var halfMinutesOfDarkness = minutesOfDarkness / 2f;
 
             // How far into the darkness we are with the current time (will be between 0 and hoursOfDarkness)
-            int minutesIntoDarkness;
-            if (time.Hour > NightStartHour)
-                minutesIntoDarkness = time.Hour - NightStartHour;
-            else
-                minutesIntoDarkness = (int)(GameDateTime.HoursPerDay - NightStartHour) + time.Hour;
-
+            int minutesIntoDarkness = time.Hour > NightStartHour 
+                ? time.Hour - NightStartHour 
+                : (int)(GameDateTime.HoursPerDay - NightStartHour) + time.Hour;
             minutesIntoDarkness *= (int)GameDateTime.MinutesPerHour;
             minutesIntoDarkness += time.Minute;
 
@@ -211,10 +190,12 @@ namespace NetGore.Features.GameTime
         /// <exception cref="MethodAccessException">This method must be called once and only once.</exception>
         public static void Initialize(GameTimeSettings settings)
         {
-            if (settings == null)
-                throw new ArgumentNullException("settings");
+            ArgumentNullException.ThrowIfNull(settings);
+
             if (_instance != null)
+            {
                 throw new MethodAccessException("This method must be called once and only once.");
+            }
 
             _instance = settings;
         }

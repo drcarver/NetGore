@@ -2,6 +2,7 @@
 using System.Linq;
 using NetGore.Graphics;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Graphics
 {
@@ -34,9 +35,9 @@ namespace NetGore.Tests.Graphics
                     title, speed, pathSep);
 
                 var v = AutomaticAnimatedGrhData.GetAutomaticAnimationInfo(path);
-                Assert.IsNotNull(v);
-                Assert.AreEqual(v.Speed.ToString(), speed, "Path sep: " + pathSep);
-                Assert.AreEqual(v.Title, title, "Path sep: " + pathSep);
+                ClassicAssert.IsNotNull(v);
+                ClassicAssert.AreEqual(v.Speed.ToString(), speed, "Path sep: " + pathSep);
+                ClassicAssert.AreEqual(v.Title, title, "Path sep: " + pathSep);
             }
         }
 

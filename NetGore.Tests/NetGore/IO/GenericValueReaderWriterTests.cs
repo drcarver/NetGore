@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.IO
 {
@@ -26,7 +27,7 @@ namespace NetGore.Tests.NetGore.IO
 
                 var reader = GenericValueReader.CreateFromFile(filePath, "Root");
                 var s = reader.ReadString("Test");
-                Assert.AreEqual("asdf", s);
+                ClassicAssert.AreEqual("asdf", s);
             }
             finally
             {
@@ -51,7 +52,7 @@ namespace NetGore.Tests.NetGore.IO
 
                 var reader = GenericValueReader.CreateFromFile(filePath, "Root");
                 var s = reader.ReadString("Test");
-                Assert.AreEqual("asdf", s);
+                ClassicAssert.AreEqual("asdf", s);
             }
             finally
             {

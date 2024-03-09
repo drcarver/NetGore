@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using NetGore.Features.Guilds;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.Features.Guilds
 {
@@ -36,10 +37,10 @@ namespace NetGore.Tests.NetGore.Features.Guilds
                         var rc = r.ReadGuildMemberNameRank("c");
                         var rd = r.ReadGuildMemberNameRank("d");
 
-                        Assert.AreEqual(a, ra);
-                        Assert.AreEqual(b, rb);
-                        Assert.AreEqual(c, rc);
-                        Assert.AreEqual(d, rd);
+                        ClassicAssert.AreEqual(a, ra);
+                        ClassicAssert.AreEqual(b, rb);
+                        ClassicAssert.AreEqual(c, rc);
+                        ClassicAssert.AreEqual(d, rd);
                     }
                 }
             }

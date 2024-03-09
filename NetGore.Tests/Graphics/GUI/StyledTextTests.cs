@@ -4,6 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NetGore.Graphics.GUI;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.Graphics.GUI
@@ -22,9 +24,9 @@ namespace NetGore.Tests.Graphics.GUI
             var s3 = new StyledText("xyz", Color.Black);
             var concat = StyledText.Concat(new StyledText[] { s1, s2, s3 });
 
-            Assert.AreEqual(1, concat.Count());
-            Assert.AreEqual(s1.Text + s2.Text + s3.Text, concat.First().Text);
-            Assert.IsTrue(s1.HasSameStyle(concat.First()));
+            ClassicAssert.AreEqual(1, concat.Count());
+            ClassicAssert.AreEqual(s1.Text + s2.Text + s3.Text, concat.First().Text);
+            ClassicAssert.IsTrue(s1.HasSameStyle(concat.First()));
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "abcd")]
@@ -36,11 +38,11 @@ namespace NetGore.Tests.Graphics.GUI
             var s3 = new StyledText("xyz", Color.White);
             var concat = StyledText.Concat(new StyledText[] { s1, s2, s3 }).ToArray();
 
-            Assert.AreEqual(2, concat.Count());
-            Assert.AreEqual(s1.Text + s2.Text, concat[0].Text);
-            Assert.AreEqual(s3.Text, concat[1].Text);
-            Assert.IsTrue(s1.HasSameStyle(concat[0]));
-            Assert.IsTrue(s3.HasSameStyle(concat[1]));
+            ClassicAssert.AreEqual(2, concat.Count());
+            ClassicAssert.AreEqual(s1.Text + s2.Text, concat[0].Text);
+            ClassicAssert.AreEqual(s3.Text, concat[1].Text);
+            ClassicAssert.IsTrue(s1.HasSameStyle(concat[0]));
+            ClassicAssert.IsTrue(s3.HasSameStyle(concat[1]));
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "abcd")]
@@ -52,13 +54,13 @@ namespace NetGore.Tests.Graphics.GUI
             var s3 = new StyledText("xyz", Color.Black);
             var concat = StyledText.Concat(new StyledText[] { s1, s2, s3 }).ToArray();
 
-            Assert.AreEqual(3, concat.Count());
-            Assert.AreEqual(s1.Text, concat[0].Text);
-            Assert.AreEqual(s2.Text, concat[1].Text);
-            Assert.AreEqual(s3.Text, concat[2].Text);
-            Assert.IsTrue(s1.HasSameStyle(concat[0]));
-            Assert.IsTrue(s2.HasSameStyle(concat[1]));
-            Assert.IsTrue(s3.HasSameStyle(concat[2]));
+            ClassicAssert.AreEqual(3, concat.Count());
+            ClassicAssert.AreEqual(s1.Text, concat[0].Text);
+            ClassicAssert.AreEqual(s2.Text, concat[1].Text);
+            ClassicAssert.AreEqual(s3.Text, concat[2].Text);
+            ClassicAssert.IsTrue(s1.HasSameStyle(concat[0]));
+            ClassicAssert.IsTrue(s2.HasSameStyle(concat[1]));
+            ClassicAssert.IsTrue(s3.HasSameStyle(concat[2]));
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "xov")]
@@ -74,11 +76,11 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText(originalString, Color.Black);
             var s2 = new StyledText("ffjfjfj", s);
 
-            Assert.AreEqual(originalString, s.Text);
-            Assert.AreEqual("ffjfjfj", s2.Text);
+            ClassicAssert.AreEqual(originalString, s.Text);
+            ClassicAssert.AreEqual("ffjfjfj", s2.Text);
 
-            Assert.AreEqual(Color.Black, s.Color);
-            Assert.AreEqual(Color.Black, s2.Color);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual(Color.Black, s2.Color);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "xov")]
@@ -91,20 +93,20 @@ namespace NetGore.Tests.Graphics.GUI
         {
             const string originalString = "asdf werljk xov  .qw 120 xcv;z";
             var s = new StyledText(originalString, Color.Black);
-            Assert.AreEqual(originalString, s.Text);
-            Assert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual(originalString, s.Text);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
         }
 
         [Test]
         public void EmptyIEnumerableToStringTest()
         {
-            Assert.AreEqual(string.Empty, StyledText.ToString(new StyledText[0]));
+            ClassicAssert.AreEqual(string.Empty, StyledText.ToString(new StyledText[0]));
         }
 
         [Test]
         public void EmptyIEnumerableToStringWithDelimiterTest()
         {
-            Assert.AreEqual(string.Empty, StyledText.ToString(new StyledText[0], "WWW"));
+            ClassicAssert.AreEqual(string.Empty, StyledText.ToString(new StyledText[0], "WWW"));
         }
 
         [Test]
@@ -113,8 +115,8 @@ namespace NetGore.Tests.Graphics.GUI
             var a = new StyledText("abc", Color.Red);
             var b = new StyledText("123", Color.Green);
 
-            Assert.IsFalse(a.HasSameStyle(b));
-            Assert.IsFalse(b.HasSameStyle(a));
+            ClassicAssert.IsFalse(a.HasSameStyle(b));
+            ClassicAssert.IsFalse(b.HasSameStyle(a));
         }
 
         [Test]
@@ -123,8 +125,8 @@ namespace NetGore.Tests.Graphics.GUI
             var a = new StyledText("abc", Color.Red);
             var b = new StyledText("123", a);
 
-            Assert.IsTrue(a.HasSameStyle(b));
-            Assert.IsTrue(b.HasSameStyle(a));
+            ClassicAssert.IsTrue(a.HasSameStyle(b));
+            ClassicAssert.IsTrue(b.HasSameStyle(a));
         }
 
         [Test]
@@ -135,7 +137,7 @@ namespace NetGore.Tests.Graphics.GUI
             var c = new StyledText("xyz");
             var v = new StyledText[] { a, b, c };
 
-            Assert.AreEqual("abc123xyz", StyledText.ToString(v));
+            ClassicAssert.AreEqual("abc123xyz", StyledText.ToString(v));
         }
 
         [Test]
@@ -146,19 +148,19 @@ namespace NetGore.Tests.Graphics.GUI
             var c = new StyledText("xyz");
             var v = new StyledText[] { a, b, c };
 
-            Assert.AreEqual("abcWWW123WWWxyz", StyledText.ToString(v, "WWW"));
+            ClassicAssert.AreEqual("abcWWW123WWWxyz", StyledText.ToString(v, "WWW"));
         }
 
         [Test]
         public void NullIEnumerableToStringTest()
         {
-            Assert.AreEqual(string.Empty, StyledText.ToString(null));
+            ClassicAssert.AreEqual(string.Empty, StyledText.ToString(null));
         }
 
         [Test]
         public void NullIEnumerableToStringWithDelimiterTest()
         {
-            Assert.AreEqual(string.Empty, StyledText.ToString(null, "WWW"));
+            ClassicAssert.AreEqual(string.Empty, StyledText.ToString(null, "WWW"));
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "asdf")]
@@ -168,8 +170,8 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText("asdf", Color.Black);
             s += "ff";
 
-            Assert.AreEqual("asdfff", s.Text);
-            Assert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual("asdfff", s.Text);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "asdf")]
@@ -179,11 +181,11 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText("asdf", Color.Black);
             var s2 = s + "ff";
 
-            Assert.AreEqual("asdf", s.Text);
-            Assert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual("asdf", s.Text);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
 
-            Assert.AreEqual("asdfff", s2.Text);
-            Assert.AreEqual(Color.Black, s2.Color);
+            ClassicAssert.AreEqual("asdfff", s2.Text);
+            ClassicAssert.AreEqual(Color.Black, s2.Color);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "abcd")]
@@ -195,34 +197,34 @@ namespace NetGore.Tests.Graphics.GUI
             StyledText r;
 
             s.SplitAt(0, out l, out r);
-            Assert.AreEqual("", l.Text);
-            Assert.AreEqual("abcd", r.Text);
-            Assert.AreEqual(Color.Black, l.Color);
-            Assert.AreEqual(Color.Black, r.Color);
+            ClassicAssert.AreEqual("", l.Text);
+            ClassicAssert.AreEqual("abcd", r.Text);
+            ClassicAssert.AreEqual(Color.Black, l.Color);
+            ClassicAssert.AreEqual(Color.Black, r.Color);
 
             s.SplitAt(1, out l, out r);
-            Assert.AreEqual("a", l.Text);
-            Assert.AreEqual("bcd", r.Text);
-            Assert.AreEqual(Color.Black, l.Color);
-            Assert.AreEqual(Color.Black, r.Color);
+            ClassicAssert.AreEqual("a", l.Text);
+            ClassicAssert.AreEqual("bcd", r.Text);
+            ClassicAssert.AreEqual(Color.Black, l.Color);
+            ClassicAssert.AreEqual(Color.Black, r.Color);
 
             s.SplitAt(2, out l, out r);
-            Assert.AreEqual("ab", l.Text);
-            Assert.AreEqual("cd", r.Text);
-            Assert.AreEqual(Color.Black, l.Color);
-            Assert.AreEqual(Color.Black, r.Color);
+            ClassicAssert.AreEqual("ab", l.Text);
+            ClassicAssert.AreEqual("cd", r.Text);
+            ClassicAssert.AreEqual(Color.Black, l.Color);
+            ClassicAssert.AreEqual(Color.Black, r.Color);
 
             s.SplitAt(3, out l, out r);
-            Assert.AreEqual("abc", l.Text);
-            Assert.AreEqual("d", r.Text);
-            Assert.AreEqual(Color.Black, l.Color);
-            Assert.AreEqual(Color.Black, r.Color);
+            ClassicAssert.AreEqual("abc", l.Text);
+            ClassicAssert.AreEqual("d", r.Text);
+            ClassicAssert.AreEqual(Color.Black, l.Color);
+            ClassicAssert.AreEqual(Color.Black, r.Color);
 
             s.SplitAt(4, out l, out r);
-            Assert.AreEqual("abcd", l.Text);
-            Assert.AreEqual("", r.Text);
-            Assert.AreEqual(Color.Black, l.Color);
-            Assert.AreEqual(Color.Black, r.Color);
+            ClassicAssert.AreEqual("abcd", l.Text);
+            ClassicAssert.AreEqual("", r.Text);
+            ClassicAssert.AreEqual(Color.Black, l.Color);
+            ClassicAssert.AreEqual(Color.Black, r.Color);
 
             Assert.Throws<ArgumentOutOfRangeException>(() => s.SplitAt(-1, out l, out r));
             Assert.Throws<ArgumentOutOfRangeException>(() => s.SplitAt(5, out l, out r));
@@ -243,8 +245,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -263,8 +265,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -283,8 +285,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -303,8 +305,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -323,8 +325,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -343,8 +345,8 @@ namespace NetGore.Tests.Graphics.GUI
 
             for (var i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(s.Color, split[i].Color);
-                Assert.AreEqual(expected[i], split[i].Text);
+                ClassicAssert.AreEqual(s.Color, split[i].Color);
+                ClassicAssert.AreEqual(expected[i], split[i].Text);
             }
         }
 
@@ -360,11 +362,11 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText(originalString, Color.Black);
             var s2 = s.Substring(5);
 
-            Assert.AreEqual(s.Text, originalString);
-            Assert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual(s.Text, originalString);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
 
-            Assert.AreEqual(originalString.Substring(5), s2.Text);
-            Assert.AreEqual(Color.Black, s2.Color);
+            ClassicAssert.AreEqual(originalString.Substring(5), s2.Text);
+            ClassicAssert.AreEqual(Color.Black, s2.Color);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "xov")]
@@ -379,11 +381,11 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText(originalString, Color.Black);
             var s2 = s.Substring(5, 4);
 
-            Assert.AreEqual(s.Text, originalString);
-            Assert.AreEqual(Color.Black, s.Color);
+            ClassicAssert.AreEqual(s.Text, originalString);
+            ClassicAssert.AreEqual(Color.Black, s.Color);
 
-            Assert.AreEqual(originalString.Substring(5, 4), s2.Text);
-            Assert.AreEqual(Color.Black, s2.Color);
+            ClassicAssert.AreEqual(originalString.Substring(5, 4), s2.Text);
+            ClassicAssert.AreEqual(Color.Black, s2.Color);
         }
 
         [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "<>g__initLocal4")]
@@ -409,10 +411,10 @@ namespace NetGore.Tests.Graphics.GUI
 
             var r = StyledText.ToMultiline(lines, false, TestHelper.DefaultFont, 400);
 
-            Assert.AreEqual("abcd", r[0][0].Text);
-            Assert.AreEqual("123", r[1][0].Text);
-            Assert.AreEqual("xyz", r[2][0].Text);
-            Assert.AreEqual("qwe", r[3][0].Text);
+            ClassicAssert.AreEqual("abcd", r[0][0].Text);
+            ClassicAssert.AreEqual("123", r[1][0].Text);
+            ClassicAssert.AreEqual("xyz", r[2][0].Text);
+            ClassicAssert.AreEqual("qwe", r[3][0].Text);
 #pragma warning restore 162
         }
 
@@ -430,18 +432,18 @@ namespace NetGore.Tests.Graphics.GUI
             var s3 = new StyledText(originalString3, Color.Black);
             var lines = StyledText.ToMultiline(new StyledText[] { s1, s2, s3 }, true);
 
-            Assert.AreEqual(6, lines.Count);
-            Assert.AreEqual("one ", lines[0][0].Text);
-            Assert.AreEqual("two", lines[1][0].Text);
-            Assert.AreEqual("three fou", lines[2][0].Text);
-            Assert.AreEqual("r", lines[3][0].Text);
-            Assert.AreEqual("fi", lines[4][0].Text);
-            Assert.AreEqual("ve", lines[5][0].Text);
+            ClassicAssert.AreEqual(6, lines.Count);
+            ClassicAssert.AreEqual("one ", lines[0][0].Text);
+            ClassicAssert.AreEqual("two", lines[1][0].Text);
+            ClassicAssert.AreEqual("three fou", lines[2][0].Text);
+            ClassicAssert.AreEqual("r", lines[3][0].Text);
+            ClassicAssert.AreEqual("fi", lines[4][0].Text);
+            ClassicAssert.AreEqual("ve", lines[5][0].Text);
 
             foreach (var l in lines)
             {
-                Assert.AreEqual(s1.Color, l[0].Color);
-                Assert.AreEqual(s2.Color, l[0].Color);
+                ClassicAssert.AreEqual(s1.Color, l[0].Color);
+                ClassicAssert.AreEqual(s2.Color, l[0].Color);
             }
         }
 
@@ -455,19 +457,19 @@ namespace NetGore.Tests.Graphics.GUI
             var s2 = new StyledText(originalString2, Color.Black);
             var lines = StyledText.ToMultiline(new StyledText[] { s1, s2 }, false);
 
-            Assert.AreEqual(3, lines.Count);
+            ClassicAssert.AreEqual(3, lines.Count);
 
-            Assert.AreEqual("one ", lines[0][0].Text);
+            ClassicAssert.AreEqual("one ", lines[0][0].Text);
 
-            Assert.AreEqual("two", lines[1][0].Text);
-            Assert.AreEqual(" three fou", lines[1][1].Text);
+            ClassicAssert.AreEqual("two", lines[1][0].Text);
+            ClassicAssert.AreEqual(" three fou", lines[1][1].Text);
 
-            Assert.AreEqual("r", lines[2][0].Text);
+            ClassicAssert.AreEqual("r", lines[2][0].Text);
 
             foreach (var l in lines)
             {
-                Assert.AreEqual(s1.Color, l[0].Color);
-                Assert.AreEqual(s2.Color, l[0].Color);
+                ClassicAssert.AreEqual(s1.Color, l[0].Color);
+                ClassicAssert.AreEqual(s2.Color, l[0].Color);
             }
         }
 
@@ -479,14 +481,14 @@ namespace NetGore.Tests.Graphics.GUI
             var s = new StyledText(originalString, Color.Black);
             var lines = StyledText.ToMultiline(s);
 
-            Assert.AreEqual(3, lines.Count);
-            Assert.AreEqual("one two", lines[0].Text);
-            Assert.AreEqual(" three fou", lines[1].Text);
-            Assert.AreEqual("r", lines[2].Text);
+            ClassicAssert.AreEqual(3, lines.Count);
+            ClassicAssert.AreEqual("one two", lines[0].Text);
+            ClassicAssert.AreEqual(" three fou", lines[1].Text);
+            ClassicAssert.AreEqual("r", lines[2].Text);
 
             foreach (var l in lines)
             {
-                Assert.AreEqual(s.Color, l.Color);
+                ClassicAssert.AreEqual(s.Color, l.Color);
             }
         }
 
@@ -496,7 +498,7 @@ namespace NetGore.Tests.Graphics.GUI
         public void ToSingleLineTest()
         {
             var a = new StyledText("abc\rdefg\r\nhij\r\nklm\nn");
-            Assert.AreEqual("abcdefghijklmn", a.ToSingleline().Text);
+            ClassicAssert.AreEqual("abcdefghijklmn", a.ToSingleline().Text);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "hij")]
@@ -505,7 +507,7 @@ namespace NetGore.Tests.Graphics.GUI
         public void ToSingleLineWithReplacementTest()
         {
             var a = new StyledText("abc\rdefg\r\nhij\r\nklm\nn");
-            Assert.AreEqual("abcXdefgXhijXklmXn", a.ToSingleline("X").Text);
+            ClassicAssert.AreEqual("abcXdefgXhijXklmXn", a.ToSingleline("X").Text);
         }
 
         [Test]
@@ -514,8 +516,8 @@ namespace NetGore.Tests.Graphics.GUI
             var a = new StyledText("abc", Color.Red);
             var b = new StyledText("123", a);
 
-            Assert.AreEqual("abc", a.ToString());
-            Assert.AreEqual("123", b.ToString());
+            ClassicAssert.AreEqual("abc", a.ToString());
+            ClassicAssert.AreEqual("123", b.ToString());
         }
 
         #endregion

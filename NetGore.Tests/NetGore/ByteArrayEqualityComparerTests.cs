@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -12,7 +13,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte [] { 1, 2, 3, 4, 5 };
             byte[] b = new byte [] { 1, 2, 3, 4, 5, 6 };
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -21,7 +22,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[] { 1, 2, 3, 4, 5 };
             byte[] b = null;
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -30,7 +31,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = null;
             byte[] b = new byte[] { 1, 2, 3, 4, 5, 6 };
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -39,7 +40,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = null;
             byte[] b = null;
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsTrue(actual);
+            ClassicAssert.IsTrue(actual);
         }
 
         [Test]
@@ -48,7 +49,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[0];
             byte[] b = new byte[] { 1, 2, 3, 4, 5, 6 };
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -57,7 +58,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[] { 1, 2, 3, 4, 5 };
             byte[] b = new byte[0]; 
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -66,7 +67,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[0];
             byte[] b = new byte[0]; 
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsTrue(actual);
+            ClassicAssert.IsTrue(actual);
         }
 
         [Test]
@@ -75,7 +76,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[] { 1, 2, 3, 4 };
             byte[] b = new byte[] { 1, 2, 4, 4 };
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsFalse(actual);
+            ClassicAssert.IsFalse(actual);
         }
 
         [Test]
@@ -84,7 +85,7 @@ namespace NetGore.Tests.NetGore
             byte[] a = new byte[] { 1, 2, 3, 4, 5, 6, 1, 3, 5 };
             byte[] b = a;
             bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-            Assert.IsTrue(actual);
+            ClassicAssert.IsTrue(actual);
         }
 
         [Test]
@@ -99,7 +100,7 @@ namespace NetGore.Tests.NetGore
                 byte[] b = DeepCopy(a);
 
                 bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-                Assert.IsTrue(actual);
+                ClassicAssert.IsTrue(actual);
             }
         }
 
@@ -117,7 +118,7 @@ namespace NetGore.Tests.NetGore
                 b[rnd.Next(0, b.Length)]++; // Increment at a random index
 
                 bool actual = ByteArrayEqualityComparer.AreEqual(a, b);
-                Assert.IsFalse(actual);
+                ClassicAssert.IsFalse(actual);
             }
         }
 

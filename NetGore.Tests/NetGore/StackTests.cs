@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -23,13 +24,13 @@ namespace NetGore.Tests.NetGore
 
             s.Sort();
 
-            Assert.AreEqual(100, s.Count);
+            ClassicAssert.AreEqual(100, s.Count);
 
             var last = s.Pop();
             while (s.Count > 0)
             {
                 var popped = s.Pop();
-                Assert.LessOrEqual(last, popped);
+                ClassicAssert.LessOrEqual(last, popped);
                 last = popped;
             }
         }
@@ -49,12 +50,12 @@ namespace NetGore.Tests.NetGore
 
             var last = s.Pop();
 
-            Assert.LessOrEqual(500, last);
+            ClassicAssert.LessOrEqual(500, last);
 
             while (s.Count > 0)
             {
                 var popped = s.Pop();
-                Assert.LessOrEqual(last, popped);
+                ClassicAssert.LessOrEqual(last, popped);
                 last = popped;
             }
         }
@@ -72,13 +73,13 @@ namespace NetGore.Tests.NetGore
 
             s.SortDescending();
 
-            Assert.AreEqual(100, s.Count);
+            ClassicAssert.AreEqual(100, s.Count);
 
             var last = s.Pop();
             while (s.Count > 0)
             {
                 var popped = s.Pop();
-                Assert.GreaterOrEqual(last, popped);
+                ClassicAssert.GreaterOrEqual(last, popped);
                 last = popped;
             }
         }
@@ -98,12 +99,12 @@ namespace NetGore.Tests.NetGore
 
             var last = s.Pop();
 
-            Assert.GreaterOrEqual(500, last);
+            ClassicAssert.GreaterOrEqual(500, last);
 
             while (s.Count > 0)
             {
                 var popped = s.Pop();
-                Assert.GreaterOrEqual(last, popped);
+                ClassicAssert.GreaterOrEqual(last, popped);
                 last = popped;
             }
         }

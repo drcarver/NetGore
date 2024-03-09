@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.IO
 {
@@ -54,11 +55,11 @@ namespace NetGore.Tests.IO
                     customMsg = msg;
             }
 
-            Assert.AreEqual(expected.Count, actual.Count, "Lengths not equal. Type: `{0}`. Message: {1}", typeof(T), customMsg);
+            ClassicAssert.AreEqual(expected.Count, actual.Count, "Lengths not equal. Type: `{0}`. Message: {1}", typeof(T), customMsg);
 
             for (var i = 0; i < expected.Count; i++)
             {
-                Assert.AreEqual(expected[i], actual[i], "Type: `{0}`  Index: `{1}`  Message: {2}", typeof(T), i, customMsg);
+                ClassicAssert.AreEqual(expected[i], actual[i], "Type: `{0}`  Index: `{1}`  Message: {2}", typeof(T), i, customMsg);
             }
         }
 
@@ -239,14 +240,14 @@ namespace NetGore.Tests.IO
 
                     var r = creator.GetReader();
                     {
-                        Assert.AreEqual(values[3], r.ReadEnumName<TestEnum>(GetValueKey(3)));
-                        Assert.AreEqual(values[5], r.ReadEnumName<TestEnum>(GetValueKey(5)));
-                        Assert.AreEqual(values[0], r.ReadEnumName<TestEnum>(GetValueKey(0)));
-                        Assert.AreEqual(values[1], r.ReadEnumName<TestEnum>(GetValueKey(1)));
-                        Assert.AreEqual(values[3], r.ReadEnumName<TestEnum>(GetValueKey(3)));
-                        Assert.AreEqual(values[5], r.ReadEnumName<TestEnum>(GetValueKey(5)));
-                        Assert.AreEqual(values[4], r.ReadEnumName<TestEnum>(GetValueKey(4)));
-                        Assert.AreEqual(values[4], r.ReadEnumName<TestEnum>(GetValueKey(4)));
+                        ClassicAssert.AreEqual(values[3], r.ReadEnumName<TestEnum>(GetValueKey(3)));
+                        ClassicAssert.AreEqual(values[5], r.ReadEnumName<TestEnum>(GetValueKey(5)));
+                        ClassicAssert.AreEqual(values[0], r.ReadEnumName<TestEnum>(GetValueKey(0)));
+                        ClassicAssert.AreEqual(values[1], r.ReadEnumName<TestEnum>(GetValueKey(1)));
+                        ClassicAssert.AreEqual(values[3], r.ReadEnumName<TestEnum>(GetValueKey(3)));
+                        ClassicAssert.AreEqual(values[5], r.ReadEnumName<TestEnum>(GetValueKey(5)));
+                        ClassicAssert.AreEqual(values[4], r.ReadEnumName<TestEnum>(GetValueKey(4)));
+                        ClassicAssert.AreEqual(values[4], r.ReadEnumName<TestEnum>(GetValueKey(4)));
                     }
                 }
             }
@@ -277,7 +278,7 @@ namespace NetGore.Tests.IO
                     {
                         for (var i = 0; i < values.Length; i++)
                         {
-                            Assert.AreEqual(values[i], r.ReadEnumName<TestEnum>(GetValueKey(i)));
+                            ClassicAssert.AreEqual(values[i], r.ReadEnumName<TestEnum>(GetValueKey(i)));
                         }
                     }
                 }
@@ -309,7 +310,7 @@ namespace NetGore.Tests.IO
                     {
                         for (var i = 0; i < values.Length; i++)
                         {
-                            Assert.AreEqual(values[i], r.ReadEnumValue<TestEnum>(GetValueKey(i)));
+                            ClassicAssert.AreEqual(values[i], r.ReadEnumValue<TestEnum>(GetValueKey(i)));
                         }
                     }
                 }
@@ -342,14 +343,14 @@ namespace NetGore.Tests.IO
 
                     var r = creator.GetReader();
                     {
-                        Assert.AreEqual(values[3], r.ReadEnumValue<TestEnum>(GetValueKey(3)));
-                        Assert.AreEqual(values[5], r.ReadEnumValue<TestEnum>(GetValueKey(5)));
-                        Assert.AreEqual(values[0], r.ReadEnumValue<TestEnum>(GetValueKey(0)));
-                        Assert.AreEqual(values[1], r.ReadEnumValue<TestEnum>(GetValueKey(1)));
-                        Assert.AreEqual(values[3], r.ReadEnumValue<TestEnum>(GetValueKey(3)));
-                        Assert.AreEqual(values[5], r.ReadEnumValue<TestEnum>(GetValueKey(5)));
-                        Assert.AreEqual(values[4], r.ReadEnumValue<TestEnum>(GetValueKey(4)));
-                        Assert.AreEqual(values[4], r.ReadEnumValue<TestEnum>(GetValueKey(4)));
+                        ClassicAssert.AreEqual(values[3], r.ReadEnumValue<TestEnum>(GetValueKey(3)));
+                        ClassicAssert.AreEqual(values[5], r.ReadEnumValue<TestEnum>(GetValueKey(5)));
+                        ClassicAssert.AreEqual(values[0], r.ReadEnumValue<TestEnum>(GetValueKey(0)));
+                        ClassicAssert.AreEqual(values[1], r.ReadEnumValue<TestEnum>(GetValueKey(1)));
+                        ClassicAssert.AreEqual(values[3], r.ReadEnumValue<TestEnum>(GetValueKey(3)));
+                        ClassicAssert.AreEqual(values[5], r.ReadEnumValue<TestEnum>(GetValueKey(5)));
+                        ClassicAssert.AreEqual(values[4], r.ReadEnumValue<TestEnum>(GetValueKey(4)));
+                        ClassicAssert.AreEqual(values[4], r.ReadEnumValue<TestEnum>(GetValueKey(4)));
                     }
                 }
             }
@@ -401,10 +402,10 @@ namespace NetGore.Tests.IO
 
                     for (var i = 0; i < illegalStrs.Length; i++)
                     {
-                        Assert.AreEqual(illegalStrs[i], r.ReadString(GetValueKey(i)));
+                        ClassicAssert.AreEqual(illegalStrs[i], r.ReadString(GetValueKey(i)));
                     }
 
-                    Assert.AreEqual(allStrings, r.ReadString("All"));
+                    ClassicAssert.AreEqual(allStrings, r.ReadString("All"));
                 }
             }
         }
@@ -484,16 +485,16 @@ namespace NetGore.Tests.IO
 
                     var r = creator.GetReader();
                     {
-                        Assert.AreEqual(f, r.ReadString("f"));
-                        Assert.AreEqual(c, r.ReadFloat("c"));
-                        Assert.AreEqual(b, r.ReadInt("b"));
-                        Assert.AreEqual(g, r.ReadInt("g"));
-                        Assert.AreEqual(d, r.ReadInt("d"));
-                        Assert.AreEqual(e, r.ReadBool("e"));
-                        Assert.AreEqual(f, r.ReadString("f"));
-                        Assert.AreEqual(d, r.ReadInt("d"));
-                        Assert.AreEqual(e, r.ReadBool("e"));
-                        Assert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(c, r.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b, r.ReadInt("b"));
+                        ClassicAssert.AreEqual(g, r.ReadInt("g"));
+                        ClassicAssert.AreEqual(d, r.ReadInt("d"));
+                        ClassicAssert.AreEqual(e, r.ReadBool("e"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(d, r.ReadInt("d"));
+                        ClassicAssert.AreEqual(e, r.ReadBool("e"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
                     }
                 }
             }
@@ -532,16 +533,16 @@ namespace NetGore.Tests.IO
 
                     var r = creator.GetReader();
                     {
-                        Assert.AreEqual(f, r.ReadString("f"));
-                        Assert.AreEqual(c, r.ReadFloat("c"));
-                        Assert.AreEqual(b, r.ReadInt("b"));
-                        Assert.AreEqual(g, r.ReadInt("g"));
-                        Assert.AreEqual(d, r.ReadInt("d"));
-                        Assert.AreEqual(e, r.ReadBool("e"));
-                        Assert.AreEqual(f, r.ReadString("f"));
-                        Assert.AreEqual(d, r.ReadInt("d"));
-                        Assert.AreEqual(e, r.ReadBool("e"));
-                        Assert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(c, r.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b, r.ReadInt("b"));
+                        ClassicAssert.AreEqual(g, r.ReadInt("g"));
+                        ClassicAssert.AreEqual(d, r.ReadInt("d"));
+                        ClassicAssert.AreEqual(e, r.ReadBool("e"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
+                        ClassicAssert.AreEqual(d, r.ReadInt("d"));
+                        ClassicAssert.AreEqual(e, r.ReadBool("e"));
+                        ClassicAssert.AreEqual(f, r.ReadString("f"));
                     }
                 }
             }
@@ -622,38 +623,38 @@ namespace NetGore.Tests.IO
                         var nodeC = r.ReadNode("NodeC");
                         var nodeA = r.ReadNode("NodeA");
 
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
-                        Assert.AreEqual(c2, nodeB.ReadFloat("c"));
-                        Assert.AreEqual(b2, nodeB.ReadInt("b"));
-                        Assert.AreEqual(g2, nodeB.ReadInt("g"));
-                        Assert.AreEqual(d2, nodeB.ReadInt("d"));
-                        Assert.AreEqual(e2, nodeB.ReadBool("e"));
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
-                        Assert.AreEqual(d2, nodeB.ReadInt("d"));
-                        Assert.AreEqual(e2, nodeB.ReadBool("e"));
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(c2, nodeB.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b2, nodeB.ReadInt("b"));
+                        ClassicAssert.AreEqual(g2, nodeB.ReadInt("g"));
+                        ClassicAssert.AreEqual(d2, nodeB.ReadInt("d"));
+                        ClassicAssert.AreEqual(e2, nodeB.ReadBool("e"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(d2, nodeB.ReadInt("d"));
+                        ClassicAssert.AreEqual(e2, nodeB.ReadBool("e"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
 
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
-                        Assert.AreEqual(c1, nodeA.ReadFloat("c"));
-                        Assert.AreEqual(b1, nodeA.ReadInt("b"));
-                        Assert.AreEqual(g1, nodeA.ReadInt("g"));
-                        Assert.AreEqual(d1, nodeA.ReadInt("d"));
-                        Assert.AreEqual(e1, nodeA.ReadBool("e"));
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
-                        Assert.AreEqual(d1, nodeA.ReadInt("d"));
-                        Assert.AreEqual(e1, nodeA.ReadBool("e"));
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(c1, nodeA.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b1, nodeA.ReadInt("b"));
+                        ClassicAssert.AreEqual(g1, nodeA.ReadInt("g"));
+                        ClassicAssert.AreEqual(d1, nodeA.ReadInt("d"));
+                        ClassicAssert.AreEqual(e1, nodeA.ReadBool("e"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(d1, nodeA.ReadInt("d"));
+                        ClassicAssert.AreEqual(e1, nodeA.ReadBool("e"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
 
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
-                        Assert.AreEqual(c3, nodeC.ReadFloat("c"));
-                        Assert.AreEqual(b3, nodeC.ReadInt("b"));
-                        Assert.AreEqual(g3, nodeC.ReadInt("g"));
-                        Assert.AreEqual(d3, nodeC.ReadInt("d"));
-                        Assert.AreEqual(e3, nodeC.ReadBool("e"));
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
-                        Assert.AreEqual(d3, nodeC.ReadInt("d"));
-                        Assert.AreEqual(e3, nodeC.ReadBool("e"));
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(c3, nodeC.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b3, nodeC.ReadInt("b"));
+                        ClassicAssert.AreEqual(g3, nodeC.ReadInt("g"));
+                        ClassicAssert.AreEqual(d3, nodeC.ReadInt("d"));
+                        ClassicAssert.AreEqual(e3, nodeC.ReadBool("e"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(d3, nodeC.ReadInt("d"));
+                        ClassicAssert.AreEqual(e3, nodeC.ReadBool("e"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
                     }
                 }
             }
@@ -734,38 +735,38 @@ namespace NetGore.Tests.IO
                         var nodeC = r.ReadNode("NodeC");
                         var nodeA = r.ReadNode("NodeA");
 
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
-                        Assert.AreEqual(c2, nodeB.ReadFloat("c"));
-                        Assert.AreEqual(b2, nodeB.ReadInt("b"));
-                        Assert.AreEqual(g2, nodeB.ReadInt("g"));
-                        Assert.AreEqual(d2, nodeB.ReadInt("d"));
-                        Assert.AreEqual(e2, nodeB.ReadBool("e"));
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
-                        Assert.AreEqual(d2, nodeB.ReadInt("d"));
-                        Assert.AreEqual(e2, nodeB.ReadBool("e"));
-                        Assert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(c2, nodeB.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b2, nodeB.ReadInt("b"));
+                        ClassicAssert.AreEqual(g2, nodeB.ReadInt("g"));
+                        ClassicAssert.AreEqual(d2, nodeB.ReadInt("d"));
+                        ClassicAssert.AreEqual(e2, nodeB.ReadBool("e"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
+                        ClassicAssert.AreEqual(d2, nodeB.ReadInt("d"));
+                        ClassicAssert.AreEqual(e2, nodeB.ReadBool("e"));
+                        ClassicAssert.AreEqual(f2, nodeB.ReadString("f"));
 
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
-                        Assert.AreEqual(c1, nodeA.ReadFloat("c"));
-                        Assert.AreEqual(b1, nodeA.ReadInt("b"));
-                        Assert.AreEqual(g1, nodeA.ReadInt("g"));
-                        Assert.AreEqual(d1, nodeA.ReadInt("d"));
-                        Assert.AreEqual(e1, nodeA.ReadBool("e"));
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
-                        Assert.AreEqual(d1, nodeA.ReadInt("d"));
-                        Assert.AreEqual(e1, nodeA.ReadBool("e"));
-                        Assert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(c1, nodeA.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b1, nodeA.ReadInt("b"));
+                        ClassicAssert.AreEqual(g1, nodeA.ReadInt("g"));
+                        ClassicAssert.AreEqual(d1, nodeA.ReadInt("d"));
+                        ClassicAssert.AreEqual(e1, nodeA.ReadBool("e"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
+                        ClassicAssert.AreEqual(d1, nodeA.ReadInt("d"));
+                        ClassicAssert.AreEqual(e1, nodeA.ReadBool("e"));
+                        ClassicAssert.AreEqual(f1, nodeA.ReadString("f"));
 
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
-                        Assert.AreEqual(c3, nodeC.ReadFloat("c"));
-                        Assert.AreEqual(b3, nodeC.ReadInt("b"));
-                        Assert.AreEqual(g3, nodeC.ReadInt("g"));
-                        Assert.AreEqual(d3, nodeC.ReadInt("d"));
-                        Assert.AreEqual(e3, nodeC.ReadBool("e"));
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
-                        Assert.AreEqual(d3, nodeC.ReadInt("d"));
-                        Assert.AreEqual(e3, nodeC.ReadBool("e"));
-                        Assert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(c3, nodeC.ReadFloat("c"));
+                        ClassicAssert.AreEqual(b3, nodeC.ReadInt("b"));
+                        ClassicAssert.AreEqual(g3, nodeC.ReadInt("g"));
+                        ClassicAssert.AreEqual(d3, nodeC.ReadInt("d"));
+                        ClassicAssert.AreEqual(e3, nodeC.ReadBool("e"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
+                        ClassicAssert.AreEqual(d3, nodeC.ReadInt("d"));
+                        ClassicAssert.AreEqual(e3, nodeC.ReadBool("e"));
+                        ClassicAssert.AreEqual(f3, nodeC.ReadString("f"));
                     }
                 }
             }

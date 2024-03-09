@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable UnusedMember.Local
 // ReSharper disable UnusedParameter.Local
@@ -49,10 +50,10 @@ namespace NetGore.Tests.NetGore
             var f4 = new TypeFilterCreator
             { RequireAttributes = true, MatchAllAttributes = true, Attributes = new Type[] { typeof(AttribA), typeof(AttribB) } };
 
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
-            Assert.IsTrue(f2.GetFilter()(typeof(A)));
-            Assert.IsTrue(f3.GetFilter()(typeof(A)));
-            Assert.IsTrue(f4.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f3.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f4.GetFilter()(typeof(A)));
         }
 
         [Test]
@@ -73,8 +74,8 @@ namespace NetGore.Tests.NetGore
             { RequireConstructor = true, ConstructorParameters = new Type[] { typeof(object), typeof(string) } };
             var f2 = new TypeFilterCreator { RequireConstructor = true, ConstructorParameters = Type.EmptyTypes };
 
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
-            Assert.IsTrue(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f2.GetFilter()(typeof(A)));
         }
 
         [Test]
@@ -83,10 +84,10 @@ namespace NetGore.Tests.NetGore
             var f1 = new TypeFilterCreator { CustomFilter = (x => !x.IsPublic) };
             var f2 = new TypeFilterCreator { CustomFilter = (x => x == typeof(object)) };
 
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
-            Assert.IsFalse(f1.GetFilter()(typeof(object)));
-            Assert.IsFalse(f2.GetFilter()(typeof(A)));
-            Assert.IsTrue(f2.GetFilter()(typeof(object)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsFalse(f1.GetFilter()(typeof(object)));
+            ClassicAssert.IsFalse(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f2.GetFilter()(typeof(object)));
         }
 
         [Test]
@@ -130,73 +131,73 @@ namespace NetGore.Tests.NetGore
             var f4 = new TypeFilterCreator
             { RequireInterfaces = true, MatchAllInterfaces = true, Interfaces = new Type[] { typeof(Ia), typeof(Ib) } };
 
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
-            Assert.IsTrue(f2.GetFilter()(typeof(A)));
-            Assert.IsTrue(f3.GetFilter()(typeof(A)));
-            Assert.IsTrue(f4.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f3.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f4.GetFilter()(typeof(A)));
         }
 
         [Test]
         public void IsAbstractFailTest()
         {
             var f1 = new TypeFilterCreator { IsAbstract = false };
-            Assert.IsFalse(f1.GetFilter()(typeof(baseClass)));
+            ClassicAssert.IsFalse(f1.GetFilter()(typeof(baseClass)));
         }
 
         [Test]
         public void IsAbstractNullTest()
         {
             var f1 = new TypeFilterCreator { IsAbstract = null };
-            Assert.IsTrue(f1.GetFilter()(typeof(int)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(int)));
         }
 
         [Test]
         public void IsAbstractPassTest()
         {
             var f1 = new TypeFilterCreator { IsAbstract = true };
-            Assert.IsTrue(f1.GetFilter()(typeof(baseClass)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(baseClass)));
         }
 
         [Test]
         public void IsClassFailTest()
         {
             var f1 = new TypeFilterCreator { IsClass = false };
-            Assert.IsFalse(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsFalse(f1.GetFilter()(typeof(A)));
         }
 
         [Test]
         public void IsClassNullTest()
         {
             var f1 = new TypeFilterCreator { IsClass = null };
-            Assert.IsTrue(f1.GetFilter()(typeof(int)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(int)));
         }
 
         [Test]
         public void IsClassPassTest()
         {
             var f1 = new TypeFilterCreator { IsClass = true };
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
         }
 
         [Test]
         public void IsInterfaceFailTest()
         {
             var f1 = new TypeFilterCreator { IsInterface = false };
-            Assert.IsFalse(f1.GetFilter()(typeof(Ia)));
+            ClassicAssert.IsFalse(f1.GetFilter()(typeof(Ia)));
         }
 
         [Test]
         public void IsInterfaceNullTest()
         {
             var f1 = new TypeFilterCreator { IsInterface = null };
-            Assert.IsTrue(f1.GetFilter()(typeof(int)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(int)));
         }
 
         [Test]
         public void IsInterfacePassTest()
         {
             var f1 = new TypeFilterCreator { IsInterface = true };
-            Assert.IsTrue(f1.GetFilter()(typeof(Ia)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(Ia)));
         }
 
         [Test]
@@ -205,8 +206,8 @@ namespace NetGore.Tests.NetGore
             var f1 = new TypeFilterCreator { Subclass = typeof(StringBuilder) };
             var f2 = new TypeFilterCreator { Subclass = typeof(Ia) };
 
-            Assert.IsFalse(f1.GetFilter()(typeof(A)));
-            Assert.IsFalse(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsFalse(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsFalse(f2.GetFilter()(typeof(A)));
         }
 
         [Test]
@@ -215,8 +216,8 @@ namespace NetGore.Tests.NetGore
             var f1 = new TypeFilterCreator { Subclass = typeof(baseClass) };
             var f2 = new TypeFilterCreator { Subclass = typeof(object) };
 
-            Assert.IsTrue(f1.GetFilter()(typeof(A)));
-            Assert.IsTrue(f2.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f1.GetFilter()(typeof(A)));
+            ClassicAssert.IsTrue(f2.GetFilter()(typeof(A)));
         }
 
         #endregion

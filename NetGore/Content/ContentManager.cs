@@ -4,8 +4,12 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+
 using log4net;
+
+using NetGore.Core;
 using NetGore.IO;
+
 using SFML;
 using SFML.Audio;
 using SFML.Graphics;

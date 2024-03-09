@@ -2,6 +2,7 @@
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.IO
 {
@@ -10,10 +11,10 @@ namespace NetGore.Tests.NetGore.IO
     {
         static void AreArraysEqual<T>(IList<T> a, IList<T> b)
         {
-            Assert.AreEqual(a.Count, b.Count);
+            ClassicAssert.AreEqual(a.Count, b.Count);
             for (var i = 0; i < a.Count; i++)
             {
-                Assert.AreEqual(a[i], b[i]);
+                ClassicAssert.AreEqual(a[i], b[i]);
             }
         }
 

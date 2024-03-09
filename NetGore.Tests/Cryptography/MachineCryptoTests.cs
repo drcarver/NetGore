@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using NetGore.Cryptography;
-using NUnit.Framework;
+﻿using NetGore.Cryptography;
+
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Cryptography
 {
@@ -16,7 +16,7 @@ namespace NetGore.Tests.Cryptography
             enc = (char)(enc[0] + 1) + enc.Substring(1);
             var decRaw = MachineCrypto.ValidatedDecode(enc);
 
-            Assert.IsNull(decRaw);
+            ClassicAssert.IsNull(decRaw);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace NetGore.Tests.Cryptography
             var enc = MachineCrypto.Encode("asdf");
             var dec = MachineCrypto.ValidatedDecode(enc);
 
-            Assert.AreEqual("asdf", dec);
+            ClassicAssert.AreEqual("asdf", dec);
         }
 
         #endregion

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.IO
 {
@@ -80,7 +81,7 @@ namespace NetGore.Tests.NetGore.IO
 
             var msg = c.GetMessage(MsgType.A);
 
-            Assert.AreEqual("Spodi says: \"Hi\"", msg);
+            ClassicAssert.AreEqual("Spodi says: \"Hi\"", msg);
         }
 
         [Test]
@@ -98,10 +99,10 @@ namespace NetGore.Tests.NetGore.IO
             }
 
             var msg = c.GetMessage(MsgType.A);
-            Assert.AreEqual("Spodi says: \"Hi\"", msg);
+            ClassicAssert.AreEqual("Spodi says: \"Hi\"", msg);
 
             msg = c.GetMessage(MsgType.B);
-            Assert.AreEqual("Spodi hates you. >:|", msg);
+            ClassicAssert.AreEqual("Spodi hates you. >:|", msg);
         }
 
         [Test]
@@ -119,10 +120,10 @@ namespace NetGore.Tests.NetGore.IO
             }
 
             var msg = c.GetMessage(MsgType.A);
-            Assert.AreEqual("Spodi says: \"Hi\"", msg);
+            ClassicAssert.AreEqual("Spodi says: \"Hi\"", msg);
 
             msg = c.GetMessage(MsgType.B, "Spodi");
-            Assert.AreEqual("Spodi hates you. >:|", msg, "Spodi");
+            ClassicAssert.AreEqual("Spodi hates you. >:|", msg, "Spodi");
         }
 
         [Test]
@@ -140,10 +141,10 @@ namespace NetGore.Tests.NetGore.IO
             }
 
             var msg = c.GetMessage(MsgType.A, "Chocolate", "Gimmie caramel!");
-            Assert.AreEqual("Chocolate says: \"Gimmie caramel!\"", msg);
+            ClassicAssert.AreEqual("Chocolate says: \"Gimmie caramel!\"", msg);
 
             msg = c.GetMessage(MsgType.B, "NetGore", "vbGORE", "breakfast");
-            Assert.AreEqual("NetGore eats vbGORE for breakfast. Yummy.", msg);
+            ClassicAssert.AreEqual("NetGore eats vbGORE for breakfast. Yummy.", msg);
         }
 
         [Test]
@@ -167,11 +168,11 @@ namespace NetGore.Tests.NetGore.IO
                 }
             }
 
-            Assert.AreEqual("Spodi says: \"Hi\"", cA.GetMessage(MsgType.A));
-            Assert.AreEqual("Spodi hates you. >:|", cA.GetMessage(MsgType.B));
+            ClassicAssert.AreEqual("Spodi says: \"Hi\"", cA.GetMessage(MsgType.A));
+            ClassicAssert.AreEqual("Spodi hates you. >:|", cA.GetMessage(MsgType.B));
 
-            Assert.AreEqual("boob says: \"Hi\"", cB.GetMessage(MsgType.A));
-            Assert.AreEqual("Spodi hates you. >:|", cB.GetMessage(MsgType.B));
+            ClassicAssert.AreEqual("boob says: \"Hi\"", cB.GetMessage(MsgType.A));
+            ClassicAssert.AreEqual("Spodi hates you. >:|", cB.GetMessage(MsgType.B));
         }
 
         [Test]
@@ -186,8 +187,8 @@ namespace NetGore.Tests.NetGore.IO
                 c = new MsgColl(f.FilePath);
             }
 
-            Assert.IsNull(c.GetMessage(MsgType.C));
-            Assert.IsNull(c.GetMessage(MsgType.C, "asdf", "fda"));
+            ClassicAssert.IsNull(c.GetMessage(MsgType.C));
+            ClassicAssert.IsNull(c.GetMessage(MsgType.C, "asdf", "fda"));
         }
 
         #endregion
