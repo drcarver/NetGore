@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -13,7 +15,7 @@ namespace NetGore.Tests.NetGore
         public void Choose1Test()
         {
             var selected = RandomHelper.Choose(1);
-            Assert.AreEqual(1, selected);
+            ClassicAssert.AreEqual(1, selected);
         }
 
         [Test]
@@ -22,7 +24,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 10; i++)
             {
                 var selected = RandomHelper.Choose(1, 2);
-                Assert.IsTrue(selected == 1 || selected == 2);
+                ClassicAssert.IsTrue(selected == 1 || selected == 2);
             }
         }
 
@@ -32,7 +34,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 10; i++)
             {
                 var selected = RandomHelper.Choose(1, 2, 3);
-                Assert.IsTrue(selected >= 1 && selected <= 3);
+                ClassicAssert.IsTrue(selected >= 1 && selected <= 3);
             }
         }
 
@@ -42,7 +44,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 10; i++)
             {
                 var selected = RandomHelper.Choose(1, 2, 3, 4);
-                Assert.IsTrue(selected >= 1 && selected <= 4);
+                ClassicAssert.IsTrue(selected >= 1 && selected <= 4);
             }
         }
 
@@ -52,7 +54,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 10; i++)
             {
                 var selected = RandomHelper.Choose(1, 2, 3, 4, 5);
-                Assert.IsTrue(selected >= 1 && selected <= 5);
+                ClassicAssert.IsTrue(selected >= 1 && selected <= 5);
             }
         }
 
@@ -62,7 +64,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 10; i++)
             {
                 var selected = RandomHelper.Choose(1, 2, 3, 4, 5, 6);
-                Assert.IsTrue(selected >= 1 && selected <= 6);
+                ClassicAssert.IsTrue(selected >= 1 && selected <= 6);
             }
         }
 
@@ -91,8 +93,8 @@ namespace NetGore.Tests.NetGore
                 }
             }
 
-            Assert.IsTrue(trueFound, "Failed to find a random 'true' value after {0} iterations.", it);
-            Assert.IsTrue(falseFound, "Failed to find a random 'false' value after {0} iterations.", it);
+            ClassicAssert.IsTrue(trueFound, "Failed to find a random 'true' value after {0} iterations.", it);
+            ClassicAssert.IsTrue(falseFound, "Failed to find a random 'false' value after {0} iterations.", it);
         }
 
         [Test]
@@ -101,8 +103,8 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextFloat();
-                Assert.GreaterOrEqual(value, 0.0f);
-                Assert.LessOrEqual(value, 1.0f);
+                ClassicAssert.GreaterOrEqual(value, 0.0f);
+                ClassicAssert.LessOrEqual(value, 1.0f);
             }
         }
 
@@ -112,8 +114,8 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextFloat(100);
-                Assert.GreaterOrEqual(value, 0.0f);
-                Assert.LessOrEqual(value, 100.0f);
+                ClassicAssert.GreaterOrEqual(value, 0.0f);
+                ClassicAssert.LessOrEqual(value, 100.0f);
             }
         }
 
@@ -123,8 +125,8 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextFloat(50, 300);
-                Assert.GreaterOrEqual(value, 50.0f);
-                Assert.LessOrEqual(value, 300.0f);
+                ClassicAssert.GreaterOrEqual(value, 50.0f);
+                ClassicAssert.LessOrEqual(value, 300.0f);
             }
         }
 
@@ -134,7 +136,7 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextInt();
-                Assert.GreaterOrEqual(value, 0);
+                ClassicAssert.GreaterOrEqual(value, 0);
             }
         }
 
@@ -144,8 +146,8 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextInt(1000);
-                Assert.GreaterOrEqual(value, 0);
-                Assert.LessOrEqual(value, 1000);
+                ClassicAssert.GreaterOrEqual(value, 0);
+                ClassicAssert.LessOrEqual(value, 1000);
             }
         }
 
@@ -155,8 +157,8 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextInt(50, 500);
-                Assert.GreaterOrEqual(value, 50);
-                Assert.LessOrEqual(value, 500);
+                ClassicAssert.GreaterOrEqual(value, 50);
+                ClassicAssert.LessOrEqual(value, 500);
             }
         }
 
@@ -166,10 +168,10 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextVector2();
-                Assert.GreaterOrEqual(value.X, 0.0f);
-                Assert.GreaterOrEqual(value.Y, 0.0f);
-                Assert.LessOrEqual(value.X, 1.0f);
-                Assert.LessOrEqual(value.Y, 1.0f);
+                ClassicAssert.GreaterOrEqual(value.X, 0.0f);
+                ClassicAssert.GreaterOrEqual(value.Y, 0.0f);
+                ClassicAssert.LessOrEqual(value.X, 1.0f);
+                ClassicAssert.LessOrEqual(value.Y, 1.0f);
             }
         }
 
@@ -179,10 +181,10 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextVector2(100);
-                Assert.GreaterOrEqual(value.X, 0.0f);
-                Assert.GreaterOrEqual(value.Y, 0.0f);
-                Assert.LessOrEqual(value.X, 100.0f);
-                Assert.LessOrEqual(value.Y, 100.0f);
+                ClassicAssert.GreaterOrEqual(value.X, 0.0f);
+                ClassicAssert.GreaterOrEqual(value.Y, 0.0f);
+                ClassicAssert.LessOrEqual(value.X, 100.0f);
+                ClassicAssert.LessOrEqual(value.Y, 100.0f);
             }
         }
 
@@ -192,10 +194,10 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextVector2(50, 100);
-                Assert.GreaterOrEqual(value.X, 50.0f);
-                Assert.GreaterOrEqual(value.Y, 50.0f);
-                Assert.LessOrEqual(value.X, 100.0f);
-                Assert.LessOrEqual(value.Y, 100.0f);
+                ClassicAssert.GreaterOrEqual(value.X, 50.0f);
+                ClassicAssert.GreaterOrEqual(value.Y, 50.0f);
+                ClassicAssert.LessOrEqual(value.X, 100.0f);
+                ClassicAssert.LessOrEqual(value.Y, 100.0f);
             }
         }
 
@@ -205,10 +207,10 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextVector2(50, 150, 100, 200);
-                Assert.GreaterOrEqual(value.X, 50.0f);
-                Assert.GreaterOrEqual(value.Y, 100.0f);
-                Assert.LessOrEqual(value.X, 150.0f);
-                Assert.LessOrEqual(value.Y, 200.0f);
+                ClassicAssert.GreaterOrEqual(value.X, 50.0f);
+                ClassicAssert.GreaterOrEqual(value.Y, 100.0f);
+                ClassicAssert.LessOrEqual(value.X, 150.0f);
+                ClassicAssert.LessOrEqual(value.Y, 200.0f);
             }
         }
 
@@ -218,10 +220,10 @@ namespace NetGore.Tests.NetGore
             for (var i = 0; i < 50; i++)
             {
                 var value = RandomHelper.NextVector2(new Vector2(50, 100), new Vector2(150, 200));
-                Assert.GreaterOrEqual(value.X, 50.0f);
-                Assert.GreaterOrEqual(value.Y, 100.0f);
-                Assert.LessOrEqual(value.X, 150.0f);
-                Assert.LessOrEqual(value.Y, 200.0f);
+                ClassicAssert.GreaterOrEqual(value.X, 50.0f);
+                ClassicAssert.GreaterOrEqual(value.Y, 100.0f);
+                ClassicAssert.LessOrEqual(value.X, 150.0f);
+                ClassicAssert.LessOrEqual(value.Y, 200.0f);
             }
         }
 

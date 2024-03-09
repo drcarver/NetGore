@@ -2,6 +2,8 @@
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -50,8 +52,8 @@ namespace NetGore.Tests.NetGore
                             for (var i = 0; i < 3; i++)
                             {
                                 var readValue = read(r, GetValueKey(i));
-                                Assert.AreEqual(value.Min, readValue.Min);
-                                Assert.AreEqual(value.Max, readValue.Max);
+                                ClassicAssert.AreEqual(value.Min, readValue.Min);
+                                ClassicAssert.AreEqual(value.Max, readValue.Max);
                             }
                         }
                     }

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
-using NetGore.Features.GameTime;
-using NUnit.Framework;
+﻿using NetGore.Features.GameTime;
+
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -16,8 +15,8 @@ namespace NetGore.Tests.NetGore
             var a = new GameDateTime(50);
             var b = new GameDateTime(25);
 
-            Assert.AreEqual(new GameDateTime(75), a + b);
-            Assert.AreEqual(new GameDateTime(75), b + a);
+            ClassicAssert.AreEqual(new GameDateTime(75), a + b);
+            ClassicAssert.AreEqual(new GameDateTime(75), b + a);
         }
 
         [Test]
@@ -27,10 +26,10 @@ namespace NetGore.Tests.NetGore
             var b = new GameDateTime(512);
             var c = new GameDateTime(312);
 
-            Assert.IsTrue(a == b);
-            Assert.IsTrue(b == a);
-            Assert.IsFalse(a == c);
-            Assert.IsFalse(b == c);
+            ClassicAssert.IsTrue(a == b);
+            ClassicAssert.IsTrue(b == a);
+            ClassicAssert.IsFalse(a == c);
+            ClassicAssert.IsFalse(b == c);
         }
 
         [Test]
@@ -40,15 +39,15 @@ namespace NetGore.Tests.NetGore
             var b = new GameDateTime(512);
             var c = new GameDateTime(312);
 
-            Assert.AreEqual(a, b);
-            Assert.AreEqual(b, a);
-            Assert.AreNotEqual(a, c);
-            Assert.AreNotEqual(b, c);
+            ClassicAssert.AreEqual(a, b);
+            ClassicAssert.AreEqual(b, a);
+            ClassicAssert.AreNotEqual(a, c);
+            ClassicAssert.AreNotEqual(b, c);
 
-            Assert.IsTrue(a.Equals(b));
-            Assert.IsTrue(b.Equals(a));
-            Assert.IsFalse(a.Equals(c));
-            Assert.IsFalse(b.Equals(c));
+            ClassicAssert.IsTrue(a.Equals(b));
+            ClassicAssert.IsTrue(b.Equals(a));
+            ClassicAssert.IsFalse(a.Equals(c));
+            ClassicAssert.IsFalse(b.Equals(c));
         }
 
         [Test]
@@ -57,8 +56,8 @@ namespace NetGore.Tests.NetGore
             var less = new GameDateTime(100);
             var more = new GameDateTime(200);
 
-            Assert.IsFalse(less > more);
-            Assert.IsTrue(more > less);
+            ClassicAssert.IsFalse(less > more);
+            ClassicAssert.IsTrue(more > less);
         }
 
         [Test]
@@ -68,10 +67,10 @@ namespace NetGore.Tests.NetGore
             var more = new GameDateTime(200);
             var less2 = new GameDateTime(100);
 
-            Assert.IsFalse(less >= more);
-            Assert.IsTrue(more >= less);
-            Assert.IsTrue(less >= less2);
-            Assert.IsTrue(less2 >= less);
+            ClassicAssert.IsFalse(less >= more);
+            ClassicAssert.IsTrue(more >= less);
+            ClassicAssert.IsTrue(less >= less2);
+            ClassicAssert.IsTrue(less2 >= less);
         }
 
         [Test]
@@ -80,8 +79,8 @@ namespace NetGore.Tests.NetGore
             var less = new GameDateTime(100);
             var more = new GameDateTime(200);
 
-            Assert.IsTrue(less < more);
-            Assert.IsFalse(more < less);
+            ClassicAssert.IsTrue(less < more);
+            ClassicAssert.IsFalse(more < less);
         }
 
         [Test]
@@ -91,10 +90,10 @@ namespace NetGore.Tests.NetGore
             var more = new GameDateTime(200);
             var less2 = new GameDateTime(100);
 
-            Assert.IsTrue(less < more);
-            Assert.IsFalse(more < less);
-            Assert.IsTrue(less <= less2);
-            Assert.IsTrue(less2 <= less);
+            ClassicAssert.IsTrue(less < more);
+            ClassicAssert.IsFalse(more < less);
+            ClassicAssert.IsTrue(less <= less2);
+            ClassicAssert.IsTrue(less2 <= less);
         }
 
         [Test]
@@ -104,10 +103,10 @@ namespace NetGore.Tests.NetGore
             var b = new GameDateTime(512);
             var c = new GameDateTime(312);
 
-            Assert.IsFalse(a != b);
-            Assert.IsFalse(b != a);
-            Assert.IsTrue(a != c);
-            Assert.IsTrue(b != c);
+            ClassicAssert.IsFalse(a != b);
+            ClassicAssert.IsFalse(b != a);
+            ClassicAssert.IsTrue(a != c);
+            ClassicAssert.IsTrue(b != c);
         }
 
         [Test]
@@ -116,7 +115,7 @@ namespace NetGore.Tests.NetGore
             var a = new GameDateTime(50);
             var b = new GameDateTime(25);
 
-            Assert.AreEqual(new GameDateTime(25), a - b);
+            ClassicAssert.AreEqual(new GameDateTime(25), a - b);
         }
 
         [Test]
@@ -128,7 +127,7 @@ namespace NetGore.Tests.NetGore
                 clientTime.Hour - (clientTime.Hour <= 1 ? 0 : 1), clientTime.Minute, clientTime.Second);
             GameDateTime.SetServerTimeOffset(serverTime);
 
-            Assert.AreEqual((clientTime.Hour <= 1 ? 0 : 1), Math.Round(GameDateTime.ServerTimeOffset.TotalHours));
+            ClassicAssert.AreEqual((clientTime.Hour <= 1 ? 0 : 1), Math.Round(GameDateTime.ServerTimeOffset.TotalHours));
         }
 
         [Test]
@@ -136,8 +135,8 @@ namespace NetGore.Tests.NetGore
         {
             const int minutes = 123123;
             var gt = new GameDateTime(minutes);
-            Assert.AreEqual(minutes, (int)gt.TotalRealMinutes);
-            Assert.AreEqual(gt, new GameDateTime((int)gt.TotalRealMinutes));
+            ClassicAssert.AreEqual(minutes, (int)gt.TotalRealMinutes);
+            ClassicAssert.AreEqual(gt, new GameDateTime((int)gt.TotalRealMinutes));
         }
 
         #endregion

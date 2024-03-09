@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.IO
 {
@@ -52,9 +53,9 @@ namespace NetGore.Tests.IO
 
         static void TestXmlValueReader(IValueReader reader)
         {
-            Assert.AreEqual(10, reader.ReadInt("MyInt"));
-            Assert.AreEqual(25.55f, reader.ReadFloat("MyFloat"));
-            Assert.AreEqual("Hello!", reader.ReadString("MyString"));
+            ClassicAssert.AreEqual(10, reader.ReadInt("MyInt"));
+            ClassicAssert.AreEqual(25.55f, reader.ReadFloat("MyFloat"));
+            ClassicAssert.AreEqual("Hello!", reader.ReadString("MyString"));
         }
 
         #region Unit tests

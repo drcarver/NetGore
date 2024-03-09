@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using NetGore.Extensions;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -24,9 +26,9 @@ namespace NetGore.Tests.NetGore
                         {
                             var v = new Vector4(x, y, z, w);
                             v = v.Abs();
-                            Assert.LessOrEqual(0, v.X);
-                            Assert.LessOrEqual(0, v.Y);
-                            Assert.LessOrEqual(0, v.Z);
+                            ClassicAssert.LessOrEqual(0, v.X);
+                            ClassicAssert.LessOrEqual(0, v.Y);
+                            ClassicAssert.LessOrEqual(0, v.Z);
                         }
                     }
                 }
@@ -44,10 +46,10 @@ namespace NetGore.Tests.NetGore
             {
                 var v = new Vector4(r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max);
                 var c = v.Ceiling();
-                Assert.AreEqual(Math.Ceiling(v.X), c.X);
-                Assert.AreEqual(Math.Ceiling(v.Y), c.Y);
-                Assert.AreEqual(Math.Ceiling(v.Z), c.Z);
-                Assert.AreEqual(Math.Ceiling(v.W), c.W);
+                ClassicAssert.AreEqual(Math.Ceiling(v.X), c.X);
+                ClassicAssert.AreEqual(Math.Ceiling(v.Y), c.Y);
+                ClassicAssert.AreEqual(Math.Ceiling(v.Z), c.Z);
+                ClassicAssert.AreEqual(Math.Ceiling(v.W), c.W);
             }
         }
 
@@ -62,10 +64,10 @@ namespace NetGore.Tests.NetGore
             {
                 var v = new Vector4(r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max);
                 var c = v.Floor();
-                Assert.AreEqual(Math.Floor(v.X), c.X);
-                Assert.AreEqual(Math.Floor(v.Y), c.Y);
-                Assert.AreEqual(Math.Floor(v.Z), c.Z);
-                Assert.AreEqual(Math.Floor(v.W), c.W);
+                ClassicAssert.AreEqual(Math.Floor(v.X), c.X);
+                ClassicAssert.AreEqual(Math.Floor(v.Y), c.Y);
+                ClassicAssert.AreEqual(Math.Floor(v.Z), c.Z);
+                ClassicAssert.AreEqual(Math.Floor(v.W), c.W);
             }
         }
 
@@ -92,10 +94,10 @@ namespace NetGore.Tests.NetGore
                                             var v2 = new Vector4(x2, y2, z2, w2);
 
                                             var b1 = (v1.X >= v2.X && v1.Y >= v2.Y && v1.Z >= v2.Z && v1.W >= v2.W);
-                                            Assert.AreEqual(b1, v1.IsGreaterOrEqual(v2));
+                                            ClassicAssert.AreEqual(b1, v1.IsGreaterOrEqual(v2));
 
                                             var b2 = (v2.X >= v1.X && v2.Y >= v1.Y && v2.Z >= v1.Z && v2.W >= v1.W);
-                                            Assert.AreEqual(b2, v2.IsGreaterOrEqual(v1));
+                                            ClassicAssert.AreEqual(b2, v2.IsGreaterOrEqual(v1));
                                         }
                                     }
                                 }
@@ -129,10 +131,10 @@ namespace NetGore.Tests.NetGore
                                             var v2 = new Vector4(x2, y2, z2, w2);
 
                                             var b1 = (v1.X > v2.X && v1.Y > v2.Y && v1.Z > v2.Z && v1.W > v2.W);
-                                            Assert.AreEqual(b1, v1.IsGreaterThan(v2));
+                                            ClassicAssert.AreEqual(b1, v1.IsGreaterThan(v2));
 
                                             var b2 = (v2.X > v1.X && v2.Y > v1.Y && v2.Z > v1.Z && v2.W > v1.W);
-                                            Assert.AreEqual(b2, v2.IsGreaterThan(v1));
+                                            ClassicAssert.AreEqual(b2, v2.IsGreaterThan(v1));
                                         }
                                     }
                                 }
@@ -166,10 +168,10 @@ namespace NetGore.Tests.NetGore
                                             var v2 = new Vector4(x2, y2, z2, w2);
 
                                             var b1 = (v1.X <= v2.X && v1.Y <= v2.Y && v1.Z <= v2.Z && v1.W <= v2.W);
-                                            Assert.AreEqual(b1, v1.IsLessOrEqual(v2));
+                                            ClassicAssert.AreEqual(b1, v1.IsLessOrEqual(v2));
 
                                             var b2 = (v2.X <= v1.X && v2.Y <= v1.Y && v2.Z <= v1.Z && v2.W <= v1.W);
-                                            Assert.AreEqual(b2, v2.IsLessOrEqual(v1));
+                                            ClassicAssert.AreEqual(b2, v2.IsLessOrEqual(v1));
                                         }
                                     }
                                 }
@@ -203,10 +205,10 @@ namespace NetGore.Tests.NetGore
                                             var v2 = new Vector4(x2, y2, z2, w2);
 
                                             var b1 = (v1.X < v2.X && v1.Y < v2.Y && v1.Z < v2.Z && v1.W < v2.W);
-                                            Assert.AreEqual(b1, v1.IsLessThan(v2));
+                                            ClassicAssert.AreEqual(b1, v1.IsLessThan(v2));
 
                                             var b2 = (v2.X < v1.X && v2.Y < v1.Y && v2.Z < v1.Z && v2.W < v1.W);
-                                            Assert.AreEqual(b2, v2.IsLessThan(v1));
+                                            ClassicAssert.AreEqual(b2, v2.IsLessThan(v1));
                                         }
                                     }
                                 }
@@ -228,10 +230,10 @@ namespace NetGore.Tests.NetGore
             {
                 var v = new Vector4(r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max, r.NextFloat() * max);
                 var c = v.Round();
-                Assert.AreEqual(Math.Round(v.X), c.X);
-                Assert.AreEqual(Math.Round(v.Y), c.Y);
-                Assert.AreEqual(Math.Round(v.Z), c.Z);
-                Assert.AreEqual(Math.Round(v.W), c.W);
+                ClassicAssert.AreEqual(Math.Round(v.X), c.X);
+                ClassicAssert.AreEqual(Math.Round(v.Y), c.Y);
+                ClassicAssert.AreEqual(Math.Round(v.Z), c.Z);
+                ClassicAssert.AreEqual(Math.Round(v.W), c.W);
             }
         }
 
@@ -247,7 +249,7 @@ namespace NetGore.Tests.NetGore
                         for (var w = -10; w < 10; w++)
                         {
                             var v = new Vector4(x, y, z, w);
-                            Assert.AreEqual(x + y + z + w, v.Sum());
+                            ClassicAssert.AreEqual(x + y + z + w, v.Sum());
                         }
                     }
                 }

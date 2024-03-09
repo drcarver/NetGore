@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NetGore.Cryptography;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Cryptography
 {
@@ -46,10 +47,10 @@ namespace NetGore.Tests.Cryptography
             foreach (var c in _cryptoProviders)
             {
                 var encBytes = c.Encode(expected, CryptoHelper.MachineKey);
-                Assert.IsFalse(AreContentsEqual(expected, encBytes));
+                ClassicAssert.IsFalse(AreContentsEqual(expected, encBytes));
 
                 var decBytes = c.Decode(encBytes, CryptoHelper.MachineKey);
-                Assert.IsTrue(AreContentsEqual(expected, decBytes));
+                ClassicAssert.IsTrue(AreContentsEqual(expected, decBytes));
             }
         }
 
@@ -63,7 +64,7 @@ namespace NetGore.Tests.Cryptography
                 var encBytes = c.Encode(expected, CryptoHelper.MachineKey);
 
                 var decBytes = c.Decode(encBytes, CryptoHelper.MachineKey);
-                Assert.IsTrue(AreContentsEqual(expected, decBytes));
+                ClassicAssert.IsTrue(AreContentsEqual(expected, decBytes));
             }
         }
 
@@ -77,7 +78,7 @@ namespace NetGore.Tests.Cryptography
                 var encBytes = c.Encode(expected, CryptoHelper.MachineKey);
                 var decBytes = c.Decode(encBytes, CryptoHelper.MachineKey);
                 var str = Encoding.UTF8.GetString(decBytes);
-                Assert.AreEqual(expected, str);
+                ClassicAssert.AreEqual(expected, str);
             }
         }
 
@@ -91,7 +92,7 @@ namespace NetGore.Tests.Cryptography
                 var encBytes = c.Encode(expected, CryptoHelper.MachineKey);
                 var decBytes = c.Decode(encBytes, CryptoHelper.MachineKey);
                 var str = Encoding.UTF8.GetString(decBytes);
-                Assert.AreEqual(expected, str);
+                ClassicAssert.AreEqual(expected, str);
             }
         }
 

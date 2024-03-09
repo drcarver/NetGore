@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests
@@ -14,7 +9,7 @@ namespace NetGore.Tests
     /// </summary>
     public static class TestHelper
     {
-        static string _devContentDir;
+        static string? _devContentDir;
 
         /// <summary>
         /// Gets the path to the DevContent directory.
@@ -51,7 +46,7 @@ namespace NetGore.Tests
             }
         }
 
-        static Font _defaultFont;
+        static Font? _defaultFont;
 
         /// <summary>
         /// Gets the defualt font.
@@ -75,10 +70,7 @@ namespace NetGore.Tests
         /// <summary>
         /// Gets the path to a font file in DevContent.
         /// </summary>
-        static string GetFontPath(string fontName)
-        {
-            return Path.Combine(DevContentDir, "Font", fontName + ".ttf");
-        }
+        private static string GetFontPath(string fontName) => Path.Combine(DevContentDir, "Font", fontName + ".ttf");
 
         /// <summary>
         /// Loads a font by name.

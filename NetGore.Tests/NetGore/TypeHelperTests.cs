@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -29,17 +30,17 @@ namespace NetGore.Tests.NetGore
             var bb = GetNestedType(b, "BB");
             var bba = GetNestedType(bb, "BBA");
 
-            Assert.IsTrue(TypeHelper.IsClassTypeTreePublic(a));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(aa));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(aaa));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(aab));
+            ClassicAssert.IsTrue(TypeHelper.IsClassTypeTreePublic(a));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(aa));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(aaa));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(aab));
 
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(b));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(ba));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(bb));
-            Assert.IsFalse(TypeHelper.IsClassTypeTreePublic(bba));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(b));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(ba));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(bb));
+            ClassicAssert.IsFalse(TypeHelper.IsClassTypeTreePublic(bba));
 
-            Assert.IsTrue(TypeHelper.IsClassTypeTreePublic(typeof(TypeHelperTests)));
+            ClassicAssert.IsTrue(TypeHelper.IsClassTypeTreePublic(typeof(TypeHelperTests)));
         }
 
         [Test]
@@ -58,14 +59,14 @@ namespace NetGore.Tests.NetGore
         public void NonNullableToNullableValidAlreadyNullableTest()
         {
             var t = TypeHelper.NonNullableToNullable(typeof(int?));
-            Assert.AreEqual(typeof(int?), t);
+            ClassicAssert.AreEqual(typeof(int?), t);
         }
 
         [Test]
         public void NonNullableToNullableValidTest()
         {
             var t = TypeHelper.NonNullableToNullable(typeof(int));
-            Assert.AreEqual(typeof(int?), t);
+            ClassicAssert.AreEqual(typeof(int?), t);
         }
 
         [Test]
@@ -90,7 +91,7 @@ namespace NetGore.Tests.NetGore
         public void NullableToNonNullableValidTest()
         {
             var t = TypeHelper.NullableToNonNullable(typeof(int?));
-            Assert.AreEqual(typeof(int), t);
+            ClassicAssert.AreEqual(typeof(int), t);
         }
 
         #endregion

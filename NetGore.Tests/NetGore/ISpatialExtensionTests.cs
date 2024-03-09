@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -16,8 +18,8 @@ namespace NetGore.Tests.NetGore
         {
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(33, 33, 30, 30);
-            Assert.IsTrue(s.Contains(r));
-            Assert.IsFalse(r.Contains(s));
+            ClassicAssert.IsTrue(s.Contains(r));
+            ClassicAssert.IsFalse(r.Contains(s));
         }
 
         [Test]
@@ -25,8 +27,8 @@ namespace NetGore.Tests.NetGore
         {
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(32, 32, 32, 32);
-            Assert.IsTrue(s.Contains(r));
-            Assert.IsTrue(r.Contains(s));
+            ClassicAssert.IsTrue(s.Contains(r));
+            ClassicAssert.IsTrue(r.Contains(s));
         }
 
         [Test]
@@ -34,8 +36,8 @@ namespace NetGore.Tests.NetGore
         {
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(40, 40, 3, 3);
-            Assert.IsTrue(s.Contains(r));
-            Assert.IsFalse(r.Contains(s));
+            ClassicAssert.IsTrue(s.Contains(r));
+            ClassicAssert.IsFalse(r.Contains(s));
         }
 
         [Test]
@@ -44,8 +46,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(32, -32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 32);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 32);
         }
 
         [Test]
@@ -54,8 +56,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(32, 96, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 32);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 32);
         }
 
         [Test]
@@ -64,8 +66,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(-32, 96, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 64);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 64);
         }
 
         [Test]
@@ -74,8 +76,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(96, 96, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 64);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 64);
         }
 
         [Test]
@@ -84,8 +86,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(-32, 32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 32);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 32);
         }
 
         [Test]
@@ -94,8 +96,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(32, 32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 0);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 0);
         }
 
         [Test]
@@ -104,8 +106,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(96, 32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 32);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 32);
         }
 
         [Test]
@@ -114,8 +116,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(-32, -32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 64);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 64);
         }
 
         [Test]
@@ -124,8 +126,8 @@ namespace NetGore.Tests.NetGore
             var s = new TestSpatial(32, 32, 32, 32);
             var r = new TestSpatial(96, -32, 32, 32);
             var d = r.GetDistance(s);
-            Assert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
-            Assert.AreEqual(d, 64);
+            ClassicAssert.AreEqual(Math.Abs(d), Math.Abs(s.GetDistance(r)));
+            ClassicAssert.AreEqual(d, 64);
         }
 
         [Test]
@@ -133,7 +135,7 @@ namespace NetGore.Tests.NetGore
         {
             var s = new TestSpatial(0, 0, 32, 32);
             var r = s.GetStandingAreaRect();
-            Assert.IsTrue(s.Intersects(r));
+            ClassicAssert.IsTrue(s.Intersects(r));
         }
 
         [Test]
@@ -141,7 +143,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(32, 0, 32, 31);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -149,7 +151,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(32, 65, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -157,7 +159,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(32, 64, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -165,7 +167,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(0, 32, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -173,7 +175,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(0, 32, 31, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -181,7 +183,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(64, 32, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -189,7 +191,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(65, 32, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -197,7 +199,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(32, 0, 32, 32);
-            Assert.IsFalse(s.Intersects(r));
+            ClassicAssert.IsFalse(s.Intersects(r));
         }
 
         [Test]
@@ -205,7 +207,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(34, 34, 6, 6);
-            Assert.IsTrue(r.Intersects(s));
+            ClassicAssert.IsTrue(r.Intersects(s));
         }
 
         [Test]
@@ -213,7 +215,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(34, 34, 6, 6);
-            Assert.IsTrue(s.Intersects(r));
+            ClassicAssert.IsTrue(s.Intersects(r));
         }
 
         [Test]
@@ -221,7 +223,7 @@ namespace NetGore.Tests.NetGore
         {
             var r = new TestSpatial(32, 32, 32, 32);
             var s = new TestSpatial(32, 32, 32, 32);
-            Assert.IsTrue(s.Intersects(r));
+            ClassicAssert.IsTrue(s.Intersects(r));
         }
 
         #endregion

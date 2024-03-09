@@ -10,25 +10,19 @@ namespace NetGore.Collections
     /// <typeparam name="T">The type of collection item.</typeparam>
     public abstract class TimeExpirationQueue<T>
     {
-        readonly Dictionary<T, TickCount> _items = new Dictionary<T, TickCount>();
+        private readonly Dictionary<T, TickCount> _items = [];
 
         TickCount _lastUpdateTime = TickCount.MinValue;
 
         /// <summary>
         /// Gets a deep copy of the items in this collection and the time at which they will expire.
         /// </summary>
-        public IEnumerable<KeyValuePair<T, TickCount>> Items
-        {
-            get { return _items.ToImmutable(); }
-        }
+        public IEnumerable<KeyValuePair<T, TickCount>> Items => _items.ToImmutable();
 
         /// <summary>
         /// Gets the time that this collection was last successfully updated.
         /// </summary>
-        public TickCount LastUpdated
-        {
-            get { return _lastUpdateTime; }
-        }
+        public TickCount LastUpdated => _lastUpdateTime;
 
         /// <summary>
         /// When overridden in the derived class, gets the minimum amount of time in milliseconds that must elapsed
@@ -84,10 +78,7 @@ namespace NetGore.Collections
         /// <param name="item">The item to remove.</param>
         /// <returns>True if the item was successfully removed; false if the <paramref name="item"/> was not
         /// in the collection.</returns>
-        public bool Remove(T item)
-        {
-            return _items.Remove(item);
-        }
+        public bool Remove(T item) => _items.Remove(item);
 
         /// <summary>
         /// Removes the expired map items.

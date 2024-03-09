@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable RedundantAssignment
 #pragma warning disable 219
@@ -21,9 +22,9 @@ namespace NetGore.Tests.Collections
             var o2 = new object();
             var d = new DArray<object>(trackFree) { o1, o2 };
 
-            Assert.IsTrue(d.Contains(o1), "TrackFree = " + trackFree);
-            Assert.IsTrue(d.Contains(o2), "TrackFree = " + trackFree);
-            Assert.AreEqual(2, d.Length, "TrackFree = " + trackFree);
+            ClassicAssert.IsTrue(d.Contains(o1), "TrackFree = " + trackFree);
+            ClassicAssert.IsTrue(d.Contains(o2), "TrackFree = " + trackFree);
+            ClassicAssert.AreEqual(2, d.Length, "TrackFree = " + trackFree);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "TrackFree")]
@@ -33,9 +34,9 @@ namespace NetGore.Tests.Collections
             const int o2 = new int();
             var d = new DArray<object>(trackFree) { o1, o2 };
 
-            Assert.IsTrue(d.Contains(o1), "TrackFree = " + trackFree);
-            Assert.IsTrue(d.Contains(o2), "TrackFree = " + trackFree);
-            Assert.AreEqual(2, d.Length, "TrackFree = " + trackFree);
+            ClassicAssert.IsTrue(d.Contains(o1), "TrackFree = " + trackFree);
+            ClassicAssert.IsTrue(d.Contains(o2), "TrackFree = " + trackFree);
+            ClassicAssert.AreEqual(2, d.Length, "TrackFree = " + trackFree);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly",
@@ -47,11 +48,11 @@ namespace NetGore.Tests.Collections
 
             var o = d[0];
 
-            Assert.IsFalse(d.CanGet(-1));
+            ClassicAssert.IsFalse(d.CanGet(-1));
             Assert.Throws<ArgumentOutOfRangeException>(() => o = d[-1],
                 "Failed to generate ArgumentOutOfRangeException for d[-1].");
 
-            Assert.IsFalse(d.CanGet(1));
+            ClassicAssert.IsFalse(d.CanGet(1));
             Assert.Throws<ArgumentOutOfRangeException>(() => o = d[-1], "Failed to generate ArgumentOutOfRangeException for d[1].");
         }
 
@@ -69,12 +70,12 @@ namespace NetGore.Tests.Collections
 
             d.Clear();
 
-            Assert.AreEqual(0, d.Length);
-            Assert.AreEqual(0, d.Count);
+            ClassicAssert.AreEqual(0, d.Length);
+            ClassicAssert.AreEqual(0, d.Count);
 
             object o;
             Assert.Throws<ArgumentOutOfRangeException>(() => o = d[0], "Failed to generate IndexOutOfRangeException for d[0].");
-            Assert.IsFalse(d.CanGet(0));
+            ClassicAssert.IsFalse(d.CanGet(0));
         }
 
         static void ContainsTestSub(bool trackFree)
@@ -89,7 +90,7 @@ namespace NetGore.Tests.Collections
 
             for (var i = 0; i < size; i++)
             {
-                Assert.IsTrue(d.Contains(d[i]));
+                ClassicAssert.IsTrue(d.Contains(d[i]));
             }
         }
 
@@ -106,7 +107,7 @@ namespace NetGore.Tests.Collections
                 {
                     d[i] = new object();
                     expectedCount++;
-                    Assert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
+                    ClassicAssert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
                 }
             }
 
@@ -114,11 +115,11 @@ namespace NetGore.Tests.Collections
             {
                 if ((i % 2) == 0 && d[i] != null)
                 {
-                    Assert.IsNotNull(d[i]);
+                    ClassicAssert.IsNotNull(d[i]);
                     d.RemoveAt(i);
                     expectedCount--;
-                    Assert.IsNull(d[i]);
-                    Assert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
+                    ClassicAssert.IsNull(d[i]);
+                    ClassicAssert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
                 }
             }
 
@@ -126,7 +127,7 @@ namespace NetGore.Tests.Collections
             {
                 d.Add(new object());
                 expectedCount++;
-                Assert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
+                ClassicAssert.AreEqual(expectedCount, d.Count, "TrackFree = " + trackFree);
             }
         }
 
@@ -153,15 +154,15 @@ namespace NetGore.Tests.Collections
             {
                 var i = d.IndexOf(obj);
 
-                Assert.IsNotNull(obj);
-                Assert.AreSame(objs[i], obj);
-                Assert.AreSame(objs[i], d[i]);
+                ClassicAssert.IsNotNull(obj);
+                ClassicAssert.AreSame(objs[i], obj);
+                ClassicAssert.AreSame(objs[i], d[i]);
 
                 objs[i] = null;
             }
 
             var remainingObjs = objs.Count(obj => obj != null);
-            Assert.AreEqual(0, remainingObjs,
+            ClassicAssert.AreEqual(0, remainingObjs,
                 "One or more items failed to be enumerated since all enumerated " + "items should have been removed from objs[].");
         }
 
@@ -185,14 +186,14 @@ namespace NetGore.Tests.Collections
             {
                 var i = d.IndexOf(obj);
 
-                Assert.AreEqual(objs[i], obj);
-                Assert.AreEqual(objs[i], d[i]);
+                ClassicAssert.AreEqual(objs[i], obj);
+                ClassicAssert.AreEqual(objs[i], d[i]);
 
                 objs[i] = -1;
             }
 
             var remainingObjs = objs.Where(obj => obj != -1).Count();
-            Assert.AreEqual(0, remainingObjs,
+            ClassicAssert.AreEqual(0, remainingObjs,
                 "One or more items failed to be enumerated since all enumerated " + "items should be equal to -1.");
         }
 
@@ -259,7 +260,7 @@ namespace NetGore.Tests.Collections
 
             for (var i = 0; i < 1000; i++)
             {
-                Assert.AreSame(objs[i], d[i]);
+                ClassicAssert.AreSame(objs[i], d[i]);
             }
         }
 
@@ -275,7 +276,7 @@ namespace NetGore.Tests.Collections
 
             for (var i = 0; i < size; i++)
             {
-                Assert.AreEqual(i, d.IndexOf(d[i]));
+                ClassicAssert.AreEqual(i, d.IndexOf(d[i]));
             }
         }
 
@@ -291,7 +292,7 @@ namespace NetGore.Tests.Collections
 
             for (var i = 0; i < size; i++)
             {
-                Assert.AreEqual(i, d.IndexOf(d[i]));
+                ClassicAssert.AreEqual(i, d.IndexOf(d[i]));
             }
         }
 
@@ -301,7 +302,7 @@ namespace NetGore.Tests.Collections
             var d = new DArray<object>(trackFree);
             for (var i = 0; i < 1000; i++)
             {
-                Assert.AreEqual(i, d.Length, "TrackFree = " + trackFree);
+                ClassicAssert.AreEqual(i, d.Length, "TrackFree = " + trackFree);
                 d[i] = new object();
             }
         }
@@ -329,11 +330,11 @@ namespace NetGore.Tests.Collections
 
             var expected = new int[] { 0, 5, 6, 9, 10, 11, 12 };
 
-            Assert.AreEqual(usedIndices.Count(), expected.Length);
+            ClassicAssert.AreEqual(usedIndices.Count(), expected.Length);
 
             foreach (var i in usedIndices)
             {
-                Assert.IsTrue(expected.Contains(i), "TrackFree = " + trackFree);
+                ClassicAssert.IsTrue(expected.Contains(i), "TrackFree = " + trackFree);
             }
         }
 
@@ -347,8 +348,8 @@ namespace NetGore.Tests.Collections
             }
 
             var o = d[5];
-            Assert.IsTrue(d.Remove(o));
-            Assert.IsFalse(d.Contains(o));
+            ClassicAssert.IsTrue(d.Remove(o));
+            ClassicAssert.IsFalse(d.Contains(o));
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "TrackFree")]
@@ -376,13 +377,13 @@ namespace NetGore.Tests.Collections
             for (var i = 0; i < size; i++)
             {
                 if (objs[i] != null)
-                    Assert.AreSame(objs[i], d[i], "TrackFree = " + trackFree);
+                    ClassicAssert.AreSame(objs[i], d[i], "TrackFree = " + trackFree);
             }
 
             // Make sure the null slots are still null
             for (var i = 0; i < d.Length; i++)
             {
-                Assert.AreSame(objs[i], d[i], "TrackFree = " + trackFree);
+                ClassicAssert.AreSame(objs[i], d[i], "TrackFree = " + trackFree);
             }
 
             // Make sure that inserts first fill up the gaps, THEN expand
@@ -393,14 +394,14 @@ namespace NetGore.Tests.Collections
                 d.Insert(new object());
             }
 
-            Assert.AreEqual(startLen, d.Length, "TrackFree = " + trackFree);
+            ClassicAssert.AreEqual(startLen, d.Length, "TrackFree = " + trackFree);
 
             // Make sure we start expanding now
             for (var i = 0; i < 10; i++)
             {
                 var before = d.Length;
                 d.Insert(new object());
-                Assert.AreEqual(before + 1, d.Length, "TrackFree = " + trackFree);
+                ClassicAssert.AreEqual(before + 1, d.Length, "TrackFree = " + trackFree);
             }
         }
 

@@ -6,8 +6,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+
 using log4net;
+
 using NetGore.Collections;
+using NetGore.Core;
 using NetGore.IO;
 
 namespace NetGore.Features.NPCChat

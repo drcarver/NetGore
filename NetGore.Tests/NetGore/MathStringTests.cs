@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -22,13 +23,13 @@ namespace NetGore.Tests.NetGore
                         var target = i + j + k;
 
                         var s = string.Format("{1}{0}{2}{0}{3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1} {0}{2}{0}   {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}{0} {2}  {0}  {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}   {0}    {2}   {0}     {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     }
                 }
             }
@@ -45,13 +46,13 @@ namespace NetGore.Tests.NetGore
                     var target = i + j;
 
                     var s = string.Format("{1}{0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1} {0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}{0} {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}   {0}    {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                 }
             }
         }
@@ -72,13 +73,13 @@ namespace NetGore.Tests.NetGore
                         var target = i / j / k;
 
                         var s = string.Format("{1}{0}{2}{0}{3}", op, i, j, k);
-                        Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                         s = string.Format("{1} {0}{2}{0}   {3}", op, i, j, k);
-                        Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                         s = string.Format("{1}{0} {2}  {0}  {3}", op, i, j, k);
-                        Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                         s = string.Format("{1}   {0}    {2}   {0}     {3}", op, i, j, k);
-                        Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                     }
                 }
             }
@@ -98,13 +99,13 @@ namespace NetGore.Tests.NetGore
                     var target = i / j;
 
                     var s = string.Format("{1}{0}{2}", op, i, j);
-                    Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                     s = string.Format("{1} {0}{2}", op, i, j);
-                    Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                     s = string.Format("{1}{0} {2}", op, i, j);
-                    Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                     s = string.Format("{1}   {0}    {2}", op, i, j);
-                    Assert.AreEqual(target, (int)MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, (int)MathString.Parse(s, null), s);
                 }
             }
         }
@@ -125,13 +126,13 @@ namespace NetGore.Tests.NetGore
                         var target = Math.Pow(Math.Pow(i, j), k);
 
                         var s = string.Format("{1}{0}{2}{0}{3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1} {0}{2}{0}   {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}{0} {2}  {0}  {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}   {0}    {2}   {0}     {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     }
                 }
             }
@@ -148,13 +149,13 @@ namespace NetGore.Tests.NetGore
                     var target = Math.Pow(i, j);
 
                     var s = string.Format("{1}{0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1} {0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}{0} {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}   {0}    {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                 }
             }
         }
@@ -172,13 +173,13 @@ namespace NetGore.Tests.NetGore
                         var target = i * j * k;
 
                         var s = string.Format("{1}{0}{2}{0}{3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1} {0}{2}{0}   {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}{0} {2}  {0}  {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}   {0}    {2}   {0}     {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     }
                 }
             }
@@ -195,13 +196,13 @@ namespace NetGore.Tests.NetGore
                     var target = i * j;
 
                     var s = string.Format("{1}{0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1} {0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}{0} {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}   {0}    {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                 }
             }
         }
@@ -219,13 +220,13 @@ namespace NetGore.Tests.NetGore
                         var target = i - j - k;
 
                         var s = string.Format("{1}{0}{2}{0}{3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1} {0}{2}{0}   {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}{0} {2}  {0}  {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                         s = string.Format("{1}   {0}    {2}   {0}     {3}", op, i, j, k);
-                        Assert.AreEqual(target, MathString.Parse(s, null), s);
+                        ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     }
                 }
             }
@@ -242,13 +243,13 @@ namespace NetGore.Tests.NetGore
                     var target = i - j;
 
                     var s = string.Format("{1}{0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1} {0}{2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}{0} {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                     s = string.Format("{1}   {0}    {2}", op, i, j);
-                    Assert.AreEqual(target, MathString.Parse(s, null), s);
+                    ClassicAssert.AreEqual(target, MathString.Parse(s, null), s);
                 }
             }
         }

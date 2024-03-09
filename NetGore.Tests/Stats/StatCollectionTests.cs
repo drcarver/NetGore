@@ -2,6 +2,7 @@
 using System.Linq;
 using NetGore.Stats;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Stats
 {
@@ -24,14 +25,14 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 10;
 
                 var copy = c.DeepCopy();
-                Assert.AreNotSame(copy, c);
-                Assert.IsTrue(c.HasSameValues(copy));
-                Assert.AreEqual(c.StatCollectionType, copy.StatCollectionType);
+                ClassicAssert.AreNotSame(copy, c);
+                ClassicAssert.IsTrue(c.HasSameValues(copy));
+                ClassicAssert.AreEqual(c.StatCollectionType, copy.StatCollectionType);
 
                 c[ST.A] = 15;
 
-                Assert.AreEqual(c[ST.A], 15);
-                Assert.AreEqual(copy[ST.A], 10);
+                ClassicAssert.AreEqual((int) c[ST.A], 15);
+                ClassicAssert.AreEqual((int) copy[ST.A], 10);
             }
         }
 
@@ -47,37 +48,37 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 10;
                 c[ST.B] = 11;
 
-                Assert.IsTrue(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 11;
-                Assert.IsTrue(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsFalse(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsFalse(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 11;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsFalse(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 9;
                 c[ST.B] = 12;
-                Assert.IsFalse(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsFalse(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 10;
-                Assert.IsFalse(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAllGreaterOrEqualValues(c));
 
                 c[ST.A] = 5;
                 c[ST.B] = 5;
-                Assert.IsFalse(c.HasAllGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAllGreaterOrEqualValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAllGreaterOrEqualValues(c));
             }
         }
 
@@ -93,37 +94,37 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 10;
                 c[ST.B] = 11;
 
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 11;
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 12;
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 11;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsTrue(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 9;
                 c[ST.B] = 12;
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 10;
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsFalse(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAllGreaterValues(c));
 
                 c[ST.A] = 5;
                 c[ST.B] = 5;
-                Assert.IsFalse(c.HasAllGreaterValues(b));
-                Assert.IsTrue(b.HasAllGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAllGreaterValues(b));
+                ClassicAssert.IsTrue(b.HasAllGreaterValues(c));
             }
         }
 
@@ -139,37 +140,37 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 10;
                 c[ST.B] = 11;
 
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 11;
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 11;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsFalse(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsFalse(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 9;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 10;
-                Assert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
 
                 c[ST.A] = 5;
                 c[ST.B] = 5;
-                Assert.IsFalse(c.HasAnyGreaterOrEqualValues(b));
-                Assert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
+                ClassicAssert.IsFalse(c.HasAnyGreaterOrEqualValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterOrEqualValues(c));
             }
         }
 
@@ -185,37 +186,37 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 10;
                 c[ST.B] = 11;
 
-                Assert.IsFalse(c.HasAnyGreaterValues(b));
-                Assert.IsFalse(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 11;
-                Assert.IsTrue(c.HasAnyGreaterValues(b));
-                Assert.IsFalse(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterValues(b));
-                Assert.IsFalse(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 11;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterValues(b));
-                Assert.IsFalse(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsFalse(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 9;
                 c[ST.B] = 12;
-                Assert.IsTrue(c.HasAnyGreaterValues(b));
-                Assert.IsTrue(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsTrue(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 10;
                 c[ST.B] = 10;
-                Assert.IsFalse(c.HasAnyGreaterValues(b));
-                Assert.IsTrue(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterValues(c));
 
                 c[ST.A] = 5;
                 c[ST.B] = 5;
-                Assert.IsFalse(c.HasAnyGreaterValues(b));
-                Assert.IsTrue(b.HasAnyGreaterValues(c));
+                ClassicAssert.IsFalse(c.HasAnyGreaterValues(b));
+                ClassicAssert.IsTrue(b.HasAnyGreaterValues(c));
             }
         }
 
@@ -231,23 +232,23 @@ namespace NetGore.Tests.Stats
                 c[ST.A] = 0;
                 c[ST.B] = 0;
 
-                Assert.IsFalse(c.HasSameValues(b));
-                Assert.IsFalse(b.HasSameValues(c));
+                ClassicAssert.IsFalse(c.HasSameValues(b));
+                ClassicAssert.IsFalse(b.HasSameValues(c));
 
                 c[ST.A] = 10;
 
-                Assert.IsFalse(c.HasSameValues(b));
-                Assert.IsFalse(b.HasSameValues(c));
+                ClassicAssert.IsFalse(c.HasSameValues(b));
+                ClassicAssert.IsFalse(b.HasSameValues(c));
 
                 c[ST.B] = 11;
 
-                Assert.IsTrue(c.HasSameValues(b));
-                Assert.IsTrue(b.HasSameValues(c));
+                ClassicAssert.IsTrue(c.HasSameValues(b));
+                ClassicAssert.IsTrue(b.HasSameValues(c));
 
                 c[ST.A] = 0;
 
-                Assert.IsFalse(c.HasSameValues(b));
-                Assert.IsFalse(b.HasSameValues(c));
+                ClassicAssert.IsFalse(c.HasSameValues(b));
+                ClassicAssert.IsFalse(b.HasSameValues(c));
             }
         }
 
@@ -259,13 +260,13 @@ namespace NetGore.Tests.Stats
                 c.SetAll(50);
                 foreach (var v in c)
                 {
-                    Assert.AreEqual(50, v.Value);
+                    ClassicAssert.AreEqual(50, (int) v.Value);
                 }
 
                 c.SetAll(75);
                 foreach (var v in c)
                 {
-                    Assert.AreEqual(75, v.Value);
+                    ClassicAssert.AreEqual(75, (int) v.Value);
                 }
             }
         }
@@ -277,23 +278,23 @@ namespace NetGore.Tests.Stats
             {
                 var changed = false;
 
-                Assert.IsFalse(changed);
+                ClassicAssert.IsFalse(changed);
 
                 c[ST.A] = 1;
 
-                Assert.IsFalse(changed);
+                ClassicAssert.IsFalse(changed);
 
                 c.StatChanged += delegate { changed = true; };
 
-                Assert.IsFalse(changed);
+                ClassicAssert.IsFalse(changed);
 
                 c[ST.A] = 1;
 
-                Assert.IsFalse(changed);
+                ClassicAssert.IsFalse(changed);
 
                 c[ST.A] = 2;
 
-                Assert.IsTrue(changed);
+                ClassicAssert.IsTrue(changed);
             }
         }
 

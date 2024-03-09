@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+
+using NetGore.Core;
 using NetGore.IO;
 
 namespace NetGore.Graphics.ParticleEngine

@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -55,7 +57,7 @@ namespace NetGore.Tests.NetGore
                 var all = spatial.GetMany(new Rectangle(0, 0, SpatialSize.X, SpatialSize.Y));
                 foreach (var a in all)
                 {
-                    Assert.IsTrue(spatial.CollectionContains(a));
+                    ClassicAssert.IsTrue(spatial.CollectionContains(a));
                 }
             }
         }
@@ -66,7 +68,7 @@ namespace NetGore.Tests.NetGore
             Entity someEntity;
             foreach (var spatial in GetSpatials(out someEntity))
             {
-                Assert.IsTrue(spatial.CollectionContains(someEntity));
+                ClassicAssert.IsTrue(spatial.CollectionContains(someEntity));
             }
         }
 
@@ -78,7 +80,7 @@ namespace NetGore.Tests.NetGore
             {
                 var all = spatial.GetMany(new Rectangle(0, 0, SpatialSize.X, SpatialSize.Y));
                 var distinct = all.Distinct();
-                Assert.AreEqual(distinct.Count(), all.Count());
+                ClassicAssert.AreEqual(distinct.Count(), all.Count());
             }
         }
 

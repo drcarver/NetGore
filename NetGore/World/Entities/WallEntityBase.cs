@@ -2,7 +2,10 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+
+using NetGore.Core;
 using NetGore.IO;
+
 using SFML.Graphics;
 
 namespace NetGore.World

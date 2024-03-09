@@ -5,7 +5,15 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore", "NetGore\NetGore.csproj", "{3E3BDE71-9A29-4743-B347-1DC0B99E4E1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lidgren.Network", "..\Lidgren\Lidgren.Network\Lidgren.Network.csproj", "{BCF3360D-F3A4-4305-BD0B-BE5659981451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Tests", "NetGore.Tests\NetGore.Tests.csproj", "{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Db", "NetGore.Db\NetGore.Db.csproj", "{25BDAE41-4A45-40A8-B151-3D78BAD33194}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Features", "NetGore.Features\NetGore.Features.csproj", "{24064304-FA4C-4D43-8CC8-02D671AA6D45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lidgren", "Lidgren", "{3C85DBFE-6EF8-4287-82A4-0FB53ED21679}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lidgren.Network", "Lidgren\Lidgren.Network\Lidgren.Network.csproj", "{043C2FBC-8647-42B1-88BA-A55E0C234753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +25,28 @@ Global
 		{3E3BDE71-9A29-4743-B347-1DC0B99E4E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3BDE71-9A29-4743-B347-1DC0B99E4E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3BDE71-9A29-4743-B347-1DC0B99E4E1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCF3360D-F3A4-4305-BD0B-BE5659981451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCF3360D-F3A4-4305-BD0B-BE5659981451}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCF3360D-F3A4-4305-BD0B-BE5659981451}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCF3360D-F3A4-4305-BD0B-BE5659981451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BDAE41-4A45-40A8-B151-3D78BAD33194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BDAE41-4A45-40A8-B151-3D78BAD33194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BDAE41-4A45-40A8-B151-3D78BAD33194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BDAE41-4A45-40A8-B151-3D78BAD33194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24064304-FA4C-4D43-8CC8-02D671AA6D45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24064304-FA4C-4D43-8CC8-02D671AA6D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24064304-FA4C-4D43-8CC8-02D671AA6D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24064304-FA4C-4D43-8CC8-02D671AA6D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{043C2FBC-8647-42B1-88BA-A55E0C234753} = {3C85DBFE-6EF8-4287-82A4-0FB53ED21679}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F07D04A7-49FD-4557-A419-76B85364DE72}

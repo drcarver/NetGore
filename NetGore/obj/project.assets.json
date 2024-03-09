@@ -493,8 +493,8 @@
     },
     "Lidgren.Network/1.0.0": {
       "type": "project",
-      "path": "../../Lidgren/Lidgren.Network/Lidgren.Network.csproj",
-      "msbuildProject": "../../Lidgren/Lidgren.Network/Lidgren.Network.csproj"
+      "path": "../Lidgren/Lidgren.Network/Lidgren.Network.csproj",
+      "msbuildProject": "../Lidgren/Lidgren.Network/Lidgren.Network.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -545,8 +545,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\drcarver\\Desktop\\netgore\\Lidgren\\Lidgren.Network\\Lidgren.Network.csproj": {
-              "projectPath": "C:\\Users\\drcarver\\Desktop\\netgore\\Lidgren\\Lidgren.Network\\Lidgren.Network.csproj"
+            "C:\\Users\\drcarver\\Desktop\\netgore\\NetGore\\Lidgren\\Lidgren.Network\\Lidgren.Network.csproj": {
+              "projectPath": "C:\\Users\\drcarver\\Desktop\\netgore\\NetGore\\Lidgren\\Lidgren.Network\\Lidgren.Network.csproj"
             }
           }
         }

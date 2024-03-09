@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 #pragma warning disable 618,612
 // ReSharper disable ConditionIsAlwaysTrueOrFalse
@@ -24,7 +25,7 @@ namespace NetGore.Tests.IO
             var mask = (1 << bits) - 1;
             var ba = a & mask;
             var bb = b & mask;
-            Assert.AreEqual(ba, bb);
+            ClassicAssert.AreEqual(ba, bb);
         }
 
         static void AreBitsEqual(uint a, uint b, int bits)
@@ -32,7 +33,7 @@ namespace NetGore.Tests.IO
             var mask = ((uint)1 << bits) - 1;
             var ba = a & mask;
             var bb = b & mask;
-            Assert.AreEqual(ba, bb);
+            ClassicAssert.AreEqual(ba, bb);
         }
 
         static void BatchIOTester<T>(IEnumerable<T> values, Func<BitStream, T> readHandler, Action<BitStream, T> writeHandler)
@@ -56,7 +57,7 @@ namespace NetGore.Tests.IO
                 var value = readHandler(bs);
                 try
                 {
-                    Assert.AreEqual(expected, value);
+                    ClassicAssert.AreEqual(expected, value);
                 }
                 catch
                 {
@@ -161,7 +162,7 @@ namespace NetGore.Tests.IO
             bs.PositionBits = 0;
             var outStr = bs.ReadString();
 
-            Assert.AreEqual(originalStr, outStr);
+            ClassicAssert.AreEqual(originalStr, outStr);
         }
 
         [Test]
@@ -184,7 +185,7 @@ namespace NetGore.Tests.IO
             {
                 for (var i = 0; i < bits.Length; i++)
                 {
-                    Assert.AreEqual(bits[i], bs.ReadBit());
+                    ClassicAssert.AreEqual(bits[i], bs.ReadBit());
                 }
             }
         }
@@ -212,27 +213,27 @@ namespace NetGore.Tests.IO
 
             for (var i = 0; i < a.Length; i++)
             {
-                Assert.AreEqual(dest.ReadInt(), a[i]);
+                ClassicAssert.AreEqual(dest.ReadInt(), a[i]);
             }
 
             for (var i = 0; i < b.Length; i++)
             {
-                Assert.AreEqual(dest.ReadFloat(), b[i]);
+                ClassicAssert.AreEqual(dest.ReadFloat(), b[i]);
             }
 
             for (var i = 0; i < c.Length; i++)
             {
-                Assert.AreEqual(dest.ReadLong(), c[i]);
+                ClassicAssert.AreEqual(dest.ReadLong(), c[i]);
             }
 
             for (var i = 0; i < d.Length; i++)
             {
-                Assert.AreEqual(dest.ReadBool(), d[i]);
+                ClassicAssert.AreEqual(dest.ReadBool(), d[i]);
             }
 
             for (var i = 0; i < e.Length; i++)
             {
-                Assert.AreEqual(dest.ReadByte(), e[i]);
+                ClassicAssert.AreEqual(dest.ReadByte(), e[i]);
             }
         }
 
@@ -298,8 +299,8 @@ namespace NetGore.Tests.IO
 
                 if (i == bits)
                 {
-                    Assert.AreEqual(min, tMin);
-                    Assert.AreEqual(max, tMax);
+                    ClassicAssert.AreEqual(min, tMin);
+                    ClassicAssert.AreEqual(max, tMax);
                 }
             }
         }
@@ -333,7 +334,7 @@ namespace NetGore.Tests.IO
 
                 for (var i = 0; i < values.Count; i++)
                 {
-                    Assert.AreEqual(values[i], bs.ReadDouble());
+                    ClassicAssert.AreEqual(values[i], bs.ReadDouble());
                 }
             }
         }
@@ -367,7 +368,7 @@ namespace NetGore.Tests.IO
 
                 for (var i = 0; i < values.Count; i++)
                 {
-                    Assert.AreEqual(values[i], bs.ReadFloat());
+                    ClassicAssert.AreEqual(values[i], bs.ReadFloat());
                 }
             }
         }
@@ -383,9 +384,9 @@ namespace NetGore.Tests.IO
             bs.PositionBits = 0;
             var buff = bs.GetBuffer();
 
-            Assert.AreEqual(20, buff[0]);
-            Assert.AreEqual(8, buff[1]);
-            Assert.AreEqual(128, buff[2] & (1 << 7));
+            ClassicAssert.AreEqual(20, buff[0]);
+            ClassicAssert.AreEqual(8, buff[1]);
+            ClassicAssert.AreEqual(128, buff[2] & (1 << 7));
         }
 
         [Test]
@@ -409,8 +410,8 @@ namespace NetGore.Tests.IO
                 for (var i = 0; i < values.Count; i++)
                 {
                     var bits = GetBitsAmountForBitTest(i, numBits);
-                    Assert.LessOrEqual(bits, numBits);
-                    Assert.GreaterOrEqual(bits, 1);
+                    ClassicAssert.LessOrEqual(bits, numBits);
+                    ClassicAssert.GreaterOrEqual(bits, 1);
                     bs.Write(values[i], bits);
                 }
 
@@ -456,8 +457,8 @@ namespace NetGore.Tests.IO
 
                 if (i == bits)
                 {
-                    Assert.AreEqual(min, tMin);
-                    Assert.AreEqual(max, tMax);
+                    ClassicAssert.AreEqual(min, tMin);
+                    ClassicAssert.AreEqual(max, tMax);
                 }
             }
         }
@@ -470,7 +471,7 @@ namespace NetGore.Tests.IO
             var expectedBits = 0;
             for (var i = 0; i < 100; i++)
             {
-                Assert.AreEqual(expectedBits, bs.LengthBits);
+                ClassicAssert.AreEqual(expectedBits, bs.LengthBits);
                 var bits = 1 + (i % 31);
                 bs.Write(i, bits);
                 expectedBits += bits;
@@ -485,7 +486,7 @@ namespace NetGore.Tests.IO
             var expectedBits = 0;
             for (var i = 0; i < 100; i++)
             {
-                Assert.AreEqual(Math.Ceiling(expectedBits / 8f), bs.Length);
+                ClassicAssert.AreEqual(Math.Ceiling(expectedBits / 8f), bs.Length);
                 var bits = 1 + (i % 31);
                 bs.Write(i, bits);
                 expectedBits += bits;
@@ -521,7 +522,7 @@ namespace NetGore.Tests.IO
 
                 for (var i = 0; i < values.Count; i++)
                 {
-                    Assert.AreEqual(values[i], bs.ReadLong());
+                    ClassicAssert.AreEqual(values[i], bs.ReadLong());
                 }
             }
         }
@@ -540,7 +541,7 @@ namespace NetGore.Tests.IO
 
             for (var i = 2; i < 32; i++)
             {
-                Assert.AreEqual((1 << i) - 1, bs.ReadUInt(i));
+                ClassicAssert.AreEqual((1 << i) - 1, bs.ReadUInt(i));
             }
         }
 
@@ -594,9 +595,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableBool());
-            Assert.AreEqual(nvalue, bs.ReadNullableBool());
-            Assert.AreEqual(value, bs.ReadNullableBool());
+            ClassicAssert.AreEqual(value, bs.ReadNullableBool());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableBool());
+            ClassicAssert.AreEqual(value, bs.ReadNullableBool());
         }
 
         [Test]
@@ -612,9 +613,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableByte());
-            Assert.AreEqual(nvalue, bs.ReadNullableByte());
-            Assert.AreEqual(value, bs.ReadNullableByte());
+            ClassicAssert.AreEqual(value, bs.ReadNullableByte());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableByte());
+            ClassicAssert.AreEqual(value, bs.ReadNullableByte());
         }
 
         [Test]
@@ -630,9 +631,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableDouble());
-            Assert.AreEqual(nvalue, bs.ReadNullableDouble());
-            Assert.AreEqual(value, bs.ReadNullableDouble());
+            ClassicAssert.AreEqual(value, bs.ReadNullableDouble());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableDouble());
+            ClassicAssert.AreEqual(value, bs.ReadNullableDouble());
         }
 
         [Test]
@@ -648,9 +649,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableFloat());
-            Assert.AreEqual(nvalue, bs.ReadNullableFloat());
-            Assert.AreEqual(value, bs.ReadNullableFloat());
+            ClassicAssert.AreEqual(value, bs.ReadNullableFloat());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableFloat());
+            ClassicAssert.AreEqual(value, bs.ReadNullableFloat());
         }
 
         [Test]
@@ -666,9 +667,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableInt());
-            Assert.AreEqual(nvalue, bs.ReadNullableInt());
-            Assert.AreEqual(value, bs.ReadNullableInt());
+            ClassicAssert.AreEqual(value, bs.ReadNullableInt());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableInt());
+            ClassicAssert.AreEqual(value, bs.ReadNullableInt());
         }
 
         [Test]
@@ -684,9 +685,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableLong());
-            Assert.AreEqual(nvalue, bs.ReadNullableLong());
-            Assert.AreEqual(value, bs.ReadNullableLong());
+            ClassicAssert.AreEqual(value, bs.ReadNullableLong());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableLong());
+            ClassicAssert.AreEqual(value, bs.ReadNullableLong());
         }
 
         [Test]
@@ -702,9 +703,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableSByte());
-            Assert.AreEqual(nvalue, bs.ReadNullableSByte());
-            Assert.AreEqual(value, bs.ReadNullableSByte());
+            ClassicAssert.AreEqual(value, bs.ReadNullableSByte());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableSByte());
+            ClassicAssert.AreEqual(value, bs.ReadNullableSByte());
         }
 
         [Test]
@@ -720,9 +721,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableShort());
-            Assert.AreEqual(nvalue, bs.ReadNullableShort());
-            Assert.AreEqual(value, bs.ReadNullableShort());
+            ClassicAssert.AreEqual(value, bs.ReadNullableShort());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableShort());
+            ClassicAssert.AreEqual(value, bs.ReadNullableShort());
         }
 
         [Test]
@@ -738,9 +739,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableUInt());
-            Assert.AreEqual(nvalue, bs.ReadNullableUInt());
-            Assert.AreEqual(value, bs.ReadNullableUInt());
+            ClassicAssert.AreEqual(value, bs.ReadNullableUInt());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableUInt());
+            ClassicAssert.AreEqual(value, bs.ReadNullableUInt());
         }
 
         [Test]
@@ -756,9 +757,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableULong());
-            Assert.AreEqual(nvalue, bs.ReadNullableULong());
-            Assert.AreEqual(value, bs.ReadNullableULong());
+            ClassicAssert.AreEqual(value, bs.ReadNullableULong());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableULong());
+            ClassicAssert.AreEqual(value, bs.ReadNullableULong());
         }
 
         [Test]
@@ -774,9 +775,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(value, bs.ReadNullableUShort());
-            Assert.AreEqual(nvalue, bs.ReadNullableUShort());
-            Assert.AreEqual(value, bs.ReadNullableUShort());
+            ClassicAssert.AreEqual(value, bs.ReadNullableUShort());
+            ClassicAssert.AreEqual(nvalue, bs.ReadNullableUShort());
+            ClassicAssert.AreEqual(value, bs.ReadNullableUShort());
         }
 
         [Test]
@@ -807,7 +808,7 @@ namespace NetGore.Tests.IO
 
             foreach (var s in strings)
             {
-                Assert.AreEqual(s, bs.ReadString(s.Length));
+                ClassicAssert.AreEqual(s, bs.ReadString(s.Length));
             }
         }
 
@@ -815,20 +816,20 @@ namespace NetGore.Tests.IO
         public void ReadLengthChangeModeTest()
         {
             var bs = new BitStream(128);
-            Assert.AreEqual(0, bs.LengthBits);
+            ClassicAssert.AreEqual(0, bs.LengthBits);
 
             bs.Write(62);
             bs.Write(true);
 
-            Assert.AreEqual(32 + 1, bs.LengthBits);
+            ClassicAssert.AreEqual(32 + 1, bs.LengthBits);
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(32 + 1, bs.LengthBits);
+            ClassicAssert.AreEqual(32 + 1, bs.LengthBits);
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(32 + 1, bs.LengthBits);
+            ClassicAssert.AreEqual(32 + 1, bs.LengthBits);
         }
 
         [Test]
@@ -837,11 +838,11 @@ namespace NetGore.Tests.IO
             var data = new byte[5];
             var bs = new BitStream(data);
 
-            Assert.AreEqual(8 * data.Length, bs.LengthBits);
+            ClassicAssert.AreEqual(8 * data.Length, bs.LengthBits);
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(8 * data.Length, bs.LengthBits);
+            ClassicAssert.AreEqual(8 * data.Length, bs.LengthBits);
         }
 
         [Test]
@@ -906,8 +907,8 @@ namespace NetGore.Tests.IO
 
                 if (i == bits)
                 {
-                    Assert.AreEqual(min, tMin);
-                    Assert.AreEqual(max, tMax);
+                    ClassicAssert.AreEqual(min, tMin);
+                    ClassicAssert.AreEqual(max, tMax);
                 }
             }
         }
@@ -956,24 +957,24 @@ namespace NetGore.Tests.IO
             var data = new byte[5];
             var bs = new BitStream(data);
 
-            Assert.AreEqual(8 * data.Length, bs.LengthBits);
+            ClassicAssert.AreEqual(8 * data.Length, bs.LengthBits);
 
             bs.LengthBits = 32;
 
-            Assert.AreEqual(32, bs.LengthBits);
+            ClassicAssert.AreEqual(32, bs.LengthBits);
         }
 
         [Test]
         public void SetLengthWhileWritingTest()
         {
             var bs = new BitStream(128);
-            Assert.AreEqual(0, bs.LengthBits);
+            ClassicAssert.AreEqual(0, bs.LengthBits);
 
             // Populate
             bs.Write(62);
             bs.Write((byte)170);
 
-            Assert.AreEqual(32 + 8, bs.LengthBits);
+            ClassicAssert.AreEqual(32 + 8, bs.LengthBits);
 
             // Shift back 8 bits to chop off the last byte written
             bs.LengthBits -= 8;
@@ -984,10 +985,10 @@ namespace NetGore.Tests.IO
             // Check our values
             bs.PositionBits = 0;
 
-            Assert.AreEqual(32 + 8, bs.LengthBits);
+            ClassicAssert.AreEqual(32 + 8, bs.LengthBits);
 
-            Assert.AreEqual(62, bs.ReadInt());
-            Assert.AreEqual(85, bs.ReadByte());
+            ClassicAssert.AreEqual(62, bs.ReadInt());
+            ClassicAssert.AreEqual(85, bs.ReadByte());
         }
 
         [Test]
@@ -1008,8 +1009,8 @@ namespace NetGore.Tests.IO
             for (var i = 0; i < values.Count; i++)
             {
                 var bits = GetBitsAmountForBitTest(i, numBits);
-                Assert.LessOrEqual(bits, numBits);
-                Assert.GreaterOrEqual(bits, 1);
+                ClassicAssert.LessOrEqual(bits, numBits);
+                ClassicAssert.GreaterOrEqual(bits, 1);
                 bs.Write(values[i], bits);
             }
 
@@ -1054,8 +1055,8 @@ namespace NetGore.Tests.IO
 
                 if (i == bits)
                 {
-                    Assert.AreEqual(min, tMin);
-                    Assert.AreEqual(max, tMax);
+                    ClassicAssert.AreEqual(min, tMin);
+                    ClassicAssert.AreEqual(max, tMax);
                 }
             }
         }
@@ -1072,11 +1073,11 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(bs.ReadByte(1), 0);
-            Assert.AreEqual(bs.ReadByte(2), 1);
-            Assert.AreEqual(bs.ReadByte(3), 2);
-            Assert.AreEqual(bs.ReadByte(4), 3);
-            Assert.AreEqual(bs.ReadByte(5), 10);
+            ClassicAssert.AreEqual(bs.ReadByte(1), 0);
+            ClassicAssert.AreEqual(bs.ReadByte(2), 1);
+            ClassicAssert.AreEqual(bs.ReadByte(3), 2);
+            ClassicAssert.AreEqual(bs.ReadByte(4), 3);
+            ClassicAssert.AreEqual(bs.ReadByte(5), 10);
         }
 
         [Test]
@@ -1093,12 +1094,12 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(-25, bs.ReadInt());
-            Assert.AreEqual(-13, bs.ReadInt());
-            Assert.AreEqual(13, bs.ReadInt());
-            Assert.AreEqual(25, bs.ReadInt());
-            Assert.AreEqual(-8, bs.ReadInt());
-            Assert.AreEqual(8, bs.ReadInt());
+            ClassicAssert.AreEqual(-25, bs.ReadInt());
+            ClassicAssert.AreEqual(-13, bs.ReadInt());
+            ClassicAssert.AreEqual(13, bs.ReadInt());
+            ClassicAssert.AreEqual(25, bs.ReadInt());
+            ClassicAssert.AreEqual(-8, bs.ReadInt());
+            ClassicAssert.AreEqual(8, bs.ReadInt());
         }
 
         [Test]
@@ -1109,7 +1110,7 @@ namespace NetGore.Tests.IO
             var expectedBits = 0;
             for (var i = 0; i < 100; i++)
             {
-                Assert.AreEqual(expectedBits, bs.LengthBits);
+                ClassicAssert.AreEqual(expectedBits, bs.LengthBits);
                 bs.Write((byte)1);
                 expectedBits += 8;
             }
@@ -1129,12 +1130,12 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(-25, bs.ReadShort(15));
-            Assert.AreEqual(-13, bs.ReadShort());
-            Assert.AreEqual(13, bs.ReadShort());
-            Assert.AreEqual(25, bs.ReadShort(15));
-            Assert.AreEqual(-8, bs.ReadShort(12));
-            Assert.AreEqual(8, bs.ReadShort(12));
+            ClassicAssert.AreEqual(-25, bs.ReadShort(15));
+            ClassicAssert.AreEqual(-13, bs.ReadShort());
+            ClassicAssert.AreEqual(13, bs.ReadShort());
+            ClassicAssert.AreEqual(25, bs.ReadShort(15));
+            ClassicAssert.AreEqual(-8, bs.ReadShort(12));
+            ClassicAssert.AreEqual(8, bs.ReadShort(12));
         }
 
         [Test]
@@ -1154,7 +1155,7 @@ namespace NetGore.Tests.IO
 
             foreach (var s in strings)
             {
-                Assert.AreEqual(s, bs.ReadString());
+                ClassicAssert.AreEqual(s, bs.ReadString());
             }
         }
 
@@ -1170,11 +1171,11 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(uint.MinValue, bs.ReadUInt());
-            Assert.AreEqual(uint.MaxValue, bs.ReadUInt());
-            Assert.AreEqual(25, bs.ReadUInt());
-            Assert.AreEqual(13, bs.ReadUInt());
-            Assert.AreEqual(8, bs.ReadUInt());
+            ClassicAssert.AreEqual(uint.MinValue, bs.ReadUInt());
+            ClassicAssert.AreEqual(uint.MaxValue, bs.ReadUInt());
+            ClassicAssert.AreEqual(25, bs.ReadUInt());
+            ClassicAssert.AreEqual(13, bs.ReadUInt());
+            ClassicAssert.AreEqual(8, bs.ReadUInt());
         }
 
         [Test]
@@ -1205,7 +1206,7 @@ namespace NetGore.Tests.IO
 
             foreach (var s in strings)
             {
-                Assert.AreEqual(s, bs.ReadString());
+                ClassicAssert.AreEqual(s, bs.ReadString());
             }
         }
 
@@ -1220,9 +1221,9 @@ namespace NetGore.Tests.IO
 
             bs.PositionBits = 0;
 
-            Assert.AreEqual(20, buff[0]);
-            Assert.AreEqual(8, buff[1]);
-            Assert.AreEqual(128, buff[2] & (1 << 7));
+            ClassicAssert.AreEqual(20, buff[0]);
+            ClassicAssert.AreEqual(8, buff[1]);
+            ClassicAssert.AreEqual(128, buff[2] & (1 << 7));
         }
 
         [Test]
@@ -1292,7 +1293,7 @@ namespace NetGore.Tests.IO
 
                 for (var i = 0; i < values.Count; i++)
                 {
-                    Assert.AreEqual(values[i], bs.ReadULong());
+                    ClassicAssert.AreEqual(values[i], bs.ReadULong());
                 }
             }
         }
@@ -1374,7 +1375,7 @@ namespace NetGore.Tests.IO
                     var expected = s;
                     if (expected.Length > length)
                         expected = expected.Substring(0, length);
-                    Assert.AreEqual(expected, bs.ReadString(length));
+                    ClassicAssert.AreEqual(expected, bs.ReadString(length));
                 }
             }
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -26,7 +27,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -52,7 +53,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -75,7 +76,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -98,7 +99,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -121,7 +122,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -144,7 +145,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -167,7 +168,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -190,7 +191,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -213,7 +214,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -236,7 +237,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -259,7 +260,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }
@@ -282,7 +283,7 @@ namespace NetGore.Tests.NetGore
                         else
                             b2 = (k >= j && k <= i);
 
-                        Assert.AreEqual(b, b2);
+                        ClassicAssert.AreEqual(b, b2);
                     }
                 }
             }

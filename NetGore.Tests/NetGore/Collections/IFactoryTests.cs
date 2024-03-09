@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.Collections
 {
@@ -40,22 +41,22 @@ namespace NetGore.Tests.NetGore.Collections
             {
                 createCount = 0;
 
-                Assert.AreEqual(0, createCount);
+                ClassicAssert.AreEqual(0, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(2, createCount);
             }
         }
 
@@ -79,42 +80,42 @@ namespace NetGore.Tests.NetGore.Collections
             {
                 createCount = 0;
 
-                Assert.AreEqual(0, createCount);
+                ClassicAssert.AreEqual(0, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(2, createCount);
 
                 f.Clear();
                 createCount = 0;
 
-                Assert.AreEqual(0, createCount);
+                ClassicAssert.AreEqual(0, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(1, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(1, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual(2, createCount);
 
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual(2, createCount);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual(2, createCount);
             }
         }
 
@@ -125,20 +126,20 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var f in factories)
             {
-                Assert.IsFalse(f.ContainsKey(1));
-                Assert.IsFalse(f.ContainsKey(1));
+                ClassicAssert.IsFalse(f.ContainsKey(1));
+                ClassicAssert.IsFalse(f.ContainsKey(1));
 
-                Assert.AreEqual("1", f[1]);
-                Assert.IsTrue(f.ContainsKey(1));
-                Assert.IsFalse(f.ContainsKey(2));
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.IsTrue(f.ContainsKey(1));
+                ClassicAssert.IsFalse(f.ContainsKey(2));
 
-                Assert.AreEqual("2", f[2]);
-                Assert.IsTrue(f.ContainsKey(2));
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.IsTrue(f.ContainsKey(2));
 
-                Assert.IsFalse(f.ContainsKey(3));
-                Assert.IsFalse(f.ContainsKey(3));
-                Assert.IsFalse(f.ContainsKey(4));
-                Assert.IsFalse(f.ContainsKey(4));
+                ClassicAssert.IsFalse(f.ContainsKey(3));
+                ClassicAssert.IsFalse(f.ContainsKey(3));
+                ClassicAssert.IsFalse(f.ContainsKey(4));
+                ClassicAssert.IsFalse(f.ContainsKey(4));
             }
         }
 
@@ -156,27 +157,27 @@ namespace NetGore.Tests.NetGore.Collections
             foreach (var f in factories)
             {
                 var a = f.GetCachedValues();
-                Assert.AreEqual(0, a.Count());
+                ClassicAssert.AreEqual(0, a.Count());
 
-                Assert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual("1", f[1]);
 
                 var b = f.GetCachedValues();
-                Assert.AreEqual(1, b.Count());
-                Assert.AreNotSame(a, b);
+                ClassicAssert.AreEqual(1, b.Count());
+                ClassicAssert.AreNotSame(a, b);
 
-                Assert.AreEqual("2", f[2]);
-                Assert.AreEqual("3", f[3]);
-                Assert.AreEqual("4", f[4]);
-                Assert.AreEqual("5", f[5]);
+                ClassicAssert.AreEqual("2", f[2]);
+                ClassicAssert.AreEqual("3", f[3]);
+                ClassicAssert.AreEqual("4", f[4]);
+                ClassicAssert.AreEqual("5", f[5]);
 
                 var c = f.GetCachedValues();
-                Assert.AreEqual(0, a.Count());
-                Assert.AreEqual(1, b.Count());
-                Assert.AreEqual(5, c.Count());
+                ClassicAssert.AreEqual(0, a.Count());
+                ClassicAssert.AreEqual(1, b.Count());
+                ClassicAssert.AreEqual(5, c.Count());
 
-                Assert.AreNotSame(a, b);
-                Assert.AreNotSame(a, c);
-                Assert.AreNotSame(b, c);
+                ClassicAssert.AreNotSame(a, b);
+                ClassicAssert.AreNotSame(a, c);
+                ClassicAssert.AreNotSame(b, c);
             }
         }
 
@@ -187,8 +188,8 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var f in factories)
             {
-                Assert.AreEqual("1", f[1]);
-                Assert.AreEqual("100", f[100]);
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.AreEqual("100", f[100]);
             }
         }
 
@@ -199,33 +200,33 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var f in factories)
             {
-                Assert.IsFalse(f.ContainsKey(1));
-                Assert.IsFalse(f.ContainsKey(2));
-                Assert.IsFalse(f.ContainsKey(3));
-                Assert.IsFalse(f.ContainsKey(4));
-                Assert.IsFalse(f.ContainsKey(5));
-                Assert.IsFalse(f.ContainsKey(6));
+                ClassicAssert.IsFalse(f.ContainsKey(1));
+                ClassicAssert.IsFalse(f.ContainsKey(2));
+                ClassicAssert.IsFalse(f.ContainsKey(3));
+                ClassicAssert.IsFalse(f.ContainsKey(4));
+                ClassicAssert.IsFalse(f.ContainsKey(5));
+                ClassicAssert.IsFalse(f.ContainsKey(6));
 
-                Assert.AreEqual("1", f[1]);
-                Assert.IsTrue(f.ContainsKey(1));
-
-                f.PrepareKeys(Enumerable.Range(1, 6));
-
-                Assert.IsTrue(f.ContainsKey(1));
-                Assert.IsTrue(f.ContainsKey(2));
-                Assert.IsTrue(f.ContainsKey(3));
-                Assert.IsTrue(f.ContainsKey(4));
-                Assert.IsTrue(f.ContainsKey(5));
-                Assert.IsTrue(f.ContainsKey(6));
+                ClassicAssert.AreEqual("1", f[1]);
+                ClassicAssert.IsTrue(f.ContainsKey(1));
 
                 f.PrepareKeys(Enumerable.Range(1, 6));
 
-                Assert.IsTrue(f.ContainsKey(1));
-                Assert.IsTrue(f.ContainsKey(2));
-                Assert.IsTrue(f.ContainsKey(3));
-                Assert.IsTrue(f.ContainsKey(4));
-                Assert.IsTrue(f.ContainsKey(5));
-                Assert.IsTrue(f.ContainsKey(6));
+                ClassicAssert.IsTrue(f.ContainsKey(1));
+                ClassicAssert.IsTrue(f.ContainsKey(2));
+                ClassicAssert.IsTrue(f.ContainsKey(3));
+                ClassicAssert.IsTrue(f.ContainsKey(4));
+                ClassicAssert.IsTrue(f.ContainsKey(5));
+                ClassicAssert.IsTrue(f.ContainsKey(6));
+
+                f.PrepareKeys(Enumerable.Range(1, 6));
+
+                ClassicAssert.IsTrue(f.ContainsKey(1));
+                ClassicAssert.IsTrue(f.ContainsKey(2));
+                ClassicAssert.IsTrue(f.ContainsKey(3));
+                ClassicAssert.IsTrue(f.ContainsKey(4));
+                ClassicAssert.IsTrue(f.ContainsKey(5));
+                ClassicAssert.IsTrue(f.ContainsKey(6));
             }
         }
 
@@ -256,7 +257,7 @@ namespace NetGore.Tests.NetGore.Collections
                 {
                     for (var j = 0; j < numKeysAccessed; j++)
                     {
-                        Assert.AreEqual(j.ToString(), f[j]);
+                        ClassicAssert.AreEqual(j.ToString(), f[j]);
                     }
                 };
 
@@ -264,7 +265,7 @@ namespace NetGore.Tests.NetGore.Collections
                 {
                     for (var j = numKeysAccessed - 1; j >= 0; j--)
                     {
-                        Assert.AreEqual(j.ToString(), f[j]);
+                        ClassicAssert.AreEqual(j.ToString(), f[j]);
                     }
                 };
 
@@ -292,7 +293,7 @@ namespace NetGore.Tests.NetGore.Collections
                 }
 
                 // Make sure the objects were only created the needed number of times
-                Assert.AreEqual(numKeysAccessed, createCount);
+                ClassicAssert.AreEqual(numKeysAccessed, createCount);
             }
             // ReSharper restore AccessToModifiedClosure
         }

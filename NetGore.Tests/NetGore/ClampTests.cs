@@ -1,5 +1,6 @@
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -20,14 +21,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -46,14 +47,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -72,14 +73,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -98,14 +99,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -124,14 +125,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -150,14 +151,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -176,14 +177,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -202,14 +203,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -228,14 +229,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }
@@ -254,14 +255,14 @@ namespace NetGore.Tests.NetGore
                         if (i < j)
                         {
                             var l = k.Clamp(i, j);
-                            Assert.GreaterOrEqual(l, i);
-                            Assert.LessOrEqual(l, j);
+                            ClassicAssert.GreaterOrEqual(l, i);
+                            ClassicAssert.LessOrEqual(l, j);
                         }
                         else
                         {
                             var l = k.Clamp(j, i);
-                            Assert.GreaterOrEqual(l, j);
-                            Assert.LessOrEqual(l, i);
+                            ClassicAssert.GreaterOrEqual(l, j);
+                            ClassicAssert.LessOrEqual(l, i);
                         }
                     }
                 }

@@ -1,6 +1,7 @@
 using System.Data;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Db.MySql
 {
@@ -20,7 +21,7 @@ namespace NetGore.Tests.Db.MySql
                     conn = connPool.Connection;
                     connPool.QueryRunner.Flush();
                 }
-                Assert.AreEqual(ConnectionState.Closed, conn.State);
+                ClassicAssert.AreEqual(ConnectionState.Closed, conn.State);
             }
         }
 
@@ -32,8 +33,8 @@ namespace NetGore.Tests.Db.MySql
                 using (var connPool = pool.Acquire())
                 {
                     var conn = connPool.Connection;
-                    Assert.IsNotNull(conn);
-                    Assert.AreEqual(ConnectionState.Open, conn.State);
+                    ClassicAssert.IsNotNull(conn);
+                    ClassicAssert.AreEqual(ConnectionState.Open, conn.State);
                 }
             }
         }
@@ -43,25 +44,25 @@ namespace NetGore.Tests.Db.MySql
         {
             using (var pool = DbManagerTestSettings.CreateConnectionPool())
             {
-                Assert.AreEqual(0, pool.LiveObjects);
+                ClassicAssert.AreEqual(0, pool.LiveObjects);
                 using (var a = pool.Acquire())
                 {
-                    Assert.AreEqual(1, pool.LiveObjects);
+                    ClassicAssert.AreEqual(1, pool.LiveObjects);
                     using (var b = pool.Acquire())
                     {
-                        Assert.AreEqual(2, pool.LiveObjects);
+                        ClassicAssert.AreEqual(2, pool.LiveObjects);
                         using (var c = pool.Acquire())
                         {
-                            Assert.AreEqual(3, pool.LiveObjects);
-                            Assert.IsNotNull(a);
-                            Assert.IsNotNull(b);
-                            Assert.IsNotNull(c);
+                            ClassicAssert.AreEqual(3, pool.LiveObjects);
+                            ClassicAssert.IsNotNull(a);
+                            ClassicAssert.IsNotNull(b);
+                            ClassicAssert.IsNotNull(c);
                         }
-                        Assert.AreEqual(2, pool.LiveObjects);
+                        ClassicAssert.AreEqual(2, pool.LiveObjects);
                     }
-                    Assert.AreEqual(1, pool.LiveObjects);
+                    ClassicAssert.AreEqual(1, pool.LiveObjects);
                 }
-                Assert.AreEqual(0, pool.LiveObjects);
+                ClassicAssert.AreEqual(0, pool.LiveObjects);
             }
         }
 
@@ -78,7 +79,7 @@ namespace NetGore.Tests.Db.MySql
                         using (var r = cmd.ExecuteReader())
                         {
                             r.Read();
-                            Assert.AreEqual(600, r[0]);
+                            ClassicAssert.AreEqual(600, r[0]);
                         }
                     }
                 }

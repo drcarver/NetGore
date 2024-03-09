@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore
 {
@@ -23,59 +24,59 @@ namespace NetGore.Tests.NetGore
         public void AllTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.All);
-            Assert.IsTrue(r.IsValid(_sLower));
-            Assert.IsTrue(r.IsValid(_sUpper));
-            Assert.IsTrue(r.IsValid(_sUpperLower));
-            Assert.IsTrue(r.IsValid(_sNumeric));
-            Assert.IsTrue(r.IsValid(_sPunctuation));
-            Assert.IsTrue(r.IsValid(_sSentence));
-            Assert.IsTrue(r.IsValid(_sWhitespace));
+            ClassicAssert.IsTrue(r.IsValid(_sLower));
+            ClassicAssert.IsTrue(r.IsValid(_sUpper));
+            ClassicAssert.IsTrue(r.IsValid(_sUpperLower));
+            ClassicAssert.IsTrue(r.IsValid(_sNumeric));
+            ClassicAssert.IsTrue(r.IsValid(_sPunctuation));
+            ClassicAssert.IsTrue(r.IsValid(_sSentence));
+            ClassicAssert.IsTrue(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void AlphaLowerTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.AlphaLower);
-            Assert.IsTrue(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsTrue(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void AlphaTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.Alpha);
-            Assert.IsTrue(r.IsValid(_sLower));
-            Assert.IsTrue(r.IsValid(_sUpper));
-            Assert.IsTrue(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsTrue(r.IsValid(_sLower));
+            ClassicAssert.IsTrue(r.IsValid(_sUpper));
+            ClassicAssert.IsTrue(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void AlphaUpperTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.AlphaUpper);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsTrue(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsTrue(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void EmptyInputTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.All);
-            Assert.IsFalse(r.IsValid(string.Empty));
+            ClassicAssert.IsFalse(r.IsValid(string.Empty));
         }
 
         [Test]
@@ -100,81 +101,81 @@ namespace NetGore.Tests.NetGore
         public void NullInputTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.All);
-            Assert.IsFalse(r.IsValid(null));
+            ClassicAssert.IsFalse(r.IsValid(null));
         }
 
         [Test]
         public void NumericTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.Numeric);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsTrue(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsTrue(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void PropertyTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.AlphaLower);
-            Assert.AreEqual(_minLength, r.MinLength);
-            Assert.AreEqual(_maxLength, r.MaxLength);
-            Assert.AreEqual(CharType.AlphaLower, r.AllowedChars);
+            ClassicAssert.AreEqual(_minLength, r.MinLength);
+            ClassicAssert.AreEqual(_maxLength, r.MaxLength);
+            ClassicAssert.AreEqual(CharType.AlphaLower, r.AllowedChars);
         }
 
         [Test]
         public void PunctuationTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.Punctuation);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsTrue(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsTrue(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void StringTooLongTest()
         {
             var r = new StringRules(_minLength, _minLength, CharType.Alpha | CharType.Punctuation | CharType.Whitespace);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void StringTooShortTest()
         {
             var r = new StringRules(_maxLength, _maxLength, CharType.Alpha | CharType.Punctuation | CharType.Whitespace);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsFalse(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsFalse(r.IsValid(_sWhitespace));
         }
 
         [Test]
         public void WhitespaceTest()
         {
             var r = new StringRules(_minLength, _maxLength, CharType.Whitespace);
-            Assert.IsFalse(r.IsValid(_sLower));
-            Assert.IsFalse(r.IsValid(_sUpper));
-            Assert.IsFalse(r.IsValid(_sUpperLower));
-            Assert.IsFalse(r.IsValid(_sNumeric));
-            Assert.IsFalse(r.IsValid(_sPunctuation));
-            Assert.IsFalse(r.IsValid(_sSentence));
-            Assert.IsTrue(r.IsValid(_sWhitespace));
+            ClassicAssert.IsFalse(r.IsValid(_sLower));
+            ClassicAssert.IsFalse(r.IsValid(_sUpper));
+            ClassicAssert.IsFalse(r.IsValid(_sUpperLower));
+            ClassicAssert.IsFalse(r.IsValid(_sNumeric));
+            ClassicAssert.IsFalse(r.IsValid(_sPunctuation));
+            ClassicAssert.IsFalse(r.IsValid(_sSentence));
+            ClassicAssert.IsTrue(r.IsValid(_sWhitespace));
         }
 
         #endregion

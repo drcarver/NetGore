@@ -1,6 +1,8 @@
 using System.Linq;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.NetGore
@@ -15,7 +17,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(0, -2), AlignmentHelper.FindOffset(Alignment.BottomLeft, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(0, -2), AlignmentHelper.FindOffset(Alignment.BottomLeft, srcSize, dstSize));
         }
 
         [Test]
@@ -23,7 +25,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(-2, -2), AlignmentHelper.FindOffset(Alignment.BottomRight, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(-2, -2), AlignmentHelper.FindOffset(Alignment.BottomRight, srcSize, dstSize));
         }
 
         [Test]
@@ -31,7 +33,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(-1, -2), AlignmentHelper.FindOffset(Alignment.Bottom, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(-1, -2), AlignmentHelper.FindOffset(Alignment.Bottom, srcSize, dstSize));
         }
 
         [Test]
@@ -39,7 +41,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(0, -1), AlignmentHelper.FindOffset(Alignment.Left, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(0, -1), AlignmentHelper.FindOffset(Alignment.Left, srcSize, dstSize));
         }
 
         [Test]
@@ -47,7 +49,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(-2, -1), AlignmentHelper.FindOffset(Alignment.Right, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(-2, -1), AlignmentHelper.FindOffset(Alignment.Right, srcSize, dstSize));
         }
 
         [Test]
@@ -55,7 +57,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(0, 0), AlignmentHelper.FindOffset(Alignment.TopLeft, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(0, 0), AlignmentHelper.FindOffset(Alignment.TopLeft, srcSize, dstSize));
         }
 
         [Test]
@@ -63,7 +65,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(-2, 0), AlignmentHelper.FindOffset(Alignment.TopRight, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(-2, 0), AlignmentHelper.FindOffset(Alignment.TopRight, srcSize, dstSize));
         }
 
         [Test]
@@ -71,7 +73,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            Assert.AreEqual(new Vector2(-1, 0), AlignmentHelper.FindOffset(Alignment.Top, srcSize, dstSize));
+            ClassicAssert.AreEqual(new Vector2(-1, 0), AlignmentHelper.FindOffset(Alignment.Top, srcSize, dstSize));
         }
 
         #endregion

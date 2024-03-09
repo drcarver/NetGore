@@ -1,6 +1,7 @@
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Collections
 {
@@ -39,7 +40,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -58,7 +59,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -69,7 +70,7 @@ namespace NetGore.Tests.Collections
             {
                 var mf = new MeanStack<int>(i);
                 mf.Fill(i);
-                Assert.AreEqual(i, mf.Mean());
+                ClassicAssert.AreEqual(i, mf.Mean());
             }
         }
 
@@ -89,7 +90,7 @@ namespace NetGore.Tests.Collections
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
                 var m = mf.Mean();
-                Assert.AreEqual(mean, m);
+                ClassicAssert.AreEqual(mean, m);
             }
         }
 
@@ -108,7 +109,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -127,7 +128,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -146,7 +147,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -165,7 +166,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -184,7 +185,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 long mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -203,7 +204,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 
@@ -222,7 +223,7 @@ namespace NetGore.Tests.Collections
                 }
 
                 var mean = sum / (_itemEnd - _itemStart + 1);
-                Assert.AreEqual(mean, mf.Mean());
+                ClassicAssert.AreEqual(mean, mf.Mean());
             }
         }
 

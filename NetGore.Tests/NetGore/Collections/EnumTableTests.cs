@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // ReSharper disable UnusedMember.Local
 
@@ -18,9 +19,9 @@ namespace NetGore.Tests.NetGore.Collections
         public void CreateSeqBoolTest()
         {
             var t = EnumTable.Create<ESeq, bool>();
-            Assert.IsNotNull(t);
+            ClassicAssert.IsNotNull(t);
             var typeName = t.GetType().FullName;
-            Assert.IsTrue(typeName.Contains("RawTableBool"), "Expected RawTableBool, but was " + typeName);
+            ClassicAssert.IsTrue(typeName.Contains("RawTableBool"), "Expected RawTableBool, but was " + typeName);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "RawTable")]
@@ -28,9 +29,9 @@ namespace NetGore.Tests.NetGore.Collections
         public void CreateSeqTest()
         {
             var t = EnumTable.Create<ESeq, object>();
-            Assert.IsNotNull(t);
+            ClassicAssert.IsNotNull(t);
             var typeName = t.GetType().FullName;
-            Assert.IsTrue(typeName.Contains("RawTable"), "Expected RawTable, but was " + typeName);
+            ClassicAssert.IsTrue(typeName.Contains("RawTable"), "Expected RawTable, but was " + typeName);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "DictionaryTable")]
@@ -38,9 +39,9 @@ namespace NetGore.Tests.NetGore.Collections
         public void CreateSparseBoolTest()
         {
             var t = EnumTable.Create<ESparse, bool>();
-            Assert.IsNotNull(t);
+            ClassicAssert.IsNotNull(t);
             var typeName = t.GetType().FullName;
-            Assert.IsTrue(typeName.Contains("DictionaryTable"), "Expected DictionaryTable, but was " + typeName);
+            ClassicAssert.IsTrue(typeName.Contains("DictionaryTable"), "Expected DictionaryTable, but was " + typeName);
         }
 
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "DictionaryTable")]
@@ -48,9 +49,9 @@ namespace NetGore.Tests.NetGore.Collections
         public void CreateSparseTest()
         {
             var t = EnumTable.Create<ESparse, object>();
-            Assert.IsNotNull(t);
+            ClassicAssert.IsNotNull(t);
             var typeName = t.GetType().FullName;
-            Assert.IsTrue(typeName.Contains("DictionaryTable"), "Expected DictionaryTable, but was " + typeName);
+            ClassicAssert.IsTrue(typeName.Contains("DictionaryTable"), "Expected DictionaryTable, but was " + typeName);
         }
 
         [Test]
@@ -58,10 +59,10 @@ namespace NetGore.Tests.NetGore.Collections
         {
             var t = EnumTable.Create<ESeq, bool>();
             t.SetAll(true);
-            Assert.IsTrue(t.All(x => x.Value));
+            ClassicAssert.IsTrue(t.All(x => x.Value));
 
             var t2 = t.DeepCopy();
-            Assert.IsTrue(t2.All(x => x.Value));
+            ClassicAssert.IsTrue(t2.All(x => x.Value));
         }
 
         [Test]
@@ -69,10 +70,10 @@ namespace NetGore.Tests.NetGore.Collections
         {
             var t = EnumTable.Create<ESeq, string>();
             t.SetAll("hi");
-            Assert.IsTrue(t.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t.All(x => x.Value == "hi"));
 
             var t2 = t.DeepCopy();
-            Assert.IsTrue(t2.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t2.All(x => x.Value == "hi"));
         }
 
         [Test]
@@ -80,10 +81,10 @@ namespace NetGore.Tests.NetGore.Collections
         {
             var t = EnumTable.Create<ESparse, string>();
             t.SetAll("hi");
-            Assert.IsTrue(t.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t.All(x => x.Value == "hi"));
 
             var t2 = t.DeepCopy();
-            Assert.IsTrue(t2.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t2.All(x => x.Value == "hi"));
         }
 
         [Test]
@@ -95,16 +96,16 @@ namespace NetGore.Tests.NetGore.Collections
             foreach (var v in t)
             {
                 if (v.Key == ESeq.c)
-                    Assert.AreEqual(true, v.Value);
+                    ClassicAssert.AreEqual(true, v.Value);
                 else
-                    Assert.AreEqual(false, v.Value);
+                    ClassicAssert.AreEqual(false, v.Value);
             }
 
             var keys = t.Select(x => x.Key).ToArray();
             var expectedKeys = EnumHelper<ESeq>.Values.ToArray();
 
-            Assert.AreEqual(keys.Length, expectedKeys.Length);
-            Assert.IsTrue(keys.ContainSameElements(expectedKeys));
+            ClassicAssert.AreEqual(keys.Length, expectedKeys.Length);
+            ClassicAssert.IsTrue(keys.ContainSameElements(expectedKeys));
         }
 
         [Test]
@@ -116,16 +117,16 @@ namespace NetGore.Tests.NetGore.Collections
             foreach (var v in t)
             {
                 if (v.Key == ESeq.c)
-                    Assert.AreEqual("hello", v.Value);
+                    ClassicAssert.AreEqual("hello", v.Value);
                 else
-                    Assert.AreEqual(null, v.Value);
+                    ClassicAssert.AreEqual(null, v.Value);
             }
 
             var keys = t.Select(x => x.Key).ToArray();
             var expectedKeys = EnumHelper<ESeq>.Values.ToArray();
 
-            Assert.AreEqual(keys.Length, expectedKeys.Length);
-            Assert.IsTrue(keys.ContainSameElements(expectedKeys));
+            ClassicAssert.AreEqual(keys.Length, expectedKeys.Length);
+            ClassicAssert.IsTrue(keys.ContainSameElements(expectedKeys));
         }
 
         [Test]
@@ -137,16 +138,16 @@ namespace NetGore.Tests.NetGore.Collections
             foreach (var v in t)
             {
                 if (v.Key == ESparse.c)
-                    Assert.AreEqual("hello", v.Value);
+                    ClassicAssert.AreEqual("hello", v.Value);
                 else
-                    Assert.AreEqual(null, v.Value);
+                    ClassicAssert.AreEqual(null, v.Value);
             }
 
             var keys = t.Select(x => x.Key).ToArray();
             var expectedKeys = EnumHelper<ESparse>.Values.ToArray();
 
-            Assert.AreEqual(keys.Length, expectedKeys.Length);
-            Assert.IsTrue(keys.ContainSameElements(expectedKeys));
+            ClassicAssert.AreEqual(keys.Length, expectedKeys.Length);
+            ClassicAssert.IsTrue(keys.ContainSameElements(expectedKeys));
         }
 
         [Test]
@@ -192,57 +193,57 @@ namespace NetGore.Tests.NetGore.Collections
         public void GetSetSeqBoolTest()
         {
             var t = EnumTable.Create<ESeq, bool>();
-            Assert.AreEqual(false, t[ESeq.a]);
+            ClassicAssert.AreEqual(false, t[ESeq.a]);
 
             t[ESeq.a] = true;
-            Assert.AreEqual(true, t[ESeq.a]);
+            ClassicAssert.AreEqual(true, t[ESeq.a]);
 
             t[ESeq.d] = true;
-            Assert.AreEqual(true, t[ESeq.d]);
+            ClassicAssert.AreEqual(true, t[ESeq.d]);
 
             t[ESeq.h] = false;
-            Assert.AreEqual(false, t[ESeq.h]);
+            ClassicAssert.AreEqual(false, t[ESeq.h]);
 
             t[ESeq.d] = true;
-            Assert.AreEqual(true, t[ESeq.d]);
+            ClassicAssert.AreEqual(true, t[ESeq.d]);
         }
 
         [Test]
         public void GetSetSeqTest()
         {
             var t = EnumTable.Create<ESeq, object>();
-            Assert.AreEqual(null, t[ESeq.a]);
+            ClassicAssert.AreEqual(null, t[ESeq.a]);
 
             t[ESeq.a] = 5;
-            Assert.AreEqual(5, t[ESeq.a]);
+            ClassicAssert.AreEqual(5, t[ESeq.a]);
 
             t[ESeq.d] = 50;
-            Assert.AreEqual(50, t[ESeq.d]);
+            ClassicAssert.AreEqual(50, t[ESeq.d]);
 
             t[ESeq.h] = "hello";
-            Assert.AreEqual("hello", t[ESeq.h]);
+            ClassicAssert.AreEqual("hello", t[ESeq.h]);
 
             t[ESeq.d] = 123;
-            Assert.AreEqual(123, t[ESeq.d]);
+            ClassicAssert.AreEqual(123, t[ESeq.d]);
         }
 
         [Test]
         public void GetSetSparseTest()
         {
             var t = EnumTable.Create<ESparse, object>();
-            Assert.AreEqual(null, t[ESparse.a]);
+            ClassicAssert.AreEqual(null, t[ESparse.a]);
 
             t[ESparse.a] = 5;
-            Assert.AreEqual(5, t[ESparse.a]);
+            ClassicAssert.AreEqual(5, t[ESparse.a]);
 
             t[ESparse.d] = 50;
-            Assert.AreEqual(50, t[ESparse.d]);
+            ClassicAssert.AreEqual(50, t[ESparse.d]);
 
             t[ESparse.h] = "hello";
-            Assert.AreEqual("hello", t[ESparse.h]);
+            ClassicAssert.AreEqual("hello", t[ESparse.h]);
 
             t[ESparse.d] = 123;
-            Assert.AreEqual(123, t[ESparse.d]);
+            ClassicAssert.AreEqual(123, t[ESparse.d]);
         }
 
         [Test]
@@ -252,10 +253,10 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var v in EnumHelper<ESeq>.Values)
             {
-                Assert.IsTrue(t.IsValidKey(v));
+                ClassicAssert.IsTrue(t.IsValidKey(v));
             }
 
-            Assert.IsFalse(t.IsValidKey((ESeq)(-999)));
+            ClassicAssert.IsFalse(t.IsValidKey((ESeq)(-999)));
         }
 
         [Test]
@@ -265,10 +266,10 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var v in EnumHelper<ESeq>.Values)
             {
-                Assert.IsTrue(t.IsValidKey(v));
+                ClassicAssert.IsTrue(t.IsValidKey(v));
             }
 
-            Assert.IsFalse(t.IsValidKey((ESeq)(-999)));
+            ClassicAssert.IsFalse(t.IsValidKey((ESeq)(-999)));
         }
 
         [Test]
@@ -278,49 +279,49 @@ namespace NetGore.Tests.NetGore.Collections
 
             foreach (var v in EnumHelper<ESparse>.Values)
             {
-                Assert.IsTrue(t.IsValidKey(v));
+                ClassicAssert.IsTrue(t.IsValidKey(v));
             }
 
-            Assert.IsFalse(t.IsValidKey((ESparse)(-999)));
+            ClassicAssert.IsFalse(t.IsValidKey((ESparse)(-999)));
         }
 
         [Test]
         public void SetAllAndClearSeqBoolTest()
         {
             var t = EnumTable.Create<ESeq, bool>();
-            Assert.IsTrue(t.All(x => x.Value == default(bool)));
+            ClassicAssert.IsTrue(t.All(x => x.Value == default(bool)));
 
             t.SetAll(true);
-            Assert.IsTrue(t.All(x => x.Value));
+            ClassicAssert.IsTrue(t.All(x => x.Value));
 
             t.Clear();
-            Assert.IsTrue(t.All(x => x.Value == default(bool)));
+            ClassicAssert.IsTrue(t.All(x => x.Value == default(bool)));
         }
 
         [Test]
         public void SetAllAndClearSeqTest()
         {
             var t = EnumTable.Create<ESeq, string>();
-            Assert.IsTrue(t.All(x => x.Value == null));
+            ClassicAssert.IsTrue(t.All(x => x.Value == null));
 
             t.SetAll("hi");
-            Assert.IsTrue(t.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t.All(x => x.Value == "hi"));
 
             t.Clear();
-            Assert.IsTrue(t.All(x => x.Value == null));
+            ClassicAssert.IsTrue(t.All(x => x.Value == null));
         }
 
         [Test]
         public void SetAllAndClearSparseTest()
         {
             var t = EnumTable.Create<ESparse, string>();
-            Assert.IsTrue(t.All(x => x.Value == null));
+            ClassicAssert.IsTrue(t.All(x => x.Value == null));
 
             t.SetAll("hi");
-            Assert.IsTrue(t.All(x => x.Value == "hi"));
+            ClassicAssert.IsTrue(t.All(x => x.Value == "hi"));
 
             t.Clear();
-            Assert.IsTrue(t.All(x => x.Value == null));
+            ClassicAssert.IsTrue(t.All(x => x.Value == null));
         }
 
         [Test]
@@ -330,21 +331,21 @@ namespace NetGore.Tests.NetGore.Collections
             bool o;
 
             var r = t.TryGetValue(ESeq.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual(false, o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual(false, o);
 
             r = t.TrySetValue(ESeq.a, true);
-            Assert.IsTrue(r);
+            ClassicAssert.IsTrue(r);
 
             r = t.TryGetValue(ESeq.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual(true, o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual(true, o);
 
             r = t.TryGetValue((ESeq)(-999), out o);
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
 
             r = t.TrySetValue((ESeq)(-999), true);
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
         }
 
         [Test]
@@ -354,21 +355,21 @@ namespace NetGore.Tests.NetGore.Collections
             object o;
 
             var r = t.TryGetValue(ESeq.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual(null, o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual(null, o);
 
             r = t.TrySetValue(ESeq.a, "asdf");
-            Assert.IsTrue(r);
+            ClassicAssert.IsTrue(r);
 
             r = t.TryGetValue(ESeq.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual("asdf", o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual("asdf", o);
 
             r = t.TryGetValue((ESeq)(-999), out o);
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
 
             r = t.TrySetValue((ESeq)(-999), "asdf");
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
         }
 
         [Test]
@@ -378,21 +379,21 @@ namespace NetGore.Tests.NetGore.Collections
             object o;
 
             var r = t.TryGetValue(ESparse.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual(null, o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual(null, o);
 
             r = t.TrySetValue(ESparse.a, "asdf");
-            Assert.IsTrue(r);
+            ClassicAssert.IsTrue(r);
 
             r = t.TryGetValue(ESparse.a, out o);
-            Assert.IsTrue(r);
-            Assert.AreEqual("asdf", o);
+            ClassicAssert.IsTrue(r);
+            ClassicAssert.AreEqual("asdf", o);
 
             r = t.TryGetValue((ESparse)(-999), out o);
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
 
             r = t.TrySetValue((ESparse)(-999), "asdf");
-            Assert.IsFalse(r);
+            ClassicAssert.IsFalse(r);
         }
 
         #endregion

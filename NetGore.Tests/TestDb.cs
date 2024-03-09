@@ -1,7 +1,8 @@
 ﻿using System.Data.Common;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+
 using MySql.Data.MySqlClient;
+
 using NetGore.Db.ClassCreator;
 
 namespace NetGore.Tests
@@ -11,44 +12,29 @@ namespace NetGore.Tests
     /// </summary>
     public static class TestDb
     {
-        static string _connectionString;
+        static string? _connectionString;
 
         /// <summary>
         /// Gets the database to run the tests on.
         /// </summary>
-        public static string Database
-        {
-            get { return "netgoretests"; }
-        }
+        public static string Database => "netgoretests";
 
         /// <summary>
         /// Gets the database host.
         /// </summary>
-        public static string Host
-        {
-            get { return "localhost"; }
-        }
+        public static string Host => "localhost";
 
         /// <summary>
         /// Gets the database user's password.
         /// </summary>
-        public static string Password
-        {
-            get { return "password"; }
-        }
+        public static string Password => "password";
 
-        public static uint Port
-        {
-            get { return 3306; }
-        }
+        public static uint Port => 3306;
 
         /// <summary>
         /// Gets the database user.
         /// </summary>
-        public static string User
-        {
-            get { return "root"; }
-        }
+        public static string User => "root";
 
         /// <summary>
         /// Closes a connection to the test database.
@@ -65,10 +51,7 @@ namespace NetGore.Tests
         /// Creates a <see cref="MySqlClassGenerator"/> for the test database.
         /// </summary>
         /// <returns>A <see cref="MySqlClassGenerator"/> for the test database.</returns>
-        public static MySqlClassGenerator CreateMySqlClassGenerator()
-        {
-            return new MySqlClassGenerator(Host, User, Password, Database, Port);
-        }
+        public static MySqlClassGenerator CreateMySqlClassGenerator() => new MySqlClassGenerator(Host, User, Password, Database, Port);
 
         /// <summary>
         /// Executes a raw query.

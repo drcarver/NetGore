@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Collections
 {
@@ -80,7 +81,7 @@ namespace NetGore.Tests.Collections
             for (var i = 1; i < 10; i++)
             {
                 var x = l.IndexOf(i);
-                Assert.AreEqual(i, l[x]);
+                ClassicAssert.AreEqual(i, l[x]);
             }
         }
 
@@ -99,7 +100,7 @@ namespace NetGore.Tests.Collections
             {
                 var x = l[i];
                 l[i] = x + 1;
-                Assert.AreEqual(x + 1, l[i]);
+                ClassicAssert.AreEqual(x + 1, l[i]);
             }
         }
 

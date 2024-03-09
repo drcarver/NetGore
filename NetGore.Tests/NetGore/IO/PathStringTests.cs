@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.NetGore.IO
 {
@@ -12,19 +13,19 @@ namespace NetGore.Tests.NetGore.IO
         [Test]
         public void BackRootTest()
         {
-            Assert.AreEqual(new PathString(@"C:\"), new PathString(@"C:\One").Back());
+            ClassicAssert.AreEqual(new PathString(@"C:\"), new PathString(@"C:\One").Back());
         }
 
         [Test]
         public void BackTest()
         {
-            Assert.AreEqual(new PathString(@"C:\One"), new PathString(@"C:\One\Two").Back());
+            ClassicAssert.AreEqual(new PathString(@"C:\One"), new PathString(@"C:\One\Two").Back());
         }
 
         [Test]
         public void EqualsTest()
         {
-            Assert.AreEqual(new PathString(@"C:\One\Two"), new PathString(@"C:\One\Two"));
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), new PathString(@"C:\One\Two"));
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One");
             var s2 = s.Join(@"Two");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -40,7 +41,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One\");
             var s2 = s.Join(@"Two");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -48,7 +49,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One");
             var s2 = s.Join(@"\Two");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -56,7 +57,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One\");
             var s2 = s.Join(@"\Two");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -64,7 +65,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One\");
             var s2 = s.Join(@"\Two\");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -72,7 +73,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One\");
             var s2 = s.Join(@"Two\");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -80,7 +81,7 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One");
             var s2 = s.Join(@"Two\");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
@@ -88,14 +89,14 @@ namespace NetGore.Tests.NetGore.IO
         {
             var s = new PathString(@"C:\One");
             var s2 = s.Join(@"\Two\");
-            Assert.AreEqual(new PathString(@"C:\One\Two"), s2);
+            ClassicAssert.AreEqual(new PathString(@"C:\One\Two"), s2);
         }
 
         [Test]
         public void ToStringEqualsStringTest()
         {
-            Assert.AreEqual(@"C:\One\Two", new PathString(@"C:\One\Two").ToString());
-            Assert.AreEqual(@"C:\One\Two", new PathString(@"C:\One\Two\").ToString());
+            ClassicAssert.AreEqual(@"C:\One\Two", new PathString(@"C:\One\Two").ToString());
+            ClassicAssert.AreEqual(@"C:\One\Two", new PathString(@"C:\One\Two\").ToString());
         }
 
         #endregion

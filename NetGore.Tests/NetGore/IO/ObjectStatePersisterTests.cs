@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using NetGore.IO;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.IO
 {
@@ -97,9 +98,9 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -137,9 +138,9 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -177,9 +178,9 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -239,8 +240,8 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -273,7 +274,7 @@ namespace NetGore.Tests.IO
                     {
                         var newItem = new InterfaceTester();
                         settingsReader.Add("item" + Parser.Invariant.ToString(i), newItem);
-                        Assert.IsTrue(items[i].HaveSameValues(newItem), "Index: {0}", i);
+                        ClassicAssert.IsTrue(items[i].HaveSameValues(newItem), "Index: {0}", i);
                     }
                 }
             }
@@ -319,9 +320,9 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -359,9 +360,9 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
-            Assert.IsTrue(t3.HaveSameValues(retT3));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t3.HaveSameValues(retT3));
         }
 
         [Test]
@@ -395,8 +396,8 @@ namespace NetGore.Tests.IO
                     File.Delete(filePath);
             }
 
-            Assert.IsTrue(t1.HaveSameValues(retT1));
-            Assert.IsTrue(t2.HaveSameValues(retT2));
+            ClassicAssert.IsTrue(t1.HaveSameValues(retT1));
+            ClassicAssert.IsTrue(t2.HaveSameValues(retT2));
         }
 
         [Test]
@@ -429,7 +430,7 @@ namespace NetGore.Tests.IO
                     {
                         var newItem = new InterfaceTester();
                         settingsReader.Add("item" + Parser.Invariant.ToString(i), newItem);
-                        Assert.IsTrue(items[i].HaveSameValues(newItem), "Index: {0}", i);
+                        ClassicAssert.IsTrue(items[i].HaveSameValues(newItem), "Index: {0}", i);
                     }
                 }
             }

@@ -1,6 +1,9 @@
 ﻿using System.Drawing;
 using System.Linq;
+
+using NetGore.Core;
 using NetGore.Properties;
+
 using SFML.Graphics;
 
 namespace NetGore.Graphics

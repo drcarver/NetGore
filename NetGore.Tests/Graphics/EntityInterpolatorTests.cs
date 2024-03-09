@@ -3,6 +3,8 @@ using System.Linq;
 using NetGore.Graphics;
 using NetGore.World;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
+
 using SFML.Graphics;
 
 namespace NetGore.Tests.Graphics
@@ -20,15 +22,15 @@ namespace NetGore.Tests.Graphics
 
             e.Position = new Vector2(0);
             i.Update(e, 1);
-            Assert.AreEqual(Vector2.Zero, i.DrawPosition);
+            ClassicAssert.AreEqual(Vector2.Zero, i.DrawPosition);
 
             e.Move(new Vector2(16));
             i.Update(e, 1);
-            Assert.AreEqual(new Vector2(16), i.DrawPosition);
+            ClassicAssert.AreEqual(new Vector2(16), i.DrawPosition);
 
             e.Move(new Vector2(100));
             i.Update(e, 1);
-            Assert.AreEqual(new Vector2(116), i.DrawPosition);
+            ClassicAssert.AreEqual(new Vector2(116), i.DrawPosition);
         }
 
         [Test]
@@ -39,22 +41,22 @@ namespace NetGore.Tests.Graphics
 
             e.Position = new Vector2(0);
             i.Update(e, 1);
-            Assert.AreEqual(Vector2.Zero, i.DrawPosition);
+            ClassicAssert.AreEqual(Vector2.Zero, i.DrawPosition);
 
             e.Move(new Vector2(16));
             e.SetVelocity(new Vector2(1));
             i.Update(e, 1);
-            Assert.AreNotEqual(new Vector2(0), i.DrawPosition);
+            ClassicAssert.AreNotEqual(new Vector2(0), i.DrawPosition);
 
             e.Move(new Vector2(100));
             e.SetVelocity(new Vector2(0));
             i.Update(e, 1);
-            Assert.AreNotEqual(new Vector2(16), i.DrawPosition);
+            ClassicAssert.AreNotEqual(new Vector2(16), i.DrawPosition);
 
             var last = i.DrawPosition;
             e.Move(new Vector2(50));
             i.Update(e, 10);
-            Assert.AreNotEqual(last, i.DrawPosition);
+            ClassicAssert.AreNotEqual(last, i.DrawPosition);
         }
 
         #endregion

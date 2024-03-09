@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using NetGore.Collections;
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Collections
 {
@@ -26,10 +27,10 @@ namespace NetGore.Tests.Collections
                 pool.Acquire();
             }
 
-            Assert.AreEqual(25, pool.LiveObjects);
+            ClassicAssert.AreEqual(25, pool.LiveObjects);
 
             pool.Clear();
-            Assert.AreEqual(0, pool.LiveObjects);
+            ClassicAssert.AreEqual(0, pool.LiveObjects);
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace NetGore.Tests.Collections
                 expectedLive++;
             }
 
-            Assert.AreEqual(expectedLive, pool.LiveObjects);
+            ClassicAssert.AreEqual(expectedLive, pool.LiveObjects);
 
             for (var i = 250; i < 150; i -= 2)
             {
@@ -54,7 +55,7 @@ namespace NetGore.Tests.Collections
                 expectedLive--;
             }
 
-            Assert.AreEqual(expectedLive, pool.LiveObjects);
+            ClassicAssert.AreEqual(expectedLive, pool.LiveObjects);
 
             for (var i = 0; i < 50; i += 2)
             {
@@ -62,14 +63,14 @@ namespace NetGore.Tests.Collections
                 expectedLive++;
             }
 
-            Assert.AreEqual(expectedLive, pool.LiveObjects);
+            ClassicAssert.AreEqual(expectedLive, pool.LiveObjects);
 
             foreach (var obj in objs)
             {
                 pool.Free(obj);
             }
 
-            Assert.AreEqual(0, pool.LiveObjects);
+            ClassicAssert.AreEqual(0, pool.LiveObjects);
         }
 
         [Test]
@@ -90,19 +91,19 @@ namespace NetGore.Tests.Collections
                 testObj = pool.Acquire();
             }
 
-            Assert.AreEqual(25, pool.LiveObjects);
+            ClassicAssert.AreEqual(25, pool.LiveObjects);
 
             pool.FreeAll(x => x == null);
-            Assert.AreEqual(25, pool.LiveObjects);
+            ClassicAssert.AreEqual(25, pool.LiveObjects);
 
             pool.FreeAll(x => x == testObj);
-            Assert.AreEqual(24, pool.LiveObjects);
+            ClassicAssert.AreEqual(24, pool.LiveObjects);
 
             pool.FreeAll(x => x == testObj);
-            Assert.AreEqual(24, pool.LiveObjects);
+            ClassicAssert.AreEqual(24, pool.LiveObjects);
 
             pool.FreeAll(x => x != testObj);
-            Assert.AreEqual(0, pool.LiveObjects);
+            ClassicAssert.AreEqual(0, pool.LiveObjects);
         }
 
         [Test]
@@ -131,13 +132,13 @@ namespace NetGore.Tests.Collections
         public void SimpleAllocationTest()
         {
             var pool = CreateTestPool();
-            Assert.AreEqual(0, pool.LiveObjects);
+            ClassicAssert.AreEqual(0, pool.LiveObjects);
 
             var obj = pool.Acquire();
-            Assert.AreEqual(1, pool.LiveObjects);
+            ClassicAssert.AreEqual(1, pool.LiveObjects);
 
             pool.Free(obj);
-            Assert.AreEqual(0, pool.LiveObjects);
+            ClassicAssert.AreEqual(0, pool.LiveObjects);
         }
 
         #endregion
