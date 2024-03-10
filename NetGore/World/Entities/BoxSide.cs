@@ -1,30 +1,27 @@
-using System.Linq;
+namespace NetGore.World;
 
-namespace NetGore.World
+/// <summary>
+/// Represents the side of a box.
+/// </summary>
+public enum BoxSide : byte
 {
     /// <summary>
-    /// Represents the side of a box.
+    /// The left side.
     /// </summary>
-    public enum BoxSide : byte
-    {
-        /// <summary>
-        /// The left side.
-        /// </summary>
-        Left,
+    Left,
 
-        /// <summary>
-        /// The right side.
-        /// </summary>
-        Right,
+    /// <summary>
+    /// The right side.
+    /// </summary>
+    Right,
 
-        /// <summary>
-        /// The top side.
-        /// </summary>
-        Top,
+    /// <summary>
+    /// The top side.
+    /// </summary>
+    Top,
 
-        /// <summary>
-        /// The bottom side.
-        /// </summary>
-        Bottom
-    }
+    /// <summary>
+    /// The bottom side.
+    /// </summary>
+    Bottom
 }

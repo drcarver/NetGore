@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vppYpinGgWGDGNLFCPTgcaSpJtnnrBkcVXoLXrd52CZq8m2MGP3423LF537ifXcCipTYkb+qj2caIRoTz9yaNw==",
+  "dgSpecHash": "nJ8eTzkHr3NTbck4NI7l4WIFol8lzCO2TvY+VfDW/bHXqgq/hWliRHgHolIOsS93XDWDYUyOAM48thEUPTIh7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\drcarver\\Desktop\\netgore\\NetGore\\NetGore\\NetGore.csproj",
+  "projectFilePath": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore\\NetGore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\drcarver\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
     "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
