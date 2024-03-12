@@ -36,3 +36,9 @@ C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\Lidgren.Network.dll
 C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\Lidgren.Network.pdb
 C:\Users\drcarver\Desktop\NetGore\NetGore\obj\Debug\net8.0\NetGore.csproj.Up2Date
 C:\Users\drcarver\Desktop\NetGore\NetGore\obj\Debug\net8.0\ref\NetGore.dll
+C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\NetGore.runtimeconfig.json
+C:\Users\drcarver\Desktop\NetGore\NetGore\obj\Debug\net8.0\NetGore.genruntimeconfig.cache
+C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\NetGore.Core.dll
+C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\NetGore.Database.dll
+C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\NetGore.Core.pdb
+C:\Users\drcarver\Desktop\NetGore\NetGore\bin\Debug\net8.0\NetGore.Database.pdb
