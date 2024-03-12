@@ -19,7 +19,8 @@ namespace DemoGame.Editor
         readonly CharacterID _characterID;
         readonly ICharacterTable _table;
 
-        // TODO: Class is currently unused because displaying persistent Characters in the editor is not yet supported
+        // TODO: Class is currently unused because displaying persistent
+        // Characters in the editor is not yet supported
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EditorCharacter"/> class.
