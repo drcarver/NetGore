@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "JLDYippqkdCZDdDkAaqB1TcyQMFn5MfF3hdj9FzONNO4sqovkPZJg5c7f4eMMFWpoCzPBEvIfuU6Q9acPiNSmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\NetGore.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.2\\microsoft.entityframeworkcore.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\drcarver\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
