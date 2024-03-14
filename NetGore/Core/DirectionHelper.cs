@@ -1,4 +1,7 @@
 using System.Linq;
+
+using NetGore.Core.Enum;
+
 using SFML.Graphics;
 
 namespace NetGore

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using NetGore.Core.Enum;
 using NetGore.IO;
 using NetGore.World;
+
 using SFML.Graphics;
 
 namespace NetGore.Graphics

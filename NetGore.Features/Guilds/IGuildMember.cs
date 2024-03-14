@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace NetGore.Features.Guilds
+﻿namespace NetGore.Features.Guilds
 {
     /// <summary>
     /// Interface for an object that is allowed to be part of a guild.

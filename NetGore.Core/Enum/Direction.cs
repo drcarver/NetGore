@@ -1,6 +1,4 @@
-using System.Linq;
-
-namespace NetGore
+namespace NetGore.Core.Enum
 {
     /// <summary>
     /// A direction.

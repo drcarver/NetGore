@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using NetGore.Core;
+using NetGore.Core.Enum;
 using NetGore.IO;
 
 using SFML.Graphics;

@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 
+using NetGore.Core.Enum;
+
 namespace NetGore.Features.Guilds
 {
     /// <summary>
