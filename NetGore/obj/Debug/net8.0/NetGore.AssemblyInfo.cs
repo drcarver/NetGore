@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetGore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7358428e09c9975487cd7f910f3e508fd52b2c6f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1aabf5378c754646566e5a06d9d0687b5e9992c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetGore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetGore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

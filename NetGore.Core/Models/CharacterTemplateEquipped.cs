@@ -31,5 +31,5 @@ public class CharacterTemplateEquipped : BaseObject, ICharacterTemplateEquipped
     /// </summary>
     [Description("The item the character template has equipped.")]
     [Comment("The item the character template has equipped.")]
-    public required ItemTemplate ItemTemplate
+    public required ItemTemplate ItemTemplate { get; set; }
 }

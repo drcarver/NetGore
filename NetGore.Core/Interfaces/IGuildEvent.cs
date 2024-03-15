@@ -1,4 +1,5 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 
 namespace NetGore.Core.Interfaces;
 
@@ -9,7 +10,7 @@ public interface IGuildEvent
     string? Arg2 { get; set; }
     Character Character { get; set; }
     DateTime Created { get; set; }
-    byte Event { get; set; }
+    GuildEvents Event { get; set; }
     Guild Guild { get; set; }
     Character? TargetCharacter { get; set; }
 }
