@@ -1,6 +1,5 @@
-using System.Linq;
 using NetGore.World;
-using NUnit.Framework;
+
 using NUnit.Framework.Legacy;
 
 using SFML.Graphics;
@@ -17,7 +16,7 @@ namespace NetGore.Tests.NetGore
         {
             var srcSize = new Vector2(4, 4);
             var dstSize = new Vector2(2, 2);
-            ClassicAssert.AreEqual(new Vector2(0, -2), AlignmentHelper.FindOffset(Alignment.BottomLeft, srcSize, dstSize));
+            Assert.That(new Vector2(0, -2) == AlignmentHelper.FindOffset(Alignment.BottomLeft, srcSize, dstSize));
         }
 
         [Test]

@@ -8,12 +8,12 @@ namespace NetGore.Database.Services;
 
 public class ExampleService : IExampleService
 {
-    private readonly IConfigurationRoot config;
+    private readonly IConfigurationRoot? config;
     private readonly ILogger<IExampleService> logger;
     private readonly NETGoreDbContext context;
 
     public ExampleService(ILoggerFactory loggerFactory, 
-        IConfigurationRoot configurationRoot,
+        IConfigurationRoot? configurationRoot,
         NETGoreDbContext dbContext)
     {
         logger = loggerFactory.CreateLogger<ExampleService>();
@@ -23,7 +23,7 @@ public class ExampleService : IExampleService
 
     public void GetExamples()
     {
-        logger.LogInformation($"All examples from database: {config["ConnectionStrings:DefaultConnection"]}");
+        logger.LogInformation($"All examples from database: {config?["ConnectionStrings:DefaultConnection"]}");
 
         var examples = context.Examples
             .OrderBy(e => e.Name)

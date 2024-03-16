@@ -18,10 +18,9 @@ public abstract class BaseObject : IBaseObject
     /// <summary>
     /// The name of the object
     /// </summary>
-    [Required]
     [MaxLength(80)]
     [Comment("The Name of the object.")]
-    public required string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// The Description of the object

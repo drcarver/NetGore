@@ -1,6 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection.Emit;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Models;
+using NetGore.Database.EntityConfigurations;
+using NetGore.Models;
 
 namespace NetGore.Database;
 
@@ -11,9 +16,15 @@ public class NETGoreDbContext : DbContext
 {
     public NETGoreDbContext(DbContextOptions<NETGoreDbContext> options)
         : base(options)
-    { }
+    {
+    }
+
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //     => optionsBuilder
+    //        .UseSqlite($@"Server={DatabaseConstants.DatabasePath}");
 
     public DbSet<Example> Examples { get; set; }
+    public DbSet<Account> Accounts { get; set; }
     public DbSet<RandomTable> RandomTables { get; set; }
     public DbSet<RandomTableEntry> RandomTableEntries { get; set; }
 
@@ -21,17 +32,6 @@ public class NETGoreDbContext : DbContext
     {
         base.OnModelCreating(builder);
 
-        //builder.Entity<Example>()
-        //    .Property(e => e.Name)
-        //    .HasColumnType("varchar(512)");
-
-        //builder.Entity<RandomTableEntity>()
-        //    .HasKey(e => e.Id);
-
-        //builder.Entity<RandomTableEntity>()
-        //    .Property(e => e.Name)
-        //    .IsRequired()
-        //    .HasComment("")
-        //    .HasColumnType("varchar(80)");
+        builder.ApplyConfigurationsFromAssembly(typeof(AccountBan).Assembly);
     }
 }

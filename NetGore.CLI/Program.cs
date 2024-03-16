@@ -13,13 +13,13 @@ var builder = new ConfigurationBuilder()
 var configuration = builder.Build();
 
 // Database
-var optionsBuilder = new DbContextOptionsBuilder<NETGoreDbContext>()
-    .UseSqlite(configuration.GetConnectionString("DefaultConnection"));
+//var optionsBuilder = new DbContextOptionsBuilder<NETGoreDbContext>()
+//    .UseSqlite(configuration.GetConnectionString("DefaultConnection"));
 
-var context = new NETGoreDbContext(optionsBuilder.Options);
+//var context = new NETGoreDbContext(optionsBuilder.Options);
 
-context.Database.EnsureDeleted();
-context.Database.EnsureCreated();
+//context.Database.EnsureDeleted();
+//context.Database.EnsureCreated();
 
 // Services
 var services = new ServiceCollection()
@@ -28,12 +28,12 @@ var services = new ServiceCollection()
         loggingBuilder.AddConsole();
     })
     .AddSingleton(configuration)
-    .AddSingleton(optionsBuilder.Options)
     .AddSingleton<IExampleService, ExampleService>()
-    .AddDbContextPool<NETGoreDbContext>(options => options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
+    .AddDbContextPool<NETGoreDbContext>(options =>
+        options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
     .BuildServiceProvider();
 
-    var logger = (services.GetService<ILoggerFactory>() ?? throw new InvalidOperationException())
+var logger = (services.GetService<ILoggerFactory>() ?? throw new InvalidOperationException())
         .CreateLogger<Program>();
 
     logger.LogInformation($"Starting application at: {DateTime.Now}");
