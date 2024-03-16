@@ -11,6 +11,7 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
     {
         builder?
             .HasComment("Game Account")
+            .HasQueryFilter(p => !p.IsDeleted)
             .HasKey(p => p.Id);
 
         builder?
@@ -43,11 +44,6 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
         builder?
             .Property(p => p.Permissions)
             .HasComment("The permission level bit mask (see UserPermissions enum).");
-
-        builder?
-            .Property(p => p.TimeCreated)
-            .IsRequired()
-            .HasComment("When the account was created.");
 
         builder?
             .Property(p => p.TimeLastLogin)

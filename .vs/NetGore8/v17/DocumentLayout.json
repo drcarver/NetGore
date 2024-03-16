@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\netgore\\alignmenthelpertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\netgore\\alignmenthelpertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\interfaces\\icharacterstatuseffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\interfaces\\icharacterstatuseffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|solutionrelative:netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.database\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|solutionrelative:netgore.database\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.database\\services\\exampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|solutionrelative:netgore.database\\services\\exampleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\characterstatuseffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\characterstatuseffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,62 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ICharacterStatusEffect.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Interfaces\\ICharacterStatusEffect.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Interfaces\\ICharacterStatusEffect.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Interfaces\\ICharacterStatusEffect.cs",
+              "RelativeToolTip": "NetGore.Core\\Interfaces\\ICharacterStatusEffect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T22:27:04.327Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AlignmentHelperTests.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\NetGore\\AlignmentHelperTests.cs",
-              "RelativeDocumentMoniker": "NetGore.Tests\\NetGore\\AlignmentHelperTests.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\NetGore\\AlignmentHelperTests.cs",
-              "RelativeToolTip": "NetGore.Tests\\NetGore\\AlignmentHelperTests.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T02:07:01.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
-              "RelativeDocumentMoniker": "NetGore.CLI\\Program.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
-              "RelativeToolTip": "NetGore.CLI\\Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Title": "CharacterStatusEffect.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\CharacterStatusEffect.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Models\\CharacterStatusEffect.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\CharacterStatusEffect.cs",
+              "RelativeToolTip": "NetGore.Core\\Models\\CharacterStatusEffect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwAgAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T22:37:30.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "NetGore.Database\\Services\\AccountService.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\Services\\AccountService.cs",
-              "RelativeToolTip": "NetGore.Database\\Services\\AccountService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T22:27:20.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ExampleService.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\Services\\ExampleService.cs",
-              "RelativeDocumentMoniker": "NetGore.Database\\Services\\ExampleService.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\Services\\ExampleService.cs",
-              "RelativeToolTip": "NetGore.Database\\Services\\ExampleService.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAowDEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-15T17:32:15.494Z",
+              "WhenOpened": "2024-03-16T22:25:03.058Z",
               "EditorCaption": ""
             }
           ]

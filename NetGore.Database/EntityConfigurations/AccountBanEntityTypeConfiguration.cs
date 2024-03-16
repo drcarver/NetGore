@@ -5,12 +5,16 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
+/// <summary>
+/// Accounts that are baned from the game
+/// </summary>
 public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<AccountBan>
 {
     public void Configure(EntityTypeBuilder<AccountBan> builder)
     {
         builder?
-            .HasComment("Accounts that is baned from the game")
+            .HasComment("Accounts that are baned from the game")
+            .HasQueryFilter(p => !p.IsDeleted)
             .HasKey(p => p.Id);
 
         builder?
@@ -19,17 +23,12 @@ public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<Accoun
             .HasComment("The primary Key");
 
         builder?
-            .Property(p => p.Account)
-            .HasComment("The account that this ban is for.");
-
-        builder?
-            .Property(p => p.AccountId)
-            .HasComment("The foreign key of account that this ban is for.");
+            .HasOne(p => p.Account);
 
         builder?
             .Property(p => p.Account)
             .IsRequired()
-            .HasComment("The account that this ban is for.");
+            .HasComment("The account this ban is for.");
 
         builder?
             .Property(p => p.EndTime)

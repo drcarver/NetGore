@@ -1,11 +1,6 @@
-﻿using System.Reflection.Emit;
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.EntityFrameworkCore;
 
 using NetGore.Core.Models;
-using NetGore.Database.EntityConfigurations;
-using NetGore.Models;
 
 namespace NetGore.Database;
 
@@ -33,5 +28,36 @@ public class NETGoreDbContext : DbContext
         base.OnModelCreating(builder);
 
         builder.ApplyConfigurationsFromAssembly(typeof(AccountBan).Assembly);
+    }
+
+    public override int SaveChanges()
+    {
+        var changedEntriesCopy = ChangeTracker.Entries()
+                    .Where( e => e.State == EntityState.Added ||
+                            e.State == EntityState.Modified ||
+                            e.State == EntityState.Deleted)
+                    .ToList();
+        var saveTime = DateTime.UtcNow;
+
+        foreach (var entityEntry in changedEntriesCopy)
+        {
+            if (entityEntry.Metadata.FindProperty("CreatedAt") != null 
+                && entityEntry.Property("CreatedAt").CurrentValue == null)
+            {
+                entityEntry.Property("CreatedAt").CurrentValue = saveTime;
+            }
+
+            if (entityEntry.Metadata.FindProperty("UpdatedAt") != null)
+            {
+                entityEntry.Property("UpdatedAt").CurrentValue = saveTime;
+            }
+
+            if (entityEntry.Metadata.FindProperty("IsDeleted") != null
+                && entityEntry.State == EntityState.Deleted)
+            {
+                entityEntry.Property("IsDeleted").CurrentValue = true;
+            }
+        }
+        return base.SaveChanges();
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace NetGore.Core.Interfaces;
+﻿namespace NetGore.Core.Models;
 
-public class ICampaignModule
+public interface ICampaignModule
 {
-    public Guid CampaignId { get; set; }
+    /// <summary>
+    /// The campaign for this module.
+    /// </summary>
+    Campaign? Campaign { get; set; }
 }

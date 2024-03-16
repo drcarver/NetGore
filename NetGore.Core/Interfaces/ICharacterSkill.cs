@@ -4,7 +4,18 @@ namespace NetGore.Core.Interfaces;
 
 public interface ICharacterSkill
 {
-    Character Character { get; set; }
-    Skill Skill { get; set; }
+    /// <summary>
+    /// The character that knows the skill.
+    /// </summary>
+    Character? Character { get; set; }
+
+    /// <summary>
+    /// The skill the character knows.
+    /// </summary>
+    Skill? Skill { get; set; }
+
+    /// <summary>
+    /// When this row was added.
+    /// </summary>
     DateTime TimeAdded { get; set; }
 }

@@ -4,6 +4,13 @@ namespace NetGore.Core.Interfaces;
 
 public interface IActiveTradeItem
 {
-    Character Character { get; set; }
-    Item Item { get; set; }
+    /// <summary>
+    /// The character that added the item.
+    /// </summary>
+    Character? Character { get; set; }
+
+    /// <summary>
+    /// The item the character put down.
+    /// </summary>
+    Item? Item { get; set; }
 }

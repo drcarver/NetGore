@@ -51,13 +51,6 @@ public class Account : BaseObject, IAccount
     public UserPermissions? Permissions { get; set; }
 
     /// <summary>
-    /// When the account was created.
-    /// </summary>
-    [Required]
-    [Description("When the account was created.")]
-    public required DateTime TimeCreated { get; set; }
-
-    /// <summary>
     /// When the account was last logged in to.
     /// </summary>
     [Required]
@@ -77,7 +70,6 @@ public class Account : BaseObject, IAccount
             IPEndPoint? endPoint = socket.LocalEndPoint as IPEndPoint;
             localIP = endPoint?.Address.ToString();
         }
-        TimeCreated = DateTime.UtcNow;
         TimeLastLogin = DateTime.UtcNow;
         CreatorIp = CurrentIp = localIP;
     }

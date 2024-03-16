@@ -1,6 +1,16 @@
-﻿namespace NetGore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class Character : BaseObject, ICharacter
 {
-    public class Character
+    /// <summary>
+    /// Create a new Character
+    /// </summary>
+    [SetsRequiredMembers]
+    protected Character()
     {
     }
 }
