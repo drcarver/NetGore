@@ -5,9 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
+public class AIEntityTypeConfiguration : IEntityTypeConfiguration<AI>
 {
-    public void Configure(EntityTypeBuilder<Example> builder)
+    public void Configure(EntityTypeBuilder<AI> builder)
     {
         #region BaseObject
         builder?

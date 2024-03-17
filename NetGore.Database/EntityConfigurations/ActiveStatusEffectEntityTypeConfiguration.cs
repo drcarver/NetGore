@@ -9,6 +9,7 @@ public class ActiveStatusEffectEntityTypeConfiguration : IEntityTypeConfiguratio
 {
     public void Configure(EntityTypeBuilder<ActiveStatusEffect> builder)
     {
+        #region BaseObject
         builder?
             .HasQueryFilter(p => !p.IsDeleted)
             .HasKey(p => p.Id);
@@ -42,5 +43,6 @@ public class ActiveStatusEffectEntityTypeConfiguration : IEntityTypeConfiguratio
             .Property(p => p.IsDeleted)
             .IsRequired()
             .HasComment("Is it marked for deletion?");
+        #endregion
     }
 }

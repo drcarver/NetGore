@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
 
-namespace NetGore.Core.Models
+namespace NetGore.Core.Models;
+
+public class ActiveStatusEffect : BaseObject, IActiveStatusEffect
 {
-    public class ActiveStatusEffect : BaseObject
+    [SetsRequiredMembers]
+    public ActiveStatusEffect()
     {
-        [SetsRequiredMembers]
-        public ActiveStatusEffect()
-        {
-        }
     }
 }

@@ -5,9 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
+public class AllianceAttackableEntityTypeConfiguration : IEntityTypeConfiguration<AllianceAttackable>
 {
-    public void Configure(EntityTypeBuilder<Example> builder)
+    public void Configure(EntityTypeBuilder<AllianceAttackable> builder)
     {
         #region BaseObject
         builder?
@@ -44,5 +44,21 @@ public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
             .IsRequired()
             .HasComment("Is it marked for deletion?");
         #endregion
+
+        builder?
+            .HasOne(p => p.Alliance);
+
+        builder?
+            .Property(p => p.Alliance)
+            .IsRequired()
+            .HasComment("The alliance.");
+
+        builder?
+            .HasOne(p => p.Attackable);
+
+        builder?
+            .Property(p => p.Attackable)
+            .IsRequired()
+            .HasComment("The alliance that this alliance can attack.");
     }
 }

@@ -5,9 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
+public class ActiveTradeCashEntityTypeConfiguration : IEntityTypeConfiguration<ActiveTradeCash>
 {
-    public void Configure(EntityTypeBuilder<Example> builder)
+    public void Configure(EntityTypeBuilder<ActiveTradeCash> builder)
     {
         #region BaseObject
         builder?
@@ -44,5 +44,17 @@ public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
             .IsRequired()
             .HasComment("Is it marked for deletion?");
         #endregion
+
+        builder?
+            .Property(p => p.Cash)
+            .IsRequired()
+            .HasComment("The amount of cash the character put down.");
+
+        builder?
+            .HasOne(p => p.Character);
+
+        builder?
+            .Property(p => p.Character)
+            .HasComment("The character that put the cash on the trade table.");
     }
 }

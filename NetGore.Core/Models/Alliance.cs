@@ -13,5 +13,4 @@ public class Alliance : BaseObject, IAlliance
     public Alliance()
     {
     }
-
 }

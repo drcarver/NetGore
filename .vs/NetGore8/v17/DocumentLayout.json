@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.database\\entityconfigurations\\activestatuseffectentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|solutionrelative:netgore.database\\entityconfigurations\\activestatuseffectentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.database\\entityconfigurations\\bodyentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59359454-5DF8-4C9A-94CE-67D0A6B7284D}|NetGore.Database\\NetGore.Database.csproj|solutionrelative:netgore.database\\entityconfigurations\\bodyentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\body.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\body.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ActiveStatusEffectEntityTypeConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\EntityConfigurations\\ActiveStatusEffectEntityTypeConfiguration.cs",
-              "RelativeDocumentMoniker": "NetGore.Database\\EntityConfigurations\\ActiveStatusEffectEntityTypeConfiguration.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\EntityConfigurations\\ActiveStatusEffectEntityTypeConfiguration.cs",
-              "RelativeToolTip": "NetGore.Database\\EntityConfigurations\\ActiveStatusEffectEntityTypeConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAAAAAA",
+              "Title": "BodyEntityTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\EntityConfigurations\\BodyEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "NetGore.Database\\EntityConfigurations\\BodyEntityTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Database\\EntityConfigurations\\BodyEntityTypeConfiguration.cs",
+              "RelativeToolTip": "NetGore.Database\\EntityConfigurations\\BodyEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T01:35:03.631Z",
+              "WhenOpened": "2024-03-17T12:55:43.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Body.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Body.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Models\\Body.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Body.cs",
+              "RelativeToolTip": "NetGore.Core\\Models\\Body.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T12:54:06.165Z",
               "EditorCaption": ""
             }
           ]

@@ -4,7 +4,7 @@ namespace NetGore.Core.Interfaces
 {
     public interface IViewBase
     {
-        AIID? AIID { get; set; }
+        AI? AI { get; set; }
         Body Body { get; set; }
         int Cash { get; set; }
         CharacterTemplate CharacterTemplate { get; set; }

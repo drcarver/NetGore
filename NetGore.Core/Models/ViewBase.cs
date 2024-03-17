@@ -15,7 +15,7 @@ public class ViewBase : BaseObject, IViewBase
     /// </summary>
     [Description("The AI used by this character. Null for no AI (does nothing, or is user-controller). Intended for NPCs only.")]
     [Comment("The AI used by this character. Null for no AI (does nothing, or is user-controller). Intended for NPCs only.")]
-    public AIID? AIID { get; set; }
+    public AI? AI { get; set; }
 
     /// <summary>
     /// The body to use to display this character.

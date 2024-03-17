@@ -5,9 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
+public class AppliedPatchesEntityTypeConfiguration : IEntityTypeConfiguration<AppliedPatches>
 {
-    public void Configure(EntityTypeBuilder<Example> builder)
+    public void Configure(EntityTypeBuilder<AppliedPatches> builder)
     {
         #region BaseObject
         builder?
@@ -44,5 +44,13 @@ public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<Example>
             .IsRequired()
             .HasComment("Is it marked for deletion?");
         #endregion
+
+        builder?
+            .Property(p => p.DateApplied)
+            .HasComment("The datetime the patch was applied.");
+
+        builder?
+            .Property(p => p.FileName)
+            .HasComment("The filename of the patch that was applied.");
     }
 }
