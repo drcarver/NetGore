@@ -5,9 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
+public class AccountCharacterEntityTypeConfiguration : IEntityTypeConfiguration<AccountCharacter>
 {
-    public void Configure(EntityTypeBuilder<Account> builder)
+    public void Configure(EntityTypeBuilder<AccountCharacter> builder)
     {
         builder?
             .HasQueryFilter(p => !p.IsDeleted)
@@ -44,34 +44,21 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
             .HasComment("Is it marked for deletion?");
 
         builder?
-            .Property(p => p.CreatorIp)
-            .IsRequired()
-            .HasComment("The IP address that created the account.");
+            .HasOne(p => p.Account);
+            
+        builder?
+            .Property(p => p.Account)
+            .HasComment("The account the character is on.");
 
         builder?
-            .Property(p => p.CurrentIp)
-            .IsRequired()
-            .HasComment("IP address currently logged in to the account, or null if nobody is logged in.");
+            .HasOne(p => p.Character);
 
         builder?
-            .Property(p => p.Email)
-            .HasComment("The email address.");
+            .Property(p => p.Character)
+            .HasComment("The character in the account.");
 
         builder?
-            .Property(p => p.Friends)
-            .HasComment("A list of friends that the user has.");
-
-        builder?
-            .Property(p => p.Password)
-            .HasComment("The account password (MD5 hashed).");
-
-        builder?
-            .Property(p => p.Permissions)
-            .HasComment("The permission level bit mask (see UserPermissions enum).");
-
-        builder?
-            .Property(p => p.TimeLastLogin)
-            .IsRequired()
-            .HasComment("When the account was last logged in to.");
+            .Property(p => p.TimeDeleted)
+            .HasComment("When the character was removed from the account (NULL if not removed).");
     }
 }

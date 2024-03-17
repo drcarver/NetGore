@@ -5,12 +5,9 @@ using NetGore.Core.Models;
 
 namespace NetGore.Database.EntityConfigurations;
 
-/// <summary>
-/// A example entity
-/// </summary>
-public class ExampleEntityTypeConfiguration : IEntityTypeConfiguration<AccountBan>
+public class ActiveStatusEffectEntityTypeConfiguration : IEntityTypeConfiguration<ActiveStatusEffect>
 {
-    public void Configure(EntityTypeBuilder<AccountBan> builder)
+    public void Configure(EntityTypeBuilder<ActiveStatusEffect> builder)
     {
         builder?
             .HasQueryFilter(p => !p.IsDeleted)

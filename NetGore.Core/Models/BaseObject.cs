@@ -40,13 +40,13 @@ public abstract class BaseObject : IBaseObject
     /// Date and Time the object was created
     /// </summary>
     [Description("Date and Time the object was created")]
-    public DateTime CreatedAt { get; }
+    public DateTime CreatedAt { get; set;  }
 
     /// <summary>
     /// Date and Time the object was last updated
     /// </summary>
     [Description("Date and Time the object was last updated")]
-    protected DateTime UpdatedAt { get; }
+    public DateTime UpdatedAt { get; set; }
 
     /// <summary>
     /// Create a new Account

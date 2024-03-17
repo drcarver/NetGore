@@ -13,7 +13,6 @@ public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<Accoun
     public void Configure(EntityTypeBuilder<AccountBan> builder)
     {
         builder?
-            .HasComment("Accounts that are baned from the game")
             .HasQueryFilter(p => !p.IsDeleted)
             .HasKey(p => p.Id);
 
@@ -21,6 +20,31 @@ public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<Accoun
             .Property(p => p.Id)
             .IsRequired()
             .HasComment("The primary Key");
+
+        builder?
+            .Property(p => p.Name)
+            .HasMaxLength(80)
+            .IsRequired()
+            .HasComment("The name");
+
+        builder?
+            .Property(p => p.Description)
+            .HasComment("The description");
+
+        builder?
+            .Property(p => p.UpdatedAt)
+            .IsRequired()
+            .HasComment("The date and time last updated");
+
+        builder?
+            .Property(p => p.CreatedAt)
+            .IsRequired()
+            .HasComment("The date and time created");
+
+        builder?
+            .Property(p => p.IsDeleted)
+            .IsRequired()
+            .HasComment("Is it marked for deletion?");
 
         builder?
             .HasOne(p => p.Account);

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Interfaces;
@@ -15,24 +14,10 @@ public class AccountCharacter : BaseObject, IAccountCharacter
     public Account? Account { get; set; }
 
     /// <summary>
-    /// The account the character is on.
-    /// </summary>
-    [Description("The Id of the account the character is on.")]
-    [ForeignKey(nameof(Account))]
-    public Guid? AccountId { get; set; }
-
-    /// <summary>
     /// The character in the account.
     /// </summary>
     [Description("The character in the account.")]
     public Character? Character { get; set; }
-
-    /// <summary>
-    /// The character in the account.
-    /// </summary>
-    [Description("The character in the account.")]
-    [ForeignKey(nameof(Character))]
-    public Guid? CharacterId { get; set; }
 
     /// <summary>
     /// When the character was removed from the account 
