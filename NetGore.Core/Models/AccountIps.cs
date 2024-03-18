@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AccountIps : BaseObject, IAccountIps
+public class AccountIP : BaseObject, IAccountIP
 {
     /// <summary>
     /// The account.
@@ -14,10 +14,16 @@ public class AccountIps : BaseObject, IAccountIps
     public Account? Account { get; set; }
 
     /// <summary>
+    /// The account Id.
+    /// </summary>
+    [Description("The account Id.")]
+    public Guid? AccountId { get; set; }
+
+    /// <summary>
     /// The IP that logged into the account.
     /// </summary>
     [Description("The IP that logged into the account.")]
-    public int Ip { get; set; }
+    public string? IP { get; set; }
 
     /// <summary>
     /// When this IP last logged into this account.
@@ -29,7 +35,7 @@ public class AccountIps : BaseObject, IAccountIps
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public AccountIps()
+    public AccountIP()
     {
     }
 }

@@ -1,5 +1,15 @@
-﻿namespace NetGore.Core.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
 
-public class NPCChatDialog : BaseObject
+namespace NetGore.Core.Models;
+
+public class NPCChatDialog : BaseObject, INPCChatDialog
 {
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected NPCChatDialog()
+    {
+    }
 }

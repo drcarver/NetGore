@@ -1,10 +1,18 @@
 ﻿using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces
+namespace NetGore.Core.Interfaces;
+
+public interface ICharacterTemplateQuestProvider
 {
-    public interface ICharacterTemplateQuestProvider
-    {
-        CharacterTemplate CharacterTemplate { get; set; }
-        Quest Quest { get; set; }
-    }
+    /// <summary>
+    /// The character template.
+    /// </summary>
+    CharacterTemplate? CharacterTemplate { get; set; }
+
+    /// <summary>
+    /// The quest provided by this character template. 
+    /// Only applies for valid quest givers (that is, 
+    /// not users).
+    /// </summary>
+    Quest? Quest { get; set; }
 }

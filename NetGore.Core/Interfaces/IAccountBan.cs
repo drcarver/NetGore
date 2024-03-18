@@ -26,12 +26,12 @@ public interface IAccountBan
     /// Name of the person or system that issued this ban 
     /// (not strongly typed at all).".
     /// </summary>
-    string IssuedBy { get; set; }
+    string? IssuedBy { get; set; }
 
     /// <summary>
     /// The reason why this account was banned.
     /// </summary>
-    string Reason { get; set; }
+    string? Reason { get; set; }
 
     /// <summary>
     /// When this ban started.

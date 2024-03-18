@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Interfaces;
 
@@ -13,23 +11,27 @@ public class CharacterTemplateEquipped : BaseObject, ICharacterTemplateEquipped
     /// The chance of the item being equipped when a 
     /// character is instantiated from this template.
     /// </summary>
-    [Required]
     [Description("The chance of the item being equipped when a character is instantiated from this template.")]
-    [Comment("The chance of the item being equipped when a character is instantiated from this template.")]
-    public required ItemChance Chance { get; set; }
+    public ItemChance? Chance { get; set; }
 
     /// <summary>
     /// The character template.
     /// </summary>
-    [Required]
     [Description("The character template.")]
-    [Comment("The character template.")]
-    public required CharacterTemplate CharacterTemplate { get; set; }
+    public CharacterTemplate? CharacterTemplate { get; set; }
 
     /// <summary>
     /// The item the character template has equipped.
     /// </summary>
     [Description("The item the character template has equipped.")]
-    [Comment("The item the character template has equipped.")]
-    public required ItemTemplate ItemTemplate { get; set; }
+    public ItemTemplate? ItemTemplate { get; set; }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected CharacterTemplateEquipped()
+    {
+       
+    }
 }

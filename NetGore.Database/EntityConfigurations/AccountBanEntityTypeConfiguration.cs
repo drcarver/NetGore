@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection.Emit;
+using System.Reflection.Metadata;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using NetGore.Core.Models;
@@ -14,6 +17,8 @@ public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<Accoun
     {
         builder?
             .HasQueryFilter(p => !p.IsDeleted)
+            .HasOne(p => p.Account)
+            .(a => a.AccountId)
             .HasKey(p => p.Id);
 
         builder?
@@ -45,9 +50,6 @@ public class AccountBanEntityTypeConfiguration : IEntityTypeConfiguration<Accoun
             .Property(p => p.IsDeleted)
             .IsRequired()
             .HasComment("Is it marked for deletion?");
-
-        builder?
-            .HasOne(p => p.Account);
 
         builder?
             .Property(p => p.Account)

@@ -1,6 +1,15 @@
-﻿namespace NetGore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class Map : BaseObject, IMap
 {
-    public class Map
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected Map()
     {
     }
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
@@ -8,40 +7,53 @@ namespace NetGore.Database.Services;
 
 public class ExampleService : IExampleService
 {
-    private readonly IConfigurationRoot? config;
+    /// <summary>
+    /// The injected logger for the service. 
+    /// </summary>
     private readonly ILogger<IExampleService> logger;
+
+    /// <summary>
+    /// The injected database context
+    /// </summary>
     private readonly NETGoreDbContext context;
 
+    /// <summary>
+    /// The Example service gets or updates the
+    /// example table
+    /// </summary>
+    /// <param name="loggerFactory"></param>
+    /// <param name="dbContext"></param>
     public ExampleService(ILoggerFactory loggerFactory, 
-        IConfigurationRoot? configurationRoot,
         NETGoreDbContext dbContext)
     {
         logger = loggerFactory.CreateLogger<ExampleService>();
-        config = configurationRoot;
         context = dbContext;
     }
 
-    public void GetExamples()
+    /// <summary>
+    /// Get the list of examples
+    /// </summary>
+    public List<Example> GetExamples()
     {
-        logger.LogInformation($"All examples from database: {config?["ConnectionStrings:DefaultConnection"]}");
-
-        var examples = context.Examples
+        logger.LogInformation($"All examples from database");
+        
+        return context.Examples
             .OrderBy(e => e.Name)
             .ToList();
-
-        foreach (var example in examples)
-        {
-            logger.LogInformation($"Name: {example.Name}");
-        }
     }
 
-    public void AddExample(string name)
+    /// <summary>
+    /// Add a new example to the database
+    /// </summary>
+    /// <param name="name">The name of the example</param>
+    /// <param name="description">The description of the example</param>
+    public void AddExample(string name, string? description)
     {
         logger.LogInformation($"Adding example: {name}");
-
         var example = new Example()
         {
-            Name = name
+            Name = name,
+            Description = description
         };
 
         context.Examples.Add(example);

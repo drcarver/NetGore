@@ -4,6 +4,13 @@ namespace NetGore.Core.Interfaces;
 
 public interface IEventCountersItemTemplate
 {
+    /// <summary>
+    /// The event counter.
+    /// </summary>
     int Counter { get; set; }
-    ItemTemplate ItemTemplate { get; set; }
+
+    /// <summary>
+    /// The template of the item the event occured on.
+    /// </summary>
+    ItemTemplate? ItemTemplate { get; set; }
 }

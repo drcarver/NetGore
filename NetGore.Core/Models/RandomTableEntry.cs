@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Interfaces;
 
@@ -9,17 +10,26 @@ public class RandomTableEntry : BaseObject, IRandomTableEntry
     /// <summary>
     /// The lower range of the dice roll for the table entry
     /// </summary>
-    [Comment("The Lower range of the dice roll.")]
+    [Description("The Lower range of the dice roll.")]
     public int LowerRange { get; set; }
 
     /// <summary>
     /// The upper range of the dice roll for the table entry
     /// </summary>
-    [Comment("The Upper range of the dice roll.")]
+    [Description("The Upper range of the dice roll.")]
     public int UpperRange { get; set; }
 
     /// <summary>
     /// The alternate table entry for this row
     /// </summary>
+    [Description("The table to chain too")]
     public RandomTable? AlternateTable { get; set; }
+
+    /// <summary>
+    /// Consructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public RandomTableEntry()
+    {
+    }
 }

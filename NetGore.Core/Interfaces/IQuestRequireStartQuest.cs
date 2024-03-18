@@ -1,10 +1,17 @@
 ﻿using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces
+namespace NetGore.Core.Interfaces;
+
+public interface IQuestRequireStartQuest
 {
-    public interface IQuestRequireStartQuest
-    {
-        Quest Quest { get; set; }
-        Quest ReqQuest { get; set; }
-    }
+    /// <summary>
+    /// The quest that this requirement is for.
+    /// </summary>
+    Quest? Quest { get; set; }
+
+    /// <summary>
+    /// The quest that is required to be finished before 
+    /// this quest can be started.
+    /// </summary>
+    Quest? ReqQuest { get; set; }
 }

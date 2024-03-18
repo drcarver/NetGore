@@ -49,7 +49,7 @@ public abstract class BaseObject : IBaseObject
     public DateTime UpdatedAt { get; set; }
 
     /// <summary>
-    /// Create a new Account
+    /// Constructor
     /// </summary>
     [SetsRequiredMembers]
     protected BaseObject()

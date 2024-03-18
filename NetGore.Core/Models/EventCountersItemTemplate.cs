@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.EntityFrameworkCore;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -12,14 +11,19 @@ public class EventCountersItemTemplate : BaseObject, IEventCountersItemTemplate
     /// The event counter.
     /// </summary>
     [Description("The event counter.")]
-    [Comment("The event counter.")]
     public int Counter { get; set; }
 
     /// <summary>
     /// The template of the item the event occured on.
     /// </summary>
-    [Required]
     [Description("The template of the item the event occured on.")]
-    [Comment("The template of the item the event occured on.")]
-    public required ItemTemplate ItemTemplate { get; set; }
+    public ItemTemplate? ItemTemplate { get; set; }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected EventCountersItemTemplate()
+    {
+    }
 }

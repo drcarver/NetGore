@@ -58,13 +58,25 @@ public class Account : BaseObject, IAccount
     public required DateTime TimeLastLogin { get; set; }
 
     /// <summary>
+    /// Not null if the accounts is banned
+    /// </summary>
+    [Description("Not null if the accounts is banned.")]
+    public AccountBan? AccountBan { get; set; }
+
+    /// <summary>
+    /// The List of IP's that have logged into the account.
+    /// </summary>
+    [Description("The List of IP's that have logged into the account..")]
+    public List<AccountIP>? AccountIPList { get; set; }
+
+    /// <summary>
     /// Create a new Account
     /// </summary>
     [SetsRequiredMembers]
     public Account()
     {
         string? localIP;
-        using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+        using (Socket socket = new(AddressFamily.InterNetwork, SocketType.Dgram, 0))
         {
             socket.Connect("8.8.8.8", 65530);
             IPEndPoint? endPoint = socket.LocalEndPoint as IPEndPoint;

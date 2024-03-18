@@ -2,5 +2,4 @@
 
 public interface IGuild
 {
-    DateTime Created { get; set; }
 }

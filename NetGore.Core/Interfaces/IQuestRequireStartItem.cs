@@ -1,11 +1,22 @@
 ﻿using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces
+namespace NetGore.Core.Interfaces;
+
+public interface IQuestRequireStartItem
 {
-    public interface IQuestRequireStartItem
-    {
-        int Amount { get; set; }
-        ItemTemplate ItemTemplate { get; set; }
-        Quest Quest { get; set; }
-    }
+    /// <summary>
+    /// The amount of the item that is required.
+    /// </summary>
+    int Amount { get; set; }
+
+    /// <summary>
+    /// The template of the item that is required to 
+    /// start the quest.
+    /// </summary>
+    ItemTemplate? ItemTemplate { get; set; }
+
+    /// <summary>
+    /// Quest that this requirement is for.
+    /// </summary>
+    Quest? Quest { get; set; }
 }

@@ -40,4 +40,9 @@ public interface IAccount
     /// When the account was last logged in to.
     /// </summary>
     DateTime TimeLastLogin { get; set; }
+
+    /// <summary>
+    /// Not null if the accounts is banned
+    /// </summary>
+    AccountBan? AccountBan { get; set; }
 }

@@ -1,6 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.EntityFrameworkCore;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -8,9 +7,10 @@ namespace NetGore.Core.Models;
 public class Guild : BaseObject, IGuild
 {
     /// <summary>
-    /// When this guild was created.
+    /// Constructor
     /// </summary>
-    [Description("When this guild was created.")]
-    [Comment("When this guild was created.")]
-    public DateTime Created { get; set; }
+    [SetsRequiredMembers]
+    protected Guild()
+    {
+    }
 }

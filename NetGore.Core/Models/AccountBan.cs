@@ -11,6 +11,12 @@ namespace NetGore.Core.Models;
 public class AccountBan : BaseObject, IAccountBan
 {
     /// <summary>
+    /// The account id that this ban is for.
+    /// </summary>
+    [Description("The account id that this ban is for.")]
+    public Guid? AccountId { get; set; }
+
+    /// <summary>
     /// The account that this ban is for.
     /// </summary>
     [Description("The account that this ban is for.")]

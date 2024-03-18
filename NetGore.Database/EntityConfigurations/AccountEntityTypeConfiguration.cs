@@ -9,6 +9,7 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
 {
     public void Configure(EntityTypeBuilder<Account> builder)
     {
+        #region BaseObject
         builder?
             .HasQueryFilter(p => !p.IsDeleted)
             .HasKey(p => p.Id);
@@ -42,6 +43,7 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
             .Property(p => p.IsDeleted)
             .IsRequired()
             .HasComment("Is it marked for deletion?");
+        #endregion
 
         builder?
             .Property(p => p.CreatorIp)
@@ -68,6 +70,11 @@ public class AccountEntityTypeConfiguration : IEntityTypeConfiguration<Account>
         builder?
             .Property(p => p.Permissions)
             .HasComment("The permission level bit mask (see UserPermissions enum).");
+
+        builder?
+            .Property(p => p.TimeLastLogin)
+            .IsRequired()
+            .HasComment("When the account was last logged in to.");
 
         builder?
             .Property(p => p.TimeLastLogin)

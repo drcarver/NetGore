@@ -2,7 +2,7 @@
 
 namespace NetGore.Core.Interfaces;
 
-public interface IAccountIps
+public interface IAccountIP
 {
     /// <summary>
     /// The account.
@@ -10,9 +10,14 @@ public interface IAccountIps
     Account? Account { get; set; }
 
     /// <summary>
+    /// The account Id.
+    /// </summary>
+    Guid? AccountId { get; set; }
+
+    /// <summary>
     /// The IP that logged into the account.
     /// </summary>
-    int Ip { get; set; }
+    string IP { get; set; }
 
     /// <summary>
     /// When this IP last logged into this account.

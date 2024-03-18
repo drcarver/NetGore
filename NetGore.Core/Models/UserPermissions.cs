@@ -1,12 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
 
-namespace NetGore.Core.Models
+namespace NetGore.Core.Models;
+
+public class UserPermissions : BaseObject, IUserPermissions
 {
-    public class UserPermissions : BaseObject
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public UserPermissions()
     {
-        [SetsRequiredMembers]
-        public UserPermissions()
-        {
-        }
     }
+
 }

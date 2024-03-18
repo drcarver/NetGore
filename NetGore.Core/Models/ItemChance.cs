@@ -1,6 +1,15 @@
-﻿namespace NetGore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class ItemChance : BaseObject, IItemChance
 {
-    public class ItemChance
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected ItemChance()
     {
     }
 }

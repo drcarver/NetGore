@@ -1,11 +1,17 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces
+namespace NetGore.Core.Interfaces;
+
+public interface ICharacterTemplateSkill
 {
-    public interface ICharacterTemplateSkill
-    {
-        CharacterTemplate CharacterTemplate { get; set; }
-        SkillType Skill { get; set; }
-    }
+    /// <summary>
+    /// The character template that knows the skill.
+    /// </summary>
+    CharacterTemplate? CharacterTemplate { get; set; }
+
+    /// <summary>
+    /// The skill the character template knows.
+    /// </summary>
+    SkillType Skill { get; set; }
 }
