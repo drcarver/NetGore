@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\interfaces\\iworldstatscountconsumeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\interfaces\\iworldstatscountconsumeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\worldstatscountconsumeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\worldstatscountconsumeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\world.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\world.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\entityconfigurations\\accountipsentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\entityconfigurations\\accountipsentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +14,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IWorldStatsCountConsumeItem.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Interfaces\\IWorldStatsCountConsumeItem.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Interfaces\\IWorldStatsCountConsumeItem.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Interfaces\\IWorldStatsCountConsumeItem.cs",
-              "RelativeToolTip": "NetGore.Core\\Interfaces\\IWorldStatsCountConsumeItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T21:55:36.209Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "World.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\World.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Models\\World.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\World.cs",
-              "RelativeToolTip": "NetGore.Core\\Models\\World.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "AccountIpsEntityTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\EntityConfigurations\\AccountIpsEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\EntityConfigurations\\AccountIpsEntityTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\EntityConfigurations\\AccountIpsEntityTypeConfiguration.cs",
+              "RelativeToolTip": "NetGore.Data\\EntityConfigurations\\AccountIpsEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAYwDIAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T21:53:47.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WorldStatsCountConsumeItem.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\WorldStatsCountConsumeItem.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Models\\WorldStatsCountConsumeItem.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\WorldStatsCountConsumeItem.cs",
-              "RelativeToolTip": "NetGore.Core\\Models\\WorldStatsCountConsumeItem.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAowAcAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T21:52:47.884Z",
+              "WhenOpened": "2024-03-19T01:40:55.946Z",
               "EditorCaption": ""
             }
           ]

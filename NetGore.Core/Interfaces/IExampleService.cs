@@ -14,5 +14,5 @@ public interface IExampleService
     /// </summary>
     /// <param name="name">The name of the example</param>
     /// <param name="description">The description of the example</param>
-    void AddExample(string name, string? description);
+    void AddExample(string name, string? description = null);
 }

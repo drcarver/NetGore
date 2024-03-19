@@ -4,8 +4,20 @@ namespace NetGore.Core.Interfaces;
 
 public interface IWorldStatsCountNpcKillUser
 {
+    /// <summary>
+    /// The number of times NPCs of this character 
+    /// template have killed the user.
+    /// </summary>
     int Count { get; set; }
-    DateTime LastUpdate { get; set; }
-    CharacterTemplate NPCTemplate { get; set; }
-    Character User { get; set; }
+
+    /// <summary>
+    /// The character template this counter is for.
+    /// </summary>
+    CharacterTemplate? NPCTemplate { get; set; }
+
+    /// <summary>
+    /// The character this counter is for (logically,
+    /// should be a user).
+    /// </summary>
+    Character? User { get; set; }
 }

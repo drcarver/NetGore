@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj" />
     <ProjectReference Include="..\NetGore.Database\NetGore.Database.csproj" />
+    <ProjectReference Include="..\NetGore.Data\NetGore.Data.csproj" />
     <ProjectReference Include="..\NetGore.Models\NetGore.Database.csproj" />
   </ItemGroup>
 

@@ -4,8 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Interfaces;
-using NetGore.Database;
-using NetGore.Database.Services;
+using NetGore.Data;
+using NetGore.Data.Services;
+
 
 // Configuration
 var builder = new ConfigurationBuilder()

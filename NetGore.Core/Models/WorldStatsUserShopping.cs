@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.EntityFrameworkCore;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -14,17 +13,14 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// only be greater for 1 for items that can stack.
     /// </summary>
     [Description("The number of items involved in the transaction. Should always be greater than 0, and should only be greater for 1 for items that can stack.")]
-    [Comment("The number of items involved in the transaction. Should always be greater than 0, and should only be greater for 1 for items that can stack.")]
     public ushort Amount { get; set; }
 
     /// <summary>
     /// The ID of the character that performed this 
     /// transaction with the shop.
     /// </summary>
-    [Required]
     [Description("The ID of the character that performed this transaction with the shop.")]
-    [Comment("The ID of the character that performed this transaction with the shop.")]
-    public required Character Character { get; set; }
+    public Character? Character { get; set; }
 
     /// <summary>
     /// The amount of money that was involved in this 
@@ -32,7 +28,6 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// items for, or how much they bought the items for).
     /// </summary>
     [Description("The amount of money that was involved in this transaction (how much the shopper sold the items for, or how much they bought the items for). ")]
-    [Comment("The amount of money that was involved in this transaction (how much the shopper sold the items for, or how much they bought the items for). ")]
     public int Cost { get; set; }
 
     /// <summary>
@@ -41,14 +36,12 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// has a set item template ID.
     /// </summary>
     [Description("The ID of the item template that the event relates to. Only valid when the item involved has a set item template ID.")]
-    [Comment("The ID of the item template that the event relates to. Only valid when the item involved has a set item template ID.")]
     public ItemTemplate? ItemTemplate { get; set; }
 
     /// <summary>
     /// The ID of the map the event took place on.
     /// </summary>
     [Description("The ID of the map the event took place on.")]
-    [Comment("The ID of the map the event took place on.")]
     public Map? Map { get; set; }
 
     /// <summary>
@@ -57,22 +50,18 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// non-zero, the shopper sold an item to a shop.
     /// </summary>
     [Description("Whether the shop sold to the user, or vise versa. If 0, the shop sold an item to the shopper. If non-zero, the shopper sold an item to a shop.")]
-    [Comment("Whether the shop sold to the user, or vise versa. If 0, the shop sold an item to the shopper. If non-zero, the shopper sold an item to a shop.")]
     public int SaleType { get; set; }
 
     /// <summary>
     /// The ID of the shop the event took place at.
     /// </summary>
-    [Required]
     [Description("The ID of the shop the event took place at.")]
-    [Comment("The ID of the shop the event took place at.")]
-    public required Shop Shop { get; set; }
+    public Shop? Shop { get; set; }
 
     /// <summary>
     /// When this event took place.
     /// </summary>
     [Description("When this event took place.")]
-    [Comment("When this event took place.")]
     public DateTime When { get; set; }
 
     /// <summary>
@@ -81,7 +70,6 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// is not null.
     /// </summary>
     [Description("The map X coordinate of the shopper when this event took place. Only valid when the map_id is not null.")]
-    [Comment("The map X coordinate of the shopper when this event took place. Only valid when the map_id is not null.")]
     public ushort X { get; set; }
 
     /// <summary>
@@ -90,6 +78,13 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// map_id is not null.
     /// </summary>
     [Description("The map Y coordinate of the shopper when this event took place. Only valid when the map_id is not null.")]
-    [Comment("The map Y coordinate of the shopper when this event took place. Only valid when the map_id is not null.")]
     public ushort Y { get; set; }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected WorldStatsUserShopping()
+    {
+    }
 }
