@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Interfaces;
 
@@ -10,11 +10,20 @@ public class Campaign : BaseObject, ICampaign
     /// <summary>
     /// The world for this game
     /// </summary>
-    [Required]
-    [Comment("The World for this game.")]
-    public required World World { get; set; }
+    [Description("The World for this game.")]
+    public World? World { get; set; }
 
-    [Required]
-    [Comment("The campaigns for this game.")]
-    public List<CampaignModule> Campaigns { get; set; } = [];
+    /// <summary>
+    /// The campaigns for this game.
+    /// </summary>
+    [Description("The campaigns for this game.")]
+    public List<CampaignModule>? Campaigns { get; set; } = [];
+
+    /// <summary>
+    /// Create a new Campaign
+    /// </summary>
+    [SetsRequiredMembers]
+    protected Campaign()
+    {
+    }
 }

@@ -1,6 +1,15 @@
-﻿namespace NetGore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class EquipmentSlot : BaseObject, IEquipmentSlot
 {
-    public class EquipmentSlot
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected EquipmentSlot()
     {
     }
 }

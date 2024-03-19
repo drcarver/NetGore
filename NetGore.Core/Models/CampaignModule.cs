@@ -1,15 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace NetGore.Core.Models;
 
-public class CampaignModule : BaseObject
+public class CampaignModule : BaseObject, ICampaignModule
 {
+    /// <summary>
+    /// The campaign Id for this module.
+    /// </summary>
+    [Description("The Campaign Id for this module.")]
+    public Guid CampaignId { get; set; }
+
     /// <summary>
     /// The campaign for this module.
     /// </summary>
-    [Required]
-    [Comment("The Campaign for this module.")]
-    public required Campaign Campaign { get; set; }
+    [Description("The Campaign for this module.")]
+    public Campaign? Campaign { get; set; }
+
+    /// <summary>
+    /// Consructor
+    /// </summary>
+    [SetsRequiredMembers]
+    protected CampaignModule()
+    {
+    }
 }

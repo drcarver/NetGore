@@ -1,4 +1,6 @@
-﻿using NetGore.Core.Interfaces;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
@@ -10,15 +12,20 @@ public class RandomTable : BaseObject, IRandomTable
     public int DiceSides { get; set; } = 100;
 
     /// <summary>
+    /// The total for the dice
+    /// </summary>
+    public int Total { get; set; }
+
+    /// <summary>
     /// The actual table
     /// </summary>
     public List<RandomTableEntry>? Table { get; set; }
 
     /// <summary>
-    /// Get a entry from the table based on a random dice 
-    /// roll
+    /// Get a entry from the table based on a random 
+    /// dice roll
     /// </summary>
-    /// <returns>The selected RandomTableEntry as a BaseObject</returns>
+    /// <returns>The selected RandomTableEntry.</returns>
     public virtual RandomTableEntry? GetRandomEntry()
     {
         if (Table == null)
@@ -27,8 +34,18 @@ public class RandomTable : BaseObject, IRandomTable
         }
 
         Dice dice = new($"1d{DiceSides}");
+        Total = dice.Total;
+
         return Table.FirstOrDefault(t =>
-                        t.LowerRange >= dice.Total
-                     && t.UpperRange <= dice.Total);
+                        t.LowerRange >= Total
+                     && t.UpperRange <= Total);
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public RandomTable()
+    {
     }
 }

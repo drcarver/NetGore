@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lidgren", "Lidgren", "{3C85
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lidgren.Network", "Lidgren\Lidgren.Network\Lidgren.Network.csproj", "{043C2FBC-8647-42B1-88BA-A55E0C234753}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Database", "NetGore.Models\NetGore.Database.csproj", "{725B2E82-34DD-44C3-863A-DA93EF431512}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Core", "NetGore.Core\NetGore.Core.csproj", "{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.CLI", "NetGore.CLI\NetGore.CLI.csproj", "{EC368F4C-C405-4896-A8B6-5382D99F4B24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Core.Tests", "NetGore.Core.Tests\NetGore.Core.Tests.csproj", "{00751636-40FA-4677-981A-3D3743F3F15C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Data", "NetGore.Data\NetGore.Data.csproj", "{184ED70E-8386-42D0-8E06-919CA7C8088B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +49,6 @@ Global
 		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043C2FBC-8647-42B1-88BA-A55E0C234753}.Release|Any CPU.Build.0 = Release|Any CPU
-		{725B2E82-34DD-44C3-863A-DA93EF431512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{725B2E82-34DD-44C3-863A-DA93EF431512}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{725B2E82-34DD-44C3-863A-DA93EF431512}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{725B2E82-34DD-44C3-863A-DA93EF431512}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +57,14 @@ Global
 		{EC368F4C-C405-4896-A8B6-5382D99F4B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC368F4C-C405-4896-A8B6-5382D99F4B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC368F4C-C405-4896-A8B6-5382D99F4B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00751636-40FA-4677-981A-3D3743F3F15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00751636-40FA-4677-981A-3D3743F3F15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00751636-40FA-4677-981A-3D3743F3F15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00751636-40FA-4677-981A-3D3743F3F15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184ED70E-8386-42D0-8E06-919CA7C8088B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184ED70E-8386-42D0-8E06-919CA7C8088B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184ED70E-8386-42D0-8E06-919CA7C8088B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184ED70E-8386-42D0-8E06-919CA7C8088B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

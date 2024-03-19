@@ -4,8 +4,25 @@ namespace NetGore.Core.Interfaces;
 
 public interface ICharacterQuestStatusKills
 {
-    Character Character { get; set; }
-    CharacterTemplate CharacterTemplate { get; set; }
+    /// <summary>
+    /// The character who is doing this quest.
+    /// </summary>
+    Character? Character { get; set; }
+
+    /// <summary>
+    /// The character template that is to be killed for 
+    /// the quest.
+    /// </summary>
+    CharacterTemplate? CharacterTemplate { get; set; }
+
+    /// <summary>
+    /// The current kill count of characters with this 
+    /// template.
+    /// </summary>
     int Count { get; set; }
-    Quest Quest { get; set; }
+
+    /// <summary>
+    /// The quest that the kill count is for.
+    /// </summary>
+    Quest? Quest { get; set; }
 }

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using NetGore.Core;
+using NetGore.Core.Enum;
 using NetGore.IO;
 
 using SFML.Graphics;
@@ -101,8 +102,7 @@ public abstract class WallEntityBase : Entity
     /// </summary>
     [Browsable(true)]
     [Description("The direction which to not allow movement through this wall.")]
-    [DefaultValue(Direction.None)]
-    public Direction DirectionalBlock { get; set; }
+    public Direction DirectionalBlock { get; set; } = Direction.None;
 
     /// <summary>
     /// Gets if the values of this <see cref="WallEntityBase"/> equal the values of another, and if they are of the

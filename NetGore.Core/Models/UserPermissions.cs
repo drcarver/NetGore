@@ -1,6 +1,16 @@
-﻿namespace NetGore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class UserPermissions : BaseObject, IUserPermissions
 {
-    public class UserPermissions
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public UserPermissions()
     {
     }
+
 }

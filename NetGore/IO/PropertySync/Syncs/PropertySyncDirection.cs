@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+
+using NetGore.Core.Enum;
 using NetGore.IO;
 using NetGore.IO.PropertySync;
 

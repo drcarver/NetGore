@@ -845,17 +845,6 @@
         "runtime": {
           "NetGore.Core.dll": {}
         }
-      },
-      "NetGore.Database/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.2",
-          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.2",
-          "Microsoft.Maui.Essentials": "8.0.7",
-          "NetGore.Core": "1.0.0"
-        },
-        "runtime": {
-          "NetGore.Database.dll": {}
-        }
       }
     }
   },
@@ -1270,11 +1259,6 @@
       "sha512": ""
     },
     "NetGore.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "NetGore.Database/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

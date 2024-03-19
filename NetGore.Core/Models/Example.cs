@@ -1,7 +1,16 @@
-﻿namespace NetGore.Core.Models;
+﻿using System.Diagnostics.CodeAnalysis;
 
-public class Example
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+/// <summary>
+/// A simple example for testing
+/// </summary>
+public class Example : BaseObject, IExample
 {
-    public int Id { get; set; }
-    public string? Name { get; set; }
+    [SetsRequiredMembers]
+    public Example() 
+    { 
+    }
 }
