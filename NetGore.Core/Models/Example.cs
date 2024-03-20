@@ -7,7 +7,7 @@ namespace NetGore.Core.Models;
 /// <summary>
 /// A simple example for testing
 /// </summary>
-public class Example : BaseObject, IExample
+public class Example : DataObject, IExample
 {
     [SetsRequiredMembers]
     public Example() 

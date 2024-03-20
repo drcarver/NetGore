@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class ActiveTradeItem : BaseObject, IActiveTradeItem
+public class ActiveTradeItem : DataObject, IActiveTradeItem
 {
     /// <summary>
     /// The character that added the item.

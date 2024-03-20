@@ -30,32 +30,11 @@ public abstract class BaseObject : IBaseObject
     public string? Description { get; set; }
 
     /// <summary>
-    /// Is the object marked for deletion?
-    /// </summary>
-    [Description("Is the object marked for deletion?")]
-    public required bool IsDeleted { get; set; }
-
-    /// <summary>
-    /// Date and Time the object was created
-    /// </summary>
-    [Description("Date and Time the object was created")]
-    public DateTime CreatedAt { get; set; }
-
-    /// <summary>
-    /// Date and Time the object was last updated
-    /// </summary>
-    [Description("Date and Time the object was last updated")]
-    public DateTime UpdatedAt { get; set; }
-
-    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
     protected BaseObject()
     {
         Id = Guid.NewGuid();
-        UpdatedAt = DateTime.UtcNow;
-        CreatedAt = DateTime.UtcNow;
-        IsDeleted = false;
     }
 }

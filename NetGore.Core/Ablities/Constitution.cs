@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using Microsoft.Extensions.Logging;
+
 namespace NetGore.Core.Ablities;
 
 /// <summary>
@@ -12,7 +14,8 @@ public class Constitution : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Constitution()
+    public Constitution(ILogger logger)
+        : base(logger)
     {
         Name = "Constitution";
         Description = "Constitution measures health, stamina, and vital force.";

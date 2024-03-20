@@ -8,7 +8,7 @@ namespace NetGore.Core.Models;
 /// <summary>
 /// Accounts that are baned from the game
 /// </summary>
-public class AccountBan : BaseObject, IAccountBan
+public class AccountBan : DataObject, IAccountBan
 {
     /// <summary>
     /// The account id that this ban is for.

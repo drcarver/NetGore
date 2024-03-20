@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AppliedPatches : BaseObject, IAppliedPatches
+public class AppliedPatches : DataObject, IAppliedPatches
 {
     /// <summary>
     /// The datetime the patch was applied.

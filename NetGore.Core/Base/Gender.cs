@@ -3,8 +3,14 @@ using NetGore.Core.Enum;
 
 namespace NetGore.Core.Base;
 
-public class Gender : BaseObject
+/// <summary>
+/// The gender of the creature
+/// </summary>
+public class Gender : DataObject
 {
+    /// <summary>
+    /// The gender as a enum
+    /// </summary>
     public GenderEnum GenderEnum { get; set; }
 
     /// <summary>

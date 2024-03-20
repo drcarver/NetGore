@@ -6,7 +6,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class ActiveTradeCash : BaseObject, IActiveTradeCash
+public class ActiveTradeCash : DataObject, IActiveTradeCash
 {
     /// <summary>
     /// The amount of cash the character put down.

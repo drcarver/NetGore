@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AccountCharacter : BaseObject, IAccountCharacter
+public class AccountCharacter : DataObject, IAccountCharacter
 {
     /// <summary>
     /// The account the character is on.

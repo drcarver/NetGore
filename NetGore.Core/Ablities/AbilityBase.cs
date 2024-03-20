@@ -2,15 +2,21 @@
 using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Base;
+using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Ablities;
 
-public abstract class AbilityBase : BaseObject
+public abstract class AbilityBase : BaseObject, IAbilityBase
 {
+    /// <summary>
+    /// The injected logger for the service. 
+    /// </summary>
+    private ILogger Logger { get; set; }
+
     /// <summary>
     /// The dice for this ability
     /// </summary>
-    private Dice Dice = new Dice("3d6");
+    private readonly Dice Dice = new Dice("3d6");
 
     /// <summary>
     /// The base ability from the total of dice roll
@@ -58,8 +64,11 @@ public abstract class AbilityBase : BaseObject
     [SetsRequiredMembers]
     public AbilityBase(ILogger logger)
     {
+        Logger = logger;
+
         BaseAbility = Dice.Total;
         Rolls = Dice.Rolls;
+        logger.LogInformation($"{Dice}");
     }
 
 }

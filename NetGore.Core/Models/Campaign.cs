@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class Campaign : BaseObject, ICampaign
+public class Campaign : DataObject, ICampaign
 {
     /// <summary>
     /// The world for this game

@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using Microsoft.Extensions.Logging;
+
 namespace NetGore.Core.Ablities;
 
 /// <summary>
@@ -12,7 +14,8 @@ public class Intelligence : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Intelligence()
+    public Intelligence(ILogger logger)
+        : base(logger)
     {
         Name = "Intelligence";
         Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";

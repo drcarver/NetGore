@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 
-using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Services;

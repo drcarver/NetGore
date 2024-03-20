@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AllianceAttackable : BaseObject, IAllianceAttackable
+public class AllianceAttackable : DataObject, IAllianceAttackable
 {
     /// <summary>
     /// The alliance.

@@ -5,7 +5,7 @@ using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AccountIP : BaseObject, IAccountIP
+public class AccountIP : DataObject, IAccountIP
 {
     /// <summary>
     /// The account.

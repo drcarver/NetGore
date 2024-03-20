@@ -12,11 +12,6 @@ namespace NetGore.Core.Ablities;
 public class Strength : AbilityBase
 {
     /// <summary>
-    /// The injected logger for the service. 
-    /// </summary>
-    private readonly ILogger<Strength> logger;
-
-    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
@@ -26,6 +21,5 @@ public class Strength : AbilityBase
         Name = "Strength";
         Description = "Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force.";
         Abbrieviation = "STR";
-        this.logger = logger;
     }
 }

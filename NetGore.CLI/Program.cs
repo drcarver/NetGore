@@ -3,11 +3,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core;
+using NetGore.Core.Ablities;
 using NetGore.Core.Interfaces;
 using NetGore.Data;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Services;
-
 
 // Configuration
 var builder = new ConfigurationBuilder()
@@ -36,11 +37,19 @@ var services = new ServiceCollection()
         options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
     .BuildServiceProvider();
 
-var logger = (services.GetService<ILoggerFactory>() ?? throw new InvalidOperationException())
+var logger = (services.GetService<ILoggerFactory>() 
+        ?? throw new InvalidOperationException())
         .CreateLogger<Program>();
 
-    logger.LogInformation($"Starting application at: {DateTime.Now}");
-    logger.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
+if (logger != null)
+{
+    var ability = new Strength(logger);
+    logger?.LogInformation(new Dice("1d10").ToString());
+    logger?.LogInformation(new Dice("3d6+3").ToString());
+}
+
+logger?.LogInformation($"Starting application at: {DateTime.Now}");
+logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
 var genderService = services.GetService<IGenderService>();
 var gender = genderService?.GetGender();

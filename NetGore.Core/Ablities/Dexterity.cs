@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using Microsoft.Extensions.Logging;
+
 namespace NetGore.Core.Ablities;
 
 /// <summary>
@@ -11,7 +13,8 @@ public class Dexterity : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Dexterity()
+    public Dexterity(ILogger logger)
+        : base(logger)
     {
         Name = "Dexterity";
         Description = "Dexterity measures agility, reflexes, and balance.";
