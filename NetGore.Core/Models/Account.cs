@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Net;
 
 using NetGore.Core.Interfaces;
+using NetGore.Core.Base;
 
 namespace NetGore.Core.Models;
 

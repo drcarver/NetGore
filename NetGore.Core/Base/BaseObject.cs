@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-
 using NetGore.Core.Interfaces;
 
-namespace NetGore.Core.Models;
+namespace NetGore.Core.Base;
 
 /// <summary>
 /// The baseobject for all models
@@ -40,7 +39,7 @@ public abstract class BaseObject : IBaseObject
     /// Date and Time the object was created
     /// </summary>
     [Description("Date and Time the object was created")]
-    public DateTime CreatedAt { get; set;  }
+    public DateTime CreatedAt { get; set; }
 
     /// <summary>
     /// Date and Time the object was last updated

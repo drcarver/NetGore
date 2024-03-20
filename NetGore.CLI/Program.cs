@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Interfaces;
 using NetGore.Data;
+using NetGore.Data.Interfaces;
 using NetGore.Data.Services;
 
 
@@ -30,6 +31,7 @@ var services = new ServiceCollection()
     })
     .AddSingleton(configuration)
     .AddSingleton<IExampleService, ExampleService>()
+    .AddSingleton<IGenderService, GenderService>()
     .AddDbContextPool<NETGoreDbContext>(options =>
         options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
     .BuildServiceProvider();
@@ -40,9 +42,12 @@ var logger = (services.GetService<ILoggerFactory>() ?? throw new InvalidOperatio
     logger.LogInformation($"Starting application at: {DateTime.Now}");
     logger.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
+var genderService = services.GetService<IGenderService>();
+var gender = genderService?.GetGender();
+
 // Example Service
-var service = services.GetService<IExampleService>();
-    service?.AddExample("Test A");
-    service?.AddExample("Test B");
-    service?.AddExample("Test C");
-    service?.GetExamples();
+//var service = services.GetService<IExampleService>();
+//    service?.AddExample("Test A");
+//    service?.AddExample("Test B");
+//    service?.AddExample("Test C");
+//    service?.GetExamples();
