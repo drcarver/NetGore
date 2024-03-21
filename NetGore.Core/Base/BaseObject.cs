@@ -8,7 +8,7 @@ namespace NetGore.Core.Base;
 /// <summary>
 /// The baseobject for all models
 /// </summary>
-public abstract class BaseObject : IBaseObject
+public class BaseObject : IBaseObject
 {
     /// <summary>
     /// The Id for the object
@@ -33,7 +33,7 @@ public abstract class BaseObject : IBaseObject
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    protected BaseObject()
+    public BaseObject()
     {
         Id = Guid.NewGuid();
     }

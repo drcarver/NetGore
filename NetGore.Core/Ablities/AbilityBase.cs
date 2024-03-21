@@ -11,12 +11,12 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// <summary>
     /// The injected logger for the service. 
     /// </summary>
-    private ILogger Logger { get; set; }
+    private ILogger? Logger { get; set; }
 
     /// <summary>
     /// The dice for this ability
     /// </summary>
-    private readonly Dice Dice = new Dice("3d6");
+    public readonly Dice Dice = new Dice("3d6+3");
 
     /// <summary>
     /// The base ability from the total of dice roll
@@ -26,7 +26,7 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// <summary>
     /// The seperate dice rolls
     /// </summary>
-    public int[] Rolls { get; private set; }
+    public int[]? Rolls { get; private set; }
 
     /// <summary>
     /// The abbrieviation for the ability
@@ -63,12 +63,20 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// <param name="logger">The logger for the class</param>
     [SetsRequiredMembers]
     public AbilityBase(ILogger logger)
+        : this()
     {
         Logger = logger;
+        logger?.LogInformation($"{Dice}");
+    }
 
-        BaseAbility = Dice.Total;
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public AbilityBase()
+    {
         Rolls = Dice.Rolls;
-        logger.LogInformation($"{Dice}");
+        BaseAbility = Dice.Total;
     }
 
 }

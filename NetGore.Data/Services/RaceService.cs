@@ -1,16 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Race;
 
 namespace NetGore.Data.Services;
 
-public class RaceService
+public class RaceService : IRaceService
 {
     /// <summary>
     /// The injected logger for the service. 
     /// </summary>
-    private readonly ILogger<IGenderService> logger;
+    private readonly ILogger Logger;
 
     //Table: Race
     private static RandomTable RaceTable { get; set; } = new()
@@ -109,21 +111,27 @@ public class RaceService
     /// Get the Gender of the creature
     /// </summary>
     /// <param name="loggerFactory">The logger factory</param>
-    public RaceService(ILoggerFactory loggerFactory)
+    public RaceService(ILogger logger)
     {
-        logger = loggerFactory.CreateLogger<GenderService>();
+        Logger = logger;
     }
 
     /// <summary>
     /// Get the race of the creature
     /// </summary>
-    /// <returns>The selected race</returns>
-    private RandomTableEntry? GetRace()
+    public void SetRace(Creature creature)
     {
         var tableentry = RaceTable.GetRandomEntry();
         
-        logger.LogInformation($"Got random table entry number {RaceTable.Total}, Name={tableentry?.Name}");
+        Logger.LogInformation($"Got random table entry number {RaceTable.Total}, Name={tableentry?.Name}");
 
-        return tableentry;
+        switch (tableentry?.Name)
+        {
+            case "Dwarf":
+                creature.Race = RaceEnum.Dwarf;
+                _ = new Dwarf(creature);
+                break;
+
+        }
     }
 }

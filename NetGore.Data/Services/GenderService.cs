@@ -53,7 +53,7 @@ public class GenderService : IGenderService
     /// Get the Gender of the creature
     /// </summary>
     /// <returns>The selected Gender</returns>
-    public Gender? GetGender()
+    public Gender GetGender()
     {
         if (GenderTable == null)
         {

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using NetGore.Core;
 using NetGore.Core.Ablities;
 using NetGore.Core.Interfaces;
+using NetGore.Core.Models;
 using NetGore.Data;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Services;
@@ -41,15 +42,18 @@ var logger = (services.GetService<ILoggerFactory>()
         ?? throw new InvalidOperationException())
         .CreateLogger<Program>();
 
+logger?.LogInformation($"Starting application at: {DateTime.Now}");
+logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
+
 if (logger != null)
 {
     var ability = new Strength(logger);
     logger?.LogInformation(new Dice("1d10").ToString());
-    logger?.LogInformation(new Dice("3d6+3").ToString());
+    logger?.LogInformation(new Dice("1d20").ToString());
+    var creature = new Creature(services.GetService<ILoggerFactory>());
+    creature = new Creature(services.GetService<ILoggerFactory>());
+    creature = new Creature(services.GetService<ILoggerFactory>());
 }
-
-logger?.LogInformation($"Starting application at: {DateTime.Now}");
-logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
 var genderService = services.GetService<IGenderService>();
 var gender = genderService?.GetGender();

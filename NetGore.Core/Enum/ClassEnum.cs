@@ -12,5 +12,6 @@ public enum ClassEnum
     Ranger,
     Rogue,
     Sorcerer,
-    Wizard
+    Warlock,
+    Wizard,
 }

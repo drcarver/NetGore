@@ -8,5 +8,5 @@ public interface IGenderService
     /// Get the Gender of the creature
     /// </summary>
     /// <returns>The selected Gender</returns>
-    Gender? GetGender();
+    Gender GetGender();
 }
