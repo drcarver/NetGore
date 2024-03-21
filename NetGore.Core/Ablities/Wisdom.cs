@@ -15,7 +15,7 @@ public class Wisdom : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Wisdom(ILogger logger)
+    public Wisdom(ILogger? logger)
         : base(logger)
     {
         Name = "Wisdom";

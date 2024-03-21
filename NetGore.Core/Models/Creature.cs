@@ -15,17 +15,17 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// The creatures gender
     /// </summary>
-    public Gender Gender { get; }
+    public Gender? Gender { get; }
 
     /// <summary>
     /// Name of the character's race
     /// </summary>
-    public string RaceName { get; set; }
+    public string? RaceName { get; set; }
 
     /// <summary>
     /// The Race description
     /// </summary>
-    public string RaceDescription { get; set; }
+    public string? RaceDescription { get; set; }
 
     /// <summary>
     /// The race of the character
@@ -81,7 +81,7 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// The height of the creature in feet and inches
     /// </summary>
-    public string Height { get; set; }
+    public string? Height { get; set; }
 
     /// <summary>
     /// The weight of the creature in pounds
@@ -94,29 +94,26 @@ public class Creature : DataObject, ICreature
     public int Speed { get; set; }
 
     /// <summary>
-    /// The class enum
-    /// </summary>
-    public List<ClassEnum> Class { get; set; } = new();
-
-    /// <summary>
-    /// THe class Names of the creature
-    /// </summary>
-    public List<ClassInformation> ClassInformation { get; set; } = new();
-
-    /// <summary>
     /// Wealth in gold pieces
     /// </summary>
     public int Wealth { get; set; }
 
     /// <summary>
+    /// Allowed Alignments
+    /// </summary>
+    public AlignmentEnum Alignment { get; set; } = AlignmentEnum.Any;
+
+    /// <summary>
     /// Constructor
     /// </summary>
+    /// <param name="loggerFactory">The factory for logging messages</param>
+    /// <param name="genderService">The gender service</param>
     [SetsRequiredMembers]
-    public Creature(ILoggerFactory loggerFactory,
-        IGenderService genderService,
-        IRaceService raceService)
+    public Creature(
+        ILoggerFactory? loggerFactory,
+        IGenderService? genderService)
     {
-        var logger = loggerFactory.CreateLogger("Ability");
+        ILogger? logger = loggerFactory?.CreateLogger<Creature>();
         
         // Generate the abilities
         Strength = new Strength(logger);
@@ -127,16 +124,14 @@ public class Creature : DataObject, ICreature
         Charisma = new Charisma(logger);
 
         // Generate the gender
-        Gender = genderService.GetGender();
+        Gender = genderService?.GetGender();
 
-        // Set the racial traits
-        raceService.SetRace(this);
-
-        logger.LogInformation($"Strength:     {Strength.Dice}");
-        logger.LogInformation($"Intelligence: {Intelligence.Dice}");
-        logger.LogInformation($"Wisdom:       {Wisdom.Dice}");
-        logger.LogInformation($"Dexterity:    {Dexterity.Dice}");
-        logger.LogInformation($"Constitution: {Constitution.Dice}");
-        logger.LogInformation($"Charisma:     {Charisma.Dice}");
+        // log the creature info
+        logger?.LogInformation($"Strength:     {Strength.Dice}");
+        logger?.LogInformation($"Intelligence: {Intelligence.Dice}");
+        logger?.LogInformation($"Wisdom:       {Wisdom.Dice}");
+        logger?.LogInformation($"Dexterity:    {Dexterity.Dice}");
+        logger?.LogInformation($"Constitution: {Constitution.Dice}");
+        logger?.LogInformation($"Charisma:     {Charisma.Dice}");
     }
 }

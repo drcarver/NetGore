@@ -23,7 +23,7 @@ public class EventCountersUser : BaseObject, IEventCountersUser
     /// The user character the event occured on.
     /// </summary>
     [Description("The user character the event occured on.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// Constructor

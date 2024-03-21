@@ -7,7 +7,7 @@ public interface ICharacterEquipped
     /// <summary>
     /// The character who the equipped item is on.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the value for the field that maps onto the database column `item_id`.

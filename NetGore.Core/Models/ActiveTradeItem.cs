@@ -11,7 +11,7 @@ public class ActiveTradeItem : DataObject, IActiveTradeItem
     /// The character that added the item.
     /// </summary>
     [Description("The character that added the item.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The item the character put down.

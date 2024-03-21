@@ -13,5 +13,5 @@ public interface IActiveTradeCash
     /// The character that put the cash on the trade 
     /// table.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 }

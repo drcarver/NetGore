@@ -14,7 +14,7 @@ public class Intelligence : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Intelligence(ILogger logger)
+    public Intelligence(ILogger? logger)
         : base(logger)
     {
         Name = "Intelligence";

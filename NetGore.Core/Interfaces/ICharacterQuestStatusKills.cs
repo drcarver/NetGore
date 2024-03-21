@@ -7,7 +7,7 @@ public interface ICharacterQuestStatusKills
     /// <summary>
     /// The character who is doing this quest.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The character template that is to be killed for 

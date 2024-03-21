@@ -7,7 +7,7 @@ public interface ICharacterSkill
     /// <summary>
     /// The character that knows the skill.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The skill the character knows.

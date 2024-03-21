@@ -14,7 +14,7 @@ public class Constitution : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Constitution(ILogger logger)
+    public Constitution(ILogger? logger)
         : base(logger)
     {
         Name = "Constitution";

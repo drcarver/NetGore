@@ -19,7 +19,7 @@ public interface IWorldStatsUserConsumeItem
     /// <summary>
     /// The user that this event is related to..
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

@@ -25,7 +25,7 @@ public class WorldStatsUserConsumeItem : BaseObject, IWorldStatsUserConsumeItem
     /// The user that this event is related to..
     /// </summary>
     [Description("The user that this event is related to.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

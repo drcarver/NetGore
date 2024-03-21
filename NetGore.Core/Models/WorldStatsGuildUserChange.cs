@@ -19,7 +19,7 @@ public class WorldStatsGuildUserChange : BaseObject, IWorldStatsGuildUserChange
     /// are part of.
     /// </summary>
     [Description("The ID of the user who changed the guild they are part of.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

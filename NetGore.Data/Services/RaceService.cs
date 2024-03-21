@@ -24,7 +24,7 @@ public class RaceService : IRaceService
             {
                 LowerRange = 01,
                 UpperRange = 10,
-                Name = "Dwarf",
+                Name = nameof(Dwarf),
                 Description = "Your dwarf character has " + 
                     "an assortment of inborn abilities, " +
                     "part and parcel of dwarven nature.",
@@ -33,7 +33,7 @@ public class RaceService : IRaceService
             {
                 LowerRange = 11,
                 UpperRange = 20,
-                Name = "Elf",
+                Name = nameof(Elf),
                 Description = "Your elf character " +
                     "has a variety of natural abilities, " +
                     "the result of thousands of years " +
@@ -108,12 +108,12 @@ public class RaceService : IRaceService
     };
 
     /// <summary>
-    /// Get the Gender of the creature
+    /// Get the race of the creature
     /// </summary>
     /// <param name="loggerFactory">The logger factory</param>
-    public RaceService(ILogger logger)
+    public RaceService(ILoggerFactory loggerFactory)
     {
-        Logger = logger;
+        Logger = loggerFactory.CreateLogger<RaceService>();
     }
 
     /// <summary>
@@ -127,7 +127,7 @@ public class RaceService : IRaceService
 
         switch (tableentry?.Name)
         {
-            case "Dwarf":
+            case nameof(Dwarf):
                 creature.Race = RaceEnum.Dwarf;
                 _ = new Dwarf(creature);
                 break;

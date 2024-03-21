@@ -1,27 +1,52 @@
-﻿using NetGore.Core;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using NetGore.Core;
+using NetGore.Core.Base;
 using NetGore.Core.Enum;
+using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
-public class Wizard
+public class Wizard : DataObject, ICharacterClass
 {
+    /// <summary>
+    /// The class enum
+    /// </summary>
+    public ClassEnum Class { get; set; }
+
+    /// <summary>
+    /// The level in the class (can be different
+    /// from the characer level for multiclass 
+    /// characters).
+    /// </summary>
+    public int Level { get; set; }
+
+    /// <summary>
+    /// The hit dice for the class
+    /// </summary>
+    public string HitDice { get; set; }
+
     /// <summary>
     /// Constructor
     /// </summary>
-    /// <param name="creature"></param>
-    public Wizard(Creature creature, RandomTableEntry entry)
+    [SetsRequiredMembers]
+    public Wizard()
     {
-        creature.ClassInformation.Add(
-            new ClassInformation
-            {
-                Name = entry.Name,
-                Description = entry.Description,
-                HitDice = "1d6",
-                Class = ClassEnum.Wizard,
-                Level = 1,
-            });
-
-            creature.Wealth = new Dice("2d6").Total * 10;
+        Name = nameof(Wizard);
+        Description = "While universalist " +
+            "wizards might study to prepare " +
+            "themselves for any manner of " +
+            "danger, specialist wizards " +
+            "research schools of magic that " +
+            "make them exceptionally skilled " +
+            "within a specific focus. Yet no " +
+            "matter their specialty, all " +
+            "wizards are masters of the " +
+            "impossible and can aid their " +
+            "allies in overcoming any danger.";
+        HitDice = "1d6";
+        Class = ClassEnum.Wizard;
+        Level = 1;
     }
 }

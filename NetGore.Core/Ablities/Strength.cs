@@ -15,7 +15,7 @@ public class Strength : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Strength(ILogger logger)
+    public Strength(ILogger? logger)
         : base(logger)
     {
         Name = "Strength";

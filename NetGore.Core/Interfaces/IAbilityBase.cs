@@ -10,7 +10,7 @@ public interface IAbilityBase
     /// <summary>
     /// The seperate dice rolls
     /// </summary>
-    int[] Rolls { get; }
+    int[]? Rolls { get; }
 
     /// <summary>
     /// The abbrieviation for the ability

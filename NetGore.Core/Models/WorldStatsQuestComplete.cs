@@ -23,7 +23,7 @@ public class WorldStatsQuestComplete : BaseObject, IWorldStatsQuestComplete
     /// The ID of the user that completed the quest.
     /// </summary>
     [Description("The ID of the user that completed the quest.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

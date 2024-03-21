@@ -24,7 +24,7 @@ public class Dwarf
     /// <param name="creature"></param>
     public Dwarf(Creature creature)
     {
-        creature.RaceName = "Dwarf";
+        creature.RaceName = nameof(Dwarf);
         creature.Description = "Dwarves are a stoic " +
             "but stern race, ensconced in cities " +
             "carved from the hearts of mountains and " +

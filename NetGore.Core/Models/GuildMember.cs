@@ -12,7 +12,7 @@ public class GuildMember : BaseObject, IGuildMember
     /// The character that is a member of the guild.
     /// </summary>
     [Description("The character that is a member of the guild.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The guild the member is a part of..

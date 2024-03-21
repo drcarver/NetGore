@@ -7,7 +7,7 @@ public interface IWorldStatsUserLevel
     /// <summary>
     /// The ID of the character that leveled up.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The level that the character leveled up to 

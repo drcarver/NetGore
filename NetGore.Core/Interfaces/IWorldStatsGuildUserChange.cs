@@ -14,7 +14,7 @@ public interface IWorldStatsGuildUserChange
     /// The ID of the user who changed the guild they 
     /// are part of.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

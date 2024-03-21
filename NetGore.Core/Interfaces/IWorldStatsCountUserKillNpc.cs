@@ -18,5 +18,5 @@ public interface IWorldStatsCountUserKillNpc
     /// <summary>
     /// The user that this kill counter is for.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 }

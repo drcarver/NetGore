@@ -20,7 +20,7 @@ public class ActiveTradeCash : DataObject, IActiveTradeCash
     /// table.
     /// </summary>
     [Description("The character that put the cash on the trade table.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// Constructor

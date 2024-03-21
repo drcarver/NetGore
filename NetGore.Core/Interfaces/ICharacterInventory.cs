@@ -10,7 +10,7 @@ public interface ICharacterInventory
     /// <summary>
     /// The character who has this item in their inventory.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The item that is in the character's inventory.

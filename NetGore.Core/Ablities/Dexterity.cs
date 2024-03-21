@@ -13,7 +13,7 @@ public class Dexterity : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Dexterity(ILogger logger)
+    public Dexterity(ILogger? logger)
         : base(logger)
     {
         Name = "Dexterity";

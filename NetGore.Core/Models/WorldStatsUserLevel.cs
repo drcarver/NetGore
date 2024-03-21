@@ -11,7 +11,7 @@ public class WorldStatsUserLevel : BaseObject, IWorldStatsUserLevel
     /// The ID of the character that leveled up.
     /// </summary>
     [Description("The ID of the character that leveled up.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The level that the character leveled up to 

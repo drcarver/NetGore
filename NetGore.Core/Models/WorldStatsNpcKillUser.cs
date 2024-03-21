@@ -39,7 +39,7 @@ public class WorldStatsNpcKillUser : BaseObject, IWorldStatsNpcKillUser
     /// The user.
     /// </summary>
     [Description("The user.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// The ID of the user.

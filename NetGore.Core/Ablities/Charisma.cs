@@ -16,7 +16,7 @@ public class Charisma : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Charisma(ILogger logger)
+    public Charisma(ILogger? logger)
         : base(logger)
     {
         Name = "Charisma";

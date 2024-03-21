@@ -17,7 +17,7 @@ public class AccountCharacter : DataObject, IAccountCharacter
     /// The character in the account.
     /// </summary>
     [Description("The character in the account.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// When the character was removed from the account 

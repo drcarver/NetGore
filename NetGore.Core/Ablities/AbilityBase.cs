@@ -16,7 +16,7 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// <summary>
     /// The dice for this ability
     /// </summary>
-    public readonly Dice Dice = new Dice("3d6+3");
+    public readonly Dice Dice = new("3d6+3");
 
     /// <summary>
     /// The base ability from the total of dice roll
@@ -62,7 +62,7 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// </summary>
     /// <param name="logger">The logger for the class</param>
     [SetsRequiredMembers]
-    public AbilityBase(ILogger logger)
+    public AbilityBase(ILogger? logger)
         : this()
     {
         Logger = logger;

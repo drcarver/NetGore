@@ -20,7 +20,7 @@ public class WorldStatsUserShopping : BaseObject, IWorldStatsUserShopping
     /// transaction with the shop.
     /// </summary>
     [Description("The ID of the character that performed this transaction with the shop.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The amount of money that was involved in this 

@@ -34,6 +34,9 @@ var services = new ServiceCollection()
     .AddSingleton(configuration)
     .AddSingleton<IExampleService, ExampleService>()
     .AddSingleton<IGenderService, GenderService>()
+    .AddSingleton<IRaceService, RaceService>()
+    .AddSingleton<IClassService, ClassService>()
+    .AddSingleton<IPlayerCharacter, PlayerCharacter>()
     .AddDbContextPool<NETGoreDbContext>(options =>
         options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
     .BuildServiceProvider();
@@ -50,13 +53,14 @@ if (logger != null)
     var ability = new Strength(logger);
     logger?.LogInformation(new Dice("1d10").ToString());
     logger?.LogInformation(new Dice("1d20").ToString());
-    var creature = new Creature(services.GetService<ILoggerFactory>());
-    creature = new Creature(services.GetService<ILoggerFactory>());
-    creature = new Creature(services.GetService<ILoggerFactory>());
 }
 
 var genderService = services.GetService<IGenderService>();
 var gender = genderService?.GetGender();
+
+var raceService = services.GetService<IRaceService>();
+
+var pc = services.GetService<IPlayerCharacter>();
 
 // Example Service
 //var service = services.GetService<IExampleService>();

@@ -7,7 +7,7 @@ public interface ICharacterQuestStatus
     /// <summary>
     /// Character this quest status info is for.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// When the quest was completed. Null if incomplete. 
