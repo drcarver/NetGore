@@ -17,7 +17,7 @@ public interface IWorldStatsQuestCancel
     /// <summary>
     /// The ID of the user that canceled the quest.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

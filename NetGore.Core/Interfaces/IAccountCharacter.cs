@@ -12,7 +12,7 @@ public interface IAccountCharacter
     /// <summary>
     /// The character in the account.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// When the character was removed from the account 

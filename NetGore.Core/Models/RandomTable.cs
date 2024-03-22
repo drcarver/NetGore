@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -36,9 +36,11 @@ public class RandomTable : BaseObject, IRandomTable
         Dice dice = new($"1d{DiceSides}");
         Total = dice.Total;
 
-        return Table.FirstOrDefault(t =>
-                        t.LowerRange >= Total
-                     && t.UpperRange <= Total);
+        var te = Table.First(t =>
+                        t.LowerRange <= Total
+                     && t.UpperRange >= Total);
+
+        return te;
     }
 
     /// <summary>

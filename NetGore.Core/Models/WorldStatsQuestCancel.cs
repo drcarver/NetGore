@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -22,7 +23,7 @@ public class WorldStatsQuestCancel : BaseObject, IWorldStatsQuestCancel
     /// The ID of the user that canceled the quest.
     /// </summary>
     [Description("The ID of the user that canceled the quest.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

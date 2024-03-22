@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AccountCharacter : BaseObject, IAccountCharacter
+public class AccountCharacter : DataObject, IAccountCharacter
 {
     /// <summary>
     /// The account the character is on.
@@ -17,7 +17,7 @@ public class AccountCharacter : BaseObject, IAccountCharacter
     /// The character in the account.
     /// </summary>
     [Description("The character in the account.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// When the character was removed from the account 

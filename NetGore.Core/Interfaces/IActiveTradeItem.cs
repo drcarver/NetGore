@@ -7,7 +7,7 @@ public interface IActiveTradeItem
     /// <summary>
     /// The character that added the item.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The item the character put down.

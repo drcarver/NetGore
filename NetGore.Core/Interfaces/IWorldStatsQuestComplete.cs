@@ -17,7 +17,7 @@ public interface IWorldStatsQuestComplete
     /// <summary>
     /// The ID of the user that completed the quest.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// When this event took place.

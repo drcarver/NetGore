@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -40,7 +40,7 @@ public class WorldStatsUserKillNpc : BaseObject, IWorldStatsUserKillNpc
     /// The ID of the user.
     /// </summary>
     [Description("The ID of the user.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// The level of the user was when this event took

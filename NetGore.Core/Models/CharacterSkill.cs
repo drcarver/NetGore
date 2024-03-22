@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -11,7 +11,7 @@ public class CharacterSkill : BaseObject, ICharacterSkill
     /// The character that knows the skill.
     /// </summary>
     [Description("The character that knows the skill.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The skill the character knows.

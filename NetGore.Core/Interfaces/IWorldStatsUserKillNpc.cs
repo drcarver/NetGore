@@ -32,7 +32,7 @@ public interface IWorldStatsUserKillNpc
     /// <summary>
     /// The ID of the user.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// The level of the user was when this event took

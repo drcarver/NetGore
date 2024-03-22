@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -11,7 +11,7 @@ public class CharacterQuestStatusKills : BaseObject, ICharacterQuestStatusKills
     /// The character who is doing this quest.
     /// </summary>
     [Description("The character who is doing this quest.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The character template that is to be killed for 

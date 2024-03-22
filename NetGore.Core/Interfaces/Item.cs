@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Base;
 using NetGore.Core.Models;
 
 namespace NetGore.Core.Interfaces;

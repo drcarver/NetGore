@@ -5,10 +5,11 @@ using System.Net.Sockets;
 using System.Net;
 
 using NetGore.Core.Interfaces;
+using NetGore.Core.Base;
 
 namespace NetGore.Core.Models;
 
-public class Account : BaseObject, IAccount
+public class Account : DataObject, IAccount
 {
     /// <summary>
     /// The IP address that created the account.

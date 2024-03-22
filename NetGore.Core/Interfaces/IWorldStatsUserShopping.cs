@@ -15,7 +15,7 @@ public interface IWorldStatsUserShopping
     /// The ID of the character that performed this 
     /// transaction with the shop.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The amount of money that was involved in this 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 
@@ -30,7 +30,7 @@ public class GuildEvent : BaseObject, IGuildEvent
     /// The character that invoked the event.
     /// </summary>
     [Description("The character that invoked the event.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The ID of the event that took place.
@@ -48,7 +48,7 @@ public class GuildEvent : BaseObject, IGuildEvent
     /// The optional character that the event involves.
     /// </summary>
     [Description("The optional character that the event involves.")]
-    public Character? TargetCharacter { get; set; }
+    public PlayerCharacter? TargetCharacter { get; set; }
 
     /// <summary>
     /// Constructor

@@ -1,9 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class Body : BaseObject, IBody
+public class Body : DataObject, IBody
 {
     /// <summary>
     /// Create a new Account

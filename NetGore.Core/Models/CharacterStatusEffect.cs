@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 
@@ -12,7 +12,7 @@ public class CharacterStatusEffect : BaseObject, ICharacterStatusEffect
     /// The Character that the status effect is on.
     /// </summary>
     [Description("The Character that the status effect is on.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The status effect instance.".

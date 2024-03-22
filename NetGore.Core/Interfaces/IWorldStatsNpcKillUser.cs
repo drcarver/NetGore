@@ -33,7 +33,7 @@ public interface IWorldStatsNpcKillUser
     /// <summary>
     /// The user.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// The ID of the user.

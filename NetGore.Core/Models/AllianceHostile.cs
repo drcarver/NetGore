@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class AllianceHostile : BaseObject, IAllianceHostile
+public class AllianceHostile : DataObject, IAllianceHostile
 {
     /// <summary>
     /// The alliance that is hotile.

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 
-using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Services;
@@ -25,30 +24,28 @@ public class AccountService
     /// <summary>
     /// Get the list of examples from the database
     /// </summary>
-    public List<Example> GetExamples()
+    public List<Account> GetAccounts()
     {
-        logger.LogInformation($"All examples from the database");
-        return context.Examples
+        logger.LogInformation($"All accounts from the database");
+        return context.Accounts
             .OrderBy(e => e.Name)
             .ToList();
     }
 
     /// <summary>
-    /// Add a example to the database
+    /// Add a Account to the database
     /// </summary>
-    /// <param name="name">The name of the example.</param>
-    /// <param name="description">The description of the example.</param>
-    public void AddExample(string name, string? description)
+    /// <param name=account>The account to be added.</param>
+    public void AddAccount(Account account)
     {
-        logger.LogInformation($"Adding example: {name}");
+        logger.LogInformation($"Adding account: {account?.Name}");
 
-        var example = new Example()
+        if (account != null)
         {
-            Name = name,
-            Description = description
-        };
-
-        context.Examples.Add(example);
-        context.SaveChanges();
+            _ = context.Accounts.Contains(account)
+                ? context.Accounts.Update(account)
+                : context.Accounts.Add(account);
+            context.SaveChanges();
+        }
     }
 }

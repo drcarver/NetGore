@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 using Microsoft.EntityFrameworkCore;
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -13,7 +14,7 @@ public class CharacterEquipped : BaseObject, ICharacterEquipped
     /// The character who the equipped item is on.
     /// </summary>
     [Description("The character who the equipped item is on.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// Gets or sets the value for the field that maps onto the database column `item_id`.

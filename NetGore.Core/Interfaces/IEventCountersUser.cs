@@ -17,5 +17,5 @@ public interface IEventCountersUser
     /// <summary>
     /// The user character the event occured on.
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 }

@@ -23,7 +23,7 @@ public interface IGuildEvent
     /// <summary>
     /// The character that invoked the event.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The ID of the event that took place.
@@ -38,5 +38,5 @@ public interface IGuildEvent
     /// <summary>
     /// The optional character that the event involves.
     /// </summary>
-    Character? TargetCharacter { get; set; }
+    PlayerCharacter? TargetCharacter { get; set; }
 }

@@ -8,7 +8,7 @@ public interface IGuildMember
     /// <summary>
     /// The character that is a member of the guild.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The guild the member is a part of..

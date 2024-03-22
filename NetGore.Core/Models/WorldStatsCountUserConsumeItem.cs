@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -25,7 +25,7 @@ public class WorldStatsCountUserConsumeItem : BaseObject, IWorldStatsCountUserCo
     /// should be a user (not persistent NPC).
     /// </summary>
     [Description("Character this counter is for. Logically, it should be a user (not persistent NPC).")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// Constructor

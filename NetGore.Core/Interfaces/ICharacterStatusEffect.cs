@@ -8,7 +8,7 @@ public interface ICharacterStatusEffect
     /// <summary>
     /// The Character that the status effect is on.
     /// </summary>
-    Character? Character { get; set; }
+    PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The status effect instance.".

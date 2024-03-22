@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 using Microsoft.EntityFrameworkCore;
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -27,7 +28,7 @@ public class WorldStatsCountNpcKillUser : BaseObject, IWorldStatsCountNpcKillUse
     /// should be a user).
     /// </summary>
     [Description("The character this counter is for (logically, should be a user).")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// Constructor

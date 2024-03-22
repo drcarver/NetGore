@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
 
-public class ActiveTradeItem : BaseObject, IActiveTradeItem
+public class ActiveTradeItem : DataObject, IActiveTradeItem
 {
     /// <summary>
     /// The character that added the item.
     /// </summary>
     [Description("The character that added the item.")]
-    public Character? Character { get; set; }
+    public PlayerCharacter? Character { get; set; }
 
     /// <summary>
     /// The item the character put down.

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-
+using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -24,7 +24,7 @@ public class WorldStatsCountUserKillNpc : BaseObject, IWorldStatsCountUserKillNp
     /// The user that this kill counter is for.
     /// </summary>
     [Description("The user that this kill counter is for.")]
-    public Character? User { get; set; }
+    public PlayerCharacter? User { get; set; }
 
     /// <summary>
     /// Constructor

@@ -28,12 +28,14 @@ public class GenderService : IGenderService
                 LowerRange = 01,
                 UpperRange = 50,
                 Name = "Male",
+                Description = "The Male of the species",
             },
             new RandomTableEntry
             {
                 LowerRange = 51,
                 UpperRange = 100,
                 Name = "Female",
+                Description = "The Female of the species",
             },
         ],
     };
@@ -51,7 +53,7 @@ public class GenderService : IGenderService
     /// Get the Gender of the creature
     /// </summary>
     /// <returns>The selected Gender</returns>
-    public Gender? GetGender()
+    public Gender GetGender()
     {
         if (GenderTable == null)
         {
@@ -59,7 +61,7 @@ public class GenderService : IGenderService
         }
 
         var tableentry = GenderTable.GetRandomEntry();
-        logger.LogTrace($"Got the random table entry number {GenderTable.Total}, Name={tableentry.Name}");
+        logger.LogInformation($"Got random table entry number {GenderTable.Total}, Name={tableentry?.Name}");
 
         return new Gender
         {

@@ -19,5 +19,5 @@ public interface IWorldStatsCountUserConsumeItem
     /// Character this counter is for. Logically, it 
     /// should be a user (not persistent NPC).
     /// </summary>
-    Character? User { get; set; }
+    PlayerCharacter? User { get; set; }
 }
