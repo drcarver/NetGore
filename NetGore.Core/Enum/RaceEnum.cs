@@ -8,7 +8,7 @@ public enum RaceEnum
     Elf = 3,
     Gnome = 4,
     HalfElf = 5,
-    Hafling = 6,
+    Halfling = 6,
     HalfOrc = 7,
     Human = 8,
     Tiefling = 9,

@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Base;
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Data.Interfaces;
 
@@ -15,10 +17,25 @@ public class PlayerCharacter : Creature, IPlayerCharacter
     public ICharacterClass? CharacterClass { get; set; }
 
     /// <summary>
-    /// THe account for the player who owns this
+    /// The characters homeland.  Automatically generated
+    /// </summary>
+    public string? Homeland { get; set; }
+
+    /// <summary>
+    /// The character racial traits
+    /// </summary>
+    public List<RacialTraitEnum> RacialTraits { get; set; } = [];
+
+    /// <summary>
+    /// The account for the player who owns this
     /// character
     /// </summary>
     public IAccount? Account { get; set; }
+
+    /// <summary>
+    /// The player character parents
+    /// </summary>
+    public string? Parents { get; set; }
 
     /// <summary>
     /// The Player Character

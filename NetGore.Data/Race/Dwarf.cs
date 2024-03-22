@@ -1,6 +1,10 @@
-﻿using NetGore.Core;
+﻿using System.Linq;
+
+using NetGore.Core;
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Background;
+using NetGore.Data.Services;
 
 namespace NetGore.Data.Race;
 
@@ -43,6 +47,48 @@ public class Dwarf
         // Your speed is not reduced by wearing
         // heavy armor
         creature.Speed = 25;
+    }
+
+    /// <summary>
+    /// Generate the character background
+    /// </summary>
+    public static void GenerateBackground(PlayerCharacter character)
+    {
+        #region Homeland
+        var homeland = (BackgroundTableEntry?) HomelandTable.GetRandomEntry();
+        if (homeland?.Name == "Unusual Homeland")
+        {
+            homeland = (BackgroundTableEntry?) BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+        }
+        character.Homeland = homeland?.Name;
+        if (homeland?.RacialTraits != null)
+        {
+            foreach (var trait in homeland.RacialTraits)
+            {
+                if (!character.RacialTraits.Contains(trait))
+                {
+                    character.RacialTraits.Add(trait);
+                }
+            }
+        }
+        #endregion
+
+        #region Parents
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
+        character.Parents = parents?.Description;
+        if (parents?.RacialTraits != null)
+        {
+            foreach (var trait in parents.RacialTraits)
+            {
+                if (!character.RacialTraits.Contains(trait))
+                {
+                    character.RacialTraits.Add(trait);
+                }
+            }
+        }
+        #endregion
+
+
     }
 
     // Table: Random Height and Weight
@@ -138,4 +184,273 @@ public class Dwarf
             creature.Age += new Dice("7d6").Total;
         }
     }
+
+    //Table: Dwarf Homeland
+    //d%	Result
+    //01–40	Hills or Mountains You gain access to the Goldsniffer race trait and the Highlander regional trait.
+    //41–80	Underground You gain access to the Surface Stranger regional trait and the Tunnel Fighter race trait.
+    //81–87	Non-Dwarven Town or Village You gain access to the Brewmaster race trait and the Militia Veteran regional trait.
+    //88–95	Non-Dwarven City or Metropolis  You gain access to the Brewmaster race trait and the Vagabond Child regional trait.
+    //96–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
+    /// <summary>
+    /// The homeland table
+    /// </summary>
+    private static RandomTable HomelandTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "Hills or Mountains"
+            //01–40	Hills or Mountains You gain
+            //access to the Goldsniffer race trait
+            //and the Highlander regional trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 40,
+                Name = "Hills or Mountains",
+                Description =
+                    "You gain access to the " +
+                    "Goldsniffer race trait and " +
+                    "the Highlander regional trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Goldsniffer,
+                    RacialTraitEnum.Highlander
+                },
+            },
+            #endregion
+
+            #region Underground
+            //41–80	Underground You gain access to
+            //the Surface Stranger regional trait
+            //and the Tunnel Fighter race trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 41,
+                UpperRange = 80,
+                Name = "Underground",
+                Description =
+                    "You gain access to the Surface " +
+                    "Stranger regional trait and the " +
+                    "Tunnel Fighter race trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.SurfaceStranger,
+                    RacialTraitEnum.TunnelFighter,
+                },
+
+            },
+            #endregion
+
+            #region "Non-Dwarven Town or Village"
+            //81–87	Non-Dwarven Town or Village You
+            //gain access to the Brewmaster race
+            //trait and the Militia Veteran regional
+            //trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 81,
+                UpperRange = 87,
+                Name = "Non-Dwarven Town or Village",
+                Description = 
+                    "You gain access to the Brewmaster " +
+                    "race trait and the Militia Veteran " +
+                    "regional trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Brewmaster,
+                    RacialTraitEnum.MilitiaVeteran,
+                },
+            },
+            #endregion
+
+            #region "Non-Dwarven City or Metropolis"
+            // 88–95 Non-Dwarven City or Metropolis
+            // You gain access to the Brewmaster race
+            // trait and the Vagabond Child regional
+            // trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 88,
+                UpperRange = 95,
+                Name = "Non-Dwarven City or Metropolis",
+                Description =
+                    "You gain access to the Brewmaster " +
+                    "race trait and the Vagabond Child " +
+                    "regional trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Brewmaster,
+                    RacialTraitEnum.VagabondChild,
+                },
+            },
+            #endregion
+                        
+            #region "Unusual Homeland."
+            //96–100 Unusual Homeland.	Roll on Table:
+            //Unusual Homeland.
+            new RandomTableEntry
+            {
+                LowerRange = 96,
+                UpperRange = 100,
+                Name = "Unusual Homeland",
+                AlternateTable = BackgroundTables.UnusualHomelandTable,
+            },
+            #endregion
+        ],
+    };
+
+    //Table: Dwarf Parents
+    //d%	Result
+    //01–60	Both of your parents are alive.
+    //61–73	Only your father is alive.
+    //74–86	Only your mother is alive.
+    //87–100	Both of your parents are dead. You gain access to the Orphaned social trait.    
+    /// <summary>
+    /// The parents table
+    /// </summary>
+    private static RandomTable ParentsTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "Both"
+            //01–60	Both of your parents are alive.            new BackgroundTableEntry
+            new BackgroundTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 60,
+                Name = "Both Alive",
+                Description = "Both of your parents are alive.",
+            },
+            #endregion
+
+            #region "Father Only"
+            //61–73	Only your father is alive.
+            new BackgroundTableEntry
+            {
+                LowerRange = 61,
+                UpperRange = 73,
+                Name = "Father Only",
+                Description = "Only your father is alive.",
+            },
+            #endregion
+
+            #region "Mother Only"
+            //74–86	Only your mother is alive.
+            new BackgroundTableEntry
+            {
+                LowerRange = 74,
+                UpperRange = 86,
+                Name = "Mother Only",
+                Description = "Only your mother is alive.",
+            },
+            #endregion
+
+            #region "Both Dead"
+            //87–100 Both of your parents are dead.
+            //You gain access to the Orphaned social
+            //trait.    
+            new BackgroundTableEntry
+            {
+                LowerRange = 88,
+                UpperRange = 95,
+                Name = "Both Dead",
+                Description =
+                    "Both of your parents are dead. " +
+                    "You gain access to the Orphaned " +
+                    "social trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Orphaned,
+                },
+
+            },
+            #endregion
+        ],
+    };
+
+    //Table: Dwarf Siblings
+    //d%	Result
+    //01–80	1d4 biological siblings.With two or more siblings, you gain access to the Kin Guardian combat trait.
+    //81–90	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
+    //91–95	1d3–1 biological siblings and 1d3–1 adopted siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
+    //96–100	No siblings    
+    /// <summary>
+    /// The parents table
+    /// </summary>
+    private static RandomTable SiblingsTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "1d4"
+            //01–80	1d4 biological siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 80,
+                Name = "1d4",
+                Description =
+                    "1d4 biological siblings. With two " +
+                    "or more siblings, you gain access " +
+                    "to the Kin Guardian combat trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinGuardian,
+                },
+            },
+            #endregion
+
+            #region "1d4+1"
+            //81–90	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
+            new BackgroundTableEntry
+            {
+                LowerRange = 81,
+                UpperRange = 90,
+                Name = "1d4+1",
+                Description =
+                    "1d4+1 biological siblings. You gain access to " +
+                    "the Kin Guardian combat trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinGuardian,
+                },
+            },
+            #endregion
+
+            #region "1d3–1 and 1d3–1"
+            //91–95	1d3–1 biological siblings and 1d3–1 adopted siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
+            new BackgroundTableEntry
+            {
+                LowerRange = 91,
+                UpperRange = 95,
+                Name = "1d3-1",
+                Description = "1d3–1 Biological siblings and " +
+                    "1d3–1 adopted siblings. With two or " +
+                    "more siblings, you gain access to the " +
+                    "Kin Guardian combat trait. Roll on Table: " +
+                    "Race Table to determine the " +
+                    "race of any adopted siblings.",
+                AlternateTable = RaceService.RaceTable,
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinGuardian,
+                },
+            },
+            #endregion
+
+            #region "No siblings"
+            //96–100 No siblings    
+            new BackgroundTableEntry
+            {
+                LowerRange = 96,
+                UpperRange = 100,
+                Name = "No siblings",
+                Description = "No siblings",
+            },
+            #endregion
+        ],
+    };
 }

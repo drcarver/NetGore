@@ -15,7 +15,7 @@ public class RaceService : IRaceService
     private readonly ILogger Logger;
 
     //Table: Race
-    private static RandomTable RaceTable { get; set; } = new()
+    public static RandomTable RaceTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -117,9 +117,9 @@ public class RaceService : IRaceService
                 creature.Race = RaceEnum.HalfElf;
                 _ = new HalfElf(creature);
                 break;
-            case nameof(Hafling):
-                creature.Race = RaceEnum.Hafling;
-                _ = new Hafling(creature);
+            case nameof(Halfling):
+                creature.Race = RaceEnum.Halfling;
+                _ = new Halfling(creature);
                 break;
             case nameof(HalfOrc):
                 creature.Race = RaceEnum.HalfOrc;

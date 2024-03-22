@@ -109,3 +109,4 @@ public class Gnome
             creature.Age += new Dice("9d6").Total;
         }
     }
+}
