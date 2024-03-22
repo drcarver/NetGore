@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-using NetGore.Core;
+﻿using NetGore.Core;
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
 

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\halforc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\halforc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\human.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\human.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\halfelf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\halfelf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\elf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\services\\raceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,37 +26,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Human.cs",
               "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Human.cs",
               "RelativeDocumentMoniker": "NetGore.Data\\Race\\Human.cs",
               "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Human.cs",
               "RelativeToolTip": "NetGore.Data\\Race\\Human.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAwwF4AAAAgAAAA",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAIwIkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T00:12:29.374Z",
+              "WhenOpened": "2024-03-22T01:58:04.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HalfElf.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfElf.cs",
-              "RelativeDocumentMoniker": "NetGore.Data\\Race\\HalfElf.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfElf.cs",
-              "RelativeToolTip": "NetGore.Data\\Race\\HalfElf.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAwwH4AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "HalfOrc.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfOrc.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\Race\\HalfOrc.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfOrc.cs",
+              "RelativeToolTip": "NetGore.Data\\Race\\HalfOrc.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAIwEcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T23:03:02.118Z",
+              "WhenOpened": "2024-03-22T01:57:52.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Elf.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Elf.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\Race\\Elf.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Elf.cs",
+              "RelativeToolTip": "NetGore.Data\\Race\\Elf.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAAIwH0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T01:39:23.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RaceService.cs",
               "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Services\\RaceService.cs",
               "RelativeDocumentMoniker": "NetGore.Data\\Services\\RaceService.cs",

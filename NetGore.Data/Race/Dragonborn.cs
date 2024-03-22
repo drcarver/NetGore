@@ -18,26 +18,26 @@ public class Dragonborn
             "a variety of traits you share with " +
             "other dragonborn.";
 
-        // Your Constitution score increases by 2.
-        creature.Constitution.RacialModifier += 2;
+        // Your Strength score increases by 2.
+        // Your Charisma score increases by 1.
+        creature.Strength.RacialModifier += 2;
+        creature.Charisma.RacialModifier += 1;
 
-        // Size. Elves stand between 4 and 5 feet tall
-        // and average about 150 pounds. Your size is Medium.
+        // Size. Your size is Medium.
         SetHeightAndWeight(creature);
         SetAge(creature);
-        creature.Size = SizeEnum.Small;
+        creature.Size = SizeEnum.Medium;
 
-        // Speed.Your base walking speed is 25 feet.
+        // Speed.Your base walking speed is 30 feet.
         // Your speed is not reduced by wearing
         // heavy armor
-        creature.Speed = 25;
+        creature.Speed = 30;
     }
-
 
     //Table: Random Height and Weight
     //Gender Base Height   Height Modifier Base Weight Weight Modifier
-    //Male	 5 ft. 2 in.	+2d8 in.        100 lbs.    +(2d8×5 lbs.)
-    //Female 5 ft. 0 in.	+2d8 in.         90 lbs.    +(2d8×5 lbs.)
+    //Male	 6 ft. 2 in.	+2d8 in.        100 lbs.    +(2d8×5 lbs.)
+    //Female 6 ft. 0 in.	+2d8 in.         90 lbs.    +(2d8×5 lbs.)
     /// <summary>
     /// The Height
     /// </summary>
@@ -49,18 +49,18 @@ public class Dragonborn
             var modifier = new Dice("2d8").Total;
             if (modifier <= 9)
             {
-                creature.Height = $"5 ft. {modifier + 2} in.";
+                creature.Height = $"6 ft. {modifier + 2} in.";
             }
             else if (modifier == 10)
             {
-                creature.Height = $"6 ft.";
+                creature.Height = $"7 ft.";
             }
             else
             {
-                creature.Height = $"6 ft. {modifier - 10} in.";
+                creature.Height = $"7 ft. {modifier - 10} in.";
             }
             // 100 lbs. +(2d8×5 lbs.)
-            creature.Weight = 100 + (new Dice("2d8").Total * 5);
+            creature.Weight = 200 + (new Dice("2d8").Total * 5);
         }
 
         if (creature?.Gender?.GenderEnum == GenderEnum.Female)
@@ -78,21 +78,21 @@ public class Dragonborn
             {
                 creature.Height = $"6 ft. {modifier - 12} in.";
             }
-            // 90 lbs. +(2d8×5 lbs.)
-            creature.Weight = 90 + (new Dice("2d8").Total * 5);
+            // 180 lbs. +(2d8×5 lbs.)
+            creature.Weight = 180 + (new Dice("2d8").Total * 5);
         }
     }
 
     // Table: Random Starting Ages
     // Adulthood   Intuitive1 Self-Taught2 Trained3
-    // 20 years	   +1d6 years  +2d6 years  +3d6 years
+    // 15 years	   +1d6 years  +2d6 years  +3d6 years
     /// <summary>
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
     private static void SetAge(PlayerCharacter creature)
     {
-        creature.Age = 20;
+        creature.Age = 15;
 
         // barbarians, rogues, sorcerers and warlocks.
         if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||

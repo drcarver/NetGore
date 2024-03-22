@@ -33,7 +33,7 @@ public class Elf
         creature.Speed = 30;
     }
 
-    // Table: Random Height and Weight
+    //Table: Random Height and Weight
     //Gender Base Height Height Modifier Base Weight Weight Modifier
     //Male	 5 ft. 4 in.    +2d8 in.      110 lbs.    +(2d8×3 lbs.)
     //Female 5 ft. 4 in.	+2d6 in.       90 lbs.    +(2d6×3 lbs.)
@@ -122,4 +122,5 @@ public class Elf
         {
             creature.Age += new Dice("10d6").Total;
         }
+    }
 }
