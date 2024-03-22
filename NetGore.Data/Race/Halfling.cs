@@ -4,15 +4,15 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Race;
 
-public class Halfling
+public class Hafling
 {
     /// <summary>
     /// Set the race traits for the creature.
     /// </summary>
     /// <param name="creature"></param>
-    public Halfling(PlayerCharacter creature)
+    public Hafling(PlayerCharacter creature)
     {
-        creature.RaceName = nameof(Halfling);
+        creature.RaceName = nameof(Hafling);
         creature.RaceDescription =
             "Your halfling character has a " +
             "number of traits in common " +

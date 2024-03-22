@@ -89,7 +89,7 @@ public class RaceService : IRaceService
     /// <summary>
     /// Get the race of the creature
     /// </summary>
-    public void SetRace(Creature creature)
+    public void SetRace(PlayerCharacter creature)
     {
         var tableentry = RaceTable.GetRandomEntry();
         
@@ -97,11 +97,42 @@ public class RaceService : IRaceService
 
         switch (tableentry?.Name)
         {
+            case nameof(Dragonborn):
+                creature.Race = RaceEnum.Dragonborn;
+                _ = new Dragonborn(creature);
+                break;
             case nameof(Dwarf):
                 creature.Race = RaceEnum.Dwarf;
                 _ = new Dwarf(creature);
                 break;
-
+            case nameof(Elf):
+                creature.Race = RaceEnum.Elf;
+                _ = new Elf(creature);
+                break;
+            case nameof(Gnome):
+                creature.Race = RaceEnum.Gnome;
+                _ = new Gnome(creature);
+                break;
+            case nameof(HalfElf):
+                creature.Race = RaceEnum.HalfElf;
+                _ = new HalfElf(creature);
+                break;
+            case nameof(Hafling):
+                creature.Race = RaceEnum.Hafling;
+                _ = new Hafling(creature);
+                break;
+            case nameof(HalfOrc):
+                creature.Race = RaceEnum.HalfOrc;
+                _ = new HalfOrc(creature);
+                break;
+            case nameof(Human):
+                creature.Race = RaceEnum.Human;
+                _ = new Human(creature);
+                break;
+            case nameof(Tiefling):
+                creature.Race = RaceEnum.Tiefling;
+                _ = new Tiefling(creature);
+                break;
         }
     }
 }
