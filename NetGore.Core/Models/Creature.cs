@@ -99,9 +99,14 @@ public class Creature : DataObject, ICreature
     public int Wealth { get; set; }
 
     /// <summary>
-    /// Allowed Alignments
+    /// Creature alignment
     /// </summary>
     public AlignmentEnum Alignment { get; set; } = AlignmentEnum.Any;
+    
+    /// <summary>
+    /// The age of the creature
+    /// </summary>
+    public int Age { get; set; }
 
     /// <summary>
     /// Constructor

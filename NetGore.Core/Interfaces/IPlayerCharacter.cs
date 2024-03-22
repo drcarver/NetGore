@@ -1,6 +1,4 @@
-﻿using NetGore.Core.Interfaces;
-
-namespace NetGore.Core.Models;
+﻿namespace NetGore.Core.Interfaces;
 
 public interface IPlayerCharacter
 {
