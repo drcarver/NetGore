@@ -13,12 +13,15 @@ public enum LanguageEnum
     Elvish,
     Undercommon,
     Sylvan,
-    Dwarvish,
     Auran,
     Terran,
     Ignan,
     Giant,
     Orc,
     Gnoll,
-    Gnomish
+    Gnomish,
+    Dwarven, 
+    Elven, 
+    Gnome, 
+    Halfling,
 }

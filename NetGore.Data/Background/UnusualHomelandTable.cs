@@ -38,7 +38,7 @@ public partial class BackgroundTables
             #region Subterranean
             //01–10	Subterranean You gain access to
             //the Surface Stranger regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 01,
                 UpperRange = 10,
@@ -56,7 +56,7 @@ public partial class BackgroundTables
             #region Mountains
             //11–25	Mountains You gain access to the
             //Highlander regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 11,
                 UpperRange = 25,
@@ -74,7 +74,7 @@ public partial class BackgroundTables
             #region Plains
             //26–40	Plains You gain access to the
             //Savanna Child regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 26,
                 UpperRange = 40,
@@ -92,7 +92,7 @@ public partial class BackgroundTables
             #region "Town or Village"
             //41–50	Town or Village You gain access
             //to the Militia Veteran regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 41,
                 UpperRange = 50,
@@ -111,7 +111,7 @@ public partial class BackgroundTables
             //51–60	City or Metropolis You gain access
             //to the Civilized social trait and the
             //Vagabond Child regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 51,
                 UpperRange = 60,
@@ -130,7 +130,7 @@ public partial class BackgroundTables
             #region Forest
             //61–70	Forest You gain access to the
             //Log Roller regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 61,
                 UpperRange = 70,
@@ -148,7 +148,7 @@ public partial class BackgroundTables
             #region "River, Swamp, or Wetlands"
             //71–80	River, Swamp, or Wetlands You gain
             //access to the River Rat regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 71,
                 UpperRange = 80,
@@ -165,7 +165,7 @@ public partial class BackgroundTables
             #region Desert
             //81–85	Desert You gain access to the
             //Desert Child regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 81,
                 UpperRange = 85,
@@ -182,7 +182,7 @@ public partial class BackgroundTables
             #region Sea-Souled
             //86–90	Sea You gain access to the
             //Sea-Souled regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 86,
                 UpperRange = 90,
@@ -199,7 +199,7 @@ public partial class BackgroundTables
             #region Tundra
             //91–95	Tundra You gain access to the
             //Tundra Child regional trait.
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 91,
                 UpperRange = 95,
@@ -217,7 +217,7 @@ public partial class BackgroundTables
             //96–100 Another Plane You gain access
             //to the Scholar of the Great Beyond
             //faith trait    
-            new BackgroundTableEntry
+            new RandomTableEntry
             {
                 LowerRange = 96,
                 UpperRange = 100,

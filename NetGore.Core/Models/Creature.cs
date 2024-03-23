@@ -4,14 +4,19 @@ using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Ablities;
 using NetGore.Core.Base;
+using NetGore.Core.Data;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
-using NetGore.Data.Interfaces;
 
 namespace NetGore.Core.Models;
 
 public class Creature : DataObject, ICreature
 {
+    /// <summary>
+    /// The logger for this class
+    /// </summary>
+    private readonly ILogger? _logger;
+
     /// <summary>
     /// The creatures gender
     /// </summary>
@@ -31,6 +36,21 @@ public class Creature : DataObject, ICreature
     /// The race of the character
     /// </summary>
     public RaceEnum Race { get; set; }
+
+    /// <summary>
+    /// Race Type
+    /// </summary>
+    public RaceType RaceType { get; set; }
+
+    /// <summary>
+    /// Race Sub Type
+    /// </summary>
+    public List<RaceSubType> RaceSubType { get; set; } = [];
+
+    /// <summary>
+    /// The languages the creature speaks
+    /// </summary>
+    public List<LanguageEnum> Languages { get; set; } = [];
 
     /// <summary>
     /// Strength measures bodily power, athletic 
@@ -112,31 +132,36 @@ public class Creature : DataObject, ICreature
     /// Constructor
     /// </summary>
     /// <param name="loggerFactory">The factory for logging messages</param>
-    /// <param name="genderService">The gender service</param>
     [SetsRequiredMembers]
-    public Creature(
-        ILoggerFactory? loggerFactory,
-        IGenderService? genderService)
+    public Creature(ILoggerFactory loggerFactory) :
+        this()
     {
-        ILogger? logger = loggerFactory?.CreateLogger<Creature>();
-        
+        _logger = loggerFactory.CreateLogger<Creature>();
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Creature()
+    {
         // Generate the abilities
-        Strength = new Strength(logger);
-        Intelligence = new Intelligence(logger);
-        Wisdom = new Wisdom(logger);
-        Dexterity = new Dexterity(logger);
-        Constitution = new Constitution(logger);
-        Charisma = new Charisma(logger);
+        Strength = new Strength(_logger);
+        Intelligence = new Intelligence(_logger);
+        Wisdom = new Wisdom(_logger);
+        Dexterity = new Dexterity(_logger);
+        Constitution = new Constitution(_logger);
+        Charisma = new Charisma(_logger);
 
         // Generate the gender
-        Gender = genderService?.GetGender();
+        Gender = GenderData.GetGender();
 
         // log the creature info
-        logger?.LogInformation($"Strength:     {Strength.Dice}");
-        logger?.LogInformation($"Intelligence: {Intelligence.Dice}");
-        logger?.LogInformation($"Wisdom:       {Wisdom.Dice}");
-        logger?.LogInformation($"Dexterity:    {Dexterity.Dice}");
-        logger?.LogInformation($"Constitution: {Constitution.Dice}");
-        logger?.LogInformation($"Charisma:     {Charisma.Dice}");
+        _logger?.LogInformation($"Strength:     {Strength.Dice}");
+        _logger?.LogInformation($"Intelligence: {Intelligence.Dice}");
+        _logger?.LogInformation($"Wisdom:       {Wisdom.Dice}");
+        _logger?.LogInformation($"Dexterity:    {Dexterity.Dice}");
+        _logger?.LogInformation($"Constitution: {Constitution.Dice}");
+        _logger?.LogInformation($"Charisma:     {Charisma.Dice}");
     }
 }

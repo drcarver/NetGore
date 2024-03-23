@@ -1,19 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-
-using NetGore.Core.Base;
+﻿using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
-using NetGore.Data.Interfaces;
 
-namespace NetGore.Data.Services;
+namespace NetGore.Core.Data;
 
-public class GenderService : IGenderService
+public class GenderData
 {
-    /// <summary>
-    /// The injected logger for the service. 
-    /// </summary>
-    private readonly ILogger<IGenderService> logger;
-
     //Table: Gender
     //d%	 Result
     //01–50	 Male
@@ -43,26 +35,10 @@ public class GenderService : IGenderService
     /// <summary>
     /// Get the Gender of the creature
     /// </summary>
-    /// <param name="loggerFactory">The logger factory</param>
-    public GenderService(ILoggerFactory loggerFactory)
-    {
-        logger = loggerFactory.CreateLogger<GenderService>();
-    }
-
-    /// <summary>
-    /// Get the Gender of the creature
-    /// </summary>
     /// <returns>The selected Gender</returns>
-    public Gender GetGender()
+    public static Gender GetGender()
     {
-        if (GenderTable == null)
-        {
-            return null;
-        }
-
         var tableentry = GenderTable.GetRandomEntry();
-        logger.LogInformation($"Got random table entry number {GenderTable.Total}, Name={tableentry?.Name}");
-
         return new Gender
         {
             Name = tableentry?.Name,

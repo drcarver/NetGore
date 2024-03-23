@@ -10,9 +10,14 @@ namespace NetGore.Data.Services;
 public class RaceService : IRaceService
 {
     /// <summary>
-    /// The injected logger for the service. 
+    /// The logger for the service. 
     /// </summary>
     private readonly ILogger Logger;
+
+    /// <summary>
+    /// The injected logger factory for the service. 
+    /// </summary>
+    private readonly ILoggerFactory LoggerFactory;
 
     //Table: Race
     public static RandomTable RaceTable { get; set; } = new()
@@ -89,7 +94,7 @@ public class RaceService : IRaceService
     /// <summary>
     /// Get the race of the creature
     /// </summary>
-    public void SetRace(PlayerCharacter creature)
+    public void SetRace(Character creature)
     {
         var tableentry = RaceTable.GetRandomEntry();
         
@@ -99,39 +104,42 @@ public class RaceService : IRaceService
         {
             case nameof(Dragonborn):
                 creature.Race = RaceEnum.Dragonborn;
-                _ = new Dragonborn(creature);
+                var dragonborn = new Dragonborn(creature);
                 break;
             case nameof(Dwarf):
                 creature.Race = RaceEnum.Dwarf;
-                _ = new Dwarf(creature);
+                var dwarf = new Dwarf(creature);
+                dwarf.GenerateRaceBackground(creature);
                 break;
             case nameof(Elf):
                 creature.Race = RaceEnum.Elf;
-                _ = new Elf(creature);
+                var elf = new Elf(creature);
+                elf.GenerateRaceBackground(creature);
                 break;
             case nameof(Gnome):
                 creature.Race = RaceEnum.Gnome;
-                _ = new Gnome(creature);
+                var gnome = new Gnome(creature);
+                gnome.GenerateRaceBackground(creature);
                 break;
             case nameof(HalfElf):
                 creature.Race = RaceEnum.HalfElf;
-                _ = new HalfElf(creature);
+                var halfelf = new HalfElf(creature);
                 break;
             case nameof(Halfling):
                 creature.Race = RaceEnum.Halfling;
-                _ = new Halfling(creature);
+                var halfling = new Halfling(creature);
                 break;
             case nameof(HalfOrc):
                 creature.Race = RaceEnum.HalfOrc;
-                _ = new HalfOrc(creature);
+                var halforc = new HalfOrc(creature);
                 break;
             case nameof(Human):
                 creature.Race = RaceEnum.Human;
-                _ = new Human(creature);
+                var human = new Human(creature);
                 break;
             case nameof(Tiefling):
                 creature.Race = RaceEnum.Tiefling;
-                _ = new Tiefling(creature);
+                var tiefling = new Tiefling(creature);
                 break;
         }
     }
