@@ -28,15 +28,10 @@ public class RandomTable : BaseObject, IRandomTable
     /// <returns>The selected RandomTableEntry.</returns>
     public virtual RandomTableEntry? GetRandomEntry()
     {
-        if (Table == null)
-        {
-            return null;
-        }
-
         Dice dice = new($"1d{DiceSides}");
         Total = dice.Total;
 
-        var te = Table.First(t =>
+        var te = Table?.First(t =>
                         t.LowerRange <= Total
                      && t.UpperRange >= Total);
 

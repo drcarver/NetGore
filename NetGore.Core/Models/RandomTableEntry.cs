@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using NetGore.Core.Base;
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Core.Models;
@@ -26,7 +27,12 @@ public class RandomTableEntry : BaseObject, IRandomTableEntry
     public RandomTable? AlternateTable { get; set; }
 
     /// <summary>
-    /// Consructor
+    /// The racial traits for this creature 
+    /// </summary>
+    public List<RacialTraitEnum> RacialTraits { get; set; } = [];
+
+    /// <summary>
+    /// Constructor
     /// </summary>
     [SetsRequiredMembers]
     public RandomTableEntry()

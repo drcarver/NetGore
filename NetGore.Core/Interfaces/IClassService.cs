@@ -7,5 +7,5 @@ public interface IClassService
     /// <summary>
     /// Set the class for the player
     /// </summary>
-    void SetClass(PlayerCharacter playerCharacter);
+    void SetClass(Character playerCharacter);
 }

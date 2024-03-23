@@ -1,16 +1,17 @@
 ﻿using NetGore.Core;
 using NetGore.Core.Enum;
+using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Race;
 
-public class Dragonborn
+public class Dragonborn : IRace
 {
     /// <summary>
     /// Set the race traits for the creature.
     /// </summary>
     /// <param name="creature"></param>
-    public Dragonborn(PlayerCharacter creature)
+    public Dragonborn(Character creature)
     {
         creature.RaceName = nameof(Dragonborn);
         creature.RaceDescription =
@@ -18,20 +19,37 @@ public class Dragonborn
             "a variety of traits you share with " +
             "other dragonborn.";
 
-        // Your Strength score increases by 2.
-        // Your Charisma score increases by 1.
+        // Ability Score Increase.Your Strength
+        // score increases by 2, and your Charisma
+        // score increases by 1.
         creature.Strength.RacialModifier += 2;
         creature.Charisma.RacialModifier += 1;
 
-        // Size. Your size is Medium.
+        //Size.Dragonborn are taller and heavier
+        //than humans, standing well over 6 feet
+        //tall and averaging almost 250 pounds.
+        //Your size is Medium.
         SetHeightAndWeight(creature);
         SetAge(creature);
         creature.Size = SizeEnum.Medium;
 
-        // Speed.Your base walking speed is 30 feet.
-        // Your speed is not reduced by wearing
-        // heavy armor
+        //Speed.Your base walking speed is 30 feet.
         creature.Speed = 30;
+
+        //Type: Dragonborn are humanoids with the
+        //Dragonborn subtype.
+        creature.RaceType = RaceType.Humanoid;
+        creature.RaceSubType.Add(RaceSubType.Dragonborn);
+
+        // Languages. You can speak, read, and write
+        // Common and Draconic. Draconic is thought
+        // to be one of the oldest languages and is
+        // often used in the study of magic.
+        // The language sounds harsh to most other
+        // creatures and includes numerous hard
+        // consonants and sibilants.
+        creature.Languages.Add(LanguageEnum.Common);
+        creature.Languages.Add(LanguageEnum.Draconic);
     }
 
     //Table: Random Height and Weight
@@ -42,7 +60,7 @@ public class Dragonborn
     /// The Height
     /// </summary>
     /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(PlayerCharacter creature)
+    private static void SetHeightAndWeight(Character creature)
     {
         if (creature?.Gender?.GenderEnum == GenderEnum.Male)
         {
@@ -90,7 +108,7 @@ public class Dragonborn
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
-    private static void SetAge(PlayerCharacter creature)
+    private static void SetAge(Character creature)
     {
         creature.Age = 15;
 
@@ -120,5 +138,15 @@ public class Dragonborn
         {
             creature.Age += new Dice("3d6").Total;
         }
+    }
+
+    /// <summary>
+    /// Nothing for Dragonborn
+    /// </summary>
+    /// <param name="character"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    public void GenerateRaceBackground(Character character)
+    {
+        throw new NotImplementedException();
     }
 }

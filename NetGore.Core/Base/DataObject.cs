@@ -7,7 +7,7 @@ namespace NetGore.Core.Base;
 /// <summary>
 /// The baseobject for all data models
 /// </summary>
-public abstract class DataObject : BaseObject, IDataObject
+public class DataObject : BaseObject, IDataObject
 {
     /// <summary>
     /// Is the object marked for deletion?
@@ -31,7 +31,7 @@ public abstract class DataObject : BaseObject, IDataObject
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    protected DataObject()
+    public DataObject()
     {
         UpdatedAt = DateTime.UtcNow;
         CreatedAt = DateTime.UtcNow;

@@ -136,7 +136,7 @@ public class ClassService : IClassService
     /// Set the class for the creature
     /// </summary>
     /// <param name="character">The character class</param>
-    public void SetClass(PlayerCharacter character)
+    public void SetClass(Character character)
     {
         var tableentry = ClassTable.GetRandomEntry();
 

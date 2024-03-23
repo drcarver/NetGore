@@ -7,5 +7,5 @@ public interface IRaceService
     /// <summary>
     /// Get the race of the creature
     /// </summary>
-    void SetRace(Creature creature);
+    void SetRace(Character creature);
 }

@@ -1,36 +1,375 @@
 ﻿using NetGore.Core;
 using NetGore.Core.Enum;
+using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
+using NetGore.Data.Background;
 
 namespace NetGore.Data.Race;
 
-public class HalfOrc
+/// <summary>
+/// Only rarely the result of a happy union between 
+/// the humans and orcs that bring them into the 
+/// world, half-orcs are often regarded as monsters. 
+/// This bleak reality makes those rare half-orcs, 
+/// cherished as much as the young of any other race, 
+/// even more extraordinary.
+/// </summary>
+public class HalfOrc : IRace
 {
     /// <summary>
     /// Set the race traits for the creature.
     /// </summary>
     /// <param name="creature"></param>
-    public HalfOrc(PlayerCharacter creature)
+    public HalfOrc(Character creature)
+    {
+        Initialize(creature);
+    }
+
+    /// <summary>
+    /// Initialize the creature
+    /// </summary>
+    /// <param name="creature"></param>
+    public void Initialize(Character creature)
     {
         creature.RaceName = nameof(HalfOrc);
         creature.RaceDescription =
             "Your half-­orc character has certain " +
             "traits deriving from your orc ancestry.";
 
-        // Your Strength score increases by 2.
-        // Your Constitution score increases by 1.
-        creature.Strength.RacialModifier += 2;
-        creature.Constitution.RacialModifier += 1;
+        //Ability Score Modifiers: Half - orc
+        //characters gain a + 2 bonus to Strength
+        //and +1 bonus to constitution
+        creature.Strength.RacialModifier = 2;
+        creature.Constitution.RacialModifier = 1;
 
-        // Size. Your size is Medium.
+        //Size: Half - orcs are Medium creatures
+        //and thus have no bonuses or penalties due
+        //to their size.
         SetHeightAndWeight(creature);
         SetAge(creature);
         creature.Size = SizeEnum.Medium;
 
-        // Speed.Your base walking speed is 25 feet.
-        // Your speed is not reduced by wearing
-        // heavy armor
+        //Base Speed: Half - orcs have a base
+        //speed of 30 feet.
         creature.Speed = 30;
+
+        //Type: Half - orcs are Humanoid creatures
+        //with both the human and orc subtypes.
+        creature.RaceType = RaceType.Humanoid;
+        creature.RaceSubType.Add(RaceSubType.Human);
+        creature.RaceSubType.Add(RaceSubType.Orc);
+
+        //Languages: Half - orcs begin play speaking
+        //Common and Orc. Half - orcs with high
+        //Intelligence scores can choose from the
+        //following: Abyssal, Draconic, Giant, Gnoll,
+        //and Goblin.
+        creature.Languages.Add(LanguageEnum.Common);
+        creature.Languages.Add(LanguageEnum.Orc);
+    }
+
+    //Table: Half-Orc Homeland
+    //d%	Result
+    //01–25	Subterranean You gain access to either the Scrapper race trait or the Surface Stranger regional trait.
+    //26–60	Orc Settlement  You gain access to the Scrapper race trait.
+    //61–75	Raised in a Human Homeland.Roll on Table: Human Homeland.
+    //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
+    //91–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
+    /// <summary>
+    /// The homeland table
+    /// </summary>
+    private static RandomTable HomelandTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "Subterranean"
+            //01–25	Subterranean You gain access to
+            //either the Scrapper race trait or the
+            //Surface Stranger regional trait.
+            new RandomTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 25,
+                Name = "Subterranean",
+                Description =
+                    "You gain access to either the " +
+                    "Scrapper race trait or the " +
+                    "Surface Stranger regional trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Scrapper,
+                    RacialTraitEnum.SurfaceStranger,
+                },
+            },
+            #endregion
+
+            #region "Orc Settlement"
+            //26–60	Orc Settlement  You gain access to the Scrapper race trait.
+            new RandomTableEntry
+            {
+                LowerRange = 26,
+                UpperRange = 60,
+                Name = "Orc Settlement",
+                Description =
+                    "You gain access to the Scrapper race trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Scrapper,
+                },
+            },
+            #endregion
+
+            #region "No True Homeland"
+            //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
+            new RandomTableEntry
+            {
+                LowerRange = 76,
+                UpperRange = 90,
+                Name = "No True Homeland",
+                Description =
+                    "You have lived a life on the run " +
+                    "and gain access to the Outcast " +
+                    "race trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Outcast,
+                },
+            },
+            #endregion
+                        
+            #region "Unusual Homeland."
+            //91–100 Unusual Homeland.	Roll on Table:
+            //Unusual Homeland.
+            new RandomTableEntry
+            {
+                LowerRange = 91,
+                UpperRange = 100,
+                Name = "Unusual Homeland",
+                AlternateTable = BackgroundTables.UnusualHomelandTable,
+            },
+            #endregion
+        ],
+    };
+
+    //Table: Half-Orc Parents
+    //d%	Result
+    //01–10	Both of your parents are alive.
+    //11–35	Only your father is alive.
+    //36–60	Only your mother is alive.
+    //61–100	Both of your parents are dead. You gain access to the Orphaned social trait.
+    /// <summary>
+    /// The parents table
+    /// </summary>
+    private static RandomTable ParentsTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "Both"
+            //01–10	Both of your parents are alive.
+            new RandomTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 10,
+                Name = "Both Alive",
+                Description = "Both of your parents are alive.",
+            },
+            #endregion
+
+            #region "Father Only"
+            //11–35	Only your father is alive.
+            new RandomTableEntry
+            {
+                LowerRange = 11,
+                UpperRange = 35,
+                Name = "Father Only",
+                Description = "Only your father is alive.",
+            },
+            #endregion
+
+            #region "Mother Only"
+            //36–60	Only your mother is alive.
+            new RandomTableEntry
+            {
+                LowerRange = 36,
+                UpperRange = 60,
+                Name = "Mother Only",
+                Description = "Only your mother is alive.",
+            },
+            #endregion
+
+            #region "Both Dead"
+            //61–100 Both of your parents are dead.
+            //You gain access to the Orphaned social
+            //trait.
+            new RandomTableEntry
+            {
+                LowerRange = 61,
+                UpperRange = 100,
+                Name = "Both Dead",
+                Description =
+                    "Both of your parents are dead. " +
+                    "You gain access to the Orphaned " +
+                    "social trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.Orphaned,
+                },
+            },
+            #endregion
+        ],
+    };
+
+    //Table: Half-Orc Siblings
+    //d%	Result
+    //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
+    //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
+    //71–80	One half-orc sibling.
+    //81–100	No siblings.
+    /// <summary>
+    /// The siblings table
+    /// </summary>
+    private static RandomTable SiblingsTable { get; set; } = new()
+    {
+        DiceSides = 100,
+        Table =
+        [
+            #region "1d6+1"
+            //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
+            new RandomTableEntry
+            {
+                LowerRange = 01,
+                UpperRange = 60,
+                Name = "1d6+1",
+                Description =
+                    "1d6+1 orc siblings.You gain access " +
+                    "to the Kin Guardian combat trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinGuardian,
+                },
+            },
+            #endregion
+
+            #region "1d4"
+            //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
+            new RandomTableEntry
+            {
+                LowerRange = 61,
+                UpperRange = 70,
+                Name = "1d4",
+                Description =
+                    "One half-elf sibling. You gain " +
+                    "access to the Kin Bond magic " +
+                    "trait.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinBond,
+                },
+            },
+            #endregion
+
+            #region "1d1"
+            //71–80	One half-orc sibling.
+            new RandomTableEntry
+            {
+                LowerRange = 71,
+                UpperRange = 80,
+                Name = "1d1",
+                Description =
+                    "One half-orc sibling.",
+                RacialTraits =
+                {
+                    RacialTraitEnum.KinBond,
+                },
+            },
+            #endregion
+
+            #region "No siblings"
+            //81–100	No siblings.
+            new RandomTableEntry
+            {
+                LowerRange = 81,
+                UpperRange = 100,
+                Name = "No siblings",
+                Description = "No siblings",
+            },
+            #endregion
+        ],
+    };
+
+    /// <summary>
+    /// Generate the character background
+    /// </summary>
+    public void GenerateRaceBackground(Character character)
+    {
+        #region Homeland
+        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        if (homeland?.Name == "Unusual Homeland")
+        {
+            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+        }
+        character.Homeland = homeland?.Name;
+        if (homeland?.RacialTraits != null)
+        {
+            foreach (var trait in homeland.RacialTraits)
+            {
+                if (!character.RacialTraits.Contains(trait))
+                {
+                    character.RacialTraits.Add(trait);
+                }
+            }
+        }
+        #endregion
+
+        #region Parents
+        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        character.Parents = parents?.Description;
+        if (parents?.RacialTraits != null)
+        {
+            foreach (var trait in parents.RacialTraits)
+            {
+                if (!character.RacialTraits.Contains(trait))
+                {
+                    character.RacialTraits.Add(trait);
+                }
+            }
+        }
+        #endregion
+
+        #region Siblings
+        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
+        {
+            var total = new Dice(siblings.Name).Total;
+            for (int i = 0; i < total; i++)
+            {
+                var creaturesiblings = new Character();
+                Initialize(creaturesiblings);
+
+                // Set relative age of sibling
+                var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
+                if (relativeage?.Name == "Younger")
+                {
+                    creaturesiblings.Age -= new Dice("1d4").Total;
+                }
+                if (relativeage?.Name == "Older")
+                {
+                    creaturesiblings.Age += new Dice("1d4").Total;
+                }
+
+                character.Siblings.Add(creaturesiblings);
+            }
+            if (character.Siblings.Count > 0)
+            {
+                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                {
+                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                }
+            }
+        }
+        #endregion
     }
 
     //Table: Random Height and Weight
@@ -41,7 +380,7 @@ public class HalfOrc
     /// The Height
     /// </summary>
     /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(PlayerCharacter creature)
+    private static void SetHeightAndWeight(Character creature)
     {
         if (creature?.Gender?.GenderEnum == GenderEnum.Male)
         {
@@ -100,7 +439,7 @@ public class HalfOrc
     /// The age
     /// </summary>
     /// <param name="creature"></param>
-    private static void SetAge(PlayerCharacter creature)
+    private static void SetAge(Character creature)
     {
         creature.Age = 14;
 

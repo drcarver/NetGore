@@ -5,10 +5,13 @@ using Microsoft.Extensions.Logging;
 
 using NetGore.Core;
 using NetGore.Core.Ablities;
+using NetGore.Core.Data;
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Race;
 using NetGore.Data.Services;
 
 // Configuration
@@ -33,8 +36,8 @@ var services = new ServiceCollection()
     })
     .AddSingleton(configuration)
     .AddSingleton<IExampleService, ExampleService>()
-    .AddSingleton<IGenderService, GenderService>()
     .AddSingleton<IRaceService, RaceService>()
+    .AddSingleton<ICharacterService, CharacterService>()
     .AddSingleton<IClassService, ClassService>()
     .AddSingleton<IPlayerCharacter, PlayerCharacter>()
     .AddDbContextPool<NETGoreDbContext>(options =>
@@ -55,12 +58,59 @@ if (logger != null)
     logger?.LogInformation(new Dice("1d20").ToString());
 }
 
-var genderService = services.GetService<IGenderService>();
-var gender = genderService?.GetGender();
+var gender = GenderData.GetGender();
 
 var raceService = services.GetService<IRaceService>();
 
 var pc = services.GetService<IPlayerCharacter>();
+
+
+// Try to create each race
+var classService = services.GetService<IClassService>();
+var characterService = services.GetService<ICharacterService>();
+if (characterService != null)
+{
+    var character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var dwarf = new Dwarf(character);
+    dwarf.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var elf = new Elf(character);
+    elf.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var gnome = new Gnome(character);
+    gnome.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var halfelf = new HalfElf(character);
+    halfelf.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var halfling = new Halfling(character);
+    halfling.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var halforc = new HalfOrc(character);
+    halforc.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var human = new Human(character);
+    human.GenerateRaceBackground(character);
+
+    character = characterService.CreateCharacter();
+    classService?.SetClass(character);
+    var tiefling = new Tiefling(character);
+    tiefling.GenerateRaceBackground(character);
+
+}
 
 // Example Service
 //var service = services.GetService<IExampleService>();
