@@ -19,7 +19,7 @@ public partial class BackgroundTables
     /// <summary>
     /// Relative Age of Sibling Table
     /// </summary>
-    public static RandomTable RelativeAgeofSiblingTable { get; set; } = new()
+    public static RandomTable RelativeAgeofSiblingTable { get; } = new()
     {
         DiceSides = 100,
         Table =

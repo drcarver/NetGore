@@ -30,7 +30,7 @@ public partial class BackgroundTables
     /// <summary>
     /// The Unusual Homeland Table
     /// </summary>
-    public static RandomTable UnusualHomelandTable { get; set; } = new()
+    public static RandomTable UnusualHomelandTable { get; } = new()
     {
         DiceSides = 100,
         Table =

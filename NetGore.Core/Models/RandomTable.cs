@@ -39,6 +39,16 @@ public class RandomTable : BaseObject, IRandomTable
     }
 
     /// <summary>
+    /// Get a entry from the table by it's name
+    /// </summary>
+    /// <returns>The selected RandomTableEntry.</returns>
+    public virtual RandomTableEntry? GetEntryByName(string Name)
+    {
+        var te = Table?.First(t => t.Name == Name);
+        return te;
+    }
+
+    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
