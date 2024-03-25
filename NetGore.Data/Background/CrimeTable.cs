@@ -30,6 +30,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable CrimeTable { get; } = new()
     {
+        Name = "CrimeTable",
         DiceSides = 100,
         Table =
         [

@@ -10,6 +10,7 @@ namespace NetGore.Data.Background;
 /// age of each sibling.For each adopted sibling, 
 /// roll on Table: RaceTable to determine that 
 /// sibling’s race.
+/// </summary>
 public partial class BackgroundTables
 {
     //Table: Relative Age of Sibling
@@ -22,6 +23,8 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable RelativeAgeofSiblingTable { get; } = new()
     {
+        Name = "Relative Age of Sibling Table",
+        Description = "If you have at least one sibling, roll on Table: Relative Age of Sibling to determine the relative age of each sibling. For each adopted sibling, roll on Table: Race of Adopted Sibling to determine that sibling’s race.",
         DiceSides = 100,
         Table =
         [
