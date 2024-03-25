@@ -1,4 +1,5 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 using NetGore.Data.Services;
 
 namespace NetGore.Data.Background;
@@ -30,7 +31,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 01,
                 UpperRange = 48,
-                Name = "Older",
+                Name = nameof(RelativeAgeofSiblingEnum.Older),
                 Description =
                     "Your sibling is older than you.",
             },
@@ -42,7 +43,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 49,
                 UpperRange = 96,
-                Name = "Younger",
+                Name = nameof(RelativeAgeofSiblingEnum.Younger),
                 Description =
                     "Your sibling is younger than you.",
             },
@@ -54,7 +55,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 97,
                 UpperRange = 100,
-                Name = "Twins",
+                Name = nameof(RelativeAgeofSiblingEnum.Twins),
                 Description =
                     "You and a sibling are twins " +
                     "(identical or fraternal, your " +

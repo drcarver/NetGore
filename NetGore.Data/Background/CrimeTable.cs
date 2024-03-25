@@ -1,4 +1,5 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 
 namespace NetGore.Data.Background;
 
@@ -27,7 +28,7 @@ public partial class BackgroundTables
     /// <summary>
     /// Crime
     /// </summary>
-    public static RandomTable Crime { get; } = new()
+    public static RandomTable CrimeTable { get; } = new()
     {
         DiceSides = 100,
         Table =
@@ -38,7 +39,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 01,
                 UpperRange = 10,
-                Name = "Adultery",
+                Name = nameof(CrimeEnum.Adultery),
             },
             #endregion
 
@@ -48,7 +49,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 11,
                 UpperRange = 20,
-                Name = "Arson",
+                Name = nameof(CrimeEnum.Arson),
             },
             #endregion
 
@@ -58,7 +59,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 21,
                 UpperRange = 30,
-                Name = "Burglary",
+                Name = nameof(CrimeEnum.Burglary),
             },
             #endregion
 
@@ -68,7 +69,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 31,
                 UpperRange = 40,
-                Name = "Heresy",
+                Name = nameof(CrimeEnum.Heresy),
             },
             #endregion
 
@@ -78,7 +79,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 41,
                 UpperRange = 50,
-                Name = "Minor offense(sumptuary law)",
+                Name = nameof(CrimeEnum.Minoroffense),
+                ProperName = "Minor offense (sumptuary law)"
             },
             #endregion
 
@@ -88,7 +90,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 51,
                 UpperRange = 60,
-                Name = "Murder",
+                Name = nameof(CrimeEnum.Murder),
             },
             #endregion
 
@@ -98,7 +100,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 61,
                 UpperRange = 70,
-                Name = "Rebellion/treason",
+                Name = nameof(CrimeEnum.RebellionorTreason),
+                ProperName = "Rebellion or Treason",
             },
             #endregion
 
@@ -108,7 +111,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 71,
                 UpperRange = 80,
-                Name = "Robbery",
+                Name = nameof(CrimeEnum.Robbery),
             },
             #endregion
 
@@ -118,7 +121,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 81,
                 UpperRange = 90,
-                Name = "Smuggling",
+                Name = nameof(CrimeEnum.Smuggling),
             },
             #endregion
 
@@ -128,7 +131,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 91,
                 UpperRange = 100,
-                Name = "Unlawful use of magic",
+                Name = nameof(CrimeEnum.Unlawfuluseofmagic),
+                ProperName = "Unlawful use of magic",
             },
             #endregion
         ]

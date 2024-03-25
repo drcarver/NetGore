@@ -1,4 +1,5 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 
 namespace NetGore.Data.Background;
 
@@ -27,7 +28,7 @@ public partial class BackgroundTables
     /// <summary>
     /// Punishment
     /// </summary>
-    public static RandomTable Punishment { get; } = new()
+    public static RandomTable PunishmentTable { get; } = new()
     {
         DiceSides = 100,
         Table =
@@ -38,7 +39,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 01,
                 UpperRange = 10,
-                Name = "Beating",
+                Name = nameof(PunishmentEnum.Beating),
             },
             #endregion
 
@@ -48,7 +49,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 11,
                 UpperRange = 20,
-                Name = "Branding",
+                Name = nameof(PunishmentEnum.Branding),
             },
             #endregion
 
@@ -58,7 +59,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 21,
                 UpperRange = 30,
-                Name = "Exile",
+                Name = nameof(PunishmentEnum.Exile),
             },
             #endregion
 
@@ -68,7 +69,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 31,
                 UpperRange = 40,
-                Name = "Fine",
+                Name = nameof(PunishmentEnum.Fine),
             },
             #endregion
 
@@ -78,7 +79,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 41,
                 UpperRange = 50,
-                Name = "Imprisonment",
+                Name = nameof(PunishmentEnum.Imprisonment),
             },
             #endregion
 
@@ -88,7 +89,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 51,
                 UpperRange = 60,
-                Name = "Stocks",
+                Name = nameof(PunishmentEnum.Stocks),
             },
             #endregion
 
@@ -98,7 +99,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 61,
                 UpperRange = 70,
-                Name = "Torture",
+                Name = nameof(PunishmentEnum.Torture),
             },
             #endregion
 
@@ -108,7 +109,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 71,
                 UpperRange = 80,
-                Name = "Trial by combat",
+                Name = nameof(PunishmentEnum.Trialbycombat),
+                ProperName = "Trial by combat",
             },
             #endregion
 
@@ -118,7 +120,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 81,
                 UpperRange = 90,
-                Name = "Trial by fire",
+                Name = nameof(PunishmentEnum.Trialbyfire),
+                ProperName = "Trial by fire",
             },
             #endregion
 
@@ -128,7 +131,8 @@ public partial class BackgroundTables
             {
                 LowerRange = 91,
                 UpperRange = 100,
-                Name = "Trial by water",
+                Name = nameof(PunishmentEnum.Trialbywater),
+                ProperName = "Trial by water",
             },
             #endregion
         ]

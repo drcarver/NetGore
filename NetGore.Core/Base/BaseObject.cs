@@ -6,7 +6,7 @@ using NetGore.Core.Interfaces;
 namespace NetGore.Core.Base;
 
 /// <summary>
-/// The baseobject for all models
+/// The base object for all models
 /// </summary>
 public class BaseObject : IBaseObject
 {
@@ -21,7 +21,7 @@ public class BaseObject : IBaseObject
     /// </summary>
     [MaxLength(80)]
     [Description("The Name of the object.")]
-    public string? Name { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
     /// The Description of the object
@@ -36,5 +36,6 @@ public class BaseObject : IBaseObject
     public BaseObject()
     {
         Id = Guid.NewGuid();
+        Name = string.Empty;
     }
 }
