@@ -22,10 +22,11 @@ public partial class BackgroundTables
     //71–95	Raised by Savage Humanoids  You were raised by savage humanoids such as orcs, kobolds, gnolls, troglodytes, or lizardfolk.As a result, your values, customs, and traditions are those of your adoptive parents, though characteristics of your true nature frequently emerge.You gain access to the Savage social trait.
     //96–100	Fiend Raised    You were separated from your natural parents and raised by a fiend who taught you the cruelty and malice of the gods and worked to fashion you into its own mortal instrument to corrupt innocent souls. You gain access to the Fiend Blood bloodline race trait and the Damned story feat.
     /// <summary>
-    /// Parents’ Profession
+    /// Adopted Outside Your Race
     /// </summary>
     public static RandomTable AdoptedOutsideYourRaceTable { get; } = new()
     {
+        Name = "Adopted Outside Your Race Table",
         DiceSides = 100,
         Table =
         [
@@ -46,7 +47,7 @@ public partial class BackgroundTables
                     "the Blood of Dragons bloodline " +
                     "race trait and the Magical Knack " +
                     "magic trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.BloodofDragons,
                     RacialTraitEnum.MagicalKnack,
@@ -69,7 +70,7 @@ public partial class BackgroundTables
                     "access to the Charming social " +
                     "trait and the Magical Knack " +
                     "magic trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Charming,
                     RacialTraitEnum.MagicalKnack,
@@ -98,7 +99,7 @@ public partial class BackgroundTables
                     "bloodline race trait, the " +
                     "Magical Knack magic trait, and " +
                     "the Glimpse Beyond story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Deathtouched,
                     RacialTraitEnum.MagicalKnack,
@@ -125,7 +126,7 @@ public partial class BackgroundTables
                     "wherever you go, your angelic " +
                     "parents watch over you. You gain " +
                     "access to the Blessed faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Blessed,
                 },
@@ -151,9 +152,9 @@ public partial class BackgroundTables
                     "specific beast. You gain access " +
                     "to the Resilient combat trait " +
                     "and the Feral Heart story feat.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Unforgotten,
+                    RacialTraitEnum.Resilient,
                     RacialTraitEnum.FeralHeart,
                 },
             },
@@ -163,8 +164,8 @@ public partial class BackgroundTables
             //26–70	Raised by Civilized Humanoids You were raised by a community of civilized humanoids of a race different from your own (chosen by your GM). Your attitudes, beliefs, and values reflect that race, although characteristics of your true nature frequently emerge.You gain access to a race trait from the race that raised you.
             new RandomTableEntry
             {
-                LowerRange = 20,
-                UpperRange = 25,
+                LowerRange = 26,
+                UpperRange = 70,
                 Name = nameof(AdoptedOutsideYourRaceEnum.RaisedbyCivilizedHumanoids),
                 ProperName = "Raised by Civilized Humanoids",
                 Description =
@@ -199,7 +200,7 @@ public partial class BackgroundTables
                     "true nature frequently emerge. " +
                     "You gain access to the Savage " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Savage,
                 },
@@ -224,7 +225,7 @@ public partial class BackgroundTables
                     "gain access to the Fiend Blood " +
                     "bloodline race trait and the " +
                     "Damned story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.FiendBlood,
                     RacialTraitEnum.Damned,

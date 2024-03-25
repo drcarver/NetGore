@@ -61,7 +61,7 @@ public partial class BackgroundTables
                     "a good portion of your formative " +
                     "years. You gain access to the " +
                     "Focused Mind magic trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.FocusedMind,
                 },
@@ -85,7 +85,7 @@ public partial class BackgroundTables
                     "abilities rather than place your " +
                     "trust in others. You gain access " +
                     "to the Suspicious social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Suspicious,
                 },
@@ -110,7 +110,7 @@ public partial class BackgroundTables
                     "a powerful flame of vengeance. " +
                     "You gain access to the Bullied " +
                     "combat trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Bullied,
                 },
@@ -137,7 +137,7 @@ public partial class BackgroundTables
                     "You gain access to the Influence " +
                     "social trait and the Champion story " +
                     "feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Influence,
                     RacialTraitEnum.Champion,
@@ -165,7 +165,7 @@ public partial class BackgroundTables
                     "access to the Reactionary combat " +
                     "trait and the Deny the Reaper " +
                     "story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Reactionary,
                     RacialTraitEnum.DenytheReaper,
@@ -196,7 +196,7 @@ public partial class BackgroundTables
                     "import.You gain access to the " +
                     "Fearless Defiance faith trait and " +
                     "the Arisen story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.FearlessDefiance,
                     RacialTraitEnum.Arisen,
@@ -225,7 +225,7 @@ public partial class BackgroundTables
                     "affected your region for good or " +
                     "ill. You gain access to the Worldly " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Worldly,
                 },
@@ -252,7 +252,7 @@ public partial class BackgroundTables
                     "is colored by moral ambiguity. You " +
                     "gain access to the Child of the Streets " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.ChildoftheStreets,
                 },
@@ -276,7 +276,7 @@ public partial class BackgroundTables
                     "formative experience. You gain " +
                     "access to the Killer combat trait " +
                     "and the Innocent Blood story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Killer,
                     RacialTraitEnum.InnocentBlood,
@@ -306,7 +306,7 @@ public partial class BackgroundTables
                     "access to the Worldly social trait " +
                     "and you roll a d12 instead of a " +
                     "d20 on Table: Romantic Relationships.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Worldly,
                 },
@@ -332,7 +332,7 @@ public partial class BackgroundTables
                     "trait. See the Crime and Punishment " +
                     "section. You also gain access to the " +
                     "Liberator story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Criminal,
                     RacialTraitEnum.Liberator
@@ -357,7 +357,7 @@ public partial class BackgroundTables
                     "learned that there is little that " +
                     "money cannot buy. You gain access " +
                     "to the Rich Parents social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.RichParents,
                 },
@@ -384,7 +384,7 @@ public partial class BackgroundTables
                     "aspects of the criminal underworld. " +
                     "You gain access to the Canter social " +
                     "trait and the Liberator story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Canter,
                     RacialTraitEnum.Liberator,
@@ -410,7 +410,7 @@ public partial class BackgroundTables
                     "always held a special fascination " +
                     "for you. You gain access to the " +
                     "Magical Talent magic trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.MagicalTalent,
                 },
@@ -437,7 +437,7 @@ public partial class BackgroundTables
                     "gain access to the Resilient " +
                     "combat trait and the Unforgotten " +
                     "story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Resilient,
                     RacialTraitEnum.Unforgotten,
@@ -463,7 +463,7 @@ public partial class BackgroundTables
                     "influence you would not be who " +
                     "you are.You gain access to the " +
                     "Mentored social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Mentored,
                 },
@@ -491,7 +491,7 @@ public partial class BackgroundTables
                     "from the other children. You " +
                     "gain access to the Gifted Adept " +
                     "magic trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.GiftedAdept,
                 },
@@ -520,7 +520,7 @@ public partial class BackgroundTables
                     "nothing ever seemed to happen. " +
                     "You gain access to the Ordinary " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Ordinary,
                 },
@@ -547,7 +547,7 @@ public partial class BackgroundTables
                     "You gain access to the Axe to Grind " +
                     "combat trait, the Foeslayer story " +
                     "feat, and the Vengeance story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.AxetoGrind,
                     RacialTraitEnum.Foeslayer,
@@ -577,7 +577,7 @@ public partial class BackgroundTables
                     "You gain access to the Vagabond " +
                     "Child regional trait and the " +
                     "Deny the Reaper story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.VagabondChild,
                     RacialTraitEnum.DenytheReaper,

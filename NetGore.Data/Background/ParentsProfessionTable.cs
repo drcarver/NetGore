@@ -44,7 +44,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Life of Toil social " +
                     "trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.LifeofToil,
                 },
@@ -62,7 +62,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the " +
                     "Poverty-Stricken social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.PovertyStricken,
                 },
@@ -78,7 +78,7 @@ public partial class BackgroundTables
                 Name = nameof(ProfessionEnum.Entertainers),
                 Description =
                     "You gain access to the Talented social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Talented,
                 },
@@ -94,7 +94,7 @@ public partial class BackgroundTables
                 Name = nameof(ProfessionEnum.Soldiers),
                 Description =
                     "You gain access to the Tactician combat trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Tactician,
                 },
@@ -110,7 +110,7 @@ public partial class BackgroundTables
                 Name = nameof(ProfessionEnum.Sailors),
                 Description =
                     "You gain access to the Worldly social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Worldly,
                 },
@@ -127,7 +127,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Child of " +
                     "the Streets social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.ChildoftheStreets,
                 },
@@ -144,7 +144,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the " +
                     "Savanna Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.SavannaChild,
                 },
@@ -162,7 +162,7 @@ public partial class BackgroundTables
                     "You gain access to the Artisan " +
                     "social trait and the Life of Toil " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Artisan,
                     RacialTraitEnum.LifeofToil,
@@ -179,7 +179,7 @@ public partial class BackgroundTables
                 Name = nameof(ProfessionEnum.Merchants),
                 Description =
                     "You gain access to the Merchant social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Merchant,
                 },
@@ -197,7 +197,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Child of " +
                     "the Temple faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.ChildoftheTemple,
                 },

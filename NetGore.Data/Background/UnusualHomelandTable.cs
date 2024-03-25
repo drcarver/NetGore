@@ -46,7 +46,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Surface " +
                     "Stranger regional trait.",
-                RacialTraits =
+                Traits =
                 { 
                     RacialTraitEnum.SurfaceStranger,
                 },   
@@ -64,7 +64,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Highlander " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Highlander,
                 },
@@ -82,7 +82,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Savanna " +
                     "Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.SavannaChild,
                 },
@@ -101,7 +101,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Militia " +
                     "Veteran regional trait",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.MilitiaVeteran,
                 },
@@ -122,7 +122,7 @@ public partial class BackgroundTables
                     "You gain access to the Civilized " +
                     "social trait and the Vagabond " +
                     "Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.MilitiaVeteran,
                 },
@@ -140,7 +140,7 @@ public partial class BackgroundTables
                 Description =
                     "You gain access to the Log Roller " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.LogRoller,
                 },
@@ -158,7 +158,7 @@ public partial class BackgroundTables
                 ProperName = "River, Swamp, or Wetlands",
                 Description =
                     "You gain access to the River Rat regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.RiverRat,
                 },
@@ -175,7 +175,7 @@ public partial class BackgroundTables
                 Name = nameof(UnusualHomelandEnum.Desert),
                 Description =
                     "You gain access to the Desert Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.DesertChild,
                 },
@@ -193,7 +193,7 @@ public partial class BackgroundTables
                 ProperName = "Sea-Souled",
                 Description =
                     "You gain access to the Sea-Souled regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.SeaSouled,
                 },
@@ -210,7 +210,7 @@ public partial class BackgroundTables
                 Name = nameof(UnusualHomelandEnum.Tundra),
                 Description =
                     "You gain access to the Tundra Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.TundraChild,
                 },
@@ -229,7 +229,7 @@ public partial class BackgroundTables
                 ProperName = "Another Plane",
                 Description =
                     "You gain access to the Scholar of the Great Beyond faith trait",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.ScholaroftheGreatBeyond,
                 },

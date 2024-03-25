@@ -96,7 +96,7 @@ public class Gnome : IRace
                     "You gain access to the " +
                     "Log Roller regional trait and " +
                     "the Animal Friend race trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.LogRoller,
                     RacialTraitEnum.AnimalFriend
@@ -113,7 +113,7 @@ public class Gnome : IRace
                 Name = "Non-Gnome Town or Village",
                 Description =
                     "You gain access to the Animal Friend race trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.AnimalFriend,
                 },
@@ -129,7 +129,7 @@ public class Gnome : IRace
                 Name = "Non-Gnome City or Metropolis",
                 Description =
                     "You gain access to the Rapscallion race trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Rapscallion,
                 },
@@ -210,7 +210,7 @@ public class Gnome : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Orphaned,
                 },
@@ -243,7 +243,7 @@ public class Gnome : IRace
                     "With two or more siblings, you " +
                     "gain access to the Kin Guardian " +
                     "combat trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinGuardian,
                 },
@@ -265,7 +265,7 @@ public class Gnome : IRace
                     "combat trait. Roll on Table: " +
                     "Race to determine the race " +
                     "of any adopted siblings.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinGuardian,
                 },
@@ -297,9 +297,9 @@ public class Gnome : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -312,9 +312,9 @@ public class Gnome : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {

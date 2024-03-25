@@ -39,13 +39,18 @@ public class RelativeAgeofSiblingTableTests
         {
             //01–48	Your sibling is older than you.
             case int n when (n>= 1 && n <= 48):
-                return entry.Name == nameof(RelativeAgeofSiblingEnum.Older);
+                return entry.Name == nameof(RelativeAgeofSiblingEnum.Older)
+                    && entry.Traits.Count == 0;
+
             //49–96	Your sibling is younger than you.
             case int n when (n >= 49 && n <= 96):
-                return entry.Name == nameof(RelativeAgeofSiblingEnum.Younger);
+                return entry.Name == nameof(RelativeAgeofSiblingEnum.Younger)
+                    && entry.Traits.Count == 0;
+
             //97–100	You and a sibling are twins(identical or fraternal, your choice). Roll on this table again. If you roll this result again, you are one of triplets; otherwise, your sibling’s relative age determines which of you emerged first.
             case int n when (n >= 97 && n <= 100):
-                return entry.Name == nameof(RelativeAgeofSiblingEnum.Twins);
+                return entry.Name == nameof(RelativeAgeofSiblingEnum.Twins)
+                    && entry.Traits.Count == 0;
         }
         return false;
     }

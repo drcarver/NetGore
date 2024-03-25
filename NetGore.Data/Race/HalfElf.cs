@@ -107,7 +107,7 @@ public class HalfElf : IRace
                 Name = "Forest",
                 Description =
                     "You gain access to the Log Roller regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.LogRoller,
                 },
@@ -188,7 +188,7 @@ public class HalfElf : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Orphaned,
                 },
@@ -225,7 +225,7 @@ public class HalfElf : IRace
                     "human, your choice). With two " +
                     "or more siblings, you gain access " +
                     "to the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinGuardian,
                 },
@@ -243,7 +243,7 @@ public class HalfElf : IRace
                     "One half-elf sibling. You gain " +
                     "access to the Kin Bond magic " +
                     "trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinBond,
                 },
@@ -275,9 +275,9 @@ public class HalfElf : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -290,9 +290,9 @@ public class HalfElf : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {

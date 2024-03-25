@@ -35,6 +35,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable CircumstanceofBirthTable { get; } = new()
     {
+        Name = "Circumstance of Birth Table",
         DiceSides = 100,
         Table =
         [
@@ -57,10 +58,11 @@ public partial class BackgroundTables
                     "Parents’ Profession to determine " +
                     "your parents’ occupation, instead " +
                     "of rolling d%.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.PovertyStricken,
                 },
+                AlternateTable = BackgroundTables.ParentsProfessionTable
             },
             #endregion
 
@@ -85,7 +87,7 @@ public partial class BackgroundTables
                     "lack the privilege of the nobility. " +
                     "You gain access to the Artisan social " +
                     "trait and the Merchant social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Artisan,
                     RacialTraitEnum.Merchant,
@@ -112,7 +114,7 @@ public partial class BackgroundTables
                     "trait and the Rich Parents social " +
                     "trait. Roll on Table: Nobility to " +
                     "determine your family’s noble rank.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Influence,
                     RacialTraitEnum.RichParents,
@@ -134,11 +136,6 @@ public partial class BackgroundTables
                     "family and grew up in a family of " +
                     "a different race than your own. " +
                     "Roll on Table: Race.",
-                RacialTraits =
-                {
-                    RacialTraitEnum.Influence,
-                    RacialTraitEnum.RichParents,
-                },
                 AlternateTable = RaceTable
             },
             #endregion
@@ -180,7 +177,7 @@ public partial class BackgroundTables
                     "unknown or a distant presence " +
                     "at best. You gain access to the " +
                     "Bastard social trait and the Shamed story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Bastard,
                     RacialTraitEnum.Shamed,
@@ -204,7 +201,7 @@ public partial class BackgroundTables
                     "marked you as special to some deity. " +
                     "You gain access to the Blessed faith " +
                     "trait and the Birthmark faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Blessed,
                     RacialTraitEnum.Birthmark,
@@ -227,7 +224,7 @@ public partial class BackgroundTables
                     "remains unknown. You gain access " +
                     "to the Axe to Grind combat trait " +
                     "and the Bastard social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.AxetoGrind,
                     RacialTraitEnum.Bastard,
@@ -252,7 +249,7 @@ public partial class BackgroundTables
                     "and alien to you. You gain access to " +
                     "the Scholar of the Great Beyond " +
                     "faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.ScholaroftheGreatBeyond,
                 },
@@ -273,7 +270,7 @@ public partial class BackgroundTables
                     "or you were sold into slavery as an infant. " +
                     "You gain access to the Life of Toil social " +
                     "trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.LifeofToil,
                 },
@@ -295,7 +292,7 @@ public partial class BackgroundTables
                     "agent of dark prophecy. You gain " +
                     "access to the Fiend Blood bloodline " +
                     "race trait and the Accursed story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.FiendBlood,
                     RacialTraitEnum.Accursed,
@@ -322,7 +319,7 @@ public partial class BackgroundTables
                     "to the Reactionary combat trait, " +
                     "the Lost Legacy story feat, " +
                     "and the Redemption story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Reactionary,
                     RacialTraitEnum.LostLegacy,
@@ -349,7 +346,7 @@ public partial class BackgroundTables
                     "fortunes. You gain access to " +
                     "the Influence social trait " +
                     "and the Rich Parents social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Influence,
                     RacialTraitEnum.RichParents,
@@ -372,7 +369,7 @@ public partial class BackgroundTables
                     "gain access to the Courageous " +
                     "combat trait, the Savage social " +
                     "trait, and the Arisen story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Courageous,
                     RacialTraitEnum.Savage,
@@ -396,7 +393,7 @@ public partial class BackgroundTables
                     "faith trait, the Sacred Touch " +
                     "faith trait, and the Prophet " +
                     "story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Birthmark,
                     RacialTraitEnum.SacredTouch,
@@ -419,7 +416,7 @@ public partial class BackgroundTables
                     "You gain access to the Sacred Conduit " +
                     "faith trait and the Sacred Touch " +
                     "faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.SacredConduit,
                     RacialTraitEnum.SacredTouch,
@@ -441,7 +438,7 @@ public partial class BackgroundTables
                     "time of power. You gain access to the " +
                     "Magical Talent magic trait, the Charming " +
                     "social trait, and the Sacred Touch faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.MagicalTalent,
                     RacialTraitEnum.Charming,
@@ -464,7 +461,7 @@ public partial class BackgroundTables
                     "thousands of years ago. You " +
                     "gain access to the Prophesied " +
                     "faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Prophesied,
                 }
@@ -488,7 +485,7 @@ public partial class BackgroundTables
                     "access to the Reincarnated " +
                     "faith trait, the Arisen story " +
                     "feat, and the Forgotten Past story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Reincarnated,
                     RacialTraitEnum.Arisen,
@@ -512,7 +509,7 @@ public partial class BackgroundTables
                     "you are an omen of promise, perhaps " +
                     "one of dark times ahead. You gain " +
                     "access to the Omen faith trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Omen,
                 }

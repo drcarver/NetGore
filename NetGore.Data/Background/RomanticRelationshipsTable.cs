@@ -87,7 +87,7 @@ public partial class BackgroundTables
                     "You are currently involved in a " +
                     "romantic relationship. You gain " +
                     "access to the True Love story feat.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.TrueLove,
                 },

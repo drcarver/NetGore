@@ -96,7 +96,7 @@ public class HalfOrc : IRace
                     "You gain access to either the " +
                     "Scrapper race trait or the " +
                     "Surface Stranger regional trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Scrapper,
                     RacialTraitEnum.SurfaceStranger,
@@ -113,7 +113,7 @@ public class HalfOrc : IRace
                 Name = "Orc Settlement",
                 Description =
                     "You gain access to the Scrapper race trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Scrapper,
                 },
@@ -131,7 +131,7 @@ public class HalfOrc : IRace
                     "You have lived a life on the run " +
                     "and gain access to the Outcast " +
                     "race trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Outcast,
                 },
@@ -212,7 +212,7 @@ public class HalfOrc : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.Orphaned,
                 },
@@ -245,7 +245,7 @@ public class HalfOrc : IRace
                 Description =
                     "1d6+1 orc siblings.You gain access " +
                     "to the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinGuardian,
                 },
@@ -263,7 +263,7 @@ public class HalfOrc : IRace
                     "One half-elf sibling. You gain " +
                     "access to the Kin Bond magic " +
                     "trait.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinBond,
                 },
@@ -279,7 +279,7 @@ public class HalfOrc : IRace
                 Name = "1d1",
                 Description =
                     "One half-orc sibling.",
-                RacialTraits =
+                Traits =
                 {
                     RacialTraitEnum.KinBond,
                 },
@@ -311,9 +311,9 @@ public class HalfOrc : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -326,9 +326,9 @@ public class HalfOrc : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {

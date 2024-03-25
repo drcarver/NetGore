@@ -39,34 +39,54 @@ public class CrimeTableTests
         {
             //01–10	Adultery
             case int n when (n>= 1 && n <= 10):
-                return entry.Name == nameof(CrimeEnum.Adultery);
+                return entry.Name == nameof(CrimeEnum.Adultery)
+                    && entry.Traits.Count == 0;
+
             //11–20	Arson
             case int n when (n >= 11 && n <= 20):
-                return entry.Name == nameof(CrimeEnum.Arson);
+                return entry.Name == nameof(CrimeEnum.Arson)
+                    && entry.Traits.Count == 0;
+
             //21–30	Burglary
             case int n when (n >= 21 && n <= 30):
-                return entry.Name == nameof(CrimeEnum.Burglary);
+                return entry.Name == nameof(CrimeEnum.Burglary)
+                    && entry.Traits.Count == 0;
+
             //31–40	Heresy
             case int n when (n >= 31 && n <= 40):
-                return entry.Name == nameof(CrimeEnum.Heresy);
+                return entry.Name == nameof(CrimeEnum.Heresy)
+                    && entry.Traits.Count == 0;
+
             //41–50	Minor offense(sumptuary law)
             case int n when (n >= 41 && n <= 50):
-                return entry.Name == nameof(CrimeEnum.Minoroffense);
+                return entry.Name == nameof(CrimeEnum.Minoroffense)
+                    && entry.Traits.Count == 0;
+
             //51–60	Murder
             case int n when (n >= 51 && n <= 60):
-                return entry.Name == nameof(CrimeEnum.Murder);
+                return entry.Name == nameof(CrimeEnum.Murder)
+                    && entry.Traits.Count == 0;
+
             //61–70	Rebellion/treason
             case int n when (n >= 61 && n <= 70):
-                return entry.Name == nameof(CrimeEnum.RebellionorTreason);
+                return entry.Name == nameof(CrimeEnum.RebellionorTreason)
+                    && entry.Traits.Count == 0;
+
             //71–80	Robbery
             case int n when (n >= 71 && n <= 80):
-                return entry.Name == nameof(CrimeEnum.Robbery);
+                return entry.Name == nameof(CrimeEnum.Robbery)
+                    && entry.Traits.Count == 0;
+
             //81–90	Smuggling
             case int n when (n >= 81 && n <= 90):
-                return entry.Name == nameof(CrimeEnum.Smuggling);
+                return entry.Name == nameof(CrimeEnum.Smuggling)
+                    && entry.Traits.Count == 0;
+
             //91–100	Unlawful use of magic
             case int n when (n >= 91 && n <= 100):
-                return entry.Name == nameof(CrimeEnum.Unlawfuluseofmagic);
+                return entry.Name == nameof(CrimeEnum.Unlawfuluseofmagic)
+                    && entry.Traits.Count == 0;
+
         }
         return false;
     }
