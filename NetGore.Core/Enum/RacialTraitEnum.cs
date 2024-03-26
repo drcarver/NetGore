@@ -87,4 +87,13 @@ public enum TraitEnum
     ForgottenPast = 82,
     Omen = 83,
     Vengeance = 84,
+    ChildofNature = 85,
+    Trustworthy = 86,
+    Mercenary = 87,
+    Unpredictable = 88,
+    Oathbound = 89,
+    NaturalBornLeader = 90,
+    MathematicalProdigy = 91,
+    Possessed = 92,
+    Ambitious = 93,
 }
