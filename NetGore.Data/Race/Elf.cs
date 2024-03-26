@@ -96,7 +96,7 @@ public class Elf : IRace
                     "Log Roller regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LogRoller,
+                    TraitEnum.LogRoller,
                 },
             },
             #endregion
@@ -117,7 +117,7 @@ public class Elf : IRace
                     "Failed Apprentice race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Civilized
+                    TraitEnum.Civilized
                 },
 
             },
@@ -134,7 +134,7 @@ public class Elf : IRace
                     "You gain access to the Forlorn race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Forlorn,
+                    TraitEnum.Forlorn,
                 },
             },
             #endregion
@@ -214,7 +214,7 @@ public class Elf : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
 
             },
@@ -248,7 +248,7 @@ public class Elf : IRace
                     "to the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -265,7 +265,7 @@ public class Elf : IRace
                     "the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -288,7 +288,7 @@ public class Elf : IRace
                 AlternateTable = RaceService.RaceTable,
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -370,9 +370,9 @@ public class Elf : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

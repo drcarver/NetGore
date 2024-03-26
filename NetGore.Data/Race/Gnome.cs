@@ -98,8 +98,8 @@ public class Gnome : IRace
                     "the Animal Friend race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LogRoller,
-                    RacialTraitEnum.AnimalFriend
+                    TraitEnum.LogRoller,
+                    TraitEnum.AnimalFriend
                 },
             },
             #endregion
@@ -115,7 +115,7 @@ public class Gnome : IRace
                     "You gain access to the Animal Friend race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.AnimalFriend,
+                    TraitEnum.AnimalFriend,
                 },
             },
             #endregion
@@ -131,7 +131,7 @@ public class Gnome : IRace
                     "You gain access to the Rapscallion race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Rapscallion,
+                    TraitEnum.Rapscallion,
                 },
             },
             #endregion
@@ -212,7 +212,7 @@ public class Gnome : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -245,7 +245,7 @@ public class Gnome : IRace
                     "combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -267,7 +267,7 @@ public class Gnome : IRace
                     "of any adopted siblings.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -349,9 +349,9 @@ public class Gnome : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

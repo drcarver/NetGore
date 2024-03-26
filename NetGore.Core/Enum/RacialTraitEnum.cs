@@ -1,6 +1,6 @@
 ﻿namespace NetGore.Core.Enum;
 
-public enum RacialTraitEnum
+public enum TraitEnum
 {
     None = 0,
     Goldsniffer = 1,
@@ -86,4 +86,5 @@ public enum RacialTraitEnum
     Reincarnated = 81,
     ForgottenPast = 82,
     Omen = 83,
+    Vengeance = 84,
 }

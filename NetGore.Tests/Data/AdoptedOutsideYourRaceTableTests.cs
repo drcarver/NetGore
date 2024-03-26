@@ -41,36 +41,36 @@ public class AdoptedOutsideYourRaceTableTests
             case int n when (n>= 1 && n <= 5):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.AdoptedbyDragons)
                     && entry.Traits.Count == 2
-                    && entry.Traits.Contains(RacialTraitEnum.BloodofDragons)
-                    && entry.Traits.Contains(RacialTraitEnum.MagicalKnack);
+                    && entry.Traits.Contains(TraitEnum.BloodofDragons)
+                    && entry.Traits.Contains(TraitEnum.MagicalKnack);
 
             //06–10	Adopted by the Fey
             case int n when (n >= 6 && n <= 10):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.AdoptedbytheFey)
                     && entry.Traits.Count == 2
-                    && entry.Traits.Contains(RacialTraitEnum.Charming)
-                    && entry.Traits.Contains(RacialTraitEnum.MagicalKnack);
+                    && entry.Traits.Contains(TraitEnum.Charming)
+                    && entry.Traits.Contains(TraitEnum.MagicalKnack);
 
             //11–13	Raised Among the Dead
             case int n when (n >= 11 && n <= 13):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedAmongtheDead)
                     && entry.Traits.Count == 3
-                    && entry.Traits.Contains(RacialTraitEnum.Deathtouched)
-                    && entry.Traits.Contains(RacialTraitEnum.GlimpseBeyond)
-                    && entry.Traits.Contains(RacialTraitEnum.MagicalKnack);
+                    && entry.Traits.Contains(TraitEnum.Deathtouched)
+                    && entry.Traits.Contains(TraitEnum.GlimpseBeyond)
+                    && entry.Traits.Contains(TraitEnum.MagicalKnack);
 
             //14–19	Raised by Angels
             case int n when (n >= 14 && n <= 19):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedbyAngels)
                     && entry.Traits.Count == 1
-                    && entry.Traits.Contains(RacialTraitEnum.Blessed);
+                    && entry.Traits.Contains(TraitEnum.Blessed);
 
             //20–25	Raised by Beasts
             case int n when (n >= 20 && n <= 25):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedbyBeasts)
                     && entry.Traits.Count == 2
-                    && entry.Traits.Contains(RacialTraitEnum.Resilient)
-                    && entry.Traits.Contains(RacialTraitEnum.FeralHeart);
+                    && entry.Traits.Contains(TraitEnum.Resilient)
+                    && entry.Traits.Contains(TraitEnum.FeralHeart);
 
             //26–70	Raised by Civilized Humanoids
             case int n when (n >= 26 && n <= 70):
@@ -81,14 +81,14 @@ public class AdoptedOutsideYourRaceTableTests
             case int n when (n >= 71 && n <= 95):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedbySavageHumanoids)
                     && entry.Traits.Count == 1
-                    && entry.Traits.Contains(RacialTraitEnum.Savage);
+                    && entry.Traits.Contains(TraitEnum.Savage);
 
             //96–100	Fiend Raised
             case int n when (n >= 96 && n <= 100):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.FiendRaised)
                     && entry.Traits.Count == 2
-                    && entry.Traits.Contains(RacialTraitEnum.FiendBlood)
-                    && entry.Traits.Contains(RacialTraitEnum.Damned);
+                    && entry.Traits.Contains(TraitEnum.FiendBlood)
+                    && entry.Traits.Contains(TraitEnum.Damned);
         }
         return false;
     }

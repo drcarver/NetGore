@@ -109,7 +109,7 @@ public class HalfElf : IRace
                     "You gain access to the Log Roller regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LogRoller,
+                    TraitEnum.LogRoller,
                 },
             },
             #endregion
@@ -190,7 +190,7 @@ public class HalfElf : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -227,7 +227,7 @@ public class HalfElf : IRace
                     "to the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -245,7 +245,7 @@ public class HalfElf : IRace
                     "trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinBond,
+                    TraitEnum.KinBond,
                 },
             },
             #endregion
@@ -327,9 +327,9 @@ public class HalfElf : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

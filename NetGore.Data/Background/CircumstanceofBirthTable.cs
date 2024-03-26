@@ -60,7 +60,7 @@ public partial class BackgroundTables
                     "of rolling d%.",
                 Traits =
                 {
-                    RacialTraitEnum.PovertyStricken,
+                    TraitEnum.PovertyStricken,
                 },
                 AlternateTable = BackgroundTables.ParentsProfessionTable
             },
@@ -89,8 +89,8 @@ public partial class BackgroundTables
                     "trait and the Merchant social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Artisan,
-                    RacialTraitEnum.Merchant,
+                    TraitEnum.Artisan,
+                    TraitEnum.Merchant,
                 },
             },
             #endregion
@@ -116,8 +116,8 @@ public partial class BackgroundTables
                     "determine your family’s noble rank.",
                 Traits =
                 {
-                    RacialTraitEnum.Influence,
-                    RacialTraitEnum.RichParents,
+                    TraitEnum.Influence,
+                    TraitEnum.RichParents,
                 },
                 AlternateTable = NobilityTable
             },
@@ -179,8 +179,8 @@ public partial class BackgroundTables
                     "Bastard social trait and the Shamed story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Bastard,
-                    RacialTraitEnum.Shamed,
+                    TraitEnum.Bastard,
+                    TraitEnum.Shamed,
                 },
             },
             #endregion
@@ -203,8 +203,8 @@ public partial class BackgroundTables
                     "trait and the Birthmark faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Blessed,
-                    RacialTraitEnum.Birthmark,
+                    TraitEnum.Blessed,
+                    TraitEnum.Birthmark,
                 },
             },
             #endregion
@@ -226,8 +226,8 @@ public partial class BackgroundTables
                     "and the Bastard social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.AxetoGrind,
-                    RacialTraitEnum.Bastard,
+                    TraitEnum.AxetoGrind,
+                    TraitEnum.Bastard,
                 },
             },
             #endregion
@@ -251,7 +251,7 @@ public partial class BackgroundTables
                     "faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.ScholaroftheGreatBeyond,
+                    TraitEnum.ScholaroftheGreatBeyond,
                 },
             },
             #endregion
@@ -272,7 +272,7 @@ public partial class BackgroundTables
                     "trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LifeofToil,
+                    TraitEnum.LifeofToil,
                 },
             },
             #endregion
@@ -294,8 +294,8 @@ public partial class BackgroundTables
                     "race trait and the Accursed story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.FiendBlood,
-                    RacialTraitEnum.Accursed,
+                    TraitEnum.FiendBlood,
+                    TraitEnum.Accursed,
                 },
             },
             #endregion
@@ -321,9 +321,9 @@ public partial class BackgroundTables
                     "and the Redemption story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Reactionary,
-                    RacialTraitEnum.LostLegacy,
-                    RacialTraitEnum.Redemption,
+                    TraitEnum.Reactionary,
+                    TraitEnum.LostLegacy,
+                    TraitEnum.Redemption,
                 },
             },
             #endregion
@@ -348,8 +348,8 @@ public partial class BackgroundTables
                     "and the Rich Parents social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Influence,
-                    RacialTraitEnum.RichParents,
+                    TraitEnum.Influence,
+                    TraitEnum.RichParents,
                 },
             },
             #endregion
@@ -371,9 +371,9 @@ public partial class BackgroundTables
                     "trait, and the Arisen story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Courageous,
-                    RacialTraitEnum.Savage,
-                    RacialTraitEnum.Arisen,
+                    TraitEnum.Courageous,
+                    TraitEnum.Savage,
+                    TraitEnum.Arisen,
                 },
             },
             #endregion
@@ -395,9 +395,9 @@ public partial class BackgroundTables
                     "story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Birthmark,
-                    RacialTraitEnum.SacredTouch,
-                    RacialTraitEnum.Prophet,
+                    TraitEnum.Birthmark,
+                    TraitEnum.SacredTouch,
+                    TraitEnum.Prophet,
                 },
             },
             #endregion
@@ -418,8 +418,8 @@ public partial class BackgroundTables
                     "faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.SacredConduit,
-                    RacialTraitEnum.SacredTouch,
+                    TraitEnum.SacredConduit,
+                    TraitEnum.SacredTouch,
                 },
             },
             #endregion
@@ -440,9 +440,9 @@ public partial class BackgroundTables
                     "social trait, and the Sacred Touch faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.MagicalTalent,
-                    RacialTraitEnum.Charming,
-                    RacialTraitEnum.SacredTouch,                },
+                    TraitEnum.MagicalTalent,
+                    TraitEnum.Charming,
+                    TraitEnum.SacredTouch,                },
             },
             #endregion
 
@@ -463,7 +463,7 @@ public partial class BackgroundTables
                     "faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Prophesied,
+                    TraitEnum.Prophesied,
                 }
             },
             #endregion
@@ -487,9 +487,9 @@ public partial class BackgroundTables
                     "feat, and the Forgotten Past story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Reincarnated,
-                    RacialTraitEnum.Arisen,
-                    RacialTraitEnum.ForgottenPast,
+                    TraitEnum.Reincarnated,
+                    TraitEnum.Arisen,
+                    TraitEnum.ForgottenPast,
                 }
             },
             #endregion
@@ -511,7 +511,7 @@ public partial class BackgroundTables
                     "access to the Omen faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Omen,
+                    TraitEnum.Omen,
                 }
             },
             #endregion

@@ -49,8 +49,8 @@ public partial class BackgroundTables
                     "magic trait.",
                 Traits =
                 {
-                    RacialTraitEnum.BloodofDragons,
-                    RacialTraitEnum.MagicalKnack,
+                    TraitEnum.BloodofDragons,
+                    TraitEnum.MagicalKnack,
                 },
             },
             #endregion
@@ -72,8 +72,8 @@ public partial class BackgroundTables
                     "magic trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Charming,
-                    RacialTraitEnum.MagicalKnack,
+                    TraitEnum.Charming,
+                    TraitEnum.MagicalKnack,
                 },
             },
             #endregion
@@ -101,9 +101,9 @@ public partial class BackgroundTables
                     "the Glimpse Beyond story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Deathtouched,
-                    RacialTraitEnum.MagicalKnack,
-                    RacialTraitEnum.GlimpseBeyond,
+                    TraitEnum.Deathtouched,
+                    TraitEnum.MagicalKnack,
+                    TraitEnum.GlimpseBeyond,
                 },
             },
             #endregion
@@ -128,7 +128,7 @@ public partial class BackgroundTables
                     "access to the Blessed faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Blessed,
+                    TraitEnum.Blessed,
                 },
             },
             #endregion
@@ -154,8 +154,8 @@ public partial class BackgroundTables
                     "and the Feral Heart story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Resilient,
-                    RacialTraitEnum.FeralHeart,
+                    TraitEnum.Resilient,
+                    TraitEnum.FeralHeart,
                 },
             },
             #endregion
@@ -202,7 +202,7 @@ public partial class BackgroundTables
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Savage,
+                    TraitEnum.Savage,
                 },
             },
             #endregion
@@ -227,8 +227,8 @@ public partial class BackgroundTables
                     "Damned story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.FiendBlood,
-                    RacialTraitEnum.Damned,
+                    TraitEnum.FiendBlood,
+                    TraitEnum.Damned,
                 },
             },
             #endregion

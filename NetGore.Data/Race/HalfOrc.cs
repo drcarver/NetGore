@@ -98,8 +98,8 @@ public class HalfOrc : IRace
                     "Surface Stranger regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Scrapper,
-                    RacialTraitEnum.SurfaceStranger,
+                    TraitEnum.Scrapper,
+                    TraitEnum.SurfaceStranger,
                 },
             },
             #endregion
@@ -115,7 +115,7 @@ public class HalfOrc : IRace
                     "You gain access to the Scrapper race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Scrapper,
+                    TraitEnum.Scrapper,
                 },
             },
             #endregion
@@ -133,7 +133,7 @@ public class HalfOrc : IRace
                     "race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Outcast,
+                    TraitEnum.Outcast,
                 },
             },
             #endregion
@@ -214,7 +214,7 @@ public class HalfOrc : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -247,7 +247,7 @@ public class HalfOrc : IRace
                     "to the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -265,7 +265,7 @@ public class HalfOrc : IRace
                     "trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinBond,
+                    TraitEnum.KinBond,
                 },
             },
             #endregion
@@ -281,7 +281,7 @@ public class HalfOrc : IRace
                     "One half-orc sibling.",
                 Traits =
                 {
-                    RacialTraitEnum.KinBond,
+                    TraitEnum.KinBond,
                 },
             },
             #endregion
@@ -363,9 +363,9 @@ public class HalfOrc : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

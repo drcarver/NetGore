@@ -76,8 +76,8 @@ public class Halfling : IRace
                     "race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Civilized,
-                    RacialTraitEnum.WellInformed,
+                    TraitEnum.Civilized,
+                    TraitEnum.WellInformed,
                 },
             },
             #endregion
@@ -93,8 +93,8 @@ public class Halfling : IRace
                     "You gain access to the Child of the Streets social trait and the Well-Informed race trait.",
                 Traits =
                 {
-                    RacialTraitEnum.ChildoftheStreets,
-                    RacialTraitEnum.WellInformed,
+                    TraitEnum.ChildoftheStreets,
+                    TraitEnum.WellInformed,
                 },
             },
             #endregion
@@ -112,7 +112,7 @@ public class Halfling : IRace
                     "You gain access to the Friend in Every Town social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.FriendinEveryTown,
+                    TraitEnum.FriendinEveryTown,
                 },
             },
             #endregion
@@ -193,7 +193,7 @@ public class Halfling : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -226,7 +226,7 @@ public class Halfling : IRace
                     "1d2 siblings. With two siblings, you gain access to the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -243,7 +243,7 @@ public class Halfling : IRace
                     "1d4+1 siblings. You gain access to the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -325,9 +325,9 @@ public class Halfling : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

@@ -51,6 +51,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable RaceTable { get; } = new()
     {
+        Name = "Race Table",
         DiceSides = 100,
         Table =
         [

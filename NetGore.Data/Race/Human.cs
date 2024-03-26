@@ -98,7 +98,7 @@ public class Human : IRace
                 "You gain access to the Militia Veteran regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.MilitiaVeteran,
                 },
             },
             #endregion
@@ -116,8 +116,8 @@ public class Human : IRace
                 Description = "If you’re a human, you gain access to the Civilized social trait and the Vagabond Child regional trait",
                 Traits =
                 {
-                    RacialTraitEnum.Civilized,
-                    RacialTraitEnum.VagabondChild,
+                    TraitEnum.Civilized,
+                    TraitEnum.VagabondChild,
                 },
             },
             #endregion
@@ -132,7 +132,7 @@ public class Human : IRace
                 Description = "You gain access to the Frontier-Forged regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.FrontierForged,
+                    TraitEnum.FrontierForged,
                 },
             },
             #endregion
@@ -213,7 +213,7 @@ public class Human : IRace
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -247,7 +247,7 @@ public class Human : IRace
                     "combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -278,7 +278,7 @@ public class Human : IRace
                     "the Kin Guardian combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -348,9 +348,9 @@ public class Human : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

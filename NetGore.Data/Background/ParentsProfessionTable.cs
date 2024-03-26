@@ -31,6 +31,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable ParentsProfessionTable { get; } = new()
     {
+        Name = "Parents’ Profession",
         DiceSides = 100,
         Table =
         [
@@ -46,7 +47,7 @@ public partial class BackgroundTables
                     "trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LifeofToil,
+                    TraitEnum.LifeofToil,
                 },
             },
             #endregion
@@ -64,7 +65,7 @@ public partial class BackgroundTables
                     "Poverty-Stricken social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.PovertyStricken,
+                    TraitEnum.PovertyStricken,
                 },
             },
             #endregion
@@ -80,7 +81,7 @@ public partial class BackgroundTables
                     "You gain access to the Talented social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Talented,
+                    TraitEnum.Talented,
                 },
             },
             #endregion
@@ -96,7 +97,7 @@ public partial class BackgroundTables
                     "You gain access to the Tactician combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Tactician,
+                    TraitEnum.Tactician,
                 },
             },
             #endregion
@@ -112,7 +113,7 @@ public partial class BackgroundTables
                     "You gain access to the Worldly social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Worldly,
+                    TraitEnum.Worldly,
                 },
             },
             #endregion
@@ -129,7 +130,7 @@ public partial class BackgroundTables
                     "the Streets social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.ChildoftheStreets,
+                    TraitEnum.ChildoftheStreets,
                 },
             },
             #endregion
@@ -146,7 +147,7 @@ public partial class BackgroundTables
                     "Savanna Child regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.SavannaChild,
+                    TraitEnum.SavannaChild,
                 },
             },
             #endregion
@@ -164,8 +165,24 @@ public partial class BackgroundTables
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Artisan,
-                    RacialTraitEnum.LifeofToil,
+                    TraitEnum.Artisan,
+                    TraitEnum.LifeofToil,
+                },
+            },
+            #endregion
+
+            #region "Artisans"
+            //71–85	Artisans	You gain access to the Artisan social trait..
+            new RandomTableEntry
+            {
+                LowerRange = 71,
+                UpperRange = 85,
+                Name = nameof(ProfessionEnum.Artisans),
+                Description =
+                    "You gain access to the Artisan social trait.",
+                Traits =
+                {
+                    TraitEnum.Artisan,
                 },
             },
             #endregion
@@ -175,13 +192,13 @@ public partial class BackgroundTables
             new RandomTableEntry
             {
                 LowerRange = 86,
-                UpperRange = 96,
+                UpperRange = 95,
                 Name = nameof(ProfessionEnum.Merchants),
                 Description =
                     "You gain access to the Merchant social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Merchant,
+                    TraitEnum.Merchant,
                 },
             },
             #endregion
@@ -199,7 +216,7 @@ public partial class BackgroundTables
                     "the Temple faith trait.",
                 Traits =
                 {
-                    RacialTraitEnum.ChildoftheTemple,
+                    TraitEnum.ChildoftheTemple,
                 },
             },
             #endregion

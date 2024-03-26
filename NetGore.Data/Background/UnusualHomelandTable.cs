@@ -32,6 +32,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable UnusualHomelandTable { get; } = new()
     {
+        Name = "The Unusual Homeland Table",
         DiceSides = 100,
         Table =
         [
@@ -48,7 +49,7 @@ public partial class BackgroundTables
                     "Stranger regional trait.",
                 Traits =
                 { 
-                    RacialTraitEnum.SurfaceStranger,
+                    TraitEnum.SurfaceStranger,
                 },   
             },
             #endregion
@@ -66,7 +67,7 @@ public partial class BackgroundTables
                     "regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Highlander,
+                    TraitEnum.Highlander,
                 },
             },
             #endregion
@@ -84,7 +85,7 @@ public partial class BackgroundTables
                     "Child regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.SavannaChild,
+                    TraitEnum.SavannaChild,
                 },
             },
             #endregion
@@ -103,7 +104,7 @@ public partial class BackgroundTables
                     "Veteran regional trait",
                 Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.MilitiaVeteran,
                 },
             },
             #endregion
@@ -124,7 +125,8 @@ public partial class BackgroundTables
                     "Child regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.Civilized,
+                    TraitEnum.VagabondChild,
                 },
             },
             #endregion
@@ -142,7 +144,7 @@ public partial class BackgroundTables
                     "regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.LogRoller,
+                    TraitEnum.LogRoller,
                 },
             },
             #endregion
@@ -160,7 +162,7 @@ public partial class BackgroundTables
                     "You gain access to the River Rat regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.RiverRat,
+                    TraitEnum.RiverRat,
                 },
             },
             #endregion
@@ -177,7 +179,7 @@ public partial class BackgroundTables
                     "You gain access to the Desert Child regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.DesertChild,
+                    TraitEnum.DesertChild,
                 },
             },
             #endregion
@@ -195,7 +197,7 @@ public partial class BackgroundTables
                     "You gain access to the Sea-Souled regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.SeaSouled,
+                    TraitEnum.SeaSouled,
                 },
             },
             #endregion
@@ -212,7 +214,7 @@ public partial class BackgroundTables
                     "You gain access to the Tundra Child regional trait.",
                 Traits =
                 {
-                    RacialTraitEnum.TundraChild,
+                    TraitEnum.TundraChild,
                 },
             },
             #endregion
@@ -231,7 +233,7 @@ public partial class BackgroundTables
                     "You gain access to the Scholar of the Great Beyond faith trait",
                 Traits =
                 {
-                    RacialTraitEnum.ScholaroftheGreatBeyond,
+                    TraitEnum.ScholaroftheGreatBeyond,
                 },
             },
             #endregion

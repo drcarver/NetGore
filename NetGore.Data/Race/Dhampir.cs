@@ -22,7 +22,7 @@ namespace NetGore.Data.Race;
 /// realms below the earth, constantly at war with 
 /// giants, goblins, and other such horrors.
 /// </summary>
-public class Dwarf : IRace
+public class Dhampir : IRace
 {
     private ILogger? _logger;
 
@@ -30,12 +30,12 @@ public class Dwarf : IRace
     /// Constructor for the character.
     /// </summary>
     /// <param name = "character" > The character (NPC or Player)</param>
-    public Dwarf(Character character)
+    public Dhampir(Character character)
     {
         Initialize(character);
     }
 
-    public Dwarf(ILoggerFactory logger,
+    public Dhampir(ILoggerFactory logger,
         ICharacterService characterService)
     {
         _logger = logger.CreateLogger<Dwarf>();
@@ -48,7 +48,7 @@ public class Dwarf : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Dwarf);
+        creature.RaceName = nameof(Dhampir);
         creature.Description = "Your dwarf character " +
             "has an assortment of inborn abilities, " +
             "part and parcel of dwarven nature.";

@@ -39,6 +39,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable MajorChildhoodEventTable { get; } = new()
     {
+        Name = "Major Childhood Event Table",
         DiceSides = 100,
         Table =
         [
@@ -63,7 +64,7 @@ public partial class BackgroundTables
                     "Focused Mind magic trait.",
                 Traits =
                 {
-                    RacialTraitEnum.FocusedMind,
+                    TraitEnum.FocusedMind,
                 },
 
             },
@@ -87,7 +88,7 @@ public partial class BackgroundTables
                     "to the Suspicious social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Suspicious,
+                    TraitEnum.Suspicious,
                 },
 
             },
@@ -112,7 +113,7 @@ public partial class BackgroundTables
                     "combat trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Bullied,
+                    TraitEnum.Bullied,
                 },
 
             },
@@ -139,8 +140,8 @@ public partial class BackgroundTables
                     "feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Influence,
-                    RacialTraitEnum.Champion,
+                    TraitEnum.Influence,
+                    TraitEnum.Champion,
                 },
 
             },
@@ -167,8 +168,8 @@ public partial class BackgroundTables
                     "story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Reactionary,
-                    RacialTraitEnum.DenytheReaper,
+                    TraitEnum.Reactionary,
+                    TraitEnum.DenytheReaper,
                 },
 
             },
@@ -198,8 +199,8 @@ public partial class BackgroundTables
                     "the Arisen story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.FearlessDefiance,
-                    RacialTraitEnum.Arisen,
+                    TraitEnum.FearlessDefiance,
+                    TraitEnum.Arisen,
                 },
 
             },
@@ -227,7 +228,7 @@ public partial class BackgroundTables
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Worldly,
+                    TraitEnum.Worldly,
                 },
             },
             #endregion
@@ -254,7 +255,7 @@ public partial class BackgroundTables
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.ChildoftheStreets,
+                    TraitEnum.ChildoftheStreets,
                 },
             },
             #endregion
@@ -278,8 +279,8 @@ public partial class BackgroundTables
                     "and the Innocent Blood story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Killer,
-                    RacialTraitEnum.InnocentBlood,
+                    TraitEnum.Killer,
+                    TraitEnum.InnocentBlood,
                 },
             },
             #endregion
@@ -308,7 +309,7 @@ public partial class BackgroundTables
                     "d20 on Table: Romantic Relationships.",
                 Traits =
                 {
-                    RacialTraitEnum.Worldly,
+                    TraitEnum.Worldly,
                 },
             },
             #endregion
@@ -334,8 +335,8 @@ public partial class BackgroundTables
                     "Liberator story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Criminal,
-                    RacialTraitEnum.Liberator
+                    TraitEnum.Criminal,
+                    TraitEnum.Liberator
                 },
             },
             #endregion
@@ -359,7 +360,7 @@ public partial class BackgroundTables
                     "to the Rich Parents social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.RichParents,
+                    TraitEnum.RichParents,
                 },
             },
             #endregion
@@ -386,8 +387,8 @@ public partial class BackgroundTables
                     "trait and the Liberator story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Canter,
-                    RacialTraitEnum.Liberator,
+                    TraitEnum.Canter,
+                    TraitEnum.Liberator,
                 },
             },
             #endregion
@@ -412,7 +413,7 @@ public partial class BackgroundTables
                     "Magical Talent magic trait.",
                 Traits =
                 {
-                    RacialTraitEnum.MagicalTalent,
+                    TraitEnum.MagicalTalent,
                 },
             },
             #endregion
@@ -439,8 +440,8 @@ public partial class BackgroundTables
                     "story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.Resilient,
-                    RacialTraitEnum.Unforgotten,
+                    TraitEnum.Resilient,
+                    TraitEnum.Unforgotten,
                 },
             },
             #endregion
@@ -465,7 +466,7 @@ public partial class BackgroundTables
                     "Mentored social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Mentored,
+                    TraitEnum.Mentored,
                 },
             },
             #endregion
@@ -493,7 +494,7 @@ public partial class BackgroundTables
                     "magic trait.",
                 Traits =
                 {
-                    RacialTraitEnum.GiftedAdept,
+                    TraitEnum.GiftedAdept,
                 },
             },
             #endregion
@@ -522,7 +523,7 @@ public partial class BackgroundTables
                     "social trait.",
                 Traits =
                 {
-                    RacialTraitEnum.Ordinary,
+                    TraitEnum.Ordinary,
                 },
             },
             #endregion
@@ -549,8 +550,9 @@ public partial class BackgroundTables
                     "feat, and the Vengeance story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.AxetoGrind,
-                    RacialTraitEnum.Foeslayer,
+                    TraitEnum.AxetoGrind,
+                    TraitEnum.Vengeance,
+                    TraitEnum.Foeslayer,
                 },
             },
             #endregion
@@ -579,8 +581,8 @@ public partial class BackgroundTables
                     "Deny the Reaper story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.VagabondChild,
-                    RacialTraitEnum.DenytheReaper,
+                    TraitEnum.VagabondChild,
+                    TraitEnum.DenytheReaper,
                 },
             },
             #endregion

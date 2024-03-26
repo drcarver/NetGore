@@ -11,5 +11,6 @@ public enum ProfessionEnum
     Yeomen,
     Tradespeople,
     Merchants,
-    ClergyorCultists
+    ClergyorCultists,
+    Artisans
 }

@@ -26,6 +26,7 @@ public partial class BackgroundTables
     /// </summary>
     public static RandomTable RomanticRelationshipsTable { get; } = new()
     {
+        Name = "Romantic Relationships Table",
         DiceSides = 20,
         Table =
         [
@@ -89,7 +90,7 @@ public partial class BackgroundTables
                     "access to the True Love story feat.",
                 Traits =
                 {
-                    RacialTraitEnum.TrueLove,
+                    TraitEnum.TrueLove,
                 },
             },
             #endregion

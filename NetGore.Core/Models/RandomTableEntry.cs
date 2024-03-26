@@ -29,7 +29,7 @@ public class RandomTableEntry : BaseObject, IRandomTableEntry
     /// <summary>
     /// The racial traits for this creature 
     /// </summary>
-    public List<RacialTraitEnum> Traits { get; set; } = [];
+    public List<TraitEnum> Traits { get; set; } = [];
     
     /// <summary>
     /// The proper name of the entry.  Not the variable
