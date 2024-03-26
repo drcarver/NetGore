@@ -2,6 +2,15 @@
 
 public enum ProfessionEnum
 {
-    Brewer,
-    Soldier
+    Slaves,
+    SerfsPeasants,
+    Entertainers,
+    Soldiers,
+    Sailors,
+    Thieves,
+    Yeomen,
+    Tradespeople,
+    Merchants,
+    ClergyorCultists,
+    Artisans
 }

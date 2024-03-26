@@ -96,9 +96,9 @@ public class Human : IRace
                 Name = "Town or Village",
                 Description =
                 "You gain access to the Militia Veteran regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.MilitiaVeteran,
                 },
             },
             #endregion
@@ -114,10 +114,10 @@ public class Human : IRace
                 UpperRange = 85,
                 Name = "City or Metropolis",
                 Description = "If you’re a human, you gain access to the Civilized social trait and the Vagabond Child regional trait",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Civilized,
-                    RacialTraitEnum.VagabondChild,
+                    TraitEnum.Civilized,
+                    TraitEnum.VagabondChild,
                 },
             },
             #endregion
@@ -130,9 +130,9 @@ public class Human : IRace
                 UpperRange = 95,
                 Name = "Frontier",
                 Description = "You gain access to the Frontier-Forged regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.FrontierForged,
+                    TraitEnum.FrontierForged,
                 },
             },
             #endregion
@@ -211,9 +211,9 @@ public class Human : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -245,9 +245,9 @@ public class Human : IRace
                     "With two or more siblings, you " +
                     "gain access to the Kin Guardian " +
                     "combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -276,9 +276,9 @@ public class Human : IRace
                 Description =
                     "2d4 siblings.You gain access to " +
                     "the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -308,9 +308,9 @@ public class Human : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -323,9 +323,9 @@ public class Human : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -348,9 +348,9 @@ public class Human : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

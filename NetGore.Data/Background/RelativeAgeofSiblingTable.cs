@@ -1,4 +1,5 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 using NetGore.Data.Services;
 
 namespace NetGore.Data.Background;
@@ -9,6 +10,7 @@ namespace NetGore.Data.Background;
 /// age of each sibling.For each adopted sibling, 
 /// roll on Table: RaceTable to determine that 
 /// sibling’s race.
+/// </summary>
 public partial class BackgroundTables
 {
     //Table: Relative Age of Sibling
@@ -19,8 +21,10 @@ public partial class BackgroundTables
     /// <summary>
     /// Relative Age of Sibling Table
     /// </summary>
-    public static RandomTable RelativeAgeofSiblingTable { get; set; } = new()
+    public static RandomTable RelativeAgeofSiblingTable { get; } = new()
     {
+        Name = "Relative Age of Sibling Table",
+        Description = "If you have at least one sibling, roll on Table: Relative Age of Sibling to determine the relative age of each sibling. For each adopted sibling, roll on Table: Race of Adopted Sibling to determine that sibling’s race.",
         DiceSides = 100,
         Table =
         [
@@ -30,7 +34,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 01,
                 UpperRange = 48,
-                Name = "Older",
+                Name = nameof(RelativeAgeofSiblingEnum.Older),
                 Description =
                     "Your sibling is older than you.",
             },
@@ -42,7 +46,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 49,
                 UpperRange = 96,
-                Name = "Younger",
+                Name = nameof(RelativeAgeofSiblingEnum.Younger),
                 Description =
                     "Your sibling is younger than you.",
             },
@@ -54,7 +58,7 @@ public partial class BackgroundTables
             {
                 LowerRange = 97,
                 UpperRange = 100,
-                Name = "Twins",
+                Name = nameof(RelativeAgeofSiblingEnum.Twins),
                 Description =
                     "You and a sibling are twins " +
                     "(identical or fraternal, your " +

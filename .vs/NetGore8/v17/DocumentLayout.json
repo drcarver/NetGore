@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|solutionrelative:netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\data\\racetabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\data\\racetabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\background\\relativeageofsiblingtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\background\\relativeageofsiblingtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\dwarf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\randomtableentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\randomtableentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\background\\racetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\background\\racetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RelativeAgeofSiblingTable.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\RelativeAgeofSiblingTable.cs",
-              "RelativeDocumentMoniker": "NetGore.Data\\Background\\RelativeAgeofSiblingTable.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\RelativeAgeofSiblingTable.cs",
-              "RelativeToolTip": "NetGore.Data\\Background\\RelativeAgeofSiblingTable.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAwCgAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T20:56:47.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RandomTableEntry.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\RandomTableEntry.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Models\\RandomTableEntry.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\RandomTableEntry.cs",
-              "RelativeToolTip": "NetGore.Core\\Models\\RandomTableEntry.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAQwCEAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T20:55:36.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dwarf.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Dwarf.cs",
-              "RelativeDocumentMoniker": "NetGore.Data\\Race\\Dwarf.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\Dwarf.cs",
-              "RelativeToolTip": "NetGore.Data\\Race\\Dwarf.cs",
-              "ViewState": "AQIAAL0BAAAAAAAAAADgvyAAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T20:54:41.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
-              "RelativeDocumentMoniker": "NetGore.CLI\\Program.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
-              "RelativeToolTip": "NetGore.CLI\\Program.cs",
-              "ViewState": "AQIAAGcAAAAAAAAAAAAQwGoAAAAAAAAA",
+              "Title": "RaceTableTests.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\RaceTableTests.cs",
+              "RelativeDocumentMoniker": "NetGore.Tests\\Data\\RaceTableTests.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\RaceTableTests.cs",
+              "RelativeToolTip": "NetGore.Tests\\Data\\RaceTableTests.cs",
+              "ViewState": "AQIAANMAAAAAAAAAAAAAANgAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T17:48:46.469Z",
+              "WhenOpened": "2024-03-26T00:58:33.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RaceTable.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\RaceTable.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\Background\\RaceTable.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\RaceTable.cs",
+              "RelativeToolTip": "NetGore.Data\\Background\\RaceTable.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T00:57:12.654Z",
               "EditorCaption": ""
             }
           ]

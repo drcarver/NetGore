@@ -94,9 +94,9 @@ public class Elf : IRace
                 Description =
                     "You gain access to the " +
                     "Log Roller regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.LogRoller,
+                    TraitEnum.LogRoller,
                 },
             },
             #endregion
@@ -115,9 +115,9 @@ public class Elf : IRace
                     "a half-elf, you gain access to the " +
                     "Civilized social trait and the " +
                     "Failed Apprentice race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Civilized
+                    TraitEnum.Civilized
                 },
 
             },
@@ -132,9 +132,9 @@ public class Elf : IRace
                 Name = "Non-Dwarven Town or Village",
                 Description =
                     "You gain access to the Forlorn race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Forlorn,
+                    TraitEnum.Forlorn,
                 },
             },
             #endregion
@@ -212,9 +212,9 @@ public class Elf : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
 
             },
@@ -246,9 +246,9 @@ public class Elf : IRace
                 Description =
                     "With two or more siblings, you gain access " +
                     "to the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -263,9 +263,9 @@ public class Elf : IRace
                 Description =
                     "You gain access to " +
                     "the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -286,9 +286,9 @@ public class Elf : IRace
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
                 AlternateTable = RaceService.RaceTable,
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -318,9 +318,9 @@ public class Elf : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -333,9 +333,9 @@ public class Elf : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -370,9 +370,9 @@ public class Elf : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

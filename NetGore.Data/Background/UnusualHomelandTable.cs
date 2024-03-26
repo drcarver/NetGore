@@ -30,8 +30,9 @@ public partial class BackgroundTables
     /// <summary>
     /// The Unusual Homeland Table
     /// </summary>
-    public static RandomTable UnusualHomelandTable { get; set; } = new()
+    public static RandomTable UnusualHomelandTable { get; } = new()
     {
+        Name = "The Unusual Homeland Table",
         DiceSides = 100,
         Table =
         [
@@ -42,13 +43,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 01,
                 UpperRange = 10,
-                Name = "Subterranean",
+                Name = nameof(UnusualHomelandEnum.Subterranean),
                 Description =
                     "You gain access to the Surface " +
                     "Stranger regional trait.",
-                RacialTraits =
+                Traits =
                 { 
-                    RacialTraitEnum.SurfaceStranger,
+                    TraitEnum.SurfaceStranger,
                 },   
             },
             #endregion
@@ -60,13 +61,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 11,
                 UpperRange = 25,
-                Name = "Mountains",
+                Name = nameof(UnusualHomelandEnum.Mountains),
                 Description =
                     "You gain access to the Highlander " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Highlander,
+                    TraitEnum.Highlander,
                 },
             },
             #endregion
@@ -78,13 +79,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 26,
                 UpperRange = 40,
-                Name = "Plains",
+                Name = nameof(UnusualHomelandEnum.Plains),
                 Description =
                     "You gain access to the Savanna " +
                     "Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.SavannaChild,
+                    TraitEnum.SavannaChild,
                 },
             },
             #endregion
@@ -96,13 +97,14 @@ public partial class BackgroundTables
             {
                 LowerRange = 41,
                 UpperRange = 50,
-                Name = "Town or Village",
+                Name = nameof(UnusualHomelandEnum.TownorVillage),
+                ProperName = "Town or Village",
                 Description =
                     "You gain access to the Militia " +
                     "Veteran regional trait",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.MilitiaVeteran,
                 },
             },
             #endregion
@@ -115,14 +117,16 @@ public partial class BackgroundTables
             {
                 LowerRange = 51,
                 UpperRange = 60,
-                Name = "City or Metropolis",
+                Name = nameof(UnusualHomelandEnum.CityorMetropolis),
+                ProperName = "City or Metropolis",
                 Description =
                     "You gain access to the Civilized " +
                     "social trait and the Vagabond " +
                     "Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.Civilized,
+                    TraitEnum.VagabondChild,
                 },
             },
             #endregion
@@ -134,13 +138,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 61,
                 UpperRange = 70,
-                Name = "Forest",
+                Name = nameof(UnusualHomelandEnum.Forest),
                 Description =
                     "You gain access to the Log Roller " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.LogRoller,
+                    TraitEnum.LogRoller,
                 },
             },
             #endregion
@@ -152,12 +156,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 71,
                 UpperRange = 80,
-                Name = "River, Swamp, or Wetlands",
+                Name = nameof(UnusualHomelandEnum.RiverSwamporWetlands),
+                ProperName = "River, Swamp, or Wetlands",
                 Description =
                     "You gain access to the River Rat regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.RiverRat,
+                    TraitEnum.RiverRat,
                 },
             },
             #endregion
@@ -169,12 +174,12 @@ public partial class BackgroundTables
             {
                 LowerRange = 81,
                 UpperRange = 85,
-                Name = "Desert",
+                Name = nameof(UnusualHomelandEnum.Desert),
                 Description =
                     "You gain access to the Desert Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.DesertChild,
+                    TraitEnum.DesertChild,
                 },
             },
             #endregion
@@ -186,12 +191,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 86,
                 UpperRange = 90,
-                Name = "Sea",
+                Name = nameof(UnusualHomelandEnum.SeaSouled),
+                ProperName = "Sea-Souled",
                 Description =
                     "You gain access to the Sea-Souled regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.SeaSouled,
+                    TraitEnum.SeaSouled,
                 },
             },
             #endregion
@@ -203,12 +209,12 @@ public partial class BackgroundTables
             {
                 LowerRange = 91,
                 UpperRange = 95,
-                Name = "Tundra",
+                Name = nameof(UnusualHomelandEnum.Tundra),
                 Description =
                     "You gain access to the Tundra Child regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.TundraChild,
+                    TraitEnum.TundraChild,
                 },
             },
             #endregion
@@ -221,12 +227,13 @@ public partial class BackgroundTables
             {
                 LowerRange = 96,
                 UpperRange = 100,
-                Name = "Another Plane",
+                Name = nameof(UnusualHomelandEnum.AnotherPlane),
+                ProperName = "Another Plane",
                 Description =
                     "You gain access to the Scholar of the Great Beyond faith trait",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.ScholaroftheGreatBeyond,
+                    TraitEnum.ScholaroftheGreatBeyond,
                 },
             },
             #endregion

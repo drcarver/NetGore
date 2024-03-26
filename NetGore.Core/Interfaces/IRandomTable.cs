@@ -25,4 +25,17 @@ public interface IRandomTable
     /// </summary>
     /// <returns>The selected RandomTableEntry.</returns>
     RandomTableEntry? GetRandomEntry();
+
+    /// <summary>
+    /// Get a entry from the table based on it's name
+    /// </summary>
+    /// <returns>The selected RandomTableEntry.</returns>
+    RandomTableEntry? GetEntryByName(string name);
+
+    /// <summary>
+    /// Get a entry from the table based on it's number
+    /// in a range
+    /// </summary>
+    /// <returns>The selected RandomTableEntry.</returns>
+    RandomTableEntry? GetEntryByNumber(int number);
 }

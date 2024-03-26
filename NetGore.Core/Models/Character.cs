@@ -27,7 +27,7 @@ public class Character : Creature, ICharacter
     /// <summary>
     /// The character racial traits
     /// </summary>
-    public List<RacialTraitEnum> RacialTraits { get; set; } = [];
+    public List<TraitEnum> RacialTraits { get; set; } = [];
 
     /// <summary>
     /// The player character parents

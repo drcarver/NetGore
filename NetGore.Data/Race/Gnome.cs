@@ -96,10 +96,10 @@ public class Gnome : IRace
                     "You gain access to the " +
                     "Log Roller regional trait and " +
                     "the Animal Friend race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.LogRoller,
-                    RacialTraitEnum.AnimalFriend
+                    TraitEnum.LogRoller,
+                    TraitEnum.AnimalFriend
                 },
             },
             #endregion
@@ -113,9 +113,9 @@ public class Gnome : IRace
                 Name = "Non-Gnome Town or Village",
                 Description =
                     "You gain access to the Animal Friend race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.AnimalFriend,
+                    TraitEnum.AnimalFriend,
                 },
             },
             #endregion
@@ -129,9 +129,9 @@ public class Gnome : IRace
                 Name = "Non-Gnome City or Metropolis",
                 Description =
                     "You gain access to the Rapscallion race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Rapscallion,
+                    TraitEnum.Rapscallion,
                 },
             },
             #endregion
@@ -210,9 +210,9 @@ public class Gnome : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
             },
             #endregion
@@ -243,9 +243,9 @@ public class Gnome : IRace
                     "With two or more siblings, you " +
                     "gain access to the Kin Guardian " +
                     "combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -265,9 +265,9 @@ public class Gnome : IRace
                     "combat trait. Roll on Table: " +
                     "Race to determine the race " +
                     "of any adopted siblings.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -297,9 +297,9 @@ public class Gnome : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -312,9 +312,9 @@ public class Gnome : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -349,9 +349,9 @@ public class Gnome : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

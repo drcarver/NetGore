@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetGore.Data\NetGore.Data.csproj" />
     <ProjectReference Include="..\NetGore.Db\NetGore.Db.csproj" />
     <ProjectReference Include="..\NetGore.Features\NetGore.Features.csproj" />
     <ProjectReference Include="..\NetGore\NetGore.csproj" />

@@ -113,10 +113,10 @@ public class Dwarf : IRace
                     "You gain access to the " +
                     "Goldsniffer race trait and " +
                     "the Highlander regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Goldsniffer,
-                    RacialTraitEnum.Highlander
+                    TraitEnum.Goldsniffer,
+                    TraitEnum.Highlander
                 },
             },
             #endregion
@@ -134,10 +134,10 @@ public class Dwarf : IRace
                     "You gain access to the Surface " +
                     "Stranger regional trait and the " +
                     "Tunnel Fighter race trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.SurfaceStranger,
-                    RacialTraitEnum.TunnelFighter,
+                    TraitEnum.SurfaceStranger,
+                    TraitEnum.TunnelFighter,
                 },
 
             },
@@ -157,10 +157,10 @@ public class Dwarf : IRace
                     "You gain access to the Brewmaster " +
                     "race trait and the Militia Veteran " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Brewmaster,
-                    RacialTraitEnum.MilitiaVeteran,
+                    TraitEnum.Brewmaster,
+                    TraitEnum.MilitiaVeteran,
                 },
             },
             #endregion
@@ -179,10 +179,10 @@ public class Dwarf : IRace
                     "You gain access to the Brewmaster " +
                     "race trait and the Vagabond Child " +
                     "regional trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Brewmaster,
-                    RacialTraitEnum.VagabondChild,
+                    TraitEnum.Brewmaster,
+                    TraitEnum.VagabondChild,
                 },
             },
             #endregion
@@ -261,9 +261,9 @@ public class Dwarf : IRace
                     "Both of your parents are dead. " +
                     "You gain access to the Orphaned " +
                     "social trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.Orphaned,
+                    TraitEnum.Orphaned,
                 },
 
             },
@@ -296,9 +296,9 @@ public class Dwarf : IRace
                     "1d4 biological siblings. With two " +
                     "or more siblings, you gain access " +
                     "to the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -313,9 +313,9 @@ public class Dwarf : IRace
                 Description =
                     "1d4+1 biological siblings. You gain access to " +
                     "the Kin Guardian combat trait.",
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -334,9 +334,9 @@ public class Dwarf : IRace
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
                 AlternateTable = RaceService.RaceTable,
-                RacialTraits =
+                Traits =
                 {
-                    RacialTraitEnum.KinGuardian,
+                    TraitEnum.KinGuardian,
                 },
             },
             #endregion
@@ -366,9 +366,9 @@ public class Dwarf : IRace
             homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
-        if (homeland?.RacialTraits != null)
+        if (homeland?.Traits != null)
         {
-            foreach (var trait in homeland.RacialTraits)
+            foreach (var trait in homeland.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -381,9 +381,9 @@ public class Dwarf : IRace
         #region Parents
         var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
-        if (parents?.RacialTraits != null)
+        if (parents?.Traits != null)
         {
-            foreach (var trait in parents.RacialTraits)
+            foreach (var trait in parents.Traits)
             {
                 if (!character.RacialTraits.Contains(trait))
                 {
@@ -418,9 +418,9 @@ public class Dwarf : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(RacialTraitEnum.KinGuardian))
+                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(RacialTraitEnum.KinGuardian);
+                    character.RacialTraits.Add(TraitEnum.KinGuardian);
                 }
             }
         }

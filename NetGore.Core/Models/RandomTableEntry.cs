@@ -29,7 +29,19 @@ public class RandomTableEntry : BaseObject, IRandomTableEntry
     /// <summary>
     /// The racial traits for this creature 
     /// </summary>
-    public List<RacialTraitEnum> RacialTraits { get; set; } = [];
+    public List<TraitEnum> Traits { get; set; } = [];
+    
+    /// <summary>
+    /// The proper name of the entry.  Not the variable
+    /// name but the English version with spaces and 
+    /// hyphens
+    /// </summary>
+    public string? ProperName { get; set; }
+
+    /// <summary>
+    /// Allow a filter of entries by class
+    /// </summary>
+    public ClassEnum Class { get; set; } = ClassEnum.Any;
 
     /// <summary>
     /// Constructor

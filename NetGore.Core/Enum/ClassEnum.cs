@@ -14,4 +14,5 @@ public enum ClassEnum
     Sorcerer,
     Warlock,
     Wizard,
+    Any,
 }
