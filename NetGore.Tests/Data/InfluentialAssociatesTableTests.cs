@@ -70,9 +70,9 @@ public class InfluentialAssociatesTableTests
             //26–30	The Lover
             case int n when (n >= 26 && n <= 30):
                 return entry.Name == nameof(InfluentialAssociatesEnum.TheLover)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.Charming)
-                    && entry.Traits.Contains(TraitEnum.TrueLove);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Charming);
+                    //&& entry.Traits.Contains(TraitEnum.TrueLove);
 
             //31–35	The Fool
             case int n when (n >= 31 && n <= 35):
@@ -125,16 +125,16 @@ public class InfluentialAssociatesTableTests
             //71–75	The Dead One
             case int n when (n >= 71 && n <= 75):
                 return entry.Name == nameof(InfluentialAssociatesEnum.TheDeadOne)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.Deathtouched)
-                    && entry.Traits.Contains(TraitEnum.GlimpseBeyond);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Deathtouched);
+                    //&& entry.Traits.Contains(TraitEnum.GlimpseBeyond);
 
             //76–80	The Fiend
             case int n when (n >= 76 && n <= 80):
                 return entry.Name == nameof(InfluentialAssociatesEnum.TheFiend)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.Possessed)
-                    && entry.Traits.Contains(TraitEnum.Damned);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Possessed);
+                    //&& entry.Traits.Contains(TraitEnum.Damned);
 
             //81–85	The Wanderer
             case int n when (n >= 81 && n <= 85):

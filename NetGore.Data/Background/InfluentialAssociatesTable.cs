@@ -213,7 +213,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Charming,
-                    TraitEnum.TrueLove,
                 },
             },
             #endregion
@@ -469,7 +468,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Deathtouched,
-                    TraitEnum.GlimpseBeyond,
+                    //TraitEnum.GlimpseBeyond,
                 },
             },
             #endregion
@@ -498,7 +497,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Possessed,
-                    TraitEnum.Damned,
+                    //TraitEnum.Damned,
                 },
             },
             #endregion

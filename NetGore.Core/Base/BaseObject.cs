@@ -27,7 +27,7 @@ public class BaseObject : IBaseObject
     /// The Description of the object
     /// </summary>
     [Description("The Description of the object.")]
-    public string? Description { get; set; }
+    public string Description { get; set; }  = string.Empty;
 
     /// <summary>
     /// Constructor

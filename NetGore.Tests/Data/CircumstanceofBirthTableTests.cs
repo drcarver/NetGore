@@ -70,9 +70,9 @@ public class CircumstanceofBirthTableTests
             //78–81	Bastard Born
             case int n when (n >= 73 && n <= 81):
                 return entry.Name == nameof(CircumstanceofBirthEnum.BastardBorn)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.Bastard)
-                    && entry.Traits.Contains(TraitEnum.Shamed);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Bastard);
+                    //&& entry.Traits.Contains(TraitEnum.Shamed);
 
             //82	Blessed Birth
             case int n when (n >= 82 && n <= 82):
@@ -103,17 +103,17 @@ public class CircumstanceofBirthTableTests
             //88	Cursed Birth
             case int n when (n >= 88 && n <= 88):
                 return entry.Name == nameof(CircumstanceofBirthEnum.CursedBirth)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.FiendBlood)
-                    && entry.Traits.Contains(TraitEnum.Accursed);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.FiendBlood);
+                    //&& entry.Traits.Contains(TraitEnum.Accursed);
 
             //89–90	Dishonored Family
             case int n when (n >= 89 && n <= 90):
                 return entry.Name == nameof(CircumstanceofBirthEnum.DishonoredFamily)
-                    && entry.Traits.Count == 3
-                    && entry.Traits.Contains(TraitEnum.Reactionary)
-                    && entry.Traits.Contains(TraitEnum.Redemption)
-                    && entry.Traits.Contains(TraitEnum.LostLegacy);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Reactionary);
+                    //&& entry.Traits.Contains(TraitEnum.Redemption)
+                    //&& entry.Traits.Contains(TraitEnum.LostLegacy);
 
             //91–92	Heir to a Legacy
             case int n when (n >= 91 && n <= 92):
@@ -125,18 +125,18 @@ public class CircumstanceofBirthTableTests
             //93–94	Left to Die
             case int n when (n >= 93 && n <= 94):
                 return entry.Name == nameof(CircumstanceofBirthEnum.LefttoDie)
-                    && entry.Traits.Count == 3
+                    && entry.Traits.Count == 2
                     && entry.Traits.Contains(TraitEnum.Courageous)
-                    && entry.Traits.Contains(TraitEnum.Savage)
-                    && entry.Traits.Contains(TraitEnum.Arisen);
+                    && entry.Traits.Contains(TraitEnum.Savage);
+                    //&& entry.Traits.Contains(TraitEnum.Arisen);
 
             //95	Marked by the Gods
             case int n when (n >= 95 && n <= 95):
                 return entry.Name == nameof(CircumstanceofBirthEnum.MarkedbytheGods)
-                    && entry.Traits.Count == 3
+                    && entry.Traits.Count == 2
                     && entry.Traits.Contains(TraitEnum.Birthmark)
-                    && entry.Traits.Contains(TraitEnum.SacredTouch)
-                    && entry.Traits.Contains(TraitEnum.Prophet);
+                    && entry.Traits.Contains(TraitEnum.SacredTouch);
+                    //&& entry.Traits.Contains(TraitEnum.Prophet);
 
             //96	Energy Infused
             case int n when (n >= 96 && n <= 96):
@@ -162,10 +162,10 @@ public class CircumstanceofBirthTableTests
             //99	Reincarnated
             case int n when (n >= 99 && n <= 99):
                 return entry.Name == nameof(CircumstanceofBirthEnum.Reincarnated)
-                    && entry.Traits.Count == 3
-                    && entry.Traits.Contains(TraitEnum.Reincarnated)
-                    && entry.Traits.Contains(TraitEnum.Arisen)
-                    && entry.Traits.Contains(TraitEnum.ForgottenPast);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Reincarnated);
+                    //&& entry.Traits.Contains(TraitEnum.Arisen)
+                    //&& entry.Traits.Contains(TraitEnum.ForgottenPast);
 
             //100	The Omen
             case int n when (n >= 100 && n <= 100):

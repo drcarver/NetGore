@@ -85,7 +85,6 @@ public partial class BackgroundTables
                     "Child regional trait.",
                 Traits =
                 {
-                    TraitEnum.SavannaChild,
                 },
             },
             #endregion
@@ -144,7 +143,6 @@ public partial class BackgroundTables
                     "regional trait.",
                 Traits =
                 {
-                    TraitEnum.LogRoller,
                 },
             },
             #endregion

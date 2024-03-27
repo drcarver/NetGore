@@ -180,7 +180,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Bastard,
-                    TraitEnum.Shamed,
                 },
             },
             #endregion
@@ -295,7 +294,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.FiendBlood,
-                    TraitEnum.Accursed,
+                    //TraitEnum.Accursed,
                 },
             },
             #endregion
@@ -322,8 +321,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reactionary,
-                    TraitEnum.LostLegacy,
-                    TraitEnum.Redemption,
                 },
             },
             #endregion
@@ -373,7 +370,6 @@ public partial class BackgroundTables
                 {
                     TraitEnum.Courageous,
                     TraitEnum.Savage,
-                    TraitEnum.Arisen,
                 },
             },
             #endregion
@@ -397,7 +393,6 @@ public partial class BackgroundTables
                 {
                     TraitEnum.Birthmark,
                     TraitEnum.SacredTouch,
-                    TraitEnum.Prophet,
                 },
             },
             #endregion
@@ -488,8 +483,8 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reincarnated,
-                    TraitEnum.Arisen,
-                    TraitEnum.ForgottenPast,
+                    //TraitEnum.Arisen,
+                    //TraitEnum.ForgottenPast,
                 }
             },
             #endregion

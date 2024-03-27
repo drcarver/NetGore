@@ -54,9 +54,9 @@ public class AdoptedOutsideYourRaceTableTests
             //11–13	Raised Among the Dead
             case int n when (n >= 11 && n <= 13):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedAmongtheDead)
-                    && entry.Traits.Count == 3
+                    && entry.Traits.Count == 2
                     && entry.Traits.Contains(TraitEnum.Deathtouched)
-                    && entry.Traits.Contains(TraitEnum.GlimpseBeyond)
+                    //&& entry.Traits.Contains(TraitEnum.GlimpseBeyond)
                     && entry.Traits.Contains(TraitEnum.MagicalKnack);
 
             //14–19	Raised by Angels
@@ -68,9 +68,9 @@ public class AdoptedOutsideYourRaceTableTests
             //20–25	Raised by Beasts
             case int n when (n >= 20 && n <= 25):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.RaisedbyBeasts)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.Resilient)
-                    && entry.Traits.Contains(TraitEnum.FeralHeart);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.Resilient);
+                    //&& entry.Traits.Contains(TraitEnum.FeralHeart);
 
             //26–70	Raised by Civilized Humanoids
             case int n when (n >= 26 && n <= 70):
@@ -86,9 +86,9 @@ public class AdoptedOutsideYourRaceTableTests
             //96–100	Fiend Raised
             case int n when (n >= 96 && n <= 100):
                 return entry.Name == nameof(AdoptedOutsideYourRaceEnum.FiendRaised)
-                    && entry.Traits.Count == 2
-                    && entry.Traits.Contains(TraitEnum.FiendBlood)
-                    && entry.Traits.Contains(TraitEnum.Damned);
+                    && entry.Traits.Count == 1
+                    && entry.Traits.Contains(TraitEnum.FiendBlood);
+                    //&& entry.Traits.Contains(TraitEnum.Damned);
         }
         return false;
     }
