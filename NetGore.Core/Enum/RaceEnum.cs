@@ -2,7 +2,7 @@
 
 public enum RaceEnum
 {
-    None = 0,
+    Any = 0,
     Dragonborn = 1,
     Dwarf = 2,
     Elf = 3,

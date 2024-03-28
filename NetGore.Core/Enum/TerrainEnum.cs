@@ -1,0 +1,33 @@
+namespace NetGore.Core.Enum;
+
+public enum TerrainEnum
+{
+	Any = 0,
+	AcademyMembership = 1,
+	Coastline = 2,
+	CoastlineorIsland = 3,
+	ColdMountains = 4,
+	Deserts = 5,
+	DragonsLair = 6,
+	Dungeon = 7,
+	Forests = 8,
+	Frontier = 9,
+	Grasslands = 10,
+	HillsorMountains = 11,
+	Islands = 12,
+	Jungle = 13,
+	LargeCity = 14,
+	MarshorRiver = 15,
+	Marshlands = 16,
+	Mountains = 17,
+	Northlands = 18,
+	Plains = 19,
+	RiverLands = 20,
+	Rivers = 21,
+	TheRiverLands = 22,
+	TownorVillage = 23,
+	TundraorColdRegions = 24,
+	Underground = 25,
+	Urban = 26,
+	WarmMountains = 27,
+}

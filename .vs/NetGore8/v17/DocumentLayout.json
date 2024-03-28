@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\data\\characterdrawbacktabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\data\\characterdrawbacktabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\traitlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\traitlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|c:\\users\\drcarver\\desktop\\netgore\\tools\\convertcsvtotable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|solutionrelative:tools\\convertcsvtotable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\trait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\trait.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|c:\\users\\drcarver\\desktop\\netgore\\tools\\convertcsvtotable\\maps\\traitcsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|solutionrelative:tools\\convertcsvtotable\\maps\\traitcsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|c:\\users\\drcarver\\desktop\\netgore\\tools\\convertcsvtotable\\maps\\traitmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|solutionrelative:tools\\convertcsvtotable\\maps\\traitmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +39,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CharacterDrawbackTableTests.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "RelativeDocumentMoniker": "NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "RelativeToolTip": "NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAACcAAAAGAAAA",
+              "Title": "TraitList.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\TraitList.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\TraitList.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\TraitList.cs",
+              "RelativeToolTip": "NetGore.Data\\TraitList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T23:02:46.896Z",
+              "WhenOpened": "2024-03-28T16:35:21.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Trait.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Trait.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Models\\Trait.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Trait.cs",
+              "RelativeToolTip": "NetGore.Core\\Models\\Trait.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAwBIAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T13:52:20.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TraitMap.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\TraitMap.cs",
+              "RelativeDocumentMoniker": "Tools\\ConvertCSVToTable\\Maps\\TraitMap.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\TraitMap.cs",
+              "RelativeToolTip": "Tools\\ConvertCSVToTable\\Maps\\TraitMap.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwBcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T13:30:57.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Program.cs",
+              "RelativeDocumentMoniker": "Tools\\ConvertCSVToTable\\Program.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Program.cs",
+              "RelativeToolTip": "Tools\\ConvertCSVToTable\\Program.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAQwG8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T12:56:42.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TraitCSV.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\TraitCSV.cs",
+              "RelativeDocumentMoniker": "Tools\\ConvertCSVToTable\\Maps\\TraitCSV.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\TraitCSV.cs",
+              "RelativeToolTip": "Tools\\ConvertCSVToTable\\Maps\\TraitCSV.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAAAsAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T23:12:42.298Z",
               "EditorCaption": ""
             }
           ]

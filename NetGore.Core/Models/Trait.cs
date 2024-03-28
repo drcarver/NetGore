@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Base;
+using NetGore.Core.Enum;
 
 namespace NetGore.Core.Models;
 
@@ -13,14 +14,17 @@ public class Trait : DataObject
     //URL,
     public Uri URL { get; set; }
 
+    public ClassEnum CharacterClass { get; set; } = ClassEnum.Any;
+
+    public RaceEnum Race { get; set; } = RaceEnum.Any;
+
     //Type,
-    public string TraitType { get; set; }
+    public TraitTypeEnum TraitType { get; set; }
 
     //Category,
-    public string Category { get; set; }
+    public TraitCategoryEnum Category { get; set; }
 
-    //Source
-    public string Source { get; set; }
+    public TerrainEnum Terrain { get; set; } = TerrainEnum.Any;
 
     [SetsRequiredMembers]
     public Trait()

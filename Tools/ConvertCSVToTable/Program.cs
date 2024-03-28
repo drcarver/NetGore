@@ -1,9 +1,7 @@
-﻿using CsvHelper;
+﻿using ConvertCSVToTable.Maps;
 
+using NetGore.Core.Enum;
 using NetGore.Core.Models;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace ConvertCSVToTable;
 
@@ -13,69 +11,21 @@ internal class Program
     const string traitcsvfile = @"C:\Users\drcarver\Desktop\netgore\documents\Traits.csv";
     const string traitlistfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TraitList.cs";
     const string traitenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TraitEnum.cs";
+    const string traitcategoryenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TraitCategoryEnum.cs";
+    const string traitplaceenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TerrainEnum.cs";
 
     static void Main(string[] args)
     {
         var csv = new CSVServices();
         var traitlist = csv.ReadTraitFile(traitcsvfile);
 
-        //var traitcategory = new List<string>();
+        //var traitfield = new List<string>();
         //foreach (var trait in traitlist)
         //{
-        //    if (!traitcategory.Contains(trait.Category))
+        //    if (!traitfield.Contains(trait.ReqPlace))
         //    {
-        //        Console.WriteLine(trait.Category);
-        //        traitcategory.Add(trait.Category);
-        //    }
-        //}
-
-        var traittype = new List<string>();
-        foreach (var trait in traitlist)
-        {
-            if (!traittype.Contains(trait.TraitType))
-            {
-                Console.WriteLine(trait.TraitType);
-                traittype.Add(trait.TraitType);
-            }
-        }
-
-        //var traitrace1 = new List<string>();
-        //foreach (var trait in traitlist)
-        //{
-        //    if (!traitrace1.Contains(trait.ReqRace1))
-        //    {
-        //        Console.WriteLine(trait.ReqRace1);
-        //        traitrace1.Add(trait.ReqRace1);
-        //    }
-        //}
-
-        //var traitrace2 = new List<string>();
-        //foreach (var trait in traitlist)
-        //{
-        //    if (!traitrace2.Contains(trait.ReqRace2))
-        //    {
-        //        Console.WriteLine(trait.ReqRace2);
-        //        traitrace2.Add(trait.ReqRace2);
-        //    }
-        //}
-
-        //var traitalign = new List<string>();
-        //foreach (var trait in traitlist)
-        //{
-        //    if (!traitalign.Contains(trait.ReqAlign))
-        //    {
-        //        Console.WriteLine(trait.ReqAlign);
-        //        traitalign.Add(trait.ReqAlign);
-        //    }
-        //}
-
-        //var traitclass = new List<string>();
-        //foreach (var trait in traitlist)
-        //{
-        //    if (!traitclass.Contains(trait.ReqClass))
-        //    {
-        //        Console.WriteLine(trait.ReqClass);
-        //        traitclass.Add(trait.ReqClass);
+        //        Console.WriteLine(trait.ReqPlace);
+        //        traitfield.Add(trait.ReqPlace);
         //    }
         //}
 
@@ -84,6 +34,8 @@ internal class Program
         ////serialize object into file stream
         //File.WriteAllText(traitfilename, json);
         //CreateTraitEnumFile(traitenumfile);
+        //CreateTraitCategoryEnumFile(traitcategoryenumfile);
+        //CreateTraitPlaceEnumFile(traitplaceenumfile);
         CreateTraitListFile(traitlistfile);
     }
 
@@ -96,6 +48,20 @@ internal class Program
         var csv = new CSVServices();
         var traitlist = csv.ReadTraitFile(traitcsvfile);
 
+        // Get the race enum as a string
+        var racelist = new List<string>();
+        foreach (var race in Enum.GetValues(typeof(RaceEnum)))
+        {
+            racelist.Add(race.ToString());
+        }
+
+        // Get the terrain enum as a string
+        var terrainlist = new List<string>();
+        foreach (var terrain in Enum.GetValues(typeof(TerrainEnum)))
+        {
+            terrainlist.Add(terrain.ToString());
+        }
+
         using (StreamWriter writer = File.CreateText(filename))
         {
             writer.WriteLine("using NetGore.Core.Enum;");
@@ -107,26 +73,82 @@ internal class Program
             writer.WriteLine("{");
             writer.WriteLine("\tpublic static List<Trait> TraitList { get; set; } = new List<Trait>()");
             writer.WriteLine("\t{");
-            writer.WriteLine($"\t\t#region Basic");
-            writer.WriteLine();
-            foreach (var trait in traitlist.Where(t => t.TraitType.Trim() == "Basic").OrderBy(o => Cleanup(o.Name)))
+
+            foreach (var traittype in Enum.GetValues(typeof(TraitTypeEnum)))
             {
-                writer.WriteLine($"\t\t#region {trait.Name}");
-                writer.WriteLine("\t\tnew Trait");
-                writer.WriteLine("\t\t{");
-                writer.WriteLine($"\t\t\tName = nameof(TraitEnum.{Cleanup(trait.Name)}),");
-                writer.WriteLine($"\t\t\tProperName = \"{trait.Name.Replace("'", string.Empty).Replace("\n", " ").Trim()}\",");
-                writer.WriteLine($"\t\t\tURL = new Uri(\"{trait?.URL.Trim()}\"),");
-                writer.WriteLine($"\t\t\tDescription = \"{trait.Description.Replace("\"", "'").Replace("\n", " ").Trim()})\",");
-                writer.WriteLine("\t\t},");
-                writer.WriteLine("\t\t#endregion");
+                writer.WriteLine($"\t\t#region {traittype.ToString()}");
+                writer.WriteLine();
+                foreach (var trait in traitlist.Where(t => t.TraitType.Trim() == traittype.ToString()).OrderBy(o => Cleanup(o.Name)))
+                {
+                    if (IncludeTrait(trait, racelist, terrainlist))
+                    {
+                        writer.WriteLine($"\t\t#region {trait.Name}");
+                        writer.WriteLine("\t\tnew Trait");
+                        writer.WriteLine("\t\t{");
+                        writer.WriteLine($"\t\t\tName = nameof(TraitEnum.{Cleanup(trait.Name)}),");
+                        writer.WriteLine($"\t\t\tProperName = \"{trait.Name.Replace("'", string.Empty).Replace("\n", " ").Trim()}\",");
+                        if (!string.IsNullOrEmpty(Cleanup(trait.Category)))
+                        {
+                            writer.WriteLine($"\t\t\tCategory = TraitCategoryEnum.{Cleanup(trait.Category)},");
+                        }
+                        writer.WriteLine($"\t\t\tTraitType = TraitTypeEnum.Basic,");
+                        if (!string.IsNullOrEmpty(trait.ReqClass))
+                        {
+                            writer.WriteLine($"\t\t\tCharacterClass = ClassEnum.{trait?.ReqClass},");
+                        }
+                        if (!string.IsNullOrEmpty(trait.ReqRace1)
+                            && !racelist.Contains(Cleanup(trait.ReqRace1)))
+                        {
+                            writer.WriteLine($"\t\t\tRace = RaceEnum.{trait?.ReqRace1},");
+                        }
+                        if (!string.IsNullOrEmpty(trait.ReqPlace)
+                            && terrainlist.Contains(Cleanup(trait.ReqPlace)))
+                        {
+                            writer.WriteLine($"\t\t\tTerrain = TerrainEnum.{Cleanup(trait?.ReqPlace)},");
+                        }
+                        if (! string.IsNullOrEmpty(trait?.URL.Trim()))
+                        {
+                            writer.WriteLine($"\t\t\tURL = new Uri(\"{trait?.URL.Trim()}\"),");
+                        }
+                        writer.WriteLine($"\t\t\tDescription = \"{trait.Description.Replace("\"", "'").Replace("\n", " ").Trim()})\",");
+                        writer.WriteLine("\t\t},");
+                        writer.WriteLine("\t\t#endregion");
+                        writer.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Ignoring {trait.Name} - Race={trait.ReqRace1} - Terrain={trait.ReqPlace}");
+                    }
+                }
+                writer.WriteLine();
+                writer.WriteLine($"\t\t#endregion");
                 writer.WriteLine();
             }
-            writer.WriteLine();
-            writer.WriteLine($"\t\t#endregion");
             writer.WriteLine("\t};");
             writer.WriteLine("}");
+            writer.Flush();
         }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="trait"></param>
+    /// <param name="racelist"></param>
+    /// <param name="terrainlist"></param>
+    /// <returns></returns>
+    static bool IncludeTrait(TraitCSV trait, List<string> racelist,
+        List<string> terrainlist)
+    {
+        var cleanrace = Cleanup(trait.ReqRace1);
+        var cleanplace = Cleanup(trait.ReqPlace);
+        if ((racelist.Contains(cleanrace) || string.IsNullOrEmpty(cleanrace))
+            && (terrainlist.Contains(cleanplace) || string.IsNullOrEmpty(cleanplace))
+            && Cleanup(trait.Name) != "PAGEMISSING")
+        {
+            return true;
+        }
+        return false;
     }
 
     /// <summary>
@@ -288,7 +310,95 @@ internal class Program
         }
     }
 
-    private static string Cleanup(string name)
+    /// <summary>
+    /// Create a trait category enum cs file
+    /// </summary>
+    /// <param name="filename">the file to create</param>
+    static void CreateTraitCategoryEnumFile(string filename)
+    {
+        var csv = new CSVServices();
+        var traitlist = csv.ReadTraitFile(traitcsvfile);
+
+        var enumlist = new List<string>();
+        using (StreamWriter writer = File.CreateText(filename))
+        {
+            foreach (var trait in traitlist.OrderBy(o => o.Category))
+            {
+                if (!enumlist.Contains(Cleanup(trait.Category))
+                    && !string.IsNullOrEmpty(trait.Category))
+                {
+                    enumlist.Add(Cleanup(trait.Category));
+                }
+            }
+            writer.WriteLine("namespace NetGore.Core.Enum;");
+            writer.WriteLine();
+            writer.WriteLine($"public enum TraitCategoryEnum");
+            writer.WriteLine("{");
+
+            int counter = 0;
+            foreach (var traitenum in enumlist)
+            {
+                writer.WriteLine($"\t{traitenum} = {counter},");
+                counter++;
+            }
+
+            writer.WriteLine("}");
+            writer.Flush();
+        }
+    }
+
+    /// <summary>
+    /// Create a trait place (terrain?) enum cs file
+    /// </summary>
+    /// <param name="filename">the file to create</param>
+    static void CreateTraitPlaceEnumFile(string filename)
+    {
+        var csv = new CSVServices();
+        var traitlist = csv.ReadTraitFile(traitcsvfile);
+
+        var enumlist = new List<string>();
+        using (StreamWriter writer = File.CreateText(filename))
+        {
+            foreach (var trait in traitlist.OrderBy(o => o.ReqPlace))
+            {
+                if (!enumlist.Contains(Cleanup(trait.ReqPlace))
+                    && !string.IsNullOrEmpty(trait.ReqPlace))
+                {
+                    enumlist.Add(Cleanup(trait.ReqPlace));
+                }
+            }
+            writer.WriteLine("namespace NetGore.Core.Enum;");
+            writer.WriteLine();
+            writer.WriteLine($"public enum TerrainEnum");
+            writer.WriteLine("{");
+
+            int counter = 0;
+            foreach (var traitenum in enumlist)
+            {
+                if (string.IsNullOrEmpty(traitenum))
+                {
+                    writer.WriteLine($"\tAny = {counter},");
+                }
+                if (traitenum != "Forest"
+                    || traitenum != "Mountain"
+                    || traitenum != "Desert")
+                {
+                    writer.WriteLine($"\t{traitenum} = {counter},");
+                }
+                counter++;
+            }
+
+            writer.WriteLine("}");
+            writer.Flush();
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    static string Cleanup(string name)
     {
         return name
         .Replace(" ", string.Empty)
@@ -298,9 +408,11 @@ internal class Program
         .Replace("-", string.Empty)
         .Replace("’", string.Empty)
         .Replace(",", string.Empty)
+        .Replace("&", string.Empty)
         .Replace("(", string.Empty)
         .Replace(")", string.Empty)
         .Replace("[", string.Empty)
-        .Replace("]", string.Empty);
+        .Replace("]", string.Empty)
+        .Trim();
     }
 }
