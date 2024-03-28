@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 /// <summary>
 /// Intelligence measures mental acuity, accuracy of recall,
@@ -19,6 +19,18 @@ public class Intelligence : AbilityBase
     {
         Name = "Intelligence";
         Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";
-        Abbrieviation = "INT";
+        Abbreviation = "INT";
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Intelligence(int baseAbility)
+        : base(baseAbility)
+    {
+        Name = "Intelligence";
+        Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";
+        Abbreviation = "INT";
     }
 }

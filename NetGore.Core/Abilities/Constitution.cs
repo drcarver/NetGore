@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 /// <summary>
 /// Constitution measures health, stamina, and vital 
@@ -19,6 +19,18 @@ public class Constitution : AbilityBase
     {
         Name = "Constitution";
         Description = "Constitution measures health, stamina, and vital force.";
-        Abbrieviation = "CON";
+        Abbreviation = "CON";
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Constitution(int baseAbility)
+        : base(baseAbility)
+    {
+        Name = "Constitution";
+        Description = "Constitution measures health, stamina, and vital force.";
+        Abbreviation = "CON";
     }
 }

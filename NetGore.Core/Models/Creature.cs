@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-using NetGore.Core.Ablities;
+using NetGore.Core.Abilities;
 using NetGore.Core.Base;
 using NetGore.Core.Data;
 using NetGore.Core.Enum;

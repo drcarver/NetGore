@@ -23,7 +23,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Core.Tests", "NetGo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Data", "NetGore.Data\NetGore.Data.csproj", "{184ED70E-8386-42D0-8E06-919CA7C8088B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertCSVToTable", "Tools\ConvertCSVToTable\ConvertCSVToTable.csproj", "{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertCSVToTable", "Tools\ConvertCSVToTable\ConvertCSVToTable.csproj", "{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{23295D56-CD9D-449D-8486-70FB99E0056C}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Craftable Construct Cheatsheet - Base Constructs.csv = Documents\Craftable Construct Cheatsheet - Base Constructs.csv
+		Documents\Feats - Updated 19Jan2020.csv = Documents\Feats - Updated 19Jan2020.csv
+		Documents\HeavyArmor.csv = Documents\HeavyArmor.csv
+		Documents\magic_items_full - Updated 19Jan2020.csv = Documents\magic_items_full - Updated 19Jan2020.csv
+		Documents\monster_stat_blocks_full - Updated 19Jan2020.csv = Documents\monster_stat_blocks_full - Updated 19Jan2020.csv
+		Documents\spell_full - Updated 31Mar2020.csv = Documents\spell_full - Updated 31Mar2020.csv
+		Documents\Traits.csv = Documents\Traits.csv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 using NetGore.Core;
-using NetGore.Core.Ablities;
+using NetGore.Core.Abilities;
 using NetGore.Core.Data;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;

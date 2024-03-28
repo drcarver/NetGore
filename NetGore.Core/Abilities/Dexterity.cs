@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 /// <summary>
 /// Dexterity measures agility, reflexes, and balance.
@@ -18,6 +18,18 @@ public class Dexterity : AbilityBase
     {
         Name = "Dexterity";
         Description = "Dexterity measures agility, reflexes, and balance.";
-        Abbrieviation = "DEX";
+        Abbreviation = "DEX";
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Dexterity(int baseAbility)
+        : base(baseAbility)
+    {
+        Name = "Dexterity";
+        Description = "Dexterity measures agility, reflexes, and balance.";
+        Abbreviation = "DEX";
     }
 }

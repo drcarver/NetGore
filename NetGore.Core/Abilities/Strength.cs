@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 /// <summary>
 /// Strength measures bodily power, athletic training, 
@@ -20,6 +20,18 @@ public class Strength : AbilityBase
     {
         Name = "Strength";
         Description = "Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force.";
-        Abbrieviation = "STR";
+        Abbreviation = "STR";
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Strength(int baseAbility)
+        : base(baseAbility)
+    {
+        Name = "Strength";
+        Description = "Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force.";
+        Abbreviation = "STR";
     }
 }

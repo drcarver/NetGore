@@ -2,7 +2,7 @@
 
 using Microsoft.Extensions.Logging;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 /// <summary>
 /// Wisdom reflects how attuned you are to the world 
@@ -20,6 +20,18 @@ public class Wisdom : AbilityBase
     {
         Name = "Wisdom";
         Description = "Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition.";
-        Abbrieviation = "WIS";
+        Abbreviation = "WIS";
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public Wisdom(int baseAbility)
+        : base(baseAbility)
+    {
+        Name = "Wisdom";
+        Description = "Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition.";
+        Abbreviation = "WIS";
     }
 }

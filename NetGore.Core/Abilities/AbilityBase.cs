@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
 
-namespace NetGore.Core.Ablities;
+namespace NetGore.Core.Abilities;
 
 public abstract class AbilityBase : BaseObject, IAbilityBase
 {
@@ -24,14 +24,14 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     public int BaseAbility { get; private set; }
 
     /// <summary>
-    /// The seperate dice rolls
+    /// The separate dice rolls
     /// </summary>
     public int[]? Rolls { get; private set; }
 
     /// <summary>
-    /// The abbrieviation for the ability
+    /// The abbreviation for the ability
     /// </summary>
-    public string Abbrieviation { get; protected set; } = string.Empty;
+    public string Abbreviation { get; protected set; } = string.Empty;
 
     /// <summary>
     /// Any racial modifiers
@@ -46,7 +46,7 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// <summary>
     /// The reason for the modifier
     /// </summary>
-    public string ModiferDescription { get; internal set; } = string.Empty;
+    public string ModifierDescription { get; internal set; } = string.Empty;
 
     /// <summary>
     /// The ability scores with all modifiers
@@ -79,4 +79,13 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
         BaseAbility = Dice.Total;
     }
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public AbilityBase(int baseAbility)
+    {
+        Rolls = null;
+        BaseAbility = baseAbility;
+    }
 }
