@@ -53,7 +53,12 @@ logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
 if (logger != null)
 {
-    var ability = new Strength(logger);
+    logger?.LogInformation(new Strength(logger).ToString());
+    logger?.LogInformation(new Intelligence(logger).ToString());
+    logger?.LogInformation(new Wisdom(logger).ToString());
+    logger?.LogInformation(new Dexterity(logger).ToString());
+    logger?.LogInformation(new Constitution(logger).ToString());
+    logger?.LogInformation(new Charisma(logger).ToString());
     logger?.LogInformation(new Dice("1d10").ToString());
     logger?.LogInformation(new Dice("1d20").ToString());
 }
@@ -63,7 +68,6 @@ var gender = GenderData.GetGender();
 var raceService = services.GetService<IRaceService>();
 
 var pc = services.GetService<IPlayerCharacter>();
-
 
 // Try to create each race
 var classService = services.GetService<IClassService>();

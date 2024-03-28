@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\abilities\\wisdom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\abilities\\wisdom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\abilities\\abilitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\abilities\\abilitybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\abilities\\strength.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\abilities\\strength.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC368F4C-C405-4896-A8B6-5382D99F4B24}|NetGore.CLI\\NetGore.CLI.csproj|solutionrelative:netgore.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\race\\halforc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\race\\halforc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Wisdom.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\Wisdom.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Abilities\\Wisdom.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\Wisdom.cs",
-              "RelativeToolTip": "NetGore.Core\\Abilities\\Wisdom.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAQwB4AAAAaAAAA",
+              "DocumentIndex": 2,
+              "Title": "HalfOrc.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfOrc.cs",
+              "RelativeDocumentMoniker": "NetGore.Data\\Race\\HalfOrc.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Race\\HalfOrc.cs",
+              "RelativeToolTip": "NetGore.Data\\Race\\HalfOrc.cs",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAAwHIAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T19:29:06.932Z",
+              "WhenOpened": "2024-03-28T20:21:20.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Strength.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\Strength.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Abilities\\Strength.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\Strength.cs",
-              "RelativeToolTip": "NetGore.Core\\Abilities\\Strength.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAQwB4AAAAaAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
+              "RelativeDocumentMoniker": "NetGore.CLI\\Program.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CLI\\Program.cs",
+              "RelativeToolTip": "NetGore.CLI\\Program.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAADwv3QAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T19:28:22.563Z",
+              "WhenOpened": "2024-03-28T20:04:49.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Creature.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Creature.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Models\\Creature.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\Creature.cs",
+              "RelativeToolTip": "NetGore.Core\\Models\\Creature.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAAwHwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T19:55:04.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AbilityBase.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\AbilityBase.cs",
+              "RelativeDocumentMoniker": "NetGore.Core\\Abilities\\AbilityBase.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Abilities\\AbilityBase.cs",
+              "RelativeToolTip": "NetGore.Core\\Abilities\\AbilityBase.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAwEgAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T19:32:38.251Z",
               "EditorCaption": ""
             }
           ]

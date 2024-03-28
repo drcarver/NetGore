@@ -104,6 +104,18 @@ public class HalfOrc : IRace
             },
             #endregion
 
+            #region Raised in a Human Homeland
+            // 61–75	Raised in a Human Homeland.	Roll on Table: Human Homeland.
+            new RandomTableEntry
+            {
+                LowerRange = 61,
+                UpperRange = 75,
+                Name = "Raised in a Human Homeland",
+                Description = "Roll on Table: Human Homeland",
+                AlternateTable = Human.HomelandTable
+            },
+            #endregion
+
             #region "Orc Settlement"
             //26–60	Orc Settlement  You gain access to the Scrapper race trait.
             new RandomTableEntry

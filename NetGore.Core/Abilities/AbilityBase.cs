@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+
 using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Base;
@@ -12,11 +15,6 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     /// The injected logger for the service. 
     /// </summary>
     private ILogger? Logger { get; set; }
-
-    /// <summary>
-    /// The dice for this ability
-    /// </summary>
-    public readonly Dice Dice = new("3d6+3");
 
     /// <summary>
     /// The base ability from the total of dice roll
@@ -58,6 +56,25 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     }
 
     /// <summary>
+    /// Return the Ability as a string
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        var retval = Abbreviation + " ";
+        for (int i = 0; i < Rolls?.Length; i ++)
+        {
+            retval += $"Dice{i}={Rolls[i]} ";
+        }
+        // BaseAbility + RacialModifier + TemporaryModifier
+        retval += $"BaseAbility({BaseAbility}) + ";
+        retval += $"RacialModifier({RacialModifier}) + ";
+        retval += $"TemporaryModifier({TemporaryModifier}) = ";
+        retval += $" Total({Ability()})";
+        return retval;
+    }
+
+    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="logger">The logger for the class</param>
@@ -66,7 +83,6 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
         : this()
     {
         Logger = logger;
-        logger?.LogInformation($"{Dice}");
     }
 
     /// <summary>
@@ -75,8 +91,13 @@ public abstract class AbilityBase : BaseObject, IAbilityBase
     [SetsRequiredMembers]
     public AbilityBase()
     {
-        Rolls = Dice.Rolls;
-        BaseAbility = Dice.Total;
+        var dice = new Dice("4d6");
+        Rolls = new int[3];
+        for (int i = 0; i <= 2; i++)
+        {
+            Rolls[i] = dice.Rolls[i];
+        }
+        BaseAbility = Rolls.Sum();
     }
 
     /// <summary>

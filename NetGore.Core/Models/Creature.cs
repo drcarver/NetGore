@@ -157,11 +157,11 @@ public class Creature : DataObject, ICreature
         Gender = GenderData.GetGender();
 
         // log the creature info
-        _logger?.LogInformation($"Strength:     {Strength.Dice}");
-        _logger?.LogInformation($"Intelligence: {Intelligence.Dice}");
-        _logger?.LogInformation($"Wisdom:       {Wisdom.Dice}");
-        _logger?.LogInformation($"Dexterity:    {Dexterity.Dice}");
-        _logger?.LogInformation($"Constitution: {Constitution.Dice}");
-        _logger?.LogInformation($"Charisma:     {Charisma.Dice}");
+        _logger?.LogInformation($"Strength:     {Strength}");
+        _logger?.LogInformation($"Intelligence: {Intelligence}");
+        _logger?.LogInformation($"Wisdom:       {Wisdom}");
+        _logger?.LogInformation($"Dexterity:    {Dexterity}");
+        _logger?.LogInformation($"Constitution: {Constitution}");
+        _logger?.LogInformation($"Charisma:     {Charisma}");
     }
 }
