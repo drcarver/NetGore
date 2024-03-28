@@ -147,7 +147,6 @@ public partial class BackgroundTables
                     "Savanna Child regional trait.",
                 Traits =
                 {
-                    TraitEnum.SavannaChild,
                 },
             },
             #endregion

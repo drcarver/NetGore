@@ -103,7 +103,7 @@ public partial class BackgroundTables
                 {
                     TraitEnum.Deathtouched,
                     TraitEnum.MagicalKnack,
-                    TraitEnum.GlimpseBeyond,
+                    //TraitEnum.GlimpseBeyond,
                 },
             },
             #endregion
@@ -155,7 +155,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Resilient,
-                    TraitEnum.FeralHeart,
+                    //TraitEnum.FeralHeart,
                 },
             },
             #endregion
@@ -228,7 +228,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.FiendBlood,
-                    TraitEnum.Damned,
+                    //T/raitEnum.Damned,
                 },
             },
             #endregion

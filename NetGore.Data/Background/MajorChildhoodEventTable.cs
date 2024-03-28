@@ -141,7 +141,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Influence,
-                    TraitEnum.Champion,
+                    //TraitEnum.Champion,
                 },
 
             },
@@ -169,7 +169,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reactionary,
-                    TraitEnum.DenytheReaper,
+                    //TraitEnum.DenytheReaper,
                 },
 
             },
@@ -200,7 +200,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.FearlessDefiance,
-                    TraitEnum.Arisen,
+                    //TraitEnum.Arisen,
                 },
 
             },
@@ -280,7 +280,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Killer,
-                    TraitEnum.InnocentBlood,
+                    //TraitEnum.InnocentBlood,
                 },
             },
             #endregion
@@ -336,7 +336,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Criminal,
-                    TraitEnum.Liberator
+                    //TraitEnum.Liberator
                 },
             },
             #endregion
@@ -388,7 +388,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Canter,
-                    TraitEnum.Liberator,
                 },
             },
             #endregion
@@ -441,7 +440,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Resilient,
-                    TraitEnum.Unforgotten,
                 },
             },
             #endregion
@@ -551,8 +549,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.AxetoGrind,
-                    TraitEnum.Vengeance,
-                    TraitEnum.Foeslayer,
                 },
             },
             #endregion
@@ -582,7 +578,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.VagabondChild,
-                    TraitEnum.DenytheReaper,
+                    //TraitEnum.DenytheReaper,
                 },
             },
             #endregion

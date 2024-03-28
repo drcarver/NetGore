@@ -90,7 +90,6 @@ public partial class BackgroundTables
                     "access to the True Love story feat.",
                 Traits =
                 {
-                    TraitEnum.TrueLove,
                 },
             },
             #endregion

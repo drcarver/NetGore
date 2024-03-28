@@ -96,7 +96,6 @@ public class Elf : IRace
                     "Log Roller regional trait.",
                 Traits =
                 {
-                    TraitEnum.LogRoller,
                 },
             },
             #endregion

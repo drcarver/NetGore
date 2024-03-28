@@ -98,7 +98,6 @@ public class Gnome : IRace
                     "the Animal Friend race trait.",
                 Traits =
                 {
-                    TraitEnum.LogRoller,
                     TraitEnum.AnimalFriend
                 },
             },

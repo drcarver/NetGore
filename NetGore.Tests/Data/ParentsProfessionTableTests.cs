@@ -82,8 +82,8 @@ public class ParentsProfessionTableTests
             //41–55	Yeomen
             case int n when (n >= 41 && n <= 55):
                 return entry.Name == nameof(ProfessionEnum.Yeomen)
-                    && entry.Traits.Count == 1
-                    && entry.Traits.Contains(TraitEnum.SavannaChild);
+                    && entry.Traits.Count == 0;
+                    //&& entry.Traits.Contains(TraitEnum.SavannaChild);
 
             //56–70	Tradespeople
             case int n when (n >= 56 && n <= 70):
