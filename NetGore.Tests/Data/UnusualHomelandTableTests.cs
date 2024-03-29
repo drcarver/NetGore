@@ -52,8 +52,8 @@ public class UnusualHomelandTableTests
             //26–40	Plains
             case int n when (n >= 26 && n <= 40):
                 return entry.Name == nameof(UnusualHomelandEnum.Plains)
-                    && entry.Traits.Count == 1
-                    && entry.Traits.Contains(TraitEnum.SavannaChild);
+                    && entry.Traits.Count == 0;
+                    //&& entry.Traits.Contains(TraitEnum.SavannaChild);
 
             //41–50	Town or Village You gain access to the Militia Veteran regional trait.
             case int n when (n >= 41 && n <= 50):
@@ -71,8 +71,8 @@ public class UnusualHomelandTableTests
             //61–70	Forest
             case int n when (n >= 61 && n <= 70):
                 return entry.Name == nameof(UnusualHomelandEnum.Forest)
-                    && entry.Traits.Count == 1
-                    && entry.Traits.Contains(TraitEnum.LogRoller);
+                    && entry.Traits.Count == 0;
+                    //&& entry.Traits.Contains(TraitEnum.LogRoller);
 
             //71–80	River, Swamp, or Wetlands
             case int n when (n >= 71 && n <= 80):

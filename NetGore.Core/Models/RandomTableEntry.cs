@@ -44,6 +44,11 @@ public class RandomTableEntry : BaseObject, IRandomTableEntry
     public ClassEnum Class { get; set; } = ClassEnum.Any;
 
     /// <summary>
+    /// Conflict points
+    /// </summary>
+    public int ConflictPoints { get; set; }
+
+    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]

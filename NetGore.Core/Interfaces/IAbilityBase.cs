@@ -15,7 +15,7 @@ public interface IAbilityBase
     /// <summary>
     /// The abbrieviation for the ability
     /// </summary>
-    string Abbrieviation { get; }
+    string Abbreviation { get; }
 
     /// <summary>
     /// Any racial modifiers
@@ -30,7 +30,7 @@ public interface IAbilityBase
     /// <summary>
     /// The reason for the modifier
     /// </summary>
-    public string ModiferDescription { get; }
+    public string ModifierDescription { get; }
 
     /// <summary>
     /// The ability scores with all modifiers

@@ -55,8 +55,8 @@ public class RomanticRelationshipsTableTests
             //10–12	Current Lover
             case int n when (n >= 10 && n <= 12):
                 return entry.Name == nameof(RomanticRelationshipsEnum.CurrentLover)
-                    && entry.Traits.Count == 1
-                    && entry.Traits.Contains(TraitEnum.TrueLove);
+                    && entry.Traits.Count == 0;
+                    //&& entry.Traits.Contains(TraitEnum.TrueLove);
 
             //13–16	Several Inconsequential Relationships
             case int n when (n >= 13 && n <= 16):

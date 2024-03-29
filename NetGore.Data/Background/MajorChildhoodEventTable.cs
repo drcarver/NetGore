@@ -1,4 +1,25 @@
-﻿using NetGore.Core.Enum;
+﻿#region Copyright Notice and source url
+//
+// This content contains copyright material. The material
+// format has been change to support the needs of the
+// Application.  In particular the table entries and
+// values have the following copyright notice.
+//
+// The content is from the url:
+// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+//
+// Pathfinder Roleplaying Game: Ultimate Campaign.
+// ©2013, Paizo Publishing, LLC;
+// Authors: Jesse Benner, Benjamin Bruck, Jason Bulmahn,
+// Ryan Costello, Adam Daigle, Matt Goetz, Tim Hitchcock,
+// James Jacobs, Ryan Macklin, Colin McComb,
+// Jason Nelson, Richard Pett, Stephen Radney-MacFarland,
+// Patrick Renie, Sean K Reynolds, F. Wesley Schneider,
+// James L.Sutter, Russ Taylor, and Stephen Townshend.
+//
+#endregion
+
+using NetGore.Core.Enum;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Background;
@@ -141,7 +162,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Influence,
-                    TraitEnum.Champion,
+                    //TraitEnum.Champion,
                 },
 
             },
@@ -169,7 +190,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reactionary,
-                    TraitEnum.DenytheReaper,
+                    //TraitEnum.DenytheReaper,
                 },
 
             },
@@ -200,7 +221,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.FearlessDefiance,
-                    TraitEnum.Arisen,
+                    //TraitEnum.Arisen,
                 },
 
             },
@@ -280,7 +301,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Killer,
-                    TraitEnum.InnocentBlood,
+                    //TraitEnum.InnocentBlood,
                 },
             },
             #endregion
@@ -336,7 +357,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Criminal,
-                    TraitEnum.Liberator
+                    //TraitEnum.Liberator
                 },
             },
             #endregion
@@ -388,7 +409,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Canter,
-                    TraitEnum.Liberator,
                 },
             },
             #endregion
@@ -441,7 +461,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Resilient,
-                    TraitEnum.Unforgotten,
                 },
             },
             #endregion
@@ -551,8 +570,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.AxetoGrind,
-                    TraitEnum.Vengeance,
-                    TraitEnum.Foeslayer,
                 },
             },
             #endregion
@@ -582,7 +599,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.VagabondChild,
-                    TraitEnum.DenytheReaper,
+                    //TraitEnum.DenytheReaper,
                 },
             },
             #endregion

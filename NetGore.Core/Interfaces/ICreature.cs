@@ -1,4 +1,4 @@
-﻿using NetGore.Core.Ablities;
+﻿using NetGore.Core.Abilities;
 
 namespace NetGore.Core.Interfaces;
 

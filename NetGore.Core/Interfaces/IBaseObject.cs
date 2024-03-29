@@ -10,10 +10,10 @@ public interface IBaseObject
     /// <summary>
     /// The name of the object
     /// </summary>
-    string? Name { get; set; }
+    string Name { get; set; }
 
     /// <summary>
     /// The Description of the object
     /// </summary>
-    string? Description { get; set; }
+    string Description { get; set; }
 }

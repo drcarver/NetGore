@@ -1,4 +1,25 @@
-﻿using NetGore.Core.Enum;
+﻿#region Copyright Notice and source url
+//
+// This content contains copyright material. The material
+// format has been change to support the needs of the
+// Application.  In particular the table entries and
+// values have the following copyright notice.
+//
+// The content is from the url:
+// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+//
+// Pathfinder Roleplaying Game: Ultimate Campaign.
+// ©2013, Paizo Publishing, LLC;
+// Authors: Jesse Benner, Benjamin Bruck, Jason Bulmahn,
+// Ryan Costello, Adam Daigle, Matt Goetz, Tim Hitchcock,
+// James Jacobs, Ryan Macklin, Colin McComb,
+// Jason Nelson, Richard Pett, Stephen Radney-MacFarland,
+// Patrick Renie, Sean K Reynolds, F. Wesley Schneider,
+// James L.Sutter, Russ Taylor, and Stephen Townshend.
+//
+#endregion
+
+using NetGore.Core.Enum;
 using NetGore.Core.Models;
 
 namespace NetGore.Data.Background;
@@ -180,7 +201,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Bastard,
-                    TraitEnum.Shamed,
                 },
             },
             #endregion
@@ -295,7 +315,7 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.FiendBlood,
-                    TraitEnum.Accursed,
+                    //TraitEnum.Accursed,
                 },
             },
             #endregion
@@ -322,8 +342,6 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reactionary,
-                    TraitEnum.LostLegacy,
-                    TraitEnum.Redemption,
                 },
             },
             #endregion
@@ -373,7 +391,6 @@ public partial class BackgroundTables
                 {
                     TraitEnum.Courageous,
                     TraitEnum.Savage,
-                    TraitEnum.Arisen,
                 },
             },
             #endregion
@@ -397,7 +414,6 @@ public partial class BackgroundTables
                 {
                     TraitEnum.Birthmark,
                     TraitEnum.SacredTouch,
-                    TraitEnum.Prophet,
                 },
             },
             #endregion
@@ -488,8 +504,8 @@ public partial class BackgroundTables
                 Traits =
                 {
                     TraitEnum.Reincarnated,
-                    TraitEnum.Arisen,
-                    TraitEnum.ForgottenPast,
+                    //TraitEnum.Arisen,
+                    //TraitEnum.ForgottenPast,
                 }
             },
             #endregion

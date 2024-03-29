@@ -109,7 +109,6 @@ public class HalfElf : IRace
                     "You gain access to the Log Roller regional trait.",
                 Traits =
                 {
-                    TraitEnum.LogRoller,
                 },
             },
             #endregion

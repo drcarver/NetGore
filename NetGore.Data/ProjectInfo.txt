@@ -1,0 +1,10 @@
+﻿This project contains both the static data files and 
+the DataContext for the database.  It is a mixture 
+of code generated files from the databases and hand
+written files.  
+
+All Random Tables are created from the standard random
+table class which includes the dice to roll on the table
+and the ability to select a particular entry by numer
+of name.  Named entries are tied back to a enmerted type
+for each entry in the table.

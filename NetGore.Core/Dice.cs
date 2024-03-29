@@ -13,7 +13,7 @@ public class Dice
     /// <summary>
     /// The dice rolls
     /// </summary>
-    public int[] Rolls { get; private set; } = new int[0];
+    public int[] Rolls { get; private set; } = Array.Empty<int>();
 
     /// <summary>
     /// The total of all dice rolls
@@ -52,12 +52,13 @@ public class Dice
         Sides = int.Parse(parts[1]);
         Modifier = parts.Length > 2 ? int.Parse(parts[2]) : 0;
 
-        Rolls = new int[numDice];
+        var rolls = new int[numDice];
         for (int i = 0; i < numDice; i++)
         {
-            Rolls[i] = random.Next(1, Sides + 1);
+            rolls[i] = random.Next(1, Sides + 1);
         }
 
+        Rolls = rolls.OrderByDescending(i => i).ToArray();
         int sum = Rolls.Sum() + Modifier;
         return sum;
     }
