@@ -26,5 +26,23 @@ public enum CharacterDrawbackEnum
 {
     AttachmenttoanObject,
     AttachmenttoaPerson,
-    Family
+    Family,
+    Justice,
+    Attached,
+    Love,
+    Loyalty,
+    MaterialWealth,
+    Pleasure,
+    Power,
+    Pride,
+    Religion,
+    ReputationorFame,
+    SafetyorSecurity,
+    SelfDoubt,
+    SocialAcceptance,
+    TheFuture,
+    ThePast,
+    Worldview,
+    Youth,
+    Race
 }

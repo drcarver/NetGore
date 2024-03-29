@@ -1157,6 +1157,29 @@ public enum TraitEnum
 
 	SelfReliant = 1096,
 
-	#endregion
+    #endregion
+
+    #region Character Drawback's
+
+    Attached = 1097,
+    Headstrong = 1098,
+    Lovesick = 1099,
+    Pride = 1100,
+    Avarice = 1101,
+    Hedonistic = 1102,
+    PowerHungry = 1103,
+    Zealous = 1104,
+    Vain = 1105,
+    Paranoid = 1106,
+    Doubt = 1107,
+    Dependent = 1108,
+    Meticulous = 1109,
+    Sentimental = 1110,
+    Provincial = 1111,
+    FamilyTies = 1112,
+    Xenophobic = 1113,
+
+    #endregion
+
 
 }
