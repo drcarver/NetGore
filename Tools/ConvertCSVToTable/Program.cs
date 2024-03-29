@@ -1,7 +1,8 @@
 ﻿using ConvertCSVToTable.Maps;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
+
+using Newtonsoft.Json;
 
 namespace ConvertCSVToTable;
 
@@ -14,29 +15,36 @@ internal class Program
     const string traitcategoryenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TraitCategoryEnum.cs";
     const string traitplaceenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\TerrainEnum.cs";
 
+    const string featcsvfile = @"C:\Users\drcarver\Desktop\netgore\documents\feats.csv";
+    const string featfilename = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\feats.json";
+    const string feattypeenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\FeatTypeEnum.cs";
+    const string featnameenumfile = @"C:\Users\drcarver\Desktop\NetGore\Tools\ConvertCSVToTable\FeatEnum.cs";
+
     static void Main(string[] args)
     {
         var csv = new CSVServices();
-        var traitlist = csv.ReadTraitFile(traitcsvfile);
+        var featlist = csv.ReadFeatFile(featcsvfile);
+        string json = JsonConvert.SerializeObject(featlist.ToArray());
+        File.WriteAllText(featfilename, json);
 
-        //var traitfield = new List<string>();
-        //foreach (var trait in traitlist)
-        //{
-        //    if (!traitfield.Contains(trait.ReqPlace))
-        //    {
-        //        Console.WriteLine(trait.ReqPlace);
-        //        traitfield.Add(trait.ReqPlace);
-        //    }
-        //}
+        var filefield = new List<string>();
+        foreach (var item in featlist)
+        {
+            if (!filefield.Contains(Cleanup(item.FeatType)))
+            {
+                Console.WriteLine(Cleanup(item.FeatType));
+                filefield.Add(Cleanup(item.FeatType));
+            }
+        }
 
-        //string json = JsonConvert.SerializeObject(traitlist.ToArray());
 
         ////serialize object into file stream
         //File.WriteAllText(traitfilename, json);
-        //CreateTraitEnumFile(traitenumfile);
+        CreateFeatNameEnumFile(featnameenumfile);
+        //CreateFeatTypeEnumFile(feattypeenumfile);
         //CreateTraitCategoryEnumFile(traitcategoryenumfile);
         //CreateTraitPlaceEnumFile(traitplaceenumfile);
-        CreateTraitListFile(traitlistfile);
+        //CreateTraitListFile(traitlistfile);
     }
 
     /// <summary>
@@ -311,6 +319,70 @@ internal class Program
     }
 
     /// <summary>
+    /// Create a feat type enum cs file
+    /// </summary>
+    /// <param name="filename">the file to create</param>
+    static void CreateFeatTypeEnumFile(string filename)
+    {
+        var csv = new CSVServices();
+        var featlist = csv.ReadFeatFile(featcsvfile);
+
+        var enums = new List<string>();
+        using (StreamWriter writer = File.CreateText(filename))
+        {
+            writer.WriteLine("namespace NetGore.Core.Enum;");
+            writer.WriteLine();
+            writer.WriteLine($"public enum FeatEnum");
+            writer.WriteLine("{");
+            int counter = 0;
+            foreach (var feat in featlist.OrderBy(o => Cleanup(o.FeatType)))
+            {
+                var name = Cleanup(feat.FeatType);
+                if (!enums.Contains(name))
+                {
+                    writer.WriteLine($"\t{name} = {counter},");
+                    enums.Add(name);
+                    counter++;
+                }
+            }
+            writer.WriteLine("}");
+            writer.Flush();
+        }
+    }
+
+    /// <summary>
+    /// Create a feat name enum cs file
+    /// </summary>
+    /// <param name="filename">the file to create</param>
+    static void CreateFeatNameEnumFile(string filename)
+    {
+        var csv = new CSVServices();
+        var featlist = csv.ReadFeatFile(featcsvfile);
+
+        var enums = new List<string>();
+        using (StreamWriter writer = File.CreateText(filename))
+        {
+            writer.WriteLine("namespace NetGore.Core.Enum;");
+            writer.WriteLine();
+            writer.WriteLine($"public enum FeatEnum");
+            writer.WriteLine("{");
+            int counter = 0;
+            foreach (var feat in featlist.OrderBy(o => Cleanup(o.Name)))
+            {
+                var name = Cleanup(feat.Name);
+                if (!enums.Contains(name))
+                {
+                    writer.WriteLine($"\t{name} = {counter},");
+                    enums.Add(name);
+                    counter++;
+                }
+            }
+            writer.WriteLine("}");
+            writer.Flush();
+        }
+    }
+
+    /// <summary>
     /// Create a trait category enum cs file
     /// </summary>
     /// <param name="filename">the file to create</param>
@@ -408,6 +480,7 @@ internal class Program
         .Replace("-", string.Empty)
         .Replace("’", string.Empty)
         .Replace(",", string.Empty)
+        .Replace("!", string.Empty)
         .Replace("&", string.Empty)
         .Replace("(", string.Empty)
         .Replace(")", string.Empty)

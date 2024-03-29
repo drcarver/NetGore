@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\data\\characterdrawbacktabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\data\\characterdrawbacktabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|c:\\users\\drcarver\\desktop\\netgore\\tools\\convertcsvtotable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|solutionrelative:tools\\convertcsvtotable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\background\\characterdrawbacktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\background\\characterdrawbacktable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.core\\models\\randomtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C9F5D27F-8A04-445D-9B76-6AEA38F2A8EA}|NetGore.Core\\NetGore.Core.csproj|solutionrelative:netgore.core\\models\\randomtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|c:\\users\\drcarver\\desktop\\netgore\\tools\\convertcsvtotable\\maps\\featscsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFFC84CA-525E-44AA-9C03-3C1DD93EA472}|Tools\\ConvertCSVToTable\\ConvertCSVToTable.csproj|solutionrelative:tools\\convertcsvtotable\\maps\\featscsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RandomTable.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\RandomTable.cs",
-              "RelativeDocumentMoniker": "NetGore.Core\\Models\\RandomTable.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Core\\Models\\RandomTable.cs",
-              "RelativeToolTip": "NetGore.Core\\Models\\RandomTable.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAIwDkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T00:10:34.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CharacterDrawbackTable.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\CharacterDrawbackTable.cs",
-              "RelativeDocumentMoniker": "NetGore.Data\\Background\\CharacterDrawbackTable.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\Background\\CharacterDrawbackTable.cs",
-              "RelativeToolTip": "NetGore.Data\\Background\\CharacterDrawbackTable.cs",
-              "ViewState": "AQIAACUCAAAAAAAAAAAIwBwCAAAgAAAA",
+              "Title": "FeatsCSV.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\FeatsCSV.cs",
+              "RelativeDocumentMoniker": "Tools\\ConvertCSVToTable\\Maps\\FeatsCSV.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Maps\\FeatsCSV.cs",
+              "RelativeToolTip": "Tools\\ConvertCSVToTable\\Maps\\FeatsCSV.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T22:52:06.871Z",
+              "WhenOpened": "2024-03-29T01:47:17.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CharacterDrawbackTableTests.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "RelativeDocumentMoniker": "NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "RelativeToolTip": "NetGore.Tests\\Data\\CharacterDrawbackTableTests.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Program.cs",
+              "RelativeDocumentMoniker": "Tools\\ConvertCSVToTable\\Program.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\Tools\\ConvertCSVToTable\\Program.cs",
+              "RelativeToolTip": "Tools\\ConvertCSVToTable\\Program.cs",
+              "ViewState": "AQIAANsBAAAAAAAAAAAIwOIBAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-28T22:51:36.291Z",
+              "WhenOpened": "2024-03-29T01:46:54.948Z",
               "EditorCaption": ""
             }
           ]
