@@ -28,7 +28,7 @@ public class CircumstanceofBirthTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

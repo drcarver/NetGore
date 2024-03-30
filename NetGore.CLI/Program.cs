@@ -3,10 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using NetGore.Core;
-using NetGore.Core.Abilities;
 using NetGore.Core.Data;
-using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data;
@@ -51,19 +48,7 @@ var logger = (services.GetService<ILoggerFactory>()
 logger?.LogInformation($"Starting application at: {DateTime.Now}");
 logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
-if (logger != null)
-{
-    logger?.LogInformation(new Strength(logger).ToString());
-    logger?.LogInformation(new Intelligence(logger).ToString());
-    logger?.LogInformation(new Wisdom(logger).ToString());
-    logger?.LogInformation(new Dexterity(logger).ToString());
-    logger?.LogInformation(new Constitution(logger).ToString());
-    logger?.LogInformation(new Charisma(logger).ToString());
-    logger?.LogInformation(new Dice("1d10").ToString());
-    logger?.LogInformation(new Dice("1d20").ToString());
-}
-
-var gender = GenderData.GetGender();
+var gender = Gender.GetGender();
 
 var raceService = services.GetService<IRaceService>();
 
@@ -115,10 +100,3 @@ if (characterService != null)
     tiefling.GenerateRaceBackground(character);
 
 }
-
-// Example Service
-//var service = services.GetService<IExampleService>();
-//    service?.AddExample("Test A");
-//    service?.AddExample("Test B");
-//    service?.AddExample("Test C");
-//    service?.GetExamples();

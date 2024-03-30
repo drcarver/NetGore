@@ -31,11 +31,7 @@ public class Elf : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Elf);
-        creature.RaceDescription =
-        "Your elf character has a variety " +
-        "of natural abilities, the result " +
-        "of thousands of years of elven refinement.";
+        creature.Race = RaceEnum.Elf;
 
         //Ability Score Increase.Your Dexterity
         //score increases by 2.creature.
@@ -388,7 +384,7 @@ public class Elf : IRace
     /// <param name="creature">The dwarf</param>
     private static void SetHeightAndWeight(Creature creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 7)
@@ -407,7 +403,7 @@ public class Elf : IRace
             creature.Weight = 110 + (new Dice("2d8").Total * 3);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d6").Total;
             if (modifier <= 7)

@@ -29,11 +29,7 @@ public class HalfElf : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature) 
     {
-        creature.RaceName = nameof(HalfElf);
-        creature.RaceDescription =
-            "Your half‑elf character has some " +
-            "qualities in common with elves and " +
-        "some that are unique to half‑elves.";
+        creature.Race = RaceEnum.HalfElf;
 
         //Ability Score Increase. Your Charisma
         //score increases by 2, and two other
@@ -345,7 +341,7 @@ public class HalfElf : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 9)
@@ -364,7 +360,7 @@ public class HalfElf : IRace
             creature.Weight = 100 + (new Dice("2d8").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 11)

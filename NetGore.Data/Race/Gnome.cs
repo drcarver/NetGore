@@ -30,11 +30,7 @@ public class Gnome : IRace
     /// <param name="character"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Gnome);
-        creature.RaceDescription =
-            "Your gnome character has certain " +
-            "characteristics in common with all " +
-            "other gnomes.";
+        creature.Race = RaceEnum.Gnome;
 
         //Ability Score Increase.Your Intelligence
         //score increases by 2.
@@ -367,7 +363,7 @@ public class Gnome : IRace
     /// <param name="creature">The dwarf</param>
     private static void SetHeightAndWeight(Creature creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             // 3 ft. 0 in.	+2d4 in.
             creature.Height = $"3 ft. {new Dice("2d8").Total} in.";
@@ -377,7 +373,7 @@ public class Gnome : IRace
         }
 
         // Female 2 ft. 10 in.	+2d4 in.
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier == 2)

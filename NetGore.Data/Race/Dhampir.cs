@@ -48,10 +48,7 @@ public class Dhampir : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Dhampir);
-        creature.Description = "Your dwarf character " +
-            "has an assortment of inborn abilities, " +
-            "part and parcel of dwarven nature.";
+        creature.Race = RaceEnum.Dhampir;
 
         //Ability Score Increase. Your Constitution score
         //increases by 2.
@@ -482,7 +479,7 @@ public class Dhampir : IRace
     /// <param name="creature">The dwarf</param>
     private static void SetHeightAndWeight(Creature creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier <= 2)
@@ -501,7 +498,7 @@ public class Dhampir : IRace
             creature.Weight = 150 + (new Dice("2d4").Total * 7);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier <= 4)

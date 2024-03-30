@@ -30,11 +30,7 @@ public class Halfling : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Halfling);
-        creature.RaceDescription =
-            "Your halfling character has a " +
-            "number of traits in common " +
-            "with all other halflings.";
+        creature.Race = RaceEnum.Halfling;
 
         //Ability Score Increase.Your Dexterity
         //score increases by 2.
@@ -344,7 +340,7 @@ public class Halfling : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier <= 3)
@@ -363,7 +359,7 @@ public class Halfling : IRace
             creature.Weight = 30 + new Dice("2d4").Total;
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier <= 5)

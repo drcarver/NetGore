@@ -8,12 +8,12 @@ public interface IAbilityBase
     int BaseAbility { get; }
 
     /// <summary>
-    /// The seperate dice rolls
+    /// The separate dice rolls
     /// </summary>
     int[]? Rolls { get; }
 
     /// <summary>
-    /// The abbrieviation for the ability
+    /// The abbreviation for the ability
     /// </summary>
     string Abbreviation { get; }
 
@@ -36,5 +36,5 @@ public interface IAbilityBase
     /// The ability scores with all modifiers
     /// </summary>
     /// <returns>The current ability score with all modifiers</returns>
-    int Ability();
+    int Score();
 }

@@ -31,10 +31,7 @@ public class HalfOrc : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(HalfOrc);
-        creature.RaceDescription =
-            "Your half-­orc character has certain " +
-            "traits deriving from your orc ancestry.";
+        creature.Race = RaceEnum.HalfOrc;
 
         //Ability Score Modifiers: Half - orc
         //characters gain a + 2 bonus to Strength
@@ -394,7 +391,7 @@ public class HalfOrc : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 1)
@@ -417,7 +414,7 @@ public class HalfOrc : IRace
             creature.Weight = 150 + (new Dice("2d12").Total * 7);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 6)

@@ -13,11 +13,7 @@ public class Dragonborn : IRace
     /// <param name="creature"></param>
     public Dragonborn(Character creature)
     {
-        creature.RaceName = nameof(Dragonborn);
-        creature.RaceDescription =
-            "Your draconic heritage manifests in " +
-            "a variety of traits you share with " +
-            "other dragonborn.";
+        creature.Race = RaceEnum.Dragonborn;
 
         // Ability Score Increase.Your Strength
         // score increases by 2, and your Charisma
@@ -62,7 +58,7 @@ public class Dragonborn : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 9)
@@ -81,7 +77,7 @@ public class Dragonborn : IRace
             creature.Weight = 200 + (new Dice("2d8").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 11)

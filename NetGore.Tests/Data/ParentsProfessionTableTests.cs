@@ -18,12 +18,12 @@ public class ParentsProfessionTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.ParentsProfessionTable.Name == "Parents’ Profession");
-        ClassicAssert.IsTrue(BackgroundTables.ParentsProfessionTable.DiceSides == 100);
+        ClassicAssert.IsTrue(BackgroundTables.ProfessionTable.Name == "Parents’ Profession");
+        ClassicAssert.IsTrue(BackgroundTables.ProfessionTable.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.ParentsProfessionTable.DiceSides; i++)
+        for (int i = 1; i <= BackgroundTables.ProfessionTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.ParentsProfessionTable.GetEntryByNumber(i);
+            var entry = BackgroundTables.ProfessionTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

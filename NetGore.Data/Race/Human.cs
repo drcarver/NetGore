@@ -34,11 +34,7 @@ public class Human : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Human);
-        creature.RaceDescription =
-            "It’s hard to make generalizations " +
-            "about humans, but your human " +
-        "character has these traits.";
+        creature.Race = RaceEnum.Human;
 
         //Ability Score Modifiers: Human characters
         //gain a +1 racial bonus to every ability
@@ -367,7 +363,7 @@ public class Human : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 1)
@@ -390,7 +386,7 @@ public class Human : IRace
             creature.Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 6)

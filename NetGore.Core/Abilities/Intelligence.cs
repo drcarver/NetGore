@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Models;
+
 namespace NetGore.Core.Abilities;
 
 /// <summary>
@@ -14,8 +16,8 @@ public class Intelligence : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Intelligence(ILogger? logger)
-        : base(logger)
+    public Intelligence(ILogger? logger, Creature parent)
+        : base(logger, parent)
     {
         Name = "Intelligence";
         Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";
@@ -26,8 +28,8 @@ public class Intelligence : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Intelligence(int baseAbility)
-        : base(baseAbility)
+    public Intelligence(int baseAbility, Creature parent)
+        : base(baseAbility, parent)
     {
         Name = "Intelligence";
         Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";
