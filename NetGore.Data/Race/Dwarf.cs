@@ -25,6 +25,7 @@ namespace NetGore.Data.Race;
 public class Dwarf : IRace
 {
     private ILogger? _logger;
+    private readonly ILoggerFactory loggerFactory;
 
     /// <summary>
     /// Constructor for the character.
@@ -32,26 +33,29 @@ public class Dwarf : IRace
     /// <param name = "character" > The character (NPC or Player)</param>
     public Dwarf(Character character)
     {
-        Initialize(character);
+        //Initialize(character);
     }
 
-    public Dwarf(ILoggerFactory logger,
-        ICharacterService characterService)
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="logger">The logging service</param>
+    /// <param name="characterService"></param>
+    public Dwarf(ILoggerFactory logger, ICharacterService characterService)
     {
         _logger = logger.CreateLogger<Dwarf>();
-        Initialize(new Character(logger));
+        loggerFactory = logger;
+        Initialize(characterService);
     }
 
     /// <summary>
     /// Initialize all the race properties of the character
     /// </summary>
     /// <param name="creature"></param>
-    public void Initialize(Character creature)
+    public void Initialize(ICharacterService characterService)
     {
-        creature.RaceName = nameof(Dwarf);
-        creature.Description = "Your dwarf character " +
-            "has an assortment of inborn abilities, " +
-            "part and parcel of dwarven nature.";
+        Character creature = characterService.CreateCharacter();
+        creature.Race = RaceEnum.Dwarf;
 
         //Ability Score Increase. Your Constitution score
         //increases by 2.
@@ -62,9 +66,8 @@ public class Dwarf : IRace
         //to their size.
         creature.Size = SizeEnum.Medium;
 
-        // Set the height and weight
-        SetHeightAndWeight(creature);
-        SetAge(creature);
+        // Height, Weight and Age
+        GetVitalStatistics(creature);
 
         //Base Speed: (Slow and Steady) Dwarves have
         //a base speed of 20 feet, but their speed
@@ -83,6 +86,42 @@ public class Dwarf : IRace
         //Terran, and Undercommon. 
         creature.Languages.Add(LanguageEnum.Common);
         creature.Languages.Add(LanguageEnum.Dwarven);
+    }
+
+    /// <summary>
+    /// Set the height, weight and age of the creature
+    /// </summary>
+    /// <param name="creature">creature info</param>
+    private void GetVitalStatistics(Creature creature)
+    {
+        int feet = 3, inches = 9, weight = 150;
+        string heightdice = "2d4";
+        string weightdice = "2D4";
+        if (creature.GenderEnum == GenderEnum.Male)
+        {
+            BackgroundTables.HeightAndWeight(
+                ref feet, ref inches, ref weight,
+                heightdice, weightdice, 7);
+            creature.Weight = weight;
+            creature.Height = $"{feet} ft. {inches} in.";
+        }
+        else
+        {
+            feet = 3; inches = 7; weight = 120;
+            BackgroundTables.HeightAndWeight(
+                ref feet, ref inches, ref weight,
+                heightdice, weightdice, 7);
+            creature.Weight = weight;
+            creature.Height = $"{feet} ft. {inches} in.";
+        }
+
+        string intuitiveDice = "3d6";
+        string selftaughtDice = "5d6";
+        string trainedDice = "7d6";
+        int startingAge = 40;
+        creature.Age = BackgroundTables.CalculateCharacterAge(
+            ClassEnum.Any, startingAge, intuitiveDice,
+            selftaughtDice, trainedDice);
     }
 
     //Table: Dwarf Homeland
@@ -400,21 +439,21 @@ public class Dwarf : IRace
             var total = new Dice(siblings.Name).Total;
             for (int i = 0; i < total; i++)
             {
-                var creaturesiblings = new Character();
-                Initialize(creaturesiblings);
+                //var creaturesiblings = new Character(logger, classService);
+                //Initialize(creaturesiblings);
 
                 // Set relative age of sibling
                 var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                if (relativeage?.Name == "Younger")
-                {
-                    creaturesiblings.Age -= new Dice("1d4").Total;
-                }
-                if (relativeage?.Name == "Older")
-                {
-                    creaturesiblings.Age += new Dice("1d4").Total;
-                }
+                //if (relativeage?.Name == "Younger")
+                //{
+                //    creaturesiblings.Age -= new Dice("1d4").Total;
+                //}
+                //if (relativeage?.Name == "Older")
+                //{
+                //    creaturesiblings.Age += new Dice("1d4").Total;
+                //}
 
-                character.Siblings.Add(creaturesiblings);
+                //character.Siblings.Add(creaturesiblings);
             }
             if (character.Siblings.Count > 0)
             {
@@ -425,99 +464,5 @@ public class Dwarf : IRace
             }
         }
         #endregion
-    }
-
-    //Table: Random Starting Ages
-    //Adulthood Intuitive1  Self-Taught2 Trained3
-    //40 years	+3d6 years
-    //(43 – 58 years) +5d6 years
-    //(45 – 70 years) +7d6 years
-    //(47 – 82 years)
-    //1 This category includes barbarians, oracles, rogues, and sorcerers.
-    //2 This category includes bards, cavaliers, fighters, gunslingers, paladins, rangers, summoners, and witches.
-    //3 This category includes alchemists, clerics, druids, inquisitors, magi, monks, and wizards.
-    /// <summary>
-    /// Set the age
-    /// </summary>
-    /// <param name="creature"></param>
-    private static void SetAge(Character creature)
-    {
-        creature.Age = 40;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("3d6").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("5d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("7d6").Total;
-        }
-    }
-
-    // Table: Random Height and Weight
-    // Gender Base Height Height Modifier Base Weight Weight Modifier
-    // Male	  3 ft. 9 in.	+2d4 in.	        150 lbs.    +(2d4×7 lbs.)
-    // Female 3 ft. 7 in.	+2d4 in.            120 lbs.    +(2d4×7 lbs.)
-    /// <summary>
-    /// The dwarfs Height
-    /// </summary>
-    /// <param name="creature">The dwarf</param>
-    private static void SetHeightAndWeight(Creature creature)
-    {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
-        {
-            var modifier = new Dice("2d4").Total;
-            if (modifier <= 2)
-            {
-                creature.Height = $"3 ft. {modifier + 9} in.";
-            }
-            else if (modifier == 3)
-            {
-                creature.Height = $"4 ft.";
-            }
-            else
-            {
-                creature.Height = $"4 ft. {modifier - 3} in.";
-            }
-            // 150 lbs. +(2d4×7 lbs.)
-            creature.Weight = 150 + (new Dice("2d4").Total * 7);
-        }
-
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
-        {
-            var modifier = new Dice("2d4").Total;
-            if (modifier <= 4)
-            {
-                creature.Height = $"3 ft. {modifier + 7} in.";
-            }
-            else if (modifier == 5)
-            {
-                creature.Height = $"4 ft.";
-            }
-            else
-            {
-                creature.Height = $"4 ft. {modifier - 5} in.";
-            }
-            // 120 lbs. +(2d4×7 lbs.)
-            creature.Weight = 120 + (new Dice("2d4").Total * 7);
-        }
     }
 }

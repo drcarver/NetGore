@@ -1,6 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Linq;
+
+using Microsoft.Extensions.Logging;
 
 using NetGore.Core;
+using NetGore.Core.Abilities;
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Classes;
@@ -139,7 +143,6 @@ public class ClassService : IClassService
     public void SetClass(Character character)
     {
         var tableentry = ClassTable.GetRandomEntry();
-
         Logger.LogInformation($"Got random table entry number {ClassTable.Total}, Name={tableentry?.Name}");
 
         // Set the class on the creature

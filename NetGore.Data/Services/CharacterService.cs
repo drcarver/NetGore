@@ -13,6 +13,11 @@ public class CharacterService : ICharacterService
     private ILogger Logger { get; }
 
     /// <summary>
+    /// The class service
+    /// </summary>
+    public IClassService ClassService { get; }
+
+    /// <summary>
     /// The logger factory
     /// </summary>
     private ILoggerFactory LoggerFactory { get; }
@@ -23,16 +28,18 @@ public class CharacterService : ICharacterService
     /// <returns>The character created</returns>
     public Character CreateCharacter()
     {
-        return new Character(LoggerFactory);
+        return new Character(LoggerFactory, ClassService);
     }
 
     /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="loggerFactory">The logger factory</param>
-    public CharacterService(ILoggerFactory loggerFactory)
+    public CharacterService(ILoggerFactory loggerFactory,
+        IClassService classService)
     {
         LoggerFactory = loggerFactory;
         Logger = loggerFactory.CreateLogger<ClassService>();
+        ClassService = classService;
     }
 }

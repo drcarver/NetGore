@@ -34,11 +34,7 @@ public class Human : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Human);
-        creature.RaceDescription =
-            "It’s hard to make generalizations " +
-            "about humans, but your human " +
-        "character has these traits.";
+        creature.Race = RaceEnum.Human;
 
         //Ability Score Modifiers: Human characters
         //gain a +1 racial bonus to every ability
@@ -342,9 +338,9 @@ public class Human : IRace
             var total = new Dice(siblings.Name).Total;
             for (int i = 0; i < total; i++)
             {
-                var creaturesiblings = new Character();
-                Initialize(creaturesiblings);
-                character.Siblings.Add(creaturesiblings);
+                //var creaturesiblings = new Character(loggerFactory, classService);
+                //Initialize(creaturesiblings);
+                //character.Siblings.Add(creaturesiblings);
             }
             if (character.Siblings.Count > 0)
             {
@@ -367,7 +363,7 @@ public class Human : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 1)
@@ -390,7 +386,7 @@ public class Human : IRace
             creature.Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 6)
@@ -426,33 +422,5 @@ public class Human : IRace
     /// <param name="creature"></param>
     private static void SetAge(Character creature)
     {
-        creature.Age = 15;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("1d4").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("1d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("2d6").Total;
-        }
     }
 }

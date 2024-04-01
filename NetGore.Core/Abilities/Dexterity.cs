@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Models;
+
 namespace NetGore.Core.Abilities;
 
 /// <summary>
@@ -13,8 +15,8 @@ public class Dexterity : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Dexterity(ILogger? logger)
-        : base(logger)
+    public Dexterity(ILogger? logger, Creature parent)
+        : base(logger, parent)
     {
         Name = "Dexterity";
         Description = "Dexterity measures agility, reflexes, and balance.";
@@ -25,8 +27,8 @@ public class Dexterity : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Dexterity(int baseAbility)
-        : base(baseAbility)
+    public Dexterity(int baseAbility, Creature parent)
+        : base(baseAbility, parent)
     {
         Name = "Dexterity";
         Description = "Dexterity measures agility, reflexes, and balance.";

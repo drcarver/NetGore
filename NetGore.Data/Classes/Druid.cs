@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -8,19 +7,29 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// The druid is a worshiper of all things natural – 
+/// a spellcaster, a friend to animals, and a skilled 
+/// shapechanger.
+/// </summary>
 public class Druid : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "WIS",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -51,7 +60,6 @@ public class Druid : DataObject, ICharacterClass
             "or even specific awe-inspiring natural " +
             "wonders.";
         HitDice = "1d8";
-        Class = ClassEnum.Druid;
-        Level = 1;
+        ClassEnum = ClassEnum.Druid;
     }
 }

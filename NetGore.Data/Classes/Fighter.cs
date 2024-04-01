@@ -8,19 +8,33 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// Fighter Brave and stalwart, the fighter is a 
+/// master of all manner of arms and armor.
+/// </summary>
 public class Fighter : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "STR",
+            Score = 13
+        },
+        new ClassPrerequisite
+        {
+            Abbreviation = "DEX",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -28,12 +42,20 @@ public class Fighter : DataObject, ICharacterClass
     public string HitDice { get; set; }
 
     /// <summary>
+    /// Level up the class
+    /// </summary>
+    public void LevelUp()
+    {
+
+    }
+
+    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
     public Fighter()
     {
-        Name = nameof(Fighter);
+        Name = nameof(ClassEnum.Fighter);
         Description = "Fighters excel at " +
               "combat—defeating their enemies, " +
               "controlling the flow of battle, " +
@@ -44,7 +66,6 @@ public class Fighter : DataObject, ICharacterClass
               "match fighters for sheer battle " +
               "prowess.";
         HitDice = "1d10";
-        Class = ClassEnum.Fighter;
-        Level = 1;
+        ClassEnum = ClassEnum.Fighter;
     }
 }

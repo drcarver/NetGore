@@ -48,9 +48,9 @@ public partial class BackgroundTables
     //86–95	Merchants You gain access to the Merchant social trait.
     //96–100	Clergy or Cultists You gain access to the Child of the Temple faith trait.}
     /// <summary>
-    /// Parents’ Profession
+    /// Profession Table
     /// </summary>
-    public static RandomTable ParentsProfessionTable { get; } = new()
+    public static RandomTable ProfessionTable { get; } = new()
     {
         Name = "Parents’ Profession",
         DiceSides = 100,

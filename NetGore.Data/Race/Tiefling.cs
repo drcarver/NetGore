@@ -46,32 +46,7 @@ public class Tiefling : IRace
     /// <param name="creature"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Tiefling);
-        creature.RaceDescription =
-            "Simultaneously more and less than " +
-            "mortal, tieflings are the offspring " +
-            "of humans and fiends. With otherworldly " +
-            "blood and traits to match, tieflings " +
-            "are often shunned and despised out of " +
-            "reactionary fear. Most tieflings never " +
-            "know their fiendish sire, as the " +
-            "coupling that produced their curse " +
-            "occurred generations earlier. The taint " +
-            "is long-lasting and persistent, often " +
-            "manifesting at birth or sometimes later " +
-            "in life, as a powerful, though often " +
-            "unwanted, boon. Despite their fiendish " +
-            "appearance and netherworld origins, " +
-            "tieflings have a human’s capacity of " +
-            "choosing their fate, and while many " +
-            "embrace their dark heritage and side " +
-            "with fiendish powers, others reject " +
-            "their darker predilections. Though the " +
-            "power of their blood calls nearly every " +
-            "tiefling to fury, destruction, and wrath, " +
-            "even the spawn of a succubus can become " +
-            "a saint and the grandchild of a pit fiend " +
-            "an unsuspecting hero.";
+        creature.Race = RaceEnum.Tiefling;
 
         //Ability Score Modifiers: Tieflings are quick
         //in body and mind, but are inherently strange
@@ -389,9 +364,9 @@ public class Tiefling : IRace
             var total = new Dice(siblings.Name).Total;
             for (int i = 0; i < total; i++)
             {
-                var creaturesiblings = new Character();
-                Initialize(creaturesiblings);
-                character.Siblings.Add(creaturesiblings);
+            //    var creaturesiblings = new Character(loggerFactory, classService);
+            //    Initialize(creaturesiblings);
+            //    character.Siblings.Add(creaturesiblings);
             }
             if (character.Siblings.Count > 0)
             {
@@ -414,7 +389,7 @@ public class Tiefling : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 1)
@@ -437,7 +412,7 @@ public class Tiefling : IRace
             creature.Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 6)
@@ -470,33 +445,5 @@ public class Tiefling : IRace
     /// <param name="creature"></param>
     private static void SetAge(Character creature)
     {
-        creature.Age = 60;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("4d6").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("6d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("8d6").Total;
-        }
     }
 }

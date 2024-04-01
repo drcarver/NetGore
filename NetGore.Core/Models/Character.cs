@@ -15,6 +15,11 @@ public class Character : Creature, ICharacter
     private ILogger<Character>? _logger;
 
     /// <summary>
+    /// Get the character class
+    /// </summary>
+    private IClassService ClassService { get; }
+
+    /// <summary>
     /// The character class
     /// </summary>
     public ICharacterClass? CharacterClass { get; set; }
@@ -37,21 +42,28 @@ public class Character : Creature, ICharacter
     /// <summary>
     /// The characters siblings
     /// </summary>
-    public List<Creature> Siblings { get; set; } = [];
+    public List<Character> Siblings { get; set; } = [];
+
+    /// <summary>
+    /// Initialize the service
+    /// </summary>
+    private void Initialize()
+    {
+        ClassService.SetClass(this);
+    }
 
     /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="loggerFactory">The factory for logging messages</param>
+    /// <param name="classService">The class service</param>
     [SetsRequiredMembers]
-    public Character(ILoggerFactory loggerFactory) :
-        this()
+    public Character(ILoggerFactory loggerFactory,
+        IClassService classService)
+        : base(loggerFactory)
     {
         _logger = loggerFactory.CreateLogger<Character>();
-    }
-
-    [SetsRequiredMembers]
-    public Character()
-    {
+        ClassService = classService;
+        Initialize();
     }
 }

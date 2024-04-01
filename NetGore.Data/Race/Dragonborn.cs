@@ -13,11 +13,7 @@ public class Dragonborn : IRace
     /// <param name="creature"></param>
     public Dragonborn(Character creature)
     {
-        creature.RaceName = nameof(Dragonborn);
-        creature.RaceDescription =
-            "Your draconic heritage manifests in " +
-            "a variety of traits you share with " +
-            "other dragonborn.";
+        creature.Race = RaceEnum.Dragonborn;
 
         // Ability Score Increase.Your Strength
         // score increases by 2, and your Charisma
@@ -62,7 +58,7 @@ public class Dragonborn : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(Character creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 9)
@@ -81,7 +77,7 @@ public class Dragonborn : IRace
             creature.Weight = 200 + (new Dice("2d8").Total * 5);
         }
 
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 11)
@@ -110,34 +106,6 @@ public class Dragonborn : IRace
     /// <param name="creature"></param>
     private static void SetAge(Character creature)
     {
-        creature.Age = 15;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("1d6").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("2d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("3d6").Total;
-        }
     }
 
     /// <summary>

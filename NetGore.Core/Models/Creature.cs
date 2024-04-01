@@ -20,20 +20,10 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// The creatures gender
     /// </summary>
-    public Gender? Gender { get; }
+    public GenderEnum GenderEnum { get; }
 
     /// <summary>
-    /// Name of the character's race
-    /// </summary>
-    public string? RaceName { get; set; }
-
-    /// <summary>
-    /// The Race description
-    /// </summary>
-    public string? RaceDescription { get; set; }
-
-    /// <summary>
-    /// The race of the character
+    /// The character's race
     /// </summary>
     public RaceEnum Race { get; set; }
 
@@ -57,32 +47,32 @@ public class Creature : DataObject, ICreature
     /// training, and the extent to which you can 
     /// exert raw physical force.
     /// </summary>
-    public Strength Strength { get; }
+    public Strength Strength { get; set; }
 
     /// <summary>
     /// Intelligence measures mental acuity, accuracy 
     /// of recall, and the ability to reason.
     /// </summary>
-    public Intelligence Intelligence { get; }
+    public Intelligence Intelligence { get; set; }
 
     /// <summary>
     /// Wisdom reflects how attuned you are to the 
     /// world around you and represents perceptiveness 
     /// and intuition.
     /// </summary>
-    public Wisdom Wisdom { get; }
+    public Wisdom Wisdom { get; set; }
 
     /// <summary>
     /// Dexterity measures agility, reflexes, and 
     /// balance.
     /// </summary>
-    public Dexterity Dexterity { get; }
+    public Dexterity Dexterity { get; set; }
 
     /// <summary>
     /// Constitution measures health, stamina, and 
     /// vital force.
     /// </summary>
-    public Constitution Constitution { get; }
+    public Constitution Constitution { get; set; }
 
     /// <summary>
     /// Charisma measures your ability to interact 
@@ -91,7 +81,7 @@ public class Creature : DataObject, ICreature
     /// it can represent a charming or commanding 
     /// personality.
     /// </summary>
-    public Charisma Charisma { get; }
+    public Charisma Charisma { get; set; }
 
     /// <summary>
     /// THe size of the creature
@@ -109,6 +99,11 @@ public class Creature : DataObject, ICreature
     public int Weight { get; set; }
 
     /// <summary>
+    /// The age of the creature
+    /// </summary>
+    public int Age { get; set; }
+
+    /// <summary>
     /// The creature speed in feet
     /// </summary>
     public int Speed { get; set; }
@@ -122,11 +117,40 @@ public class Creature : DataObject, ICreature
     /// Creature alignment
     /// </summary>
     public AlignmentEnum Alignment { get; set; } = AlignmentEnum.Any;
-    
+
     /// <summary>
-    /// The age of the creature
+    /// The base armor class of the creature
     /// </summary>
-    public int Age { get; set; }
+    public ArmorClass ArmorClass { get; set; } = new ArmorClass();
+
+    /// <summary>
+    /// The hit points for the character
+    /// </summary>
+    public HitPoints HitPoints { get; set; }
+
+    /// <summary>
+    /// These saves reflect your resistance to mental 
+    /// influence as well as many magical effects. 
+    /// Apply your Wisdom modifier to your Will saving 
+    /// throws.
+    /// </summary>
+    public WillSave WillSave { get; set; }
+
+    /// <summary>
+    /// These saves measure your ability to stand up 
+    /// to physical punishment or attacks against your 
+    /// vitality and health. Apply your Constitution 
+    /// modifier to your Fortitude saving throws.
+    /// </summary>
+    public FortitudeSave FortitudeSave { get; set; }
+
+    /// <summary>
+    /// These saves test your ability to dodge area 
+    /// attacks and unexpected situations. Apply 
+    /// your Dexterity modifier to your Reflex saving 
+    /// throws
+    /// </summary>
+    public ReflexSave ReflexSave { get; set; }
 
     /// <summary>
     /// Constructor
@@ -146,15 +170,20 @@ public class Creature : DataObject, ICreature
     public Creature()
     {
         // Generate the abilities
-        Strength = new Strength(_logger);
-        Intelligence = new Intelligence(_logger);
-        Wisdom = new Wisdom(_logger);
-        Dexterity = new Dexterity(_logger);
-        Constitution = new Constitution(_logger);
-        Charisma = new Charisma(_logger);
+        Strength = new Strength(_logger, this);
+        Intelligence = new Intelligence(_logger, this);
+        Wisdom = new Wisdom(_logger, this);
+        Dexterity = new Dexterity(_logger, this);
+        Constitution = new Constitution(_logger, this);
+        Charisma = new Charisma(_logger, this);
 
         // Generate the gender
-        Gender = GenderData.GetGender();
+        GenderEnum = Gender.GetGender();
+
+        // Saving throws
+        WillSave = new WillSave(_logger,  this);
+        FortitudeSave = new FortitudeSave(_logger, this);
+        ReflexSave = new ReflexSave(_logger, this);
 
         // log the creature info
         _logger?.LogInformation($"Strength:     {Strength}");

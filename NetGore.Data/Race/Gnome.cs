@@ -30,11 +30,7 @@ public class Gnome : IRace
     /// <param name="character"></param>
     public void Initialize(Character creature)
     {
-        creature.RaceName = nameof(Gnome);
-        creature.RaceDescription =
-            "Your gnome character has certain " +
-            "characteristics in common with all " +
-            "other gnomes.";
+        creature.Race = RaceEnum.Gnome;
 
         //Ability Score Increase.Your Intelligence
         //score increases by 2.
@@ -330,21 +326,21 @@ public class Gnome : IRace
             var total = new Dice(siblings.Name).Total;
             for (int i = 0; i < total; i++)
             {
-                var creaturesiblings = new Character();
-                Initialize(creaturesiblings);
+                //var creaturesiblings = new Character(loggerFactory, classService);
+                //Initialize(creaturesiblings);
 
                 // Set relative age of sibling
-                var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                if (relativeage?.Name == "Younger")
-                {
-                    creaturesiblings.Age -= new Dice("1d4").Total;
-                }
-                if (relativeage?.Name == "Older")
-                {
-                    creaturesiblings.Age += new Dice("1d4").Total;
-                }
+                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
+                //if (relativeage?.Name == "Younger")
+                //{
+                //    creaturesiblings.Age -= new Dice("1d4").Total;
+                //}
+                //if (relativeage?.Name == "Older")
+                //{
+                //    creaturesiblings.Age += new Dice("1d4").Total;
+                //}
 
-                character.Siblings.Add(creaturesiblings);
+                //character.Siblings.Add(creaturesiblings);
             }
             if (character.Siblings.Count > 0)
             {
@@ -367,7 +363,7 @@ public class Gnome : IRace
     /// <param name="creature">The dwarf</param>
     private static void SetHeightAndWeight(Creature creature)
     {
-        if (creature?.Gender?.GenderEnum == GenderEnum.Male)
+        if (creature?.GenderEnum == GenderEnum.Male)
         {
             // 3 ft. 0 in.	+2d4 in.
             creature.Height = $"3 ft. {new Dice("2d8").Total} in.";
@@ -377,7 +373,7 @@ public class Gnome : IRace
         }
 
         // Female 2 ft. 10 in.	+2d4 in.
-        if (creature?.Gender?.GenderEnum == GenderEnum.Female)
+        if (creature?.GenderEnum == GenderEnum.Female)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier == 2)
@@ -405,33 +401,5 @@ public class Gnome : IRace
     /// <param name="creature"></param>
     private static void SetAge(Character creature)
     {
-        creature.Age = 40;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("4d6").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("6d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("9d6").Total;
-        }
     }
 }

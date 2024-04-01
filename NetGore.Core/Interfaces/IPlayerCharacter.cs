@@ -5,7 +5,7 @@ public interface IPlayerCharacter
     /// <summary>
     /// The character class
     /// </summary>
-    ICharacterClass? CharacterClass { get; set; }
+    List<IClassInformation> ClassInformation { get; }
 
     /// <summary>
     /// The account for the player who owns this

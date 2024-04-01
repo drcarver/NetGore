@@ -1,10 +1,9 @@
-﻿using NetGore.Core.Base;
-using NetGore.Core.Enum;
+﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 
 namespace NetGore.Core.Data;
 
-public class GenderData
+public class Gender
 {
     //Table: Gender
     //d%	 Result
@@ -19,14 +18,14 @@ public class GenderData
             {
                 LowerRange = 01,
                 UpperRange = 50,
-                Name = "Male",
+                Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
             new RandomTableEntry
             {
                 LowerRange = 51,
                 UpperRange = 100,
-                Name = "Female",
+                Name = nameof(GenderEnum.Female),
                 Description = "The Female of the species",
             },
         ],
@@ -36,15 +35,16 @@ public class GenderData
     /// Get the Gender of the creature
     /// </summary>
     /// <returns>The selected Gender</returns>
-    public static Gender GetGender()
+    public static GenderEnum GetGender()
     {
-        var tableentry = GenderTable.GetRandomEntry();
-        return new Gender
+        switch (GenderTable.GetRandomEntry().Name)
         {
-            Name = tableentry?.Name,
-            GenderEnum = tableentry?.Name == "Male" ?
-                GenderEnum.Male :
-                GenderEnum.Female,
-        };
+            case nameof(GenderEnum.Male):
+                return GenderEnum.Male;
+            case nameof(GenderEnum.Female):
+                return GenderEnum.Female;
+
+        }
+        return GenderEnum.Male;
     }
 }

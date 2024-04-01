@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Models;
+
 namespace NetGore.Core.Abilities;
 
 /// <summary>
@@ -16,8 +18,8 @@ public class Charisma : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Charisma(ILogger? logger)
-        : base(logger)
+    public Charisma(ILogger? logger, Creature creature)
+        : base(logger, creature)
     {
         Name = "Charisma";
         Description = "Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence, and it can represent a charming or commanding personality.";
@@ -28,8 +30,8 @@ public class Charisma : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Charisma(int baseAbility)
-        : base(baseAbility)
+    public Charisma(int baseAbility, Creature creature)
+        : base(baseAbility, creature)
     {
         Name = "Charisma";
         Description = "Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence, and it can represent a charming or commanding personality.";

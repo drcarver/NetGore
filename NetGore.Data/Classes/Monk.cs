@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -8,19 +7,33 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// A student of martial arts, the monk trains his 
+/// body to be his greatest weapon and defense.
+/// </summary>
 public class Monk : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "WIS",
+            Score = 13
+        },
+        new ClassPrerequisite
+        {
+            Abbreviation = "DEX",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -44,7 +57,6 @@ public class Monk : DataObject, ICharacterClass
             "ease, aiding allies wherever they " +
             "are needed most.";
         HitDice = "1d8";
-        Class = ClassEnum.Monk;
-        Level = 1;
+        ClassEnum = ClassEnum.Monk;
     }
 }

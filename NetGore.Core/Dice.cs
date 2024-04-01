@@ -37,7 +37,7 @@ public class Dice
     /// <summary>
     /// The modifier for the dice roll
     /// </summary>
-    public int Modifier { get; private set; }
+    private int Modifier { get; set; }
 
     /// <summary>
     /// Roll the dice

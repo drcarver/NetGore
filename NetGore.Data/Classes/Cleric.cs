@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -8,19 +7,29 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// A devout follower of a deity, the cleric 
+/// can heal wounds, raise the dead, and call 
+/// down the wrath of the gods.
+/// </summary>
 public class Cleric : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [    
+        new ClassPrerequisite
+        {
+            Abbreviation = "WIS",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -56,7 +65,6 @@ public class Cleric : DataObject, ICharacterClass
             "as battle, death, justice, or " +
             "knowledge—free of a deific abstraction. ";
         HitDice = "1d8";
-        Class = ClassEnum.Cleric;
-        Level = 1;
+        ClassEnum = ClassEnum.Cleric;
     }
 }

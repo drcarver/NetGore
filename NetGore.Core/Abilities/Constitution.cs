@@ -2,6 +2,8 @@
 
 using Microsoft.Extensions.Logging;
 
+using NetGore.Core.Models;
+
 namespace NetGore.Core.Abilities;
 
 /// <summary>
@@ -14,8 +16,8 @@ public class Constitution : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Constitution(ILogger? logger)
-        : base(logger)
+    public Constitution(ILogger? logger, Creature parent)
+        : base(logger, parent)
     {
         Name = "Constitution";
         Description = "Constitution measures health, stamina, and vital force.";
@@ -26,8 +28,8 @@ public class Constitution : AbilityBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Constitution(int baseAbility)
-        : base(baseAbility)
+    public Constitution(int baseAbility, Creature parent)
+        : base(baseAbility, parent)
     {
         Name = "Constitution";
         Description = "Constitution measures health, stamina, and vital force.";
