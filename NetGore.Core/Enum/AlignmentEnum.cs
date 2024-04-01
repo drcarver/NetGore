@@ -8,7 +8,7 @@ public enum AlignmentEnum
     LawfulNeutral,
     ChaoticGood,
     ChaoticEvil,
-    ChaoticNuetral,
+    ChaoticNeutral,
     NeutralEvil,
     NeutralGood,
     Neutral

@@ -3,6 +3,7 @@
 using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Abilities;
+using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
@@ -23,8 +24,9 @@ public class Commoner : Character
     /// <param name="loggerFactory"></param>
     [SetsRequiredMembers]
     public Commoner(ILoggerFactory loggerFactory,
+        IClassService classService,
         IRaceService raceService) 
-        : base(loggerFactory)
+        : base(loggerFactory, classService)
     {
         RaceService = raceService;
         Initialize();

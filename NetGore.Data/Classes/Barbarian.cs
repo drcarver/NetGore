@@ -3,22 +3,32 @@
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
+using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// The barbarian is a brutal berserker from beyond 
+/// the edge of civilized lands.
+/// </summary>
 public class Barbarian : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "STR",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -43,7 +53,6 @@ public class Barbarian : DataObject, ICharacterClass
             "battle and ruin all who would " +
             "stand in their way.";
         HitDice = "1d12";
-        Class = ClassEnum.Barbarian;
-        Level = 1;
+        ClassEnum = ClassEnum.Barbarian;
     }
 }

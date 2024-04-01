@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -8,19 +7,29 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// Rogue The rogue is a thief and a scout, an 
+/// opportunist capable of delivering brutal 
+/// strikes against unwary foes.
+/// </summary>
 public class Rogue : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "DEX",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -48,7 +57,6 @@ public class Rogue : DataObject, ICharacterClass
             "to outwitting magical hazards and " +
             "conning dull-witted opponents.";
         HitDice = "1d8";
-        Class = ClassEnum.Rogue;
-        Level = 1;
+        ClassEnum = ClassEnum.Rogue;
     }
 }

@@ -4,22 +4,38 @@ using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
+using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// Ranger  A tracker and hunter, the ranger is a 
+/// creature of the wild and of tracking down his 
+/// favored foes.
+/// </summary>
 public class Ranger : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "WIS",
+            Score = 13
+        },
+        new ClassPrerequisite
+        {
+            Abbreviation = "DEX",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -42,7 +58,6 @@ public class Ranger : DataObject, ICharacterClass
             "their skills are valuable against " +
             "all manner of enemies.";
         HitDice = "1d10";
-        Class = ClassEnum.Ranger;
-        Level = 1;
+        ClassEnum = ClassEnum.Ranger;
     }
 }

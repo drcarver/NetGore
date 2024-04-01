@@ -99,6 +99,11 @@ public class Creature : DataObject, ICreature
     public int Weight { get; set; }
 
     /// <summary>
+    /// The age of the creature
+    /// </summary>
+    public int Age { get; set; }
+
+    /// <summary>
     /// The creature speed in feet
     /// </summary>
     public int Speed { get; set; }
@@ -112,11 +117,6 @@ public class Creature : DataObject, ICreature
     /// Creature alignment
     /// </summary>
     public AlignmentEnum Alignment { get; set; } = AlignmentEnum.Any;
-    
-    /// <summary>
-    /// The age of the creature
-    /// </summary>
-    public int Age { get; set; }
 
     /// <summary>
     /// The base armor class of the creature

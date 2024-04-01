@@ -16,6 +16,16 @@ public class PlayerCharacter : Character, IPlayerCharacter
     public IAccount? Account { get; set; }
 
     /// <summary>
+    /// The experience points for the player character
+    /// </summary>
+    public int ExperiencePoints { get; set; }
+
+    /// <summary>
+    /// The classes for this player character
+    /// </summary>
+    public List<IClassInformation> ClassInformation { get; }
+
+    /// <summary>
     /// The Player Character
     /// </summary>
     /// <param name="loggerFactory">The logger service</param>
@@ -26,7 +36,7 @@ public class PlayerCharacter : Character, IPlayerCharacter
         ILoggerFactory loggerFactory,
         IRaceService raceService,
         IClassService classService)
-        : base(loggerFactory)
+        : base(loggerFactory, classService)
     {
         classService.SetClass(this);
         raceService.SetRace(this);

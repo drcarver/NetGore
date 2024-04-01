@@ -364,9 +364,9 @@ public class Tiefling : IRace
             var total = new Dice(siblings.Name).Total;
             for (int i = 0; i < total; i++)
             {
-                var creaturesiblings = new Character();
-                Initialize(creaturesiblings);
-                character.Siblings.Add(creaturesiblings);
+            //    var creaturesiblings = new Character(loggerFactory, classService);
+            //    Initialize(creaturesiblings);
+            //    character.Siblings.Add(creaturesiblings);
             }
             if (character.Siblings.Count > 0)
             {
@@ -445,33 +445,5 @@ public class Tiefling : IRace
     /// <param name="creature"></param>
     private static void SetAge(Character creature)
     {
-        creature.Age = 60;
-
-        // barbarians, rogues, sorcerers and warlocks.
-        if (creature?.CharacterClass?.Class == ClassEnum.Barbarian ||
-            creature?.CharacterClass?.Class == ClassEnum.Rogue ||
-            creature?.CharacterClass?.Class == ClassEnum.Sorcerer ||
-            creature?.CharacterClass?.Class == ClassEnum.Warlock)
-        {
-            creature.Age += new Dice("4d6").Total;
-        }
-
-        // bards, fighters, paladins and rangers.
-        if (creature?.CharacterClass?.Class == ClassEnum.Bard ||
-            creature?.CharacterClass?.Class == ClassEnum.Fighter ||
-            creature?.CharacterClass?.Class == ClassEnum.Paladin ||
-            creature?.CharacterClass?.Class == ClassEnum.Ranger)
-        {
-            creature.Age += new Dice("6d6").Total;
-        }
-
-        // clerics, druids, monks, and wizards.
-        if (creature?.CharacterClass?.Class == ClassEnum.Cleric ||
-            creature?.CharacterClass?.Class == ClassEnum.Druid ||
-            creature?.CharacterClass?.Class == ClassEnum.Monk ||
-            creature?.CharacterClass?.Class == ClassEnum.Wizard)
-        {
-            creature.Age += new Dice("8d6").Total;
-        }
     }
 }

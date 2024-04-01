@@ -1,4 +1,5 @@
 ﻿using NetGore.Core.Enum;
+using NetGore.Core.Models;
 
 namespace NetGore.Core.Interfaces;
 
@@ -7,15 +8,13 @@ public interface ICharacterClass
     /// <summary>
     /// The class enum
     /// </summary>
-    ClassEnum Class { get; set; }
+    ClassEnum ClassEnum { get; set; }
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class prerequisites
     /// </summary>
-    int Level { get; set; }
-
+    List<ClassPrerequisite> ClassPrerequisites { get; set; }
+    
     /// <summary>
     /// The hit dice for the class
     /// </summary>

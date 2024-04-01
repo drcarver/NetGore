@@ -3,22 +3,33 @@
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
+using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// The bard uses skill and spell alike to bolster 
+/// his allies, confound his enemies, and build 
+/// upon his fame.
+/// </summary>
 public class Bard : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [    
+        new ClassPrerequisite
+        {
+            Abbreviation = "CHA",
+            Score = 13
+        }
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -44,7 +55,6 @@ public class Bard : DataObject, ICharacterClass
             "fear of interruptions to their " +
             "performances.";
         HitDice = "1d8";
-        Class = ClassEnum.Bard;
-        Level = 1;
+        ClassEnum = ClassEnum.Bard;
     }
 }

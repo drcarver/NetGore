@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -8,19 +7,29 @@ using NetGore.Core.Models;
 
 namespace NetGore.Data.Classes;
 
+/// <summary>
+/// Sorcerer The spellcasting sorcerer is born with 
+/// an innate knack for magic and has strange, 
+/// eldritch powers.
+/// </summary>
 public class Sorcerer : DataObject, ICharacterClass
 {
     /// <summary>
-    /// The class enum
+    /// The ability score prerequisite's for the class.   
     /// </summary>
-    public ClassEnum Class { get; set; }
+    public List<ClassPrerequisite> ClassPrerequisites { get; set; } =
+    [
+        new ClassPrerequisite
+        {
+            Abbreviation = "CHA",
+            Score = 13
+        },
+    ];
 
     /// <summary>
-    /// The level in the class (can be different
-    /// from the characer level for multiclass 
-    /// characters).
+    /// The class enum
     /// </summary>
-    public int Level { get; set; }
+    public ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// The hit dice for the class
@@ -32,7 +41,7 @@ public class Sorcerer : DataObject, ICharacterClass
     /// </summary>
     /// <param name="creature"></param>
     [SetsRequiredMembers]
-    public Sorcerer(Creature creature)
+    public Sorcerer()
     {
         Name = nameof(Sorcerer);
         Description = "Sorcerers excel at " +
@@ -49,9 +58,6 @@ public class Sorcerer : DataObject, ICharacterClass
             "assuring that no two sorcerers " +
             "are ever quite alike";
         HitDice = "1d6";
-        Class = ClassEnum.Sorcerer;
-        Level = 1;
-
-        creature.Wealth = new Dice("2d6").Total * 10;
+        ClassEnum = ClassEnum.Sorcerer;
     }
 }
