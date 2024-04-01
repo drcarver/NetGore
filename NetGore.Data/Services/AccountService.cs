@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Models;
+using NetGore.Core.Interfaces;
 
 namespace NetGore.Data.Services;
 
-public class AccountService
+public class AccountService : IAccountService
 {
     private readonly ILogger<AccountService> logger;
     private readonly NETGoreDbContext context;
