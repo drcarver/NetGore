@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using NetGore.Collections;
+using NetGore.Core;
 using NetGore.IO;
 
 namespace NetGore.Features.ActionDisplays

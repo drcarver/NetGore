@@ -6,12 +6,17 @@
                                                             |___/ 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-This file contains information about this feature in general. One is provided for each feature in NetGore and can be found in the feature's
-folder in the NetGore.Features project.
+This file contains information about this feature in 
+general. One is provided for each feature in NetGore 
+and can be found in the feature's folder in the 
+NetGore.Features project.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-PeerTrading handles trading that takes place between two characters. While it is generic enough to be able to trade between any two characters
-(even NPCs), that really isn't the intention of the feature, just a fortunate side-effect of generic programming. :)
+PeerTrading handles trading that takes place between two
+characters. While it is generic enough to be able to 
+trade between any two characters (even NPCs), that 
+really isn't the intention of the feature, just a 
+fortunate side-effect of generic programming. :)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 DATABASE TABLES:

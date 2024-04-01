@@ -4,7 +4,10 @@
              x:Class="NetGore.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <HorizontalStackLayout>
+            
+        </HorizontalStackLayout>
+        <!--<VerticalStackLayout
             Padding="30,0"
             Spacing="25">
             <Image
@@ -30,7 +33,7 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
     </ScrollView>
 
 </ContentPage>

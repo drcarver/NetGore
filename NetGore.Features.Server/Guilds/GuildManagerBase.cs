@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using NetGore.Collections;
+using NetGore.Core.Enum;
 
 namespace NetGore.Features.Guilds
 {

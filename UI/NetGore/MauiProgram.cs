@@ -1,10 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Mvvm.DependencyInjection;
 
-using NetGore.Core.Interfaces;
-using NetGore.Core.Models;
-using NetGore.Data.Interfaces;
-using NetGore.Data.Services;
-using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
+
+using NetGore.Data;
 
 namespace NetGore;
 
@@ -25,18 +24,11 @@ public static class MauiProgram
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-
-            // Services
-            var services = new ServiceCollection()
-                //.AddSingleton<IExampleService, ExampleService>()
-                .AddSingleton<IRaceService, RaceService>()
-                .AddSingleton<ICharacterService, CharacterService>()
-                .AddSingleton<IClassService, ClassService>()
-                .AddSingleton<IPlayerCharacter, PlayerCharacter>()
-                .AddSingleton<IAccountService, AccountService>()
-            //.AddDbContextPool<NETGoreDbContext>(options =>
-            //    options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
-            .BuildServiceProvider();
+        // Services
+        Ioc.Default.ConfigureServices(
+            new ServiceCollection()
+                .UseNetGoreData()
+                .BuildServiceProvider());
 
         return builder.Build();
     }

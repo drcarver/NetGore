@@ -5,12 +5,16 @@
 \__/ |_| |_| |_| \___/  \__||_| \___|\___/ |_| |_||___/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-This file contains information about this feature in general. One is provided for each feature in NetGore and can be found in the feature's
-folder in the NetGore.Features project.
+This file contains information about this feature in 
+general. One is provided for each feature in NetGore 
+and can be found in the feature's folder in the 
+NetGore.Features project.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-The emoticons feature is quite a simple one. All it does is allow Characters to display an emoticon near them. Though there is quite a lot
-of code provided to make the implementation and usage as simple as possible.
+The emoticons feature is quite a simple one. All it does 
+is allow Characters to display an emoticon near them. 
+Though there is quite a lot of code provided to make 
+the implementation and usage as simple as possible.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 DATABASE TABLES:

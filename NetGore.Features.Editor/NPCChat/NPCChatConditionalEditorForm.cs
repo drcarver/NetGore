@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using NetGore.Features.NPCChat.Conditionals;
+using NetGore.Graphics.GUI;
 
 namespace NetGore.Features.NPCChat
 {

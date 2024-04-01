@@ -57,8 +57,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Platforms\Android\Linker.xml" />
+	  <None Remove="Platforms\iOS\linker.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <LinkDescription Include="Platforms\Android\Linker.xml" />
+	  <LinkDescription Include="Platforms\iOS\linker.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.0" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />

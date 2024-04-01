@@ -5,6 +5,8 @@ using System.Linq;
 using System.Reflection;
 using log4net;
 
+using NetGore.Core.Enum;
+
 namespace NetGore.Features.Guilds
 {
     /// <summary>

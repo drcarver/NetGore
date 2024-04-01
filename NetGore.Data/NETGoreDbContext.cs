@@ -12,6 +12,8 @@ public class NETGoreDbContext : DbContext
     public NETGoreDbContext(DbContextOptions<NETGoreDbContext> options)
         : base(options)
     {
+        SQLitePCL.Batteries_V2.Init();
+        Database.EnsureCreated();
     }
 
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,7 +29,7 @@ public class NETGoreDbContext : DbContext
     {
         base.OnModelCreating(builder);
 
-        builder.ApplyConfigurationsFromAssembly(typeof(AccountBan).Assembly);
+        builder.ApplyConfigurationsFromAssembly(typeof(Account).Assembly);
     }
 
     public override int SaveChanges()
@@ -61,3 +63,19 @@ public class NETGoreDbContext : DbContext
         return base.SaveChanges();
     }
 }
+
+//public DbSet<QuestionPack> QuestionPacks { get; set; }
+//public DbSet<Question> Questions { get; set; }
+
+//public DataContext()
+//{
+//    SQLitePCL.Batteries_V2.Init();
+
+//    Database.EnsureCreated();
+//}
+
+//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//{
+//    string dbPath = Path.Combine(FileSystem.AppDataDirectory, "medbaseapplica.db3");
+//    optionsBuilder.UseSqlite($"Filename={dbPath}");
+//}

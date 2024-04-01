@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeToolTip": "UI\\NetGore\\MauiProgram.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABMAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T01:10:41.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
-              "RelativeToolTip": "UI\\NetGore\\MainPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-01T00:56:29.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\AppShell.xaml",
-              "RelativeDocumentMoniker": "UI\\NetGore\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\AppShell.xaml",
-              "RelativeToolTip": "UI\\NetGore\\AppShell.xaml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-01T00:56:02.058Z",
-              "EditorCaption": ""
             }
           ]
         }

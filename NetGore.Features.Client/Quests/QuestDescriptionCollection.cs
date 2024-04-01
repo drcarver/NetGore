@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using NetGore.Collections;
+using NetGore.Core;
 using NetGore.IO;
 
 namespace NetGore.Features.Quests

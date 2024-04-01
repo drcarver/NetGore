@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{21CBF812-F3DE-4CCD-BE43-4D28EC611272}</ProjectGuid>
+    <ProjectGuid>{8F5B9178-799E-4A9E-8BAD-23A68CF8F06E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NetGore.Features</RootNamespace>
-    <AssemblyName>NetGore.Features</AssemblyName>
+    <AssemblyName>NetGore.Features.Client</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -62,24 +62,26 @@
     <Optimize>true</Optimize>
     <CodeAnalysisRuleSet>..\CodeRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugSideScroller|x86' ">
+    <OutputPath>..\bin\</OutputPath>
+    <CodeAnalysisRuleSet>..\CodeRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Mono|x86' ">
+    <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\bin\</OutputPath>
     <DefineConstants>TRACE;DEBUG;MONO;TOPDOWN</DefineConstants>
+    <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>..\CodeRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MonoSideScroller|x86' ">
     <OutputPath>..\bin\</OutputPath>
     <PlatformTarget>x86</PlatformTarget>
     <DefineConstants>TRACE;DEBUG;MONO</DefineConstants>
-    <Optimize>false</Optimize>
     <CodeAnalysisRuleSet>..\CodeRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugSideScroller|x86' ">
-    <OutputPath>..\bin\</OutputPath>
-    <CodeAnalysisRuleSet>..\CodeRules.ruleset</CodeAnalysisRuleSet>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, processorArchitecture=MSIL">
@@ -99,84 +101,65 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionDisplays\ActionDisplayID.cs" />
-    <Compile Include="ActionDisplays\PropertySyncActionDisplayID.cs" />
-    <Compile Include="Emoticons\EmoticonInfo.cs" />
-    <Compile Include="Emoticons\EmoticonInfoManager.cs" />
-    <Compile Include="GameTime\GameDateTime.cs" />
-    <Compile Include="GameTime\GameTimeSettings.cs" />
-    <Compile Include="Groups\GroupSettings.cs" />
-    <Compile Include="Groups\GroupShareMode.cs" />
-    <Compile Include="Groups\IGroup.cs" />
-    <Compile Include="Groups\IGroupable.cs" />
-    <Compile Include="Groups\UserGroupInformation.cs" />
-    <Compile Include="Guilds\GuildEvents.cs" />
-    <Compile Include="Guilds\GuildID.cs" />
-    <Compile Include="Guilds\GuildIDTypeConverter.cs" />
-    <Compile Include="Guilds\GuildMemberNameRank.cs" />
-    <Compile Include="Guilds\GuildRenameEventArgs.cs" />
-    <Compile Include="Guilds\IGuild.cs" />
-    <Compile Include="Guilds\IGuildManager.cs" />
-    <Compile Include="Guilds\IGuildManagerExtensions.cs" />
-    <Compile Include="Guilds\IGuildMember.cs" />
-    <Compile Include="Guilds\IValueReaderWriterExtensions.cs" />
-    <Compile Include="Guilds\PropertySyncGuildID.cs" />
-    <Compile Include="Guilds\UserGuildInformation.cs" />
-    <Compile Include="Guilds\GuildRank.cs" />
-    <Compile Include="Guilds\GuildSettings.cs" />
-    <Compile Include="NPCChat\Conditionals\NPCChatConditionalBase.cs" />
-    <Compile Include="NPCChat\Conditionals\NPCChatConditionalCollectionBase.cs" />
-    <Compile Include="NPCChat\Conditionals\NPCChatConditionalCollectionItemBase.cs" />
-    <Compile Include="NPCChat\Conditionals\NPCChatConditionalEvaluationType.cs" />
-    <Compile Include="NPCChat\Conditionals\Parameters\NPCChatConditionalParameter.cs" />
-    <Compile Include="NPCChat\Conditionals\Parameters\NPCChatConditionalParameterFloat.cs" />
-    <Compile Include="NPCChat\Conditionals\Parameters\NPCChatConditionalParameterInteger.cs" />
-    <Compile Include="NPCChat\Conditionals\Parameters\NPCChatConditionalParameterString.cs" />
-    <Compile Include="NPCChat\Conditionals\Parameters\NPCChatConditionalParameterType.cs" />
-    <Compile Include="NPCChat\NPCChatDialogBase.cs" />
-    <Compile Include="NPCChat\NPCChatDialogID.cs" />
-    <Compile Include="NPCChat\NPCChatDialogItemBase.cs" />
-    <Compile Include="NPCChat\NPCChatDialogItemID.cs" />
-    <Compile Include="NPCChat\NPCChatManagerBase.cs" />
-    <Compile Include="NPCChat\NPCChatResponseActionBase.cs" />
-    <Compile Include="NPCChat\NPCChatResponseBase.cs" />
-    <Compile Include="NPCChat\PropertySyncNPCChatDialogID.cs" />
+    <Compile Include="ActionDisplays\ActionDisplay.cs" />
+    <Compile Include="ActionDisplays\ActionDisplayCollection.cs" />
+    <Compile Include="ActionDisplays\ActionDisplayScriptAttribute.cs" />
+    <Compile Include="ActionDisplays\ActionDisplayScriptCollectionAttribute.cs" />
+    <Compile Include="ActionDisplays\ActionDisplayScriptHandler.cs" />
+    <Compile Include="ActionDisplays\ActionDisplayScriptManager.cs" />
+    <Compile Include="Emoticons\EmoticonDisplayManager.cs" />
+    <Compile Include="Emoticons\EmoticonMapDrawingExtension.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Groups\GroupForm.cs" />
+    <Compile Include="Groups\GroupMemberListControl.cs" />
+    <Compile Include="Guilds\GuildForm.cs" />
+    <Compile Include="Guilds\GuildInfoFormBase.cs" />
+    <Compile Include="Guilds\GuildMemberListControl.cs" />
+    <Compile Include="Guilds\GuildMembersForm.cs" />
+    <Compile Include="Guilds\GuildMembersFormBase.cs" />
+    <Compile Include="Guilds\GuildOnlineMembersForm.cs" />
+    <Compile Include="NPCChat\ClientNPCChatDialog.cs" />
+    <Compile Include="NPCChat\ClientNPCChatDialogItem.cs" />
+    <Compile Include="NPCChat\ClientNPCChatManager.cs" />
+    <Compile Include="NPCChat\ClientNPCChatResponse.cs" />
+    <Compile Include="PeerTrading\EventArgs\ClientPeerTradeInfoHandlerAcceptStatusChangedEventArgs.cs" />
+    <Compile Include="PeerTrading\EventArgs\ClientPeerTradeInfoHandlerCashChangedEventArgs.cs" />
+    <Compile Include="PeerTrading\EventArgs\ClientPeerTradeInfoHandlerSlotUpdatedEventArgs.cs" />
+    <Compile Include="PeerTrading\EventArgs\ClientPeerTradeInfoHandlerTradeCanceledEventArgs.cs" />
+    <Compile Include="PeerTrading\EventArgs\ItemSlotClickedEventArgs.cs" />
+    <Compile Include="PeerTrading\PeerTradeFormBase.cs" />
+    <Compile Include="PeerTrading\EventArgs\PeerTradeInfoHandlerChangedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quests\PropertySyncQuestID.cs" />
-    <Compile Include="Quests\QuestID.cs" />
-    <Compile Include="Quests\QuestIDTypeConverter.cs" />
-    <Compile Include="Quests\QuestSettings.cs" />
-    <Compile Include="Quests\UserQuestInformation.cs" />
-    <Compile Include="Shops\PropertySyncShopID.cs" />
-    <Compile Include="Shops\ShopID.cs" />
-    <Compile Include="Shops\ShopIDTypeConverter.cs" />
-    <Compile Include="Shops\ShopItemIndex.cs" />
-    <Compile Include="Shops\ShopItemIndexExtensions.cs" />
-    <Compile Include="Shops\ShopSettings.cs" />
-    <Compile Include="Skills\KnownSkillsCollection\IKnownSkillsCollection.cs" />
-    <Compile Include="Skills\ISkill.cs" />
-    <Compile Include="Skills\SkillCooldownmanager\ISkillCooldownManager.cs" />
-    <Compile Include="Skills\KnownSkillsCollection\KnownSkillsCollection.cs" />
-    <Compile Include="Skills\SkillBase.cs" />
-    <Compile Include="Skills\SkillCooldownmanager\SkillCooldownManager.cs" />
-    <Compile Include="Skills\SkillInfo.cs" />
-    <Compile Include="Skills\SkillInfoManager.cs" />
-    <Compile Include="Skills\SkillManager.cs" />
-    <Compile Include="StatusEffects\IStatusEffect.cs" />
-    <Compile Include="StatusEffects\StatusEffect.cs" />
-    <Compile Include="StatusEffects\StatusEffectManager.cs" />
-    <Compile Include="StatusEffects\StatusEffectMergeType.cs" />
-    <Compile Include="StatusEffects\StatusEffectSettings.cs" />
-    <Compile Include="PeerTrading\PeerTradeInfoClientMessage.cs" />
-    <Compile Include="PeerTrading\PeerTradeInfoServerMessage.cs" />
-    <Compile Include="PeerTrading\PeerTradingSettings.cs" />
+    <Compile Include="Quests\HasQuestRequirementsTracker.cs" />
+    <Compile Include="Quests\IQuestDescription.cs" />
+    <Compile Include="Quests\IQuestDescriptionCollection.cs" />
+    <Compile Include="Quests\QuestDescription.cs" />
+    <Compile Include="Quests\QuestDescriptionCollection.cs" />
+    <Compile Include="Quests\AvailableQuestsForm.cs" />
+    <Compile Include="Quests\QuestDescriptionListBox.cs" />
+    <Compile Include="Quests\QuestMapDrawingExtension.cs" />
+    <Compile Include="Shops\ShopInfo.cs" />
+    <Compile Include="PeerTrading\ClientPeerTradeInfoHandlerBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NetGore.Features\NetGore.Features.csproj">
+      <Project>{21CBF812-F3DE-4CCD-BE43-4D28EC611272}</Project>
+      <Name>NetGore.Features</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\NetGore\NetGore.csproj">
       <Project>{5C385F68-DAEB-4BF2-9472-D5D69B6B2373}</Project>
       <Name>NetGore</Name>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Banning\" />
+    <Folder Include="EventCounters\" />
+    <Folder Include="GameTime\" />
+    <Folder Include="Skills\" />
+    <Folder Include="StatusEffects\" />
+    <Folder Include="WorldStats\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -196,28 +179,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Banning\_FeatureInfo.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ActionDisplays\_FeatureInfo.txt" />
-    <None Include="Emoticons\_FeatureInfo.txt" />
-    <None Include="GameTime\_FeatureInfo.txt" />
-    <None Include="Groups\_FeatureInfo.txt" />
-    <None Include="Guilds\_FeatureInfo.txt" />
-    <None Include="Quests\_FeatureInfo.txt" />
-    <None Include="Shops\_FeatureInfo.txt" />
-    <None Include="Skills\_FeatureInfo.txt" />
-    <None Include="StatusEffects\_FeatureInfo.txt" />
-    <None Include="PeerTrading\_FeatureInfo.txt" />
-    <None Include="WorldStats\_FeatureInfo.txt" />
     <None Include="_ProjectInfo.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="NPCChat\_FeatureInfo.txt" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="EventCounters\_FeatureInfo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
