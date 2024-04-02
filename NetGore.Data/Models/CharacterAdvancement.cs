@@ -46,8 +46,8 @@ public class CharacterAdvancement : BaseObject, ICharacterAdvancement
     public virtual CharacterAdvancementEntry? GetEntryByExperiencePoints(int number)
     {
         var te = Table?.First(t =>
-                        t.ExperiencePoints.End.Value <= number
-                     && t.ExperiencePoints.Start.Value >= number);
+                        t.ExperiencePoints.End.Value >= number
+                     && t.ExperiencePoints.Start.Value <= number);
 
         return te;
     }

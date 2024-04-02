@@ -21,21 +21,18 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using NetGore.Core.Base;
-using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
 /// <summary>
-/// Determine the circumstances of your birth.
+/// Beyond 1st Level
 /// </summary>
 public class CharacterAdvancementTable : CharacterAdvancement, ICharacterAdvancement
 {
     //Character Advancement
-    //Experience Points Level Proficiency    Bonus
+    //Experience Points Level Proficiency Bonus
     //0 1 +2
     //300 2 +2
     //900 3 +2
@@ -78,7 +75,7 @@ public class CharacterAdvancementTable : CharacterAdvancement, ICharacterAdvance
             new CharacterAdvancementEntry
             {
                 ExperiencePoints = new Range(0, 299),
-                ProficiencyBonus = 1,
+                ProficiencyBonus = 2,
                 Level = 1,
             },
             #endregion
@@ -100,6 +97,176 @@ public class CharacterAdvancementTable : CharacterAdvancement, ICharacterAdvance
                 ExperiencePoints = new Range(900, 2699),
                 ProficiencyBonus = 2,
                 Level = 3,
+            },
+            #endregion
+
+            #region 4th Level
+            //2700-6499 4 +2
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(2700, 6499),
+                ProficiencyBonus = 2,
+                Level = 4,
+            },
+            #endregion
+
+            #region 5th Level
+            //6500-13999 5 +3
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(6500, 13999),
+                ProficiencyBonus = 3,
+                Level = 5,
+            },
+            #endregion
+
+            #region 6th Level
+            //14000-22999 6 +3
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(14000, 22999),
+                ProficiencyBonus = 3,
+                Level = 6,
+            },
+            #endregion
+
+            #region 7th Level
+            //23000-33999 7 +3
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(23000, 33999),
+                ProficiencyBonus = 3,
+                Level = 7,
+            },
+            #endregion
+
+            #region 8th Level
+            //34000-47999 8 +3
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(34000, 47999),
+                ProficiencyBonus = 3,
+                Level = 8,
+            },
+            #endregion
+
+            #region 9th Level
+            //48000-63999 9 +4
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(48000, 63999),
+                ProficiencyBonus = 4,
+                Level = 9,
+            },
+            #endregion
+
+            #region 10th Level
+            //64000-85999 10 +4
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(64000, 84999),
+                ProficiencyBonus = 4,
+                Level = 10,
+            },
+            #endregion
+
+            #region 11th Level
+            //85000-99999 11 +4
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(85000, 99999),
+                ProficiencyBonus = 4,
+                Level = 11,
+            },
+            #endregion
+
+            #region 12th Level
+            //100,000-119999 12 +4
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(100000, 119999),
+                ProficiencyBonus = 4,
+                Level = 12,
+            },
+            #endregion
+
+            #region 13th Level
+            //120,000-139,999 13 +5
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(120000, 139999),
+                ProficiencyBonus = 5,
+                Level = 13,
+            },
+            #endregion
+
+            #region 14th Level
+            //140,000-164,999 14 +5
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(140000, 164999),
+                ProficiencyBonus = 5,
+                Level = 14,
+            },
+            #endregion
+
+            #region 15th Level
+            //165,000-194,999 15 +5
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(165000, 194999),
+                ProficiencyBonus = 5,
+                Level = 15,
+            },
+            #endregion
+
+            #region 16th Level
+            //195,000-224,999 16 +5
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(195000, 224999),
+                ProficiencyBonus = 5,
+                Level = 16,
+            },
+            #endregion
+
+            #region 17th Level
+            //225000-264999 16 +5
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(225000, 264999),
+                ProficiencyBonus = 6,
+                Level = 17,
+            },
+            #endregion
+
+            #region 18th Level
+            //265000-304999 18 +6
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(265000, 304999),
+                ProficiencyBonus = 6,
+                Level = 18,
+            },
+            #endregion
+
+            #region 19th Level
+            //305,000-304999 19 +6
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(305000, 354999),
+                ProficiencyBonus = 6,
+                Level = 19,
+            },
+            #endregion
+
+            #region 20th Level
+            //355000-int.MaxValue 20 +6
+            new CharacterAdvancementEntry
+            {
+                ExperiencePoints = new Range(355000, int.MaxValue),
+                ProficiencyBonus = 6,
+                Level = 20,
             },
             #endregion
         ];
