@@ -1,5 +1,7 @@
-﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using NetGore.Core.Enum;
+using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
@@ -7,7 +9,7 @@ namespace NetGore.Data.Background;
 /// <summary>
 /// Determine your character's alignment
 /// </summary>
-public partial class BackgroundTables
+public class AlignmentTable : RandomRangeTable, IAlignmentTable
 {
     //d9 Alignment
     //1	LG(Lawful Good)
@@ -22,10 +24,12 @@ public partial class BackgroundTables
     /// <summary>
     /// Alignment Table
     /// </summary>
-    public static RandomRangeTable AlignmentTable { get; } = new()
+    [SetsRequiredMembers]
+    public AlignmentTable()
     {
-        Name = "Alignment Table",
-        DiceSides = 9,
+        Name = nameof(AlignmentTable);
+        Description = "Alignment Table";
+        DiceSides = 9;
         Table =
         [
             #region Lawful Good
@@ -35,7 +39,7 @@ public partial class BackgroundTables
                 Range = new Range(1, 1),
                 Name = nameof(AlignmentEnum.LawfulGood),
                 ProperName = "Lawful Good",
-                Description = 
+                Description =
                     "A lawful good character acts as " +
                     "a good person is expected or " +
                     "required to act. They combine a " +
@@ -79,7 +83,7 @@ public partial class BackgroundTables
                     "as their conscience directs them " +
                     "with little regard for what " +
                     "others expect of them. They " +
-                    "make their own way, but are " + 
+                    "make their own way, but are " +
                     "kind and benevolent. They " +
                     "believe in goodness and right " +
                     "but have little use for laws " +
@@ -259,6 +263,6 @@ public partial class BackgroundTables
                     "assassinate him.",
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }

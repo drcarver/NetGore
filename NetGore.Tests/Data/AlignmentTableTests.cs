@@ -12,12 +12,13 @@ public class AlignmentTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.AlignmentTable.Name == "Alignment Table");
-        ClassicAssert.IsTrue(BackgroundTables.AlignmentTable.DiceSides == 9);
+        var table = new AlignmentTable();
+        ClassicAssert.IsTrue(table.Name == nameof(AlignmentTable));
+        ClassicAssert.IsTrue(table.DiceSides == 9);
 
-        for (int i = 1; i <= BackgroundTables.AlignmentTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.AlignmentTable.GetEntryByNumber(i);
+            var entry = table.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

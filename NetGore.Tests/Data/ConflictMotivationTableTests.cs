@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class ConflictMotivationTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.ConflictMotivationTable.Name == "The Conflict Motivation Table");
-        ClassicAssert.IsTrue(BackgroundTables.ConflictMotivationTable.DiceSides == 10);
+        var conflictMotivationTable = new ConflictMotivationTable();
+        ClassicAssert.IsTrue(conflictMotivationTable.Name == nameof(ConflictMotivationTable));
+        ClassicAssert.IsTrue(conflictMotivationTable.DiceSides == 10);
 
-        for (int i = 1; i <= BackgroundTables.ConflictMotivationTable.DiceSides; i++)
+        for (int i = 1; i <= conflictMotivationTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.ConflictMotivationTable.GetEntryByNumber(i);
+            var entry = conflictMotivationTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class ConflictMotivationTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

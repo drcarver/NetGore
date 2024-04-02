@@ -1,8 +1,7 @@
-﻿using System.Diagnostics;
-
-using NetGore.Core.Enum;
+﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 
@@ -14,12 +13,13 @@ public class CharacterDrawbackTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.CharacterDrawbackTable.Name == "Character Drawback Table");
-        ClassicAssert.IsTrue(BackgroundTables.CharacterDrawbackTable.DiceSides == 100);
+        var characterDrawbackTable = new CharacterDrawbackTable();
+        ClassicAssert.IsTrue(characterDrawbackTable.Name == nameof(CharacterDrawbackTable));
+        ClassicAssert.IsTrue(characterDrawbackTable.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.CharacterDrawbackTable.DiceSides; i++)
+        for (int i = 1; i <= characterDrawbackTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.CharacterDrawbackTable.GetEntryByNumber(i);
+            var entry = characterDrawbackTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -30,7 +30,7 @@ public class CharacterDrawbackTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

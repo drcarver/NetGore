@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class AdoptedOutsideYourRaceTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.AdoptedOutsideYourRaceTable.Name == "Adopted Outside Your Race Table");
-        ClassicAssert.IsTrue(BackgroundTables.AdoptedOutsideYourRaceTable.DiceSides == 100);
+        var adoptedOutsideYourRaceTable = new AdoptedOutsideYourRaceTable();
+        ClassicAssert.IsTrue(adoptedOutsideYourRaceTable.Name == nameof(AdoptedOutsideYourRaceTable));
+        ClassicAssert.IsTrue(adoptedOutsideYourRaceTable.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.AdoptedOutsideYourRaceTable.DiceSides; i++)
+        for (int i = 1; i <= adoptedOutsideYourRaceTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.AdoptedOutsideYourRaceTable.GetEntryByNumber(i);
+            var entry = adoptedOutsideYourRaceTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class AdoptedOutsideYourRaceTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

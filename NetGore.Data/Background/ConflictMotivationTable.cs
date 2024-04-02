@@ -19,8 +19,11 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -34,7 +37,7 @@ namespace NetGore.Data.Background;
 /// The motivation affects the CP gained from 
 /// the conflict.
 /// </summary>
-public partial class BackgroundTables
+public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTable
 {
     //Table: Motivation
     //d10 Result CP
@@ -51,18 +54,18 @@ public partial class BackgroundTables
     /// <summary>
     /// Conflict Subject Table
     /// </summary>
-    public static RandomTable ConflictMotivationTable { get; } = new()
+    [SetsRequiredMembers]
+    public ConflictMotivationTable()
     {
-        Name = "The Conflict Motivation Table",
-        DiceSides = 10,
+        Name = nameof(ConflictMotivationTable);
+        DiceSides = 10;
         Table =
         [
             #region Justice
             //1	Justice	1
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 01,
-                UpperRange = 01,
+                Range = new Range(01, 01),
                 Name = nameof(ConflictMotivationEnum.Justice),
                 ConflictPoints = 1
             },
@@ -70,10 +73,9 @@ public partial class BackgroundTables
 
             #region Love
             //2	Love	1
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 02,
-                UpperRange = 02,
+                Range = new Range(02, 02),
                 Name = nameof(ConflictMotivationEnum.Love),
                 ConflictPoints = 1
             },
@@ -81,10 +83,9 @@ public partial class BackgroundTables
 
             #region Pressured or Manipulated
             //3	Pressured or Manipulated	2
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 03,
-                UpperRange = 03,
+                Range = new Range(03, 03),
                 Name = nameof(ConflictMotivationEnum.PressuredorManipulated),
                 ProperName = "Pressured or Manipulated",
                 ConflictPoints = 2
@@ -93,10 +94,9 @@ public partial class BackgroundTables
 
             #region Religion
             //4	Religion	2
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 04,
-                UpperRange = 04,
+                Range = new Range(04, 04),
                 Name = nameof(ConflictMotivationEnum.Religion),
                 ProperName = "Religion",
                 ConflictPoints = 2
@@ -105,10 +105,9 @@ public partial class BackgroundTables
 
             #region Family
             //5	Family	3
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 05,
-                UpperRange = 05,
+                Range = new Range(05, 05),
                 Name = nameof(ConflictMotivationEnum.Family),
                 ProperName = "Family",
                 ConflictPoints = 3
@@ -117,10 +116,9 @@ public partial class BackgroundTables
 
             #region Money
             //6	Money	3
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 06,
-                UpperRange = 06,
+                Range = new Range(06, 06),
                 Name = nameof(ConflictMotivationEnum.Money),
                 ProperName = "Money",
                 ConflictPoints = 3
@@ -129,10 +127,9 @@ public partial class BackgroundTables
 
             #region Jealousy
             //7	Jealousy	4
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 07,
-                UpperRange = 07,
+                Range = new Range(07, 07),
                 Name = nameof(ConflictMotivationEnum.Jealousy),
                 ProperName = "Jealousy",
                 ConflictPoints = 4
@@ -141,10 +138,9 @@ public partial class BackgroundTables
 
             #region Hatred or Malice
             //8	Hatred or Malice	4
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 08,
-                UpperRange = 08,
+                Range = new Range(08, 08),
                 Name = nameof(ConflictMotivationEnum.HatredorMalice),
                 ProperName = "Hatred or Malice",
                 ConflictPoints = 4
@@ -153,10 +149,9 @@ public partial class BackgroundTables
 
             #region Pleasure
             //9	Pleasure	5
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 09,
-                UpperRange = 09,
+                Range = new Range(09, 09),
                 Name = nameof(ConflictMotivationEnum.Pleasure),
                 ProperName = "Pleasure",
                 ConflictPoints = 5
@@ -165,15 +160,14 @@ public partial class BackgroundTables
 
             #region Amusement or Entertainment
             //10	Amusement or Entertainment	5    
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 10,
-                UpperRange = 10,
+                Range = new Range(10, 10),
                 Name = nameof(ConflictMotivationEnum.AmusementorEntertainment),
                 ProperName = "Pleasure",
                 ConflictPoints = 5
             },
             #endregion
-        ],
-    };
+        ];
+    }
 }

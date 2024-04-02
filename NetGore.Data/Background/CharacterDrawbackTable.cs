@@ -19,8 +19,11 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -38,7 +41,7 @@ namespace NetGore.Data.Background;
 /// following table to determine your character’s 
 /// drawback.
 /// </summary>
-public partial class BackgroundTables
+public class CharacterDrawbackTable : RandomRangeTable, ICharacterDrawbackTable
 {
     //Table: Character Drawback
     //d%	Result
@@ -65,18 +68,18 @@ public partial class BackgroundTables
     /// <summary>
     /// Character Drawback
     /// </summary>
-    public static RandomTable CharacterDrawbackTable { get; } = new()
+    [SetsRequiredMembers]
+    public CharacterDrawbackTable()
     {
-        Name = "Character Drawback Table",
-        DiceSides = 100,
+        Name = nameof(CharacterDrawbackTable);
+        DiceSides = 100;
         Table =
         [
             #region Attachment to an Object
             //01–05	Attachment(Object) You are attached to a precious possession with immense sentimental value and significance.Without it, you are no longer yourself and are prone to suffer from depression, moodiness, or aggressive behavior.You gain access to the Attached drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 01,
-                UpperRange = 05,
+                Range = new Range(01, 05),
                 Name = nameof(CharacterDrawbackEnum.AttachmenttoanObject),
                 ProperName = "Attachment to an Object",
                 Description =
@@ -95,10 +98,9 @@ public partial class BackgroundTables
 
             #region Attachment to a Person
             //06–10	Attachment(Person) You are attached to a particular person—a friend, family member, or loved one—who means more than anything or anyone in the world.Your thoughts always return to this person.You gain access to the Attached drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 06,
-                UpperRange = 10,
+                Range = new Range(06, 10),
                 Name = nameof(CharacterDrawbackEnum.AttachmenttoaPerson),
                 ProperName = "Attachment to a Person",
                 Description =
@@ -117,10 +119,9 @@ public partial class BackgroundTables
 
             #region Family
             //11–15	Family Your family means everything to you, and there is nothing you wouldn’t do for them.Maybe your ties extend to your entire clan or bloodline, or perhaps there is one specific member of your family you hold closer than any other. You gain access to the Family Ties drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 11,
-                UpperRange = 15,
+                Range = new Range(11, 15),
                 Name = nameof(CharacterDrawbackEnum.Family),
                 ProperName = "Family",
                 Description =
@@ -130,7 +131,7 @@ public partial class BackgroundTables
                     "ties extend to your entire clan " +
                     "or bloodline, or perhaps there is " +
                     "one specific member of your family " +
-                    "you hold closer than any other. ", 
+                    "you hold closer than any other. ",
                 Traits =
                 {
                     TraitEnum.FamilyTies,
@@ -140,10 +141,9 @@ public partial class BackgroundTables
 
             #region Justice
             //16–20	Justice Unfairness and injustice are intolerable. Whenever you witness them, you feel compelled to act or speak out. When you’re personally wronged, you require appeasement—or revenge if you don’t receive it.You gain access to the Headstrong drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 16,
-                UpperRange = 20,
+                Range = new Range(16, 20),
                 Name = nameof(CharacterDrawbackEnum.Justice),
                 ProperName = "Justice",
                 Description =
@@ -163,10 +163,9 @@ public partial class BackgroundTables
 
             #region Love
             //21–25	Love Your love for someone motivates you.When this person is in danger, you’re prone to feel weak, powerless, or angry. You gain access to the Lovesick drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 21,
-                UpperRange = 25,
+                Range = new Range(21, 25),
                 Name = nameof(CharacterDrawbackEnum.Love),
                 ProperName = "Love",
                 Description =
@@ -185,10 +184,9 @@ public partial class BackgroundTables
 
             #region Loyalty
             //26–30	Loyalty You value loyalty over all things.You treasure the friends, associates, and lovers you have earned throughout the years, and when someone breaks your trust or betrays you in some way, you become utterly unhinged. You gain access to the Pride drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 26,
-                UpperRange = 30,
+                Range = new Range(26, 30),
                 Name = nameof(CharacterDrawbackEnum.Loyalty),
                 ProperName = "Loyalty",
                 Description =
@@ -208,10 +206,9 @@ public partial class BackgroundTables
 
             #region Material Wealth
             //31–35	Material Wealth You have a weakness for material things—money, fine jewelry, exquisite foods, expensive or rare items, and so on.When such riches are within your reach, you’re driven to possess them, and you claim them either as an honest collector or a cunning thief.You gain access to the Avarice drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 31,
-                UpperRange = 35,
+                Range = new Range(31, 35),
                 Name = nameof(CharacterDrawbackEnum.MaterialWealth),
                 ProperName = "Material Wealth",
                 Description =
@@ -234,10 +231,9 @@ public partial class BackgroundTables
 
             #region Pleasure
             //36–40	Pleasure You crave luxury, entertainment, and pleasure. You might indulge in every passing fancy or hold strong against a temptation that constantly eats at you. You gain access to the Hedonistic drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 36,
-                UpperRange = 40,
+                Range = new Range(36, 40),
                 Name = nameof(CharacterDrawbackEnum.Pleasure),
                 ProperName = "Pleasure",
                 Description =
@@ -256,10 +252,9 @@ public partial class BackgroundTables
 
             #region Power
             //41–45	Power You long for the ability to influence the world around you, whether that’s as small as a village or as large as a plane of reality. You gain access to the Power-Hungry drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 41,
-                UpperRange = 45,
+                Range = new Range(41, 45),
                 Name = nameof(CharacterDrawbackEnum.Power),
                 ProperName = "Power",
                 Description =
@@ -278,10 +273,9 @@ public partial class BackgroundTables
 
             #region Pride
             //46–50	Pride You present an image to the world that can’t be tarnished.When someone questions your motives, criticizes your actions, or insults your honor or pride, you question his friendship or count him among your enemies until he makes amends. You gain access to the Pride drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 46,
-                UpperRange = 50,
+                Range = new Range(46, 50),
                 Name = nameof(CharacterDrawbackEnum.Pride),
                 ProperName = "Pride",
                 Description =
@@ -302,10 +296,9 @@ public partial class BackgroundTables
 
             #region Race
             //51–55	Race You are truly comfortable only around others of your race, and you have a hard time putting faith or trust in those of races different from your own.You gain access to the Xenophobic drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 51,
-                UpperRange = 55,
+                Range = new Range(51, 55),
                 Name = nameof(CharacterDrawbackEnum.Race),
                 ProperName = "Race",
                 Description =
@@ -324,10 +317,9 @@ public partial class BackgroundTables
 
             #region Religion
             //56–60	Religion Your beliefs are of paramount importance in your life, whether you belong to a temple, follow a cult, or practice a religious philosophy independently. When others question or attack the beliefs, principles, relics, or structures of your faith, you respond with fury. You gain access to the Zealous drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 56,
-                UpperRange = 60,
+                Range = new Range(56, 60),
                 Name = nameof(CharacterDrawbackEnum.Religion),
                 ProperName = "Religion",
                 Description =
@@ -350,10 +342,9 @@ public partial class BackgroundTables
 
             #region Reputation or Fame
             //61–65	Reputation or Fame You’ve worked hard to establish your identity and reputation, and someone who slanders or insults you must answer for it.You strive to promote your identity to the point where everyone knows your reputation. You gain access to the Vain drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 61,
-                UpperRange = 65,
+                Range = new Range(61, 65),
                 Name = nameof(CharacterDrawbackEnum.ReputationorFame),
                 ProperName = "Reputation or Fame",
                 Description =
@@ -375,10 +366,9 @@ public partial class BackgroundTables
 
             #region Safety or Security
             //66–70	Safety or Security You are cautious and guarded—wary of others who might harm you, steal from you, or betray your trust. As such, you sleep lightly, always suspecting someone or something to sneak in upon you in the dark. Even when in relationships with people who trust you, there’s always the fear that they harbor hidden agendas or will change and turn against you. You gain access to the Paranoid drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 66,
-                UpperRange = 70,
+                Range = new Range(66, 70),
                 Name = nameof(CharacterDrawbackEnum.SafetyorSecurity),
                 ProperName = "Safety or Security",
                 Description =
@@ -403,10 +393,9 @@ public partial class BackgroundTables
 
             #region Self-Doubt
             //71–75	Self-Doubt No matter what you do, it’s never good enough. You cannot help but see in your victories many little defeats and failures.If you were stronger, smarter, faster, or more powerful, maybe you could be better.However, stuck in the body and mind you have, you feel you’re destined to fail. You gain access to the Doubt drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 71,
-                UpperRange = 75,
+                Range = new Range(71, 75),
                 Name = nameof(CharacterDrawbackEnum.SelfDoubt),
                 ProperName = "Self-Doubt",
                 Description =
@@ -429,10 +418,9 @@ public partial class BackgroundTables
 
             #region Social Acceptance
             //76–80	Social Acceptance   You want others to accept you, to believe you’re special and worthy of merit. You are self-conscious about your social flaws and breaches of etiquette.Rejection is among your greatest fears. You might go to extraordinary lengths to be accepted by or seek favor from your peers. You gain access to the Dependent drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 76,
-                UpperRange = 80,
+                Range = new Range(76, 80),
                 Name = nameof(CharacterDrawbackEnum.SocialAcceptance),
                 ProperName = "Social Acceptance",
                 Description =
@@ -456,10 +444,9 @@ public partial class BackgroundTables
 
             #region The Future
             //81–85	The Future  Your concerns lie not with the present, but with preparation for the future. You may be an avid and organized planner, or perhaps you see the signs of a coming dark age or troubled time. You behave cautiously, conservatively, and methodically as you plan for events that might one day occur. You gain access to the Meticulous drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 81,
-                UpperRange = 85,
+                Range = new Range(81, 85),
                 Name = nameof(CharacterDrawbackEnum.TheFuture),
                 ProperName = "The Future",
                 Description =
@@ -483,10 +470,9 @@ public partial class BackgroundTables
 
             #region The Past
             //86–90	The Past    You long for the world to return to a past age. You’ve adopted the manners and style of this age, and are fascinated by its customs, relics, and artifacts, and by the historical figures of that time. Perhaps you live so much in this past age that your connection to the present is tenuous.Or your pretentiousness annoys others.You gain access to the Sentimental drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 86,
-                UpperRange = 90,
+                Range = new Range(86, 90),
                 Name = nameof(CharacterDrawbackEnum.ThePast),
                 ProperName = "The Past",
                 Description =
@@ -510,10 +496,9 @@ public partial class BackgroundTables
 
             #region Worldview
             //91–95	Worldview In your eyes, your moral philosophy—your alignment—is the only correct and true way of the world. Perhaps you gently pity, argue with, or brawl with those misguided souls who don’t see the world your way or by your light of reason. You gain access to the Provincial drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 91,
-                UpperRange = 95,
+                Range = new Range(91, 95),
                 Name = nameof(CharacterDrawbackEnum.Worldview),
                 ProperName = "Worldview",
                 Description =
@@ -535,10 +520,9 @@ public partial class BackgroundTables
 
             #region Youth
             //96–100	Youth You reflect upon your youth as a golden time, one ever present in your mind and that refuses to fade into the background. Every day, you feel yourself growing older and closer to your inevitable end.You seek ways to make yourself look and feel young in attempt to rekindle that fire of your adolescence, but despite your attempts, you realize that your time still draws ever nearer.You gain access to the Vain drawback.
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96, 100),
                 Name = nameof(CharacterDrawbackEnum.Youth),
                 ProperName = "Youth",
                 Description =
@@ -562,6 +546,6 @@ public partial class BackgroundTables
                 },
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }

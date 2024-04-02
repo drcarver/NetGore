@@ -20,14 +20,16 @@ public static class DataServices
             .AddSingleton<IPlayerCharacter, PlayerCharacter>()
             .AddSingleton<IAccountService, AccountService>()
 
-            // Random Tables
-            .AddSingleton<ICharacterAdvancement, CharacterAdvancementTable>()
-            .AddSingleton<ICircumstanceofBirthTable, CircumstanceofBirthTable>()
-            .AddSingleton<ICrimeTable, CrimeTable>()
-            .AddSingleton<ILanguageTable, LanguageTable>()
-            .AddSingleton<INobilityTable, NobilityTable>()
-            .AddSingleton<IProfessionTable, ProfessionTable>()
-            .AddSingleton<IRaceTable, RaceTable>()
+            // Transient Random Tables
+            .AddTransient<IAdoptedOutsideYourRaceTable, AdoptedOutsideYourRaceTable>()
+            .AddTransient<IAlignmentTable, AlignmentTable>()
+            .AddTransient<ICharacterAdvancement, CharacterAdvancementTable>()
+            .AddTransient<ICircumstanceofBirthTable, CircumstanceofBirthTable>()
+            .AddTransient<ICrimeTable, CrimeTable>()
+            .AddTransient<ILanguageTable, LanguageTable>()
+            .AddTransient<INobilityTable, NobilityTable>()
+            .AddTransient<IProfessionTable, ProfessionTable>()
+            .AddTransient<IRaceTable, RaceTable>()
             ;
 
         return collection;
