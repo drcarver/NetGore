@@ -1,5 +1,6 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -8,7 +9,7 @@ namespace NetGore.Data.Background;
 /// </summary>
 public partial class BackgroundTables
 {
-    //d10 Alignment
+    //d9 Alignment
     //1	LG(Lawful Good)
     //2	NG(Neutral Good)
     //3	CG(Chaotic Good)

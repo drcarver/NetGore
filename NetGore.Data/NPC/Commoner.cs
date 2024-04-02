@@ -7,6 +7,7 @@ using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 
 namespace NetGore.Data.NPC;

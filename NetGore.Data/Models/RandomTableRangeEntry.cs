@@ -4,7 +4,7 @@ using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 
-namespace NetGore.Core.Models;
+namespace NetGore.Data.Models;
 
 public class RandomTableRangeEntry : BaseObject, IRandomTableRangeEntry
 {

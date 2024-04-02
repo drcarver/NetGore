@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 
-namespace NetGore.Core.Models;
+namespace NetGore.Data.Models;
 
 public class RandomRangeTable : BaseObject, IRandomRangeTable
 {
@@ -45,7 +46,7 @@ public class RandomRangeTable : BaseObject, IRandomRangeTable
         if (filtered != null && filtered.Length > 0)
         {
             Dice dice = new($"1d{filtered.Length}");
-            return filtered[dice.Total-1];
+            return filtered[dice.Total - 1];
         }
         return GetRandomEntry();
     }

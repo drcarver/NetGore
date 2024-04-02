@@ -5,6 +5,7 @@ using Microsoft.Maui.Graphics;
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 using NetGore.Data.Race;
 
 namespace NetGore.Data.Background;

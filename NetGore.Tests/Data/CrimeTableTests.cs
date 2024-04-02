@@ -1,6 +1,6 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 

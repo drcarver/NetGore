@@ -24,6 +24,7 @@ using System.Diagnostics.CodeAnalysis;
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 

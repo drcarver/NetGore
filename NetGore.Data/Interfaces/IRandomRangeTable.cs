@@ -1,4 +1,4 @@
-﻿using NetGore.Core.Models;
+﻿using NetGore.Data.Models;
 
 namespace NetGore.Data.Interfaces;
 
