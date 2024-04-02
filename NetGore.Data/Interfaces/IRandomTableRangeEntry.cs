@@ -1,14 +1,14 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces;
+namespace NetGore.Data.Interfaces;
 
 public interface IRandomTableRangeEntry
 {
     /// <summary>
     /// The table to call for more data
     /// </summary>
-    RandomTable? AlternateTable { get; set; }
+    string? AlternateTable { get; set; }
 
     /// <summary>
     /// The class for this entry

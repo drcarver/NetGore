@@ -19,15 +19,18 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
 
 namespace NetGore.Data.Background;
 
 /// <summary>
 /// The table of races
 /// </summary>
-public partial class BackgroundTables
+public class RaceTable : RandomRangeTable, IRaceTable
 {
     //Table: Race
     //d%	Result
@@ -70,138 +73,127 @@ public partial class BackgroundTables
     /// <summary>
     /// Allowed character races
     /// </summary>
-    public static RandomTable RaceTable { get; } = new()
+    [SetsRequiredMembers]
+    public RaceTable()
     {
-        Name = "Race Table",
-        DiceSides = 100,
+        Name = nameof(RaceTable);
+        Description = "Race";
+        DiceSides = 100;
         Table =
         [
             #region "Aasimar"
             //01	Aasimar
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 01,
-                UpperRange = 01,
+                Range = new Range(01, 01),
                 Name = nameof(RaceEnum.Aasimar),
             },
             #endregion
 
             #region "Catfolk"
             //02	Catfolk
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 02,
-                UpperRange = 02,
+                Range = new Range(02, 02),
                 Name = nameof(RaceEnum.Catfolk),
             },
             #endregion
 
             #region "Changeling"
             //03–04	Changeling
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 03,
-                UpperRange = 04,
+                Range = new Range(03, 04),
                 Name = nameof(RaceEnum.Changeling),
             },
             #endregion
 
             #region "Dhampir"
             //05	Dhampir
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 05,
-                UpperRange = 05,
+                Range = new Range(05, 05),
                 Name = nameof(RaceEnum.Dhampir),
             },
             #endregion
 
             #region "Duergar"
             //06	Duergar
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 06,
-                UpperRange = 06,
+                Range = new Range(06, 06),
                 Name = nameof(RaceEnum.Duergar),
             },
             #endregion
 
             #region "Dwarf"
             //07–16	Dwarf
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 07,
-                UpperRange = 16,
+                Range = new Range(07, 16),
                 Name = nameof(RaceEnum.Dwarf),
             },
             #endregion
 
             #region "Elf"
             //17–26	Elf
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 17,
-                UpperRange = 26,
+                Range = new Range(17, 26),
                 Name = nameof(RaceEnum.Elf),
             },
             #endregion
 
             #region "Fetchling"
             //27	Fetchling
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 27,
-                UpperRange = 27,
+                Range = new Range(27, 27),
                 Name = nameof(RaceEnum.Fetchling),
             },
             #endregion
 
             #region "Gillman"
             //28	Gillman
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 28,
-                UpperRange = 28,
+                Range = new Range(28, 28),
                 Name = nameof(RaceEnum.Gillman),
             },
             #endregion
 
             #region "Gnome"
             //29–38	Gnome
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 29,
-                UpperRange = 38,
+                Range = new Range(29, 38),
                 Name = nameof(RaceEnum.Gnome),
             },
             #endregion
 
             #region "Goblin"
             //39	Goblin
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 39,
-                UpperRange = 39,
+                Range = new Range(39, 39),
                 Name = nameof(RaceEnum.Goblin),
             },
             #endregion
 
             #region "Grippli"
             //40	Grippli
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 40,
-                UpperRange = 40,
+                Range = new Range(40, 40),
                 Name = nameof(RaceEnum.Grippli),
             },
             #endregion
 
             #region "Half-Elf"
             //41–50	Half-Elf
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 41,
-                UpperRange = 50,
+                Range = new Range(41, 50),
                 Name = nameof(RaceEnum.HalfElf),
                 ProperName = "Half-Elf"
             },
@@ -209,10 +201,9 @@ public partial class BackgroundTables
 
             #region "Half-orc"
             //51–60	Half-orc
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51, 60),
                 Name = nameof(RaceEnum.HalfOrc),
                 ProperName = "Half-orc"
             },
@@ -220,223 +211,201 @@ public partial class BackgroundTables
 
             #region "Halfling"
             //61–70	Halfling
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61, 70),
                 Name = nameof(RaceEnum.Halfling),
             },
             #endregion
 
             #region "Hobgoblin"
             //71	Hobgoblin
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 71,
-                UpperRange = 71,
+                Range = new Range(71, 71),
                 Name = nameof(RaceEnum.Hobgoblin),
             },
             #endregion
 
             #region "Human"
             //72–81	Human
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 72,
-                UpperRange = 81,
+                Range = new Range(72, 81),
                 Name = nameof(RaceEnum.Human),
             },
             #endregion
 
             #region "Ifrit"
             //82	Ifrit
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 82,
-                UpperRange = 82,
+                Range = new Range(82, 82),
                 Name = nameof(RaceEnum.Ifrit),
             },
             #endregion
 
             #region "Kitsune"
             //83	Kitsune
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 83,
-                UpperRange = 83,
+                Range = new Range(83, 83),
                 Name = nameof(RaceEnum.Kitsune),
             },
             #endregion
 
             #region "Kobold"
             //84	Kobold
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 84,
-                UpperRange = 84,
+                Range = new Range(84, 84),
                 Name = nameof(RaceEnum.Kobold),
             },
             #endregion
 
             #region "Merfolk"
             //85	Merfolk
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 85,
-                UpperRange = 85,
+                Range = new Range(85, 85),
                 Name = nameof(RaceEnum.Merfolk),
             },
             #endregion
 
             #region "Nagaji"
             //86	Nagaji
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 86,
-                UpperRange = 86,
+                Range = new Range(86, 86),
                 Name = nameof(RaceEnum.Nagaji),
             },
             #endregion
 
             #region "Orc"
             //87	Orc
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 87,
-                UpperRange = 87,
+                Range = new Range(87, 87),
                 Name = nameof(RaceEnum.Orc),
             },
             #endregion
 
             #region "Oread"
             //88	Oread
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 88,
-                UpperRange = 88,
+                Range = new Range(88, 88),
                 Name = nameof(RaceEnum.Oread),
             },
             #endregion
 
             #region "Ratfolk"
             //89	Ratfolk
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 89,
-                UpperRange = 89,
+                Range = new Range(89, 89),
                 Name = nameof(RaceEnum.Ratfolk),
             },
             #endregion
 
             #region "Samsaran"
             //90	Samsaran
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 90,
-                UpperRange = 90,
+                Range = new Range(90, 90),
                 Name = nameof(RaceEnum.Samsaran),
             },
             #endregion
 
             #region "Strix"
             //91	Strix
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 91,
-                UpperRange = 91,
+                Range = new Range(91, 91),
                 Name = nameof(RaceEnum.Strix),
             },
             #endregion
 
             #region "Suli"
             //92	Suli
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 92,
-                UpperRange = 92,
+                Range = new Range(92, 92),
                 Name = nameof(RaceEnum.Suli),
             },
             #endregion
 
             #region "Svirfneblin"
             //93	Svirfneblin
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 93,
-                UpperRange = 93,
+                Range = new Range(93, 93),
                 Name = nameof(RaceEnum.Svirfneblin),
             },
             #endregion
 
             #region "Sylph"
             //94	Sylph
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 94,
-                UpperRange = 94,
+                Range = new Range(94, 94),
                 Name = nameof(RaceEnum.Sylph),
             },
             #endregion
 
             #region "Tengu"
             //95	Tengu
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 95,
-                UpperRange = 95,
+                Range = new Range(95, 95),
                 Name = nameof(RaceEnum.Tengu),
             },
             #endregion
 
             #region "Tiefling"
             //96	Tiefling
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 96,
-                UpperRange = 96,
+                Range = new Range(96, 96),
                 Name = nameof(RaceEnum.Tiefling),
             },
             #endregion
 
             #region "Undine"
             //97	Undine
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 97,
-                UpperRange = 97,
+                Range = new Range(97, 97),
                 Name = nameof(RaceEnum.Undine),
             },
             #endregion
 
             #region "Vanara"
             //98	Vanara
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 98,
-                UpperRange = 98,
+                Range = new Range(98, 98),
                 Name = nameof(RaceEnum.Vanara),
             },
             #endregion
 
             #region "Vishkanya"
             //99	Vishkanya
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 99,
-                UpperRange = 99,
+                Range = new Range(99, 99),
                 Name = nameof(RaceEnum.Vishkanya),
             },
             #endregion
 
             #region "Wayang"
             //100	Wayang
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 100,
-                UpperRange = 100,
+                Range = new Range( 100,100),
                 Name = nameof(RaceEnum.Wayang),
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }

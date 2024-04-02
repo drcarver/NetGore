@@ -1,14 +1,7 @@
-﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using System.Drawing;
-
-using NetGore.Core.Enum;
+﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
-using NetGore.Data.Classes;
-
 using NUnit.Framework.Legacy;
-
-using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace NetGore.Tests.Data;
 
@@ -18,12 +11,13 @@ public class ParentsProfessionTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.ProfessionTable.Name == "Parents’ Profession");
-        ClassicAssert.IsTrue(BackgroundTables.ProfessionTable.DiceSides == 100);
+        var professionTable = new ProfessionTable();
+        ClassicAssert.IsTrue(professionTable.Name == nameof(ProfessionTable));
+        ClassicAssert.IsTrue(professionTable.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.ProfessionTable.DiceSides; i++)
+        for (int i = 1; i <= professionTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.ProfessionTable.GetEntryByNumber(i);
+            var entry = professionTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -34,7 +28,7 @@ public class ParentsProfessionTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

@@ -85,7 +85,7 @@ public class Dwarf : IRace
         //following: Giant, Gnome, Goblin, Orc,
         //Terran, and Undercommon. 
         creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Dwarven);
+        creature.Languages.Add(LanguageEnum.Dwarvish);
     }
 
     /// <summary>

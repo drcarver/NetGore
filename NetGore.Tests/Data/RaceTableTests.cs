@@ -12,12 +12,13 @@ public class RaceTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.RaceTable.Name == "Race Table");
-        ClassicAssert.IsTrue(BackgroundTables.RaceTable.DiceSides == 100);
+        var raceTable = new RaceTable();
+        ClassicAssert.IsTrue(raceTable.Name == nameof(RaceTable));
+        ClassicAssert.IsTrue(raceTable.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.RaceTable.DiceSides; i++)
+        for (int i = 1; i <= raceTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.RaceTable.GetEntryByNumber(i);
+            var entry = raceTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +29,7 @@ public class RaceTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

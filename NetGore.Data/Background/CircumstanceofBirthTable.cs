@@ -19,15 +19,18 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
 
 namespace NetGore.Data.Background;
 
 /// <summary>
 /// Determine the circumstances of your birth.
 /// </summary>
-public partial class BackgroundTables
+public class CircumstanceofBirthTable : RandomRangeTable, ICircumstanceofBirthTable
 {
     //Table: Circumstance of Birth
     //d%	Result
@@ -54,10 +57,12 @@ public partial class BackgroundTables
     /// <summary>
     /// Determine the circumstances of your birth.
     /// </summary>
-    public static RandomRangeTable CircumstanceofBirthTable { get; } = new()
+    [SetsRequiredMembers]
+    public CircumstanceofBirthTable()
     {
-        Name = "Circumstance of Birth Table",
-        DiceSides = 100,
+        Name = nameof(CircumstanceofBirthTable);
+        Description = "Circumstance of Birth Table";
+        DiceSides = 100;
         Table =
         [
             #region "Lower-Class Birth"
@@ -82,7 +87,7 @@ public partial class BackgroundTables
                 {
                     TraitEnum.PovertyStricken,
                 },
-                AlternateTable = BackgroundTables.ProfessionTable
+                AlternateTable = nameof(ProfessionTable),
             },
             #endregion
 
@@ -137,7 +142,7 @@ public partial class BackgroundTables
                     TraitEnum.Influence,
                     TraitEnum.RichParents,
                 },
-                AlternateTable = NobilityTable
+                AlternateTable = nameof(NobilityTable),
             },
             #endregion
 
@@ -153,7 +158,7 @@ public partial class BackgroundTables
                     "family and grew up in a family of " +
                     "a different race than your own. " +
                     "Roll on Table: Race.",
-                AlternateTable = RaceTable
+                AlternateTable = nameof(RaceTable),
             },
             #endregion
 
@@ -173,7 +178,7 @@ public partial class BackgroundTables
                     "birth family and a second time for " +
                     "your adoptive family.You gain access " +
                     "to traits granted by both sets of parents.",
-                AlternateTable = ProfessionTable
+                AlternateTable = nameof(ProfessionTable),
             },
             #endregion
 
@@ -511,6 +516,6 @@ public partial class BackgroundTables
                 }
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }

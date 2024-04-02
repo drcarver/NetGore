@@ -61,7 +61,7 @@ public class Gnome : IRace
         //the following: Draconic, Dwarven, Elven,
         //Giant, Goblin, and Orc.
         creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Gnome);
+        creature.Languages.Add(LanguageEnum.Gnomish);
         creature.Languages.Add(LanguageEnum.Sylvan);
     }
 

@@ -1,7 +1,10 @@
 ﻿using NetGore.Core.Models;
 
-namespace NetGore.Core.Interfaces;
+namespace NetGore.Data.Interfaces;
 
+/// <summary>
+/// The random range table
+/// </summary>
 public interface IRandomRangeTable
 {
     /// <summary>

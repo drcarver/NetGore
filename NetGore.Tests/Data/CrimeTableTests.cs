@@ -12,13 +12,21 @@ public class CrimeTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.CrimeTable.Name == "CrimeTable");
-        ClassicAssert.IsTrue(BackgroundTables.CrimeTable.DiceSides == 100);
+        var table = new CrimeTable();
+        ClassicAssert.IsTrue(table.Name == nameof(CrimeTable));
+        ClassicAssert.IsTrue(table.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.CrimeTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.CrimeTable.GetEntryByNumber(i);
-            ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
+            var entry = table.GetEntryByNumber(i);
+            try
+            {
+                ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentOutOfRangeException($"Index={i}");
+            }
         }
     }
 
@@ -28,7 +36,7 @@ public class CrimeTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

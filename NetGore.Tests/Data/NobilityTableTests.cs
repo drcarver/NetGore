@@ -12,12 +12,13 @@ public class NobilityTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.NobilityTable.Name == "NobilityTable");
-        ClassicAssert.IsTrue(BackgroundTables.NobilityTable.DiceSides == 100);
+        var nobilityTable = new NobilityTable();
+        ClassicAssert.IsTrue(new NobilityTable().Name == nameof(NobilityTable));
+        ClassicAssert.IsTrue(new NobilityTable().DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.NobilityTable.DiceSides; i++)
+        for (int i = 1; i <=  nobilityTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.NobilityTable.GetEntryByNumber(i);
+            var entry = nobilityTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +29,7 @@ public class NobilityTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

@@ -61,7 +61,7 @@ public class Elf : IRace
         //page for more information about these
         //languages.
         creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Elven);
+        creature.Languages.Add(LanguageEnum.Elvish);
 
     }
 

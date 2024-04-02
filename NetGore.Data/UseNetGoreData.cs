@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
+using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Services;
 
@@ -17,7 +19,14 @@ public static class DataServices
             .AddSingleton<ICharacterService, CharacterService>()
             .AddSingleton<IClassService, ClassService>()
             .AddSingleton<IPlayerCharacter, PlayerCharacter>()
-            .AddSingleton<IAccountService, AccountService>();
+            .AddSingleton<IAccountService, AccountService>()
+            .AddSingleton<ICircumstanceofBirthTable, CircumstanceofBirthTable>()
+            .AddSingleton<ICrimeTable, CrimeTable>()
+            .AddSingleton<INobilityTable, NobilityTable>()
+            .AddSingleton<IProfessionTable, ProfessionTable>()
+            .AddSingleton<IRaceTable, RaceTable>()
+            .AddSingleton<ILanguageTable, LanguageTable>()
+            ;
 
         return collection;
     }

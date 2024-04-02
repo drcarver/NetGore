@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
-using NetGore.Core.Interfaces;
+using NetGore.Data.Interfaces;
 
 namespace NetGore.Core.Models;
 

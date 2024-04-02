@@ -35,7 +35,7 @@ public class Commoner : Character
     /// <summary>
     /// The commoner's profession
     /// </summary>
-    public RandomTableEntry? Profession { get; private set; }
+    public RandomTableRangeEntry? Profession { get; private set; }
     
     /// <summary>
     /// The race Service
@@ -67,7 +67,7 @@ public class Commoner : Character
         RaceService.SetRace(this);
 
         // The commoner profession
-        Profession = BackgroundTables.ProfessionTable.GetRandomEntry();
+        Profession = new ProfessionTable().GetRandomEntry();
 
         //Commoner
         //Medium humanoid(any race),	any alignment
