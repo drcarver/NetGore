@@ -2,7 +2,7 @@
 
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
-using NetGore.Data.Interfaces;
+using NetGore.Core.Interfaces;
 
 namespace NetGore.Data.Models;
 

@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class ConflictResolutionTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.ConflictResolutionTable.Name == "The Conflict Resolution Table");
-        ClassicAssert.IsTrue(BackgroundTables.ConflictResolutionTable.DiceSides == 8);
+        var conflictResolutionTable = new ConflictResolutionTable();
+        ClassicAssert.IsTrue(conflictResolutionTable.Name == nameof(ConflictResolutionTable));
+        ClassicAssert.IsTrue(conflictResolutionTable.DiceSides == 8);
 
-        for (int i = 1; i <= BackgroundTables.ConflictResolutionTable.DiceSides; i++)
+        for (int i = 1; i <= conflictResolutionTable.DiceSides; i++)
         {
-            var entry = BackgroundTables.ConflictResolutionTable.GetEntryByNumber(i);
+            var entry = conflictResolutionTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class ConflictResolutionTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, RandomTableRangeEntry? entry)
     {
         if (entry == null)
         {

@@ -1,7 +1,6 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
 
-namespace NetGore.Data.Interfaces;
+namespace NetGore.Core.Interfaces;
 
 public interface IRandomTableRangeEntry
 {

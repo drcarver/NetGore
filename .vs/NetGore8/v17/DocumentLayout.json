@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\data\\conflictmotivationtabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\data\\conflictmotivationtabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.items\\armortable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|solutionrelative:netgore.items\\armortable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.items\\itembase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|solutionrelative:netgore.items\\itembase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.items\\armorentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|solutionrelative:netgore.items\\armorentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.items\\exchangerates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}|NetGore.Items\\NetGore.Items.csproj|solutionrelative:netgore.items\\exchangerates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.characterclasses\\models\\barbarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|solutionrelative:netgore.characterclasses\\models\\barbarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.characterclasses\\interfaces\\iclassfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|solutionrelative:netgore.characterclasses\\interfaces\\iclassfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.characterclasses\\models\\classfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D295D67-39FA-4865-A878-69649C2021D0}|NetGore.CharacterClasses\\NetGore.CharacterClasses.csproj|solutionrelative:netgore.characterclasses\\models\\classfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ArmorTable.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ArmorTable.cs",
+              "RelativeDocumentMoniker": "NetGore.Items\\ArmorTable.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ArmorTable.cs",
+              "RelativeToolTip": "NetGore.Items\\ArmorTable.cs",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAABEAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T01:02:39.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArmorEntry.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ArmorEntry.cs",
+              "RelativeDocumentMoniker": "NetGore.Items\\ArmorEntry.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ArmorEntry.cs",
+              "RelativeToolTip": "NetGore.Items\\ArmorEntry.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T23:43:54.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExchangeRates.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ExchangeRates.cs",
+              "RelativeDocumentMoniker": "NetGore.Items\\ExchangeRates.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\ExchangeRates.cs",
+              "RelativeToolTip": "NetGore.Items\\ExchangeRates.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T23:36:31.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Itembase.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\Itembase.cs",
+              "RelativeDocumentMoniker": "NetGore.Items\\Itembase.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Items\\Itembase.cs",
+              "RelativeToolTip": "NetGore.Items\\Itembase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T23:28:51.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IClassFeature.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Interfaces\\IClassFeature.cs",
+              "RelativeDocumentMoniker": "NetGore.CharacterClasses\\Interfaces\\IClassFeature.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Interfaces\\IClassFeature.cs",
+              "RelativeToolTip": "NetGore.CharacterClasses\\Interfaces\\IClassFeature.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:03:30.807Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConflictMotivationTableTests.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\ConflictMotivationTableTests.cs",
-              "RelativeDocumentMoniker": "NetGore.Tests\\Data\\ConflictMotivationTableTests.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\ConflictMotivationTableTests.cs",
-              "RelativeToolTip": "NetGore.Tests\\Data\\ConflictMotivationTableTests.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAABEAAAA5AAAA",
+              "DocumentIndex": 6,
+              "Title": "ClassFeature.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Models\\ClassFeature.cs",
+              "RelativeDocumentMoniker": "NetGore.CharacterClasses\\Models\\ClassFeature.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Models\\ClassFeature.cs",
+              "RelativeToolTip": "NetGore.CharacterClasses\\Models\\ClassFeature.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T16:46:54.71Z",
+              "WhenOpened": "2024-04-02T19:09:38.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Barbarian.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Models\\Barbarian.cs",
+              "RelativeDocumentMoniker": "NetGore.CharacterClasses\\Models\\Barbarian.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.CharacterClasses\\Models\\Barbarian.cs",
+              "RelativeToolTip": "NetGore.CharacterClasses\\Models\\Barbarian.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAAAPsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:00:16.242Z",
               "EditorCaption": ""
             }
           ]

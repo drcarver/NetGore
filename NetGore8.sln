@@ -44,6 +44,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Features.Client", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.Features.Server", "NetGore.Features.Server\NetGore.Features.Server.csproj", "{EB46B55E-A698-42C4-B946-D7D9BBE62365}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.CharacterClasses", "NetGore.CharacterClasses\NetGore.CharacterClasses.csproj", "{9D295D67-39FA-4865-A878-69649C2021D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.Items", "NetGore.Items\NetGore.Items.csproj", "{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +108,14 @@ Global
 		{EB46B55E-A698-42C4-B946-D7D9BBE62365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB46B55E-A698-42C4-B946-D7D9BBE62365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB46B55E-A698-42C4-B946-D7D9BBE62365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D295D67-39FA-4865-A878-69649C2021D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D295D67-39FA-4865-A878-69649C2021D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D295D67-39FA-4865-A878-69649C2021D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D295D67-39FA-4865-A878-69649C2021D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

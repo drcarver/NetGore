@@ -1,6 +1,4 @@
-﻿using NetGore.Data.Models;
-
-namespace NetGore.Data.Interfaces;
+﻿namespace NetGore.Core.Interfaces;
 
 /// <summary>
 /// The random range table
@@ -20,25 +18,25 @@ public interface IRandomRangeTable
     /// <summary>
     /// The actual table
     /// </summary>
-    List<RandomTableRangeEntry>? Table { get; set; }
+    List<IRandomTableRangeEntry>? Table { get; set; }
 
     /// <summary>
     /// Get a entry from the table based on a random 
     /// dice roll
     /// </summary>
     /// <returns>The selected RandomTableEntry.</returns>
-    RandomTableRangeEntry? GetRandomEntry();
+    IRandomTableRangeEntry? GetRandomEntry();
 
     /// <summary>
     /// Get a entry from the table based on it's name
     /// </summary>
     /// <returns>The selected RandomTableEntry.</returns>
-    RandomTableRangeEntry? GetEntryByName(string name);
+    IRandomTableRangeEntry? GetEntryByName(string name);
 
     /// <summary>
     /// Get a entry from the table based on it's number
     /// in a range
     /// </summary>
     /// <returns>The selected RandomTableEntry.</returns>
-    RandomTableRangeEntry? GetEntryByNumber(int number);
+    IRandomTableRangeEntry? GetEntryByNumber(int number);
 }

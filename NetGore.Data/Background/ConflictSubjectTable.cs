@@ -19,8 +19,12 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -31,7 +35,7 @@ namespace NetGore.Data.Background;
 /// child or a young person does the subject affect 
 /// the accumulation of CP.
 /// </summary>
-public partial class BackgroundTables
+public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
 {
     //Table: Conflict Subject
     //d20 Result
@@ -58,18 +62,19 @@ public partial class BackgroundTables
     /// <summary>
     /// Conflict Subject Table
     /// </summary>
-    public static RandomTable ConflictSubjectTable { get; } = new()
+    [SetsRequiredMembers]
+    public ConflictSubjectTable()
     {
-        Name = "The Conflicts Subject Table",
-        DiceSides = 20,
+        Name = nameof(ConflictSubjectTable);
+        Description = "The Conflicts Subject Table";
+        DiceSides = 20;
         Table =
         [
             #region Commoner
             //1	Commoner
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 01,
-                UpperRange = 01,
+                Range = new Range(01, 01),
                 Name = nameof(ConflictSubjectEnum.Commoner),
                 ConflictPoints = 0
             },
@@ -77,10 +82,9 @@ public partial class BackgroundTables
 
             #region Merchant
             //2	Merchant
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 02,
-                UpperRange = 02,
+                Range = new Range(02, 02),
                 Name = nameof(ConflictSubjectEnum.Merchant),
                 ConflictPoints = 0
             },
@@ -88,10 +92,9 @@ public partial class BackgroundTables
 
             #region Tradesperson
             //3	Tradesperson
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 03,
-                UpperRange = 03,
+                Range = new Range(03, 03),
                 Name = nameof(ConflictSubjectEnum.Tradesperson),
                 ConflictPoints = 0
             },
@@ -99,10 +102,9 @@ public partial class BackgroundTables
 
             #region Artisan
             //4	Artisan
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 04,
-                UpperRange = 04,
+                Range = new Range(04, 04),
                 Name = nameof(ConflictSubjectEnum.Artisan),
                 ConflictPoints = 0
             },
@@ -110,10 +112,9 @@ public partial class BackgroundTables
 
             #region Civic or military official
             //5	Civic or military official
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 05,
-                UpperRange = 05,
+                Range = new Range(05, 05),
                 Name = nameof(ConflictSubjectEnum.Civicormilitaryofficial),
                 ConflictPoints = 0
             },
@@ -121,10 +122,9 @@ public partial class BackgroundTables
                     
             #region Noble
             //6	Noble
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 06,
-                UpperRange = 06,
+                Range = new Range(06, 06),
                 Name = nameof(ConflictSubjectEnum.Noble),
                 ConflictPoints = 0
             },
@@ -132,10 +132,9 @@ public partial class BackgroundTables
                     
             #region Leader
             //7	Leader
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 07,
-                UpperRange = 07,
+                Range = new Range(07, 07),
                 Name = nameof(ConflictSubjectEnum.Leader),
                 ConflictPoints = 0
             },
@@ -143,10 +142,9 @@ public partial class BackgroundTables
                     
             #region Clergy
             //8	Clergy
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 08,
-                UpperRange = 08,
+                Range = new Range(08, 08),
                 Name = nameof(ConflictSubjectEnum.Clergy),
                 ConflictPoints = 0
             },
@@ -154,10 +152,9 @@ public partial class BackgroundTables
                     
             #region Soldier or warrior
             //9	Soldier or warrior
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 09,
-                UpperRange = 09,
+                Range = new Range(09, 09),
                 Name = nameof(ConflictSubjectEnum.Soldierorwarrior),
                 ProperName = "Soldier or warrior",
                 ConflictPoints = 0
@@ -166,10 +163,9 @@ public partial class BackgroundTables
                     
             #region Spellcaster
             //10	Spellcaster
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 10,
-                UpperRange = 10,
+                Range = new Range(10, 10),
                 Name = nameof(ConflictSubjectEnum.Spellcaster),
                 ProperName = "Spellcaster",
                 ConflictPoints = 0
@@ -178,10 +174,9 @@ public partial class BackgroundTables
                     
             #region Scoundrel
             //11	Scoundrel
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 11,
-                UpperRange = 11,
+                Range = new Range(11, 11),
                 Name = nameof(ConflictSubjectEnum.Scoundrel),
                 ProperName = "Scoundrel",
                 ConflictPoints = 0
@@ -190,10 +185,9 @@ public partial class BackgroundTables
                     
             #region Child or young person
             //12	Child or young person
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 12,
-                UpperRange = 12,
+                Range = new Range(12, 12),
                 Name = nameof(ConflictSubjectEnum.Child),
                 ProperName = "Child or young person",
                 ConflictPoints = 1
@@ -202,10 +196,9 @@ public partial class BackgroundTables
                     
             #region Family member
             //13	Family member
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 13,
-                UpperRange = 13,
+                Range = new Range(13, 13),
                 Name = nameof(ConflictSubjectEnum.Familymember),
                 ProperName = "Family member",
                 ConflictPoints = 0
@@ -214,10 +207,9 @@ public partial class BackgroundTables
                     
             #region Close friend
             //14	Close friend
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 14,
-                UpperRange = 14,
+                Range = new Range(14, 14),
                 Name = nameof(ConflictSubjectEnum.Closefriend),
                 ProperName = "Close friend",
                 ConflictPoints = 0
@@ -226,10 +218,9 @@ public partial class BackgroundTables
                     
             #region Lover or former lover
             //15	Lover or former lover
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 15,
-                UpperRange = 15,
+                Range = new Range(15, 15),
                 Name = nameof(ConflictSubjectEnum.Loverorformerlover),
                 ProperName = "Lover or former lover",
                 ConflictPoints = 0
@@ -238,10 +229,9 @@ public partial class BackgroundTables
                     
             #region Enemy or rival
             //16	Enemy or rival
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 16,
-                UpperRange = 16,
+                Range = new Range(16, 16),
                 Name = nameof(ConflictSubjectEnum.Enemyorrival),
                 ProperName = "Enemy or rival",
                 ConflictPoints = 0
@@ -250,10 +240,9 @@ public partial class BackgroundTables
                     
             #region Gangster or underworld figure
             //17	Gangster or underworld figure
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 17,
-                UpperRange = 17,
+                Range = new Range(17, 17),
                 Name = nameof(ConflictSubjectEnum.Gangsterorunderworldfigure),
                 ProperName = "Gangster or underworld figure",
                 ConflictPoints = 0
@@ -262,10 +251,9 @@ public partial class BackgroundTables
                     
             #region Adventurer
             //18	Adventurer
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 18,
-                UpperRange = 18,
+                Range = new Range(18, 18),
                 Name = nameof(ConflictSubjectEnum.Adventurer),
                 ProperName = "Adventurer",
                 ConflictPoints = 0
@@ -274,10 +262,9 @@ public partial class BackgroundTables
                     
             #region Humanoid monster
             //19	Humanoid monster
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 19,
-                UpperRange = 19,
+                Range = new Range(19, 19),
                 Name = nameof(ConflictSubjectEnum.Humanoidmonster),
                 ProperName = "Humanoid monster",
                 ConflictPoints = 0
@@ -286,15 +273,14 @@ public partial class BackgroundTables
                     
             #region Non-humanoid monster
             //20	Non-humanoid monster    
-            new RandomTableEntry
+            new RandomTableRangeEntry
             {
-                LowerRange = 20,
-                UpperRange = 20,
+                Range = new Range(20, 20),
                 Name = nameof(ConflictSubjectEnum.Nonhumanoidmonster),
                 ProperName = "Non-humanoid monster",
                 ConflictPoints = 0
             },
             #endregion
-        ],
-    };
+        ];
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace NetGore.Core.Enum;
+﻿namespace NetGore.CharacterClasses.Enum;
 
 /// <summary>
 /// The available skills
