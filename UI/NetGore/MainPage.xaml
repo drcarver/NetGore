@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NetGore.MainPage">
+             x:Class="NetGore.MainPage"
+             xmlns:viewmodel="clr-namespace:NetGore.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
 
     <Grid
         RowDefinitions="100,Auto,*"
@@ -15,26 +17,31 @@
                BackgroundColor="Transparent">
         </Image>
 
-        <Entry Placeholder="Enter Task" Grid.Row="1" />
-        <Button Text="Add" Grid.Row="1" Grid.Column="2" />
+        <Entry Placeholder="Enter Task" Grid.Row="1" 
+               Text="{Binding Text}" />
+        <Button Text="Add" Grid.Row="1" Grid.Column="2" 
+                Command="{Binding AddCommand}"/>
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
-            <CollectionView.ItemsSource>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Items}">
+            <!--<CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Apples</x:String>
                     <x:String>Grapes</x:String>
                     <x:String>Peaches</x:String>
                 </x:Array>
-            </CollectionView.ItemsSource>
+            </CollectionView.ItemsSource>-->
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
                                 <SwipeItem Text="Delete"
-                                           BackgroundColor="Crimson">
-                                   
-                                </SwipeItem>
+                                           BackgroundColor="Crimson"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}" 
+                                           CommandParameter="{Binding .}" />
+
+
                             </SwipeItems>                            
                         </SwipeView.RightItems>
                         <Grid Padding="0,5">
@@ -46,9 +53,6 @@
                     </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-
         </CollectionView>
-
-
-    </Grid>
+   </Grid>
 </ContentPage>

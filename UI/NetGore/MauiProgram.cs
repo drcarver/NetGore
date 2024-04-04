@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 using NetGore.Data;
+using NetGore.ViewModel;
 
 namespace NetGore;
 
@@ -25,11 +26,11 @@ public static class MauiProgram
             builder.Logging.AddDebug();
 #endif
         // Services
-        Ioc.Default.ConfigureServices(
-            new ServiceCollection()
-                .UseNetGoreData()
-                .UseNetGoreUIAdmin()
-                .BuildServiceProvider());
+        builder.Services
+            .AddSingleton<MainPage, MainViewModel>()
+            .UseNetGoreData()
+            .UseNetGoreUIAdmin()
+            .BuildServiceProvider(); 
 
         return builder.Build();
     }

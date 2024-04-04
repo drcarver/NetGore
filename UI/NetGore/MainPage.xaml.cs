@@ -1,12 +1,14 @@
-﻿namespace NetGore;
+﻿using NetGore.ViewModel;
+
+namespace NetGore;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-
-    public MainPage()
+    public MainPage(MainViewModel vm)
     {
         InitializeComponent();
+
+        BindingContext = vm;
     }
 }
 
