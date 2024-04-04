@@ -3,10 +3,9 @@ using NetGore.Core.Interfaces;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
-
 using NUnit.Framework.Legacy;
 
-namespace NetGore.Tests.Data;
+namespace NetGore.Tests.Data.Background;
 
 [TestFixture]
 public class NobilityTableTests
@@ -18,9 +17,9 @@ public class NobilityTableTests
         ClassicAssert.IsTrue(nobilityTable.Name == nameof(NobilityTable));
         ClassicAssert.IsTrue(nobilityTable.DiceSides == 100);
 
-        for (int i = 1; i <=  nobilityTable.DiceSides; i++)
+        for (int i = 1; i <= nobilityTable.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry) nobilityTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)nobilityTable.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -41,37 +40,37 @@ public class NobilityTableTests
         switch (i)
         {
             //01–60	Gentry
-            case int n when (n>= 1 && n <= 60):
+            case int n when n >= 1 && n <= 60:
                 return entry.Name == nameof(NobilityEnum.Gentry)
                     && entry.Traits.Count == 0;
 
             //61–78	Knight
-            case int n when (n >= 61 && n <= 78):
+            case int n when n >= 61 && n <= 78:
                 return entry.Name == nameof(NobilityEnum.Knight)
                     && entry.Traits.Count == 0;
 
             //79–85	Baron
-            case int n when (n >= 79 && n <= 85):
+            case int n when n >= 79 && n <= 85:
                 return entry.Name == nameof(NobilityEnum.Baron)
                     && entry.Traits.Count == 0;
 
             //86–91	Count
-            case int n when (n >= 86 && n <= 91):
+            case int n when n >= 86 && n <= 91:
                 return entry.Name == nameof(NobilityEnum.Count)
                     && entry.Traits.Count == 0;
 
             //92–96	Duke
-            case int n when (n >= 92 && n <= 96):
+            case int n when n >= 92 && n <= 96:
                 return entry.Name == nameof(NobilityEnum.Duke)
                     && entry.Traits.Count == 0;
 
             //97–99	Minor Prince
-            case int n when (n >= 97 && n <= 99):
+            case int n when n >= 97 && n <= 99:
                 return entry.Name == nameof(NobilityEnum.MinorPrince)
                     && entry.Traits.Count == 0;
 
             //100	Regent
-            case int n when (n >= 100 && n <= 100):
+            case int n when n >= 100 && n <= 100:
                 return entry.Name == nameof(NobilityEnum.Regent)
                     && entry.Traits.Count == 0;
         }

@@ -5,7 +5,7 @@ using NetGore.Data.Background;
 
 using NUnit.Framework.Legacy;
 
-namespace NetGore.Tests.Data;
+namespace NetGore.Tests.Data.Background;
 
 [TestFixture]
 public class HeightWeightAgeTests
@@ -34,81 +34,81 @@ public class HeightWeightAgeTests
     }
 
     [Test]
-    public void CalculateAgeTest() 
+    public void CalculateAgeTest()
     {
         int StartingAge = 40;
 
         // barbarians 3d6
         int age = 0;
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Barbarian, StartingAge, "3d6", "5d6", "7d6");
-        ClassicAssert.IsTrue(age >= StartingAge + 3 
-            && age <= StartingAge + (3 * 6),
+        ClassicAssert.IsTrue(age >= StartingAge + 3
+            && age <= StartingAge + 3 * 6,
             $"{nameof(ClassEnum.Barbarian)} Age={age} is outside of range");
 
         // rogues 3d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Rogue, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 3
-            && age <= StartingAge + (3 * 6),
+            && age <= StartingAge + 3 * 6,
             $"{nameof(ClassEnum.Rogue)} Age={age} is outside of range");
 
         // sorcerers 3d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Sorcerer, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 3
-            && age <= StartingAge + (3 * 6),
+            && age <= StartingAge + 3 * 6,
             $"{nameof(ClassEnum.Sorcerer)} Age={age} is outside of range");
 
         // warlocks. 3d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Warlock, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 3
-            && age <= StartingAge + (3 * 6),
+            && age <= StartingAge + 3 * 6,
             $"{nameof(ClassEnum.Warlock)} Age={age} is outside of range");
 
         // bards 5d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Bard, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 5
-            && age <= StartingAge + (5 * 6),
+            && age <= StartingAge + 5 * 6,
             $"{nameof(ClassEnum.Bard)} Age={age} is outside of range");
 
         // fighters 5d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Fighter, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 5
-            && age <= StartingAge + (5 * 6),
+            && age <= StartingAge + 5 * 6,
             $"{nameof(ClassEnum.Fighter)} Age={age} is outside of range");
 
         // paladins 5d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Paladin, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 5
-            && age <= StartingAge + (5 * 6),
+            && age <= StartingAge + 5 * 6,
             $"{nameof(ClassEnum.Paladin)} Age={age} is outside of range");
 
         // ranger 5d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Ranger, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 5
-            && age <= StartingAge + (5 * 6),
+            && age <= StartingAge + 5 * 6,
             $"{nameof(ClassEnum.Ranger)} Age={age} is outside of range");
 
         // clerics 7d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Cleric, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 7
-            && age <= StartingAge + (7 * 6),
+            && age <= StartingAge + 7 * 6,
             $"{nameof(ClassEnum.Cleric)} Age={age} is outside of range");
 
         // druids 7d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Druid, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 7
-            && age <= StartingAge + (7 * 6),
+            && age <= StartingAge + 7 * 6,
             $"{nameof(ClassEnum.Druid)} Age={age} is outside of range");
 
         // monks 7d6
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Monk, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 7
-            && age <= StartingAge + (7 * 6),
+            && age <= StartingAge + 7 * 6,
             $"{nameof(ClassEnum.Monk)} Age={age} is outside of range");
 
         // wizards 7d6.
         age = BackgroundTables.CalculateCharacterAge(ClassEnum.Wizard, StartingAge, "3d6", "5d6", "7d6");
         ClassicAssert.IsTrue(age >= StartingAge + 7
-            && age <= StartingAge + (7 * 6),
+            && age <= StartingAge + 7 * 6,
             $"{nameof(ClassEnum.Wizard)} Age={age} is outside of range");
     }
 }

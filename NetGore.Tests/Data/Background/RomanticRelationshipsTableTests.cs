@@ -2,10 +2,9 @@
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
-
 using NUnit.Framework.Legacy;
 
-namespace NetGore.Tests.Data;
+namespace NetGore.Tests.Data.Background;
 
 [TestFixture]
 public class RomanticRelationshipsTableTests
@@ -40,31 +39,31 @@ public class RomanticRelationshipsTableTests
         switch (i)
         {
             //1–2	One Significant Relationship
-            case int n when (n >= 1 && n <= 2):
+            case int n when n >= 1 && n <= 2:
                 return entry.Name == nameof(RomanticRelationshipsEnum.OneSignificantRelationship);
 
             //3–6	A Few Significant Relationships
-            case int n when (n >= 3 && n <= 6):
+            case int n when n >= 3 && n <= 6:
                 return entry.Name == nameof(RomanticRelationshipsEnum.AFewSignificantRelationships);
 
             //7–9	Several Significant Relationships
-            case int n when (n >= 7 && n <= 9):
+            case int n when n >= 7 && n <= 9:
                 return entry.Name == nameof(RomanticRelationshipsEnum.SeveralSignificantRelationships);
 
             //10–12	Current Lover
-            case int n when (n >= 10 && n <= 12):
+            case int n when n >= 10 && n <= 12:
                 return entry.Name == nameof(RomanticRelationshipsEnum.CurrentLover);
 
             //13–16	Several Inconsequential Relationships
-            case int n when (n >= 13 && n <= 16):
+            case int n when n >= 13 && n <= 16:
                 return entry.Name == nameof(RomanticRelationshipsEnum.SeveralInconsequentialRelationships);
 
             //17–18	Experience but No Substantial Relationships
-            case int n when (n >= 17 && n <= 18):
+            case int n when n >= 17 && n <= 18:
                 return entry.Name == nameof(RomanticRelationshipsEnum.ExperiencebutNoSubstantialRelationships);
 
             //19–20	No Experience
-            case int n when (n >= 19 && n <= 20):
+            case int n when n >= 19 && n <= 20:
                 return entry.Name == nameof(RomanticRelationshipsEnum.NoExperience);
         }
         return false;
