@@ -1,16 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using Microsoft.Maui.Graphics;
-
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 using NetGore.Data.Race;
 
-namespace NetGore.Data.Background;
+namespace NetGore.Data.Core;
 
-public class LanguageTable : RandomRangeTable, ILanguageTable
+public class LanguageTable : GameTable, ILanguageTable
 {
     /// <summary>
     /// The Language Table
@@ -29,7 +28,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
         [
             #region Common
             //01	Common
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(01, 01),
                 Name = nameof(LanguageEnum.Common),
@@ -38,7 +37,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Dwarvish
             //02	Dwarvish
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(02, 02),
                 Name = nameof(LanguageEnum.Dwarvish),
@@ -47,7 +46,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Elvish
             //03	Elvish
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(03, 03),
                 Name = nameof(LanguageEnum.Elvish),
@@ -56,7 +55,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Giant
             //04	Giant
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(04, 04),
                 Name = nameof(LanguageEnum.Giant),
@@ -65,7 +64,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Gnomish
             //05	Gnomish
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(05, 05),
                 Name = nameof(LanguageEnum.Gnomish),
@@ -74,7 +73,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Goblin
             //06	Goblin
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(06, 06),
                 Name = nameof(LanguageEnum.Goblin),
@@ -83,7 +82,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Halfling
             //07	Halfling
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(07, 07),
                 Name = nameof(LanguageEnum.Halfling),
@@ -92,7 +91,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Orc
             //08	Orc
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(08, 08),
                 Name = nameof(LanguageEnum.Orc),
@@ -101,7 +100,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Abyssal
             //09	Abyssal
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(09, 09),
                 Name = nameof(LanguageEnum.Abyssal),
@@ -110,7 +109,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Celestial
             //10	Celestial
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(10, 10),
                 Name = nameof(LanguageEnum.Celestial),
@@ -119,7 +118,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Draconic
             //11	Draconic
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(11, 11),
                 Name = nameof(LanguageEnum.Draconic),
@@ -128,7 +127,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Deep
             //12	Deep
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(12, 12),
                 Name = nameof(LanguageEnum.Deep),
@@ -137,7 +136,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Infernal
             //13	Infernal
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(13, 13),
                 Name = nameof(LanguageEnum.Infernal),
@@ -146,7 +145,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Primordial
             //14	Primordial
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(14, 14),
                 Name = nameof(LanguageEnum.Primordial),
@@ -155,7 +154,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Sylvan
             //15	Sylvan
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(15, 15),
                 Name = nameof(LanguageEnum.Sylvan),
@@ -164,7 +163,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Undercommon
             //16	Undercommon
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(16, 16),
                 Name = nameof(LanguageEnum.Undercommon),
@@ -173,7 +172,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Aquan
             //17	Aquan
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(17, 17),
                 Name = nameof(LanguageEnum.Aquan),
@@ -182,7 +181,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Gnoll
             //18	Gnoll
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(18, 18),
                 Name = nameof(LanguageEnum.Gnoll),
@@ -191,7 +190,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Auran
             //19	Auran
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(19, 19),
                 Name = nameof(LanguageEnum.Auran),
@@ -200,7 +199,7 @@ public class LanguageTable : RandomRangeTable, ILanguageTable
 
             #region Terran
             //20	Terran
-            new RandomTableRangeEntry
+            new GameTableEntry
             {
                 Range = new Range(20, 20),
                 Name = nameof(LanguageEnum.Terran),

@@ -37,7 +37,7 @@ namespace NetGore.Data.Background;
 /// The motivation affects the CP gained from 
 /// the conflict.
 /// </summary>
-public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTable
+public class ConflictMotivationTable : GameTable, IConflictMotivationTable
 {
     //Table: Motivation
     //d10 Result CP
@@ -63,7 +63,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
         [
             #region Justice
             //1	Justice	1
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(01, 01),
                 Name = nameof(ConflictMotivationEnum.Justice),
@@ -73,7 +73,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Love
             //2	Love	1
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(02, 02),
                 Name = nameof(ConflictMotivationEnum.Love),
@@ -83,7 +83,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Pressured or Manipulated
             //3	Pressured or Manipulated	2
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(03, 03),
                 Name = nameof(ConflictMotivationEnum.PressuredorManipulated),
@@ -94,7 +94,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Religion
             //4	Religion	2
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(04, 04),
                 Name = nameof(ConflictMotivationEnum.Religion),
@@ -105,7 +105,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Family
             //5	Family	3
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(05, 05),
                 Name = nameof(ConflictMotivationEnum.Family),
@@ -116,7 +116,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Money
             //6	Money	3
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(06, 06),
                 Name = nameof(ConflictMotivationEnum.Money),
@@ -127,7 +127,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Jealousy
             //7	Jealousy	4
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(07, 07),
                 Name = nameof(ConflictMotivationEnum.Jealousy),
@@ -138,7 +138,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Hatred or Malice
             //8	Hatred or Malice	4
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(08, 08),
                 Name = nameof(ConflictMotivationEnum.HatredorMalice),
@@ -149,7 +149,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Pleasure
             //9	Pleasure	5
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(09, 09),
                 Name = nameof(ConflictMotivationEnum.Pleasure),
@@ -160,7 +160,7 @@ public class ConflictMotivationTable : RandomRangeTable, IConflictMotivationTabl
 
             #region Amusement or Entertainment
             //10	Amusement or Entertainment	5    
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(10, 10),
                 Name = nameof(ConflictMotivationEnum.AmusementorEntertainment),

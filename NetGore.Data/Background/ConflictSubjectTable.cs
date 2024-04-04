@@ -22,7 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -35,7 +34,7 @@ namespace NetGore.Data.Background;
 /// child or a young person does the subject affect 
 /// the accumulation of CP.
 /// </summary>
-public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
+public class ConflictSubjectTable : GameTable, IConflictSubjectTable
 {
     //Table: Conflict Subject
     //d20 Result
@@ -72,7 +71,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
         [
             #region Commoner
             //1	Commoner
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(01, 01),
                 Name = nameof(ConflictSubjectEnum.Commoner),
@@ -82,7 +81,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
 
             #region Merchant
             //2	Merchant
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(02, 02),
                 Name = nameof(ConflictSubjectEnum.Merchant),
@@ -92,7 +91,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
 
             #region Tradesperson
             //3	Tradesperson
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(03, 03),
                 Name = nameof(ConflictSubjectEnum.Tradesperson),
@@ -102,7 +101,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
 
             #region Artisan
             //4	Artisan
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(04, 04),
                 Name = nameof(ConflictSubjectEnum.Artisan),
@@ -112,7 +111,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
 
             #region Civic or military official
             //5	Civic or military official
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(05, 05),
                 Name = nameof(ConflictSubjectEnum.Civicormilitaryofficial),
@@ -122,7 +121,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Noble
             //6	Noble
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(06, 06),
                 Name = nameof(ConflictSubjectEnum.Noble),
@@ -132,7 +131,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Leader
             //7	Leader
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(07, 07),
                 Name = nameof(ConflictSubjectEnum.Leader),
@@ -142,7 +141,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Clergy
             //8	Clergy
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(08, 08),
                 Name = nameof(ConflictSubjectEnum.Clergy),
@@ -152,7 +151,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Soldier or warrior
             //9	Soldier or warrior
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(09, 09),
                 Name = nameof(ConflictSubjectEnum.Soldierorwarrior),
@@ -163,7 +162,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Spellcaster
             //10	Spellcaster
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(10, 10),
                 Name = nameof(ConflictSubjectEnum.Spellcaster),
@@ -174,7 +173,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Scoundrel
             //11	Scoundrel
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(11, 11),
                 Name = nameof(ConflictSubjectEnum.Scoundrel),
@@ -185,7 +184,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Child or young person
             //12	Child or young person
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(12, 12),
                 Name = nameof(ConflictSubjectEnum.Child),
@@ -196,7 +195,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Family member
             //13	Family member
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(13, 13),
                 Name = nameof(ConflictSubjectEnum.Familymember),
@@ -207,7 +206,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Close friend
             //14	Close friend
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(14, 14),
                 Name = nameof(ConflictSubjectEnum.Closefriend),
@@ -218,7 +217,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Lover or former lover
             //15	Lover or former lover
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(15, 15),
                 Name = nameof(ConflictSubjectEnum.Loverorformerlover),
@@ -229,7 +228,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Enemy or rival
             //16	Enemy or rival
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(16, 16),
                 Name = nameof(ConflictSubjectEnum.Enemyorrival),
@@ -240,7 +239,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Gangster or underworld figure
             //17	Gangster or underworld figure
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(17, 17),
                 Name = nameof(ConflictSubjectEnum.Gangsterorunderworldfigure),
@@ -251,7 +250,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Adventurer
             //18	Adventurer
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(18, 18),
                 Name = nameof(ConflictSubjectEnum.Adventurer),
@@ -262,7 +261,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Humanoid monster
             //19	Humanoid monster
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(19, 19),
                 Name = nameof(ConflictSubjectEnum.Humanoidmonster),
@@ -273,7 +272,7 @@ public class ConflictSubjectTable : RandomRangeTable, IConflictSubjectTable
                     
             #region Non-humanoid monster
             //20	Non-humanoid monster    
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(20, 20),
                 Name = nameof(ConflictSubjectEnum.Nonhumanoidmonster),

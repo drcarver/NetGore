@@ -1,4 +1,4 @@
-﻿namespace NetGore.Items;
+﻿namespace NetGore.Data.Enum;
 
 /// <summary>
 /// Anyone can put on a suit of armor or strap a shield 
@@ -11,7 +11,7 @@
 /// involves Strength or Dexterity, and you can’t cast
 /// spells.
 /// </summary>
-public enum ArmorProficiencyEnum
+public enum ArmorCategoryEnum
 {
     /// <summary>
     /// Heavier armor interferes with the

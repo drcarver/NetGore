@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class MajorChildhoodEventTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.MajorChildhoodEventTable.Name == "Major Childhood Event Table");
-        ClassicAssert.IsTrue(BackgroundTables.MajorChildhoodEventTable.DiceSides == 100);
+        var table = new MajorChildhoodEventTable();
+        ClassicAssert.IsTrue(table.Description == "Major Childhood Event Table");
+        ClassicAssert.IsTrue(table.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.MajorChildhoodEventTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.MajorChildhoodEventTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry) table.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class MajorChildhoodEventTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, IBackgroundTableEntry entry)
     {
         if (entry == null)
         {

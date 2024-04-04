@@ -19,8 +19,12 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -33,7 +37,7 @@ namespace NetGore.Data.Background;
 /// one where there are few other members of your 
 /// race, outside of your family.
 /// </summary>
-public partial class BackgroundTables
+public class UnusualHomelandTable : GameTable, IUnusualHomelandTable
 {
     //Table: Unusual Homeland
     //d%	Result
@@ -51,37 +55,37 @@ public partial class BackgroundTables
     /// <summary>
     /// The Unusual Homeland Table
     /// </summary>
-    public static RandomTable UnusualHomelandTable { get; } = new()
+    [SetsRequiredMembers]
+    public UnusualHomelandTable()
     {
-        Name = "The Unusual Homeland Table",
-        DiceSides = 100,
+        Name = nameof(UnusualHomelandTable);
+        Description = "The Unusual Homeland Table";
+        DiceSides = 100;
         Table =
         [
             #region Subterranean
             //01–10	Subterranean You gain access to
             //the Surface Stranger regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 10,
+                Range = new Range(01,10),
                 Name = nameof(UnusualHomelandEnum.Subterranean),
                 Description =
                     "You gain access to the Surface " +
                     "Stranger regional trait.",
                 Traits =
-                { 
+                {
                     TraitEnum.SurfaceStranger,
-                },   
+                },
             },
             #endregion
 
             #region Mountains
             //11–25	Mountains You gain access to the
             //Highlander regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 25,
+                Range = new Range(11,25),
                 Name = nameof(UnusualHomelandEnum.Mountains),
                 Description =
                     "You gain access to the Highlander " +
@@ -96,10 +100,9 @@ public partial class BackgroundTables
             #region Plains
             //26–40	Plains You gain access to the
             //Savanna Child regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 26,
-                UpperRange = 40,
+                Range = new Range(26,40),
                 Name = nameof(UnusualHomelandEnum.Plains),
                 Description =
                     "You gain access to the Savanna " +
@@ -113,10 +116,9 @@ public partial class BackgroundTables
             #region "Town or Village"
             //41–50	Town or Village You gain access
             //to the Militia Veteran regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 50,
+                Range = new Range(41,50),
                 Name = nameof(UnusualHomelandEnum.TownorVillage),
                 ProperName = "Town or Village",
                 Description =
@@ -133,10 +135,9 @@ public partial class BackgroundTables
             //51–60	City or Metropolis You gain access
             //to the Civilized social trait and the
             //Vagabond Child regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51,60),
                 Name = nameof(UnusualHomelandEnum.CityorMetropolis),
                 ProperName = "City or Metropolis",
                 Description =
@@ -154,10 +155,9 @@ public partial class BackgroundTables
             #region Forest
             //61–70	Forest You gain access to the
             //Log Roller regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61,70),
                 Name = nameof(UnusualHomelandEnum.Forest),
                 Description =
                     "You gain access to the Log Roller " +
@@ -171,10 +171,9 @@ public partial class BackgroundTables
             #region "River, Swamp, or Wetlands"
             //71–80	River, Swamp, or Wetlands You gain
             //access to the River Rat regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = nameof(UnusualHomelandEnum.RiverSwamporWetlands),
                 ProperName = "River, Swamp, or Wetlands",
                 Description =
@@ -189,10 +188,9 @@ public partial class BackgroundTables
             #region Desert
             //81–85	Desert You gain access to the
             //Desert Child regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 85,
+                Range = new Range(81,85),
                 Name = nameof(UnusualHomelandEnum.Desert),
                 Description =
                     "You gain access to the Desert Child regional trait.",
@@ -206,10 +204,9 @@ public partial class BackgroundTables
             #region Sea-Souled
             //86–90	Sea You gain access to the
             //Sea-Souled regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 86,
-                UpperRange = 90,
+                Range = new Range(86,90),
                 Name = nameof(UnusualHomelandEnum.SeaSouled),
                 ProperName = "Sea-Souled",
                 Description =
@@ -224,10 +221,9 @@ public partial class BackgroundTables
             #region Tundra
             //91–95	Tundra You gain access to the
             //Tundra Child regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 95,
+                Range = new Range(91,95),
                 Name = nameof(UnusualHomelandEnum.Tundra),
                 Description =
                     "You gain access to the Tundra Child regional trait.",
@@ -242,10 +238,9 @@ public partial class BackgroundTables
             //96–100 Another Plane You gain access
             //to the Scholar of the Great Beyond
             //faith trait    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = nameof(UnusualHomelandEnum.AnotherPlane),
                 ProperName = "Another Plane",
                 Description =
@@ -256,6 +251,6 @@ public partial class BackgroundTables
                 },
             },
             #endregion
-        ],
-    };
+        ];
+    }
 }

@@ -19,8 +19,12 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -31,7 +35,7 @@ namespace NetGore.Data.Background;
 /// requires you to roll a d12 on this table instead 
 /// of a d20.
 /// </summary>
-public partial class BackgroundTables
+public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 {
     //Table: Romantic Relationships
     //d20 Result
@@ -45,18 +49,19 @@ public partial class BackgroundTables
     /// <summary>
     /// Romantic Relationships
     /// </summary>
-    public static RandomTable RomanticRelationshipsTable { get; } = new()
+    [SetsRequiredMembers]
+    public RomanticRelationshipsTable()
     {
-        Name = "Romantic Relationships Table",
-        DiceSides = 20,
+        Name = nameof(RomanticRelationshipsTable);
+        Description = "Romantic Relationships Table";
+        DiceSides = 20;
         Table =
         [
             #region "One Significant Relationship"
             //1–2	One Significant Relationship You had a true love once, but that time has passed.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 02,
+                Range = new Range(01,02),
                 Name = nameof(RomanticRelationshipsEnum.OneSignificantRelationship),
                 ProperName = "One Significant Relationship",
                 Description =
@@ -67,10 +72,9 @@ public partial class BackgroundTables
 
             #region "A Few Significant Relationships"
             //3–6	A Few Significant Relationships You’ve tried to make deep connections with individuals on several occasions, but it’s never worked out.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 03,
-                UpperRange = 06,
+                Range = new Range(03,06),
                 Name = nameof(RomanticRelationshipsEnum.AFewSignificantRelationships),
                 ProperName = "A Few Significant Relationships",
                 Description =
@@ -83,10 +87,9 @@ public partial class BackgroundTables
 
             #region "Several Significant Relationships"
             //7–9	Several Significant Relationships You’ve engaged in a number of partnerships, but for some reason or another your relationships always fail.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 07,
-                UpperRange = 09,
+                Range = new Range(07,09),
                 Name = nameof(RomanticRelationshipsEnum.SeveralSignificantRelationships),
                 ProperName = "Several Significant Relationships",
                 Description =
@@ -99,28 +102,23 @@ public partial class BackgroundTables
 
             #region "Current Lover"
             //10–12	Current Lover You are currently involved in a romantic relationship.You gain access to the True Love story feat.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 10,
-                UpperRange = 12,
+                Range = new Range(10,12),
                 Name = nameof(RomanticRelationshipsEnum.CurrentLover),
                 ProperName = "Current Lover",
                 Description =
                     "You are currently involved in a " +
                     "romantic relationship. You gain " +
                     "access to the True Love story feat.",
-                Traits =
-                {
-                },
             },
             #endregion
 
             #region "Several Inconsequential Relationships"
             //13–16	Several Inconsequential Relationships You have had many lovers but no long-lasting, meaningful relationships.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 13,
-                UpperRange = 16,
+                Range = new Range(13,16),
                 Name = nameof(RomanticRelationshipsEnum.SeveralInconsequentialRelationships),
                 ProperName = "Several Inconsequential Relationships",
                 Description =
@@ -131,10 +129,9 @@ public partial class BackgroundTables
 
             #region "Experience but No Substantial Relationships"
             //17–18	Experience but No Substantial Relationships You’ve had a fling or two, but have so far shied away from any ties or commitments.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 17,
-                UpperRange = 18,
+                Range = new Range(17,18),
                 Name = nameof(RomanticRelationshipsEnum.ExperiencebutNoSubstantialRelationships),
                 ProperName = "Experience but No Substantial Relationships",
                 Description =
@@ -146,10 +143,9 @@ public partial class BackgroundTables
 
             #region "No Experience"
             //19–20	No Experience You have never experienced any kind of romantic connection whatsoever.
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 19,
-                UpperRange = 20,
+                Range = new Range(19,20),
                 Name = nameof(RomanticRelationshipsEnum.NoExperience),
                 ProperName = "No Experience",
                 Description =
@@ -158,7 +154,7 @@ public partial class BackgroundTables
                     "whatsoever.",
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }
 

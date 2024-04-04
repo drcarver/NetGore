@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 
 using NetGore.Core.Abilities;
 using NetGore.Core.Base;
-using NetGore.Core.Data;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 
@@ -157,7 +156,8 @@ public class Creature : DataObject, ICreature
     /// </summary>
     /// <param name="loggerFactory">The factory for logging messages</param>
     [SetsRequiredMembers]
-    public Creature(ILoggerFactory loggerFactory) :
+    public Creature(ILoggerFactory loggerFactory,
+        IGenderTable genderTable) :
         this()
     {
         _logger = loggerFactory.CreateLogger<Creature>();
@@ -178,7 +178,7 @@ public class Creature : DataObject, ICreature
         Charisma = new Charisma(_logger, this);
 
         // Generate the gender
-        GenderEnum = Gender.GetGender();
+        //GenderEnum = new GenderTable.GetGender();
 
         // Saving throws
         WillSave = new WillSave(_logger,  this);

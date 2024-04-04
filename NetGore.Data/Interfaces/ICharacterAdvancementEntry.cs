@@ -1,12 +1,9 @@
-﻿namespace NetGore.Data.Interfaces;
+﻿using NetGore.Core.Interfaces;
 
-public interface ICharacterAdvancementEntry
+namespace NetGore.Data.Interfaces;
+
+public interface ICharacterAdvancementEntry : IGameTableEntry
 {
-    /// <summary>
-    /// The experience points for this level
-    /// </summary>
-    Range ExperiencePoints { get; set; }
-
     /// <summary>
     /// The level
     /// </summary>

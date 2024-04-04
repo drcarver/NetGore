@@ -3,6 +3,8 @@
 using NetGore.CharacterClasses.Enum;
 using NetGore.Core.Abilities;
 using NetGore.Core.Base;
+using NetGore.Core.Models;
+using NetGore.Data.Enum;
 
 namespace NetGore.CharacterClasses.Models;
 
@@ -24,7 +26,7 @@ public class CharacterClassBase : BaseObject
     /// <summary>
     /// Armor Proficiency
     /// </summary>
-    public List<ArmorProficiencyEnum> ArmorProficiency { get; set; } = [];
+    public List<ArmorCategoryEnum> ArmorCategory { get; set; } = [];
 
     /// <summary>
     /// Weapon Proficiency

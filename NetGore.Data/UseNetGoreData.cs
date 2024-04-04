@@ -3,8 +3,10 @@
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Core;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Services;
+using NetGore.Items;
 
 namespace NetGore.Data;
 
@@ -20,12 +22,11 @@ public static class DataServices
             .AddSingleton<IPlayerCharacter, PlayerCharacter>()
             .AddSingleton<IAccountService, AccountService>()
 
-            // Transient Random Tables
+            // Transient Background Tables
             .AddTransient<IAdoptedOutsideYourRaceTable, AdoptedOutsideYourRaceTable>()
-            .AddTransient<IAlignmentTable, AlignmentTable>()
-            .AddTransient<ICharacterAdvancement, CharacterAdvancementTable>()
             .AddTransient<ICharacterDrawbackTable, CharacterDrawbackTable>()
             .AddTransient<ICircumstanceofBirthTable, CircumstanceofBirthTable>()
+            .AddTransient<IConflictTable, ConflictTable>()
             .AddTransient<IConflictMotivationTable, ConflictMotivationTable>()
             .AddTransient<IConflictResolutionTable, ConflictResolutionTable>()
             .AddTransient<IConflictSubjectTable, ConflictSubjectTable>()
@@ -34,8 +35,12 @@ public static class DataServices
             .AddTransient<INobilityTable, NobilityTable>()
             .AddTransient<IProfessionTable, ProfessionTable>()
             .AddTransient<IRaceTable, RaceTable>()
-            ;
 
+            // Core Tables
+            .AddTransient<IAlignmentTable, AlignmentTable>()
+            .AddTransient<IArmorTable, ArmorTable>()
+            .AddTransient<ICharacterAdvancementTable, CharacterAdvancementTable>()
+            ;
         return collection;
     }
 }

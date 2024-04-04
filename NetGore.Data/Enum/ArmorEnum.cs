@@ -1,4 +1,4 @@
-﻿namespace NetGore.Items;
+﻿namespace NetGore.Data.Enum;
 
 public enum ArmorEnum
 {

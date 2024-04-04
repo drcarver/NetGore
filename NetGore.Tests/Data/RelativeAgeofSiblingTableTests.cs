@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class RelativeAgeofSiblingTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.RelativeAgeofSiblingTable.Name == "Relative Age of Sibling Table");
-        ClassicAssert.IsTrue(BackgroundTables.RelativeAgeofSiblingTable.DiceSides == 100);
+        var table = new RelativeAgeofSiblingTable();
+        ClassicAssert.IsTrue(table.Description == "Relative Age of Sibling Table");
+        ClassicAssert.IsTrue(table.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.RelativeAgeofSiblingTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.RelativeAgeofSiblingTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry) table.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class RelativeAgeofSiblingTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, IBackgroundTableEntry entry)
     {
         if (entry == null)
         {

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj" />
+    <ProjectReference Include="..\NetGore.Data\NetGore.Data.csproj" />
   </ItemGroup>
 
 </Project>

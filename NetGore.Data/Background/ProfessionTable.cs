@@ -22,7 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -36,7 +35,7 @@ namespace NetGore.Data.Background;
 /// to determine the principal profession of your 
 /// parents.
 /// </summary>
-public class ProfessionTable : RandomRangeTable, IProfessionTable
+public class ProfessionTable : GameTable, IProfessionTable
 {
     //Table: Parents’ Profession
     //d%	Result
@@ -64,7 +63,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
         [
             #region "Slaves"
             //01–05	Slaves You gain access to the Life of Toil social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(01, 05),
                 Name = nameof(ProfessionEnum.Slaves),
@@ -80,7 +79,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Serfs/Peasants"
             //06–25	Serfs/Peasants You gain access to the Poverty-Stricken social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(06, 25),
                 Name = nameof(ProfessionEnum.SerfsPeasants),
@@ -97,7 +96,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Entertainers"
             //26–30	Entertainers You gain access to the Talented social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(26, 30),
                 Name = nameof(ProfessionEnum.Entertainers),
@@ -112,7 +111,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Soldiers"
             //31–34	Soldiers You gain access to the Tactician combat trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(31, 34),
                 Name = nameof(ProfessionEnum.Soldiers),
@@ -127,7 +126,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Sailors"
             //35–37	Sailors You gain access to the Worldly social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(35, 37),
                 Name = nameof(ProfessionEnum.Sailors),
@@ -142,7 +141,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Thieves"
             //38–40	Thieves You gain access to the Child of the Streets social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(38, 40),
                 Name = nameof(ProfessionEnum.Thieves),
@@ -158,7 +157,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Yeomen"
             //41–55	Yeomen You gain access to the Savanna Child regional trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(41, 55),
                 Name = nameof(ProfessionEnum.Yeomen),
@@ -173,7 +172,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Tradespeople"
             //56–70	Tradespeople You gain access to the Artisan social trait and the Life of Toil social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(56, 70),
                 Name = nameof(ProfessionEnum.Tradespeople),
@@ -191,7 +190,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Artisans"
             //71–85	Artisans	You gain access to the Artisan social trait..
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(71, 85),
                 Name = nameof(ProfessionEnum.Artisans),
@@ -206,7 +205,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Merchants"
             //86–95	Merchants You gain access to the Merchant social trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(86, 95),
                 Name = nameof(ProfessionEnum.Merchants),
@@ -221,7 +220,7 @@ public class ProfessionTable : RandomRangeTable, IProfessionTable
 
             #region "Clergy or Cultists"
             //96–100 Clergy or Cultists You gain access to the Child of the Temple faith trait.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(96, 100),
                 Name = nameof(ProfessionEnum.ClergyorCultists),

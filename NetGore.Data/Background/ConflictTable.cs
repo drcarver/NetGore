@@ -19,8 +19,11 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -38,7 +41,7 @@ namespace NetGore.Data.Background;
 /// Table: Conflict Subject and to the tables and 
 /// sections subsequent to it.
 /// </summary>
-public partial class BackgroundTables
+public class ConflictTable : GameTable, IConflictTable
 {
     //Table: Conflicts
     //d20 Result CP
@@ -65,18 +68,19 @@ public partial class BackgroundTables
     /// <summary>
     /// Conflicts Table
     /// </summary>
-    public static RandomTable ConflictTable { get; } = new()
+    [SetsRequiredMembers]
+    public ConflictTable()
     {
-        Name = "The Conflicts Table",
-        DiceSides = 20,
+        Name = nameof(ConflictTable);
+        Description = "The Conflicts Table";
+        DiceSides = 20;
         Table =
         [
             #region Minor Failure
             //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 01,
+                Range = new Range(01, 01),
                 Name = nameof(ConflictEnum.MinorFailure),
                 ProperName = "Minor Failure",
                 Description =
@@ -90,10 +94,9 @@ public partial class BackgroundTables
 
             #region Petty Crime
             //2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 02,
-                UpperRange = 02,
+                Range = new Range(02, 02),
                 Name = nameof(ConflictEnum.PettyCrime),
                 ProperName = "Petty Crime",
                 Description =
@@ -106,10 +109,9 @@ public partial class BackgroundTables
 
             #region Told a Lie
             //3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 03,
-                UpperRange = 03,
+                Range = new Range(03, 03),
                 Name = nameof(ConflictEnum.ToldaLie),
                 ProperName = "Told a Lie",
                 Description =
@@ -122,10 +124,9 @@ public partial class BackgroundTables
 
             #region Broke a Promise
             //4	Broke a Promise You swore an oath or vow that was important to someone else, but you did not keep your promise. 1
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 04,
-                UpperRange = 04,
+                Range = new Range(04, 04),
                 Name = nameof(ConflictEnum.BrokeaPromise),
                 ProperName = "Broke a Promise",
                 Description =
@@ -138,10 +139,9 @@ public partial class BackgroundTables
 
             #region Humiliation
             //5	Humiliation You publicly humiliated or scandalized someone with either true or slanderous information.  2
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 05,
-                UpperRange = 05,
+                Range = new Range(05, 05),
                 Name = nameof(ConflictEnum.Humiliation),
                 Description =
                     "You publicly humiliated or " +
@@ -153,10 +153,9 @@ public partial class BackgroundTables
 
             #region Negligence
             //6	Negligence You caused someone else to suffer by your own inaction, disregard, or excessive recklessness.   2
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 06,
-                UpperRange = 06,
+                Range = new Range(06, 06),
                 Name = nameof(ConflictEnum.Negligence),
                 Description =
                     "You caused someone else to suffer " +
@@ -168,10 +167,9 @@ public partial class BackgroundTables
 
             #region Minor Theft
             //7	Minor Theft You stole several small or inexpensive items that belonged to someone else.	2
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 07,
-                UpperRange = 07,
+                Range = new Range(07, 07),
                 Name = nameof(ConflictEnum.MinorTheft),
                 ProperName = "Minor Theft",
                 Description =
@@ -184,10 +182,9 @@ public partial class BackgroundTables
 
             #region Seducer
             //8	Seducer 
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 08,
-                UpperRange = 08,
+                Range = new Range(08, 08),
                 Name = nameof(ConflictEnum.Seducer),
                 Description =
                     "You tempted or manipulated someone " +
@@ -200,10 +197,9 @@ public partial class BackgroundTables
 
             #region Cheater
             //9	Cheater You broke a rule, law, contract, or agreement for your own gain.    3
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 09,
-                UpperRange = 09,
+                Range = new Range(09, 09),
                 Name = nameof(ConflictEnum.Cheater),
                 Description =
                     "You broke a rule, law, contract, " +
@@ -214,10 +210,9 @@ public partial class BackgroundTables
 
             #region Betrayal
             //10	Betrayal 
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 10,
-                UpperRange = 10,
+                Range = new Range(10, 10),
                 Name = nameof(ConflictEnum.Betrayal),
                 Description =
                     "You betrayed someone who trusted you.",
@@ -227,10 +222,9 @@ public partial class BackgroundTables
 
             #region Malign Associates
             //11	Malign Associates   
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 11,
+                Range = new Range(11, 11),
                 Name = nameof(ConflictEnum.MalignAssociates),
                 ProperName = "Malign Associates",
                 Description =
@@ -243,10 +237,9 @@ public partial class BackgroundTables
 
             #region Destroyed a Reputation
             //12	Destroyed a Reputation 
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 12,
-                UpperRange = 12,
+                Range = new Range(12, 12),
                 Name = nameof(ConflictEnum.DestroyedaReputation),
                 ProperName = "Destroyed a Reputation",
                 Description =
@@ -259,10 +252,9 @@ public partial class BackgroundTables
 
             #region Major Theft
             //13	Major Theft 
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 13,
-                UpperRange = 13,
+                Range = new Range(13, 13),
                 Name = nameof(ConflictEnum.MajorTheft),
                 ProperName = "Major Theft",
                 Description =
@@ -273,10 +265,9 @@ public partial class BackgroundTables
 
             #region Corrupted an Innocent
             //14	Corrupted an Innocent 
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 14,
-                UpperRange = 14,
+                Range = new Range(14, 14),
                 Name = nameof(ConflictEnum.CorruptedanInnocent),
                 ProperName = "Corrupted an Innocent",
                 Description =
@@ -289,10 +280,9 @@ public partial class BackgroundTables
 
             #region Blackmailed
             //15	Blackmailed You used sensitive knowledge or threats to force someone’s cooperation.	6
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 15,
-                UpperRange = 15,
+                Range = new Range(15, 15),
                 Name = nameof(ConflictEnum.Blackmailed),
                 ProperName = "Blackmailed",
                 Description =
@@ -305,10 +295,9 @@ public partial class BackgroundTables
 
             #region Destruction
             //16	Destruction You destroyed someone else’s property.	6
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 16,
-                UpperRange = 16,
+                Range = new Range(16, 16),
                 Name = nameof(ConflictEnum.Destruction),
                 ProperName = "Destruction",
                 Description =
@@ -319,10 +308,9 @@ public partial class BackgroundTables
 
             #region Armed Robbery
             //17	Armed Robbery
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 17,
-                UpperRange = 17,
+                Range = new Range(17, 17),
                 Name = nameof(ConflictEnum.ArmedRobbery),
                 ProperName = "Armed Robbery",
                 Description =
@@ -334,10 +322,9 @@ public partial class BackgroundTables
 
             #region Violent Crime
             //18	Violent Crime   
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 18,
-                UpperRange = 18,
+                Range = new Range(18, 18),
                 Name = nameof(ConflictEnum.ViolentCrime),
                 ProperName = "Violent Crime",
                 Description =
@@ -348,10 +335,9 @@ public partial class BackgroundTables
 
             #region Murder
             //19	Murder
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 19,
-                UpperRange = 19,
+                Range = new Range(19, 19),
                 Name = nameof(ConflictEnum.Murder),
                 ProperName = "Murder",
                 Description =
@@ -362,10 +348,9 @@ public partial class BackgroundTables
 
             #region Mass Murder
             //20	Mass Murder
-            new RandomTableEntry
+            new ConflictTableEntry
             {
-                LowerRange = 20,
-                UpperRange = 20,
+                Range = new Range(20, 20),
                 Name = nameof(ConflictEnum.MassMurder),
                 ProperName = "Mass Murder",
                 Description =
@@ -373,6 +358,6 @@ public partial class BackgroundTables
                 ConflictPoints = 12
             },
             #endregion
-        ],
-    };
+        ];
+    }
 }

@@ -2,6 +2,6 @@
 
 namespace NetGore.Data.Interfaces;
 
-public interface IConflictResolutionTable : IRandomRangeTable
+public interface IConflictResolutionTable : IGameTable
 {
 }

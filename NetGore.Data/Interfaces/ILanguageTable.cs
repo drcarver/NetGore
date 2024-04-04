@@ -2,6 +2,6 @@
 
 namespace NetGore.Data.Interfaces;
 
-internal interface ILanguageTable : IRandomRangeTable
+internal interface ILanguageTable : IGameTable
 {
 }

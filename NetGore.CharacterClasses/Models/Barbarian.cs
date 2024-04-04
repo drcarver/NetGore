@@ -3,6 +3,7 @@
 using NetGore.CharacterClasses.Enum;
 using NetGore.Core;
 using NetGore.Core.Abilities;
+using NetGore.Data.Enum;
 
 namespace NetGore.CharacterClasses.Models;
 
@@ -236,11 +237,11 @@ public class Barbarian : CharacterClassBase
         Name = nameof(Barbarian);
         Description = "";
         HitDice = "1d12";
-        ArmorProficiency =
+        ArmorCategory =
         [
-            ArmorProficiencyEnum.LightArmor,
-            ArmorProficiencyEnum.MediumArmor,
-            ArmorProficiencyEnum.Shields,
+            ArmorCategoryEnum.LightArmor,
+            ArmorCategoryEnum.MediumArmor,
+            ArmorCategoryEnum.Shields,
         ];
         WeaponProficiency =
         [
@@ -249,7 +250,6 @@ public class Barbarian : CharacterClassBase
         ];
         SavingThrows =
         [
-            ""
         ];
     }
 

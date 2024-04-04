@@ -19,8 +19,11 @@
 //
 #endregion
 
+using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -32,7 +35,7 @@ namespace NetGore.Data.Background;
 /// the severity of the punishment you received—or 
 /// have yet to receive—for having been judged guilty.
 /// </summary>
-public partial class BackgroundTables
+public class PunishmentTable : GameTable, IPunishmentTable
 {
     //Table: Punishment
     //d%	Punishment
@@ -49,88 +52,82 @@ public partial class BackgroundTables
     /// <summary>
     /// Punishment
     /// </summary>
-    public static RandomTable PunishmentTable { get; } = new()
+    [SetsRequiredMembers]
+    public PunishmentTable()
     {
-        Name = "PunishmentTable",
-        DiceSides = 100,
+        Name = nameof(PunishmentTable);
+        Description = "Punishment";
+        DiceSides = 100;
         Table =
         [
             #region "Beating"
             //01–10	Beating
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 10,
+                Range = new Range(01,10),
                 Name = nameof(PunishmentEnum.Beating),
             },
             #endregion
 
             #region "Branding"
             //11–20	Branding
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 20,
+                Range = new Range(11,20),
                 Name = nameof(PunishmentEnum.Branding),
             },
             #endregion
 
             #region "Exile"
             //21–30	Exile
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 21,
-                UpperRange = 30,
+                Range = new Range(21,30),
                 Name = nameof(PunishmentEnum.Exile),
             },
             #endregion
 
             #region "Fine"
             //31–40	Fine
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 40,
+                Range = new Range(31,40),
                 Name = nameof(PunishmentEnum.Fine),
             },
             #endregion
 
             #region "Imprisonment"
             //41–50	Imprisonment
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 50,
+                Range = new Range(41,50),
                 Name = nameof(PunishmentEnum.Imprisonment),
             },
             #endregion
 
             #region "Stocks"
             //51–60	Stocks
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51,60),
                 Name = nameof(PunishmentEnum.Stocks),
             },
             #endregion
 
             #region "Torture"
             //61–70	Torture
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61,70),
                 Name = nameof(PunishmentEnum.Torture),
             },
             #endregion
 
             #region "Trial by combat"
             //71–80	Trial by combat
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = nameof(PunishmentEnum.Trialbycombat),
                 ProperName = "Trial by combat",
             },
@@ -138,10 +135,9 @@ public partial class BackgroundTables
 
             #region "Trial by fire"
             //81–90	Trial by fire
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 90,
+                Range = new Range(81,90),
                 Name = nameof(PunishmentEnum.Trialbyfire),
                 ProperName = "Trial by fire",
             },
@@ -149,15 +145,14 @@ public partial class BackgroundTables
 
             #region "Trial by water"
             //91–100 Trial by water
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = nameof(PunishmentEnum.Trialbywater),
                 ProperName = "Trial by water",
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }
 

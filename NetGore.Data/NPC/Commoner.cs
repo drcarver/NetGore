@@ -9,7 +9,6 @@ using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
-
 namespace NetGore.Data.NPC;
 
 public class Commoner : Character
@@ -36,7 +35,7 @@ public class Commoner : Character
     /// <summary>
     /// The commoner's profession
     /// </summary>
-    public RandomTableRangeEntry? Profession { get; private set; }
+    public BackgroundTableEntry Profession { get; private set; }
     
     /// <summary>
     /// The race Service
@@ -63,12 +62,12 @@ public class Commoner : Character
         
         // The rest of the NPC values
         HitPoints = new HitPoints(HitDice, this);
-        Size = Core.Enum.SizeEnum.Medium;
+        Size = NetGore.Core.Enum.SizeEnum.Medium;
         Speed = 30;
         RaceService.SetRace(this);
 
         // The commoner profession
-        Profession = new ProfessionTable().GetRandomEntry();
+        Profession = (BackgroundTableEntry) new ProfessionTable().GetRandomEntry();
 
         //Commoner
         //Medium humanoid(any race),	any alignment

@@ -2,6 +2,6 @@
 
 namespace NetGore.Data.Interfaces;
 
-public interface IAlignmentTable : IRandomRangeTable
+public interface IAlignmentTable : IGameTable
 {
 }

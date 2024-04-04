@@ -15,5 +15,5 @@ public interface IBaseObject
     /// <summary>
     /// The Description of the object
     /// </summary>
-    string Description { get; set; }
+    string? Description { get; set; }
 }

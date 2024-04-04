@@ -35,7 +35,7 @@ namespace NetGore.Data.Background;
 /// that would adjust your character to an evil 
 /// alignment.
 /// </summary>
-public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTable
+public class ConflictResolutionTable : GameTable, IConflictResolutionTable
 {
     //Table: Resolution
     //d7 Result CP
@@ -65,7 +65,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
             //and those who don’t can easily find
             //them out if they know where to look
             //or whom to ask.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(01, 01),
                 Name = nameof(ConflictResolutionEnum.RegretandPenance),
@@ -82,7 +82,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
             //companions know of the conflict, and
             //they have promised a degree of
             //discretion.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(02, 02),
                 Name = nameof(ConflictResolutionEnum.SincereRegret),
@@ -98,7 +98,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
             //to forget it ever happened.Only you
             //and maybe a select few people know
             //of your involvement in the conflict.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(03, 03),
                 Name = nameof(ConflictResolutionEnum.SecretRegret),
@@ -109,7 +109,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
 
             #region Mixed Feelings
             //Mixed Feelings (0 cp) Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(04, 05),
                 Name = nameof(ConflictResolutionEnum.MixedFeelings),
@@ -120,7 +120,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
 
             #region Denial
             //Denial (+1 cp) You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(06, 06),
                 Name = nameof(ConflictResolutionEnum.Denial),
@@ -131,7 +131,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
 
             #region No Guilt
             //No Guilt (+2 cp) Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(07, 07),
                 Name = nameof(ConflictResolutionEnum.NoGuilt),
@@ -142,7 +142,7 @@ public class ConflictResolutionTable : RandomRangeTable, IConflictResolutionTabl
 
             #region You Enjoyed It
             //You Enjoyed It (+3 cp) Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse
-            new RandomTableRangeEntry
+            new ConflictTableEntry
             {
                 Range = new Range(08, 08),
                 Name = nameof(ConflictResolutionEnum.YouEnjoyedIt),

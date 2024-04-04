@@ -19,16 +19,12 @@
 //
 #endregion
 
-using System.Diagnostics.Contracts;
-using System.Runtime.InteropServices;
-
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
-
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Background;
 
@@ -55,7 +51,8 @@ namespace NetGore.Data.Background;
 /// to improve group cohesion.
 /// </para>
 /// </summary>
-public partial class BackgroundTables
+public class RelationshipwithFellowAdventurerTable : GameTable,
+    IRelationshipwithFellowAdventurerTable
 {
     //Table: Relationship with Fellow Adventurer
     //d%	Result
@@ -82,18 +79,19 @@ public partial class BackgroundTables
     /// <summary>
     /// Relationship with Fellow Adventurer
     /// </summary>
-    public static RandomTable RelationshipwithFellowAdventurerTable { get; } = new()
+    [SetsRequiredMembers]
+    public RelationshipwithFellowAdventurerTable()
     {
-        Name = "Relationship with Fellow Adventurer Table",
-        DiceSides = 100,
+        Name = nameof(RelationshipwithFellowAdventurerTable);
+        Description = "Relationship with Fellow Adventurer Table";
+        DiceSides = 100;
         Table =
         [
             #region Family
             //01–05	Family or close as family—close friends, close/distant relatives, relatives by marriage/adoption
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 05,
+                Range = new Range(01,05),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Family),
                 ProperName = "Family",
                 Description =
@@ -105,10 +103,9 @@ public partial class BackgroundTables
 
             #region Friend of a friend
             //06–10	Friend of a friend
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 06,
-                UpperRange = 10,
+                Range = new Range(06,10),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Friendofafriend),
                 ProperName = "Friend of a friend",
                 Description =
@@ -120,10 +117,9 @@ public partial class BackgroundTables
 
             #region Tavern buddies
             //11–15	Tavern buddies
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 15,
+                Range = new Range(11,15),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Tavernbuddies),
                 ProperName = "Tavern buddies",
             },
@@ -131,10 +127,9 @@ public partial class BackgroundTables
 
             #region Hunting companions
             //16–20	Hunting companions
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 16,
-                UpperRange = 20,
+                Range = new Range(16,20),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Huntingcompanions),
                 ProperName = "Hunting companions",
             },
@@ -142,10 +137,9 @@ public partial class BackgroundTables
 
             #region Business associates
             //21–25	Business associates, current or former
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 21,
-                UpperRange = 25,
+                Range = new Range(21,25),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Businessassociates),
                 ProperName = "Business associates",
                 Description = "Business associates, current or former"
@@ -154,22 +148,19 @@ public partial class BackgroundTables
 
             #region Contractor and employer
             //26–30	Contractor and employer
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 26,
-                UpperRange = 30,
+                Range = new Range(26,30),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Contractorandemployer),
                 ProperName = "Contractor and employer",
-                Description = "Contractor and employer"
             },
             #endregion
 
             #region Former allies
             //31–35	Former allies
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 35,
+                Range = new Range(31,35),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerallies),
                 ProperName = "Former allies",
             },
@@ -177,10 +168,9 @@ public partial class BackgroundTables
 
             #region Former enemies
             //36–40	Former enemies
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 36,
-                UpperRange = 40,
+                Range = new Range(36,40),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerenemies),
                 ProperName = "Former enemies"
             },
@@ -188,10 +178,9 @@ public partial class BackgroundTables
 
             #region Friendly competitors
             //41–45	Friendly competitors
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 45,
+                Range = new Range(41,45),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Friendlycompetitors),
                 ProperName = "Friendly competitors"
             },
@@ -199,10 +188,9 @@ public partial class BackgroundTables
 
             #region Romantic competitors
             //46–50	Romantic competitors, current or former
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 46,
-                UpperRange = 50,
+                Range = new Range(46,50),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Romanticcompetitors),
                 ProperName = "Romantic competitors",
                 Description = "Romantic competitors, current or former"
@@ -211,10 +199,9 @@ public partial class BackgroundTables
 
             #region Know each other by reputation only
             //51–55	Know each other by reputation only
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 55,
+                Range = new Range(51,55),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.KnownByRepution),
                 ProperName = "Know each other by reputation only",
             },
@@ -222,10 +209,9 @@ public partial class BackgroundTables
 
             #region Former inmates
             //56–60	Former inmates(prison, asylum, or captivity) or former inmate and captor
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 56,
-                UpperRange = 60,
+                Range = new Range(56,60),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerinmates),
                 ProperName = "Former inmates",
                 Description = "Former inmates(prison, asylum, or captivity) or former inmate and captor"
@@ -234,10 +220,9 @@ public partial class BackgroundTables
 
             #region Criminal connections
             //61–65	Criminal connections
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 65,
+                Range = new Range(61,65),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Criminalconnections),
                 ProperName = "Criminal connections",
             },
@@ -245,10 +230,9 @@ public partial class BackgroundTables
 
             #region Servants
             //66–70	Servants or apprentices to the same master
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 66,
-                UpperRange = 70,
+                Range = new Range(66,70),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Servants),
                 ProperName = "Servants",
                 Description = "Servants or apprentices to the same master"
@@ -257,10 +241,9 @@ public partial class BackgroundTables
 
             #region Met on a pilgrimage
             //71–75	Met on a pilgrimage, caravan, or journey
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 75,
+                Range = new Range(71,75),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Metonapilgrimage),
                 ProperName = "Met on a pilgrimage",
                 Description = "Met on a pilgrimage, caravan, or journey"
@@ -269,10 +252,9 @@ public partial class BackgroundTables
 
             #region Veterans
             //76–80	Veterans of a skirmish or war
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 76,
-                UpperRange = 80,
+                Range = new Range(76,80),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Veterans),
                 ProperName = "Veterans",
                 Description = "Veterans of a skirmish or war"
@@ -281,10 +263,9 @@ public partial class BackgroundTables
 
             #region Follow
             //81–85	Follow(or followed) the same faith or cult
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 85,
+                Range = new Range(81,85),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Follow),
                 ProperName = "Follow",
                 Description = "Follow (or followed) the same faith or cult"
@@ -293,10 +274,9 @@ public partial class BackgroundTables
 
             #region Best friends
             //86–90	Best friends
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 86,
-                UpperRange = 90,
+                Range = new Range(86,90),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Bestfriends),
                 ProperName = "Best friends",
             },
@@ -304,10 +284,9 @@ public partial class BackgroundTables
 
             #region Gaming
             //91–95	Gaming or gambling associates
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 95,
+                Range = new Range(91,95),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Gaming),
                 ProperName = "Gaming or gambling associates",
             },
@@ -315,14 +294,13 @@ public partial class BackgroundTables
 
             #region Hometown
             //96–100	From the same hometown or region
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Hometown),
                 ProperName = "From the same hometown or region",
             },
             #endregion
-        ]
-    };
+        ];
+    }
 }

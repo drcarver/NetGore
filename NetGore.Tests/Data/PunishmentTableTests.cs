@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class PunishmentTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.PunishmentTable.Name == "PunishmentTable");
-        ClassicAssert.IsTrue(BackgroundTables.PunishmentTable.DiceSides == 100);
+        var table = new PunishmentTable();
+        ClassicAssert.IsTrue(table.Name == nameof(PunishmentTable));
+        ClassicAssert.IsTrue(table.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.PunishmentTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.PunishmentTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry) table.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class PunishmentTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, IBackgroundTableEntry entry)
     {
         if (entry == null)
         {

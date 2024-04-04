@@ -2,6 +2,6 @@
 
 namespace NetGore.Data.Interfaces;
 
-internal interface INobilityTable : IRandomRangeTable
+internal interface INobilityTable : IGameTable
 {
 }

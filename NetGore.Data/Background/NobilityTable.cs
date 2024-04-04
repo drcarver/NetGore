@@ -38,7 +38,7 @@ namespace NetGore.Data.Background;
 /// Table: Nobility to learn your parents’ 
 /// position among the ruling class.
 /// </summary>
-public class NobilityTable : RandomRangeTable, INobilityTable
+public class NobilityTable : GameTable, INobilityTable
 {
     //Table: Nobility
     //d%	Result
@@ -62,7 +62,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
         [
             #region "Gentry"
             //01–60	Gentry You are the child of a minor lord, lady, or noble with an income, hereditary land such as a manor, and titles.You likely grew up in a manor and your parents were paid tribute by peasants.Your parents serve a higher baron, count, or duke.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(01, 60),
                 Name = nameof(NobilityEnum.Gentry),
@@ -80,7 +80,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Knight"
             //61–78	Knight You are the child of a knight, a noble with estates, titles, and lands who serves a lord. Your family has sworn an oath of fealty to a liege—such as a baron, count, or duke—and commits to military service in his or her name. As the child of a knight, you may serve as a squire to another knight while pursuing your own path to knighthood.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(61, 78),
                 Name = nameof(NobilityEnum.Knight),
@@ -102,7 +102,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Baron"
             //79–85	Baron You are the child of a baron or baroness, a noble responsible for a land encompassing several smaller manors that pay tribute.Your parents receive orders directly from the monarch, and you’re expected to attend the royal court.You are entitled to hereditary estates, titles, and land.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(79, 85),
                 Name = nameof(NobilityEnum.Baron),
@@ -122,7 +122,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Count"
             //86–91	Count You are the noble child of a count or countess.Your family members receive hereditary titles, land, and estates, and are among the most wealthy nobles in your domain. Knights and minor lords pay tribute to your family, and your parents attend directly to the monarch. You’re expected to attend the royal court.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(68, 91),
                 Name = nameof(NobilityEnum.Count),
@@ -143,7 +143,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Duke"
             //92–96	Duke You are the child of a duke or duchess, the most powerful noble in the realm apart from the royal family.Your parents attend directly to the monarch and have the highest place at court. Your lands, titles, and estates are significant, and many lords and knights serve under your parents’ command.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(92, 96),
                 Name = nameof(NobilityEnum.Duke),
@@ -163,7 +163,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Minor Prince"
             //97–99	Minor Prince You are the child of a prince or princess, and part of the royal family. You aren’t the next in succession, but your power and wealth are grand indeed.
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(97, 99),
                 Name = nameof(NobilityEnum.MinorPrince),
@@ -179,7 +179,7 @@ public class NobilityTable : RandomRangeTable, INobilityTable
 
             #region "Regent"
             //100	Regent You are a prince or princess, the son or daughter of the monarch.You owe fealty directly to your parents, and to no one else. Few command the power and wealth you do, and your presence inspires great respect, if not total awe, among those who kneel before the crown
-            new RandomTableRangeEntry
+            new BackgroundTableEntry
             {
                 Range = new Range(100, 100),
                 Name = nameof(NobilityEnum.Regent),

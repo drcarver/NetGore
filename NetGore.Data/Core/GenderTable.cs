@@ -1,43 +1,45 @@
-﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using NetGore.Core.Enum;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Core.Data;
 
-public class Gender
+public class GenderTable : GameTable, IGenderTable
 {
     //Table: Gender
     //d%	 Result
     //01–50	 Male
     //51–100 Female
-    private static RandomTable GenderTable { get; set; } = new()
+    [SetsRequiredMembers]
+    public GenderTable()
     {
-        DiceSides = 100,
+        DiceSides = 100;
         Table =
         [
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 50,
+                Range = new Range(01,50),
                 Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 100,
+                Range = new Range(51,100),
                 Name = nameof(GenderEnum.Female),
                 Description = "The Female of the species",
             },
-        ],
-    };
+        ];
+    }
 
     /// <summary>
     /// Get the Gender of the creature
     /// </summary>
     /// <returns>The selected Gender</returns>
-    public static GenderEnum GetGender()
+    public GenderEnum GetGender()
     {
-        switch (GenderTable.GetRandomEntry().Name)
+        switch (GetRandomEntry().Name)
         {
             case nameof(GenderEnum.Male):
                 return GenderEnum.Male;
