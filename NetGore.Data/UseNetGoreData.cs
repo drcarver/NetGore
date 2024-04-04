@@ -28,7 +28,7 @@ public static class DataServices
             .AddSingleton<IPlayerCharacter, PlayerCharacter>()
             .AddSingleton<IAccountService, AccountService>();
         
-        // Add all the gametable types as transient
+         // Add all the gametable types as transient
         foreach (var table in FindSubClassesOf<GameTable>())
         {
             collection.AddTransient(table);

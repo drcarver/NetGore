@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.CharacterClasses", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.Items", "NetGore.Items\NetGore.Items.csproj", "{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.UI.Admin", "UI\NetGore.Ui.Admin\NetGore.UI.Admin.csproj", "{C536270F-3C27-41F6-A72F-CEE1351AA46A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A5546ED-FAC9-4005-AF0E-D004B4D6B89B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C536270F-3C27-41F6-A72F-CEE1351AA46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C536270F-3C27-41F6-A72F-CEE1351AA46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C536270F-3C27-41F6-A72F-CEE1351AA46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C536270F-3C27-41F6-A72F-CEE1351AA46A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +123,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{043C2FBC-8647-42B1-88BA-A55E0C234753} = {3C85DBFE-6EF8-4287-82A4-0FB53ED21679}
 		{F757770A-7C84-4397-8D7F-247C43C4B1AD} = {1A734E0C-58C2-4EEB-9171-67E0ECFC6839}
+		{C536270F-3C27-41F6-A72F-CEE1351AA46A} = {1A734E0C-58C2-4EEB-9171-67E0ECFC6839}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F07D04A7-49FD-4557-A419-76B85364DE72}

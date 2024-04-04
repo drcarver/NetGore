@@ -28,6 +28,7 @@ public static class MauiProgram
         Ioc.Default.ConfigureServices(
             new ServiceCollection()
                 .UseNetGoreData()
+                .UseNetGoreUIAdmin()
                 .BuildServiceProvider());
 
         return builder.Build();

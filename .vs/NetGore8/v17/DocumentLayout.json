@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.data\\usenetgoredata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184ED70E-8386-42D0-8E06-919CA7C8088B}|NetGore.Data\\NetGore.Data.csproj|solutionrelative:netgore.data\\usenetgoredata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|c:\\users\\drcarver\\desktop\\netgore\\netgore.tests\\data\\gametabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A01ECCB4-1A90-4790-9A0E-F4B45F4D844B}|NetGore.Tests\\NetGore.Tests.csproj|solutionrelative:netgore.tests\\data\\gametabletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeToolTip": "UI\\NetGore\\MauiProgram.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAB0AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:36:17.292Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UseNetGoreData.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\UseNetGoreData.cs",
-              "RelativeDocumentMoniker": "NetGore.Data\\UseNetGoreData.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Data\\UseNetGoreData.cs",
-              "RelativeToolTip": "NetGore.Data\\UseNetGoreData.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAIAwwBQAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:31:07.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameTableTests.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\GameTableTests.cs",
-              "RelativeDocumentMoniker": "NetGore.Tests\\Data\\GameTableTests.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\NetGore.Tests\\Data\\GameTableTests.cs",
-              "RelativeToolTip": "NetGore.Tests\\Data\\GameTableTests.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAwwAcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T12:18:39.147Z",
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
+              "RelativeDocumentMoniker": "UI\\NetGore\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
+              "RelativeToolTip": "UI\\NetGore\\MainPage.xaml",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAAB4AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-04T17:25:41.189Z",
               "EditorCaption": ""
             }
           ]
