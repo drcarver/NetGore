@@ -3,6 +3,7 @@
 using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 using NetGore.Data.Race;
 
 namespace NetGore.Data.Services;
@@ -20,63 +21,54 @@ public class RaceService : IRaceService
     private readonly ILoggerFactory LoggerFactory;
 
     //Table: Race
-    public static RandomTable RaceTable { get; set; } = new()
+    public static GameTable RaceTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 10,
+                Range = new Range(01,10),
                 Name = nameof(Dwarf),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 20,
+                Range = new Range(11,20),
                 Name = nameof(Elf),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 21,
-                UpperRange = 30,
+                Range = new Range(21,30),
                 Name = nameof(Halfling),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 50,
+                Range = new Range(31,50),
                 Name = nameof(Human),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51,60),
                 Name = nameof(Dragonborn),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61,70),
                 Name = nameof(Gnome),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = nameof(HalfElf),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 90,
+                Range = new Range(81,90),
                 Name = nameof(HalfOrc),
             },
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = nameof(Tiefling),
             },
         ],
@@ -98,7 +90,7 @@ public class RaceService : IRaceService
     {
         var tableentry = RaceTable.GetRandomEntry();
         
-        Logger.LogInformation($"Got random table entry number {RaceTable.Total}, Name={tableentry?.Name}");
+        Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 
         switch (tableentry?.Name)
         {

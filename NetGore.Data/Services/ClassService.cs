@@ -1,13 +1,10 @@
-﻿using System.Linq;
-
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 using NetGore.Core;
-using NetGore.Core.Abilities;
-using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Classes;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Services;
 
@@ -21,115 +18,103 @@ public class ClassService : IClassService
     /// <summary>
     /// The class table
     /// </summary>
-    private static RandomTable ClassTable { get; set; } = new()
+    private static GameTable ClassTable { get; set; } = new()
     {
         DiceSides = 120,
         Table =
         [
             #region Barbarian
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 10,
+                Range = new Range(01,10),
                 Name = nameof(Barbarian),
             },
             #endregion
 
             #region Bard
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 20,
+                Range = new Range(11,20),
                 Name = nameof(Bard),
             },
             #endregion
 
             #region Cleric
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 21,
-                UpperRange = 30,
+                Range = new Range(21,30),
                 Name = nameof(Cleric),
             },
             #endregion
 
             #region Druid
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 40,
+                Range = new Range(31,40),
                 Name = nameof(Druid),
             },
             #endregion
                         
             #region Fighter
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 50,
+                Range = new Range(41,50),
                 Name = "Fighter",
             },
             #endregion
 
             #region Monk
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51,60),
                 Name = nameof(Monk),
             },
             #endregion
 
             #region Paladin
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61,70),
                 Name = nameof(Paladin),
             },
             #endregion
 
             #region Ranger
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = nameof(Ranger),
             },
             #endregion
 
             #region Rogue
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 90,
+                Range = new Range(81,90),
                 Name = "Rogue",
             },
             #endregion
 
             #region Sorcerer
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = nameof(Sorcerer),
             },
             #endregion
 
             #region Warlock
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 101,
-                UpperRange = 110,
+                Range = new Range(101,110),
                 Name = nameof(Warlock),
             },
             #endregion
 
             #region Wizard
-            new RandomTableEntry
+            new GameTableEntry
             {
-                LowerRange = 111,
-                UpperRange = 120,
+                Range = new Range(111,120),
                 Name = nameof(Wizard),
             },
             #endregion
@@ -143,7 +128,7 @@ public class ClassService : IClassService
     public void SetClass(Character character)
     {
         var tableentry = ClassTable.GetRandomEntry();
-        Logger.LogInformation($"Got random table entry number {ClassTable.Total}, Name={tableentry?.Name}");
+        Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 
         // Set the class on the creature
         switch (tableentry?.Name)

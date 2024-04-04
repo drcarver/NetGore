@@ -3,6 +3,7 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Race;
 
@@ -54,17 +55,16 @@ public class Halfling : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    private static RandomTable HomelandTable { get; set; } = new()
+    private static GameTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Halfling Settlement"
             //01–50	Halfling Settlement You gain access to the Civilized social trait and the Well-Informed race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 50,
+                Range = new Range(01,50),
                 Name = "Halfling Settlement",
                 Description =
                     "You gain access to the Civilized " +
@@ -80,10 +80,9 @@ public class Halfling : IRace
 
             #region "Human Settlement"
             //51–80	Human Settlement You gain access to the Child of the Streets social trait and the Well-Informed race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 80,
+                Range = new Range(51,80),
                 Name = "Human Homeland",
                 Description =
                     "You gain access to the Child of the Streets social trait and the Well-Informed race trait.",
@@ -99,10 +98,9 @@ public class Halfling : IRace
             //81–95	Traveling Band or Caravan You gain
             //access to the Friend in Every Town social
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 95,
+                Range = new Range(81,95),
                 Name = "Traveling Band or Caravan",
                 Description =
                     "You gain access to the Friend in Every Town social trait.",
@@ -116,12 +114,11 @@ public class Halfling : IRace
             #region "Unusual Homeland."
             //96–100 Unusual Homeland.	Roll on Table:
             //Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -136,17 +133,16 @@ public class Halfling : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; set; } = new()
+    private static GameTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
             //01–70	Both of your parents are alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 70,
+                Range = new Range(01,70),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -154,10 +150,9 @@ public class Halfling : IRace
 
             #region "Father Only"
             //71–80	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -165,10 +160,9 @@ public class Halfling : IRace
 
             #region "Mother Only"
             //81–90	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 90,
+                Range = new Range(81,90),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -178,10 +172,9 @@ public class Halfling : IRace
             //91–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -204,7 +197,7 @@ public class Halfling : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; set; } = new()
+    private static GameTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -213,10 +206,9 @@ public class Halfling : IRace
             //01–30	1d2 siblings.With two siblings,
             //you gain access to the Kin Guardian
             //combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 30,
+                Range = new Range(01,30),
                 Name = "1d2",
                 Description =
                     "1d2 siblings. With two siblings, you gain access to the Kin Guardian combat trait.",
@@ -230,10 +222,9 @@ public class Halfling : IRace
             #region "1d4+1"
             //1d4+1 siblings. You gain access to the
             //Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 90,
+                Range = new Range(31,90),
                 Name = "1d1",
                 Description =
                     "1d4+1 siblings. You gain access to the Kin Guardian combat trait.",
@@ -246,10 +237,9 @@ public class Halfling : IRace
 
             #region "No siblings"
             //91–100	No siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -263,10 +253,10 @@ public class Halfling : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -282,7 +272,7 @@ public class Halfling : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -297,7 +287,7 @@ public class Halfling : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;

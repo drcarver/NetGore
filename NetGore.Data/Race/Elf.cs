@@ -3,6 +3,7 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 using NetGore.Data.Services;
 
 namespace NetGore.Data.Race;
@@ -74,7 +75,7 @@ public class Elf : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    public static RandomTable HomelandTable { get; set; } = new()
+    public static GameTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -82,10 +83,9 @@ public class Elf : IRace
             #region "Forest"
             //01–60	Forest You gain access to the
             //Log Roller regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 60,
+                Range = new Range(01,60),
                 Name = "Forest",
                 Description =
                     "You gain access to the " +
@@ -98,10 +98,9 @@ public class Elf : IRace
 
             #region "Non-Elven City or Metropolis"
             //61–80	Non-Elven City or Metropolis    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 80,
+                Range = new Range(61,80),
                 Name = "Non-Elven City or Metropolis",
                 Description =
                     "If you’re an elf, you gain access " +
@@ -120,10 +119,9 @@ public class Elf : IRace
 
             #region "Non-Elven Town or Village"
             //81–95	Non-Elven Town or Village
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 95,
+                Range = new Range(81,95),
                 Name = "Non-Dwarven Town or Village",
                 Description =
                     "You gain access to the Forlorn race trait.",
@@ -136,12 +134,11 @@ public class Elf : IRace
                         
             #region "Unusual Homeland."
             //96–100	Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -156,17 +153,16 @@ public class Elf : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; set; } = new()
+    private static GameTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
             //01–79	Both of your parents are alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 79,
+                Range = new Range(01,79),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -174,10 +170,9 @@ public class Elf : IRace
 
             #region "Father Only"
             //80–87	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 80,
-                UpperRange = 87,
+                Range = new Range(80,87),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -185,10 +180,9 @@ public class Elf : IRace
 
             #region "Mother Only"
             //88–95	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 88,
-                UpperRange = 95,
+                Range = new Range(88,95),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -198,10 +192,9 @@ public class Elf : IRace
             //96–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -226,17 +219,16 @@ public class Elf : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; set; } = new()
+    private static GameTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "1d2"
             //01–80	1d2 biological siblings.If you roll 2 siblings, you gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 80,
+                Range = new Range(01,80),
                 Name = "1d2",
                 Description =
                     "With two or more siblings, you gain access " +
@@ -250,10 +242,9 @@ public class Elf : IRace
 
             #region "1d4+1"
             //81–85	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 85,
+                Range = new Range(81,85),
                 Name = "1d4+1",
                 Description =
                     "You gain access to " +
@@ -267,10 +258,9 @@ public class Elf : IRace
 
             #region "1d4+1 "
             //86–90	1d4+1 biological siblings. 1d3–1 of these siblings are half-elves, adopted, or a mix of the two (your choice). You gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 86,
-                UpperRange = 90,
+                Range = new Range(86,90),
                 Name = "1d3",
                 Description = "1d4+1 biological " +
                     "siblings. 1d3–1 of these siblings " +
@@ -280,7 +270,7 @@ public class Elf : IRace
                     "trait. Roll on Table: " +
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
-                AlternateTable = RaceService.RaceTable,
+                AlternateTable = typeof(RaceTable),
                 Traits =
                 {
                     TraitEnum.KinGuardian,
@@ -290,10 +280,9 @@ public class Elf : IRace
 
             #region "No siblings"
             //91–100 No siblings    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -307,10 +296,10 @@ public class Elf : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -326,7 +315,7 @@ public class Elf : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -341,7 +330,7 @@ public class Elf : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;

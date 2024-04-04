@@ -5,6 +5,7 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 using NetGore.Data.Services;
 
 namespace NetGore.Data.Race;
@@ -134,7 +135,7 @@ public class Dwarf : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    private static RandomTable HomelandTable { get; set; } = new()
+    private static GameTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -143,10 +144,9 @@ public class Dwarf : IRace
             //01–40	Hills or Mountains You gain
             //access to the Goldsniffer race trait
             //and the Highlander regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 40,
+                Range = new Range(01,40),
                 Name = "Hills or Mountains",
                 Description =
                     "You gain access to the " +
@@ -164,10 +164,9 @@ public class Dwarf : IRace
             //41–80	Underground You gain access to
             //the Surface Stranger regional trait
             //and the Tunnel Fighter race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 80,
+                Range = new Range(41,80),
                 Name = "Underground",
                 Description =
                     "You gain access to the Surface " +
@@ -187,10 +186,9 @@ public class Dwarf : IRace
             //gain access to the Brewmaster race
             //trait and the Militia Veteran regional
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 87,
+                Range = new Range(81,87),
                 Name = "Non-Dwarven Town or Village",
                 Description =
                     "You gain access to the Brewmaster " +
@@ -209,10 +207,9 @@ public class Dwarf : IRace
             // You gain access to the Brewmaster race
             // trait and the Vagabond Child regional
             // trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 88,
-                UpperRange = 95,
+                Range = new Range(88,95),
                 Name = "Non-Dwarven City or Metropolis",
                 Description =
                     "You gain access to the Brewmaster " +
@@ -229,12 +226,11 @@ public class Dwarf : IRace
             #region "Unusual Homeland."
             //96–100 Unusual Homeland.	Roll on Table:
             //Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -249,17 +245,16 @@ public class Dwarf : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; set; } = new()
+    private static GameTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
-            //01–60	Both of your parents are alive.            new RandomTableEntry
-            new RandomTableEntry
+            //01–60	Both of your parents are alive.
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 60,
+                Range = new Range(01,60),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -267,10 +262,9 @@ public class Dwarf : IRace
 
             #region "Father Only"
             //61–73	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 73,
+                Range = new Range(61,73),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -278,10 +272,9 @@ public class Dwarf : IRace
 
             #region "Mother Only"
             //74–86	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 74,
-                UpperRange = 86,
+                Range = new Range(74,86),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -291,10 +284,9 @@ public class Dwarf : IRace
             //87–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 87,
-                UpperRange = 100,
+                Range = new Range(87,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -319,17 +311,16 @@ public class Dwarf : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; set; } = new()
+    private static GameTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "1d4"
             //01–80	1d4 biological siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 80,
+                Range = new Range(01,80),
                 Name = "1d4",
                 Description =
                     "1d4 biological siblings. With two " +
@@ -344,10 +335,9 @@ public class Dwarf : IRace
 
             #region "1d4+1"
             //81–90	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 90,
+                Range = new Range(81,90),
                 Name = "1d4+1",
                 Description =
                     "1d4+1 biological siblings. You gain access to " +
@@ -361,10 +351,9 @@ public class Dwarf : IRace
 
             #region "1d3–1 and 1d3–1"
             //91–95	1d3–1 biological siblings and 1d3–1 adopted siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 95,
+                Range = new Range(91,95),
                 Name = "1d3",
                 Description = "1d3–1 Biological siblings and " +
                     "1d3–1 adopted siblings. With two or " +
@@ -372,7 +361,7 @@ public class Dwarf : IRace
                     "Kin Guardian combat trait. Roll on Table: " +
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
-                AlternateTable = RaceService.RaceTable,
+                AlternateTable = typeof(RaceTable),
                 Traits =
                 {
                     TraitEnum.KinGuardian,
@@ -382,10 +371,9 @@ public class Dwarf : IRace
 
             #region "No siblings"
             //96–100 No siblings    
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -399,10 +387,10 @@ public class Dwarf : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -418,7 +406,7 @@ public class Dwarf : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -433,7 +421,7 @@ public class Dwarf : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;
@@ -443,7 +431,7 @@ public class Dwarf : IRace
                 //Initialize(creaturesiblings);
 
                 // Set relative age of sibling
-                var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
+                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
                 //if (relativeage?.Name == "Younger")
                 //{
                 //    creaturesiblings.Age -= new Dice("1d4").Total;

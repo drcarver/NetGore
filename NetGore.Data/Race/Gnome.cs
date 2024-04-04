@@ -3,6 +3,7 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Race;
 
@@ -74,7 +75,7 @@ public class Gnome : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    private static RandomTable HomelandTable { get; set; } = new()
+    private static GameTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -83,10 +84,9 @@ public class Gnome : IRace
             //01–30	Forest You gain access to the
             //Log Roller regional trait and the
             //Animal Friend race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 30,
+                Range = new Range(01,30),
                 Name = "Forest",
                 Description =
                     "You gain access to the " +
@@ -101,10 +101,9 @@ public class Gnome : IRace
 
             #region "Non-Gnome Town or Village"
             //31–65	Non-Gnome Town or Village   You gain access to the Animal Friend race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 31,
-                UpperRange = 65,
+                Range = new Range(31,65),
                 Name = "Non-Gnome Town or Village",
                 Description =
                     "You gain access to the Animal Friend race trait.",
@@ -117,10 +116,9 @@ public class Gnome : IRace
 
             #region "Non-Gnome City or Metropolis"
             //66–95	Non-Gnome City or Metropolis You gain access to the Rapscallion race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 66,
-                UpperRange = 95,
+                Range = new Range(66,95),
                 Name = "Non-Gnome City or Metropolis",
                 Description =
                     "You gain access to the Rapscallion race trait.",
@@ -134,12 +132,11 @@ public class Gnome : IRace
             #region "Unusual Homeland."
             //96–100 Unusual Homeland.	Roll on Table:
             //Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -154,17 +151,16 @@ public class Gnome : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; set; } = new()
+    private static GameTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
             //01–90	Both of your parents are alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 90,
+                Range = new Range(01,90),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -172,10 +168,9 @@ public class Gnome : IRace
 
             #region "Father Only"
             //91–93	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 93,
+                Range = new Range(91,93),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -183,10 +178,9 @@ public class Gnome : IRace
 
             #region "Mother Only"
             //94–96	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 94,
-                UpperRange = 96,
+                Range = new Range(94,96),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -196,10 +190,9 @@ public class Gnome : IRace
             //97–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 97,
-                UpperRange = 100,
+                Range = new Range(97,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -222,17 +215,16 @@ public class Gnome : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; set; } = new()
+    private static GameTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "1d4"
             //01–50	1d4 biological siblings.With two or more siblings, you gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 50,
+                Range = new Range(01,50),
                 Name = "1d4",
                 Description =
                     "With two or more siblings, you " +
@@ -247,10 +239,9 @@ public class Gnome : IRace
 
             #region "1d4-1"
             //51–60	1d4–1 biological siblings and one adopted sibling. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 60,
+                Range = new Range(51,60),
                 Name = "1d4",
                 Description =
                     "1d4–1 biological siblings and " +
@@ -269,10 +260,9 @@ public class Gnome : IRace
 
             #region "No siblings"
             //61–100	No siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 100,
+                Range = new Range(61,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -286,10 +276,10 @@ public class Gnome : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -305,7 +295,7 @@ public class Gnome : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -320,7 +310,7 @@ public class Gnome : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;

@@ -3,6 +3,8 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Race;
 
@@ -75,7 +77,7 @@ public class HalfOrc : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    private static RandomTable HomelandTable { get; set; } = new()
+    private static GameTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -84,10 +86,9 @@ public class HalfOrc : IRace
             //01–25	Subterranean You gain access to
             //either the Scrapper race trait or the
             //Surface Stranger regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 25,
+                Range = new Range(01,25),
                 Name = "Subterranean",
                 Description =
                     "You gain access to either the " +
@@ -103,22 +104,20 @@ public class HalfOrc : IRace
 
             #region Raised in a Human Homeland
             // 61–75	Raised in a Human Homeland.	Roll on Table: Human Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 75,
+                Range = new Range(61,75),
                 Name = "Raised in a Human Homeland",
                 Description = "Roll on Table: Human Homeland",
-                AlternateTable = Human.HomelandTable
+                //AlternateTable = Human.HomelandTable
             },
             #endregion
 
             #region "Orc Settlement"
             //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 26,
-                UpperRange = 60,
+                Range = new Range(26,60),
                 Name = "Orc Settlement",
                 Description =
                     "You gain access to the Scrapper race trait.",
@@ -131,10 +130,9 @@ public class HalfOrc : IRace
 
             #region "No True Homeland"
             //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 76,
-                UpperRange = 90,
+                Range = new Range(76,90),
                 Name = "No True Homeland",
                 Description =
                     "You have lived a life on the run " +
@@ -150,12 +148,11 @@ public class HalfOrc : IRace
             #region "Unusual Homeland."
             //91–100 Unusual Homeland.	Roll on Table:
             //Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(IUnusualHomelandTable),
             },
             #endregion
         ],
@@ -170,17 +167,16 @@ public class HalfOrc : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; set; } = new()
+    private static GameTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
             //01–10	Both of your parents are alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 10,
+                Range = new Range(01,10),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -188,10 +184,9 @@ public class HalfOrc : IRace
 
             #region "Father Only"
             //11–35	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 11,
-                UpperRange = 35,
+                Range = new Range(11,35),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -199,10 +194,9 @@ public class HalfOrc : IRace
 
             #region "Mother Only"
             //36–60	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 36,
-                UpperRange = 60,
+                Range = new Range(36,60),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -212,10 +206,9 @@ public class HalfOrc : IRace
             //61–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 100,
+                Range = new Range(61,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -239,17 +232,16 @@ public class HalfOrc : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; set; } = new()
+    private static GameTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "1d6+1"
             //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 60,
+                Range = new Range(01,60),
                 Name = "1d6+1",
                 Description =
                     "1d6+1 orc siblings.You gain access " +
@@ -263,10 +255,9 @@ public class HalfOrc : IRace
 
             #region "1d4"
             //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 61,
-                UpperRange = 70,
+                Range = new Range(61,70),
                 Name = "1d4",
                 Description =
                     "One half-elf sibling. You gain " +
@@ -281,10 +272,9 @@ public class HalfOrc : IRace
 
             #region "1d1"
             //71–80	One half-orc sibling.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 80,
+                Range = new Range(71,80),
                 Name = "1d1",
                 Description =
                     "One half-orc sibling.",
@@ -297,10 +287,9 @@ public class HalfOrc : IRace
 
             #region "No siblings"
             //81–100	No siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 81,
-                UpperRange = 100,
+                Range = new Range(81,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -314,10 +303,10 @@ public class HalfOrc : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -333,7 +322,7 @@ public class HalfOrc : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -348,7 +337,7 @@ public class HalfOrc : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;

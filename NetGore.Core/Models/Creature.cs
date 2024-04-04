@@ -156,8 +156,8 @@ public class Creature : DataObject, ICreature
     /// </summary>
     /// <param name="loggerFactory">The factory for logging messages</param>
     [SetsRequiredMembers]
-    public Creature(ILoggerFactory loggerFactory,
-        IGenderTable genderTable) :
+    public Creature(ILoggerFactory loggerFactory) :
+        //IGenderTable genderTable) :
         this()
     {
         _logger = loggerFactory.CreateLogger<Creature>();

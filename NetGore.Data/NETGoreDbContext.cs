@@ -22,8 +22,6 @@ public class NETGoreDbContext : DbContext
 
     public DbSet<Example> Examples { get; set; }
     public DbSet<Account> Accounts { get; set; }
-    public DbSet<RandomTable> RandomTables { get; set; }
-    public DbSet<RandomTableEntry> RandomTableEntries { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

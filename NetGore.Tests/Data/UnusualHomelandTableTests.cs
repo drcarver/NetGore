@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Models;
 
 using NUnit.Framework.Legacy;
 
@@ -12,12 +13,13 @@ public class UnusualHomelandTableTests
     [Test]
     public void AreTableEntriesCorrect()
     {
-        ClassicAssert.IsTrue(BackgroundTables.UnusualHomelandTable.Name == "The Unusual Homeland Table");
-        ClassicAssert.IsTrue(BackgroundTables.UnusualHomelandTable.DiceSides == 100);
+        var table = new UnusualHomelandTable();
+        ClassicAssert.IsTrue(table.Name == "The Unusual Homeland Table");
+        ClassicAssert.IsTrue(table.DiceSides == 100);
 
-        for (int i = 1; i <= BackgroundTables.UnusualHomelandTable.DiceSides; i++)
+        for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = BackgroundTables.UnusualHomelandTable.GetEntryByNumber(i);
+            var entry = (BackgroundTableEntry) table.GetEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} is incorrect");
         }
     }
@@ -28,7 +30,7 @@ public class UnusualHomelandTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, RandomTableEntry? entry)
+    private static bool VerifyEntry(int i, BackgroundTableEntry entry)
     {
         if (entry == null)
         {

@@ -49,7 +49,7 @@ var logger = (services.GetService<ILoggerFactory>()
 logger?.LogInformation($"Starting application at: {DateTime.Now}");
 logger?.LogInformation($"Current Directory={Directory.GetCurrentDirectory()}");
 
-var gender = Gender.GetGender();
+//var gender = Gender.GetGender();
 
 var raceService = services.GetService<IRaceService>();
 

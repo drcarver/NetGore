@@ -3,6 +3,8 @@ using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.Data.Race;
 
@@ -103,7 +105,7 @@ public class Tiefling : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    public static RandomTable HomelandTable { get; } = new()
+    public static GameTable HomelandTable { get; } = new()
     {
         DiceSides = 100,
         Table =
@@ -111,10 +113,9 @@ public class Tiefling : IRace
             #region "Town or Village"
             //01–50	Town or Village You gain access
             //to the Militia Veteran regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 50,
+                Range = new Range(01,50),
                 Name = "Town or Village",
                 Description =
                 "You gain access to the Militia Veteran regional trait.",
@@ -130,10 +131,9 @@ public class Tiefling : IRace
             //human, you gain access to the Civilized
             //social trait and the Vagabond Child
             //regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 85,
+                Range = new Range(51,85),
                 Name = "City or Metropolis",
                 Description = "If you’re a human, you gain access to the Civilized social trait and the Vagabond Child regional trait",
                 Traits =
@@ -146,10 +146,9 @@ public class Tiefling : IRace
 
             #region "Frontier"
             //86–95	Frontier You gain access to the Frontier-Forged regional trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 86,
-                UpperRange = 95,
+                Range = new Range(86,95),
                 Name = "Frontier",
                 Description = "You gain access to the Frontier-Forged regional trait.",
                 Traits =
@@ -162,12 +161,11 @@ public class Tiefling : IRace
             #region "Unusual Homeland."
             //96–100 Unusual Homeland.	Roll on Table:
             //Unusual Homeland.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 96,
-                UpperRange = 100,
+                Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = BackgroundTables.UnusualHomelandTable,
+                AlternateTable = typeof(IUnusualHomelandTable),
             },
             #endregion
         ],
@@ -182,17 +180,16 @@ public class Tiefling : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static RandomTable ParentsTable { get; } = new()
+    private static GameTable ParentsTable { get; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "Both"
             //01–50	Both of your parents are alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 50,
+                Range = new Range(01,50),
                 Name = "Both Alive",
                 Description = "Both of your parents are alive.",
             },
@@ -200,10 +197,9 @@ public class Tiefling : IRace
 
             #region "Father Only"
             //51–70	Only your father is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 51,
-                UpperRange = 70,
+                Range = new Range(51,70),
                 Name = "Father Only",
                 Description = "Only your father is alive.",
             },
@@ -211,10 +207,9 @@ public class Tiefling : IRace
 
             #region "Mother Only"
             //71–90	Only your mother is alive.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 90,
+                Range = new Range(71,90),
                 Name = "Mother Only",
                 Description = "Only your mother is alive.",
             },
@@ -224,10 +219,9 @@ public class Tiefling : IRace
             //91–100 Both of your parents are dead.
             //You gain access to the Orphaned social
             //trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "Both Dead",
                 Description =
                     "Both of your parents are dead. " +
@@ -251,17 +245,16 @@ public class Tiefling : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static RandomTable SiblingsTable { get; } = new()
+    private static GameTable SiblingsTable { get; } = new()
     {
         DiceSides = 100,
         Table =
         [
             #region "1d2"
             //01–40	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 01,
-                UpperRange = 40,
+                Range = new Range(01,40),
                 Name = "1d4",
                 Description =
                     "With two or more siblings, you " +
@@ -276,10 +269,9 @@ public class Tiefling : IRace
 
             #region "1d4"
             //41–70	1d2 siblings and 1d2 half-siblings(roll d% to determine each one’s race)
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 41,
-                UpperRange = 70,
+                Range = new Range(41,70),
                 Name = "1d4",
                 Description =
                     "1d2 siblings and 1d2 " +
@@ -290,10 +282,9 @@ public class Tiefling : IRace
 
             #region "2d4"
             //71–90	2d4 siblings.You gain access to the Kin Guardian combat trait.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 71,
-                UpperRange = 90,
+                Range = new Range(71,90),
                 Name = "2d4",
                 Description =
                     "2d4 siblings.You gain access to " +
@@ -307,10 +298,9 @@ public class Tiefling : IRace
 
             #region "No siblings"
             //91–100	No siblings.
-            new RandomTableEntry
+            new BackgroundTableEntry
             {
-                LowerRange = 91,
-                UpperRange = 100,
+                Range = new Range(91,100),
                 Name = "No siblings",
                 Description = "No siblings",
             },
@@ -324,10 +314,10 @@ public class Tiefling : IRace
     public void GenerateRaceBackground(Character character)
     {
         #region Homeland
-        var homeland = (RandomTableEntry?)HomelandTable.GetRandomEntry();
+        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
         if (homeland?.Name == "Unusual Homeland")
         {
-            homeland = (RandomTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
         }
         character.Homeland = homeland?.Name;
         if (homeland?.Traits != null)
@@ -343,7 +333,7 @@ public class Tiefling : IRace
         #endregion
 
         #region Parents
-        var parents = (RandomTableEntry?)ParentsTable.GetRandomEntry();
+        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
         character.Parents = parents?.Description;
         if (parents?.Traits != null)
         {
@@ -358,7 +348,7 @@ public class Tiefling : IRace
         #endregion
 
         #region Siblings
-        var siblings = (RandomTableEntry?)SiblingsTable.GetRandomEntry();
+        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
         if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
         {
             var total = new Dice(siblings.Name).Total;
