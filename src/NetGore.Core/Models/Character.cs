@@ -1,0 +1,69 @@
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Microsoft.Extensions.Logging;
+
+using NetGore.Core.Enum;
+using NetGore.Core.Interfaces;
+
+namespace NetGore.Core.Models;
+
+public class Character : Creature, ICharacter
+{
+    /// <summary>
+    /// The logger for the class
+    /// </summary>
+    private ILogger<Character>? _logger;
+
+    /// <summary>
+    /// Get the character class
+    /// </summary>
+    private IClassService ClassService { get; }
+
+    /// <summary>
+    /// The character class
+    /// </summary>
+    public ICharacterClass? CharacterClass { get; set; }
+
+    /// <summary>
+    /// The characters homeland.  Automatically generated
+    /// </summary>
+    public string? Homeland { get; set; }
+
+    /// <summary>
+    /// The character racial traits
+    /// </summary>
+    public List<TraitEnum> RacialTraits { get; set; } = [];
+
+    /// <summary>
+    /// The player character parents
+    /// </summary>
+    public string? Parents { get; set; }
+
+    /// <summary>
+    /// The characters siblings
+    /// </summary>
+    public List<Character> Siblings { get; set; } = [];
+
+    /// <summary>
+    /// Initialize the service
+    /// </summary>
+    private void Initialize()
+    {
+        ClassService.SetClass(this);
+    }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="loggerFactory">The factory for logging messages</param>
+    /// <param name="classService">The class service</param>
+    [SetsRequiredMembers]
+    public Character(ILoggerFactory loggerFactory,
+        IClassService classService)
+        : base(loggerFactory)
+    {
+        _logger = loggerFactory.CreateLogger<Character>();
+        ClassService = classService;
+        Initialize();
+    }
+}
