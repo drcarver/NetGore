@@ -13,7 +13,7 @@
         ColumnSpacing="10">
 
         <Image Grid.ColumnSpan="2"
-               Source="dotnet_bot.png"
+               Source="greendragon.png"
                BackgroundColor="Transparent">
         </Image>
 

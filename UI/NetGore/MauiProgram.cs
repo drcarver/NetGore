@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Mvvm.DependencyInjection;
 
 using Microsoft.Extensions.Logging;
 
@@ -30,6 +29,7 @@ public static class MauiProgram
             .AddSingleton<MainPage, MainViewModel>()
             .UseNetGoreData()
             .UseNetGoreUIAdmin()
+            //.AddSingletonWithShellRoute<MainPage, MainViewModel>("")
             .BuildServiceProvider(); 
 
         return builder.Build();

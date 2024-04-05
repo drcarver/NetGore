@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C536270F-3C27-41F6-A72F-CEE1351AA46A}|UI\\NetGore.Ui.Admin\\NetGore.Ui.Admin.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore.ui.admin\\viewmodels\\gametableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C536270F-3C27-41F6-A72F-CEE1351AA46A}|UI\\NetGore.Ui.Admin\\NetGore.Ui.Admin.csproj|solutionrelative:ui\\netgore.ui.admin\\viewmodels\\gametableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,15 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml",
-              "RelativeToolTip": "UI\\NetGore\\MainPage.xaml",
-              "ViewState": "AQIAACEAAAAAAAAAAAAgwCgAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-04T20:41:33.473Z",
+              "DocumentIndex": 1,
+              "Title": "GameTableViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
+              "RelativeDocumentMoniker": "UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
+              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
+              "RelativeToolTip": "UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T11:58:23.525Z",
               "EditorCaption": ""
             },
             {
@@ -53,35 +45,9 @@
               "RelativeDocumentMoniker": "UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
               "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
               "RelativeToolTip": "UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAwwBwAAAAEAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAwwCoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T20:37:55.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MainPage.xaml.cs",
-              "RelativeToolTip": "UI\\NetGore\\MainPage.xaml.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAADgvwoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T20:07:52.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\MauiProgram.cs",
-              "RelativeToolTip": "UI\\NetGore\\MauiProgram.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAADgvxwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T20:07:37.492Z",
+              "WhenOpened": "2024-04-05T11:53:03.078Z",
               "EditorCaption": ""
             }
           ]
