@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.Items", "NetGore.It
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGore.UI.Admin", "UI\NetGore.Ui.Admin\NetGore.UI.Admin.csproj", "{C536270F-3C27-41F6-A72F-CEE1351AA46A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2974F683-734D-4E8E-999C-BC06ECBE1E14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
