@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\drcarver\\Desktop\\NetGore\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F757770A-7C84-4397-8D7F-247C43C4B1AD}|UI\\NetGore\\NetGore.csproj|solutionrelative:ui\\netgore\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C536270F-3C27-41F6-A72F-CEE1351AA46A}|UI\\NetGore.Ui.Admin\\NetGore.Ui.Admin.csproj|c:\\users\\drcarver\\desktop\\netgore\\ui\\netgore.ui.admin\\viewmodels\\gametableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C536270F-3C27-41F6-A72F-CEE1351AA46A}|UI\\NetGore.Ui.Admin\\NetGore.Ui.Admin.csproj|solutionrelative:ui\\netgore.ui.admin\\viewmodels\\gametableviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,37 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameTableViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
-              "RelativeToolTip": "UI\\NetGore.Ui.Admin\\ViewModels\\GameTableViewModel.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T11:58:23.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
-              "RelativeDocumentMoniker": "UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
-              "ToolTip": "C:\\Users\\drcarver\\Desktop\\NetGore\\UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
-              "RelativeToolTip": "UI\\NetGore\\ViewModel\\MainPageViewModel.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAwwC4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T11:53:03.078Z",
-              "EditorCaption": ""
             }
           ]
         }

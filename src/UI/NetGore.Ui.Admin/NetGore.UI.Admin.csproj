@@ -25,7 +25,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\NetGore.Data\NetGore.Data.csproj" />
+	  <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
+	  <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
