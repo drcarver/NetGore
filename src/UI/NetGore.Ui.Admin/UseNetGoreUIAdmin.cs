@@ -10,8 +10,8 @@ public static class DataServices
     public static IServiceCollection UseNetGoreUIAdmin(this IServiceCollection collection)
     {
         collection
-            // Add a view and view model
-            .AddTransient<GameTableDetailPage, GameTableDetailViewModel>();
+            // Add a view and view model with route
+            .AddTransientWithShellRoute<GameTableDetailPage, GameTableDetailViewModel>(nameof(GameTableDetailPage));
         return collection;
     }
 }

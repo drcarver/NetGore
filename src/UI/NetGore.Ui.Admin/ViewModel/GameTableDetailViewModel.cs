@@ -3,10 +3,11 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using NetGore.Core.Interfaces;
+using NetGore.Data.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
-public partial class GameTableDetailViewModel : ObservableObject
+public partial class GameTableDetailViewModel : ObservableObject, IQueryAttributable
 {
     /// <summary>
     /// The ProperName of the table
@@ -32,16 +33,17 @@ public partial class GameTableDetailViewModel : ObservableObject
     [ObservableProperty]
     ObservableCollection<GameTableEntryViewModel> table = [];
 
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public GameTableDetailViewModel(IGameTable gameTable)
+    public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        ProperName = gameTable.ProperName ?? gameTable.Name;
-        Dice = $"d{gameTable.DiceSides}";
-        Description = gameTable.Description;
+        var table = (IGameTable) query[nameof(GameTable)];
+        if (table == null)
+            return;
 
-        foreach (var entry in gameTable.Table)
+        ProperName = table.ProperName ?? table.Name;
+        Dice = $"d{table.DiceSides}";
+        Description = table.Description;
+
+        foreach (var entry in table.Table)
         {
             Table.Add(new GameTableEntryViewModel(entry));
         }

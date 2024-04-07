@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:NetGore.UI.Admin.ViewModel"
              x:Class="NetGore.UI.Admin.Views.GameTableDetailPage"
-             Title="Game Table Detail">
+             Title="Game Table Detail"
+             x:DataType="viewmodel:GameTableDetailViewModel">
+
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"

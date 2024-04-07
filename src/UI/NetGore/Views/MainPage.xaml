@@ -31,8 +31,12 @@
                 ItemsSource="{Binding Items}"
                 AutoGenerateColumnsMode="None"
                 GridLinesVisibility="Both"
+                SortingMode="Single"
                 SelectionMode="Single"
                 SelectedRow="{Binding SelectedItem}" >
+            <syncfusion:SfDataGrid.SortColumnDescriptions>
+                <syncfusion:SortColumnDescription ColumnName="Name" SortDirection="Ascending" />
+            </syncfusion:SfDataGrid.SortColumnDescriptions>
             <syncfusion:SfDataGrid.Behaviors>
                 <toolkit:EventToCommandBehavior
                     EventName="SelectionChanged"

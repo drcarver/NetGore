@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 
 using NetGore.Core.Interfaces;
 using NetGore.Data.Models;
+using NetGore.UI.Admin.Views;
 
 namespace NetGore.ViewModel;
 
@@ -45,11 +46,16 @@ public partial class MainViewModel : ObservableObject
     /// The TapCommand for when a row is tapped
     /// </summary>
     [RelayCommand]
-    void Tap()
+    async void Tap()
     {
         if (SelectedItem != null)
         {
-            // Navigate to detail
+            var table = gameTables.First(gt => gt.Id.Equals(SelectedItem.Id));
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { nameof(GameTable), table }
+            };
+            await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
         }
     }
 

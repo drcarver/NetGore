@@ -16,6 +16,7 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitMediaElement()
+            .ConfigureSyncfusionCore()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -32,9 +33,6 @@ public static class MauiProgram
             .UseNetGoreUIAdmin()
             //.AddSingletonWithShellRoute<MainPage, MainViewModel>("")
             .BuildServiceProvider();
-
-        // Syncfusion install
-        builder.ConfigureSyncfusionCore();
 
         // all done
         return builder.Build();
