@@ -52,7 +52,7 @@ public class AdoptedOutsideYourRaceTable : GameTable, IAdoptedOutsideYourRaceTab
     public AdoptedOutsideYourRaceTable()
     {
         Name = nameof(AdoptedOutsideYourRaceTable);
-        Description = "Adopted Outside Your Race Table";
+        ProperName = "Adopted Outside Your Race Table";
         DiceSides = 100;
         Table =
         [

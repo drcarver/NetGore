@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 
-using NetGore.Data.ViewModels;
+using NetGore.UI.Admin.ViewModel;
 using NetGore.UI.Admin.Views;
 
 namespace NetGore.Data;
@@ -11,7 +11,7 @@ public static class DataServices
     {
         collection
             // Add a view and view model
-            .AddSingleton<NewContent1, GameTableViewModel>();
+            .AddTransient<GameTableDetailPage, GameTableDetailViewModel>();
         return collection;
     }
 }

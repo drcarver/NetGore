@@ -15,6 +15,8 @@ public class GenderTable : GameTable, IGenderTable
     [SetsRequiredMembers]
     public GenderTable()
     {
+        Name = nameof(GenderTable);
+        ProperName = "Gender Table";
         DiceSides = 100;
         Table =
         [

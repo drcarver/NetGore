@@ -53,6 +53,7 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
     public ConflictResolutionTable()
     {
         Name = nameof(ConflictResolutionTable);
+        ProperName = "Conflict Resolution Table";
         DiceSides = 8;
         Table =
         [

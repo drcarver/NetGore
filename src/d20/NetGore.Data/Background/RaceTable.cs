@@ -77,7 +77,7 @@ public class RaceTable : GameTable, IRaceTable
     public RaceTable()
     {
         Name = nameof(RaceTable);
-        Description = "Race";
+        ProperName = "Race Table";
         DiceSides = 100;
         Table =
         [

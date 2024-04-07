@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Diagnostics;
 
+using Microsoft.Extensions.DependencyInjection;
+
+using NetGore.Core.Data;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
@@ -10,12 +13,12 @@ namespace NetGore.Data;
 
 public static class DataServices
 {
-    public static IEnumerable<Type> FindSubClassesOf<TBaseType>()
+    public static List<Type> FindSubClassesOf<TBaseType>()
     {
         var baseType = typeof(TBaseType);
         var assembly = baseType.Assembly;
 
-        return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType));
+        return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType)).ToList();
     }
 
     public static IServiceCollection UseNetGoreData(this IServiceCollection collection)
@@ -28,10 +31,10 @@ public static class DataServices
             .AddSingleton<IPlayerCharacter, PlayerCharacter>()
             .AddSingleton<IAccountService, AccountService>();
         
-         // Add all the gametable types as transient
+         // Add all the game table types as transient
         foreach (var table in FindSubClassesOf<GameTable>())
         {
-            collection.AddTransient(table);
+            var t = collection.AddTransient(table);
         }
         return collection;
     }

@@ -6,6 +6,11 @@
 public interface IGameTable : IBaseObject
 {
     /// <summary>
+    /// The proper name of the table
+    /// </summary>
+    string ProperName { get; set; }
+    
+    /// <summary>
     /// The dice used to access the entries in the
     /// table
     /// </summary>

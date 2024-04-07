@@ -21,7 +21,6 @@
 
 using NetGore.Core;
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 
 namespace NetGore.Data.Background;
 

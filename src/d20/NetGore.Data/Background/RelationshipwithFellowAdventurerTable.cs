@@ -83,7 +83,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
     public RelationshipwithFellowAdventurerTable()
     {
         Name = nameof(RelationshipwithFellowAdventurerTable);
-        Description = "Relationship with Fellow Adventurer Table";
+        ProperName = "Relationship with Fellow Adventurer Table";
         DiceSides = 100;
         Table =
         [

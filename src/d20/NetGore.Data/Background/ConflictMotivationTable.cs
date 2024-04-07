@@ -52,12 +52,13 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
     //9	Pleasure	5
     //10	Amusement or Entertainment	5    
     /// <summary>
-    /// Conflict Subject Table
+    /// Conflict Motivation Table
     /// </summary>
     [SetsRequiredMembers]
     public ConflictMotivationTable()
     {
         Name = nameof(ConflictMotivationTable);
+        ProperName = "Conflict Motivation Table";
         DiceSides = 10;
         Table =
         [

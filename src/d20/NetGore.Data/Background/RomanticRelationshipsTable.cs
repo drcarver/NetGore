@@ -53,7 +53,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
     public RomanticRelationshipsTable()
     {
         Name = nameof(RomanticRelationshipsTable);
-        Description = "Romantic Relationships Table";
+        ProperName = "Romantic Relationships Table";
         DiceSides = 20;
         Table =
         [

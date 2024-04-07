@@ -22,6 +22,11 @@ public class GameTable : BaseObject, IGameTable
     }
 
     /// <summary>
+    /// THe proper name of the table
+    /// </summary>
+    public string ProperName { get; set; } = string.Empty;
+
+    /// <summary>
     /// The sides to a dice to be rolled to get random
     /// entries from the table
     /// </summary>
@@ -30,7 +35,7 @@ public class GameTable : BaseObject, IGameTable
     /// <summary>
     /// The table itself
     /// </summary>
-    public List<IGameTableEntry> Table { get; set; }
+    public List<IGameTableEntry> Table { get; set; } = [];
 
     /// <summary>
     /// Get a entry from the table based on a random 

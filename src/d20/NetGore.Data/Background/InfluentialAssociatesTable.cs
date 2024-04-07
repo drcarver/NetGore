@@ -72,7 +72,7 @@ public class InfluentialAssociatesTable : GameTable, IInfluentialAssociatesTable
     public InfluentialAssociatesTable()
     {
         Name = nameof(InfluentialAssociatesTable);
-        Description = "Influential Associates Table";
+        ProperName = "Influential Associates Table";
         DiceSides = 100;
         Table =
         [

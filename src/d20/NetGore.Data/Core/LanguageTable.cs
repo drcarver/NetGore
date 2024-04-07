@@ -1,11 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Maui.Graphics;
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
-using NetGore.Data.Race;
 
 namespace NetGore.Data.Core;
 
@@ -18,6 +15,7 @@ public class LanguageTable : GameTable, ILanguageTable
     public LanguageTable()
     {
         Name = nameof(LanguageTable);
+        ProperName = "Language Table";
         Description = "Your race indicates the " +
             "languages your character can  speak by " +
             "default, and your background might give " +

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetGore.MainPage"
+             xmlns:viewmodel="clr-namespace:NetGore.ViewModel"
+             xmlns:model="clr-namespace:NetGore.Data.Models;assembly=NetGore.Data"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:sfavatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+            x:DataType="viewmodel:MainViewModel">
+
+    <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*" />
+            <ColumnDefinition Width="75*" />
+        </Grid.ColumnDefinitions>-->
+        <!--<sfavatar:SfAvatarView
+            Grid.Column="0"
+            Grid.Row="0"
+            ContentType="Custom"
+                ImageSource="greendragon.png"
+                HeightRequest="50"
+                CornerRadius="25"
+                WidthRequest="50"
+                BackgroundColor="Transparent" />-->
+
+        <Label Text="Game Tables" HorizontalOptions="Center"
+               Grid.Row="0"/>
+
+        <syncfusion:SfDataGrid x:Name="GameTableGrid"
+                ItemsSource="{Binding Items}"
+                AutoGenerateColumnsMode="None"
+                GridLinesVisibility="Both"
+                SelectionMode="Single"
+                SelectedRow="{Binding SelectedItem}" >
+            <syncfusion:SfDataGrid.Behaviors>
+                <toolkit:EventToCommandBehavior
+                    EventName="SelectionChanged"
+                    Command="{Binding TapCommand}"/>
+            </syncfusion:SfDataGrid.Behaviors>
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn
+                    MappingName="Dice"
+                    HeaderText="Dice"
+                    ColumnWidthMode="Auto" />
+                <syncfusion:DataGridTextColumn
+                    MappingName="Name"
+                    HeaderText="Table Name"
+                    ColumnWidthMode="LastColumnFill"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+        <!--<Entry Placeholder="Enter Task" Grid.Row="1" 
+               Text="{Binding Text}" />
+        <Button Text="Add" Grid.Row="1" Grid.Column="2" 
+                Command="{Binding AddCommand}"/>-->
+
+        <!--<CollectionView Grid.Row="2" Grid.ColumnSpan="2"
+                        ItemsSource="{Binding Items}">-->
+            <!--<CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Apples</x:String>
+                    <x:String>Grapes</x:String>
+                    <x:String>Peaches</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>-->
+            <!--<DataTemplate BindableLayout.ItemsSource="{Binding Items}"
+                            x:DataType="{x:Type x:GameTable}">
+                <SwipeView>
+                    <SwipeView.RightItems>
+                        <SwipeItems>
+                            <SwipeItem Text="Delete"
+                                        BackgroundColor="Crimson"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}" 
+                                        CommandParameter="{Binding .}" />
+                        </SwipeItems>                            
+                    </SwipeView.RightItems>
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding}"
+                                    Aspect="AspectFill" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </SwipeView>
+                </DataTemplate>
+            <CollectionView />-->
+   </Grid>
+</ContentPage>

@@ -22,7 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -57,7 +56,7 @@ public class NobilityTable : GameTable, INobilityTable
     {
         Name = "NobilityTable";
         DiceSides = 100;
-        Description = "Nobility";
+        ProperName = "Nobility Table";
         Table =
         [
             #region "Gentry"

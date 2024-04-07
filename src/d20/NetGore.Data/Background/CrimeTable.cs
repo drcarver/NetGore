@@ -56,8 +56,8 @@ public class CrimeTable : GameTable, ICrimeTable
     public CrimeTable()
     {
         Name = "CrimeTable";
+        ProperName = "Crime Table";
         DiceSides = 100;
-        Description = "Crime Table";
         Table =
         [
             #region "Adultery"

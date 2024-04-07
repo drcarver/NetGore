@@ -27,7 +27,7 @@ public class AlignmentTable : GameTable, IAlignmentTable
     public AlignmentTable()
     {
         Name = nameof(AlignmentTable);
-        Description = "Alignment Table";
+        ProperName = "Alignment Table";
         DiceSides = 9;
         Table =
         [

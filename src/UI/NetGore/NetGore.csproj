@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Page1.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Platforms\Android\Linker.xml" />
 	  <None Remove="Platforms\iOS\linker.xml" />
 	</ItemGroup>
@@ -74,12 +78,18 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Maui.Graphics" Version="8.0.14" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="25.1.38" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.38" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
 	  <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
 	  <ProjectReference Include="..\NetGore.Ui.Admin\NetGore.UI.Admin.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
 	</ItemGroup>
 
 </Project>

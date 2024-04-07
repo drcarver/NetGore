@@ -59,7 +59,7 @@ public class UnusualHomelandTable : GameTable, IUnusualHomelandTable
     public UnusualHomelandTable()
     {
         Name = nameof(UnusualHomelandTable);
-        Description = "The Unusual Homeland Table";
+        ProperName = "Unusual Homeland Table";
         DiceSides = 100;
         Table =
         [

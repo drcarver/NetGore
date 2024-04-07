@@ -39,6 +39,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
     public CharacterAdvancementTable()
     {
         Name = nameof(CharacterAdvancementTable);
+        ProperName = "Character Advancement Table";
         Description = "As your character goes on " +
             "adventures and  overcomes challenges, " +
             "they gain experience,  represented by " +

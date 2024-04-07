@@ -57,7 +57,7 @@ public class ProfessionTable : GameTable, IProfessionTable
     public ProfessionTable()
     {
         Name = nameof(ProfessionTable);
-        Description = "Profession Table";
+        ProperName = "Profession Table";
         DiceSides = 100;
         Table =
         [

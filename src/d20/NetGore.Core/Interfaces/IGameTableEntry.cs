@@ -13,7 +13,7 @@ public interface IGameTableEntry : IBaseObject
     Range Range { get; set; }
 
     /// <summary>
-    /// THe English name for the entry
+    /// The English name for the entry
     /// </summary>
     string? ProperName { get; set; }
 }

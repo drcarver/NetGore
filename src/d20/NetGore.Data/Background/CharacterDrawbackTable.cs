@@ -72,6 +72,7 @@ public class CharacterDrawbackTable : GameTable, ICharacterDrawbackTable
     public CharacterDrawbackTable()
     {
         Name = nameof(CharacterDrawbackTable);
+        ProperName = "Character Drawback Table";
         DiceSides = 100;
         Table =
         [

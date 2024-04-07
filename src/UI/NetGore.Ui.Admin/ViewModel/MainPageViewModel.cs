@@ -6,7 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 using NetGore.Core.Interfaces;
 using NetGore.Data.Models;
 
-namespace NetGore.ViewModel;
+namespace NetGore.UI.Admin.ViewModel;
 
 public partial class MainViewModel : ObservableObject
 {
@@ -33,13 +33,13 @@ public partial class MainViewModel : ObservableObject
     /// The GameTable view model list
     /// </summary>
     [ObservableProperty]
-    ObservableCollection<GameTableViewModel> items = [];
+    ObservableCollection<GameTableGridViewModel> items = [];
 
     /// <summary>
     /// The currently selected row
     /// </summary>
     [ObservableProperty]
-    GameTableViewModel? selectedItem;
+    GameTableGridViewModel? selectedItem;
 
     /// <summary>
     /// The TapCommand for when a row is tapped
@@ -64,7 +64,7 @@ public partial class MainViewModel : ObservableObject
             if (gt != null)
             {
                 gameTables.Add(gt);
-                Items.Add(new GameTableViewModel(gt));
+                Items.Add(new GameTableGridViewModel(gt));
             }
         }
     }

@@ -56,7 +56,7 @@ public class PunishmentTable : GameTable, IPunishmentTable
     public PunishmentTable()
     {
         Name = nameof(PunishmentTable);
-        Description = "Punishment";
+        ProperName = "Punishment Table";
         DiceSides = 100;
         Table =
         [

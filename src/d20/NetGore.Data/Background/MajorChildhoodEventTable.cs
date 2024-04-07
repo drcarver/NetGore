@@ -65,7 +65,7 @@ public class MajorChildhoodEventTable : GameTable, IMajorChildhoodEventTable
     public MajorChildhoodEventTable()
     {
         Name = nameof(MajorChildhoodEventTable);
-        Description = "Major Childhood Event Table";
+        ProperName = "Major Childhood Event Table";
         DiceSides = 100;
         Table =
         [

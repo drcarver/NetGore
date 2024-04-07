@@ -65,7 +65,7 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
     public ConflictSubjectTable()
     {
         Name = nameof(ConflictSubjectTable);
-        Description = "The Conflicts Subject Table";
+        ProperName = "Conflicts Subject Table";
         DiceSides = 20;
         Table =
         [

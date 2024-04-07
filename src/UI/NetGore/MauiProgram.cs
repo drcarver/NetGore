@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 
 using Microsoft.Extensions.Logging;
-
+using Syncfusion.Maui.Core.Hosting;
 using NetGore.Data;
 using NetGore.ViewModel;
 
@@ -24,14 +24,19 @@ public static class MauiProgram
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
+
         // Services
         builder.Services
             .AddSingleton<MainPage, MainViewModel>()
             .UseNetGoreData()
             .UseNetGoreUIAdmin()
             //.AddSingletonWithShellRoute<MainPage, MainViewModel>("")
-            .BuildServiceProvider(); 
+            .BuildServiceProvider();
 
+        // Syncfusion install
+        builder.ConfigureSyncfusionCore();
+
+        // all done
         return builder.Build();
     }
 }

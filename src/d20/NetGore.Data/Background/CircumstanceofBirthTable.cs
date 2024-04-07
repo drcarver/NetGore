@@ -61,7 +61,7 @@ public class CircumstanceofBirthTable : GameTable, ICircumstanceofBirthTable
     public CircumstanceofBirthTable()
     {
         Name = nameof(CircumstanceofBirthTable);
-        Description = "Circumstance of Birth Table";
+        ProperName = "Circumstance of Birth Table";
         DiceSides = 100;
         Table =
         [

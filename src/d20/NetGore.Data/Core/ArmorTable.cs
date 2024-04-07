@@ -25,7 +25,8 @@ public class ArmorTable : GameTable, IArmorTable
     [SetsRequiredMembers]
     public ArmorTable()
     {
-        Name = "Armor";
+        Name = nameof(ArmorTable);
+        ProperName = "Armor Table";
         DiceSides = 10;
         Description = "Adventurers have  access to a " +
             "variety of armor types, ranging from " +
