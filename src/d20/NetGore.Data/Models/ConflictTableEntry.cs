@@ -17,5 +17,4 @@ public class ConflictTableEntry : GameTableEntry, IConflictTableEntry
     /// Conflict points
     /// </summary>
     public int ConflictPoints { get; set; }
-
 }

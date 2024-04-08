@@ -34,7 +34,7 @@ namespace NetGore.Data.Background;
 /// Childhood Event to determine the type of 
 /// event that shaped you in early childhood.
 /// </summary>
-public class MajorChildhoodEventTable : GameTable, IMajorChildhoodEventTable
+public class MajorChildhoodEventTable : RandomTable, IMajorChildhoodEventTable
 {
     //Table: Major Childhood Event
     //d%	Result
@@ -65,7 +65,9 @@ public class MajorChildhoodEventTable : GameTable, IMajorChildhoodEventTable
     public MajorChildhoodEventTable()
     {
         Name = nameof(MajorChildhoodEventTable);
-        Description = "Major Childhood Event Table";
+        ProperName = "Major Childhood Event Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "During your childhood, you were influenced by a significant event that helped to shape the person you became. Roll on Table: Major Childhood Event to determine the type of event that shaped you in early childhood.";
         DiceSides = 100;
         Table =
         [

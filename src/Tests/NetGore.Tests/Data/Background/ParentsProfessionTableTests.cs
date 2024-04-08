@@ -19,7 +19,7 @@ public class ParentsProfessionTableTests
 
         for (int i = 1; i <= professionTable.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)professionTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)professionTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

@@ -79,7 +79,7 @@ public class Human : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    public static GameTable HomelandTable { get; } = new()
+    public static RandomTable HomelandTable { get; } = new()
     {
         DiceSides = 100,
         Table =
@@ -154,7 +154,7 @@ public class Human : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static GameTable ParentsTable { get; } = new()
+    private static RandomTable ParentsTable { get; } = new()
     {
         DiceSides = 100,
         Table =
@@ -219,7 +219,7 @@ public class Human : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static GameTable SiblingsTable { get; } = new()
+    private static RandomTable SiblingsTable { get; } = new()
     {
         DiceSides = 100,
         Table =

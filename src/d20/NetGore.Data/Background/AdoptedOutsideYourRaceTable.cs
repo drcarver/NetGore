@@ -33,7 +33,7 @@ namespace NetGore.Data.Background;
 /// Table: Adopted Outside Your Race to determine 
 /// the type of creature that raised you.
 /// </summary>
-public class AdoptedOutsideYourRaceTable : GameTable, IAdoptedOutsideYourRaceTable
+public class AdoptedOutsideYourRaceTable : RandomTable, IAdoptedOutsideYourRaceTable
 {
     //Table: Adopted Outside Your Race
     //d%	Result
@@ -52,7 +52,9 @@ public class AdoptedOutsideYourRaceTable : GameTable, IAdoptedOutsideYourRaceTab
     public AdoptedOutsideYourRaceTable()
     {
         Name = nameof(AdoptedOutsideYourRaceTable);
-        Description = "Adopted Outside Your Race Table";
+        ProperName = "Adopted Outside Your Race Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "If you made a roll that determined your character was adopted outside your race, roll on Table: Adopted Outside Your Race to determine the type of creature that raised you.";
         DiceSides = 100;
         Table =
         [

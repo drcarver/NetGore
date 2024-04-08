@@ -22,12 +22,6 @@ public class GameTableEntry : BaseObject, IGameTableEntry
     }
 
     /// <summary>
-    /// The range for this entry.  Used to get random 
-    /// entries or entries by number.
-    /// </summary>
-    public Range Range { get; set; }
-
-    /// <summary>
     /// The English name for the entry
     /// </summary>
     public string? ProperName { get; set; }

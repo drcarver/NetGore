@@ -12,12 +12,11 @@ public class CharacterAdvancementTableTests
     {
         var characterAdvancementTable = new CharacterAdvancementTable();
         ClassicAssert.IsTrue(characterAdvancementTable.Name == nameof(CharacterAdvancementTable));
-        ClassicAssert.IsTrue(characterAdvancementTable.DiceSides == 20);
 
         for (int i = 0; i <= 400000; i++)
         {
             var entry = characterAdvancementTable.GetEntryByExperiencePoints(i);
-            ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry Level={entry?.Level} - ExperiencePoints = {entry?.Range.Start.Value}-{entry?.Range.End.Value} is incorrect");
+            ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry Level={entry?.Level} - ExperiencePoints = {entry?.ExperiencePoints.Start.Value}-{entry?.ExperiencePoints.End.Value} is incorrect");
         }
     }
 

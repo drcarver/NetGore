@@ -37,7 +37,7 @@ namespace NetGore.Data.Background;
 /// The motivation affects the CP gained from 
 /// the conflict.
 /// </summary>
-public class ConflictMotivationTable : GameTable, IConflictMotivationTable
+public class ConflictMotivationTable : RandomTable, IConflictMotivationTable
 {
     //Table: Motivation
     //d10 Result CP
@@ -52,20 +52,21 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
     //9	Pleasure	5
     //10	Amusement or Entertainment	5    
     /// <summary>
-    /// Conflict Subject Table
+    /// Conflict Motivation Table
     /// </summary>
     [SetsRequiredMembers]
     public ConflictMotivationTable()
     {
         Name = nameof(ConflictMotivationTable);
-        DiceSides = 10;
+        ProperName = "Conflict Motivation Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the source of your motivation for the conflict, roll on Table: Motivation. If the campaign allows the full spectrum of alignments, roll a d10 on this table. If the campaign allows only nonevil alignments, roll a d8. If you’re a paladin, roll a d4. The motivation affects the CP gained from the conflict.";
         Table =
         [
             #region Justice
             //1	Justice	1
             new ConflictTableEntry
             {
-                Range = new Range(01, 01),
                 Name = nameof(ConflictMotivationEnum.Justice),
                 ConflictPoints = 1
             },
@@ -75,7 +76,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //2	Love	1
             new ConflictTableEntry
             {
-                Range = new Range(02, 02),
                 Name = nameof(ConflictMotivationEnum.Love),
                 ConflictPoints = 1
             },
@@ -85,7 +85,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //3	Pressured or Manipulated	2
             new ConflictTableEntry
             {
-                Range = new Range(03, 03),
                 Name = nameof(ConflictMotivationEnum.PressuredorManipulated),
                 ProperName = "Pressured or Manipulated",
                 ConflictPoints = 2
@@ -96,7 +95,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //4	Religion	2
             new ConflictTableEntry
             {
-                Range = new Range(04, 04),
                 Name = nameof(ConflictMotivationEnum.Religion),
                 ProperName = "Religion",
                 ConflictPoints = 2
@@ -107,7 +105,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //5	Family	3
             new ConflictTableEntry
             {
-                Range = new Range(05, 05),
                 Name = nameof(ConflictMotivationEnum.Family),
                 ProperName = "Family",
                 ConflictPoints = 3
@@ -118,7 +115,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //6	Money	3
             new ConflictTableEntry
             {
-                Range = new Range(06, 06),
                 Name = nameof(ConflictMotivationEnum.Money),
                 ProperName = "Money",
                 ConflictPoints = 3
@@ -129,7 +125,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //7	Jealousy	4
             new ConflictTableEntry
             {
-                Range = new Range(07, 07),
                 Name = nameof(ConflictMotivationEnum.Jealousy),
                 ProperName = "Jealousy",
                 ConflictPoints = 4
@@ -140,7 +135,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //8	Hatred or Malice	4
             new ConflictTableEntry
             {
-                Range = new Range(08, 08),
                 Name = nameof(ConflictMotivationEnum.HatredorMalice),
                 ProperName = "Hatred or Malice",
                 ConflictPoints = 4
@@ -151,7 +145,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //9	Pleasure	5
             new ConflictTableEntry
             {
-                Range = new Range(09, 09),
                 Name = nameof(ConflictMotivationEnum.Pleasure),
                 ProperName = "Pleasure",
                 ConflictPoints = 5
@@ -162,7 +155,6 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
             //10	Amusement or Entertainment	5    
             new ConflictTableEntry
             {
-                Range = new Range(10, 10),
                 Name = nameof(ConflictMotivationEnum.AmusementorEntertainment),
                 ProperName = "Pleasure",
                 ConflictPoints = 5

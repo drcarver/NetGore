@@ -72,15 +72,15 @@ public class ConflictTable : GameTable, IConflictTable
     public ConflictTable()
     {
         Name = nameof(ConflictTable);
-        Description = "The Conflicts Table";
-        DiceSides = 20;
+        ProperName = "Conflicts Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
         Table =
         [
             #region Minor Failure
             //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.
             new ConflictTableEntry
             {
-                Range = new Range(01, 01),
                 Name = nameof(ConflictEnum.MinorFailure),
                 ProperName = "Minor Failure",
                 Description =
@@ -93,10 +93,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Petty Crime
-            //2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
+            // 2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
             new ConflictTableEntry
             {
-                Range = new Range(02, 02),
                 Name = nameof(ConflictEnum.PettyCrime),
                 ProperName = "Petty Crime",
                 Description =
@@ -108,10 +107,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Told a Lie
-            //3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1
+            // 3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1
             new ConflictTableEntry
             {
-                Range = new Range(03, 03),
                 Name = nameof(ConflictEnum.ToldaLie),
                 ProperName = "Told a Lie",
                 Description =
@@ -123,10 +121,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Broke a Promise
-            //4	Broke a Promise You swore an oath or vow that was important to someone else, but you did not keep your promise. 1
+            // 4	Broke a Promise You swore an oath or vow that was important to someone else, but you did not keep your promise. 1
             new ConflictTableEntry
             {
-                Range = new Range(04, 04),
                 Name = nameof(ConflictEnum.BrokeaPromise),
                 ProperName = "Broke a Promise",
                 Description =
@@ -138,10 +135,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Humiliation
-            //5	Humiliation You publicly humiliated or scandalized someone with either true or slanderous information.  2
+            // 5	Humiliation You publicly humiliated or scandalized someone with either true or slanderous information.  2
             new ConflictTableEntry
             {
-                Range = new Range(05, 05),
                 Name = nameof(ConflictEnum.Humiliation),
                 Description =
                     "You publicly humiliated or " +
@@ -152,10 +148,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Negligence
-            //6	Negligence You caused someone else to suffer by your own inaction, disregard, or excessive recklessness.   2
+            // 6	Negligence You caused someone else to suffer by your own inaction, disregard, or excessive recklessness.   2
             new ConflictTableEntry
             {
-                Range = new Range(06, 06),
                 Name = nameof(ConflictEnum.Negligence),
                 Description =
                     "You caused someone else to suffer " +
@@ -166,10 +161,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Minor Theft
-            //7	Minor Theft You stole several small or inexpensive items that belonged to someone else.	2
+            // 7	Minor Theft You stole several small or inexpensive items that belonged to someone else.	2
             new ConflictTableEntry
             {
-                Range = new Range(07, 07),
                 Name = nameof(ConflictEnum.MinorTheft),
                 ProperName = "Minor Theft",
                 Description =
@@ -181,10 +175,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Seducer
-            //8	Seducer 
+            // 8	Seducer 
             new ConflictTableEntry
             {
-                Range = new Range(08, 08),
                 Name = nameof(ConflictEnum.Seducer),
                 Description =
                     "You tempted or manipulated someone " +
@@ -196,10 +189,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Cheater
-            //9	Cheater You broke a rule, law, contract, or agreement for your own gain.    3
+            // 9	Cheater You broke a rule, law, contract, or agreement for your own gain.    3
             new ConflictTableEntry
             {
-                Range = new Range(09, 09),
                 Name = nameof(ConflictEnum.Cheater),
                 Description =
                     "You broke a rule, law, contract, " +
@@ -209,22 +201,19 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Betrayal
-            //10	Betrayal 
+            // 10	Betrayal 
             new ConflictTableEntry
             {
-                Range = new Range(10, 10),
                 Name = nameof(ConflictEnum.Betrayal),
-                Description =
-                    "You betrayed someone who trusted you.",
+                Description = "You betrayed someone who trusted you.",
                 ConflictPoints = 4
             },
             #endregion
 
             #region Malign Associates
-            //11	Malign Associates   
+            // 11	Malign Associates   
             new ConflictTableEntry
             {
-                Range = new Range(11, 11),
                 Name = nameof(ConflictEnum.MalignAssociates),
                 ProperName = "Malign Associates",
                 Description =
@@ -236,10 +225,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Destroyed a Reputation
-            //12	Destroyed a Reputation 
+            //  12	Destroyed a Reputation 
             new ConflictTableEntry
             {
-                Range = new Range(12, 12),
                 Name = nameof(ConflictEnum.DestroyedaReputation),
                 ProperName = "Destroyed a Reputation",
                 Description =
@@ -251,23 +239,20 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Major Theft
-            //13	Major Theft 
+            // 13	Major Theft 
             new ConflictTableEntry
             {
-                Range = new Range(13, 13),
                 Name = nameof(ConflictEnum.MajorTheft),
                 ProperName = "Major Theft",
-                Description =
-                    "You stole expensive items.",
+                Description = "You stole expensive items.",
                 ConflictPoints = 5
             },
             #endregion
 
             #region Corrupted an Innocent
-            //14	Corrupted an Innocent 
+            // 14	Corrupted an Innocent 
             new ConflictTableEntry
             {
-                Range = new Range(14, 14),
                 Name = nameof(ConflictEnum.CorruptedanInnocent),
                 ProperName = "Corrupted an Innocent",
                 Description =
@@ -279,10 +264,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Blackmailed
-            //15	Blackmailed You used sensitive knowledge or threats to force someone’s cooperation.	6
+            // 15	Blackmailed You used sensitive knowledge or threats to force someone’s cooperation.	6
             new ConflictTableEntry
             {
-                Range = new Range(15, 15),
                 Name = nameof(ConflictEnum.Blackmailed),
                 ProperName = "Blackmailed",
                 Description =
@@ -297,7 +281,6 @@ public class ConflictTable : GameTable, IConflictTable
             //16	Destruction You destroyed someone else’s property.	6
             new ConflictTableEntry
             {
-                Range = new Range(16, 16),
                 Name = nameof(ConflictEnum.Destruction),
                 ProperName = "Destruction",
                 Description =
@@ -307,10 +290,9 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Armed Robbery
-            //17	Armed Robbery
+            // 17	Armed Robbery
             new ConflictTableEntry
             {
-                Range = new Range(17, 17),
                 Name = nameof(ConflictEnum.ArmedRobbery),
                 ProperName = "Armed Robbery",
                 Description =
@@ -324,7 +306,6 @@ public class ConflictTable : GameTable, IConflictTable
             //18	Violent Crime   
             new ConflictTableEntry
             {
-                Range = new Range(18, 18),
                 Name = nameof(ConflictEnum.ViolentCrime),
                 ProperName = "Violent Crime",
                 Description =
@@ -334,14 +315,12 @@ public class ConflictTable : GameTable, IConflictTable
             #endregion
 
             #region Murder
-            //19	Murder
+            // 19	Murder
             new ConflictTableEntry
             {
-                Range = new Range(19, 19),
                 Name = nameof(ConflictEnum.Murder),
                 ProperName = "Murder",
-                Description =
-                    "Murder You killed someone.",
+                Description = "Murder You killed someone.",
                 ConflictPoints = 8
             },
             #endregion
@@ -350,11 +329,9 @@ public class ConflictTable : GameTable, IConflictTable
             //20	Mass Murder
             new ConflictTableEntry
             {
-                Range = new Range(20, 20),
                 Name = nameof(ConflictEnum.MassMurder),
                 ProperName = "Mass Murder",
-                Description =
-                    "You killed several sentient beings.",
+                Description = "You killed several sentient beings.",
                 ConflictPoints = 12
             },
             #endregion

@@ -65,15 +65,15 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
     public ConflictSubjectTable()
     {
         Name = nameof(ConflictSubjectTable);
-        Description = "The Conflicts Subject Table";
-        DiceSides = 20;
+        ProperName = "Conflicts Subject Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the key person (or people) involved in the conflict, roll on Table: Conflict Subject. Only on the rare occasion that the subject was a child or a young person does the subject affect the accumulation of CP.";
         Table =
         [
             #region Commoner
             //1	Commoner
             new ConflictTableEntry
             {
-                Range = new Range(01, 01),
                 Name = nameof(ConflictSubjectEnum.Commoner),
                 ConflictPoints = 0
             },
@@ -83,7 +83,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //2	Merchant
             new ConflictTableEntry
             {
-                Range = new Range(02, 02),
                 Name = nameof(ConflictSubjectEnum.Merchant),
                 ConflictPoints = 0
             },
@@ -93,7 +92,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //3	Tradesperson
             new ConflictTableEntry
             {
-                Range = new Range(03, 03),
                 Name = nameof(ConflictSubjectEnum.Tradesperson),
                 ConflictPoints = 0
             },
@@ -103,7 +101,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //4	Artisan
             new ConflictTableEntry
             {
-                Range = new Range(04, 04),
                 Name = nameof(ConflictSubjectEnum.Artisan),
                 ConflictPoints = 0
             },
@@ -113,7 +110,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //5	Civic or military official
             new ConflictTableEntry
             {
-                Range = new Range(05, 05),
                 Name = nameof(ConflictSubjectEnum.Civicormilitaryofficial),
                 ConflictPoints = 0
             },
@@ -123,7 +119,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //6	Noble
             new ConflictTableEntry
             {
-                Range = new Range(06, 06),
                 Name = nameof(ConflictSubjectEnum.Noble),
                 ConflictPoints = 0
             },
@@ -133,7 +128,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //7	Leader
             new ConflictTableEntry
             {
-                Range = new Range(07, 07),
                 Name = nameof(ConflictSubjectEnum.Leader),
                 ConflictPoints = 0
             },
@@ -143,7 +137,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //8	Clergy
             new ConflictTableEntry
             {
-                Range = new Range(08, 08),
                 Name = nameof(ConflictSubjectEnum.Clergy),
                 ConflictPoints = 0
             },
@@ -153,7 +146,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //9	Soldier or warrior
             new ConflictTableEntry
             {
-                Range = new Range(09, 09),
                 Name = nameof(ConflictSubjectEnum.Soldierorwarrior),
                 ProperName = "Soldier or warrior",
                 ConflictPoints = 0
@@ -164,7 +156,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //10	Spellcaster
             new ConflictTableEntry
             {
-                Range = new Range(10, 10),
                 Name = nameof(ConflictSubjectEnum.Spellcaster),
                 ProperName = "Spellcaster",
                 ConflictPoints = 0
@@ -175,7 +166,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //11	Scoundrel
             new ConflictTableEntry
             {
-                Range = new Range(11, 11),
                 Name = nameof(ConflictSubjectEnum.Scoundrel),
                 ProperName = "Scoundrel",
                 ConflictPoints = 0
@@ -186,7 +176,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //12	Child or young person
             new ConflictTableEntry
             {
-                Range = new Range(12, 12),
                 Name = nameof(ConflictSubjectEnum.Child),
                 ProperName = "Child or young person",
                 ConflictPoints = 1
@@ -197,7 +186,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //13	Family member
             new ConflictTableEntry
             {
-                Range = new Range(13, 13),
                 Name = nameof(ConflictSubjectEnum.Familymember),
                 ProperName = "Family member",
                 ConflictPoints = 0
@@ -208,7 +196,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //14	Close friend
             new ConflictTableEntry
             {
-                Range = new Range(14, 14),
                 Name = nameof(ConflictSubjectEnum.Closefriend),
                 ProperName = "Close friend",
                 ConflictPoints = 0
@@ -219,7 +206,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //15	Lover or former lover
             new ConflictTableEntry
             {
-                Range = new Range(15, 15),
                 Name = nameof(ConflictSubjectEnum.Loverorformerlover),
                 ProperName = "Lover or former lover",
                 ConflictPoints = 0
@@ -230,7 +216,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //16	Enemy or rival
             new ConflictTableEntry
             {
-                Range = new Range(16, 16),
                 Name = nameof(ConflictSubjectEnum.Enemyorrival),
                 ProperName = "Enemy or rival",
                 ConflictPoints = 0
@@ -241,7 +226,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //17	Gangster or underworld figure
             new ConflictTableEntry
             {
-                Range = new Range(17, 17),
                 Name = nameof(ConflictSubjectEnum.Gangsterorunderworldfigure),
                 ProperName = "Gangster or underworld figure",
                 ConflictPoints = 0
@@ -252,7 +236,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //18	Adventurer
             new ConflictTableEntry
             {
-                Range = new Range(18, 18),
                 Name = nameof(ConflictSubjectEnum.Adventurer),
                 ProperName = "Adventurer",
                 ConflictPoints = 0
@@ -263,7 +246,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //19	Humanoid monster
             new ConflictTableEntry
             {
-                Range = new Range(19, 19),
                 Name = nameof(ConflictSubjectEnum.Humanoidmonster),
                 ProperName = "Humanoid monster",
                 ConflictPoints = 0
@@ -274,7 +256,6 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
             //20	Non-humanoid monster    
             new ConflictTableEntry
             {
-                Range = new Range(20, 20),
                 Name = nameof(ConflictSubjectEnum.Nonhumanoidmonster),
                 ProperName = "Non-humanoid monster",
                 ConflictPoints = 0

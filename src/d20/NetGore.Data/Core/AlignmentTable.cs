@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
@@ -10,16 +11,6 @@ namespace NetGore.Data.Core;
 /// </summary>
 public class AlignmentTable : GameTable, IAlignmentTable
 {
-    //d9 Alignment
-    //1	LG(Lawful Good)
-    //2	NG(Neutral Good)
-    //3	CG(Chaotic Good)
-    //4	LN(Lawful Neutral)
-    //5	N(Neutral)
-    //6	CN(Chaotic Neutral)
-    //7	LE(Lawful Evil)
-    //8	NE(Neutral Evil)
-    //9	CE(Chaotic Evil)
     /// <summary>
     /// Alignment Table
     /// </summary>
@@ -27,15 +18,14 @@ public class AlignmentTable : GameTable, IAlignmentTable
     public AlignmentTable()
     {
         Name = nameof(AlignmentTable);
-        Description = "Alignment Table";
-        DiceSides = 9;
+        ProperName = "Alignment Table";
+        TableType = TableTypeEnum.GameTable;
         Table =
         [
             #region Lawful Good
-            //1	LG(Lawful Good)
+            // LG(Lawful Good)
             new GameTableEntry
             {
-                Range = new Range(1, 1),
                 Name = nameof(AlignmentEnum.LawfulGood),
                 ProperName = "Lawful Good",
                 Description =
@@ -54,10 +44,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Neutral Good
-            //2	NG(Neutral Good)
+            // NG(Neutral Good)
             new GameTableEntry
             {
-                Range = new Range(2, 2),
                 Name = nameof(AlignmentEnum.NeutralGood),
                 ProperName = "Neutral Good",
                 Description =
@@ -71,10 +60,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Chaotic Good
-            //3	CG(Chaotic Good)
+            // CG(Chaotic Good)
             new GameTableEntry
             {
-                Range = new Range(3, 3),
                 Name = nameof(AlignmentEnum.ChaoticGood),
                 ProperName = "Chaotic Good",
                 Description =
@@ -96,10 +84,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Lawful Neutral
-            //4	LN(Lawful Neutral)
+            // LN(Lawful Neutral)
             new GameTableEntry
             {
-                Range = new Range(4,4),
                 Name = nameof(AlignmentEnum.LawfulNeutral),
                 ProperName = "Lawful Neutral",
                 Description =
@@ -116,10 +103,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Neutral
-            //5	N(Neutral)
+            // N(Neutral)
             new GameTableEntry
             {
-                Range = new Range(5,5),
                 Name = nameof(AlignmentEnum.Neutral),
                 ProperName = "Neutral",
                 Description =
@@ -145,10 +131,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Chaotic Neutral
-            //6	CN(Chaotic Neutral)
+            // CN(Chaotic Neutral)
             new GameTableEntry
             {
-                Range = new Range(6,6),
                 Name = nameof(AlignmentEnum.ChaoticNeutral),
                 ProperName = "Chaotic Neutral",
                 Description =
@@ -178,10 +163,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Lawful Evil
-            //7	LE(Lawful Evil)
+            // LE(Lawful Evil)
             new GameTableEntry
             {
-                Range = new Range(7,7),
                 Name = nameof(AlignmentEnum.LawfulEvil),
                 ProperName = "Lawful Evil",
                 Description =
@@ -205,10 +189,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Neutral Evil
-            //8	NE(Neutral Evil)
+            // NE(Neutral Evil)
             new GameTableEntry
             {
-                Range = new Range(8,8),
                 Name = nameof(AlignmentEnum.NeutralEvil),
                 ProperName = "Neutral Evil",
                 Description =
@@ -232,10 +215,9 @@ public class AlignmentTable : GameTable, IAlignmentTable
             #endregion
 
             #region Chaotic Evil
-            //9	CE(Chaotic Evil)
+            // CE(Chaotic Evil)
             new GameTableEntry
             {
-                Range = new Range(9,9),
                 Name = nameof(AlignmentEnum.ChaoticEvil),
                 ProperName = "Chaotic Evil",
                 Description =

@@ -30,7 +30,7 @@ namespace NetGore.Data.Background;
 /// <summary>
 /// Determine the circumstances of your birth.
 /// </summary>
-public class CircumstanceofBirthTable : GameTable, ICircumstanceofBirthTable
+public class CircumstanceofBirthTable : RandomTable, ICircumstanceofBirthTable
 {
     //Table: Circumstance of Birth
     //d%	Result
@@ -61,7 +61,9 @@ public class CircumstanceofBirthTable : GameTable, ICircumstanceofBirthTable
     public CircumstanceofBirthTable()
     {
         Name = nameof(CircumstanceofBirthTable);
-        Description = "Circumstance of Birth Table";
+        ProperName = "Circumstance of Birth Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll once on Table: Circumstance of Birth to determine the circumstances of your birth.";
         DiceSides = 100;
         Table =
         [

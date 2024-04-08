@@ -22,7 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -37,7 +36,7 @@ namespace NetGore.Data.Background;
 /// one where there are few other members of your 
 /// race, outside of your family.
 /// </summary>
-public class UnusualHomelandTable : GameTable, IUnusualHomelandTable
+public class UnusualHomelandTable : RandomTable, IUnusualHomelandTable
 {
     //Table: Unusual Homeland
     //d%	Result
@@ -59,7 +58,9 @@ public class UnusualHomelandTable : GameTable, IUnusualHomelandTable
     public UnusualHomelandTable()
     {
         Name = nameof(UnusualHomelandTable);
-        Description = "The Unusual Homeland Table";
+        ProperName = "Unusual Homeland Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "You grew up in a region not typically associated with the lands that your people call home. Roll on Table: Unusual Homeland to determine the homeland of your family. If the result is one that is typical for your race, this region is one where there are few other members of your race, outside of your family.";
         DiceSides = 100;
         Table =
         [

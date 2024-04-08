@@ -6,7 +6,7 @@ using NetGore.Data.Interfaces;
 
 namespace NetGore.Data.Models;
 
-public class BackgroundTableEntry : GameTableEntry, IBackgroundTableEntry
+public class BackgroundTableEntry : RandomTableEntry, IBackgroundTableEntry
 {
     /// <summary>
     /// The racial traits for this creature 

@@ -3,34 +3,79 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
+using NetGore.Data.Models;
+using NetGore.UI.Admin.Views;
 
 namespace NetGore.ViewModel;
 
 public partial class MainViewModel : ObservableObject
 {
-    [ObservableProperty]
-    ObservableCollection<string> items = [];
-
-    [ObservableProperty]
-    string text = string.Empty;
-
-    [RelayCommand]
-    void Add()
+    /// <summary>
+    /// The list of Types with the same base type from
+    /// a given assembly
+    /// </summary>
+    /// <typeparam name="TBaseType">The base type</typeparam>
+    /// <returns>The type list</returns>
+    private Type[] FindSubClassesOf<TBaseType>()
     {
-        if (string.IsNullOrEmpty(Text))
-            return;
-        Items.Add(Text);
+        var baseType = typeof(TBaseType);
+        var assembly = baseType.Assembly;
 
-        Text = string.Empty;
+        return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType)).ToArray();
     }
 
+    /// <summary>
+    /// The list of game tables from the DI
+    /// </summary>
+    private List<IGameTable> gameTables = [];
+
+    /// <summary>
+    /// The GameTable view model list
+    /// </summary>
+    [ObservableProperty]
+    ObservableCollection<GameTableViewModel> items = [];
+
+    /// <summary>
+    /// The currently selected row
+    /// </summary>
+    [ObservableProperty]
+    GameTableViewModel? selectedItem;
+
+    /// <summary>
+    /// The TapCommand for when a row is tapped
+    /// </summary>
     [RelayCommand]
-    void Delete(string s)
+    async Task Tap()
     {
-        if (Items.Contains(s))
+        if (SelectedItem != null)
         {
-            Items.Remove(s);
+            var table = gameTables.First(gt => gt.Id.Equals(SelectedItem.Id));
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { nameof(GameTable), table }
+            };
+            switch (table.TableType)
+            {
+                case TableTypeEnum.GoodsTable:
+                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.BackgroundTable:
+                    await Shell.Current.GoToAsync(nameof(BackgroundTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.CharacterTable:
+                    await Shell.Current.GoToAsync(nameof(CharacterAdvancementDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.ConflictTable:
+                    await Shell.Current.GoToAsync(nameof(ConflictTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.GameTable:
+                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -39,10 +84,14 @@ public partial class MainViewModel : ObservableObject
     /// </summary>
     public MainViewModel(IServiceProvider services)
     {
-        var itemList = services.GetServices<IGameTable>();
-        foreach (var item in itemList)
+        foreach (var item in FindSubClassesOf<GameTable>())
         {
-            Items.Add(item.Name);
+            var gt = (IGameTable?)services.GetService(item);
+            if (gt != null)
+            {
+                gameTables.Add(gt);
+                Items.Add(new GameTableViewModel(gt));
+            }
         }
     }
 }

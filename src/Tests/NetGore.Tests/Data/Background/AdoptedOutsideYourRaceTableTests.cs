@@ -19,7 +19,7 @@ public class AdoptedOutsideYourRaceTableTests
 
         for (int i = 1; i <= adoptedOutsideYourRaceTable.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)adoptedOutsideYourRaceTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)adoptedOutsideYourRaceTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

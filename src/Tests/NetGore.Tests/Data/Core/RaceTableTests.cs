@@ -18,7 +18,7 @@ public class RaceTableTests
 
         for (int i = 1; i <= raceTable.DiceSides; i++)
         {
-            var entry = raceTable.GetEntryByNumber(i);
+            var entry = raceTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

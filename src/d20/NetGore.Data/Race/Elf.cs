@@ -75,7 +75,7 @@ public class Elf : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    public static GameTable HomelandTable { get; set; } = new()
+    public static RandomTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -153,7 +153,7 @@ public class Elf : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static GameTable ParentsTable { get; set; } = new()
+    private static RandomTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -219,7 +219,7 @@ public class Elf : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static GameTable SiblingsTable { get; set; } = new()
+    private static RandomTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =

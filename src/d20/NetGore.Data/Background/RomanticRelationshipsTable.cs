@@ -35,7 +35,7 @@ namespace NetGore.Data.Background;
 /// requires you to roll a d12 on this table instead 
 /// of a d20.
 /// </summary>
-public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
+public class RomanticRelationshipsTable : RandomTable, IRomanticRelationshipsTable
 {
     //Table: Romantic Relationships
     //d20 Result
@@ -53,13 +53,15 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
     public RomanticRelationshipsTable()
     {
         Name = nameof(RomanticRelationshipsTable);
-        Description = "Romantic Relationships Table";
+        ProperName = "Romantic Relationships Table";
+        TableType = TableTypeEnum.GameTable;
+        Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a d20.";
         DiceSides = 20;
         Table =
         [
             #region "One Significant Relationship"
             //1–2	One Significant Relationship You had a true love once, but that time has passed.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(01,02),
                 Name = nameof(RomanticRelationshipsEnum.OneSignificantRelationship),
@@ -72,7 +74,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "A Few Significant Relationships"
             //3–6	A Few Significant Relationships You’ve tried to make deep connections with individuals on several occasions, but it’s never worked out.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(03,06),
                 Name = nameof(RomanticRelationshipsEnum.AFewSignificantRelationships),
@@ -87,7 +89,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "Several Significant Relationships"
             //7–9	Several Significant Relationships You’ve engaged in a number of partnerships, but for some reason or another your relationships always fail.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(07,09),
                 Name = nameof(RomanticRelationshipsEnum.SeveralSignificantRelationships),
@@ -102,7 +104,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "Current Lover"
             //10–12	Current Lover You are currently involved in a romantic relationship.You gain access to the True Love story feat.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(10,12),
                 Name = nameof(RomanticRelationshipsEnum.CurrentLover),
@@ -116,7 +118,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "Several Inconsequential Relationships"
             //13–16	Several Inconsequential Relationships You have had many lovers but no long-lasting, meaningful relationships.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(13,16),
                 Name = nameof(RomanticRelationshipsEnum.SeveralInconsequentialRelationships),
@@ -129,7 +131,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "Experience but No Substantial Relationships"
             //17–18	Experience but No Substantial Relationships You’ve had a fling or two, but have so far shied away from any ties or commitments.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(17,18),
                 Name = nameof(RomanticRelationshipsEnum.ExperiencebutNoSubstantialRelationships),
@@ -143,7 +145,7 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
 
             #region "No Experience"
             //19–20	No Experience You have never experienced any kind of romantic connection whatsoever.
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(19,20),
                 Name = nameof(RomanticRelationshipsEnum.NoExperience),

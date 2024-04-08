@@ -1,9 +1,8 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Core.Interfaces;
 
 namespace NetGore.Data.Interfaces;
 
-public interface IBackgroundTableEntry : IGameTableEntry
+public interface IBackgroundTableEntry : IRandomTableEntry
 {
     /// <summary>
     /// The racial traits for this creature 

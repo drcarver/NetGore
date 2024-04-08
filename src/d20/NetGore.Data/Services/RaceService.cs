@@ -23,52 +23,42 @@ public class RaceService : IRaceService
     //Table: Race
     public static GameTable RaceTable { get; set; } = new()
     {
-        DiceSides = 100,
         Table =
         [
             new GameTableEntry
             {
-                Range = new Range(01,10),
                 Name = nameof(Dwarf),
             },
             new GameTableEntry
             {
-                Range = new Range(11,20),
                 Name = nameof(Elf),
             },
             new GameTableEntry
             {
-                Range = new Range(21,30),
                 Name = nameof(Halfling),
             },
             new GameTableEntry
             {
-                Range = new Range(31,50),
                 Name = nameof(Human),
             },
             new GameTableEntry
             {
-                Range = new Range(51,60),
                 Name = nameof(Dragonborn),
             },
             new GameTableEntry
             {
-                Range = new Range(61,70),
                 Name = nameof(Gnome),
             },
             new GameTableEntry
             {
-                Range = new Range(71,80),
                 Name = nameof(HalfElf),
             },
             new GameTableEntry
             {
-                Range = new Range(81,90),
                 Name = nameof(HalfOrc),
             },
             new GameTableEntry
             {
-                Range = new Range(91,100),
                 Name = nameof(Tiefling),
             },
         ],

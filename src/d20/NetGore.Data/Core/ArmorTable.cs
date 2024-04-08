@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using NetGore.Core.Enum;
 using NetGore.Data.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
@@ -25,8 +26,9 @@ public class ArmorTable : GameTable, IArmorTable
     [SetsRequiredMembers]
     public ArmorTable()
     {
-        Name = "Armor";
-        DiceSides = 10;
+        Name = nameof(ArmorTable);
+        ProperName = "Armor Table";
+        TableType = TableTypeEnum.GoodsTable;
         Description = "Adventurers have  access to a " +
             "variety of armor types, ranging from " +
             "leather armor to chain mail to costly " +
@@ -47,7 +49,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Padded 5	gp 11+Dex modifier — Disadvantage 8	lb.
             new ArmorEntry
             {
-                Range = new Range(1,1),
                 ArmorCategoryEnum = ArmorCategoryEnum.LightArmor,
                 Name = nameof(ArmorEnum.Padded),
                 ProperName = "Padded",
@@ -66,7 +67,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Leather 10 gp 11+Dex modifier — — 10	lb.
             new ArmorEntry
             {
-                Range = new Range(2,2),
                 ArmorCategoryEnum = ArmorCategoryEnum.LightArmor,
                 Name = nameof(ArmorEnum.Leather),
                 Description = "The breastplate and " +
@@ -89,7 +89,6 @@ public class ArmorTable : GameTable, IArmorTable
             // Studded leather 45 gp 12+Dex modifier — — 13	lb.
             new ArmorEntry
             {
-                Range = new Range(3,3),
                 ArmorCategoryEnum = ArmorCategoryEnum.LightArmor,
                 Name = nameof(ArmorEnum.StuddedLeather),
                 ProperName = "Studded leather",
@@ -110,7 +109,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Hide 10gp 12+Dex modifier(max 2) — — 12	lb.
             new ArmorEntry
             {
-                Range = new Range(4,4),
                 ArmorCategoryEnum = ArmorCategoryEnum.MediumArmor,
                 Name = nameof(ArmorEnum.Hide),
                 Description = "This crude armor " +
@@ -133,7 +131,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Chain shirt 50gp 13+Dex modifier(max 2) — — 20lb.
             new ArmorEntry
             {
-                Range = new Range(5,5),
                 ArmorCategoryEnum = ArmorCategoryEnum.MediumArmor,
                 Name = nameof(ArmorEnum.ChainShirt),
                 Description = "Made of interlocking " +
@@ -158,7 +155,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Scale mail 50	gp 14+Dex modifier(max 2) — Disadvantage 45	lb.
             new ArmorEntry
             {
-                Range = new Range(6,6),
                 ArmorCategoryEnum = ArmorCategoryEnum.MediumArmor,
                 Name = nameof(ArmorEnum.ScaleMail),
                 ProperName = "Scale mail",
@@ -182,7 +178,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Breastplate 400gp 14+Dex modifier(max 2) — — 20	lb.
             new ArmorEntry
             {
-                Range = new Range(7,7),
                 ArmorCategoryEnum = ArmorCategoryEnum.MediumArmor,
                 Name = nameof(ArmorEnum.Breastplate),
                 Description = "This armor consists of " +
@@ -206,7 +201,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Half plate 750gp 15+Dex modifier(max 2) — Disadvantage 40	lb.
             new ArmorEntry
             {
-                Range = new Range(8,8),
                 ArmorCategoryEnum = ArmorCategoryEnum.MediumArmor,
                 Name = nameof(ArmorEnum.Halfplate),
                 ProperName = "Half plate",
@@ -229,7 +223,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Ring mail 30gp 14 — Disadvantage 40	lb.
             new ArmorEntry
             {
-                Range = new Range(9,9),
                 ArmorCategoryEnum = ArmorCategoryEnum.HeavyArmor,
                 Name = nameof(ArmorEnum.Ringmail),
                 ProperName = "Ring mail",
@@ -254,7 +247,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Chain mail 75gp 16 Str 13 Disadvantage 55lb.
             new ArmorEntry
             {
-                Range = new Range(10,10),
                 ArmorCategoryEnum = ArmorCategoryEnum.HeavyArmor,
                 Name = nameof(ArmorEnum.Chainmail),
                 ProperName = "Chain mail",
@@ -278,7 +270,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Splint 200gp 17 Str 15 Disadvantage 60lb.
             new ArmorEntry
             {
-                Range = new Range(11,11),
                 ArmorCategoryEnum = ArmorCategoryEnum.HeavyArmor,
                 Name = nameof(ArmorEnum.Splint),
                 Description = "This armor is made of " +
@@ -300,7 +291,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Plate 1,500gp 18 Str 15 Disadvantage 65lb.
             new ArmorEntry
             {
-                Range = new Range(12,12),
                 ArmorCategoryEnum = ArmorCategoryEnum.HeavyArmor,
                 Name = nameof(ArmorEnum.Plate),
                 Description = "Plate consists of " +
@@ -325,7 +315,6 @@ public class ArmorTable : GameTable, IArmorTable
             //Shield 10	gp +2 — — 6	lb.
             new ArmorEntry
             {
-                Range = new Range(13,13),
                 ArmorCategoryEnum = ArmorCategoryEnum.Shields,
                 Name = nameof(ArmorEnum.Shield),
                 Cost = 10,

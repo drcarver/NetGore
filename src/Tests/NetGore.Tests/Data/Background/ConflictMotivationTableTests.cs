@@ -16,11 +16,10 @@ public class ConflictMotivationTableTests
     {
         var conflictMotivationTable = new ConflictMotivationTable();
         ClassicAssert.IsTrue(conflictMotivationTable.Name == nameof(ConflictMotivationTable));
-        ClassicAssert.IsTrue(conflictMotivationTable.DiceSides == 10);
 
         for (int i = 1; i <= conflictMotivationTable.DiceSides; i++)
         {
-            var entry = (IConflictTableEntry)conflictMotivationTable.GetEntryByNumber(i);
+            var entry = (IConflictTableEntry)conflictMotivationTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

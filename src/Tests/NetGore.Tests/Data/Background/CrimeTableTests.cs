@@ -1,6 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Data.Background;
+using NetGore.Data.Interfaces;
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Background;
@@ -17,12 +18,12 @@ public class CrimeTableTests
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = table.GetEntryByNumber(i);
+            var entry = table.GetRangeEntryByNumber(i);
             try
             {
                 ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new ArgumentOutOfRangeException($"Index={i}");
             }
@@ -35,7 +36,7 @@ public class CrimeTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, IGameTableEntry entry)
+    private static bool VerifyEntry(int i, IRandomTableEntry entry)
     {
         if (entry == null)
         {

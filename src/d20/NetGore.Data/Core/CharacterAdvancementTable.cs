@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using NetGore.Core.Interfaces;
+
+using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -39,6 +40,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
     public CharacterAdvancementTable()
     {
         Name = nameof(CharacterAdvancementTable);
+        ProperName = "Character Advancement Table";
         Description = "As your character goes on " +
             "adventures and  overcomes challenges, " +
             "they gain experience,  represented by " +
@@ -46,14 +48,14 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             "reaches a specified experience point " +
             "total advances  in capability. This " +
             "advancement is called gaining a  level";
-        DiceSides = 20;
+        TableType = TableTypeEnum.CharacterTable;
         Table =
         [
             #region 1st Level
             //0-299 1 +2
             new CharacterAdvancementEntry
             {
-                Range = new Range(0, 299),
+                ExperiencePoints = new Range(0, 299),
                 ProficiencyBonus = 2,
                 Level = 1,
             },
@@ -63,7 +65,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //300-899 2 +2
             new CharacterAdvancementEntry
             {
-                Range = new Range(300, 899),
+                ExperiencePoints = new Range(300, 899),
                 ProficiencyBonus = 2,
                 Level = 2,
             },
@@ -73,7 +75,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //900-2699 3 +2
             new CharacterAdvancementEntry
             {
-                Range = new Range(900, 2699),
+                ExperiencePoints = new Range(900, 2699),
                 ProficiencyBonus = 2,
                 Level = 3,
             },
@@ -83,7 +85,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //2700-6499 4 +2
             new CharacterAdvancementEntry
             {
-                Range = new Range(2700, 6499),
+                ExperiencePoints = new Range(2700, 6499),
                 ProficiencyBonus = 2,
                 Level = 4,
             },
@@ -93,7 +95,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //6500-13999 5 +3
             new CharacterAdvancementEntry
             {
-                Range = new Range(6500, 13999),
+                ExperiencePoints = new Range(6500, 13999),
                 ProficiencyBonus = 3,
                 Level = 5,
             },
@@ -103,7 +105,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //14000-22999 6 +3
             new CharacterAdvancementEntry
             {
-                Range = new Range(14000, 22999),
+                ExperiencePoints = new Range(14000, 22999),
                 ProficiencyBonus = 3,
                 Level = 6,
             },
@@ -113,7 +115,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //23000-33999 7 +3
             new CharacterAdvancementEntry
             {
-                Range = new Range(23000, 33999),
+                ExperiencePoints = new Range(23000, 33999),
                 ProficiencyBonus = 3,
                 Level = 7,
             },
@@ -123,7 +125,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //34000-47999 8 +3
             new CharacterAdvancementEntry
             {
-                Range = new Range(34000, 47999),
+                ExperiencePoints = new Range(34000, 47999),
                 ProficiencyBonus = 3,
                 Level = 8,
             },
@@ -133,7 +135,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //48000-63999 9 +4
             new CharacterAdvancementEntry
             {
-                Range = new Range(48000, 63999),
+                ExperiencePoints = new Range(48000, 63999),
                 ProficiencyBonus = 4,
                 Level = 9,
             },
@@ -143,7 +145,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //64000-85999 10 +4
             new CharacterAdvancementEntry
             {
-                Range = new Range(64000, 84999),
+                ExperiencePoints = new Range(64000, 84999),
                 ProficiencyBonus = 4,
                 Level = 10,
             },
@@ -153,7 +155,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //85000-99999 11 +4
             new CharacterAdvancementEntry
             {
-                Range = new Range(85000, 99999),
+                ExperiencePoints = new Range(85000, 99999),
                 ProficiencyBonus = 4,
                 Level = 11,
             },
@@ -163,7 +165,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //100,000-119999 12 +4
             new CharacterAdvancementEntry
             {
-                Range = new Range(100000, 119999),
+                ExperiencePoints = new Range(100000, 119999),
                 ProficiencyBonus = 4,
                 Level = 12,
             },
@@ -173,7 +175,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //120,000-139,999 13 +5
             new CharacterAdvancementEntry
             {
-                Range = new Range(120000, 139999),
+                ExperiencePoints = new Range(120000, 139999),
                 ProficiencyBonus = 5,
                 Level = 13,
             },
@@ -183,7 +185,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //140,000-164,999 14 +5
             new CharacterAdvancementEntry
             {
-                Range = new Range(140000, 164999),
+                ExperiencePoints = new Range(140000, 164999),
                 ProficiencyBonus = 5,
                 Level = 14,
             },
@@ -193,7 +195,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //165,000-194,999 15 +5
             new CharacterAdvancementEntry
             {
-                Range = new Range(165000, 194999),
+                ExperiencePoints = new Range(165000, 194999),
                 ProficiencyBonus = 5,
                 Level = 15,
             },
@@ -203,7 +205,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //195,000-224,999 16 +5
             new CharacterAdvancementEntry
             {
-                Range = new Range(195000, 224999),
+                ExperiencePoints = new Range(195000, 224999),
                 ProficiencyBonus = 5,
                 Level = 16,
             },
@@ -213,7 +215,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //225000-264999 16 +5
             new CharacterAdvancementEntry
             {
-                Range = new Range(225000, 264999),
+                ExperiencePoints = new Range(225000, 264999),
                 ProficiencyBonus = 6,
                 Level = 17,
             },
@@ -223,7 +225,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //265000-304999 18 +6
             new CharacterAdvancementEntry
             {
-                Range = new Range(265000, 304999),
+                ExperiencePoints = new Range(265000, 304999),
                 ProficiencyBonus = 6,
                 Level = 18,
             },
@@ -233,7 +235,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //305,000-304999 19 +6
             new CharacterAdvancementEntry
             {
-                Range = new Range(305000, 354999),
+                ExperiencePoints = new Range(305000, 354999),
                 ProficiencyBonus = 6,
                 Level = 19,
             },
@@ -243,7 +245,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             //355000-int.MaxValue 20 +6
             new CharacterAdvancementEntry
             {
-                Range = new Range(355000, int.MaxValue),
+                ExperiencePoints = new Range(355000, int.MaxValue),
                 ProficiencyBonus = 6,
                 Level = 20,
             },
@@ -252,16 +254,14 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
     }
 
     /// <summary>
-    /// Get a entry from the table by it's name
+    /// Get a entry from the table by it's experience points
     /// </summary>
     /// <returns>The selected CharacterAdvancementEntry.</returns>
     public ICharacterAdvancementEntry GetEntryByExperiencePoints(int number)
     {
-        var te = Table.First(t =>
-                        t.Range.Start.Value <= number
-                     && t.Range.End.Value >= number);
-        return (ICharacterAdvancementEntry)te;
+        var te = Table.Cast<ICharacterAdvancementEntry>().First(t =>
+                        t.ExperiencePoints.Start.Value <= number
+                     && t.ExperiencePoints.End.Value >= number);
+        return te;
     }
-
-
 }

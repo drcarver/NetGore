@@ -6,27 +6,30 @@ using NetGore.Data.Models;
 
 namespace NetGore.Core.Data;
 
+/// <summary>
+/// The gender table.  
+/// </summary>
 public class GenderTable : GameTable, IGenderTable
 {
-    //Table: Gender
-    //d%	 Result
-    //01–50	 Male
-    //51–100 Female
+    /// <summary>
+    /// Constructor
+    /// </summary>
     [SetsRequiredMembers]
     public GenderTable()
     {
-        DiceSides = 100;
+        Name = nameof(GenderTable);
+        ProperName = "Gender Table";
+        TableType = TableTypeEnum.CharacterTable;
         Table =
         [
             new GameTableEntry
             {
-                Range = new Range(01,50),
                 Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
+
             new GameTableEntry
             {
-                Range = new Range(51,100),
                 Name = nameof(GenderEnum.Female),
                 Description = "The Female of the species",
             },

@@ -1,7 +1,7 @@
 ﻿using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
-using NetGore.Core.Models;
 using NetGore.Data.Background;
+
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Background;
@@ -13,12 +13,12 @@ public class RomanticRelationshipsTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new RomanticRelationshipsTable();
-        ClassicAssert.IsTrue(table.Description == "Romantic Relationships Table");
+        ClassicAssert.IsTrue(table.ProperName == "Romantic Relationships Table");
         ClassicAssert.IsTrue(table.DiceSides == 20);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = table.GetEntryByNumber(i);
+            var entry = table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} is incorrect");
         }
     }

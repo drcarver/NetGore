@@ -35,7 +35,7 @@ namespace NetGore.Data.Background;
 /// the severity of the punishment you received—or 
 /// have yet to receive—for having been judged guilty.
 /// </summary>
-public class PunishmentTable : GameTable, IPunishmentTable
+public class PunishmentTable : RandomTable, IPunishmentTable
 {
     //Table: Punishment
     //d%	Punishment
@@ -56,7 +56,9 @@ public class PunishmentTable : GameTable, IPunishmentTable
     public PunishmentTable()
     {
         Name = nameof(PunishmentTable);
-        Description = "Punishment";
+        ProperName = "Punishment Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll on Table: Punishment to learn the severity of the punishment you received—or have yet to receive—for having been judged guilty.";
         DiceSides = 100;
         Table =
         [
