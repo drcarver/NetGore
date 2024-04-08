@@ -33,7 +33,7 @@ namespace NetGore.Data.Background;
 /// Table: Adopted Outside Your Race to determine 
 /// the type of creature that raised you.
 /// </summary>
-public class AdoptedOutsideYourRaceTable : GameTable, IAdoptedOutsideYourRaceTable
+public class AdoptedOutsideYourRaceTable : RandomTable, IAdoptedOutsideYourRaceTable
 {
     //Table: Adopted Outside Your Race
     //d%	Result

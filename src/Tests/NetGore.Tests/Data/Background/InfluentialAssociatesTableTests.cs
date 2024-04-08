@@ -1,7 +1,7 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
+
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Background;
@@ -13,12 +13,12 @@ public class InfluentialAssociatesTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new InfluentialAssociatesTable();
-        ClassicAssert.IsTrue(table.Description == "Influential Associates Table");
+        ClassicAssert.IsTrue(table.ProperName == "Influential Associates Table");
         ClassicAssert.IsTrue(table.DiceSides == 100);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)table.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

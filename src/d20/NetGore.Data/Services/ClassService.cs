@@ -20,13 +20,11 @@ public class ClassService : IClassService
     /// </summary>
     private static GameTable ClassTable { get; set; } = new()
     {
-        DiceSides = 120,
         Table =
         [
             #region Barbarian
             new GameTableEntry
             {
-                Range = new Range(01,10),
                 Name = nameof(Barbarian),
             },
             #endregion
@@ -34,7 +32,6 @@ public class ClassService : IClassService
             #region Bard
             new GameTableEntry
             {
-                Range = new Range(11,20),
                 Name = nameof(Bard),
             },
             #endregion
@@ -42,7 +39,6 @@ public class ClassService : IClassService
             #region Cleric
             new GameTableEntry
             {
-                Range = new Range(21,30),
                 Name = nameof(Cleric),
             },
             #endregion
@@ -50,7 +46,6 @@ public class ClassService : IClassService
             #region Druid
             new GameTableEntry
             {
-                Range = new Range(31,40),
                 Name = nameof(Druid),
             },
             #endregion
@@ -58,7 +53,6 @@ public class ClassService : IClassService
             #region Fighter
             new GameTableEntry
             {
-                Range = new Range(41,50),
                 Name = "Fighter",
             },
             #endregion
@@ -66,7 +60,6 @@ public class ClassService : IClassService
             #region Monk
             new GameTableEntry
             {
-                Range = new Range(51,60),
                 Name = nameof(Monk),
             },
             #endregion
@@ -74,7 +67,6 @@ public class ClassService : IClassService
             #region Paladin
             new GameTableEntry
             {
-                Range = new Range(61,70),
                 Name = nameof(Paladin),
             },
             #endregion
@@ -82,7 +74,6 @@ public class ClassService : IClassService
             #region Ranger
             new GameTableEntry
             {
-                Range = new Range(71,80),
                 Name = nameof(Ranger),
             },
             #endregion
@@ -90,7 +81,6 @@ public class ClassService : IClassService
             #region Rogue
             new GameTableEntry
             {
-                Range = new Range(81,90),
                 Name = "Rogue",
             },
             #endregion
@@ -98,7 +88,6 @@ public class ClassService : IClassService
             #region Sorcerer
             new GameTableEntry
             {
-                Range = new Range(91,100),
                 Name = nameof(Sorcerer),
             },
             #endregion
@@ -106,7 +95,6 @@ public class ClassService : IClassService
             #region Warlock
             new GameTableEntry
             {
-                Range = new Range(101,110),
                 Name = nameof(Warlock),
             },
             #endregion
@@ -114,7 +102,6 @@ public class ClassService : IClassService
             #region Wizard
             new GameTableEntry
             {
-                Range = new Range(111,120),
                 Name = nameof(Wizard),
             },
             #endregion

@@ -34,7 +34,7 @@ namespace NetGore.Data.Background;
 /// Childhood Event to determine the type of 
 /// event that shaped you in early childhood.
 /// </summary>
-public class MajorChildhoodEventTable : GameTable, IMajorChildhoodEventTable
+public class MajorChildhoodEventTable : RandomTable, IMajorChildhoodEventTable
 {
     //Table: Major Childhood Event
     //d%	Result

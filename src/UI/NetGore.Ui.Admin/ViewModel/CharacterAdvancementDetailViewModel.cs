@@ -4,18 +4,13 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 using NetGore.Core.Interfaces;
+using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
 public partial class CharacterAdvancementDetailViewModel : ObservableObject, IQueryAttributable
 {
-    /// <summary>
-    /// The dice to roll for a random entry 
-    /// </summary>
-    [ObservableProperty]
-    string? dice;
-
     /// <summary>
     /// The description of the table
     /// </summary>
@@ -56,11 +51,10 @@ public partial class CharacterAdvancementDetailViewModel : ObservableObject, IQu
     /// <param name="query">The navigation query</param>
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(GameTable)];
+        var table = (ICharacterAdvancementTable) query[nameof(GameTable)];
         if (table == null)
             return;
 
-        Dice = $"d{table.DiceSides}";
         Description = table.Description;
         ProperName = table.ProperName ?? table.Name;
 

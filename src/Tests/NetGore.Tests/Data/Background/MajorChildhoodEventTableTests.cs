@@ -13,12 +13,12 @@ public class MajorChildhoodEventTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new MajorChildhoodEventTable();
-        ClassicAssert.IsTrue(table.Description == "Major Childhood Event Table");
+        ClassicAssert.IsTrue(table.ProperName == "Major Childhood Event Table");
         ClassicAssert.IsTrue(table.DiceSides == 100);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)table.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

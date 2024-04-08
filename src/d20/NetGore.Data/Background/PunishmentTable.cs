@@ -35,7 +35,7 @@ namespace NetGore.Data.Background;
 /// the severity of the punishment you received—or 
 /// have yet to receive—for having been judged guilty.
 /// </summary>
-public class PunishmentTable : GameTable, IPunishmentTable
+public class PunishmentTable : RandomTable, IPunishmentTable
 {
     //Table: Punishment
     //d%	Punishment

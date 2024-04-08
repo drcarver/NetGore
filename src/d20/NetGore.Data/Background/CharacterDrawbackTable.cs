@@ -41,7 +41,7 @@ namespace NetGore.Data.Background;
 /// following table to determine your character’s 
 /// drawback.
 /// </summary>
-public class CharacterDrawbackTable : GameTable, ICharacterDrawbackTable
+public class CharacterDrawbackTable : RandomTable, ICharacterDrawbackTable
 {
     //Table: Character Drawback
     //d%	Result

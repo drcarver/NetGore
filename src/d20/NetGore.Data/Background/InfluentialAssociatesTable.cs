@@ -41,7 +41,7 @@ namespace NetGore.Data.Background;
 ///this chapter to randomly fill in this 
 ///person’s details
 /// </summary>
-public class InfluentialAssociatesTable : GameTable, IInfluentialAssociatesTable
+public class InfluentialAssociatesTable : RandomTable, IInfluentialAssociatesTable
 {
     //Table: Influential Associates
     //d%	Result

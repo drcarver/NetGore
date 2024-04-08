@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography;
 
-using NetGore.Core;
 using NetGore.Core.Base;
 using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
@@ -24,15 +24,9 @@ public class GameTable : BaseObject, IGameTable
     }
 
     /// <summary>
-    /// THe proper name of the table
+    /// The proper name of the table
     /// </summary>
     public string ProperName { get; set; } = string.Empty;
-
-    /// <summary>
-    /// The sides to a dice to be rolled to get random
-    /// entries from the table
-    /// </summary>
-    public int DiceSides { get; set; }
 
     /// <summary>
     /// The table type
@@ -45,17 +39,6 @@ public class GameTable : BaseObject, IGameTable
     public List<IGameTableEntry> Table { get; set; } = [];
 
     /// <summary>
-    /// Get a entry from the table based on a random 
-    /// dice roll
-    /// </summary>
-    /// <returns>The selected TableEntry.</returns>
-    public IGameTableEntry GetRandomEntry()
-    {
-        Dice dice = new($"1d{DiceSides}");
-        return GetEntryByNumber(dice.Total);
-    }
-
-    /// <summary>
     /// Get a entry from the table by it's name
     /// </summary>
     /// <returns>The selected RandomTableEntry.</returns>
@@ -66,14 +49,14 @@ public class GameTable : BaseObject, IGameTable
     }
 
     /// <summary>
-    /// Get a entry from the table by it's name
+    /// Get a random entry from the table 
     /// </summary>
-    /// <returns>The selected RandomTableEntry.</returns>
-    public IGameTableEntry GetEntryByNumber(int number)
+    /// <returns>The selected TableEntry.</returns>
+    public IGameTableEntry GetRandomEntry()
     {
-        var te = Table.First(t =>
-                        t.Range.Start.Value <= number
-                     && t.Range.End.Value >= number);
-        return te;
+        using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+        {
+            return Table[RandomNumberGenerator.GetInt32(Table.Count)];
+        }
     }
 }

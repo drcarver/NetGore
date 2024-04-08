@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NetGore.Core.Base;
 using NetGore.Core.Interfaces;
+using NetGore.Data.Interfaces;
 
 namespace NetGore.Data.Models;
 
@@ -11,18 +12,18 @@ namespace NetGore.Data.Models;
 /// range to access the entries by number or 
 /// randomly
 /// </summary>
-public class GameTableEntry : BaseObject, IGameTableEntry
+public class RandomTableEntry : GameTableEntry, IRandomTableEntry
 {
     /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public GameTableEntry()
+    public RandomTableEntry()
     {
     }
 
     /// <summary>
-    /// The English name for the entry
+    /// The range of the entry
     /// </summary>
-    public string? ProperName { get; set; }
+    public Range Range { get; set; }
 }

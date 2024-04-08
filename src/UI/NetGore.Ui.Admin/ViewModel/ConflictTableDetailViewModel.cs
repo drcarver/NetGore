@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 using NetGore.Core.Interfaces;
+using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
@@ -45,12 +46,11 @@ public partial class ConflictTableDetailViewModel : ObservableObject, IQueryAttr
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(GameTable)];
+        var table = (IConflictTable) query[nameof(GameTable)];
         if (table == null)
             return;
 
         ProperName = table.ProperName ?? table.Name;
-        Dice = $"d{table.DiceSides}";
         Description = table.Description;
 
         foreach (ConflictTableEntry entry in table.Table)

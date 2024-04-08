@@ -10,7 +10,7 @@ public partial class GameTableViewModel : ObservableObject
     string name;
 
     [ObservableProperty]
-    string dice;
+    string? description;
 
     public Guid Id { get; set; }
 
@@ -18,6 +18,6 @@ public partial class GameTableViewModel : ObservableObject
     {
         Id = table.Id;
         Name = table.ProperName ?? table.Name;
-        Dice = $"d{table.DiceSides}";
+        Description = table.Description;
     }
 }

@@ -19,7 +19,7 @@ public class NobilityTableTests
 
         for (int i = 1; i <= nobilityTable.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)nobilityTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)nobilityTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

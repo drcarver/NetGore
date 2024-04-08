@@ -50,8 +50,7 @@ namespace NetGore.Data.Background;
 /// to improve group cohesion.
 /// </para>
 /// </summary>
-public class RelationshipwithFellowAdventurerTable : GameTable,
-    IRelationshipwithFellowAdventurerTable
+public class RelationshipwithFellowAdventurerTable : RandomTable, IRelationshipwithFellowAdventurerTable
 {
     //Table: Relationship with Fellow Adventurer
     //d%	Result
@@ -90,7 +89,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
         [
             #region Family
             //01–05	Family or close as family—close friends, close/distant relatives, relatives by marriage/adoption
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(01,05),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Family),
@@ -104,7 +103,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Friend of a friend
             //06–10	Friend of a friend
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(06,10),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Friendofafriend),
@@ -118,7 +117,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Tavern buddies
             //11–15	Tavern buddies
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(11,15),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Tavernbuddies),
@@ -128,7 +127,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Hunting companions
             //16–20	Hunting companions
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(16,20),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Huntingcompanions),
@@ -138,7 +137,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Business associates
             //21–25	Business associates, current or former
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(21,25),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Businessassociates),
@@ -149,7 +148,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Contractor and employer
             //26–30	Contractor and employer
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(26,30),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Contractorandemployer),
@@ -159,7 +158,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Former allies
             //31–35	Former allies
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(31,35),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerallies),
@@ -169,7 +168,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Former enemies
             //36–40	Former enemies
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(36,40),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerenemies),
@@ -179,7 +178,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Friendly competitors
             //41–45	Friendly competitors
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(41,45),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Friendlycompetitors),
@@ -189,7 +188,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Romantic competitors
             //46–50	Romantic competitors, current or former
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(46,50),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Romanticcompetitors),
@@ -200,7 +199,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Know each other by reputation only
             //51–55	Know each other by reputation only
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(51,55),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.KnownByRepution),
@@ -210,7 +209,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Former inmates
             //56–60	Former inmates(prison, asylum, or captivity) or former inmate and captor
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(56,60),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Formerinmates),
@@ -221,7 +220,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Criminal connections
             //61–65	Criminal connections
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(61,65),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Criminalconnections),
@@ -231,7 +230,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Servants
             //66–70	Servants or apprentices to the same master
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(66,70),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Servants),
@@ -242,7 +241,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Met on a pilgrimage
             //71–75	Met on a pilgrimage, caravan, or journey
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(71,75),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Metonapilgrimage),
@@ -253,7 +252,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Veterans
             //76–80	Veterans of a skirmish or war
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(76,80),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Veterans),
@@ -264,7 +263,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Follow
             //81–85	Follow(or followed) the same faith or cult
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(81,85),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Follow),
@@ -275,7 +274,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Best friends
             //86–90	Best friends
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(86,90),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Bestfriends),
@@ -285,7 +284,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Gaming
             //91–95	Gaming or gambling associates
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(91,95),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Gaming),
@@ -295,7 +294,7 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
 
             #region Hometown
             //96–100	From the same hometown or region
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(96,100),
                 Name = nameof(RelationshipwithFellowAdventurerEnum.Hometown),

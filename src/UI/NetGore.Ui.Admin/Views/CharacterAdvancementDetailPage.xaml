@@ -11,7 +11,6 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -19,33 +18,23 @@
             <ColumnDefinition Width="10*" />
             <ColumnDefinition Width="75*" />
         </Grid.ColumnDefinitions>
-        <Label Text="Dice"
-            VerticalTextAlignment="Start"
-            HorizontalOptions="Start"
-            Margin="10,10,10,10"
-            Grid.Row="0" Grid.Column="0" />
-        <Label Text="{Binding Dice}"
-            VerticalTextAlignment="Start"
-            HorizontalOptions="Start"
-            Margin="10,10,10,10"
-            Grid.Row="0" Grid.Column="1" />
         <Label Text="Description"
             VerticalTextAlignment="Start"
             HorizontalOptions="Start"
             Margin="10,10,10,10"
-            Grid.Row="1" Grid.Column="0" />
+            Grid.Row="0" Grid.Column="0" />
         <Label Text="{Binding Description}"
             VerticalTextAlignment="Start"
             HorizontalOptions="Start"
             Margin="10,10,10,10"
-            Grid.Row="1" Grid.Column="1" />
+            Grid.Row="0" Grid.Column="1" />
 
         <syncfusion:SfDataGrid x:Name="CharacterAdvancementGrid"
                 ItemsSource="{Binding Table}"
                 AutoGenerateColumnsMode="None"
                 GridLinesVisibility="Both"
                 SelectionMode="None"
-                Grid.Row="2"
+                Grid.Row="1"
                 Grid.ColumnSpan="2"
                 SelectedRow="{Binding SelectedItem}" >
             <syncfusion:SfDataGrid.Columns>
@@ -54,7 +43,7 @@
                     HeaderText="Level"
                     ColumnWidthMode="Auto"/>
                 <syncfusion:DataGridTextColumn
-                    MappingName="Range"
+                    MappingName="ExperiencePoints"
                     HeaderText="Experience Points"
                     ColumnWidthMode="Auto" />
                 <syncfusion:DataGridTextColumn
@@ -64,7 +53,7 @@
             </syncfusion:SfDataGrid.Columns>
         </syncfusion:SfDataGrid>
 
-        <Button Text="Go Back" Grid.Row="3" 
+        <Button Text="Go Back" Grid.Row="2" 
                 Margin="10,10,10,10"
                 Grid.ColumnSpan="2" 
                 HorizontalOptions="Center"

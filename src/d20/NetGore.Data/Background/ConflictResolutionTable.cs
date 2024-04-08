@@ -56,7 +56,6 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
         ProperName = "Conflict Resolution Table";
         TableType = TableTypeEnum.ConflictTable;
         Description = "Once you determine the nature and CP for the event, the next step is to determine the resolution. Instead of rolling for the conflict’s resolution, you choose how you dealt with it, and your choice can affect the number of CP the conflict is worth. In games that do not allow evil characters, you cannot take a resolution that would adjust your character to an evil alignment.";
-        DiceSides = 8;
         Table =
         [
             #region Regret and Penance
@@ -70,9 +69,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //or whom to ask.
             new ConflictTableEntry
             {
-                Range = new Range(01, 01),
                 Name = nameof(ConflictResolutionEnum.RegretandPenance),
                 ProperName = "Regret and Penance",
+                Description = "Not only do you regret your action, but you have publicly admitted to it and did your best to make amends for the wrongdoing. Most know of the conflict’s details and those who don’t can easily find them out if they know where to look or whom to ask.",
                 ConflictPoints = -3
             },
             #endregion
@@ -87,9 +86,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //discretion.
             new ConflictTableEntry
             {
-                Range = new Range(02, 02),
                 Name = nameof(ConflictResolutionEnum.SincereRegret),
                 ProperName = "Sincere Regret",
+                Description = "Though you feel sincere regret for the event and its memory affects your behavior, it’s still a secret. Only your trusted companions know of the conflict, and they have promised a degree of discretion.",
                 ConflictPoints = -2
             },
             #endregion
@@ -103,9 +102,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //of your involvement in the conflict.
             new ConflictTableEntry
             {
-                Range = new Range(03, 03),
                 Name = nameof(ConflictResolutionEnum.SecretRegret),
                 ProperName = "Secret Regret",
+                Description = "You regret the conflict, but go to great lengths to keep it secret and try desperately to forget it ever happened.Only you and maybe a select few people know of your involvement in the conflict.",
                 ConflictPoints = -1
             },
             #endregion
@@ -114,9 +113,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //Mixed Feelings (0 cp) Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.
             new ConflictTableEntry
             {
-                Range = new Range(04, 05),
                 Name = nameof(ConflictResolutionEnum.MixedFeelings),
                 ProperName = "Mixed Feelings",
+                Description = "Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.",
                 ConflictPoints = 0
             },
             #endregion
@@ -125,9 +124,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //Denial (+1 cp) You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.
             new ConflictTableEntry
             {
-                Range = new Range(06, 06),
                 Name = nameof(ConflictResolutionEnum.Denial),
                 ProperName = "Denial",
+                Description = "You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.",
                 ConflictPoints = 1
             },
             #endregion
@@ -136,9 +135,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //No Guilt (+2 cp) Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.
             new ConflictTableEntry
             {
-                Range = new Range(07, 07),
                 Name = nameof(ConflictResolutionEnum.NoGuilt),
                 ProperName = "No Guilt",
+                Description = "Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.",
                 ConflictPoints = 2
             },
             #endregion
@@ -147,9 +146,9 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
             //You Enjoyed It (+3 cp) Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse
             new ConflictTableEntry
             {
-                Range = new Range(08, 08),
                 Name = nameof(ConflictResolutionEnum.YouEnjoyedIt),
                 ProperName = "You Enjoyed It",
+                Description = "Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse",
                 ConflictPoints = 3
             },
             #endregion

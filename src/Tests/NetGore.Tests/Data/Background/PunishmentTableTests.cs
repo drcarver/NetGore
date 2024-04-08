@@ -18,7 +18,7 @@ public class PunishmentTableTests
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)table.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

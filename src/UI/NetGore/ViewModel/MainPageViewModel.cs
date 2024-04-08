@@ -58,13 +58,13 @@ public partial class MainViewModel : ObservableObject
             };
             switch (table.TableType)
             {
-                case TableTypeEnum.ArmorTable:
+                case TableTypeEnum.GoodsTable:
                     await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
                     break;
                 case TableTypeEnum.BackgroundTable:
                     await Shell.Current.GoToAsync(nameof(BackgroundTableDetailPage), navigationParameter);
                     break;
-                case TableTypeEnum.CharacterAdvancementTable:
+                case TableTypeEnum.CharacterTable:
                     await Shell.Current.GoToAsync(nameof(CharacterAdvancementDetailPage), navigationParameter);
                     break;
                 case TableTypeEnum.ConflictTable:

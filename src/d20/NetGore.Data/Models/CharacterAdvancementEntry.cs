@@ -16,6 +16,11 @@ public class CharacterAdvancementEntry : GameTableEntry, ICharacterAdvancementEn
     public int ProficiencyBonus { get; set; }
 
     /// <summary>
+    /// The range of experience points for this level
+    /// </summary>
+    public Range ExperiencePoints { get; set; }
+
+    /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]

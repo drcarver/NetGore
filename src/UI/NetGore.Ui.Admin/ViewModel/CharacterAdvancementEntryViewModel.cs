@@ -7,10 +7,10 @@ namespace NetGore.UI.Admin.ViewModel;
 public partial class CharacterAdvancementEntryViewModel : ObservableObject
 {
     /// <summary>
-    /// The range of the entries on the dice (0-9) for example
+    /// The experience point range required for the level
     /// </summary>
     [ObservableProperty]
-    Range range;
+    Range experiencePoints;
 
     /// <summary>
     /// The description of the entry
@@ -42,7 +42,7 @@ public partial class CharacterAdvancementEntryViewModel : ObservableObject
     /// <param name="model">The model to be loaded</param>
     public CharacterAdvancementEntryViewModel(ICharacterAdvancementEntry model)
     {
-        Range = model.Range;
+        ExperiencePoints = model.ExperiencePoints;
         Description = model.Description;
         ProficiencyBonus = model.ProficiencyBonus;
         Level = model.Level;

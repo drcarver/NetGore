@@ -50,7 +50,6 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
             return;
 
         ProperName = table.ProperName ?? table.Name;
-        Dice = $"d{table.DiceSides}";
         Description = table.Description;
 
         foreach (var entry in table.Table)

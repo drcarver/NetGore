@@ -11,15 +11,9 @@ public interface IGameTable : IBaseObject
     /// The proper name of the table
     /// </summary>
     string ProperName { get; set; }
-    
-    /// <summary>
-    /// The dice used to access the entries in the
-    /// table
-    /// </summary>
-    int DiceSides { get; set; }
 
     /// <summary>
-    /// 
+    /// The type of table
     /// </summary>
     TableTypeEnum TableType { get; set; }
 
@@ -34,17 +28,4 @@ public interface IGameTable : IBaseObject
     /// <param name="Name">The name of the entry</param>
     /// <returns>The table entry</returns>
     IGameTableEntry GetEntryByName(string Name);
-
-    /// <summary>
-    /// Return the table entry by number
-    /// </summary>
-    /// <param name="number">The number of entry</param>
-    /// <returns>The table entry</returns>
-    IGameTableEntry GetEntryByNumber(int number);
-
-    /// <summary>
-    /// Get a random entry from the table
-    /// </summary>
-    /// <returns>The table entry</returns>
-    IGameTableEntry GetRandomEntry();
 }

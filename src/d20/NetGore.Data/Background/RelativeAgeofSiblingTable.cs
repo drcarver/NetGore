@@ -34,7 +34,7 @@ namespace NetGore.Data.Background;
 /// roll on Table: RaceTable to determine that 
 /// sibling’s race.
 /// </summary>
-public class RelativeAgeofSiblingTable : GameTable, IRelativeAgeofSiblingTable
+public class RelativeAgeofSiblingTable : RandomTable, IRelativeAgeofSiblingTable
 {
     //Table: Relative Age of Sibling
     //d%	Result

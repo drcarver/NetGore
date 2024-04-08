@@ -13,12 +13,12 @@ public class RelativeAgeofSiblingTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new RelativeAgeofSiblingTable();
-        ClassicAssert.IsTrue(table.Description == "Relative Age of Sibling Table");
+        ClassicAssert.IsTrue(table.ProperName == "Relative Age of Sibling Table");
         ClassicAssert.IsTrue(table.DiceSides == 100);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)table.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} is incorrect");
         }
     }

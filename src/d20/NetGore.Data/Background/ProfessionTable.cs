@@ -31,13 +31,13 @@ namespace NetGore.Data.Background;
 /// Most of the time, your parents both come from 
 /// the same social stratum. It’s uncommon, but 
 /// not unheard of, for people to marry outside 
-/// their caste. Roll on Table: Parent’s Profession 
+/// their caste. Roll on Table: Profession 
 /// to determine the principal profession of your 
 /// parents.
 /// </summary>
-public class ProfessionTable : GameTable, IProfessionTable
+public class ProfessionTable : RandomTable, IProfessionTable
 {
-    //Table: Parents’ Profession
+    //Table: Profession
     //d%	Result
     //01–05	Slaves You gain access to the Life of Toil social trait.
     //06–25	Serfs/Peasants You gain access to the Poverty-Stricken social trait.

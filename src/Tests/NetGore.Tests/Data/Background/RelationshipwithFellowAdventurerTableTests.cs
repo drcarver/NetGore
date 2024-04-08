@@ -3,7 +3,6 @@ using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
-using NetGore.Data.Models;
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Background;
@@ -15,12 +14,12 @@ public class RelationshipwithFellowAdventurerTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new RelationshipwithFellowAdventurerTable();
-        ClassicAssert.IsTrue(table.Description == "Relationship with Fellow Adventurer Table");
+        ClassicAssert.IsTrue(table.ProperName == "Relationship with Fellow Adventurer Table");
         ClassicAssert.IsTrue(table.DiceSides == 100);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = table.GetEntryByNumber(i);
+            var entry = table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }
@@ -31,7 +30,7 @@ public class RelationshipwithFellowAdventurerTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, IGameTableEntry entry)
+    private static bool VerifyEntry(int i, IRandomTableEntry entry)
     {
         if (entry == null)
         {

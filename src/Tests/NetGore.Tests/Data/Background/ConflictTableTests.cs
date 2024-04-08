@@ -2,6 +2,8 @@
 using NetGore.Core.Models;
 using NetGore.Data.Background;
 using NetGore.Data.Interfaces;
+using NetGore.Data.Models;
+
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Background;
@@ -14,12 +16,10 @@ public class ConflictTableTests
     {
         var table = new ConflictTable();
         ClassicAssert.IsTrue(table.Name == nameof(ConflictTable));
-        ClassicAssert.IsTrue(table.DiceSides == 20);
 
-        for (int i = 1; i <= table.DiceSides; i++)
+        foreach (var entry in table.Table)
         {
-            var entry = (IConflictTableEntry)table.GetEntryByNumber(i);
-            ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
+            ClassicAssert.IsTrue(VerifyEntry((IConflictTableEntry) entry), $"Table entry Name = {entry?.Name} is incorrect");
         }
     }
 
@@ -29,124 +29,94 @@ public class ConflictTableTests
     /// <param name="i">The index for the table</param>
     /// <param name="entry">The random entry</param>
     /// <returns>True if correct</returns>
-    private static bool VerifyEntry(int i, IConflictTableEntry entry)
+    private static bool VerifyEntry(IConflictTableEntry entry)
     {
         if (entry == null)
         {
             return false;
         }
 
-        switch (i)
+        switch (entry.Name)
         {
             //1	Minor Failure
-            case int n when n >= 1 && n <= 1:
-                return entry.Name == nameof(ConflictEnum.MinorFailure)
-                    && entry.ConflictPoints == 1;
+            case nameof(ConflictEnum.MinorFailure):
+                    return entry.ConflictPoints == 1;
 
             //2	Petty Crime
-            case int n when n >= 2 && n <= 2:
-                return entry.Name == nameof(ConflictEnum.PettyCrime)
-                    && entry.ConflictPoints == 1;
-
-            //2	Petty Crime
-            case int n when n >= 2 && n <= 2:
-                return entry.Name == nameof(ConflictEnum.PettyCrime)
-                    && entry.ConflictPoints == 1;
+            case nameof(ConflictEnum.PettyCrime):
+                    return entry.ConflictPoints == 1;
 
             //3	Told a Lie
-            case int n when n >= 3 && n <= 3:
-                return entry.Name == nameof(ConflictEnum.ToldaLie)
-                    && entry.ConflictPoints == 1;
+            case nameof(ConflictEnum.ToldaLie):
+                    return entry.ConflictPoints == 1;
 
             //4	Broke a Promise
-            case int n when n >= 4 && n <= 4:
-                return entry.Name == nameof(ConflictEnum.BrokeaPromise)
-                    && entry.ConflictPoints == 1;
+            case nameof(ConflictEnum.BrokeaPromise):
+                    return entry.ConflictPoints == 1;
 
             //5	Humiliation
-            case int n when n >= 5 && n <= 5:
-                return entry.Name == nameof(ConflictEnum.Humiliation)
-                    && entry.ConflictPoints == 2;
+            case nameof(ConflictEnum.Humiliation):
+                    return entry.ConflictPoints == 2;
 
             //6	Negligence
-            case int n when n >= 6 && n <= 6:
-                return entry.Name == nameof(ConflictEnum.Negligence)
-                    && entry.ConflictPoints == 2;
-
-            //6	Negligence
-            case int n when n >= 6 && n <= 6:
-                return entry.Name == nameof(ConflictEnum.Negligence)
-                    && entry.ConflictPoints == 2;
+            case nameof(ConflictEnum.Negligence):
+                    return entry.ConflictPoints == 2;
 
             //7	Minor Theft
-            case int n when n >= 7 && n <= 7:
-                return entry.Name == nameof(ConflictEnum.MinorTheft)
-                    && entry.ConflictPoints == 2;
+            case nameof(ConflictEnum.MinorTheft):
+                    return entry.ConflictPoints == 2;
 
             //8	Seducer
-            case int n when n >= 8 && n <= 8:
-                return entry.Name == nameof(ConflictEnum.Seducer)
-                    && entry.ConflictPoints == 3;
+            case nameof(ConflictEnum.Seducer):
+                    return entry.ConflictPoints == 3;
 
             //9	Cheater
-            case int n when n >= 9 && n <= 9:
-                return entry.Name == nameof(ConflictEnum.Cheater)
-                    && entry.ConflictPoints == 3;
+            case nameof(ConflictEnum.Cheater):
+                    return entry.ConflictPoints == 3;
 
             //10 Betrayal
-            case int n when n >= 10 && n <= 10:
-                return entry.Name == nameof(ConflictEnum.Betrayal)
-                    && entry.ConflictPoints == 4;
+            case nameof(ConflictEnum.Betrayal):
+                    return entry.ConflictPoints == 4;
 
             //11	Malign Associates
-            case int n when n >= 11 && n <= 11:
-                return entry.Name == nameof(ConflictEnum.MalignAssociates)
-                    && entry.ConflictPoints == 4;
+            case nameof(ConflictEnum.MalignAssociates):
+                    return entry.ConflictPoints == 4;
 
             //12 Destroyed a Reputation
-            case int n when n >= 12 && n <= 12:
-                return entry.Name == nameof(ConflictEnum.DestroyedaReputation)
-                    && entry.ConflictPoints == 5;
+            case nameof(ConflictEnum.DestroyedaReputation):
+                    return entry.ConflictPoints == 5;
 
             //13 Major Theft
-            case int n when n >= 13 && n <= 13:
-                return entry.Name == nameof(ConflictEnum.MajorTheft)
-                    && entry.ConflictPoints == 5;
+            case nameof(ConflictEnum.MajorTheft):
+                    return entry.ConflictPoints == 5;
 
             //14 Corrupted an Innocent
-            case int n when n >= 14 && n <= 14:
-                return entry.Name == nameof(ConflictEnum.CorruptedanInnocent)
-                    && entry.ConflictPoints == 6;
+            case nameof(ConflictEnum.CorruptedanInnocent):
+                    return entry.ConflictPoints == 6;
 
             //15 Blackmailed
-            case int n when n >= 15 && n <= 15:
-                return entry.Name == nameof(ConflictEnum.Blackmailed)
-                    && entry.ConflictPoints == 6;
+            case nameof(ConflictEnum.Blackmailed):
+                    return entry.ConflictPoints == 6;
 
             //16 Destruction
-            case int n when n >= 16 && n <= 16:
-                return entry.Name == nameof(ConflictEnum.Destruction)
-                    && entry.ConflictPoints == 6;
+            case nameof(ConflictEnum.Destruction):
+                    return entry.ConflictPoints == 6;
 
             //17 Armed Robbery
-            case int n when n >= 17 && n <= 17:
-                return entry.Name == nameof(ConflictEnum.ArmedRobbery)
-                    && entry.ConflictPoints == 6;
+            case nameof(ConflictEnum.ArmedRobbery):
+                    return entry.ConflictPoints == 6;
 
             //18 Violent Crime
-            case int n when n >= 18 && n <= 18:
-                return entry.Name == nameof(ConflictEnum.ViolentCrime)
-                    && entry.ConflictPoints == 7;
+            case nameof(ConflictEnum.ViolentCrime):
+                    return entry.ConflictPoints == 7;
 
             //19 Murder
-            case int n when n >= 19 && n <= 19:
-                return entry.Name == nameof(ConflictEnum.Murder)
-                    && entry.ConflictPoints == 8;
+            case nameof(ConflictEnum.Murder):
+                    return entry.ConflictPoints == 8;
 
             //20 Mass Murder
-            case int n when n >= 20 && n <= 20:
-                return entry.Name == nameof(ConflictEnum.MassMurder)
-                    && entry.ConflictPoints == 12;
+            case nameof(ConflictEnum.MassMurder):
+                    return entry.ConflictPoints == 12;
         }
         return false;
     }

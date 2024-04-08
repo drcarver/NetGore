@@ -35,7 +35,7 @@ namespace NetGore.Data.Background;
 /// the severity of the punishment you received—or 
 /// have yet to receive—for having been judged guilty.
 /// </summary>
-public class CrimeTable : GameTable, ICrimeTable
+public class CrimeTable : RandomTable, ICrimeTable
 {
     //Table: Crime
     //d%	Crime
@@ -64,7 +64,7 @@ public class CrimeTable : GameTable, ICrimeTable
         [
             #region "Adultery"
             //01–10	Adultery
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(01, 10),
                 Name = nameof(CrimeEnum.Adultery),
@@ -73,7 +73,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Arson"
             //11–20	Arson
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(11, 20),
                 Name = nameof(CrimeEnum.Arson),
@@ -82,7 +82,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Burglary"
             //21–30	Burglary
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(21, 30),
                 Name = nameof(CrimeEnum.Burglary),
@@ -91,7 +91,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Heresy"
             //31–40	Heresy
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(31, 40),
                 Name = nameof(CrimeEnum.Heresy),
@@ -100,7 +100,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Minor offense(sumptuary law)"
             //41–50	Minor offense(sumptuary law)
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(41, 50),
                 Name = nameof(CrimeEnum.Minoroffense),
@@ -110,7 +110,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Murder"
             //51–60	Murder
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(51, 60),
                 Name = nameof(CrimeEnum.Murder),
@@ -119,7 +119,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Rebellion/treason"
             //61–70	Rebellion/treason
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(61, 70),
                 Name = nameof(CrimeEnum.RebellionorTreason),
@@ -129,7 +129,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Robbery"
             //71–80	Robbery
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(71, 80),
                 Name = nameof(CrimeEnum.Robbery),
@@ -138,7 +138,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Smuggling"
             //81–90	Smuggling
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(81, 90),
                 Name = nameof(CrimeEnum.Smuggling),
@@ -147,7 +147,7 @@ public class CrimeTable : GameTable, ICrimeTable
 
             #region "Unlawful use of magic"
             //91–100	Unlawful use of magic
-            new GameTableEntry
+            new RandomTableEntry
             {
                 Range = new Range(91, 100),
                 Name = nameof(CrimeEnum.Unlawfuluseofmagic),

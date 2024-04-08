@@ -135,7 +135,7 @@ public class Dwarf : IRace
     /// <summary>
     /// The homeland table
     /// </summary>
-    private static GameTable HomelandTable { get; set; } = new()
+    private static RandomTable HomelandTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -245,7 +245,7 @@ public class Dwarf : IRace
     /// <summary>
     /// The parents table
     /// </summary>
-    private static GameTable ParentsTable { get; set; } = new()
+    private static RandomTable ParentsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =
@@ -311,7 +311,7 @@ public class Dwarf : IRace
     /// <summary>
     /// The siblings table
     /// </summary>
-    private static GameTable SiblingsTable { get; set; } = new()
+    private static RandomTable SiblingsTable { get; set; } = new()
     {
         DiceSides = 100,
         Table =

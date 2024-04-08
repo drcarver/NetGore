@@ -36,7 +36,7 @@ namespace NetGore.Data.Background;
 /// one where there are few other members of your 
 /// race, outside of your family.
 /// </summary>
-public class UnusualHomelandTable : GameTable, IUnusualHomelandTable
+public class UnusualHomelandTable : RandomTable, IUnusualHomelandTable
 {
     //Table: Unusual Homeland
     //d%	Result

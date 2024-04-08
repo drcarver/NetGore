@@ -13,12 +13,12 @@ public class UnusualHomelandTableTests
     public void AreTableEntriesCorrect()
     {
         var table = new UnusualHomelandTable();
-        ClassicAssert.IsTrue(table.Name == "The Unusual Homeland Table");
+        ClassicAssert.IsTrue(table.ProperName == "Unusual Homeland Table");
         ClassicAssert.IsTrue(table.DiceSides == 100);
 
         for (int i = 1; i <= table.DiceSides; i++)
         {
-            var entry = (BackgroundTableEntry)table.GetEntryByNumber(i);
+            var entry = (BackgroundTableEntry)table.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} is incorrect");
         }
     }

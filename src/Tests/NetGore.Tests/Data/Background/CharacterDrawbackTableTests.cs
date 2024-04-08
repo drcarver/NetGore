@@ -17,7 +17,7 @@ public class CharacterDrawbackTableTests
 
         for (int i = 1; i <= characterDrawbackTable.DiceSides; i++)
         {
-            var entry = (IBackgroundTableEntry)characterDrawbackTable.GetEntryByNumber(i);
+            var entry = (IBackgroundTableEntry)characterDrawbackTable.GetRangeEntryByNumber(i);
             ClassicAssert.IsTrue(VerifyEntry(i, entry), $"Table entry {i} - Name = {entry?.Name} is incorrect");
         }
     }

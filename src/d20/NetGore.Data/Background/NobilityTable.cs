@@ -37,7 +37,7 @@ namespace NetGore.Data.Background;
 /// Table: Nobility to learn your parents’ 
 /// position among the ruling class.
 /// </summary>
-public class NobilityTable : GameTable, INobilityTable
+public class NobilityTable : RandomTable, INobilityTable
 {
     //Table: Nobility
     //d%	Result

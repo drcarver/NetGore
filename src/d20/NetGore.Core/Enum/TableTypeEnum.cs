@@ -2,9 +2,9 @@
 
 public enum TableTypeEnum
 {
-    ArmorTable,
+    GoodsTable,
     BackgroundTable,
-    CharacterAdvancementTable,
+    CharacterTable,
     ConflictTable,
     GameTable,
 }

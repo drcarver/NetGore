@@ -30,7 +30,7 @@ namespace NetGore.Data.Background;
 /// <summary>
 /// Determine the circumstances of your birth.
 /// </summary>
-public class CircumstanceofBirthTable : GameTable, ICircumstanceofBirthTable
+public class CircumstanceofBirthTable : RandomTable, ICircumstanceofBirthTable
 {
     //Table: Circumstance of Birth
     //d%	Result
