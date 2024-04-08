@@ -58,6 +58,8 @@ public class ProfessionTable : GameTable, IProfessionTable
     {
         Name = nameof(ProfessionTable);
         ProperName = "Profession Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Most of the time, your parents both come from the same social stratum. It’s uncommon, but not unheard of, for people to marry outside their caste. Roll on Table: Profession to determine the principal profession of your parents.";
         DiceSides = 100;
         Table =
         [

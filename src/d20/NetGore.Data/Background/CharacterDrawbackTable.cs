@@ -73,6 +73,8 @@ public class CharacterDrawbackTable : GameTable, ICharacterDrawbackTable
     {
         Name = nameof(CharacterDrawbackTable);
         ProperName = "Character Drawback Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Character drawbacks are emotional weak points—chinks your armor. a drawback gives you a small mechanical penalty and a roleplaying hook. Drawbacks also serve as loopholes in the alignment system. When roleplaying your drawback, you might act well outside the bounds of your alignment within certain situations. Each of the following grants a drawback you may choose to take. If you take a drawback option, you may take three traits you have access to instead of two. Roll on the following table to determine your character’s drawback.";
         DiceSides = 100;
         Table =
         [
@@ -128,7 +130,7 @@ public class CharacterDrawbackTable : GameTable, ICharacterDrawbackTable
                 Description =
                     "Your family means everything to " +
                     "you, and there is nothing you " +
-                    "wouldn’t do for them. Maybe your " +
+                    "would not do for them. Maybe your " +
                     "ties extend to your entire clan " +
                     "or bloodline, or perhaps there is " +
                     "one specific member of your family " +

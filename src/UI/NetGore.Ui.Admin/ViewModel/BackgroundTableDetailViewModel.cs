@@ -8,14 +8,8 @@ using NetGore.Data.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
-public partial class GameTableDetailViewModel : ObservableObject, IQueryAttributable
+public partial class BackgroundTableDetailViewModel : ObservableObject, IQueryAttributable
 {
-    /// <summary>
-    /// The ProperName of the table
-    /// </summary>
-    [ObservableProperty]
-    string? properName;
-
     /// <summary>
     /// The dice to roll for a random entry 
     /// </summary>
@@ -32,30 +26,47 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
     /// The entries in the table
     /// </summary>
     [ObservableProperty]
-    ObservableCollection<GameTableEntryViewModel> table = [];
+    ObservableCollection<BackgroundEntryViewModel> table = [];
 
+    /// <summary>
+    /// One level entry
+    /// </summary>
     [ObservableProperty]
-    GameTableEntryViewModel? selectedItem;
+    BackgroundEntryViewModel? selectedItem;
 
+    /// <summary>
+    /// The title of the table
+    /// </summary>
+    [ObservableProperty]
+    string properName;
+
+    /// <summary>
+    /// Navigate back a level
+    /// </summary>
+    /// <returns>A task for the navigation</returns>
     [RelayCommand]
     async Task Goback()
     {
         await Shell.Current.GoToAsync("..");
     }
 
+    /// <summary>
+    /// Query attributes for Navigation
+    /// </summary>
+    /// <param name="query">The navigation query</param>
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
         var table = (IGameTable) query[nameof(GameTable)];
         if (table == null)
             return;
 
-        ProperName = table.ProperName ?? table.Name;
         Dice = $"d{table.DiceSides}";
         Description = table.Description;
+        ProperName = table.ProperName ?? table.Name;
 
-        foreach (var entry in table.Table)
+        foreach (BackgroundTableEntry entry in table.Table)
         {
-            Table.Add(new GameTableEntryViewModel(entry));
+            Table.Add(new BackgroundEntryViewModel(entry));
         }
     }
 }

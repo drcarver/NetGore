@@ -66,6 +66,8 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
     {
         Name = nameof(ConflictSubjectTable);
         ProperName = "Conflicts Subject Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the key person (or people) involved in the conflict, roll on Table: Conflict Subject. Only on the rare occasion that the subject was a child or a young person does the subject affect the accumulation of CP.";
         DiceSides = 20;
         Table =
         [

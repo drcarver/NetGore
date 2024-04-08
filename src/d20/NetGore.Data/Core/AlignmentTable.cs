@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
@@ -28,6 +29,7 @@ public class AlignmentTable : GameTable, IAlignmentTable
     {
         Name = nameof(AlignmentTable);
         ProperName = "Alignment Table";
+        TableType = TableTypeEnum.GameTable;
         DiceSides = 9;
         Table =
         [

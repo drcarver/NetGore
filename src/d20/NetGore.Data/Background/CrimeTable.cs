@@ -57,6 +57,8 @@ public class CrimeTable : GameTable, ICrimeTable
     {
         Name = "CrimeTable";
         ProperName = "Crime Table";
+        TableType = TableTypeEnum.GameTable;
+        Description = "If you have the Criminal social trait, roll on Table: Crime to determine the crime for which you were accused or convicted.";
         DiceSides = 100;
         Table =
         [

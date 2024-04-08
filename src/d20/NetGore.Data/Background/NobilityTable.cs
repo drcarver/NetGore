@@ -56,7 +56,9 @@ public class NobilityTable : GameTable, INobilityTable
     {
         Name = "NobilityTable";
         DiceSides = 100;
+        TableType = TableTypeEnum.BackgroundTable;
         ProperName = "Nobility Table";
+        Description = "As a person of noble rank, you have access to a degree of wealth, privilege, or influence beyond that of the common people. If your character is of noble birth (and comes from a society where the nobility uses a traditional structure of rank), roll on Table: Nobility to learn your parents’ position among the ruling class.";
         Table =
         [
             #region "Gentry"
@@ -182,7 +184,7 @@ public class NobilityTable : GameTable, INobilityTable
             {
                 Range = new Range(100, 100),
                 Name = nameof(NobilityEnum.Regent),
-                ProperName = "Minor Prince",
+                ProperName = "Regent",
                 Description =
                     "You are a prince or princess, " +
                     "the son or daughter of the " +

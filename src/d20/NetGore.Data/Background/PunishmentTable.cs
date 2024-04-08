@@ -57,6 +57,8 @@ public class PunishmentTable : GameTable, IPunishmentTable
     {
         Name = nameof(PunishmentTable);
         ProperName = "Punishment Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll on Table: Punishment to learn the severity of the punishment you received—or have yet to receive—for having been judged guilty.";
         DiceSides = 100;
         Table =
         [

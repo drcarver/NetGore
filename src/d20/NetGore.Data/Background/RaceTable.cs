@@ -78,6 +78,7 @@ public class RaceTable : GameTable, IRaceTable
     {
         Name = nameof(RaceTable);
         ProperName = "Race Table";
+        TableType = TableTypeEnum.GameTable;
         DiceSides = 100;
         Table =
         [

@@ -3,6 +3,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 using NetGore.Data.Models;
 using NetGore.UI.Admin.Views;
@@ -46,7 +47,7 @@ public partial class MainViewModel : ObservableObject
     /// The TapCommand for when a row is tapped
     /// </summary>
     [RelayCommand]
-    async void Tap()
+    async Task Tap()
     {
         if (SelectedItem != null)
         {
@@ -55,7 +56,26 @@ public partial class MainViewModel : ObservableObject
             {
                 { nameof(GameTable), table }
             };
-            await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
+            switch (table.TableType)
+            {
+                case TableTypeEnum.ArmorTable:
+                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.BackgroundTable:
+                    await Shell.Current.GoToAsync(nameof(BackgroundTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.CharacterAdvancementTable:
+                    await Shell.Current.GoToAsync(nameof(CharacterAdvancementDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.ConflictTable:
+                    await Shell.Current.GoToAsync(nameof(ConflictTableDetailPage), navigationParameter);
+                    break;
+                case TableTypeEnum.GameTable:
+                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

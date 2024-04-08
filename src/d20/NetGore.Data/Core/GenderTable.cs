@@ -18,6 +18,7 @@ public class GenderTable : GameTable, IGenderTable
         Name = nameof(GenderTable);
         ProperName = "Gender Table";
         DiceSides = 100;
+        TableType = TableTypeEnum.GameTable;
         Table =
         [
             new GameTableEntry
@@ -26,6 +27,7 @@ public class GenderTable : GameTable, IGenderTable
                 Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
+
             new GameTableEntry
             {
                 Range = new Range(51,100),

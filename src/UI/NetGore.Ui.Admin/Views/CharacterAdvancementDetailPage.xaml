@@ -4,9 +4,9 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:viewmodel="clr-namespace:NetGore.UI.Admin.ViewModel"
-             x:Class="NetGore.UI.Admin.Views.GameTableDetailPage"
-             Title="{Binding ProperName}"
-             x:DataType="viewmodel:GameTableDetailViewModel">
+             x:Class="NetGore.UI.Admin.Views.CharacterAdvancementDetailPage"
+             x:DataType="viewmodel:CharacterAdvancementDetailViewModel"
+             Title="{Binding ProperName}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -40,7 +40,7 @@
             Margin="10,10,10,10"
             Grid.Row="1" Grid.Column="1" />
 
-        <syncfusion:SfDataGrid x:Name="GameTableGrid"
+        <syncfusion:SfDataGrid x:Name="CharacterAdvancementGrid"
                 ItemsSource="{Binding Table}"
                 AutoGenerateColumnsMode="None"
                 GridLinesVisibility="Both"
@@ -50,16 +50,16 @@
                 SelectedRow="{Binding SelectedItem}" >
             <syncfusion:SfDataGrid.Columns>
                 <syncfusion:DataGridTextColumn
-                    MappingName="Range"
-                    HeaderText="Dice Roll"
-                    ColumnWidthMode="Auto" />
-                <syncfusion:DataGridTextColumn
-                    MappingName="ProperName"
-                    HeaderText="Name"
+                    MappingName="Level"
+                    HeaderText="Level"
                     ColumnWidthMode="Auto"/>
                 <syncfusion:DataGridTextColumn
-                    MappingName="Description"
-                    HeaderText="Description"
+                    MappingName="Range"
+                    HeaderText="Experience Points"
+                    ColumnWidthMode="Auto" />
+                <syncfusion:DataGridTextColumn
+                    MappingName="ProficiencyBonus"
+                    HeaderText="Proficiency Bonus"
                     ColumnWidthMode="LastColumnFill"/>
             </syncfusion:SfDataGrid.Columns>
         </syncfusion:SfDataGrid>

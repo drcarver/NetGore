@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+
 using NetGore.Core;
 using NetGore.Core.Base;
+using NetGore.Core.Enum;
 using NetGore.Core.Interfaces;
 
 namespace NetGore.Data.Models;
@@ -31,6 +33,11 @@ public class GameTable : BaseObject, IGameTable
     /// entries from the table
     /// </summary>
     public int DiceSides { get; set; }
+
+    /// <summary>
+    /// The table type
+    /// </summary>
+    public TableTypeEnum TableType { get; set; } = TableTypeEnum.GameTable;
 
     /// <summary>
     /// The table itself

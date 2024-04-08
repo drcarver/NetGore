@@ -22,6 +22,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.38" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -30,12 +31,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\BackgroundTableDetailPage.xaml.cs">
+	    <DependentUpon>BackgroundTableDetailPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ConflictTableDetailPage.xaml.cs">
+	    <DependentUpon>ConflictTableDetailPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\CharacterAdvancementDetailPage.xaml.cs">
+	    <DependentUpon>CharacterAdvancementDetailPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\GameTableDetailPage.xaml.cs">
 	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\BackgroundTableDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ConflictTableDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CharacterAdvancementDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\GameTableDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

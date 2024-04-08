@@ -9,23 +9,18 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
             x:DataType="viewmodel:MainViewModel">
 
-    <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*" />
-            <ColumnDefinition Width="75*" />
-        </Grid.ColumnDefinitions>-->
-        <!--<sfavatar:SfAvatarView
-            Grid.Column="0"
-            Grid.Row="0"
-            ContentType="Custom"
-                ImageSource="greendragon.png"
-                HeightRequest="50"
-                CornerRadius="25"
-                WidthRequest="50"
-                BackgroundColor="Transparent" />-->
+    <!--Margin="Left,Top,Right,Bottom"-->
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
 
-        <Label Text="Game Tables" HorizontalOptions="Center"
-               Grid.Row="0"/>
+        <Label Text="Game Tables" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="0,30,0,20"
+               Grid.Row="0" />
 
         <syncfusion:SfDataGrid x:Name="GameTableGrid"
                 ItemsSource="{Binding Items}"
@@ -33,6 +28,7 @@
                 GridLinesVisibility="Both"
                 SortingMode="Single"
                 SelectionMode="Single"
+                Grid.Row="1"
                 SelectedRow="{Binding SelectedItem}" >
             <syncfusion:SfDataGrid.SortColumnDescriptions>
                 <syncfusion:SortColumnDescription ColumnName="Name" SortDirection="Ascending" />

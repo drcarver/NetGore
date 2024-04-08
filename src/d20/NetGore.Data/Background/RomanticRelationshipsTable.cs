@@ -54,6 +54,8 @@ public class RomanticRelationshipsTable : GameTable, IRomanticRelationshipsTable
     {
         Name = nameof(RomanticRelationshipsTable);
         ProperName = "Romantic Relationships Table";
+        TableType = TableTypeEnum.GameTable;
+        Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a d20.";
         DiceSides = 20;
         Table =
         [

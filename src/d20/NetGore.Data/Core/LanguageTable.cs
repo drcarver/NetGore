@@ -21,6 +21,7 @@ public class LanguageTable : GameTable, ILanguageTable
             "default, and your background might give " +
             "you access to one or more additional " +
             "languages of  your choice.";
+        TableType = TableTypeEnum.GameTable;
         DiceSides = 20;
         Table =
         [

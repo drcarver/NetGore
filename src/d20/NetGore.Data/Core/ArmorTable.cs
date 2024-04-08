@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using NetGore.Core.Enum;
 using NetGore.Data.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
@@ -27,7 +28,8 @@ public class ArmorTable : GameTable, IArmorTable
     {
         Name = nameof(ArmorTable);
         ProperName = "Armor Table";
-        DiceSides = 10;
+        DiceSides = 12;
+        TableType = TableTypeEnum.ArmorTable;
         Description = "Adventurers have  access to a " +
             "variety of armor types, ranging from " +
             "leather armor to chain mail to costly " +

@@ -66,6 +66,8 @@ public class MajorChildhoodEventTable : GameTable, IMajorChildhoodEventTable
     {
         Name = nameof(MajorChildhoodEventTable);
         ProperName = "Major Childhood Event Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "During your childhood, you were influenced by a significant event that helped to shape the person you became. Roll on Table: Major Childhood Event to determine the type of event that shaped you in early childhood.";
         DiceSides = 100;
         Table =
         [

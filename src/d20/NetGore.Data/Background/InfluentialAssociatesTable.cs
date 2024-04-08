@@ -73,6 +73,8 @@ public class InfluentialAssociatesTable : GameTable, IInfluentialAssociatesTable
     {
         Name = nameof(InfluentialAssociatesTable);
         ProperName = "Influential Associates Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Influential associates are people who had (or continue to have) a strong influence upon your development. They are archetypes and templates for NPCs that you can customize to fit your background. Roll on Table: Influential Associates to determine an associate or ally who had a major influence on your life. Then flesh out the details to show how this person fits within your story. You might also wish to use other tables in this chapter to randomly fill in this person’s details.";
         DiceSides = 100;
         Table =
         [

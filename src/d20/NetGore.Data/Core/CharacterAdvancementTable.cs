@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using NetGore.Core.Interfaces;
+
+using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -47,6 +48,7 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             "reaches a specified experience point " +
             "total advances  in capability. This " +
             "advancement is called gaining a  level";
+        TableType = TableTypeEnum.CharacterAdvancementTable;
         DiceSides = 20;
         Table =
         [

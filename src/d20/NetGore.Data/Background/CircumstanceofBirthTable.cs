@@ -62,6 +62,8 @@ public class CircumstanceofBirthTable : GameTable, ICircumstanceofBirthTable
     {
         Name = nameof(CircumstanceofBirthTable);
         ProperName = "Circumstance of Birth Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll once on Table: Circumstance of Birth to determine the circumstances of your birth.";
         DiceSides = 100;
         Table =
         [

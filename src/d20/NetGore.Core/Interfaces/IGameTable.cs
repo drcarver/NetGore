@@ -1,4 +1,6 @@
-﻿namespace NetGore.Core.Interfaces;
+﻿using NetGore.Core.Enum;
+
+namespace NetGore.Core.Interfaces;
 
 /// <summary>
 /// The interface for the table
@@ -15,6 +17,11 @@ public interface IGameTable : IBaseObject
     /// table
     /// </summary>
     int DiceSides { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    TableTypeEnum TableType { get; set; }
 
     /// <summary>
     /// The table it self

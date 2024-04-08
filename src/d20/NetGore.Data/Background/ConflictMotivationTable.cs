@@ -59,6 +59,8 @@ public class ConflictMotivationTable : GameTable, IConflictMotivationTable
     {
         Name = nameof(ConflictMotivationTable);
         ProperName = "Conflict Motivation Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the source of your motivation for the conflict, roll on Table: Motivation. If the campaign allows the full spectrum of alignments, roll a d10 on this table. If the campaign allows only nonevil alignments, roll a d8. If you’re a paladin, roll a d4. The motivation affects the CP gained from the conflict.";
         DiceSides = 10;
         Table =
         [

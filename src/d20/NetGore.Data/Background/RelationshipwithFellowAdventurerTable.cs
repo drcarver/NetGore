@@ -22,7 +22,6 @@
 using System.Diagnostics.CodeAnalysis;
 
 using NetGore.Core.Enum;
-using NetGore.Core.Models;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
@@ -84,6 +83,8 @@ public class RelationshipwithFellowAdventurerTable : GameTable,
     {
         Name = nameof(RelationshipwithFellowAdventurerTable);
         ProperName = "Relationship with Fellow Adventurer Table";
+        TableType = TableTypeEnum.GameTable;
+        Description = "This table is best used by the adventuring party as a whole to determine starting relationships between the characters. One player begins the process by choosing someone in the group and rolling to learn the relationship between her and the second character. Then the next player chooses a different character and rolls to determine their relationship, and so on, until finally the last player rolls to determine his relationship with the first character. It is easiest to do this sitting around a table, with each player passing the dice clockwise until the dice have completed a full turn around the table.";
         DiceSides = 100;
         Table =
         [

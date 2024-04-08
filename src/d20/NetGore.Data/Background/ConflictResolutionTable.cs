@@ -54,6 +54,8 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
     {
         Name = nameof(ConflictResolutionTable);
         ProperName = "Conflict Resolution Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "Once you determine the nature and CP for the event, the next step is to determine the resolution. Instead of rolling for the conflict’s resolution, you choose how you dealt with it, and your choice can affect the number of CP the conflict is worth. In games that do not allow evil characters, you cannot take a resolution that would adjust your character to an evil alignment.";
         DiceSides = 8;
         Table =
         [

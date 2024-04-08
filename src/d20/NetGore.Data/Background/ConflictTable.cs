@@ -73,6 +73,8 @@ public class ConflictTable : GameTable, IConflictTable
     {
         Name = nameof(ConflictTable);
         ProperName = "Conflicts Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
         DiceSides = 20;
         Table =
         [

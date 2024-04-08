@@ -8,7 +8,7 @@ using NetGore.Data.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
-public partial class GameTableDetailViewModel : ObservableObject, IQueryAttributable
+public partial class ConflictTableDetailViewModel : ObservableObject, IQueryAttributable
 {
     /// <summary>
     /// The ProperName of the table
@@ -32,10 +32,10 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
     /// The entries in the table
     /// </summary>
     [ObservableProperty]
-    ObservableCollection<GameTableEntryViewModel> table = [];
+    ObservableCollection<ConflictEntryViewModel> table = [];
 
     [ObservableProperty]
-    GameTableEntryViewModel? selectedItem;
+    ConflictEntryViewModel? selectedItem;
 
     [RelayCommand]
     async Task Goback()
@@ -53,9 +53,9 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
         Dice = $"d{table.DiceSides}";
         Description = table.Description;
 
-        foreach (var entry in table.Table)
+        foreach (ConflictTableEntry entry in table.Table)
         {
-            Table.Add(new GameTableEntryViewModel(entry));
+            Table.Add(new ConflictEntryViewModel(entry));
         }
     }
 }
