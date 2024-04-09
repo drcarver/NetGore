@@ -1,8 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-using Microsoft.Extensions.DependencyInjection;
-
-using NetGore.Core.Data;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data.Interfaces;

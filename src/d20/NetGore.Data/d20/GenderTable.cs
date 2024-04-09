@@ -4,7 +4,7 @@ using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
-namespace NetGore.Core.Data;
+namespace NetGore.Data.d20;
 
 /// <summary>
 /// The gender table.  

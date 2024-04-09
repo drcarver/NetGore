@@ -6,7 +6,7 @@ using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 using NetGore.Items;
 
-namespace NetGore.Data.Core;
+namespace NetGore.Data.d20;
 
 //Adventurers have access to  a variety of armor 
 //types, ranging from leather armor to chain mail to

@@ -4,7 +4,7 @@ using NetGore.Core.Enum;
 using NetGore.Data.Interfaces;
 using NetGore.Data.Models;
 
-namespace NetGore.Data.Core;
+namespace NetGore.Data.d20;
 
 /// <summary>
 /// Determine your character's alignment

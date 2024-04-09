@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-using NetGore.Core.Data;
 using NetGore.Core.Interfaces;
 using NetGore.Core.Models;
 using NetGore.Data;

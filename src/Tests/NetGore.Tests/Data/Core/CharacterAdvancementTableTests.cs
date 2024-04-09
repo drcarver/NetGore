@@ -1,5 +1,6 @@
-﻿using NetGore.Data.Core;
+﻿using NetGore.Data.d20;
 using NetGore.Data.Interfaces;
+
 using NUnit.Framework.Legacy;
 
 namespace NetGore.Tests.Data.Core;

@@ -11,7 +11,11 @@ public enum ClassFeatureEnum
     ExtraAttack,
     FastMovement,
     FeralInstinct,
-    BrutalCritical1die,
     Relentless,
-    BrutalCritical2die
+    PersistentRage,
+    IndomitableMight,
+    PrimalChampionUnlimited,
+    BrutalCritical,
+    RelentlessRage,
+    PrimalChampion
 }

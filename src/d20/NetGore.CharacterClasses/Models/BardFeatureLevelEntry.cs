@@ -1,6 +1,6 @@
 ﻿namespace NetGore.CharacterClasses.Models;
 
-public class BarbarianClassFeatureLevelEntry : ClassFeatureLevelEntry
+public class BardFeatureLevelEntry : ClassFeatureLevelEntry
 {
     /// <summary>
     /// Number of rages per day

@@ -21,4 +21,8 @@ public enum SkillEnum
     SleightOfHand,
     Stealth,
     Survival,
+    AnimalHandling,
+    Athletics,
+    Intimidation,
+    Nature,
 }

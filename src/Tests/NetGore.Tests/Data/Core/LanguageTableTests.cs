@@ -1,5 +1,5 @@
 ﻿using NetGore.Core.Enum;
-using NetGore.Data.Core;
+using NetGore.Data.d20;
 
 using NUnit.Framework.Legacy;
 
