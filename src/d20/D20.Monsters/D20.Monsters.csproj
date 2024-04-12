@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NetGore\NetGore.Core\NetGore.Core.csproj" />
+    <ProjectReference Include="..\D20.Core\D20.Core.csproj" />
+    <ProjectReference Include="..\D20Core\D20.Core.csproj" />
+  </ItemGroup>
+
+</Project>

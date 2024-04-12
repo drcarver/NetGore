@@ -35,6 +35,7 @@
     <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
     <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
     <ProjectReference Include="..\..\Network\Lidgren\Lidgren.Network\Lidgren.Network.csproj" />
+    <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj" />
   </ItemGroup>
 
 </Project>

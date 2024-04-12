@@ -1,0 +1,11 @@
+﻿using D20.Core.Interfaces;
+
+namespace D20.Character.Interfaces;
+
+public interface IConflictTableEntry : IGameTableEntry
+{
+    /// <summary>
+    /// Conflict points
+    /// </summary>
+    int ConflictPoints { get; set; }
+}

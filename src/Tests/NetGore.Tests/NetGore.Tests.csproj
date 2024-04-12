@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\d20\D20.Character\D20.Character.csproj" />
     <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
     <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
     <ProjectReference Include="..\..\NetGore\.NetGore\NetGore.csproj" />

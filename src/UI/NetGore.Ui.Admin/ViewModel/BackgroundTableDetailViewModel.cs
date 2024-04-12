@@ -3,9 +3,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using NetGore.Core.Interfaces;
-using NetGore.Data.Models;
-
 namespace NetGore.UI.Admin.ViewModel;
 
 public partial class BackgroundTableDetailViewModel : ObservableObject, IQueryAttributable
