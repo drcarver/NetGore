@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NetGore\NetGore.Core\NetGore.Core.csproj" />
     <ProjectReference Include="..\D20.Core\D20.Core.csproj" />
-    <ProjectReference Include="..\D20Core\D20.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Enum\" />
+    <Folder Include="Tables\" />
   </ItemGroup>
 
 </Project>

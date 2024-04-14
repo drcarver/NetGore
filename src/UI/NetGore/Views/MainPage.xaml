@@ -1,22 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NetGore.MainPage"
+             x:Class="NetGore.Views.MainPage"
              xmlns:viewmodel="clr-namespace:NetGore.ViewModel"
-             xmlns:model="clr-namespace:NetGore.Data.Models;assembly=NetGore.Data"
+             xmlns:model="clr-namespace:D20.Core.Models;assembly=D20.Core"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:sfavatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-            x:DataType="viewmodel:MainViewModel">
+             x:DataType="viewmodel:MainPageViewModel"
+             Title="{Binding Name}">
 
     <!--Margin="Left,Top,Right,Bottom"-->
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"  />
-            <RowDefinition  />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Text="Game Tables" 
+        <Label Text="{Binding Description}" 
                HorizontalOptions="Center"
                VerticalOptions="Center"
                Margin="0,30,0,20"
@@ -24,6 +25,7 @@
 
         <syncfusion:SfDataGrid x:Name="GameTableGrid"
                 ItemsSource="{Binding Items}"
+                HeaderRowHeight="0"
                 AutoGenerateColumnsMode="None"
                 GridLinesVisibility="Both"
                 SortingMode="Single"
@@ -40,49 +42,9 @@
             </syncfusion:SfDataGrid.Behaviors>
             <syncfusion:SfDataGrid.Columns>
                 <syncfusion:DataGridTextColumn
-                    MappingName="Dice"
-                    HeaderText="Dice"
-                    ColumnWidthMode="Auto" />
-                <syncfusion:DataGridTextColumn
-                    MappingName="Name"
-                    HeaderText="Table Name"
+                    MappingName="ProperName"
                     ColumnWidthMode="LastColumnFill"/>
             </syncfusion:SfDataGrid.Columns>
         </syncfusion:SfDataGrid>
-
-        <!--<Entry Placeholder="Enter Task" Grid.Row="1" 
-               Text="{Binding Text}" />
-        <Button Text="Add" Grid.Row="1" Grid.Column="2" 
-                Command="{Binding AddCommand}"/>-->
-
-        <!--<CollectionView Grid.Row="2" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding Items}">-->
-            <!--<CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Apples</x:String>
-                    <x:String>Grapes</x:String>
-                    <x:String>Peaches</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>-->
-            <!--<DataTemplate BindableLayout.ItemsSource="{Binding Items}"
-                            x:DataType="{x:Type x:GameTable}">
-                <SwipeView>
-                    <SwipeView.RightItems>
-                        <SwipeItems>
-                            <SwipeItem Text="Delete"
-                                        BackgroundColor="Crimson"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}" 
-                                        CommandParameter="{Binding .}" />
-                        </SwipeItems>                            
-                    </SwipeView.RightItems>
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding}"
-                                    Aspect="AspectFill" />
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </SwipeView>
-                </DataTemplate>
-            <CollectionView />-->
    </Grid>
 </ContentPage>

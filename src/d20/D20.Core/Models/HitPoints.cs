@@ -2,6 +2,7 @@
 
 using D20.Core.Abilities;
 using D20.Core.Base;
+using D20.Core.Interfaces;
 
 namespace D20.Core.Models;
 
@@ -33,12 +34,18 @@ public class HitPoints : DataObject
     /// <summary>
     /// Creature with these Hit points 
     /// </summary>
-    public Guid CreatureId { get; }
+    public ICreature Creature { get; }
 
     /// <summary>
     /// The Hit dice per level
     /// </summary>
-    private List<int> LevelDice { set; get; } = [];
+    private List<int>? LevelDice { set; get; } = [];
+
+    /// <summary>
+    /// Hit the hit point base (when a creature is created
+    /// with a determined number of hit points).
+    /// </summary>
+    public int HitPointBase { get; set; }
 
     /// <summary>
     /// Modifiers based on the characters constitution
@@ -56,31 +63,28 @@ public class HitPoints : DataObject
     /// <returns>The computed hit points</returns>
     public int HP()
     {
-        int hitpoints = TemporaryBonus;
-        foreach (var hitpoint in LevelDice)
+        int hitPoints = TemporaryBonus;
+        if (LevelDice != null)
         {
-            hitpoints += hitpoint;
+            foreach (var hitPoint in LevelDice)
+            {
+                hitPoints += hitPoint;
+            }
+            hitPoints += LevelDice.Count() * Constitution.Score();
         }
-        hitpoints += LevelDice.Count() * Constitution.Score();
-        return hitpoints;
+        else
+        {
+            hitPoints += HitPointBase;
+        }
+        return hitPoints;
     }
 
     /// <summary>
-    /// The constructor
+    /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public HitPoints(string hitDie, Creature creature)
+    public HitPoints(ICreature creature)
     {
-        // Save off the hit dice (for example: 1d8)
-        HitDice = hitDie;
-
-        // First level is max hit die
-        LevelDice.Add(new Dice(hitDie).Sides);
-
-        // Tied to the constitution score and Creature Id
-        CreatureId = creature.Id;
-        Constitution = creature.Constitution;
-
         // Description
         Name = "Hit Points";
         Description = "Hit points are an abstraction " +
@@ -103,5 +107,36 @@ public class HitPoints : DataObject
             "unconscious. When a creature’s hit " +
             "points reach a negative total equal " +
             "to its Constitution score, it dies.";
+
+        // Tied to the constitution score and Creature Id
+        Creature = creature;
+        Constitution = creature.Constitution;
+    }
+
+    /// <summary>
+    /// The constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public HitPoints(string hitDie, Creature creature)
+        : this(creature)
+    {
+        // Save off the hit dice (for example: 1d8)
+        HitDice = hitDie;
+
+        // First level is max hit die
+        LevelDice?.Add(new Dice(hitDie).Sides);
+    }
+
+    /// <summary>
+    /// The constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public HitPoints(int hitPoints, Creature creature)
+        : this(creature)
+    {
+        // Save off the hit dice (for example: 1d8)
+        HitPointBase = hitPoints;
+        HitDice = string.Empty;
+        LevelDice = null;
     }
 }

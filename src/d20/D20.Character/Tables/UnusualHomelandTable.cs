@@ -21,11 +21,11 @@
 
 using System.Diagnostics.CodeAnalysis;
 
+using D20.Character.Enum;
 using D20.Character.Interfaces;
+using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Core.Models;
-
-using NetGore.Core.Enum;
 
 namespace D20.Character.Tables;
 

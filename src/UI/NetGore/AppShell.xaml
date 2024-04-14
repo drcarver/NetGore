@@ -3,7 +3,7 @@
     x:Class="NetGore.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:NetGore"
+    xmlns:local="clr-namespace:NetGore.Views"
     xmlns:admin="clr-namespace:NetGore.UI.Admin.Views;assembly=NetGore.UI.Admin"
     Shell.FlyoutBehavior="Disabled"
     Title="NetGore">

@@ -23,6 +23,7 @@ using System.Diagnostics.CodeAnalysis;
 
 using D20.Character.Enum;
 using D20.Character.Models;
+using D20.Core.Enum;
 using D20.Core.Models;
 
 namespace D20.Character.Tables.Halfling;
@@ -45,6 +46,9 @@ public class HalflingHomelandTable : RandomTable, IHalflingHomelandTable
     public HalflingHomelandTable()
     {
         DiceSides = 100;
+        Name = nameof(HalflingHomelandTable);
+        ProperName = "Halfling Homeland Table";
+        TableType = TableTypeEnum.RaceTable;
         Table =
         [
             #region "Halfling Settlement"

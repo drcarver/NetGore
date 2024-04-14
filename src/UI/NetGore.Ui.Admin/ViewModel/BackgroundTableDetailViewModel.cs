@@ -3,6 +3,10 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using D20.Character.Models;
+using D20.Core.Interfaces;
+using D20.Core.Models;
+
 namespace NetGore.UI.Admin.ViewModel;
 
 public partial class BackgroundTableDetailViewModel : ObservableObject, IQueryAttributable

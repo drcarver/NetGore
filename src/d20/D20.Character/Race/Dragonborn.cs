@@ -1,6 +1,7 @@
 ﻿using D20.Character.Interfaces;
 using D20.Core;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace D20.Character.Race;
@@ -35,7 +36,7 @@ public class Dragonborn : IRace
         //Type: Dragonborn are humanoids with the
         //Dragonborn subtype.
         creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubType.Dragonborn);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Dragonborn);
 
         // Languages. You can speak, read, and write
         // Common and Draconic. Draconic is thought
@@ -114,6 +115,11 @@ public class Dragonborn : IRace
     /// <param name="character"></param>
     /// <exception cref="NotImplementedException"></exception>
     public void GenerateRaceBackground(ICharacter character)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
     {
         throw new NotImplementedException();
     }

@@ -2,7 +2,6 @@
 using D20.Character.Race;
 using D20.Core.Enum;
 using D20.Core.Models;
-using D20.Data.Models;
 
 using Microsoft.Extensions.Logging;
 
@@ -84,47 +83,47 @@ public class RaceService : IRaceService
 
         Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 
-        switch (tableentry?.Name)
-        {
-            case nameof(Dragonborn):
-                creature.Race = RaceEnum.Dragonborn;
-                var dragonborn = new Dragonborn(creature);
-                break;
-            case nameof(Dwarf):
-                creature.Race = RaceEnum.Dwarf;
-                var dwarf = new Dwarf(creature);
-                dwarf.GenerateRaceBackground(creature);
-                break;
-            case nameof(Elf):
-                creature.Race = RaceEnum.Elf;
-                var elf = new Elf(creature);
-                elf.GenerateRaceBackground(creature);
-                break;
-            case nameof(Gnome):
-                creature.Race = RaceEnum.Gnome;
-                var gnome = new Gnome(creature);
-                gnome.GenerateRaceBackground(creature);
-                break;
-            case nameof(HalfElf):
-                creature.Race = RaceEnum.HalfElf;
-                var halfelf = new HalfElf(creature);
-                break;
-            case nameof(Halfling):
-                creature.Race = RaceEnum.Halfling;
-                var halfling = new Halfling(creature);
-                break;
-            case nameof(HalfOrc):
-                creature.Race = RaceEnum.HalfOrc;
-                var halforc = new HalfOrc(creature);
-                break;
-            case nameof(Human):
-                creature.Race = RaceEnum.Human;
-                var human = new Human(creature);
-                break;
-            case nameof(Tiefling):
-                creature.Race = RaceEnum.Tiefling;
-                var tiefling = new Tiefling(creature);
-                break;
-        }
+        //switch (tableentry?.Name)
+        //{
+        //    case nameof(Dragonborn):
+        //        creature.Race = RaceEnum.Dragonborn;
+        //        var dragonborn = new Dragonborn(creature);
+        //        break;
+        //    case nameof(Dwarf):
+        //        creature.Race = RaceEnum.Dwarf;
+        //        var dwarf = new Dwarf(creature);
+        //        dwarf.GenerateRaceBackground(creature);
+        //        break;
+        //    case nameof(Elf):
+        //        creature.Race = RaceEnum.Elf;
+        //        var elf = new Elf(creature);
+        //        elf.GenerateRaceBackground(creature);
+        //        break;
+        //    case nameof(Gnome):
+        //        creature.Race = RaceEnum.Gnome;
+        //        var gnome = new Gnome(creature);
+        //        gnome.GenerateRaceBackground(creature);
+        //        break;
+        //    case nameof(HalfElf):
+        //        creature.Race = RaceEnum.HalfElf;
+        //        var halfelf = new HalfElf(creature);
+        //        break;
+        //    case nameof(Halfling):
+        //        creature.Race = RaceEnum.Halfling;
+        //        var halfling = new Halfling(creature);
+        //        break;
+        //    case nameof(HalfOrc):
+        //        creature.Race = RaceEnum.HalfOrc;
+        //        var halforc = new HalfOrc(creature);
+        //        break;
+        //    case nameof(Human):
+        //        creature.Race = RaceEnum.Human;
+        //        var human = new Human(creature);
+        //        break;
+        //    case nameof(Tiefling):
+        //        creature.Race = RaceEnum.Tiefling;
+        //        var tiefling = new Tiefling(creature);
+        //        break;
+        //}
     }
 }

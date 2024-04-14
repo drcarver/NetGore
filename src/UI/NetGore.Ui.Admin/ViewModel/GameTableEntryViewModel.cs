@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using NetGore.Core.Interfaces;
+using D20.Core.Interfaces;
 
 namespace NetGore.UI.Admin.ViewModel;
 

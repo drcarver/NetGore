@@ -1,15 +1,39 @@
-﻿namespace D20.Core;
+﻿using System.Reflection;
+
+using D20.Core.Models;
+
+namespace D20.Core;
 
 public static class DataServices
 {
+    /// <summary>
+    /// Get all the IGameable entries
+    /// </summary>
+    /// <returns></returns>
+    public static List<Type> GetGameTables() => Assembly
+        .GetExecutingAssembly()
+        .GetExportedTypes()
+        .Where(t => t.IsSubclassOf(typeof(GameTable)) && t.Name != nameof(RandomTable))
+        .ToList();
+
+    /// <summary>
+    /// The D20 Core tables and services
+    /// </summary>
+    /// <param name="collection">The DI service collection</param>
+    /// <returns>The services collection</returns>
     public static IServiceCollection UseD20Core(this IServiceCollection collection)
     {
         //collection
-        // Add a view and view model with route
-        //.AddTransientWithShellRoute<GameTableDetailPage, GameTableDetailViewModel>(nameof(GameTableDetailPage))
-        //.AddTransientWithShellRoute<ConflictTableDetailPage, ConflictTableDetailViewModel>(nameof(ConflictTableDetailPage))
-        //.AddTransientWithShellRoute<BackgroundTableDetailPage, BackgroundTableDetailViewModel>(nameof(BackgroundTableDetailPage))
-        //.AddTransientWithShellRoute<CharacterAdvancementDetailPage, CharacterAdvancementDetailViewModel>(nameof(CharacterAdvancementDetailPage));
+        // Add all the game table types as transient
+        var list = GetGameTables();
+        foreach (var table in list)
+        {
+            if (table.Name != nameof(RandomTable)
+                || table.Name != nameof(GameTable))
+            {
+                var t = collection.AddTransient(table);
+            }
+        }
 
         return collection;
     }

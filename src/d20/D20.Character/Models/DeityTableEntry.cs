@@ -7,7 +7,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class PantheonTableEntry : GameTableEntry, IPantheonTableEntry
+public class DeityTableEntry : GameTableEntry, IDeityTableEntry
 {
     /// <summary>
     /// The deity alignment
@@ -28,7 +28,7 @@ public class PantheonTableEntry : GameTableEntry, IPantheonTableEntry
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public PantheonTableEntry()
+    public DeityTableEntry()
     {
     }
 }

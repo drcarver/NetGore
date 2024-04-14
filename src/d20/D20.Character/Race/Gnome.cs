@@ -56,7 +56,7 @@ public class Gnome : IRace
         //Type: Gnomes are Humanoid creatures with
         //the gnome subtype.
         creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubType.Gnome);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Gnome);
 
         //Languages: Gnomes begin play speaking
         //Common, Gnome, and Sylvan. Gnomes with
@@ -288,9 +288,9 @@ public class Gnome : IRace
         {
             foreach (var trait in homeland.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -303,9 +303,9 @@ public class Gnome : IRace
         {
             foreach (var trait in parents.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -336,9 +336,9 @@ public class Gnome : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
+                if (!character.Traits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(TraitEnum.KinGuardian);
+                    character.Traits.Add(TraitEnum.KinGuardian);
                 }
             }
         }
@@ -393,5 +393,10 @@ public class Gnome : IRace
     /// <param name="creature"></param>
     private static void SetAge(ICharacter creature)
     {
+    }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
+    {
+        throw new NotImplementedException();
     }
 }

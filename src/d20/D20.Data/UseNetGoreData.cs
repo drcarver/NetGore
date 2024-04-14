@@ -1,35 +1,39 @@
-﻿using D20.Core.Models;
-
-using NetGore.Core.Interfaces;
-using NetGore.Data.Services;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace NetGore.Data;
 
 public static class DataServices
 {
-    public static List<Type> FindSubClassesOf<TBaseType>()
+    public static List<Type> FindSubClassesOf<GameTable>()
     {
-        var baseType = typeof(TBaseType);
+        var baseType = typeof(GameTable);
         var assembly = baseType.Assembly;
 
         return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType)).ToList();
     }
 
-    public static IServiceCollection UseNetGoreData(this IServiceCollection collection)
+    public static IServiceCollection UseD20Data(this IServiceCollection collection)
     {
         collection
-            .AddDbContext<NETGoreDbContext>()
+            .AddDbContext<NETGoreDbContext>();
             //.AddSingleton<IRaceService, RaceService>()
             //.AddSingleton<ICharacterService, CharacterService>()
             //.AddSingleton<IClassService, ClassService>()
             //.AddSingleton<IPlayerCharacter, PlayerCharacter>()
-            .AddSingleton<IAccountService, AccountService>();
-        
-         // Add all the game table types as transient
-        foreach (var table in FindSubClassesOf<GameTable>())
-        {
-            var t = collection.AddTransient(table);
-        }
+            //    .AddSingleton<IAccountService, AccountService>();
+
+        ////collection
+        //// Add all the game table types as transient
+        //var list = Core.DataServices.GetGameTables();
+        //foreach (var table in list)
+        //{
+        //    if (table.Name != nameof(RandomTable))
+        //    {
+        //        var t = collection.AddTransient(table);
+        //    }
+        //}
+
+        //GameTables.AddRange(list.Cast<IGameTable>());
         return collection;
     }
 }

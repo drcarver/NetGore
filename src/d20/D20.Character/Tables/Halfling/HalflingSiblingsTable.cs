@@ -23,6 +23,7 @@ using System.Diagnostics.CodeAnalysis;
 
 using D20.Character.Enum;
 using D20.Character.Models;
+using D20.Core.Enum;
 using D20.Core.Models;
 
 namespace D20.Character.Tables.Halfling;
@@ -41,6 +42,9 @@ public class HalflingSiblingsTable : RandomTable, IHalflingSiblingsTable
     public HalflingSiblingsTable()
     {
         DiceSides = 100;
+        Name = nameof(HalflingSiblingsTable);
+        ProperName = "Halfling Siblings Table";
+        TableType = TableTypeEnum.RaceTable;
         Table =
         [
             #region "1d2"

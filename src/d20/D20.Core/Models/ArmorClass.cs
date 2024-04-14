@@ -7,6 +7,8 @@ namespace D20.Core.Models;
 
 public class ArmorClass : DataObject
 {
+    private int v;
+
     /// <summary>
     /// Tha base armor class for the creature
     /// </summary>
@@ -189,10 +191,10 @@ public class ArmorClass : DataObject
     /// <returns>The computed armor class</returns>
     public int AC(AttackTypeEnum attackType)
     {
-        int itembonus = 0;
+        int itemBonus = 0;
         foreach (var item in MagicItemBonus)
         {
-            itembonus += item;
+            itemBonus += item;
         }
         int ACBonus = BaseArmorClass
             + ClassBonus
@@ -207,7 +209,7 @@ public class ArmorClass : DataObject
             + SizeBonus
             + SpellBonus
             + TemporaryBonus
-            + itembonus;
+            + itemBonus;
 
         if (attackType != AttackTypeEnum.Touch)
         {
@@ -241,5 +243,16 @@ public class ArmorClass : DataObject
             "average unarmored person has an AC of " +
             "10. Armor and various abilities can " +
             "increase this number.";
+    }
+
+    /// <summary>
+    /// Set the armor class
+    /// </summary>
+    /// <param name="armorClass">The armor class</param>
+    [SetsRequiredMembers]
+    public ArmorClass(int armorClass)
+        : base()
+    {
+        this.BaseArmorClass = armorClass;
     }
 }

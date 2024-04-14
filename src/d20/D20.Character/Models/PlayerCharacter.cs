@@ -48,7 +48,7 @@ public class PlayerCharacter : D20Character, IPlayerCharacter
         //IRaceService raceService,
         IClassService classService,
         ICharacterAdvancementTable characterAdvancement)
-        : base(loggerFactory, classService)
+        : base(loggerFactory)
     {
         classService.SetClass(this);
         //raceService.SetRace(this);

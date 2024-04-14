@@ -28,7 +28,7 @@ public class CharacterService : ICharacterService
     /// <returns>The character created</returns>
     public ICharacter CreateCharacter()
     {
-        return new D20Character(LoggerFactory, ClassService);
+        return new D20Character(LoggerFactory);
     }
 
     /// <summary>

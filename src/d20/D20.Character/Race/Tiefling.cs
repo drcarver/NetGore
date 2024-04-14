@@ -1,7 +1,9 @@
 ﻿using D20.Character.Enum;
 using D20.Character.Interfaces;
 using D20.Character.Models;
+using D20.Core;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace NetGore.Data.Race;
@@ -59,7 +61,7 @@ public class Tiefling : IRace
         //Type: Tieflings are outsiders with the
         //native subtype.
         creature.RaceType = RaceType.Outsiders;
-        creature.RaceSubType.Add(RaceSubType.Native);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Native);
 
         //Size: Tieflings are Medium creatures and
         //thus receive no bonuses or penalties due
@@ -322,9 +324,9 @@ public class Tiefling : IRace
         {
             foreach (var trait in homeland.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -337,9 +339,9 @@ public class Tiefling : IRace
         {
             foreach (var trait in parents.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -358,9 +360,9 @@ public class Tiefling : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
+                if (!character.Traits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(TraitEnum.KinGuardian);
+                    character.Traits.Add(TraitEnum.KinGuardian);
                 }
             }
         }
@@ -377,48 +379,18 @@ public class Tiefling : IRace
     /// <param name="creature">The player character</param>
     private static void SetHeightAndWeight(D20Character creature)
     {
-        if (creature?.GenderEnum == GenderEnum.Male)
+        if (creature?.Gender == GenderEnum.Male)
         {
-            var modifier = new Dice("2d10").Total;
-            if (modifier <= 1)
-            {
-                creature.Height = $"4 ft. {modifier + 10} in.";
-            }
-            else if (modifier == 2)
-            {
-                creature.Height = $"5 ft.";
-            }
-            else if (modifier <= 13 && modifier >= 3)
-            {
-                creature.Height = $"5 ft. {modifier - 2} in.";
-            }
-            else
-            {
-                creature.Height = $"6 ft. {modifier - 13} in.";
-            }
+            creature.Height = new Height(4, 10).Add("2d10");
+
             // 120 lbs.    +(2d10×5 lbs.)
             creature.Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.GenderEnum == GenderEnum.Female)
+        if (creature?.Gender == GenderEnum.Female)
         {
-            var modifier = new Dice("2d10").Total;
-            if (modifier <= 6)
-            {
-                creature.Height = $"4 ft. {modifier + 5} in.";
-            }
-            else if (modifier == 7)
-            {
-                creature.Height = $"5 ft.";
-            }
-            else if (modifier <= 19 && modifier >= 8)
-            {
-                creature.Height = $"5 ft. {modifier - 8} in.";
-            }
-            else
-            {
-                creature.Height = $"6 ft.";
-            }
+            creature.Height = new Height(4, 5).Add("2d10");
+
             // 85 lbs. +(2d10×5 lbs.)
             creature.Weight = 85 + (new Dice("2d10").Total * 5);
         }
@@ -436,6 +408,11 @@ public class Tiefling : IRace
     }
 
     public void GenerateRaceBackground(ICharacter character)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
     {
         throw new NotImplementedException();
     }

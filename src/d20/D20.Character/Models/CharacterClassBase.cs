@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
+using D20.Character.Interfaces;
 using D20.Core.Base;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
 namespace D20.Character.Models;
 
-public class CharacterClassBase : BaseObject
+public class CharacterClassBase : BaseObject, ICharacterClassBase
 {
     /// <summary>
     /// Constructor

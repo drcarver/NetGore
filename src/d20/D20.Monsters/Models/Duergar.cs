@@ -1,5 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using D20.Core;
+using D20.Core.Abilities;
+using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
 
@@ -14,22 +17,60 @@ public class Duergar : Creature, ICreature
     /// </summary>
     /// <param name="loggerFactory">The logger factor</param>
     [SetsRequiredMembers]
-    public Duergar(ILoggerFactory loggerFactory) : 
-        base(loggerFactory)
+    public Duergar(ILoggerFactory loggerFactory, bool GenerateStats = false) : 
+        base()
     {
+        //Medium  humanoid(dwarf),	lawful evil
+        Size = SizeEnum.Medium;
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Dwarf);
+        Alignment = AlignmentEnum.LawfulEvil;
+
+        //Armor Class 16	(scale mail, shield)
+        if (GenerateStats)
+        {
+            // Add armor and shield to inventory and don
+            // the armor.  Compute armor class from that
+        }
+        ArmorClass = new ArmorClass(16);
+
+        //Hit Points 26	(4d8 + 8)
+        if (GenerateStats)
+        {
+            HitPoints = new HitPoints(new Dice("4d8+8").Total, this);
+        }
+        else
+        {
+            HitPoints.HitPointBase = 26;
+        }
+
+        //Speed 25	ft.
+        Speed = 25;
+
+        //STR DEX CON INT WIS CHA
+        //14 (+2) 11 (+0) 14 (+2) 11 (+0) 10 (+0) 9	(−1)
+        if (!GenerateStats)
+        {
+            Strength = new Strength(14, this);
+            Dexterity = new Dexterity(11, this);
+            Constitution = new Constitution(14, this);
+            Intelligence = new Intelligence(11, this);
+            Wisdom = new Wisdom(10, this);
+            Charisma = new Charisma(9, this);
+        }
+
+        //Languages Dwarvish, Undercommon
+        Languages.Add(LanguageEnum.Dwarvish);
+        Languages.Add(LanguageEnum.Undercommon);
+
+        ////Challenge 1(200    XP)
+        ChallengeRating = 1;
+        ExperiencePoints = 200; 
     }
 }
 //Duergar
-//Medium  humanoid(dwarf),	lawful evil
-//Armor Class 16	(scale mail, shield)
-//Hit Points 26	(4d8	+	8)
-//Speed 25	ft.
-//STR DEX CON INT WIS CHA
-//14	(+2) 11	(+0) 14	(+2) 11	(+0) 10	(+0) 9	(−1)
 //Damage Resistances poison
 //Senses  darkvision	120	ft.,	passive Perception  10
-//Languages Dwarvish, Undercommon
-//Challenge 1	(200	XP)
 //Duergar Resilience.The duergar has advantage on
 //saving throws  against poison, spells, and illusions,  as	
 //well    as	to resist  being charmed or paralyzed.

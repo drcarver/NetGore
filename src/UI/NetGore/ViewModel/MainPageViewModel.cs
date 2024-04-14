@@ -1,47 +1,56 @@
-﻿using System.Collections.ObjectModel;
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using NetGore.Core.Enum;
-using NetGore.Core.Interfaces;
-using NetGore.Data.Models;
+using D20.Core.Enum;
+using D20.Core.Interfaces;
+using D20.Core.Models;
+
+using NetGore.Interfaces;
 using NetGore.UI.Admin.Views;
+
+using System.Collections.ObjectModel;
 
 namespace NetGore.ViewModel;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainPageViewModel : ObservableObject
 {
     /// <summary>
     /// The list of Types with the same base type from
     /// a given assembly
     /// </summary>
-    /// <typeparam name="TBaseType">The base type</typeparam>
+    /// <typeparam name="GameTable">The base type</typeparam>
     /// <returns>The type list</returns>
-    private Type[] FindSubClassesOf<TBaseType>()
+    private Type[] FindSubClassesOf<GameTable>()
     {
-        var baseType = typeof(TBaseType);
+        var baseType = typeof(GameTable);
         var assembly = baseType.Assembly;
 
         return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType)).ToArray();
     }
 
     /// <summary>
-    /// The list of game tables from the DI
-    /// </summary>
-    private List<IGameTable> gameTables = [];
-
-    /// <summary>
-    /// The GameTable view model list
+    /// The name of the table
     /// </summary>
     [ObservableProperty]
-    ObservableCollection<GameTableViewModel> items = [];
+    string name;
+
+    /// <summary>
+    /// The description of the table
+    /// </summary>
+    [ObservableProperty]
+    string description;
+
+    /// <summary>
+    /// The Navigation Table list
+    /// </summary>
+    [ObservableProperty]
+    List<GameNavigationTableEntry> items = [];
 
     /// <summary>
     /// The currently selected row
     /// </summary>
     [ObservableProperty]
-    GameTableViewModel? selectedItem;
+    IGameNavigationTableEntry? selectedItem;
 
     /// <summary>
     /// The TapCommand for when a row is tapped
@@ -51,47 +60,18 @@ public partial class MainViewModel : ObservableObject
     {
         if (SelectedItem != null)
         {
-            var table = gameTables.First(gt => gt.Id.Equals(SelectedItem.Id));
-            var navigationParameter = new Dictionary<string, object>
-            {
-                { nameof(GameTable), table }
-            };
-            switch (table.TableType)
-            {
-                case TableTypeEnum.GoodsTable:
-                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
-                    break;
-                case TableTypeEnum.BackgroundTable:
-                    await Shell.Current.GoToAsync(nameof(BackgroundTableDetailPage), navigationParameter);
-                    break;
-                case TableTypeEnum.CharacterTable:
-                    await Shell.Current.GoToAsync(nameof(CharacterAdvancementDetailPage), navigationParameter);
-                    break;
-                case TableTypeEnum.ConflictTable:
-                    await Shell.Current.GoToAsync(nameof(ConflictTableDetailPage), navigationParameter);
-                    break;
-                case TableTypeEnum.GameTable:
-                    await Shell.Current.GoToAsync(nameof(GameTableDetailPage), navigationParameter);
-                    break;
-                default:
-                    break;
-            }
+            //await Shell.Current.GoToAsync(SelectedItem.Route);
         }
     }
 
     /// <summary>
     /// Constructor
     /// </summary>
-    public MainViewModel(IServiceProvider services)
+    /// <param name="navigationTable">The navigation table</param>
+    public MainPageViewModel(IMainNavigationTable navigationTable, IServiceCollection services)
     {
-        foreach (var item in FindSubClassesOf<GameTable>())
-        {
-            var gt = (IGameTable?)services.GetService(item);
-            if (gt != null)
-            {
-                gameTables.Add(gt);
-                Items.Add(new GameTableViewModel(gt));
-            }
-        }
+        Name = navigationTable.ProperName ?? navigationTable.Name;
+        Description = navigationTable.Description ?? navigationTable.Name;
+        Items = navigationTable.Table.Cast<GameNavigationTableEntry>().ToList();
     }
 }

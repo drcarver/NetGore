@@ -1,5 +1,5 @@
-﻿using NetGore.Core.Enum;
-using NetGore.Data.d20;
+﻿using D20.Core.Enum;
+using D20.Core.Tables;
 
 using NUnit.Framework.Legacy;
 
@@ -12,7 +12,7 @@ public class AlignmentTableTests
     public void AreTableEntriesCorrect()
     {
         var alignments = new List<string>();
-        foreach (var align in Enum.GetValues(typeof(LanguageEnum)).Cast<AlignmentEnum>())
+        foreach (var align in Enum.GetValues(typeof(AlignmentEnum)).Cast<AlignmentEnum>())
         {
             alignments.Add(align.ToString());
         }

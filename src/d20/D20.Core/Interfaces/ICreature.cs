@@ -24,7 +24,7 @@ public interface ICreature
     /// <summary>
     /// Race Sub Type
     /// </summary>
-    List<RaceSubType> RaceSubType { get; set; }
+    List<RaceSubTypeEnum> RaceSubType { get; set; }
 
     /// <summary>
     /// The languages the creature speaks
@@ -145,4 +145,14 @@ public interface ICreature
     /// The creature skills
     /// </summary>
     List<SkillEnum> Skills { get; set; }
+
+    /// <summary>
+    /// The challenge rating of the creature
+    /// </summary>
+    decimal ChallengeRating { get; set; }
+
+    /// <summary>
+    /// THe experience points for killing the creature
+    /// </summary>
+    int ExperiencePoints { get; set; }
 }

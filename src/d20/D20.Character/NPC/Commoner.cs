@@ -26,7 +26,7 @@ public class Commoner : D20Character
     public Commoner(ILoggerFactory loggerFactory,
         IClassService classService)
         //IRaceService raceService) 
-        : base(loggerFactory, classService)
+        : base(loggerFactory)
     {
         //RaceService = raceService;
         Initialize();

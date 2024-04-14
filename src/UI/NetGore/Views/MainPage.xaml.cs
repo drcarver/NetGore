@@ -1,10 +1,10 @@
 ﻿using NetGore.ViewModel;
 
-namespace NetGore;
+namespace NetGore.Views;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage(MainViewModel vm)
+    public MainPage(IMainPageViewModel vm)
     {
         InitializeComponent();
 

@@ -79,7 +79,7 @@ public class Dwarf : IRace
         //Type: Dwarves are humanoids with the
         //dwarf subtype.
         creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubType.Dwarf);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
         //Languages: Dwarves begin play speaking
         //Common and Dwarven. Dwarves with high
@@ -398,9 +398,9 @@ public class Dwarf : IRace
         {
             foreach (var trait in homeland.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -413,9 +413,9 @@ public class Dwarf : IRace
         {
             foreach (var trait in parents.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -446,12 +446,17 @@ public class Dwarf : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
+                if (!character.Traits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(TraitEnum.KinGuardian);
+                    character.Traits.Add(TraitEnum.KinGuardian);
                 }
             }
         }
         #endregion
+    }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
+    {
+        throw new NotImplementedException();
     }
 }

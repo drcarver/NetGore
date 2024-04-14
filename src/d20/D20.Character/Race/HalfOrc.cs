@@ -3,6 +3,7 @@ using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Core;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace D20.Character.Race;
@@ -54,8 +55,8 @@ public class HalfOrc : IRace
         //Type: Half - orcs are Humanoid creatures
         //with both the human and orc subtypes.
         creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubType.Human);
-        creature.RaceSubType.Add(RaceSubType.Orc);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Human);
+        creature.RaceSubType.Add(RaceSubTypeEnum.Orc);
 
         //Languages: Half - orcs begin play speaking
         //Common and Orc. Half - orcs with high
@@ -312,9 +313,9 @@ public class HalfOrc : IRace
         {
             foreach (var trait in homeland.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -327,9 +328,9 @@ public class HalfOrc : IRace
         {
             foreach (var trait in parents.Traits)
             {
-                if (!character.RacialTraits.Contains(trait))
+                if (!character.Traits.Contains(trait))
                 {
-                    character.RacialTraits.Add(trait);
+                    character.Traits.Add(trait);
                 }
             }
         }
@@ -360,9 +361,9 @@ public class HalfOrc : IRace
             }
             if (character.Siblings.Count > 0)
             {
-                if (!character.RacialTraits.Contains(TraitEnum.KinGuardian))
+                if (!character.Traits.Contains(TraitEnum.KinGuardian))
                 {
-                    character.RacialTraits.Add(TraitEnum.KinGuardian);
+                    character.Traits.Add(TraitEnum.KinGuardian);
                 }
             }
         }
@@ -438,5 +439,10 @@ public class HalfOrc : IRace
     /// <param name="creature"></param>
     private static void SetAge(ICharacter creature)
     {
+    }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
+    {
+        throw new NotImplementedException();
     }
 }

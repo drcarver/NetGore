@@ -52,7 +52,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
         Table =
         [
             #region The Daghdha
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.TheDaghdha),
                 ProperName = "The Daghdha",
@@ -70,7 +70,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Arawn
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Arawn),
                 ProperName = "Arawn",
@@ -91,13 +91,13 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Belenus
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Belenus),
                 ProperName = "Belenus",
                 Description = "God of sun",
                 Alignment = AlignmentEnum.NeutralGood,
-                Symbol = "Solar disk and standing stones"
+                Symbol = "Solar disk and standing stones",
                 SuggestedClasses =
                 [
                     ClassEnum.Barbarian,
@@ -111,7 +111,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Brigantia
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Brigantia),
                 ProperName = "Brigantia",
@@ -133,13 +133,13 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Diancecht
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Diancecht),
                 ProperName = "Diancecht",
                 Description = "God of  medicine and healing",
                 Alignment = AlignmentEnum.LawfulGood,
-                Symbol = "Crossed oak and mistletoe branches"
+                Symbol = "Crossed oak and mistletoe branches",
                 SuggestedClasses =
                 [
                     ClassEnum.Paladin,
@@ -154,7 +154,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Dunatis
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Dunatis),
                 ProperName = "Dunatis",
@@ -174,7 +174,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Goibhniu
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Goibhniu),
                 ProperName = "Goibhniu",
@@ -194,7 +194,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Lugh
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Lugh),
                 ProperName = "Lugh",
@@ -212,7 +212,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Manannan mac Lir
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.ManannanmacLir),
                 ProperName = "Manannan mac Lir",
@@ -231,7 +231,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Math Mathonwy
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.MathMathonwy),
                 ProperName = "Math Mathonwy",
@@ -254,7 +254,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Morrigan
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Morrigan),
                 ProperName = "Morrigan",
@@ -277,7 +277,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Nuada
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Nuada),
                 ProperName = "Nuada",
@@ -297,7 +297,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Oghma
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Oghma),
                 ProperName = "Oghma",
@@ -316,7 +316,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             #endregion
 
             #region Silvanus
-            new PantheonTableEntry
+            new DeityTableEntry
             {
                 Name = nameof(CelticDeitiesEnum.Silvanus),
                 ProperName = "Silvanus",

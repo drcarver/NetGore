@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using NetGore.Core.Interfaces;
+using D20.Core.Interfaces;
+using D20.Core.Models;
 
 namespace NetGore.ViewModel;
 
@@ -14,10 +15,15 @@ public partial class GameTableViewModel : ObservableObject
 
     public Guid Id { get; set; }
 
-    public GameTableViewModel(IGameTable table)
+    public GameTableViewModel(GameTable table)
     {
         Id = table.Id;
         Name = table.ProperName ?? table.Name;
         Description = table.Description;
+    }
+
+    public GameTableViewModel()
+    {
+        Id = Guid.NewGuid();
     }
 }

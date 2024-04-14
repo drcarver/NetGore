@@ -197,4 +197,9 @@ public class Halfling : D20Character, IRace
     private void SetAge(ICharacter creature)
     {
     }
+
+    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
+    {
+        throw new NotImplementedException();
+    }
 }

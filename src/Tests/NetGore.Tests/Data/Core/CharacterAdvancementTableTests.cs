@@ -1,5 +1,5 @@
-﻿using NetGore.Data.d20;
-using NetGore.Data.Interfaces;
+﻿using D20.Character.Interfaces;
+using D20.Character.Tables;
 
 using NUnit.Framework.Legacy;
 

@@ -4,6 +4,11 @@ using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 using NetGore.Data;
 using NetGore.ViewModel;
+using D20.Core;
+using D20.Character;
+using NetGore.Interfaces;
+using NetGore.Tables;
+using NetGore.Views;
 
 namespace NetGore;
 
@@ -28,10 +33,14 @@ public static class MauiProgram
 
         // Services
         builder.Services
-            .AddSingleton<MainPage, MainViewModel>()
-            .UseNetGoreData()
+            .AddSingleton<IMainNavigationTable, MainNavigationTable>()
+            .AddSingletonWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
+            .UseD20Core()
+            //.UseD20Character()
+            //.UseD20Data()
+            //.UseD20Goods()
+            //.UseD20MagicItems()
             .UseNetGoreUIAdmin()
-            //.AddSingletonWithShellRoute<MainPage, MainViewModel>("")
             .BuildServiceProvider();
 
         // all done

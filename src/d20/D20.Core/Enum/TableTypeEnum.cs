@@ -2,10 +2,14 @@
 
 public enum TableTypeEnum
 {
-    GoodsTable,
     BackgroundTable,
     CharacterTable,
     ConflictTable,
     GameTable,
+    GoodsTable,
+    MagicItemTable,
+    MonsterTable,
     PantheonTable,
+    RaceTable,
+    SpellTable,
 }

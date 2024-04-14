@@ -4,7 +4,7 @@ using D20.Core.Interfaces;
 
 namespace D20.Character.Interfaces;
 
-public interface IPantheonTableEntry : IGameTableEntry
+public interface IDeityTableEntry : IGameTableEntry
 {
     /// <summary>
     /// The deity alignment

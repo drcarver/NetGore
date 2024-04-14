@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using NetGore.Core.Models;
 
+
 namespace NetGore.Data.EntityConfigurations;
 
 /// <summary>

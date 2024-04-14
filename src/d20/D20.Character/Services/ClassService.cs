@@ -119,57 +119,57 @@ public class ClassService : IClassService
         Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 
         // Set the class on the creature
-        switch (tableentry?.Name)
-        {
-            case nameof(Barbarian):
-                character.CharacterClass = new Barbarian();
-                character.Wealth = new Dice("3d6").Total * 10;
-                break;
-            case nameof(Bard):
-                character.CharacterClass = new Bard();
-                character.Wealth = new Dice("3d6").Total * 10;
-                break;
-            case nameof(Cleric):
-                character.CharacterClass = new Cleric();
-                character.Wealth = new Dice("4d6").Total * 10;
-                break;
-            case nameof(Druid):
-                character.CharacterClass = new Druid();
-                character.Wealth = new Dice("2d6").Total * 10;
-                break;
-            case nameof(Fighter):
-                character.CharacterClass = new Fighter();
-                character.Wealth = new Dice("5d6").Total * 10;
-                break;
-            case nameof(Monk):
-                character.CharacterClass = new Monk();
-                character.Wealth = new Dice("1d6").Total * 10;
-                break;
-            case nameof(Paladin):
-                character.CharacterClass = new Paladin();
-                character.Wealth = new Dice("5d6").Total * 10;
-                break;
-            case nameof(Ranger):
-                character.CharacterClass = new Ranger();
-                character.Wealth = new Dice("5d6").Total * 10;
-                break;
-            case nameof(Rogue):
-                character.CharacterClass = new Rogue();
-                character.Wealth = new Dice("4d6").Total * 10;
-                break;
-            case nameof(Sorcerer):
-                character.CharacterClass = new Rogue();
-                character.Wealth = new Dice("4d6").Total * 10;
-                break;
-            case nameof(Warlock):
-                character.CharacterClass = new Warlock();
-                character.Wealth = new Dice("2d6").Total * 10;
-                break;
-            case nameof(Wizard):
-                character.CharacterClass = new Wizard();
-                character.Wealth = new Dice("2d6").Total * 10;
-                break;
-        }
+        //switch (tableentry?.Name)
+        //{
+        //    case nameof(Barbarian):
+        //        character.CharacterClass = new Barbarian();
+        //        character.Wealth = new Dice("3d6").Total * 10;
+        //        break;
+        //    case nameof(Bard):
+        //        character.CharacterClass = new Bard();
+        //        character.Wealth = new Dice("3d6").Total * 10;
+        //        break;
+        //    case nameof(Cleric):
+        //        character.CharacterClass = new Cleric();
+        //        character.Wealth = new Dice("4d6").Total * 10;
+        //        break;
+        //    case nameof(Druid):
+        //        character.CharacterClass = new Druid();
+        //        character.Wealth = new Dice("2d6").Total * 10;
+        //        break;
+        //    case nameof(Fighter):
+        //        character.CharacterClass = new Fighter();
+        //        character.Wealth = new Dice("5d6").Total * 10;
+        //        break;
+        //    case nameof(Monk):
+        //        character.CharacterClass = new Monk();
+        //        character.Wealth = new Dice("1d6").Total * 10;
+        //        break;
+        //    case nameof(Paladin):
+        //        character.CharacterClass = new Paladin();
+        //        character.Wealth = new Dice("5d6").Total * 10;
+        //        break;
+        //    case nameof(Ranger):
+        //        character.CharacterClass = new Ranger();
+        //        character.Wealth = new Dice("5d6").Total * 10;
+        //        break;
+        //    case nameof(Rogue):
+        //        character.CharacterClass = new Rogue();
+        //        character.Wealth = new Dice("4d6").Total * 10;
+        //        break;
+        //    case nameof(Sorcerer):
+        //        character.CharacterClass = new Rogue();
+        //        character.Wealth = new Dice("4d6").Total * 10;
+        //        break;
+        //    case nameof(Warlock):
+        //        character.CharacterClass = new Warlock();
+        //        character.Wealth = new Dice("2d6").Total * 10;
+        //        break;
+        //    case nameof(Wizard):
+        //        character.CharacterClass = new Wizard();
+        //        character.Wealth = new Dice("2d6").Total * 10;
+        //        break;
+        //}
     }
 
     /// <summary>

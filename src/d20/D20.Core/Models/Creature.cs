@@ -6,8 +6,6 @@ using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Tables;
 
-using Microsoft.Extensions.Logging;
-
 namespace D20.Core.Models;
 
 public class Creature : DataObject, ICreature
@@ -30,7 +28,7 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// Race Sub Type
     /// </summary>
-    public List<RaceSubType> RaceSubType { get; set; } = [];
+    public List<RaceSubTypeEnum> RaceSubType { get; set; } = [];
 
     /// <summary>
     /// The languages the creature speaks
@@ -151,6 +149,16 @@ public class Creature : DataObject, ICreature
     /// The creature skills
     /// </summary>
     public List<SkillEnum> Skills { get; set; }
+
+    /// <summary>
+    /// The challenge rating of the creature
+    /// </summary>
+    public decimal ChallengeRating { get; set; }
+
+    /// <summary>
+    /// THe experience points for killing the creature
+    /// </summary>
+    public int ExperiencePoints { get; set; }
 
     /// <summary>
     /// Creatures that have a height and weight implement

@@ -1,6 +1,6 @@
 ﻿namespace D20.Core.Enum;
 
-public enum RaceSubType
+public enum RaceSubTypeEnum
 {
     None = 0,
     Native = 1,

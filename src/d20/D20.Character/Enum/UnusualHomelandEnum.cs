@@ -19,7 +19,7 @@
 //
 #endregion
 
-namespace NetGore.Core.Enum;
+namespace D20.Character.Enum;
 
 public enum UnusualHomelandEnum
 {

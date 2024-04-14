@@ -24,16 +24,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NetGore\NetGore.Core\NetGore.Core.csproj" />
-    <ProjectReference Include="..\D20.Core\D20.Core.csproj" />
-    <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Background\" />
     <Folder Include="Enum\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\NetGore\NetGore.Core\NetGore.Core.csproj" />
   </ItemGroup>
 
 </Project>

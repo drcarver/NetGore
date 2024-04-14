@@ -1,8 +1,6 @@
-﻿using NetGore.Core.Enum;
-using NetGore.Core.Models;
-using NetGore.Data.Background;
-using NetGore.Data.Interfaces;
-using NetGore.Data.Models;
+﻿using D20.Character.Enum;
+using D20.Character.Interfaces;
+using D20.Character.Tables;
 
 using NUnit.Framework.Legacy;
 
