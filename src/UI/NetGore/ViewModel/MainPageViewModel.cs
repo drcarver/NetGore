@@ -68,7 +68,7 @@ public partial class MainPageViewModel : ObservableObject
     /// Constructor
     /// </summary>
     /// <param name="navigationTable">The navigation table</param>
-    public MainPageViewModel(IMainNavigationTable navigationTable, IServiceCollection services)
+    public MainPageViewModel(IMainNavigationTable navigationTable)
     {
         Name = navigationTable.ProperName ?? navigationTable.Name;
         Description = navigationTable.Description ?? navigationTable.Name;

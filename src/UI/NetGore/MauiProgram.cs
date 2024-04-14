@@ -34,7 +34,7 @@ public static class MauiProgram
         // Services
         builder.Services
             .AddSingleton<IMainNavigationTable, MainNavigationTable>()
-            .AddSingletonWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
+            .AddScopedWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
             .UseD20Core()
             //.UseD20Character()
             //.UseD20Data()

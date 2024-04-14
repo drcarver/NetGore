@@ -1,4 +1,4 @@
-﻿namespace NetGore.Core.Enum;
+﻿namespace D20.Core.Enum;
 
 /// <summary>
 /// Anyone can put on a suit of armor or strap a shield 

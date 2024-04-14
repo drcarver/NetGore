@@ -4,7 +4,7 @@ namespace NetGore.Views;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage(IMainPageViewModel vm)
+    public MainPage(MainPageViewModel vm)
     {
         InitializeComponent();
 
