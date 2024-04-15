@@ -26,12 +26,12 @@ public class GameTable : BaseObject, IGameTable
     /// <summary>
     /// The proper name of the table
     /// </summary>
-    public string ProperName { get; set; } = string.Empty;
+    public string? ProperName { get; set; } = string.Empty;
 
     /// <summary>
     /// The table type
     /// </summary>
-    public TableTypeEnum TableType { get; set; } = TableTypeEnum.GameTable;
+    public TableTypeEnum TableType { get; set; }
 
     /// <summary>
     /// The table itself
@@ -58,5 +58,13 @@ public class GameTable : BaseObject, IGameTable
         {
             return Table[RandomNumberGenerator.GetInt32(Table.Count)];
         }
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public virtual void InitializeTable()
+    {
     }
 }

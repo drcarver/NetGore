@@ -16,7 +16,7 @@ namespace D20.Character.Race;
 /// grow up with the help of a large social 
 /// network.
 /// </summary>
-public class Elf : IRace
+public class Elf : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.
@@ -271,7 +271,7 @@ public class Elf : IRace
                     "trait. Roll on Table: " +
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
-                AlternateTable = typeof(RaceTable),
+                //AlternateTable = typeof(RaceTable),
                 Traits =
                 {
                     TraitEnum.KinGuardian,

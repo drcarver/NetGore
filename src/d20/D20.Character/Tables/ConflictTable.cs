@@ -45,6 +45,18 @@ namespace D20.Character.Tables;
 /// </summary>
 public class ConflictTable : GameTable, IConflictTable
 {
+    /// <summary>
+    /// Conflicts Table
+    /// </summary>
+    [SetsRequiredMembers]
+    public ConflictTable()
+    {
+        Name = nameof(ConflictTable);
+        ProperName = "Conflicts Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
+    }
+
     //Table: Conflicts
     //d20 Result CP
     //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.  1
@@ -68,15 +80,11 @@ public class ConflictTable : GameTable, IConflictTable
     //19	Murder You killed someone.	8
     //20	Mass Murder You killed several sentient beings. 12
     /// <summary>
-    /// Conflicts Table
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public ConflictTable()
+    public override void InitializeTable()
     {
-        Name = nameof(ConflictTable);
-        ProperName = "Conflicts Table";
-        TableType = TableTypeEnum.ConflictTable;
-        Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
         Table =
         [
             #region Minor Failure

@@ -8,6 +8,7 @@ using D20.Core.Models;
 using NetGore.Interfaces;
 using NetGore.UI.Admin.Views;
 
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace NetGore.ViewModel;
@@ -25,8 +26,13 @@ public partial class MainPageViewModel : ObservableObject
         var baseType = typeof(GameTable);
         var assembly = baseType.Assembly;
 
-        return assembly.GetTypes().Where(t => t.IsSubclassOf(baseType)).ToArray();
+        return assembly.GetExportedTypes().Where(t => t.IsSubclassOf(baseType)).ToArray();
     }
+
+    /// <summary>
+    /// The list of tables in the DI
+    /// </summary>
+    private List<IGameTable> _tables = [];
 
     /// <summary>
     /// The name of the table
@@ -60,7 +66,7 @@ public partial class MainPageViewModel : ObservableObject
     {
         if (SelectedItem != null)
         {
-            //await Shell.Current.GoToAsync(SelectedItem.Route);
+            await Shell.Current.GoToAsync(SelectedItem.Route);
         }
     }
 
@@ -68,8 +74,9 @@ public partial class MainPageViewModel : ObservableObject
     /// Constructor
     /// </summary>
     /// <param name="navigationTable">The navigation table</param>
-    public MainPageViewModel(IMainNavigationTable navigationTable)
+    public MainPageViewModel(IMainNavigationTable navigationTable, IServiceProvider services)
     {
+        navigationTable.InitializeTable();
         Name = navigationTable.ProperName ?? navigationTable.Name;
         Description = navigationTable.Description ?? navigationTable.Name;
         Items = navigationTable.Table.Cast<GameNavigationTableEntry>().ToList();

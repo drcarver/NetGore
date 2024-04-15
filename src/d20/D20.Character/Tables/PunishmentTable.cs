@@ -39,6 +39,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class PunishmentTable : RandomTable, IPunishmentTable
 {
+    /// <summary>
+    /// Punishment
+    /// </summary>
+    [SetsRequiredMembers]
+    public PunishmentTable()
+    {
+        Name = nameof(PunishmentTable);
+        ProperName = "Punishment Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll on Table: Punishment to learn the severity of the punishment you received—or have yet to receive—for having been judged guilty.";
+        DiceSides = 100;
+    }
+
     //Table: Punishment
     //d%	Punishment
     //01–10	Beating
@@ -52,16 +65,11 @@ public class PunishmentTable : RandomTable, IPunishmentTable
     //81–90	Trial by fire
     //91–100	Trial by water
     /// <summary>
-    /// Punishment
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public PunishmentTable()
+    public override void InitializeTable()
     {
-        Name = nameof(PunishmentTable);
-        ProperName = "Punishment Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "Roll on Table: Punishment to learn the severity of the punishment you received—or have yet to receive—for having been judged guilty.";
-        DiceSides = 100;
         Table =
         [
             #region "Beating"

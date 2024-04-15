@@ -6,7 +6,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Race;
 
-public class Dragonborn : IRace
+public class Dragonborn : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.

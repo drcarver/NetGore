@@ -15,7 +15,7 @@ namespace D20.Character.Race;
 /// form their own gnome communities or integrate 
 /// themselves into other humanoid societies.
 /// </summary>
-public class HalfElf : IRace
+public class HalfElf : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.

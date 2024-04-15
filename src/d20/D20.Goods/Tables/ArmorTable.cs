@@ -43,8 +43,16 @@ public class ArmorTable : GameTable, IArmorTable
             "table shows the cost, weight, and " +
             "other  properties of the common types " +
             "of armor";
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
-        [
+[
             #region Light - Padded
             //Padded 5	gp 11+Dex modifier — Disadvantage 8	lb.
             new ArmorEntry

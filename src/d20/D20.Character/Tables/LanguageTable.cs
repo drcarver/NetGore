@@ -21,6 +21,14 @@ public class LanguageTable : GameTable, ILanguageTable
             "you access to one or more additional " +
             "languages of  your choice.";
         TableType = TableTypeEnum.CharacterTable;
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region Common

@@ -40,6 +40,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class UnusualHomelandTable : RandomTable, IUnusualHomelandTable
 {
+    /// <summary>
+    /// The Unusual Homeland Table
+    /// </summary>
+    [SetsRequiredMembers]
+    public UnusualHomelandTable()
+    {
+        Name = nameof(UnusualHomelandTable);
+        ProperName = "Unusual Homeland Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "You grew up in a region not typically associated with the lands that your people call home. Roll on Table: Unusual Homeland to determine the homeland of your family. If the result is one that is typical for your race, this region is one where there are few other members of your race, outside of your family.";
+        DiceSides = 100;
+    }
+
     //Table: Unusual Homeland
     //d%	Result
     //01–10	Subterranean You gain access to the Surface Stranger regional trait.
@@ -54,16 +67,11 @@ public class UnusualHomelandTable : RandomTable, IUnusualHomelandTable
     //91–95	Tundra You gain access to the Tundra Child regional trait.
     //96–100	Another Plane   Your GM chooses the plane.You gain access to the Scholar of the Great Beyond faith trait    
     /// <summary>
-    /// The Unusual Homeland Table
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public UnusualHomelandTable()
+    public virtual void InitializeTable()
     {
-        Name = nameof(UnusualHomelandTable);
-        ProperName = "Unusual Homeland Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "You grew up in a region not typically associated with the lands that your people call home. Roll on Table: Unusual Homeland to determine the homeland of your family. If the result is one that is typical for your race, this region is one where there are few other members of your race, outside of your family.";
-        DiceSides = 100;
         Table =
         [
             #region Subterranean

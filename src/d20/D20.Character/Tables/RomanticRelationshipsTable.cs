@@ -37,6 +37,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class RomanticRelationshipsTable : RandomTable, IRomanticRelationshipsTable
 {
+    /// <summary>
+    /// Romantic Relationships
+    /// </summary>
+    [SetsRequiredMembers]
+    public RomanticRelationshipsTable()
+    {
+        Name = nameof(RomanticRelationshipsTable);
+        ProperName = "Romantic Relationships Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a d20.";
+        DiceSides = 20;
+    }
+
     //Table: Romantic Relationships
     //d20 Result
     //1–2	One Significant Relationship You had a true love once, but that time has passed.
@@ -47,16 +60,11 @@ public class RomanticRelationshipsTable : RandomTable, IRomanticRelationshipsTab
     //17–18	Experience but No Substantial Relationships You’ve had a fling or two, but have so far shied away from any ties or commitments.
     //19–20	No Experience   You have never experienced any kind of romantic connection whatsoever.
     /// <summary>
-    /// Romantic Relationships
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public RomanticRelationshipsTable()
+    public override void InitializeTable()
     {
-        Name = nameof(RomanticRelationshipsTable);
-        ProperName = "Romantic Relationships Table";
-        TableType = TableTypeEnum.GameTable;
-        Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a d20.";
-        DiceSides = 20;
         Table =
         [
             #region "One Significant Relationship"
@@ -159,4 +167,3 @@ public class RomanticRelationshipsTable : RandomTable, IRomanticRelationshipsTab
         ];
     }
 }
-

@@ -45,6 +45,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class CharacterDrawbackTable : RandomTable, ICharacterDrawbackTable
 {
+    /// <summary>
+    /// Character Drawback
+    /// </summary>
+    [SetsRequiredMembers]
+    public CharacterDrawbackTable()
+    {
+        Name = nameof(CharacterDrawbackTable);
+        ProperName = "Character Drawback Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Character drawbacks are emotional weak points—chinks your armor. a drawback gives you a small mechanical penalty and a roleplaying hook. Drawbacks also serve as loopholes in the alignment system. When roleplaying your drawback, you might act well outside the bounds of your alignment within certain situations. Each of the following grants a drawback you may choose to take. If you take a drawback option, you may take three traits you have access to instead of two. Roll on the following table to determine your character’s drawback.";
+        DiceSides = 100;
+    }
+
     //Table: Character Drawback
     //d%	Result
     //01–05	Attachment(Object) You are attached to a precious possession with immense sentimental value and significance.Without it, you are no longer yourself and are prone to suffer from depression, moodiness, or aggressive behavior.You gain access to the Attached drawback.
@@ -68,16 +81,11 @@ public class CharacterDrawbackTable : RandomTable, ICharacterDrawbackTable
     //91–95	Worldview In your eyes, your moral philosophy—your alignment—is the only correct and true way of the world. Perhaps you gently pity, argue with, or brawl with those misguided souls who don’t see the world your way or by your light of reason. You gain access to the Provincial drawback.
     //96–100	Youth You reflect upon your youth as a golden time, one ever present in your mind and that refuses to fade into the background. Every day, you feel yourself growing older and closer to your inevitable end.You seek ways to make yourself look and feel young in attempt to rekindle that fire of your adolescence, but despite your attempts, you realize that your time still draws ever nearer.You gain access to the Vain drawback.
     /// <summary>
-    /// Character Drawback
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public CharacterDrawbackTable()
+    public override void InitializeTable()
     {
-        Name = nameof(CharacterDrawbackTable);
-        ProperName = "Character Drawback Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "Character drawbacks are emotional weak points—chinks your armor. a drawback gives you a small mechanical penalty and a roleplaying hook. Drawbacks also serve as loopholes in the alignment system. When roleplaying your drawback, you might act well outside the bounds of your alignment within certain situations. Each of the following grants a drawback you may choose to take. If you take a drawback option, you may take three traits you have access to instead of two. Roll on the following table to determine your character’s drawback.";
-        DiceSides = 100;
         Table =
         [
             #region Attachment to an Object

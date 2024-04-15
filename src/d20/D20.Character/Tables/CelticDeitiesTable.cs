@@ -49,6 +49,15 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
             "forester dared put a name to the face seen in the " +
             "bole of a tree or the voice babbling in a brook, these " +
             "gods forced themselves into being.";
+    }
+
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region The Daghdha
@@ -163,7 +172,7 @@ public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
                 Symbol = "Red sun-capped mountain peak",
                 SuggestedClasses =
                 [
-                    ClassEnum.Barbarian, 
+                    ClassEnum.Barbarian,
                     ClassEnum.Bard,
                     ClassEnum.Cleric,
                     ClassEnum.Fighter,

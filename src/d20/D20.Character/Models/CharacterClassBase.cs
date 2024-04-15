@@ -60,4 +60,10 @@ public class CharacterClassBase : BaseObject, ICharacterClassBase
     /// Equipment
     /// </summary>
     public List<EquipmentEnum> Armor { get; set; } = [];
+
+    /// <summary>
+    /// The description of the class background.  Used to provide
+    /// a background for the character selecting this class
+    /// </summary>
+    public string? BackgroundDescription { get; set; }
 }

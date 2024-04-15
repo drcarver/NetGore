@@ -20,7 +20,7 @@ namespace D20.Character.Race;
 /// wanderlust, halflings can be found anywhere 
 /// civilized humanoids settle.
 /// </summary>
-public class Halfling : D20Character, IRace
+public class Halfling : D20Character, ICharacterRace
 {
     /// <summary>
     /// Constructor for a simple create

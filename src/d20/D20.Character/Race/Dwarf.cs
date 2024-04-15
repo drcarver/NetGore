@@ -24,7 +24,7 @@ namespace D20.Character.Race;
 /// realms below the earth, constantly at war with 
 /// giants, goblins, and other such horrors.
 /// </summary>
-public class Dwarf : IRace
+public class Dwarf : ICharacterRace
 {
     private ILogger? _logger;
     private readonly ILoggerFactory loggerFactory;
@@ -362,7 +362,6 @@ public class Dwarf : IRace
                     "Kin Guardian combat trait. Roll on Table: " +
                     "Race Table to determine the " +
                     "race of any adopted siblings.",
-                AlternateTable = typeof(RaceTable),
                 Traits =
                 {
                     TraitEnum.KinGuardian,

@@ -12,6 +12,37 @@ namespace D20.Character.Tables;
 /// </summary>
 public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
 {
+    /// <summary>
+    /// Determine the character advancement.
+    /// </summary>
+    [SetsRequiredMembers]
+    public CharacterAdvancementTable()
+    {
+        Name = nameof(CharacterAdvancementTable);
+        ProperName = "Character Advancement Table";
+        Description = "As your character goes on " +
+            "adventures and  overcomes challenges, " +
+            "they gain experience,  represented by " +
+            "experience points. A character who  " +
+            "reaches a specified experience point " +
+            "total advances  in capability. This " +
+            "advancement is called gaining a  level";
+        TableType = TableTypeEnum.CharacterTable;
+    }
+
+    /// <summary>
+    /// Get a entry from the table by it's experience points
+    /// </summary>
+    /// <returns>The selected CharacterAdvancementEntry.</returns>
+    public ICharacterAdvancementEntry GetEntryByExperiencePoints(int number)
+    {
+        var te = Table.Cast<ICharacterAdvancementEntry>().First(t =>
+                        t.ExperiencePoints.Start.Value <= number
+                     && t.ExperiencePoints.End.Value >= number);
+        return te;
+    }
+
+
     //Character Advancement
     //Experience Points Level Proficiency Bonus
     //0 1 +2
@@ -35,21 +66,11 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
     //305,000 19 +6
     //355,000 20 +6
     /// <summary>
-    /// Determine the character advancement.
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public CharacterAdvancementTable()
+    public override void InitializeTable()
     {
-        Name = nameof(CharacterAdvancementTable);
-        ProperName = "Character Advancement Table";
-        Description = "As your character goes on " +
-            "adventures and  overcomes challenges, " +
-            "they gain experience,  represented by " +
-            "experience points. A character who  " +
-            "reaches a specified experience point " +
-            "total advances  in capability. This " +
-            "advancement is called gaining a  level";
-        TableType = TableTypeEnum.CharacterTable;
         Table =
         [
             #region 1st Level
@@ -252,17 +273,5 @@ public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
             },
             #endregion
         ];
-    }
-
-    /// <summary>
-    /// Get a entry from the table by it's experience points
-    /// </summary>
-    /// <returns>The selected CharacterAdvancementEntry.</returns>
-    public ICharacterAdvancementEntry GetEntryByExperiencePoints(int number)
-    {
-        var te = Table.Cast<ICharacterAdvancementEntry>().First(t =>
-                        t.ExperiencePoints.Start.Value <= number
-                     && t.ExperiencePoints.End.Value >= number);
-        return te;
     }
 }

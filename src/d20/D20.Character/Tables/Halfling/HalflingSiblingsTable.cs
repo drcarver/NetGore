@@ -30,11 +30,6 @@ namespace D20.Character.Tables.Halfling;
 
 public class HalflingSiblingsTable : RandomTable, IHalflingSiblingsTable
 {
-    //Table: Halfling Siblings
-    //d%	Result
-    //01–30	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
-    //31–90	1d4+1 siblings.You gain access to the Kin Guardian combat trait.
-    //91–100	No siblings.
     /// <summary>
     /// The siblings table
     /// </summary>
@@ -45,6 +40,19 @@ public class HalflingSiblingsTable : RandomTable, IHalflingSiblingsTable
         Name = nameof(HalflingSiblingsTable);
         ProperName = "Halfling Siblings Table";
         TableType = TableTypeEnum.RaceTable;
+    }
+
+    //Table: Halfling Siblings
+    //d%	Result
+    //01–30	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
+    //31–90	1d4+1 siblings.You gain access to the Kin Guardian combat trait.
+    //91–100	No siblings.
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region "1d2"

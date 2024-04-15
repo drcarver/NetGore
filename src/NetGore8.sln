@@ -56,9 +56,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetGore.Core", "NetGore\Net
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.Goods", "d20\D20.Goods\D20.Goods.csproj", "{52A24781-FBBB-49E0-98FF-763CB321DF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d20.Spells", "d20\d20.Spells\d20.Spells.csproj", "{43438171-A071-4ED9-8C14-BCBCD3412183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.Spells", "d20\d20.Spells\D20.Spells.csproj", "{43438171-A071-4ED9-8C14-BCBCD3412183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "d20.MagicItems", "d20\d20.MagicItems\d20.MagicItems.csproj", "{ED6F321F-5213-4A26-A477-50DA7F6C23F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.MagicItems", "d20\d20.MagicItems\D20.MagicItems.csproj", "{ED6F321F-5213-4A26-A477-50DA7F6C23F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

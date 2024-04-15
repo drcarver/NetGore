@@ -2,7 +2,7 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IRace
+public interface ICharacterRace
 {
     /// <summary>
     /// Generate the character background

@@ -38,11 +38,6 @@ namespace D20.Character.Tables;
 /// </summary>
 public class RelativeAgeofSiblingTable : RandomTable, IRelativeAgeofSiblingTable
 {
-    //Table: Relative Age of Sibling
-    //d%	Result
-    //01–48	Your sibling is older than you.
-    //49–96	Your sibling is younger than you.
-    //97–100	You and a sibling are twins (identical or fraternal, your choice). Roll on this table again. If you roll this result again, you are one of triplets; otherwise, your sibling’s relative age determines which of you emerged first.
     /// <summary>
     /// Relative Age of Sibling Table
     /// </summary>
@@ -54,6 +49,19 @@ public class RelativeAgeofSiblingTable : RandomTable, IRelativeAgeofSiblingTable
         TableType = TableTypeEnum.BackgroundTable;
         Description = "If you have at least one sibling, roll on Table: Relative Age of Sibling to determine the relative age of each sibling. For each adopted sibling, roll on Table: Race of Adopted Sibling to determine that sibling’s race.";
         DiceSides = 100;
+    }
+
+    //Table: Relative Age of Sibling
+    //d%	Result
+    //01–48	Your sibling is older than you.
+    //49–96	Your sibling is younger than you.
+    //97–100	You and a sibling are twins (identical or fraternal, your choice). Roll on this table again. If you roll this result again, you are one of triplets; otherwise, your sibling’s relative age determines which of you emerged first.
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region Older
@@ -89,7 +97,7 @@ public class RelativeAgeofSiblingTable : RandomTable, IRelativeAgeofSiblingTable
                     "you are one of triplets; otherwise, " +
                     "your sibling’s relative age " +
                     "determines which of you emerged first.",
-                AlternateTable = typeof(RaceTable)
+                //AlternateTable = typeof(RaceTable)
             },
             #endregion
         ];

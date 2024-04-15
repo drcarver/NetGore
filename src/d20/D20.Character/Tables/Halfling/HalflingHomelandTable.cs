@@ -28,12 +28,6 @@ using D20.Core.Models;
 
 namespace D20.Character.Tables.Halfling;
 
-//Table: Halfling Homeland
-//d%	Result
-//01–50	Halfling Settlement You gain access to the Civilized social trait and the Well-Informed race trait.
-//51–80	Human Settlement    You gain access to the Child of the Streets social trait and the Well-Informed race trait.
-//81–95	Traveling Band or Caravan   You gain access to the Friend in Every Town social trait.
-//96–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
 /// <summary>
 /// The homeland table
 /// </summary>
@@ -49,6 +43,20 @@ public class HalflingHomelandTable : RandomTable, IHalflingHomelandTable
         Name = nameof(HalflingHomelandTable);
         ProperName = "Halfling Homeland Table";
         TableType = TableTypeEnum.RaceTable;
+    }
+
+    //Table: Halfling Homeland
+    //d%	Result
+    //01–50	Halfling Settlement You gain access to the Civilized social trait and the Well-Informed race trait.
+    //51–80	Human Settlement    You gain access to the Child of the Streets social trait and the Well-Informed race trait.
+    //81–95	Traveling Band or Caravan   You gain access to the Friend in Every Town social trait.
+    //96–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region "Halfling Settlement"

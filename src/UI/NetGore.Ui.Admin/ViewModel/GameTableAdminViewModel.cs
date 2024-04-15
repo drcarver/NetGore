@@ -51,16 +51,27 @@ public partial class GameTableAdminViewModel : ObservableObject, IQueryAttributa
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(D20.Core.Models.GameTable)];
-        if (table == null)
-            return;
+        //var table = (IGameTable) query[nameof(D20.Core.Models.GameTable)];
+        //if (table == null)
+        //    return;
 
-        Name = table.ProperName ?? table.Name;
-        Description = table.Description;
+        //Name = table.ProperName ?? table.Name;
+        //Description = table.Description;
 
-        foreach (var entry in table.Table)
-        {
-            items.Add(new GameTableEntryViewModel(entry));
-        }
+        //foreach (var entry in table.Table)
+        //{
+        //    items.Add(new GameTableEntryViewModel(entry));
+        //}
+
+
+        //foreach (var table in D20.Core.DataServices.GameTables)
+        //{
+        //    IGameTable? service = (IGameTable?)services.GetService(table);
+        //    if (service != null)
+        //    {
+        //        _tables.Add(service);
+        //    }
+        //}
+
     }
 }

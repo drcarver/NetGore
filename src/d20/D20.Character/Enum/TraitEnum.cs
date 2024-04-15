@@ -1178,8 +1178,14 @@ public enum TraitEnum
     Provincial = 1111,
     FamilyTies = 1112,
     Xenophobic = 1113,
-
     #endregion
 
-
+    #region Story Feats
+    Vengeance = 1114,
+    Foeslayer = 1115,
+    Champion = 1116,
+    InnocentBlood = 1117,
+    TrueLove = 1118,
+    MagnumOpus = 1119,
+    #endregion
 }

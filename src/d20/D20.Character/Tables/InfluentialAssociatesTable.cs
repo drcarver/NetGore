@@ -45,6 +45,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class InfluentialAssociatesTable : RandomTable, IInfluentialAssociatesTable
 {
+    /// <summary>
+    /// Influential Associates
+    /// </summary>
+    [SetsRequiredMembers]
+    public InfluentialAssociatesTable()
+    {
+        Name = nameof(InfluentialAssociatesTable);
+        ProperName = "Influential Associates Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Influential associates are people who had (or continue to have) a strong influence upon your development. They are archetypes and templates for NPCs that you can customize to fit your background. Roll on Table: Influential Associates to determine an associate or ally who had a major influence on your life. Then flesh out the details to show how this person fits within your story. You might also wish to use other tables in this chapter to randomly fill in this person’s details.";
+        DiceSides = 100;
+    }
+
     //Table: Influential Associates
     //d%	Result
     //01–05	The Hunter  This person was a lone wolf who nonetheless cautiously allowed you to become a member of her solitary pack.She taught you how to thrive on your own in spite of the many perils and natural dangers of your native environment.You gain access to the Child of Nature religion trait.
@@ -68,16 +81,11 @@ public class InfluentialAssociatesTable : RandomTable, IInfluentialAssociatesTab
     //91–95	The Craftsperson    One of your major influences cherished perfection in every form of art. This person might have followed any path in life, from craftsperson to artist to assassin. From this person you developed a disciplined mind, a solitary focus, and the ability to create something useful and beautiful.You gain access to the Artisan social trait.
     //96–100	Well-Connected Friend   In your circle of disparate associates, there was someone everyone knew.This person collected friends like trophies, and she had contacts in every social or professional circle.Through this connection, you continue to meet and associate with a wide variety of people in every walk of life. You gain access to the Well-Informed halfling race trait (which you may take regardless of your race).
     /// <summary>
-    /// Influential Associates
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public InfluentialAssociatesTable()
+    public override void InitializeTable()
     {
-        Name = nameof(InfluentialAssociatesTable);
-        ProperName = "Influential Associates Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "Influential associates are people who had (or continue to have) a strong influence upon your development. They are archetypes and templates for NPCs that you can customize to fit your background. Roll on Table: Influential Associates to determine an associate or ally who had a major influence on your life. Then flesh out the details to show how this person fits within your story. You might also wish to use other tables in this chapter to randomly fill in this person’s details.";
-        DiceSides = 100;
         Table =
         [
             #region "The Hunter"

@@ -1,9 +1,19 @@
-﻿using D20.Character.Models;
+﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC;
+using D20.Character.Models;
 
-public class BardFeatureLevelEntry : ClassFeatureLevelEntry
+namespace D20.Character.PC.Bard;
+
+public class SpellCasterLevelEntry : ClassFeatureLevelEntry
 {
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public SpellCasterLevelEntry()
+    {
+    }
+
     /// <summary>
     /// Level 0 spells
     /// </summary>
@@ -17,5 +27,5 @@ public class BardFeatureLevelEntry : ClassFeatureLevelEntry
     /// <summary>
     /// Spell slots at this level
     /// </summary>
-    public required int[] SpellSlots { get; set; }
+    public int[]? SpellSlots { get; set; }
 }

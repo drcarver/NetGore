@@ -39,6 +39,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class ProfessionTable : RandomTable, IProfessionTable
 {
+    /// <summary>
+    /// Profession Table
+    /// </summary>
+    [SetsRequiredMembers]
+    public ProfessionTable()
+    {
+        Name = nameof(ProfessionTable);
+        ProperName = "Profession Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Most of the time, your parents both come from the same social stratum. It’s uncommon, but not unheard of, for people to marry outside their caste. Roll on Table: Profession to determine the principal profession of your parents.";
+        DiceSides = 100;
+    }
+
     //Table: Profession
     //d%	Result
     //01–05	Slaves You gain access to the Life of Toil social trait.
@@ -53,16 +66,11 @@ public class ProfessionTable : RandomTable, IProfessionTable
     //86–95	Merchants You gain access to the Merchant social trait.
     //96–100	Clergy or Cultists You gain access to the Child of the Temple faith trait.}
     /// <summary>
-    /// Profession Table
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public ProfessionTable()
+    public override void InitializeTable()
     {
-        Name = nameof(ProfessionTable);
-        ProperName = "Profession Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "Most of the time, your parents both come from the same social stratum. It’s uncommon, but not unheard of, for people to marry outside their caste. Roll on Table: Profession to determine the principal profession of your parents.";
-        DiceSides = 100;
         Table =
         [
             #region "Slaves"

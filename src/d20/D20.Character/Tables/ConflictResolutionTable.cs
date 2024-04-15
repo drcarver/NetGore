@@ -39,15 +39,6 @@ namespace D20.Character.Tables;
 /// </summary>
 public class ConflictResolutionTable : GameTable, IConflictResolutionTable
 {
-    //Table: Resolution
-    //d7 Result CP
-    //Regret and Penance(–3 cp) Not only do you regret your action, but you have publicly admitted to it and did your best to make amends for the wrongdoing.Most know of the conflict’s details and those who don’t can easily find them out if they know where to look or whom to ask.
-    //Sincere Regret (–2 cp) Though you feel sincere regret for the event and its memory affects your behavior, it’s still a secret.Only your trusted companions know of the conflict, and they have promised a degree of discretion.
-    //Secret Regret (–1 cp) You regret the conflict, but go to great lengths to keep it secret and try desperately to forget it ever happened.Only you and maybe a select few people know of your involvement in the conflict.
-    //Mixed Feelings (0 cp) Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.
-    //Denial (+1 cp) You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.
-    //No Guilt (+2 cp) Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.
-    //You Enjoyed It (+3 cp) Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse
     /// <summary>
     /// Conflict Resolution Table
     /// </summary>
@@ -58,6 +49,23 @@ public class ConflictResolutionTable : GameTable, IConflictResolutionTable
         ProperName = "Conflict Resolution Table";
         TableType = TableTypeEnum.ConflictTable;
         Description = "Once you determine the nature and CP for the event, the next step is to determine the resolution. Instead of rolling for the conflict’s resolution, you choose how you dealt with it, and your choice can affect the number of CP the conflict is worth. In games that do not allow evil characters, you cannot take a resolution that would adjust your character to an evil alignment.";
+    }
+
+    //Table: Resolution
+    //d7 Result CP
+    //Regret and Penance(–3 cp) Not only do you regret your action, but you have publicly admitted to it and did your best to make amends for the wrongdoing.Most know of the conflict’s details and those who don’t can easily find them out if they know where to look or whom to ask.
+    //Sincere Regret (–2 cp) Though you feel sincere regret for the event and its memory affects your behavior, it’s still a secret.Only your trusted companions know of the conflict, and they have promised a degree of discretion.
+    //Secret Regret (–1 cp) You regret the conflict, but go to great lengths to keep it secret and try desperately to forget it ever happened.Only you and maybe a select few people know of your involvement in the conflict.
+    //Mixed Feelings (0 cp) Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.
+    //Denial (+1 cp) You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.
+    //No Guilt (+2 cp) Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.
+    //You Enjoyed It (+3 cp) Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region Regret and Penance

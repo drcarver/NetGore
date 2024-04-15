@@ -38,6 +38,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class CrimeTable : RandomTable, ICrimeTable
 {
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public CrimeTable()
+    {
+        Name = "CrimeTable";
+        ProperName = "Crime Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "If you have the Criminal social trait, roll on Table: Crime to determine the crime for which you were accused or convicted.";
+        DiceSides = 100;
+    }
+
     //Table: Crime
     //d%	Crime
     //01–10	Adultery
@@ -51,16 +64,11 @@ public class CrimeTable : RandomTable, ICrimeTable
     //81–90	Smuggling
     //91–100	Unlawful use of magic
     /// <summary>
-    /// Constructor
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public CrimeTable()
+    public override void InitializeTable()
     {
-        Name = "CrimeTable";
-        ProperName = "Crime Table";
-        TableType = TableTypeEnum.GameTable;
-        Description = "If you have the Criminal social trait, roll on Table: Crime to determine the crime for which you were accused or convicted.";
-        DiceSides = 100;
         Table =
         [
             #region "Adultery"

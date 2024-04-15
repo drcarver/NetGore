@@ -25,6 +25,14 @@ public class MainNavigationTable : GameTable, IMainNavigationTable
         Name = nameof(MainPage);
         Description = "Available Game Tables";
         ProperName = "Main Menu";
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             new GameNavigationTableEntry
@@ -57,10 +65,10 @@ public class MainNavigationTable : GameTable, IMainNavigationTable
             },
             new GameNavigationTableEntry
             {
-                Name = nameof(TableType.GameTable),
-                ProperName = "Misc Game tables",
+                Name = nameof(TableType.CoreTable),
+                ProperName = "Core Game tables",
                 Route = nameof(GameTableAdminPage),
-                TableType = TableTypeEnum.GameTable
+                TableType = TableTypeEnum.CoreTable
             },
             new GameNavigationTableEntry
             {

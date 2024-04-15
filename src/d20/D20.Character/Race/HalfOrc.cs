@@ -16,7 +16,7 @@ namespace D20.Character.Race;
 /// cherished as much as the young of any other race, 
 /// even more extraordinary.
 /// </summary>
-public class HalfOrc : IRace
+public class HalfOrc : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.

@@ -5,7 +5,7 @@ public interface IBaseObject
     /// <summary>
     /// The Id for the object
     /// </summary>
-    Guid Id { get; }
+    Guid? Id { get; set; }
 
     /// <summary>
     /// The name of the object

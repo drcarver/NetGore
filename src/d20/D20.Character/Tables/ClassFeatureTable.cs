@@ -1,11 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
 using D20.Character.Enum;
 using D20.Character.Interfaces;
 using D20.Core.Enum;
 using D20.Core.Models;
 
-namespace D20.Character.Models;
+namespace D20.Character.Tables;
 
 /// <summary>
 /// The list of features for the class
@@ -20,7 +19,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
     {
         Name = nameof(ClassFeatureTable);
         ProperName = "Class Feature Table";
-        TableType = TableTypeEnum.GameTable;
+        TableType = TableTypeEnum.CharacterTable;
         Table =
         [
             #region Rage

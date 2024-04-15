@@ -31,7 +31,7 @@ namespace NetGore.Data.Race;
 /// succubus can become a saint and the 
 /// grandchild of a pit fiend an unsuspecting hero.
 /// </summary>
-public class Tiefling : IRace
+public class Tiefling : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.

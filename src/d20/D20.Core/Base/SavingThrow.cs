@@ -17,7 +17,7 @@ public class SavingThrow : BaseObject
     /// <summary>
     /// The Id of the creature for this ability
     /// </summary>
-    public Guid CreatureId { get; }
+    private Creature? Creature { get; }
 
     /// <summary>
     /// The ability this saving throw is based on
@@ -78,6 +78,6 @@ public class SavingThrow : BaseObject
     public SavingThrow(AbilityBase ability, Creature creature)
     {
         this.ability = ability;
-        CreatureId = creature.Id;
+        Creature = creature;
     }
 }

@@ -19,7 +19,15 @@ public class AlignmentTable : GameTable, IAlignmentTable
     {
         Name = nameof(AlignmentTable);
         ProperName = "Alignment Table";
-        TableType = TableTypeEnum.GameTable;
+        TableType = TableTypeEnum.CoreTable;
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region Lawful Good

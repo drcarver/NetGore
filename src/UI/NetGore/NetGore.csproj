@@ -83,7 +83,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\d20\D20.Character\D20.Character.csproj" />
 	  <ProjectReference Include="..\..\d20\D20.Core\D20.Core.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Goods\D20.Goods.csproj" />
+	  <ProjectReference Include="..\..\d20\d20.MagicItems\D20.MagicItems.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Monsters\D20.Monsters.csproj" />
+	  <ProjectReference Include="..\..\d20\d20.Spells\D20.Spells.csproj" />
 	  <ProjectReference Include="..\NetGore.Ui.Admin\NetGore.UI.Admin.csproj" />
 	</ItemGroup>
 

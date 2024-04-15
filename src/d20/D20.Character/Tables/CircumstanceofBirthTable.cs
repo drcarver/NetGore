@@ -24,17 +24,29 @@ using System.Diagnostics.CodeAnalysis;
 using D20.Character.Enum;
 using D20.Character.Interfaces;
 using D20.Character.Models;
-using D20.Character.Tables;
 using D20.Core.Enum;
 using D20.Core.Models;
 
-namespace NetGore.Data.Background;
+namespace D20.Character.Tables;
 
 /// <summary>
 /// Determine the circumstances of your birth.
 /// </summary>
 public class CircumstanceofBirthTable : RandomTable, ICircumstanceofBirthTable
 {
+    /// <summary>
+    /// Determine the circumstances of your birth.
+    /// </summary>
+    [SetsRequiredMembers]
+    public CircumstanceofBirthTable()
+    {
+        Name = nameof(CircumstanceofBirthTable);
+        ProperName = "Circumstance of Birth Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "Roll once on Table: Circumstance of Birth to determine the circumstances of your birth.";
+        DiceSides = 100;
+    }
+
     //Table: Circumstance of Birth
     //d%	Result
     //01–40	Lower-Class Birth   You were born among peasants or slum denizens.You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement. You gain access to the Poverty-Stricken social trait.Roll 2d20 on Table: Parents’ Profession to determine your parents’ occupation, instead of rolling d%.
@@ -58,16 +70,11 @@ public class CircumstanceofBirthTable : RandomTable, ICircumstanceofBirthTable
     //99	Reincarnated You have been reborn in many cycles, and may be reborn in many more until you accomplish the ultimate task for which you are destined. You gain access to the Reincarnated faith trait, the Arisen story feat, and the Forgotten Past story feat.
     //100	The Omen    The sages, priests, or wizards of your society decreed your birth an omen of a coming age or event—perhaps you are an omen of promise, perhaps one of dark times ahead. You gain access to the Omen faith trait.
     /// <summary>
-    /// Determine the circumstances of your birth.
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public CircumstanceofBirthTable()
+    public override void InitializeTable()
     {
-        Name = nameof(CircumstanceofBirthTable);
-        ProperName = "Circumstance of Birth Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "Roll once on Table: Circumstance of Birth to determine the circumstances of your birth.";
-        DiceSides = 100;
         Table =
         [
             #region "Lower-Class Birth"
@@ -163,7 +170,7 @@ public class CircumstanceofBirthTable : RandomTable, ICircumstanceofBirthTable
                     "family and grew up in a family of " +
                     "a different race than your own. " +
                     "Roll on Table: Race.",
-                AlternateTable = typeof(RaceTable),
+                //AlternateTable = typeof(RaceTable),
             },
             #endregion
 

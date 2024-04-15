@@ -38,6 +38,18 @@ namespace D20.Character.Tables;
 /// </summary>
 public class ConflictSubjectTable : GameTable, IConflictSubjectTable
 {
+    /// <summary>
+    /// Conflict Subject Table
+    /// </summary>
+    [SetsRequiredMembers]
+    public ConflictSubjectTable()
+    {
+        Name = nameof(ConflictSubjectTable);
+        ProperName = "Conflicts Subject Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the key person (or people) involved in the conflict, roll on Table: Conflict Subject. Only on the rare occasion that the subject was a child or a young person does the subject affect the accumulation of CP.";
+    }
+
     //Table: Conflict Subject
     //d20 Result
     //1	Commoner
@@ -61,15 +73,11 @@ public class ConflictSubjectTable : GameTable, IConflictSubjectTable
     //19	Humanoid monster
     //20	Non-humanoid monster    
     /// <summary>
-    /// Conflict Subject Table
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public ConflictSubjectTable()
+    public override void InitializeTable()
     {
-        Name = nameof(ConflictSubjectTable);
-        ProperName = "Conflicts Subject Table";
-        TableType = TableTypeEnum.ConflictTable;
-        Description = "To determine the key person (or people) involved in the conflict, roll on Table: Conflict Subject. Only on the rare occasion that the subject was a child or a young person does the subject affect the accumulation of CP.";
         Table =
         [
             #region Commoner

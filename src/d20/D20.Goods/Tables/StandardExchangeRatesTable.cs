@@ -24,6 +24,14 @@ public class StandardExchangeRatesTable : GameTable
             "metal from which they are made.The three most " +
             "common coins are the gold piece (gp), the silver " +
             "piece (sp), and the copper piece (cp).";
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region Copper
@@ -91,6 +99,6 @@ public class StandardExchangeRatesTable : GameTable
             },
             #endregion
         ];
-  }
+    }
 }
 

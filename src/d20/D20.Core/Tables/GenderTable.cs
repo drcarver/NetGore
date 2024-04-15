@@ -19,20 +19,6 @@ public class GenderTable : GameTable, IGenderTable
         Name = nameof(GenderTable);
         ProperName = "Gender Table";
         TableType = TableTypeEnum.CharacterTable;
-        Table =
-        [
-            new GameTableEntry
-            {
-                Name = nameof(GenderEnum.Male),
-                Description = "The Male of the species",
-            },
-
-            new GameTableEntry
-            {
-                Name = nameof(GenderEnum.Female),
-                Description = "The Female of the species",
-            },
-        ];
     }
 
     /// <summary>
@@ -50,5 +36,27 @@ public class GenderTable : GameTable, IGenderTable
 
         }
         return GenderEnum.Male;
+    }
+
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it;s meta properties
+    /// with out creating the table.  A bit of optimiation to conserve memeory
+    /// </summary>
+    public override void InitializeTable()
+    {
+        Table =
+        [
+            new GameTableEntry
+            {
+                Name = nameof(GenderEnum.Male),
+                Description = "The Male of the species",
+            },
+
+            new GameTableEntry
+            {
+                Name = nameof(GenderEnum.Female),
+                Description = "The Female of the species",
+            },
+        ];
     }
 }

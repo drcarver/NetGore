@@ -11,7 +11,7 @@ namespace NetGore.Data.Race;
 /// <summary>
 /// As diverse as they are widespread, humans tend to grow up in small or large societies of people with similar origins and histories, though individuals’ paths may run the gamut from idealized to tragic.
 /// </summary>
-public class Human : IRace
+public class Human : ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.

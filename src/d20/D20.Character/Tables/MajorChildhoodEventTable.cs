@@ -38,6 +38,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class MajorChildhoodEventTable : RandomTable, IMajorChildhoodEventTable
 {
+    /// <summary>
+    /// Major Childhood Event
+    /// </summary>
+    [SetsRequiredMembers]
+    public MajorChildhoodEventTable()
+    {
+        Name = nameof(MajorChildhoodEventTable);
+        ProperName = "Major Childhood Event Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "During your childhood, you were influenced by a significant event that helped to shape the person you became. Roll on Table: Major Childhood Event to determine the type of event that shaped you in early childhood.";
+        DiceSides = 100;
+    }
+
     //Table: Major Childhood Event
     //d%	Result
     //01–05	Academy Training    You attended a private academy where you studied a number of skills and gained training in your current profession.Whether you were a brilliant student or a dropout, the university environment was your home for a good portion of your formative years.You gain access to the Focused Mind magic trait.
@@ -61,16 +74,11 @@ public class MajorChildhoodEventTable : RandomTable, IMajorChildhoodEventTable
     //91–95	Raiders a horde of raiders attacked your settlement and killed several of your people. This could have been a tribe of brutal humanoids or the conquering army of a civilized nation.As a result, you harbor deep resentment toward a particular faction, race, or country. You gain access to the Axe to Grind combat trait, the Foeslayer story feat, and the Vengeance story feat.
     //96–100	The War You grew up against the backdrop of a major military conflict that affected much of your childhood world. You became accustomed to a short food supply, living in occupied territory, and moving from place to place. Several of the people you knew in your childhood were lost in the war, including members of your family.You gain access to the Vagabond Child regional trait and the Deny the Reaper story feat.
     /// <summary>
-    /// Major Childhood Event
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public MajorChildhoodEventTable()
+    public override void InitializeTable()
     {
-        Name = nameof(MajorChildhoodEventTable);
-        ProperName = "Major Childhood Event Table";
-        TableType = TableTypeEnum.BackgroundTable;
-        Description = "During your childhood, you were influenced by a significant event that helped to shape the person you became. Roll on Table: Major Childhood Event to determine the type of event that shaped you in early childhood.";
-        DiceSides = 100;
         Table =
         [
             #region "Academy Training"

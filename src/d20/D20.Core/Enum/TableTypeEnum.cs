@@ -5,7 +5,7 @@ public enum TableTypeEnum
     BackgroundTable,
     CharacterTable,
     ConflictTable,
-    GameTable,
+    CoreTable,
     GoodsTable,
     MagicItemTable,
     MonsterTable,

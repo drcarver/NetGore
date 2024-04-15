@@ -15,7 +15,7 @@ public class BaseObject : IBaseObject
     /// The Id for the object
     /// </summary>
     [Description("Primary key of the object.")]
-    public Guid Id { get; }
+    public Guid? Id { get; set; }
 
     /// <summary>
     /// The name of the object

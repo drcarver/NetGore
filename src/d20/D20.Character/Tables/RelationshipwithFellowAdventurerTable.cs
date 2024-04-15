@@ -53,6 +53,19 @@ namespace D20.Character.Tables;
 /// </summary>
 public class RelationshipwithFellowAdventurerTable : RandomTable, IRelationshipwithFellowAdventurerTable
 {
+    /// <summary>
+    /// Relationship with Fellow Adventurer
+    /// </summary>
+    [SetsRequiredMembers]
+    public RelationshipwithFellowAdventurerTable()
+    {
+        Name = nameof(RelationshipwithFellowAdventurerTable);
+        ProperName = "Relationship with Fellow Adventurer Table";
+        TableType = TableTypeEnum.BackgroundTable;
+        Description = "This table is best used by the adventuring party as a whole to determine starting relationships between the characters. One player begins the process by choosing someone in the group and rolling to learn the relationship between her and the second character. Then the next player chooses a different character and rolls to determine their relationship, and so on, until finally the last player rolls to determine his relationship with the first character. It is easiest to do this sitting around a table, with each player passing the dice clockwise until the dice have completed a full turn around the table.";
+        DiceSides = 100;
+    }
+
     //Table: Relationship with Fellow Adventurer
     //d%	Result
     //01–05	Family or close as family—close friends, close/distant relatives, relatives by marriage/adoption
@@ -76,16 +89,11 @@ public class RelationshipwithFellowAdventurerTable : RandomTable, IRelationshipw
     //91–95	Gaming or gambling associates
     //96–100	From the same hometown or region
     /// <summary>
-    /// Relationship with Fellow Adventurer
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public RelationshipwithFellowAdventurerTable()
+    public override void InitializeTable()
     {
-        Name = nameof(RelationshipwithFellowAdventurerTable);
-        ProperName = "Relationship with Fellow Adventurer Table";
-        TableType = TableTypeEnum.GameTable;
-        Description = "This table is best used by the adventuring party as a whole to determine starting relationships between the characters. One player begins the process by choosing someone in the group and rolling to learn the relationship between her and the second character. Then the next player chooses a different character and rolls to determine their relationship, and so on, until finally the last player rolls to determine his relationship with the first character. It is easiest to do this sitting around a table, with each player passing the dice clockwise until the dice have completed a full turn around the table.";
-        DiceSides = 100;
         Table =
         [
             #region Family

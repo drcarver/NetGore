@@ -30,12 +30,6 @@ namespace D20.Character.Tables.Halfling;
 
 public class HalflingParentsTable : RandomTable, IHalflingParentsTable
 {
-    //Table: Halfling Parents
-    //d%	Result
-    //01–70	Both parents living.
-    //71–80	Only your father is alive.
-    //81–90	Only your mother is alive.
-    //91–100	Both of your parents are dead.You gain access to the Orphaned social trait
     /// <summary>
     /// The parents table
     /// </summary>
@@ -46,6 +40,20 @@ public class HalflingParentsTable : RandomTable, IHalflingParentsTable
         Name = nameof(HalflingParentsTable);
         ProperName = "halfling parents table";
         TableType = TableTypeEnum.RaceTable;
+    }
+
+    //Table: Halfling Parents
+    //d%	Result
+    //01–70	Both parents living.
+    //71–80	Only your father is alive.
+    //81–90	Only your mother is alive.
+    //91–100	Both of your parents are dead.You gain access to the Orphaned social trait
+    /// <summary>
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
         Table =
         [
             #region "Both"

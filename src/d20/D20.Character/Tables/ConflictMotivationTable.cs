@@ -41,6 +41,18 @@ namespace D20.Character.Tables;
 /// </summary>
 public class ConflictMotivationTable : RandomTable, IConflictMotivationTable
 {
+    /// <summary>
+    /// Conflict Motivation Table
+    /// </summary>
+    [SetsRequiredMembers]
+    public ConflictMotivationTable()
+    {
+        Name = nameof(ConflictMotivationTable);
+        ProperName = "Conflict Motivation Table";
+        TableType = TableTypeEnum.ConflictTable;
+        Description = "To determine the source of your motivation for the conflict, roll on Table: Motivation. If the campaign allows the full spectrum of alignments, roll a d10 on this table. If the campaign allows only nonevil alignments, roll a d8. If you’re a paladin, roll a d4. The motivation affects the CP gained from the conflict.";
+    }
+
     //Table: Motivation
     //d10 Result CP
     //1	Justice	1
@@ -54,15 +66,11 @@ public class ConflictMotivationTable : RandomTable, IConflictMotivationTable
     //9	Pleasure	5
     //10	Amusement or Entertainment	5    
     /// <summary>
-    /// Conflict Motivation Table
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public ConflictMotivationTable()
+    public override void InitializeTable()
     {
-        Name = nameof(ConflictMotivationTable);
-        ProperName = "Conflict Motivation Table";
-        TableType = TableTypeEnum.ConflictTable;
-        Description = "To determine the source of your motivation for the conflict, roll on Table: Motivation. If the campaign allows the full spectrum of alignments, roll a d10 on this table. If the campaign allows only nonevil alignments, roll a d8. If you’re a paladin, roll a d4. The motivation affects the CP gained from the conflict.";
         Table =
         [
             #region Justice

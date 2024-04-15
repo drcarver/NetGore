@@ -21,17 +21,29 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Interfaces;
 using D20.Core.Enum;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
 
 namespace D20.Character.Tables;
 
 /// <summary>
-/// The table of races
+/// The table of humanoid races
 /// </summary>
-public class RaceTable : RandomTable, IRaceTable
+public class HumanoidRaceTable : RandomTable, IHumanoidRace
 {
+    /// <summary>
+    /// Allowed character races
+    /// </summary>
+    [SetsRequiredMembers]
+    public HumanoidRaceTable()
+    {
+        Name = nameof(HumanoidRaceTable);
+        ProperName = "Humanoid Race Table";
+        TableType = TableTypeEnum.MonsterTable;
+        DiceSides = 100;
+    }
+
     //Table: Race
     //d%	Result
     //01	Aasimar
@@ -71,15 +83,11 @@ public class RaceTable : RandomTable, IRaceTable
     //99	Vishkanya
     //100	Wayang
     /// <summary>
-    /// Allowed character races
+    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
     /// </summary>
-    [SetsRequiredMembers]
-    public RaceTable()
+    public override void InitializeTable()
     {
-        Name = nameof(RaceTable);
-        ProperName = "Race Table";
-        TableType = TableTypeEnum.GameTable;
-        DiceSides = 100;
         Table =
         [
             #region "Aasimar"

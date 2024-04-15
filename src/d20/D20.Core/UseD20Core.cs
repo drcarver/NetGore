@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace D20.Core;
@@ -10,11 +11,16 @@ public static class DataServices
     /// Get all the IGameable entries
     /// </summary>
     /// <returns></returns>
-    public static List<Type> GetGameTables() => Assembly
+    private static List<Type> GetGameTables() => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
         .Where(t => t.IsSubclassOf(typeof(GameTable)) && t.Name != nameof(RandomTable))
         .ToList();
+
+    /// <summary>
+    /// The list of game table entries
+    /// </summary>
+    public static List<Type> CoreTables { get; set; } = [];
 
     /// <summary>
     /// The D20 Core tables and services
@@ -26,6 +32,7 @@ public static class DataServices
         //collection
         // Add all the game table types as transient
         var list = GetGameTables();
+        CoreTables.AddRange(list);
         foreach (var table in list)
         {
             if (table.Name != nameof(RandomTable)

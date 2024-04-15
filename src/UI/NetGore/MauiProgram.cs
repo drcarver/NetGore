@@ -1,14 +1,21 @@
 ﻿using CommunityToolkit.Maui;
 
-using Microsoft.Extensions.Logging;
-using Syncfusion.Maui.Core.Hosting;
-using NetGore.Data;
-using NetGore.ViewModel;
-using D20.Core;
 using D20.Character;
+using D20.Core;
+using D20.Goods;
+using D20.MagicItems;
+using D20.Monsters;
+using D20.Spells;
+
+using Microsoft.Extensions.Logging;
+
+using NetGore.Data;
 using NetGore.Interfaces;
 using NetGore.Tables;
+using NetGore.ViewModel;
 using NetGore.Views;
+
+using Syncfusion.Maui.Core.Hosting;
 
 namespace NetGore;
 
@@ -34,12 +41,14 @@ public static class MauiProgram
         // Services
         builder.Services
             .AddSingleton<IMainNavigationTable, MainNavigationTable>()
-            .AddScopedWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
+            .AddSingletonWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
             .UseD20Core()
-            //.UseD20Character()
+            .UseD20Character()
             //.UseD20Data()
-            //.UseD20Goods()
-            //.UseD20MagicItems()
+            .UseD20Goods()
+            .UseD20MagicItems()
+            .UseD20Monsters()
+            .UseD20Spells()
             .UseNetGoreUIAdmin()
             .BuildServiceProvider();
 

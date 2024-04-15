@@ -13,7 +13,7 @@ public partial class GameTableViewModel : ObservableObject
     [ObservableProperty]
     string? description;
 
-    public Guid Id { get; set; }
+    private Guid? Id { get; set; }
 
     public GameTableViewModel(GameTable table)
     {
