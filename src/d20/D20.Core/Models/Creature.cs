@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 using D20.Core.Abilities;
 using D20.Core.Base;
@@ -10,6 +12,8 @@ namespace D20.Core.Models;
 
 public class Creature : DataObject, ICreature
 {
+    private int speed;
+
     ///// <summary>
     /// The creatures gender
     /// </summary>
@@ -97,9 +101,23 @@ public class Creature : DataObject, ICreature
     public int Age { get; set; }
 
     /// <summary>
-    /// The creature speed in feet
+    /// The weight in lbs being dragged
     /// </summary>
-    public int Speed { get; set; }
+    public float DragOrPushWeight { get; set; } = 0;
+
+    /// <summary>
+    /// The creature's speed in feet
+    /// </summary>
+    public int Speed {
+        get 
+        {
+            if (DragOrPushWeight > CarryingCapacity)
+            {
+                return 5;             
+            }
+            return speed; 
+        } 
+        set => speed = value; }
 
     /// <summary>
     /// Wealth in gold pieces
@@ -148,7 +166,7 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// The creature skills
     /// </summary>
-    public List<SkillEnum> Skills { get; set; }
+    public List<SkillEnum> Skills { get; set; } = [];
 
     /// <summary>
     /// The challenge rating of the creature
@@ -160,9 +178,66 @@ public class Creature : DataObject, ICreature
     /// </summary>
     public int ExperiencePoints { get; set; }
 
+    #region Drag, lift, push and carry
+    // Size and Strength. Larger creatures can bear
+    //more weight, whereas Tiny creatures can carry less.
+    //For each size category above Medium, double the
+    //creature’s carrying capacity and the amount it can
+    //push, drag, or lift. For a Tiny creature, halve these
+    //weights.
+
+    /// <summary>
+    /// Push, Drag, or Lift.You can push, drag, or lift a
+    /// weight in pounds up to twice your carrying capacity
+    /// (or 30 times your Strength score). While pushing or
+    /// dragging weight in excess of your carrying capacity, 
+    /// your speed drops to 5 feet
+    /// </summary>
+    public float CanDrag => Capacity(30); 
+
+    /// <summary>
+    /// Your carrying capacity is your Strength score 
+    /// multiplied by 15. This is the weight (in pounds) that 
+    /// you can carry, which is high enough that most characters 
+    /// don’t usually have to worry about it.
+    /// </summary>
+    public float CarryingCapacity => Capacity(15);
+
+    /// <summary>
+    /// Compute capacity based on size
+    /// </summary>
+    /// <param name="multiplier">Either 15 for carrying or 30 for dragging</param>
+    /// <returns>The weight in lbs.</returns>
+    private float Capacity(int multiplier)
+    {
+        switch (Size)
+        {
+            case SizeEnum.Gargantuan:
+                return Strength.Score() * (multiplier * 16);
+            case SizeEnum.Colossal:
+                return Strength.Score() * (multiplier * 8);
+            case SizeEnum.Huge:
+                return Strength.Score() * (multiplier * 4);
+            case SizeEnum.Large:
+                return Strength.Score() * (multiplier * 2);
+            case SizeEnum.Medium:
+                return Strength.Score() * multiplier;
+            case SizeEnum.Small:
+                return Strength.Score() * (multiplier / 2);
+            case SizeEnum.Tiny:
+                return Strength.Score() * (multiplier / 4);
+            case SizeEnum.Diminutive:
+                return Strength.Score() * (multiplier / 8);
+            case SizeEnum.Fine:
+                return Strength.Score() * (multiplier / 16);
+        }
+        return Strength.Score() * multiplier;
+    }
+    #endregion
+
     /// <summary>
     /// Creatures that have a height and weight implement
-    /// this partial method
+    /// this method
     /// </summary>
     public virtual void SetHeightAndWeight()
     {
@@ -174,6 +249,10 @@ public class Creature : DataObject, ICreature
     [SetsRequiredMembers]
     public Creature()
     {
+        // Setup some required values
+        HitPoints = new HitPoints(this);
+        Height = new Height();
+
         // Generate the abilities
         Strength = new Strength(this);
         Intelligence = new Intelligence(this);

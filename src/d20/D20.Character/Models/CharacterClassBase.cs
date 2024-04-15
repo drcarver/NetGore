@@ -39,7 +39,7 @@ public class CharacterClassBase : BaseObject, ICharacterClassBase
     /// <summary>
     /// Tools
     /// </summary>
-    public List<ToolProficiencyEnum> ToolProficiency { get; set; } = [];
+    public List<EquipmentEnum> ToolProficiency { get; set; } = [];
 
     /// <summary>
     /// Saving Throws

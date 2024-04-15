@@ -39,7 +39,7 @@ public class HitPoints : DataObject
     /// <summary>
     /// The Hit dice per level
     /// </summary>
-    private List<int>? LevelDice { set; get; } = [];
+    private List<int> LevelDice { set; get; } = [];
 
     /// <summary>
     /// Hit the hit point base (when a creature is created
@@ -124,7 +124,7 @@ public class HitPoints : DataObject
         HitDice = hitDie;
 
         // First level is max hit die
-        LevelDice?.Add(new Dice(hitDie).Sides);
+        LevelDice.Add(new Dice(hitDie).Sides);
     }
 
     /// <summary>
@@ -137,6 +137,5 @@ public class HitPoints : DataObject
         // Save off the hit dice (for example: 1d8)
         HitPointBase = hitPoints;
         HitDice = string.Empty;
-        LevelDice = null;
     }
 }

@@ -1187,5 +1187,6 @@ public enum TraitEnum
     InnocentBlood = 1117,
     TrueLove = 1118,
     MagnumOpus = 1119,
+    ThiefofLegend = 1120,
     #endregion
 }

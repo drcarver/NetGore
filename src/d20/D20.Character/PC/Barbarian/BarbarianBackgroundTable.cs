@@ -16,7 +16,7 @@ public class BarbarianBackgroundTable : RandomTable, IBarbarianBackgroundTable
     public BarbarianBackgroundTable()
     {
         Name = nameof(BarbarianLevelTable);
-        ProperName = "Barbarian Features and Proficencies by Level";
+        ProperName = "Barbarian backgrounds";
         TableType = TableTypeEnum.CharacterTable;
         DiceSides = 100;
         Description =

@@ -2,7 +2,7 @@
 
 using D20.Character.Models;
 
-namespace D20.Character.PC.Bard;
+namespace D20.Character.PC;
 
 public class SpellCasterLevelEntry : ClassFeatureLevelEntry
 {

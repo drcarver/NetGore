@@ -37,6 +37,18 @@ public enum ClassFeatureEnum
     CounterCharm,
     BardCollegeFeature,
     MagicalSecrets,
-    SuperiorInspiration
+    SuperiorInspiration,
+    #endregion
+
+    #region Rogue
+    SneakAttack,
+    ThievesCant,
+    CunningAction,
+    RoguishArchetype,
+    UncannyDodge,
+    Evasion,
+    ReliableTalent,
+    SlipperyMind,
+    StrokeofLuck
     #endregion
 }

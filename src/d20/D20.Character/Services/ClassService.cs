@@ -1,6 +1,7 @@
 ﻿using D20.Character.Interfaces;
 using D20.Character.PC.Barbarian;
 using D20.Character.PC.Bard;
+using D20.Character.PC.Cleric;
 using D20.Core;
 using D20.Core.Models;
 

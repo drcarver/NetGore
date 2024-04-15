@@ -19,5 +19,6 @@ public enum EquipmentEnum
     HandAxe,
     Javelin,
     ExplorersPack,
-    Dagger
+    Dagger,
+    ThievesTools
 }

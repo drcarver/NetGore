@@ -2,7 +2,6 @@
 
 using D20.Character.Enum;
 using D20.Character.Models;
-using D20.Character.PC.Barbarian;
 using D20.Core.Enum;
 using D20.Core.Models;
 
@@ -17,7 +16,7 @@ public class BardBackgroundTable : RandomTable, IBardBackgroundTable
     public BardBackgroundTable()
     {
         Name = nameof(BardBackgroundTable);
-        ProperName = "Bard Features and Proficencies by Level";
+        ProperName = "Bard backgrounds";
         TableType = TableTypeEnum.CharacterTable;
         DiceSides = 100;
         Description =
@@ -39,10 +38,10 @@ public class BardBackgroundTable : RandomTable, IBardBackgroundTable
     //81–90	Virtuoso One day, you picked up an instrument or told a tale, and your raw natural ability captivated everyone who saw you perform.Words and music have always come to you effortlessly, as naturally as breathing.You gain access to the Talented social trait and the Magnum Opus story feat.
     //91–100	Worldshaker Since childhood, you’ve observed the world around you and translated those observations into story and song. Your unique, unabashed vision resonated with the audience, revealing new perspectives as well as simple truths.You’re used to people quoting your words and looking up to you, though some authority figures deem you a rabble-rouser and troublemaker.You gain access to the Natural-Born Leader social trait.
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so 
+    /// Initialize the game table.  This is a separate method so 
     /// we can create a game table for it's meta properties with 
     /// out creating the actual able values.  A bit of optimization 
-    /// to conserve memeory on big tables
+    /// to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

@@ -25,4 +25,10 @@ public enum SkillEnum
     Athletics,
     Intimidation,
     Nature,
+    Deception,
+    Insight,
+    Investigation,
+    Performance,
+    Persuasion,
+    SleightofHand,
 }

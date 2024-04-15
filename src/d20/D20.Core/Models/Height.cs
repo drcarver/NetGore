@@ -41,4 +41,13 @@ public record Height
         Feet = feet;
         Inches = inches;
     }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    public Height()
+    {
+        Feet = 0;
+        Inches = 0;
+    }
 }
