@@ -6,7 +6,7 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class EquipmentEntry : GoodsEntry, IEquipmentEntry
+public class EquipmentEntry : GoodsTableEntry, IEquipmentEntry
 {
     /// <summary>
     /// The Equipment entry

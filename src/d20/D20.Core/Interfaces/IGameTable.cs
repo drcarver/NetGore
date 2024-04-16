@@ -1,4 +1,5 @@
 ﻿using D20.Core.Enum;
+using D20.Core.Models;
 
 namespace D20.Core.Interfaces;
 
@@ -20,7 +21,7 @@ public interface IGameTable : IBaseObject
     /// <summary>
     /// The table it self
     /// </summary>
-    List<IGameTableEntry> Table { get; set; }
+    GameTableList<IGameTableEntry> Table { get; set; }
 
     /// <summary>
     /// Return the table entry by name
@@ -30,8 +31,10 @@ public interface IGameTable : IBaseObject
     IGameTableEntry GetEntryByName(string Name);
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     virtual void InitializeTable()
     {

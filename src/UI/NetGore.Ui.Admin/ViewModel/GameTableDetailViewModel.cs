@@ -54,7 +54,10 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
 
         foreach (var entry in table.Table)
         {
-            Table.Add(new GameTableEntryViewModel(entry));
+            if (entry is IStandardTableEntry)
+            {
+                Table.Add(new GameTableEntryViewModel((IStandardTableEntry) entry));
+            }
         }
     }
 }

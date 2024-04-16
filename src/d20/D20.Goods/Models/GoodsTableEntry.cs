@@ -5,13 +5,13 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class GoodsEntry : GameTableEntry, IGoodsTableEntry
+public class GoodsTableEntry : StandardTableEntry, IGoodsTableEntry
 {
     /// <summary>
     /// A good to be purchased
     /// </summary>
     [SetsRequiredMembers]
-    public GoodsEntry()
+    public GoodsTableEntry()
     {
     }
 

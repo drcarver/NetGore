@@ -2,7 +2,7 @@
 
 namespace D20.Goods.Interfaces;
 
-public interface IArmorEntry : IGameTableEntry
+public interface IArmorEntry : IStandardTableEntry
 {
     /// <summary>
     /// The Armor class of the armor

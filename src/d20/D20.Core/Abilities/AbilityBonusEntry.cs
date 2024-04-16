@@ -5,7 +5,7 @@ using D20.Core.Models;
 
 namespace D20.Core.Abilities;
 
-public class AbilityBonusEntry : GameTableEntry 
+public class AbilityBonusEntry : StandardTableEntry 
 {
     /// <summary>
     /// The range of a ability scores for this entry

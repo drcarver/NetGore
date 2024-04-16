@@ -4,7 +4,7 @@ using D20.Spells.Enum;
 
 namespace D20.Spells.Tables;
 
-public class SpellTableEntry : GameTableEntry
+public class SpellTableEntry : StandardTableEntry
 {
     /// <summary>
     /// Constructor

@@ -34,7 +34,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
         Table =
         [
             #region Animal Friendship
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.AnimalFriendship),
                 ProperName = "Animal Friendship",
@@ -42,7 +42,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Bane
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Bane),
                 ProperName = "Bane",
@@ -50,7 +50,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Charm Person
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.CharmPerson),
                 ProperName = "Charm Person",
@@ -58,7 +58,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Comprehend Languages
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.ComprehendLanguages),
                 ProperName = "Comprehend Languages",
@@ -66,7 +66,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Cure Wounds
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.CureWounds),
                 ProperName = "Cure Wounds",
@@ -74,7 +74,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Detect Magic
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.DetectMagic),
                 ProperName = "Detect Magic",
@@ -82,7 +82,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Disguise Self
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.DisguiseSelf),
                 ProperName = "Disguise Self",
@@ -90,7 +90,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Faerie Fire
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.FaerieFire),
                 ProperName = "Faerie Fire",
@@ -98,7 +98,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Feather Fall
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.FeatherFall),
                 ProperName = "Feather Fall",
@@ -106,7 +106,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Healing Word
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.HealingWord),
                 ProperName = "Healing Word",
@@ -114,7 +114,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Heroism
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Heroism),
                 ProperName = "Heroism",
@@ -122,7 +122,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Hideous Laughter
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.HideousLaughter),
                 ProperName = "Hideous Laughter",
@@ -130,7 +130,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Identify
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Identify),
                 ProperName = "Identify",
@@ -138,7 +138,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Illusory Script
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.IllusoryScript),
                 ProperName = "Illusory Script",
@@ -146,7 +146,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Longstrider
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Longstrider),
                 ProperName = "Longstrider",
@@ -154,7 +154,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Silent Image
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.SilentImage),
                 ProperName = "Silent Image",
@@ -162,7 +162,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Sleep
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Sleep),
                 ProperName = "Sleep",
@@ -170,7 +170,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Speak with Animals
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.SpeakwithAnimals),
                 ProperName = "Speak with Animals",
@@ -178,7 +178,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Thunderwave
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Thunderwave),
                 ProperName = "Thunderwave",
@@ -186,7 +186,7 @@ public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
             #endregion
 
             #region Unseen Servant
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.UnseenServant),
                 ProperName = "Unseen Servant",

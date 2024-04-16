@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IClassFeatureLevelEntry : IGameTableEntry
+public interface IClassFeatureLevelEntry : IStandardTableEntry
 {
 }

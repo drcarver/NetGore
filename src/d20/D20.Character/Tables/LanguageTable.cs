@@ -33,7 +33,7 @@ public class LanguageTable : GameTable, ILanguageTable
         [
             #region Common
             // Common
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Common),
             },
@@ -41,7 +41,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Dwarvish
             // Dwarvish
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Dwarvish),
             },
@@ -49,7 +49,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Elvish
             // Elvish
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Elvish),
             },
@@ -57,7 +57,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Giant
             // Giant
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Giant),
             },
@@ -65,7 +65,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Gnomish
             // Gnomish
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Gnomish),
             },
@@ -73,7 +73,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Goblin
             // Goblin
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Goblin),
             },
@@ -81,7 +81,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Halfling
             // Halfling
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Halfling),
             },
@@ -89,7 +89,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Orc
             // Orc
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Orc),
             },
@@ -97,7 +97,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Abyssal
             // Abyssal
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Abyssal),
             },
@@ -105,7 +105,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Celestial
             // Celestial
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Celestial),
             },
@@ -113,7 +113,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Draconic
             // Draconic
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Draconic),
             },
@@ -121,7 +121,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Deep
             // Deep
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Deep),
             },
@@ -129,7 +129,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Infernal
             // Infernal
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Infernal),
             },
@@ -137,7 +137,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Primordial
             // Primordial
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Primordial),
             },
@@ -145,7 +145,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Sylvan
             // Sylvan
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Sylvan),
             },
@@ -153,7 +153,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Undercommon
             // Undercommon
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Undercommon),
             },
@@ -161,7 +161,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Aquan
             // Aquan
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Aquan),
             },
@@ -169,7 +169,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Gnoll
             // Gnoll
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Gnoll),
             },
@@ -177,7 +177,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Auran
             // Auran
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Auran),
             },
@@ -185,7 +185,7 @@ public class LanguageTable : GameTable, ILanguageTable
 
             #region Terran
             // Terran
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(LanguageEnum.Terran),
             },

@@ -46,13 +46,13 @@ public class GenderTable : GameTable, IGenderTable
     {
         Table =
         [
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
 
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(GenderEnum.Female),
                 Description = "The Female of the species",

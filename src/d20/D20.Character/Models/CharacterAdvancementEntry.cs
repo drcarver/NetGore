@@ -5,7 +5,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class CharacterAdvancementEntry : GameTableEntry, ICharacterAdvancementEntry
+public class CharacterAdvancementEntry : StandardTableEntry, ICharacterAdvancementEntry
 {
     /// <summary>
     /// The sides to the dice for the table

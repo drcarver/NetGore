@@ -13,7 +13,7 @@ namespace D20.Core.Models;
 /// range to access the entries by number or 
 /// randomly
 /// </summary>
-public class GameNavigationTableEntry : GameTableEntry, IGameNavigationTableEntry
+public class GameNavigationTableEntry : StandardTableEntry, IGameNavigationTableEntry
 {
     /// <summary>
     /// Constructor

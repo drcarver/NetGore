@@ -5,7 +5,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class ConflictTableEntry : GameTableEntry, IConflictTableEntry
+public class ConflictTableEntry : StandardTableEntry, IConflictTableEntry
 {
     /// <summary>
     /// Constructor

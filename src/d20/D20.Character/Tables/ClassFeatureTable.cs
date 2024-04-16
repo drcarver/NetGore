@@ -23,7 +23,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
         Table =
         [
             #region Rage
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.Rage),
                 ProperName = "Rage",
@@ -42,7 +42,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Unarmored Defense
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.UnarmoredDefense),
                 ProperName = "Unarmored Defense",
@@ -51,7 +51,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Reckless Attack
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.RecklessAttack),
                 ProperName = "Reckless Attack",
@@ -67,7 +67,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Danger Sense
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.DangerSense),
                 ProperName = "Danger Sense",
@@ -83,7 +83,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Primal Path
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.PrimalPath),
                 ProperName = "Primal Path",
@@ -98,7 +98,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Ability Score Improvement
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.AbilityScoreImprovement),
                 ProperName = "Ability Score Improvement",
@@ -113,7 +113,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Extra Attack
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.ExtraAttack),
                 ProperName = "Extra Attack",
@@ -124,7 +124,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Fast Movement
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.FastMovement),
                 ProperName = "Fast Movement",
@@ -135,7 +135,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Feral Instinct
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.FeralInstinct),
                 ProperName = "Feral Instinct",
@@ -150,7 +150,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Brutal Critical
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.BrutalCritical),
                 ProperName = "Brutal Critical",
@@ -164,7 +164,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Relentless Rage
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.RelentlessRage),
                 ProperName = "Relentless Rage",
@@ -181,7 +181,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Persistent Rage
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.PersistentRage),
                 ProperName = "Persistent Rage",
@@ -193,7 +193,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Indomitable Might
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.IndomitableMight),
                 ProperName = "Indomitable Might",
@@ -205,7 +205,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Primal Champion
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.PrimalChampion),
                 ProperName = "Primal Champion",
@@ -217,7 +217,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Path of the Berserker
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.PathoftheBerserker),
                 ProperName = "Path of the Berserker",
@@ -231,7 +231,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Frenzy
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.Frenzy),
                 ProperName = "Frenzy",
@@ -246,7 +246,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Intimidating Presence
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.IntimidatingPresence),
                 ProperName = "Intimidating Presence",
@@ -270,7 +270,7 @@ public class ClassFeatureTable : GameTable, IClassFeatureTable
             #endregion
 
             #region Retaliation
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(ClassFeatureEnum.Retaliation),
                 ProperName = "Retaliation",

@@ -26,14 +26,14 @@ public class ClassService : IClassService
         Table =
         [
             #region Barbarian
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Barbarian),
             },
             #endregion
 
             #region Bard
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Bard),
             },

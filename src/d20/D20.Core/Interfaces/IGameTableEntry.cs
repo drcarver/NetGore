@@ -1,12 +1,9 @@
 ﻿namespace D20.Core.Interfaces;
 
-/// <summary>
-/// A Game Table Entry
-/// </summary>
-public interface IGameTableEntry : IBaseObject
+public interface IGameTableEntry
 {
     /// <summary>
-    /// The English name for the entry
+    /// The name of the table entry
     /// </summary>
-    string? ProperName { get; set; }
+    string Name { get; set; }
 }

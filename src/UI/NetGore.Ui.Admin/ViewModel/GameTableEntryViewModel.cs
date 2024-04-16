@@ -22,7 +22,7 @@ public partial class GameTableEntryViewModel : ObservableObject
     /// Constructor
     /// </summary>
     /// <param name="model">The model to be loaded</param>
-    public GameTableEntryViewModel(IGameTableEntry model)
+    public GameTableEntryViewModel(IStandardTableEntry model)
     {
         Description = model.Description;
         ProperName = model.ProperName ?? model.Name;

@@ -6,13 +6,12 @@ using D20.Core.Interfaces;
 namespace D20.Core.Models;
 
 /// <summary>
-/// The base Game table entry. This is all some
-/// tables need.  A table entry usually uses a 
-/// enumerated type as a name (or key) and a
-/// range to access the entries by number or 
-/// randomly
+/// The base table entry. This only contains the name.  it
+/// is the most common entry table need. A table entry usually 
+/// uses a enumerated type as a name (or key).  The table entries
+/// can be accessed by name or their number in the list.
 /// </summary>
-public class GameTableEntry : BaseObject, IGameTableEntry
+public class GameTableEntry : IGameTableEntry
 {
     /// <summary>
     /// Constructor
@@ -20,10 +19,12 @@ public class GameTableEntry : BaseObject, IGameTableEntry
     [SetsRequiredMembers]
     public GameTableEntry()
     {
+        Name = string.Empty;
     }
 
     /// <summary>
-    /// The English name for the entry
+    /// The name of the table entry
     /// </summary>
-    public string? ProperName { get; set; }
+    public string Name { get; set; }
+
 }

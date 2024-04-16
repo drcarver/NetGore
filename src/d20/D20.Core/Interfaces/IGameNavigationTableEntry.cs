@@ -2,7 +2,7 @@
 
 namespace D20.Core.Interfaces;
 
-public interface IGameNavigationTableEntry : IGameTableEntry
+public interface IGameNavigationTableEntry : IStandardTableEntry
 {
     /// <summary>
     /// The table type

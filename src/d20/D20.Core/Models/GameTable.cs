@@ -36,7 +36,7 @@ public class GameTable : BaseObject, IGameTable
     /// <summary>
     /// The table itself
     /// </summary>
-    public List<IGameTableEntry> Table { get; set; } = [];
+    public GameTableList<IGameTableEntry> Table { get; set; } = [];
 
     /// <summary>
     /// Get a entry from the table by it's name
@@ -61,8 +61,10 @@ public class GameTable : BaseObject, IGameTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// initialize to conserve memory on big tables
     /// </summary>
     public virtual void InitializeTable()
     {

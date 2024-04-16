@@ -7,7 +7,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class DeityTableEntry : GameTableEntry, IDeityTableEntry
+public class DeityTableEntry : StandardTableEntry, IDeityTableEntry
 {
     /// <summary>
     /// The deity alignment

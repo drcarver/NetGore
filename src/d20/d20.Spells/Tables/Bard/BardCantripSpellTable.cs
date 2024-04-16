@@ -34,7 +34,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
         Table =
         [
             #region Dancing Lights
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.DancingLights),
                 ProperName = "Dancing Lights",
@@ -42,7 +42,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Light
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Light),
                 ProperName = "Light",
@@ -50,7 +50,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Mage Hand
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.MageHand),
                 ProperName = "Mage Hand",
@@ -58,7 +58,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Mending
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Mending),
                 ProperName = "Mending",
@@ -66,7 +66,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Message
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Message),
                 ProperName = "Message",
@@ -74,7 +74,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Minor Illusion
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.MinorIllusion),
                 ProperName = "Minor Illusion",
@@ -82,7 +82,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Prestidigitation
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.Prestidigitation),
                 ProperName = "Prestidigitation",
@@ -90,7 +90,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region True Strike
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.TrueStrike),
                 ProperName = "True Strike",
@@ -98,7 +98,7 @@ public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
             #endregion
 
             #region Vicious Mockery
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(SpellEnum.ViciousMockery),
                 ProperName = "Vicious Mockery",

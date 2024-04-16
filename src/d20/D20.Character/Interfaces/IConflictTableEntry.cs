@@ -2,7 +2,7 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IConflictTableEntry : IGameTableEntry
+public interface IConflictTableEntry : IStandardTableEntry
 {
     /// <summary>
     /// Conflict points

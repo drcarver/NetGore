@@ -6,7 +6,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class ClassFeatureLevelEntry : GameTableEntry, IClassFeatureLevelEntry
+public class ClassFeatureLevelEntry : StandardTableEntry, IClassFeatureLevelEntry
 {
     /// <summary>
     /// Constructor

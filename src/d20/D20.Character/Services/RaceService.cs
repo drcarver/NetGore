@@ -26,39 +26,39 @@ public class RaceService : IRaceService
     {
         Table =
         [
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Dwarf),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Elf),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Halfling),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Human),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Dragonborn),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Gnome),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(HalfElf),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(HalfOrc),
             },
-            new GameTableEntry
+            new StandardTableEntry
             {
                 Name = nameof(Tiefling),
             },
