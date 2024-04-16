@@ -31,4 +31,7 @@ public enum SkillEnum
     Performance,
     Persuasion,
     SleightofHand,
+    History,
+    Medicine,
+    Religion,
 }

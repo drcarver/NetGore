@@ -28,8 +28,8 @@ public class MainNavigationTable : GameTable, IMainNavigationTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {
@@ -59,7 +59,7 @@ public class MainNavigationTable : GameTable, IMainNavigationTable
             new GameNavigationTableEntry
             {
                 Name = nameof(TableType.RaceTable),
-                ProperName = "Characer races tables",
+                ProperName = "Character races tables",
                 Route = nameof(GameTableAdminPage),
                 TableType = TableTypeEnum.RaceTable
             },
@@ -101,7 +101,7 @@ public class MainNavigationTable : GameTable, IMainNavigationTable
             new GameNavigationTableEntry
             {
                 Name = nameof(TableType.SpellTable),
-                ProperName = "Spell table by classs",
+                ProperName = "Spell tables by class",
                 Route = nameof(GameTableAdminPage),
                 TableType = TableTypeEnum.SpellTable
             },

@@ -60,7 +60,7 @@ public class RogueLevelTable : GameTable, IRogueLevelTable
             "lives on the road, journeying far, meeting exotic people, " +
             "and facing fantastic danger in pursuit of equally fantastic " +
             "riches. In the end, any who desire to shape their fates and " +
-            "live life on their own terms might come to be called rogues."    
+            "live life on their own terms might come to be called rogues.";    
     }
 
     /// <summary>

@@ -61,7 +61,7 @@ public class D20Character : Creature, ICharacter
     /// <summary>
     /// Tools for the creation of the character
     /// </summary>
-    public List<ToolProficiencyEnum> ToolProficiency { get; set; }
+    public List<EquipmentEnum> ToolProficiency { get; set; }
 
     /// <summary>
     /// The inventory for the creature

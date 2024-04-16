@@ -11,4 +11,9 @@ public class BardFeatureLevelEntry : SpellCasterLevelEntry
     public BardFeatureLevelEntry()
     {
     }
+
+    /// <summary>
+    /// 1st to 9th level spells known
+    /// </summary>
+    public int SpellsKnown { get; set; }
 }

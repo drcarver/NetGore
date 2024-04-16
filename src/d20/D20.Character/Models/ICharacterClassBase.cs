@@ -29,7 +29,7 @@ interface ICharacterClassBase : IBaseObject
     /// <summary>
     /// Tools
     /// </summary>
-    List<ToolProficiencyEnum> ToolProficiency { get; set; }
+    List<EquipmentEnum> ToolProficiency { get; set; }
 
     /// <summary>
     /// Saving Throws

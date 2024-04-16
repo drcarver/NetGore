@@ -50,7 +50,7 @@ public interface ICharacter : ICreature
     /// <summary>
     /// Tools for the creation of the character
     /// </summary>
-    List<ToolProficiencyEnum> ToolProficiency { get; set; }
+    List<EquipmentEnum> ToolProficiency { get; set; }
 
     /// <summary>
     /// The inventory for the creature

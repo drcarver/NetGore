@@ -16,20 +16,6 @@ namespace NetGore.ViewModel;
 public partial class MainPageViewModel : ObservableObject
 {
     /// <summary>
-    /// The list of Types with the same base type from
-    /// a given assembly
-    /// </summary>
-    /// <typeparam name="GameTable">The base type</typeparam>
-    /// <returns>The type list</returns>
-    private Type[] FindSubClassesOf<GameTable>()
-    {
-        var baseType = typeof(GameTable);
-        var assembly = baseType.Assembly;
-
-        return assembly.GetExportedTypes().Where(t => t.IsSubclassOf(baseType)).ToArray();
-    }
-
-    /// <summary>
     /// The list of tables in the DI
     /// </summary>
     private List<IGameTable> _tables = [];

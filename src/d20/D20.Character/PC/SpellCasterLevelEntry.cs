@@ -20,11 +20,6 @@ public class SpellCasterLevelEntry : ClassFeatureLevelEntry
     public int CantripsKnown { get; set; }
 
     /// <summary>
-    /// 1st to 9th level spells known
-    /// </summary>
-    public int SpellsKnown { get; set; }
-
-    /// <summary>
     /// Spell slots at this level
     /// </summary>
     public int[]? SpellSlots { get; set; }

@@ -1188,5 +1188,8 @@ public enum TraitEnum
     TrueLove = 1118,
     MagnumOpus = 1119,
     ThiefofLegend = 1120,
+    FearlessZeal = 1121,
+    BattlefieldHealer = 1122,
+    Arisen = 1123,
     #endregion
 }

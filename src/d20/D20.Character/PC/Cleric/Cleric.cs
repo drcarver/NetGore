@@ -1,16 +1,21 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.ConstrainedExecution;
 
 using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Maui.Controls;
+
 namespace D20.Character.PC.Cleric;
 
 /// <summary>
-/// Clerics have a talent for song and story, and they come to 
-/// their careers by developing this talent as they pick up 
-/// on a smattering of other skills. 
+/// Clerics are not merely people of religious faith—they are 
+/// devoted servants who wield true divine power from their 
+/// deities. The particular path that steers a cleric toward 
+/// their faith can mean the difference between a demon-worshiping 
+/// cultist and a lawful harbinger of her deity’s blessed faith.
 /// </summary>
 public class Cleric : CharacterClassBase
 {
@@ -38,43 +43,45 @@ public class Cleric : CharacterClassBase
         serviceProvider = services;
         Name = nameof(Cleric);
         Description =
-            "Clerics have a talent for song and story, and they come to " +
-            "their careers by developing this talent as they pick up " +
-            "on a smattering of other skills.";
+            "Clerics are not merely people of religious " +
+            "faith—they are devoted servants who wield true " +
+            "divine power from their deities. The particular " +
+            "path that steers a cleric toward her faith can " +
+            "mean the difference between a demon-worshiping " +
+            "cultist and a lawful harbinger of her deity’s " +
+            "blessed faith.";
         HitDice = "1d8";
+
+        //Armor: Light armor, medium  armor,	shields
         ArmorProficiency =
         [
             EquipmentCategoryEnum.LightArmor,
+            EquipmentCategoryEnum.MediumArmor,
+            EquipmentCategoryEnum.Shields,
         ];
         WeaponProficiency =
         [
             WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.HandCrossbows,
-            WeaponProficiencyEnum.LongSwords,
-            WeaponProficiencyEnum.Rapiers,
-            WeaponProficiencyEnum.ShortSwords,
         ];
+        ToolProficiency =
+        [
+            // None
+        ];
+        //Saving  Throws:	Wisdom,	Charisma
         SavingThrows =
         [
-            AbilityEnum.Dexterity,
+            AbilityEnum.Wisdom,
             AbilityEnum.Charisma,
         ];
+        //Skills: Choose two from History, Insight, Medicine,
+        //Persuasion, and Religion
         Skills =
         [
-            SkillEnum.AnimalHandling,
-            SkillEnum.Athletics,
-            SkillEnum.Intimidation,
-            SkillEnum.Nature,
-            SkillEnum.Perception,
-            SkillEnum.Survival,
-        ];
-        Equipment =
-        [
-            EquipmentEnum.Dagger
-        ];
-        Armor =
-        [
-            EquipmentEnum.Leather
+            SkillEnum.History,
+            SkillEnum.Insight,
+            SkillEnum.Medicine,
+            SkillEnum.Persuasion,
+            SkillEnum.Religion,
         ];
 
         // Generate the class background
@@ -82,15 +89,13 @@ public class Cleric : CharacterClassBase
         BackgroundDescription = classBackground.Description;
     }
 }
-
-//Tools: Three musical instruments of  your choice
-//Skills: Choose any three
 //Equipment
 //You start   with the following equipment,  in	addition
 //to  the equipment   granted by  your background:
-//• (a) a   rapier,	(b) a   longsword,	or(c) any simple
+//• (a) a   mace or(b) a warhammer(if	proficient)
+//• (a) scale   mail,	(b) leather armor,	or(c) chain mail
+//(if	proficient)
+//• (a) a   light crossbow    and	20	bolts or(b) any simple
 //weapon
-//• (a) a   diplomat’s pack    or(b) an entertainer’s pack
-//• (a) a   lute or(b) any other   musical instrument
-//• Leather armor   and a   dagger
-//The Cleric
+//• (a) a   priest’s pack    or(b) an explorer’s pack
+//• A shield  and a   holy symbol

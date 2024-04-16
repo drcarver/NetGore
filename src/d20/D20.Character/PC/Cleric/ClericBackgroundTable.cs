@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Metrics;
 
 using D20.Character.Enum;
 using D20.Character.Models;
@@ -20,24 +21,27 @@ public class ClericBackgroundTable : RandomTable, IClericBackgroundTable
         TableType = TableTypeEnum.CharacterTable;
         DiceSides = 100;
         Description =
-            "Clerics have a talent for song and story, and they " +
-            "come to their careers by developing this talent " +
-            "as they pick up on a smattering of other skills.";
+            "Clerics are not merely people of religious " +
+            "faith—they are devoted servants who wield true " +
+            "divine power from their deities. The particular " +
+            "path that steers a cleric toward her faith can " +
+            "mean the difference between a demon-worshiping " +
+            "cultist and a lawful harbinger of her deity’s " +
+            "blessed faith.";
     }
 
     //Table: Cleric Backgrounds
     //d%	Result
-    //01–10	Celebrity In your formative years, you saw a player or troupe of players perform before an enthralled audience.That’s when you decided that you wanted to be up on that stage performing for the adulation of the crowd.As a minor celebrity, you gain access to either the Charming social trait or the Influence social trait.
-    //11–20	Cultural Mandate    There has always been a revered storyteller in your culture.This could be an official skald, a royal minstrel, the washerman who spins parables and folk wisdom, or the old farmer who tells tall tales at the pub.Ever since you were young, your community has groomed you to fulfill this role.As a silver-tongued storyteller, you gain access to the Fast Talker social trait.
-    //21–30	Dabbler Whether you grew up rich or poor, you refused to accept the limits imposed by your social class or means.In your youth, you determined to learn a little bit of all there was to know.You may not be the master of any one career, but the breadth of your experience is wide, textured, and diverse.You gain access to the Worldly social trait.
-    //31–40	For Love    When you were young, you tried to express yourself to your beloved using song or poetry.Driven by desire, you refined your skill and learned to articulate raw emotion in story and song.You gain access to the Ear for Music religion trait and the True Love story feat.You roll a d12 instead of a d20 on Table: Romantic Relationships.
-    //41–50	Gift Someone gave you a special instrument or a collection of songs and stories at a time in your life when you needed them most.You have treasured this object above all other possessions, and it started you on a path to new songs and stories.You gain access to the Seeker social trait.
-    //51–60	Ongoing Patron  When you were young, a person with money or power took an interest in your art and sponsored you.Most of what you created was dictated by the patron’s tastes, and you probably still work for this patron, who maintains a strong influence over your life. You gain access to the Oathbound faith trait.
-    //61–70	Spy Someone once asked you to employ your artistic talents as an excuse to observe a person, steal an object, or retrieve a piece of information. Infiltrating various houses and estates in the guise of an actor, minstrel, or storyteller, you honed your art while being paid better than most other performers.You gain access to the Criminal social trait. See the Crime and Punishment sidebar.
-    //71–80	Troupe of Players You were born into, helped found, or fell in with a troupe of traveling players. You spent your early years rambling from one place to another—from tavern to tavern, town to town, or even between countries. Long hours traveling gave you plenty of time to practice and hone your skill. You gain access to the World Traveler human race trait (which you may take regardless of your race).
-    //81–90	Virtuoso One day, you picked up an instrument or told a tale, and your raw natural ability captivated everyone who saw you perform.Words and music have always come to you effortlessly, as naturally as breathing.You gain access to the Talented social trait and the Magnum Opus story feat.
-    //91–100	Worldshaker Since childhood, you’ve observed the world around you and translated those observations into story and song. Your unique, unabashed vision resonated with the audience, revealing new perspectives as well as simple truths.You’re used to people quoting your words and looking up to you, though some authority figures deem you a rabble-rouser and troublemaker.You gain access to the Natural-Born Leader social trait.
-    /// <summary>
+    //01–10	Angelic Encounter   a supernatural being, such as an angel or demon, appeared to you and proclaimed that you were destined to perform a great task in service to your god.You might have tried to deny it—and you even might still have doubts—but eventually you took up the mantle of a holy warrior and chose to meet this destiny head on, either to prove to yourself that you’re worthy of such a destiny or to show your supernatural messenger that you cannot be pigeon-holed so easily.You gain access to the Prophesied faith trait.
+    //11–20	Atonement In your youth, you committed actions you are not proud of. Your deeds left dark stains upon your soul, ones so deep they might take a lifetime to wash away.When you hit rock-bottom—whether through greed, addiction, hedonism, or simply lack of good sense—you turned to faith, vowing to atone for all of the horrible acts you’ve committed. You gain access to the Oathbound faith trait.
+    //21–30	Converted In your early life, you followed a different faith, a different god or powerful entity, or perhaps no faith at all. a representative of your current faith showed you the error of your ways and converted you, and you couldn’t be happier.You can only hope to do for others what this individual did for you.You gain access to the Inspired faith trait.
+    //31–40	Devoted From your earliest memory, you’ve had a close relationship with your deity. This entity has been a constant presence in your life: your greatest comfort, best companion, truest love, or some combination of the three. You’ve never had to see or speak with your deity to know that he watches over you, and the beliefs and criticisms of others do not faze you—your faith is enough.You gain access to the Blessed faith trait and the Fearless Zeal story feat.
+    //41–50	Healed As a child, you were afflicted with a terrible physical or mental illness or a debilitating wound that prevented you from functioning in society.a miracle worker touched your body and commanded you to be well, and—for perhaps the first time in your life—you were whole.Now you live your life in tribute to the deity whose divine healer restored you, and perhaps hope to bestow similar gifts unto deserving nonbelievers. You gain access to the Sacred Touch faith trait and the Battlefield Healer story feat.
+    //51–60	Reborn You died or nearly died. In the midst of this experience, your mind came to a place of quiet where you witnessed your deity or its agents pulling your body and spirit back from the brink of death.Every day since has been a gift, and you strive to understand the reason you have been saved while countless others perish.You gain access to the Deathtouched bloodline race trait and the Arisen story feat.
+    //61–70	Religious Colony    You grew up in a religious colony or settlement.This may have been a small village in the hinterlands or a kingdom-sized theocracy devoted to a single religion.When you came of age, you decided to serve your god and country as a cleric, a choice that garnered respect, dignity, and honor among your people.You gain access to the Natural-Born Leader social trait.
+    //71–80	Revelation In your youth, a deity granted you visions or dreams that revealed startling truths.These visions might have been prophetic, deeply insightful, or filled with extraordinary solutions to problems that plagued you, your family, or your community.So powerful and compelling were the visions that you devoted your life to the deity.You gain access to the Worldly social trait.
+    //81–90	Sanctuary When you were young, you did a very wicked deed—or were accused of one—and fled to the only place that could shelter you from the law.You found sanctuary among the worshipers of a deity, and they took you in and protected you.In time, you joined the faithful to serve their cause in the world, though the shadow of your past sin still lurks beyond the church’s walls.You gain access to the Criminal social trait.See the Crime and Punishment sidebar.
+    //91–100	Taken in by the Church You spent your youth in a church or monastery serving as an acolyte or doing menial work on the grounds, either taken in as an orphan, sent there by your equally devout parents, or by taking on the faith of your own volition. The traditions and rituals of the religion served as your way of life throughout your adolescence, and you left that pious community with the skills to champion your faith in the world. You gain access to the Child of the Temple faith trait.    /// <summary>
     /// Initialize the game table.  This is a separate method so 
     /// we can create a game table for it's meta properties with 
     /// out creating the actual able values.  A bit of optimization 
@@ -47,140 +51,51 @@ public class ClericBackgroundTable : RandomTable, IClericBackgroundTable
     {
         Table =
         [
-            #region "Celebrity"
-            //01–10	Celebrity In your formative years, you saw a player or troupe of players perform before an enthralled audience.That’s when you decided that you wanted to be up on that stage performing for the adulation of the crowd.As a minor celebrity, you gain access to either the Charming social trait or the Influence social trait.
+            #region "Angelic Encounter"
+            //01–10	Angelic Encounter   a supernatural being, such as an angel or demon, appeared to you and proclaimed that you were destined to perform a great task in service to your god.You might have tried to deny it—and you even might still have doubts—but eventually you took up the mantle of a holy warrior and chose to meet this destiny head on, either to prove to yourself that you’re worthy of such a destiny or to show your supernatural messenger that you cannot be pigeon-holed so easily.You gain access to the Prophesied faith trait.
             new BackgroundTableEntry
             {
                 Range = new Range(01, 10),
-                Name = nameof(ClericBackgroundEnum.Celebrity),
-                ProperName = "Celebrity",
+                Name = nameof(ClericBackgroundEnum.AngelicEncounter),
+                ProperName = "Angelic Encounter",
                 Description =
-                    "In your formative years, you saw a player " +
-                    "or troupe of players perform before an " +
-                    "enthralled audience. That’s when you decided " +
-                    "that you wanted to be up on that stage " +
-                    "performing for the adulation of the crowd. " +
-                    "As a minor celebrity, you gain access to " +
-                    "either the Charming social trait or the " +
-                    "Influence social trait.",
+                    "A supernatural being, such as an angel or " +
+                    "demon, appeared to you and proclaimed that " +
+                    "you were destined to perform a great task in " +
+                    "service to your god. You might have tried " +
+                    "to deny it—and you even might still have " +
+                    "doubts—but eventually you took up the " +
+                    "mantle of a holy warrior and chose to meet " +
+                    "this destiny head on, either to prove to " +
+                    "yourself that you’re worthy of such a destiny " +
+                    "or to show your supernatural messenger that " +
+                    "you cannot be pigeon-holed so easily. You " +
+                    "gain access to the Prophesied faith trait.",
                 Traits =
                 [
-                    TraitEnum.Charming,
-                    TraitEnum.Influence,
+                    TraitEnum.Prophesied,
                 ]
             },
             #endregion
 
-            #region "Cultural Mandate"
-            //11–20	Cultural Mandate    There has always been a revered storyteller in your culture.This could be an official skald, a royal minstrel, the washerman who spins parables and folk wisdom, or the old farmer who tells tall tales at the pub.Ever since you were young, your community has groomed you to fulfill this role.As a silver-tongued storyteller, you gain access to the Fast Talker social trait.
+            #region "Atonement"
+            //11–20	Atonement In your youth, you committed actions you are not proud of. Your deeds left dark stains upon your soul, ones so deep they might take a lifetime to wash away.When you hit rock-bottom—whether through greed, addiction, hedonism, or simply lack of good sense—you turned to faith, vowing to atone for all of the horrible acts you’ve committed. You gain access to the Oathbound faith trait.
             new BackgroundTableEntry
             {
                 Range = new Range(11, 20),
-                Name = nameof(ClericBackgroundEnum.CulturalMandate),
-                ProperName = "Cultural Mandate",
+                Name = nameof(ClericBackgroundEnum.Atonement),
+                ProperName = "Atonement",
                 Description =
-                    "There has always been a revered storyteller " +
-                    "in your culture.This could be an official " +
-                    "skald, a royal minstrel, the washerman who " +
-                    "spins parables and folk wisdom, or the old " +
-                    "farmer who tells tall tales at the pub. " +
-                    "Ever since you were young, your community " +
-                    "has groomed you to fulfill this role. As " +
-                    "a silver-tongued storyteller, you gain " +
-                    "access to the Fast Talker social trait.",
-                Traits =
-                [
-                    TraitEnum.FastTalker,
-                ]
-            },
-            #endregion
-
-            #region "Dabbler"
-            //21–30	Dabbler Whether you grew up rich or poor, you refused to accept the limits imposed by your social class or means.In your youth, you determined to learn a little bit of all there was to know.You may not be the master of any one career, but the breadth of your experience is wide, textured, and diverse.You gain access to the Worldly social trait.
-            new BackgroundTableEntry
-            {
-                Range = new Range(21, 30),
-                Name = nameof(ClericBackgroundEnum.Dabbler),
-                ProperName = "Dabbler",
-                Description =
-                    "Whether you grew up rich or poor, you " +
-                    "refused to accept the limits imposed by " +
-                    "your social class or means. In your youth, " +
-                    "you determined to learn a little bit of " +
-                    "all there was to know. You may not be " +
-                    "the master of any one career, but the " +
-                    "breadth of your experience is wide, " +
-                    "textured, and diverse. You gain access " +
-                    "to the Worldly social trait.",
-                Traits =
-                [
-                    TraitEnum.Worldly,
-                ]
-            },
-            #endregion
-
-            #region "For Love"
-            //31–40	For Love    When you were young, you tried to express yourself to your beloved using song or poetry.Driven by desire, you refined your skill and learned to articulate raw emotion in story and song.You gain access to the Ear for Music religion trait and the True Love story feat.You roll a d12 instead of a d20 on Table: Romantic Relationships.
-            new BackgroundTableEntry
-            {
-                Range = new Range(31, 40),
-                Name = nameof(ClericBackgroundEnum.ForLove),
-                ProperName = "For Love",
-                Description =
-                    "When you were young, you tried to express " +
-                    "yourself to your beloved using song or " +
-                    "poetry. Driven by desire, you refined your " +
-                    "skill and learned to articulate raw emotion " +
-                    "in story and song. You gain access to the " +
-                    "Ear for Music religion trait and the " +
-                    "True Love story feat. You roll a d12 instead " +
-                    "of a d20 on Table: Romantic Relationships.",
-                Traits =
-                [
-                    TraitEnum.EarforMusic,
-                    TraitEnum.TrueLove
-                ]
-            },
-            #endregion
-
-            #region "Gift"
-            //41–50	Gift Someone gave you a special instrument or a collection of songs and stories at a time in your life when you needed them most.You have treasured this object above all other possessions, and it started you on a path to new songs and stories.You gain access to the Seeker social trait.
-            new BackgroundTableEntry
-            {
-                Range = new Range(41, 50),
-                Name = nameof(ClericBackgroundEnum.Gift),
-                ProperName = "Gift",
-                Description =
-                    "Someone gave you a special instrument or " +
-                    "a collection of songs and stories at a time " +
-                    "in your life when you needed them most. You " +
-                    "have treasured this object above all other " +
-                    "possessions, and it started you on a path " +
-                    "to new songs and stories. You gain access " +
-                    "to the Seeker social trait.",
-                Traits =
-                [
-                    TraitEnum.Seeker,
-                ]
-            },
-            #endregion
-
-            #region "Ongoing Patron"
-            //51–60	Ongoing Patron  When you were young, a person with money or power took an interest in your art and sponsored you.Most of what you created was dictated by the patron’s tastes, and you probably still work for this patron, who maintains a strong influence over your life. You gain access to the Oathbound faith trait.
-            new BackgroundTableEntry
-            {
-                Range = new Range(51, 60),
-                Name = nameof(ClericBackgroundEnum.OngoingPatron),
-                ProperName = "Ongoing Patron",
-                Description =
-                    "When you were young, a person with money " +
-                    "or power took an interest in your art and " +
-                    "sponsored you. Most of what you created " +
-                    "was dictated by the patron’s tastes, and " +
-                    "you probably still work for this patron, " +
-                    "who maintains a strong influence over " +
-                    "your life. You gain access to the " +
-                    "Oathbound faith trait.",
+                    "In your youth, you committed actions you " +
+                    "are not proud of. Your deeds left dark " +
+                    "stains upon your soul, ones so deep they " +
+                    "might take a lifetime to wash away. When " +
+                    "you hit rock-bottom—whether through greed, " +
+                    "addiction, hedonism, or simply lack of " +
+                    "good sense—you turned to faith, vowing to " +
+                    "atone for all of the horrible acts you’ve " +
+                    "committed. You gain access to the Oathbound " +
+                    "faith trait.",
                 Traits =
                 [
                     TraitEnum.Oathbound,
@@ -188,24 +103,178 @@ public class ClericBackgroundTable : RandomTable, IClericBackgroundTable
             },
             #endregion
 
-            #region "Spy"
-            //61–70	Spy Someone once asked you to employ your artistic talents as an excuse to observe a person, steal an object, or retrieve a piece of information. Infiltrating various houses and estates in the guise of an actor, minstrel, or storyteller, you honed your art while being paid better than most other performers.You gain access to the Criminal social trait. See the Crime and Punishment sidebar.
+            #region "Converted"
+            //21–30	Converted In your early life, you followed a different faith, a different god or powerful entity, or perhaps no faith at all. a representative of your current faith showed you the error of your ways and converted you, and you couldn’t be happier.You can only hope to do for others what this individual did for you.You gain access to the Inspired faith trait.
+            new BackgroundTableEntry
+            {
+                Range = new Range(21, 30),
+                Name = nameof(ClericBackgroundEnum.Converted),
+                ProperName = "Converted",
+                Description =
+                    "In your early life, you followed a different " +
+                    "faith, a different god or powerful entity, " +
+                    "or perhaps no faith at all. a representative " +
+                    "of your current faith showed you the error " +
+                    "of your ways and converted you, and you " +
+                    "couldn’t be happier. You can only hope to " +
+                    "do for others what this individual did for " +
+                    "you. You gain access to the Inspired faith trait.",
+                Traits =
+                [
+                    TraitEnum.Inspired,
+                ]
+            },
+            #endregion
+
+            #region "Devoted"
+            //31–40	Devoted From your earliest memory, you’ve had a close relationship with your deity. This entity has been a constant presence in your life: your greatest comfort, best companion, truest love, or some combination of the three. You’ve never had to see or speak with your deity to know that he watches over you, and the beliefs and criticisms of others do not faze you—your faith is enough.You gain access to the Blessed faith trait and the Fearless Zeal story feat.
+            new BackgroundTableEntry
+            {
+                Range = new Range(31, 40),
+                Name = nameof(ClericBackgroundEnum.Devoted),
+                ProperName = "Devoted",
+                Description =
+                    "From your earliest memory, you’ve had a " +
+                    "close relationship with your deity. This " +
+                    "entity has been a constant presence in your " +
+                    "life: your greatest comfort, best companion, " +
+                    "truest love, or some combination of the " +
+                    "three. You’ve never had to see or speak " +
+                    "with your deity to know that he watches over " +
+                    "you, and the beliefs and criticisms of others " +
+                    "do not faze you—your faith is enough. You " +
+                    "gain access to the Blessed faith trait and " +
+                    "the Fearless Zeal story feat.",
+                Traits =
+                [
+                    TraitEnum.Blessed,
+                    TraitEnum.FearlessZeal
+                ]
+            },
+            #endregion
+
+            #region "Healed"
+            //41–50	Healed As a child, you were afflicted with a terrible physical or mental illness or a debilitating wound that prevented you from functioning in society.a miracle worker touched your body and commanded you to be well, and—for perhaps the first time in your life—you were whole.Now you live your life in tribute to the deity whose divine healer restored you, and perhaps hope to bestow similar gifts unto deserving nonbelievers. You gain access to the Sacred Touch faith trait and the Battlefield Healer story feat.
+            new BackgroundTableEntry
+            {
+                Range = new Range(41, 50),
+                Name = nameof(ClericBackgroundEnum.Healed),
+                ProperName = "Healed",
+                Description =
+                    "As a child, you were afflicted with a " +
+                    "terrible physical or mental illness or a " +
+                    "debilitating wound that prevented you from " +
+                    "functioning in society.a miracle worker " +
+                    "touched your body and commanded you to be " +
+                    "well, and—for perhaps the first time in " +
+                    "your life—you were whole.Now you live your " +
+                    "life in tribute to the deity whose divine " +
+                    "healer restored you, and perhaps hope to " +
+                    "bestow similar gifts unto deserving " +
+                    "nonbelievers. You gain access to the " +
+                    "Sacred Touch faith trait and the " +
+                    "Battlefield Healer story feat.",
+                Traits =
+                [
+                    TraitEnum.SacredTouch,
+                    TraitEnum.BattlefieldHealer
+                ]
+            },
+            #endregion
+
+            #region "Reborn"
+            //51–60	Reborn You died or nearly died. In the midst of this experience, your mind came to a place of quiet where you witnessed your deity or its agents pulling your body and spirit back from the brink of death.Every day since has been a gift, and you strive to understand the reason you have been saved while countless others perish.You gain access to the Deathtouched bloodline race trait and the Arisen story feat.
+            new BackgroundTableEntry
+            {
+                Range = new Range(51, 60),
+                Name = nameof(ClericBackgroundEnum.Reborn),
+                ProperName = "Reborn",
+                Description =
+                    "You died or nearly died. In the midst of " +
+                    "this experience, your mind came to a place " +
+                    "of quiet where you witnessed your deity " +
+                    "or its agents pulling your body and spirit " +
+                    "back from the brink of death. Every day " +
+                    "since has been a gift, and you strive to " +
+                    "understand the reason you have been saved " +
+                    "while countless others perish. You gain " +
+                    "access to the Deathtouched bloodline race " +
+                    "trait and the Arisen story feat.",
+                Traits =
+                [
+                    TraitEnum.Deathtouched,
+                    TraitEnum.Arisen,
+                ]
+            },
+            #endregion
+
+            #region "Religious Colony"
+            //61–70	Religious Colony You grew up in a religious colony or settlement.This may have been a small village in the hinterlands or a kingdom-sized theocracy devoted to a single religion.When you came of age, you decided to serve your god and country as a cleric, a choice that garnered respect, dignity, and honor among your people.You gain access to the Natural-Born Leader social trait.
             new BackgroundTableEntry
             {
                 Range = new Range(61, 70),
-                Name = nameof(ClericBackgroundEnum.Spy),
-                ProperName = "Spy",
+                Name = nameof(ClericBackgroundEnum.ReligiousColony),
+                ProperName = "Religious Colony",
                 Description =
-                    "Someone once asked you to employ your " +
-                    "artistic talents as an excuse to observe " +
-                    "a person, steal an object, or retrieve " +
-                    "a piece of information. Infiltrating " +
-                    "various houses and estates in the guise " +
-                    "of an actor, minstrel, or storyteller, " +
-                    "you honed your art while being paid better " +
-                    "than most other performers. You gain access " +
-                    "to the Criminal social trait. See the Crime " +
-                    "and Punishment sidebar.",
+                    "You grew up in a religious colony or " +
+                    "settlement.This may have been a small village " +
+                    "in the hinterlands or a kingdom-sized " +
+                    "theocracy devoted to a single religion. " +
+                    "When you came of age, you decided to serve " +
+                    "your god and country as a cleric, a choice " +
+                    "that garnered respect, dignity, and honor " +
+                    "among your people. You gain access to the " +
+                    "Natural-Born Leader social trait.",
+                Traits =
+                [
+                    TraitEnum.NaturalBornLeader,
+                ]
+            },
+            #endregion
+
+            #region "Revelation"
+            //71–80	Revelation In your youth, a deity granted you visions or dreams that revealed startling truths.These visions might have been prophetic, deeply insightful, or filled with extraordinary solutions to problems that plagued you, your family, or your community.So powerful and compelling were the visions that you devoted your life to the deity.You gain access to the Worldly social trait.
+            new BackgroundTableEntry
+            {
+                Range = new Range(71, 80),
+                Name = nameof(ClericBackgroundEnum.Revelation),
+                ProperName = "Revelation",
+                Description =
+                    "In your youth, a deity granted you visions " +
+                    "or dreams that revealed startling truths. " +
+                    "These visions might have been prophetic, " +
+                    "deeply insightful, or filled with extraordinary " +
+                    "solutions to problems that plagued you, " +
+                    "your family, or your community. So powerful " +
+                    "and compelling were the visions that you " +
+                    "devoted your life to the deity. You gain " +
+                    "access to the Worldly social trait.",
+                Traits =
+                [
+                    TraitEnum.Worldly,
+                ]
+            },
+            #endregion
+
+            #region "Sanctuary"
+            //81–90	Sanctuary When you were young, you did a very wicked deed—or were accused of one—and fled to the only place that could shelter you from the law.You found sanctuary among the worshipers of a deity, and they took you in and protected you.In time, you joined the faithful to serve their cause in the world, though the shadow of your past sin still lurks beyond the church’s walls.You gain access to the Criminal social trait.See the Crime and Punishment sidebar.
+            new BackgroundTableEntry
+            {
+                Range = new Range(81, 90),
+                Name = nameof(ClericBackgroundEnum.Sanctuary),
+                ProperName = "Sanctuary",
+                Description =
+                    "When you were young, you did a very wicked " +
+                    "deed—or were accused of one—and fled to the " +
+                    "only place that could shelter you from the " +
+                    "law. You found sanctuary among the worshipers " +
+                    "of a deity, and they took you in and protected " +
+                    "you. In time, you joined the faithful to " +
+                    "serve their cause in the world, though the " +
+                    "shadow of your past sin still lurks beyond " +
+                    "the church’s walls.You gain access to the " +
+                    "Criminal social trait. See the " +
+                    "Crime and Punishment sidebar.",
                 Traits =
                 [
                     TraitEnum.Criminal,
@@ -213,79 +282,33 @@ public class ClericBackgroundTable : RandomTable, IClericBackgroundTable
             },
             #endregion
 
-            #region "Troupe of Players"
-            //71–80	Troupe of Players You were born into, helped found, or fell in with a troupe of traveling players. You spent your early years rambling from one place to another—from tavern to tavern, town to town, or even between countries. Long hours traveling gave you plenty of time to practice and hone your skill. You gain access to the World Traveler human race trait (which you may take regardless of your race).
-            new BackgroundTableEntry
-            {
-                Range = new Range(71, 80),
-                Name = nameof(ClericBackgroundEnum.TroupeofPlayers),
-                ProperName = "Troupe of Players",
-                Description =
-                    "You were born into, helped found, or " +
-                    "fell in with a troupe of traveling players. " +
-                    "You spent your early years rambling from " +
-                    "one place to another—from tavern to tavern, " +
-                    "town to town, or even between countries. " +
-                    "Long hours traveling gave you plenty of " +
-                    "time to practice and hone your skill. You " +
-                    "gain access to the World Traveler human " +
-                    "race trait (which you may take regardless " +
-                    "of your race).",
-                Traits =
-                [
-                    TraitEnum.WorldTraveler,
-                ]
-            },
-            #endregion
-
-            #region "Virtuoso"
-            //81–90	Virtuoso One day, you picked up an instrument or told a tale, and your raw natural ability captivated everyone who saw you perform.Words and music have always come to you effortlessly, as naturally as breathing.You gain access to the Talented social trait and the Magnum Opus story feat.
-            new BackgroundTableEntry
-            {
-                Range = new Range(81, 90),
-                Name = nameof(ClericBackgroundEnum.Virtuoso),
-                ProperName = "Virtuoso",
-                Description =
-                    "One day, you picked up an instrument or " +
-                    "told a tale, and your raw natural ability " +
-                    "captivated everyone who saw you perform. " +
-                    "Words and music have always come to you " +
-                    "effortlessly, as naturally as breathing. " +
-                    "You gain access to the Talented social " +
-                    "trait and the Magnum Opus story feat.",
-                Traits =
-                [
-                    TraitEnum.Talented,
-                    TraitEnum.MagnumOpus,
-                ]
-            },
-            #endregion
-
-            #region "Worldshaker"
-            //91–100	Worldshaker Since childhood, you’ve observed the world around you and translated those observations into story and song. Your unique, unabashed vision resonated with the audience, revealing new perspectives as well as simple truths.You’re used to people quoting your words and looking up to you, though some authority figures deem you a rabble-rouser and troublemaker.You gain access to the Natural-Born Leader social trait.
+            #region "Taken in by the Church"
+            //91–100 Taken in by the Church You spent your youth in a church or monastery serving as an acolyte or doing menial work on the grounds, either taken in as an orphan, sent there by your equally devout parents, or by taking on the faith of your own volition. The traditions and rituals of the religion served as your way of life throughout your adolescence, and you left that pious community with the skills to champion your faith in the world. You gain access to the Child of the Temple faith trait.
             new BackgroundTableEntry
             {
                 Range = new Range(91, 100),
-                Name = nameof(ClericBackgroundEnum.Worldshaker),
-                ProperName = "Worldshaker",
+                Name = nameof(ClericBackgroundEnum.TakeninbytheChurch),
+                ProperName = "Taken in by the Church",
                 Description =
-                    "Since childhood, you’ve observed the " +
-                    "world around you and translated those " +
-                    "observations into story and song. Your " +
-                    "unique, unabashed vision resonated with " +
-                    "the audience, revealing new perspectives " +
-                    "as well as simple truths. You’re used " +
-                    "to people quoting your words and looking " +
-                    "up to you, though some authority figures " +
-                    "deem you a rabble-rouser and troublemaker. " +
-                    "You gain access to the Natural-Born Leader " +
-                    "social trait.",
+                    "You spent your youth in a church or monastery " +
+                    "serving as an acolyte or doing menial work " +
+                    "on the grounds, either taken in as an orphan, " +
+                    "sent there by your equally devout parents, " +
+                    "or by taking on the faith of your own volition. " +
+                    "The traditions and rituals of the religion " +
+                    "served as your way of life throughout your " +
+                    "adolescence, and you left that pious " +
+                    "community with the skills to champion your " +
+                    "faith in the world. You gain access to the " +
+                    "Child of the Temple faith trait.",
                 Traits =
                 [
-                    TraitEnum.NaturalBornLeader,
+                    TraitEnum.ChildoftheTemple,
                 ]
             },
             #endregion
         ];
     }
 }
+
+

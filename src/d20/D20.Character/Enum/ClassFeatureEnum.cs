@@ -40,6 +40,13 @@ public enum ClassFeatureEnum
     SuperiorInspiration,
     #endregion
 
+    #region Cleric
+    DivineDomain,
+    ChannelDivinity,
+    DestroyUndead,
+    DivineIntervention,
+    #endregion
+
     #region Rogue
     SneakAttack,
     ThievesCant,
@@ -47,8 +54,10 @@ public enum ClassFeatureEnum
     RoguishArchetype,
     UncannyDodge,
     Evasion,
+    Blindsense,
     ReliableTalent,
     SlipperyMind,
-    StrokeofLuck
+    StrokeofLuck,
+    Elusive,
     #endregion
 }

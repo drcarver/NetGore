@@ -1,8 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.ConstrainedExecution;
+using System.Threading.Channels;
 
 using D20.Character.Enum;
 using D20.Core.Enum;
 using D20.Core.Models;
+
+using Microsoft.Maui.Controls;
 
 namespace D20.Character.PC.Cleric;
 
@@ -15,12 +19,16 @@ public class ClericLevelTable : GameTable, IClericLevelTable
     public ClericLevelTable()
     {
         Name = nameof(ClericLevelTable);
-        ProperName = "Cleric Features and Proficencies by Level";
+        ProperName = "Cleric Features and Proficiencies by Level";
         TableType = TableTypeEnum.CharacterTable;
         Description =
-            "Clerics have a talent for song and story, and they " +
-            "come to their careers by developing this talent " +
-            "as they pick up on a smattering of other skills.";
+            "Clerics are not merely people of religious " +
+            "faith—they are devoted servants who wield true " +
+            "divine power from their deities. The particular " +
+            "path that steers a cleric toward her faith can " +
+            "mean the difference between a demon-worshiping " +
+            "cultist and a lawful harbinger of her deity’s " +
+            "blessed faith.";
     }
 
     /// <summary>
@@ -32,66 +40,60 @@ public class ClericLevelTable : GameTable, IClericLevelTable
         Table =
         [
             #region 1st Level
-            //1st +2 Spellcasting, Clericic Inspiration (d6)
+            //1st +2 Spellcasting,	Divine Domain 3 2 ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 1,
                 BaseProficiency = 2,
-                SpellsKnown = 4,
-                CantripsKnown = 2,
-                SpellSlots = [2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 3,
+                SpellSlots = [3, 2, 0, 0, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.Spellcasting,
-                    ClassFeatureEnum.ClericicInspiration
+                    ClassFeatureEnum.DivineDomain
                 ],
             },
             #endregion
 
             #region 2nd Level
-            //2nd +2 Jack of  All Trades, Song of Rest (d6)
-            //2 5 3 ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶
+            //2nd +2 Channel Divinity(1/rest),	Divine Domain feature
+            //3 3 ̶ ̶ ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 2,
                 BaseProficiency = 2,
-                CantripsKnown = 2,
-                SpellsKnown = 5,
-                SpellSlots = [2, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 3,
+                SpellSlots = [3, 3, 0, 0, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.JackofAllTrades,
-                    ClassFeatureEnum.SongofRest
+                    ClassFeatureEnum.ChannelDivinity,
+                    ClassFeatureEnum.DivineDomain
                 ],
             },
             #endregion
 
             #region 3rd Level
-            //3rd +2 Cleric College,    Expertise 2 6 4 2 ̶ ̶ ̶ ̶ ̶ ̶ ̶
+            //3rd +2 ̶ 3 4 2 ̶ ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 3,
                 BaseProficiency = 2,
-                CantripsKnown = 2,
-                SpellsKnown = 6,
-                SpellSlots = [2, 4, 2, 0, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 3,
+                SpellSlots = [3, 4, 2, 0, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.ClericCollege,
-                    ClassFeatureEnum.Expertise,
                 ],
             },
             #endregion
 
             #region 4th Level
-            //4th +2 Ability  Score   Improvement 3 7 4 3 ̶ ̶ ̶ ̶ ̶ ̶ ̶
+            //4th +2 Ability Score Improvement 4 4 3 ̶ ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 4,
                 BaseProficiency = 2,
-                CantripsKnown = 3,
-                SpellsKnown = 7,
-                SpellSlots = [3, 4, 3, 0, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 0, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.AbilityScoreImprovement
@@ -100,50 +102,45 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 5th Level
-            //5th +3 Clericic Inspiration (d8), Font of Inspiration
-            //3 8 4 3 2 ̶ ̶ ̶ ̶ ̶ ̶
+            //5th +3 Destroy Undead(CR 1/2) 4 4 3 2 ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 5,
                 BaseProficiency = 3,
-                CantripsKnown = 3,
-                SpellsKnown = 8,
-                SpellSlots = [3, 4, 3, 2, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 2, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.ClericicInspiration,
-                    ClassFeatureEnum.FontofInspiration,
+                    ClassFeatureEnum.DestroyUndead,
                 ],
             },
             #endregion
 
             #region 6th Level
-            //6th +3 Countercharm, Cleric College feature
-            //3 9 4 3 3 ̶ ̶ ̶ ̶ ̶ ̶
+            //6th +3 Channel Divinity(2/rest),	Divine Domain feature
+            //4 4 3 3 ̶ ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 6,
-                BaseProficiency = 3,
-                CantripsKnown = 2,
-                SpellsKnown = 9,
-                SpellSlots = [3, 4, 3, 3, 0, 0, 0, 0, 0, 0],
+                BaseProficiency = 4,
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 3, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.CounterCharm,
-                    ClassFeatureEnum.ClericCollegeFeature,
+                    ClassFeatureEnum.ChannelDivinity,
+                    ClassFeatureEnum.DivineDomain,
                 ],
             },
             #endregion
 
             #region 7th Level
-            //7th +3 ̶ 3 10 4 3 3 1 ̶ ̶ ̶ ̶ ̶
+            //7th +3 ̶ 4 4 3 3 1 ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 7,
                 BaseProficiency = 3,
-                CantripsKnown = 3,
-                SpellsKnown = 10,
-                SpellSlots = [2, 4, 3, 3, 0, 0, 0, 0, 0, 0],
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 3, 1, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
                 ],
@@ -151,30 +148,31 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 8th Level
-            //8th +3 Ability Score Improvement 3 11 4 3 3 2 ̶ ̶ ̶ ̶ ̶
+            //8th +3 Ability Score Improvement, Destroy Undead (CR 1), Divine Domain feature
+            //4 4 3 3 2 ̶ ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 8,
                 BaseProficiency = 3,
-                CantripsKnown = 3,
-                SpellsKnown = 11,
-                SpellSlots = [3, 4, 3, 3, 2, 0, 0, 0, 0, 0],
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 3, 2, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.AbilityScoreImprovement
+                    ClassFeatureEnum.AbilityScoreImprovement,
+                    ClassFeatureEnum.DestroyUndead,
+                    ClassFeatureEnum.DivineDomain
                 ],
             },
             #endregion
 
             #region 9th Level
-            //9th +4 Song of Rest (d8) 3 12 4 3 3 3 1 ̶ ̶ ̶ ̶
+            //9th +4 ̶ 4 4 3 3 3 1 ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 8,
                 BaseProficiency = 4,
-                CantripsKnown = 3,
-                SpellsKnown = 12,
-                SpellSlots = [3, 4, 3, 3, 3, 1, 0, 0, 0, 0],
+                CantripsKnown = 4,
+                SpellSlots = [4, 4, 3, 3, 3, 1, 0, 0, 0, 0],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.SongofRest
@@ -183,48 +181,43 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 10th Level
-            //10th +4 Clericic Inspiration, Expertise, Magical Secrets
-            //4 14 4 3 3 3 2 ̶ ̶ ̶ ̶
+            //10th +4 Divine Intervention 5 4 3 3 3 2 ̶ ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 10,
                 BaseProficiency = 4,
                 CantripsKnown = 4,
-                SpellsKnown = 14,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 0, 0, 0, 0],
+                SpellSlots = [5, 4, 3, 3, 3, 2, 0, 0, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.ClericicInspiration,
-                    ClassFeatureEnum.Expertise,
-                    ClassFeatureEnum.MagicalSecrets
+                    ClassFeatureEnum.DivineIntervention,
                 ],
             },
             #endregion
 
             #region 11th Level
-            //11th +4 ̶ 4 15 4 3 3 3 2 1 ̶ ̶ ̶
+            //11th +4 Destroy Undead(CR 2) 5 4 3 3 3 2 1 ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 11,
                 BaseProficiency = 4,
-                CantripsKnown = 4,
-                SpellsKnown = 15,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 0, 0, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 0, 0, 0],
                 ClassFeatures =
                 [
+                    ClassFeatureEnum.DestroyUndead,
                 ],
             },
             #endregion
 
             #region 12th Level
-            //12th +4 Ability Score Improvement 4 15 4 3 3 3 2 1 ̶ ̶ ̶
+            //12th +4 Ability Score   Improvement 5 4 3 3 3 2 1 ̶ ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 12,
                 BaseProficiency = 4,
-                CantripsKnown = 4,
-                SpellsKnown = 15,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 0, 0, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 0, 0, 0],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.AbilityScoreImprovement
@@ -233,64 +226,56 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 13th Level
-            //13th +5 Song of Rest (d10) 4 16 4 3 3 3 2 1 1 ̶ ̶
+            //13th +5 ̶ 5 4 3 3 3 2 1 1 ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 13,
                 BaseProficiency = 5,
-                CantripsKnown = 4,
-                SpellsKnown = 16,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 0, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.SongofRest
                 ],
             },
             #endregion
 
             #region 14th Level
-            //14th +5 Magical Secrets, Cleric College feature
-            //4 18 4 3 3 3 2 1 1 ̶ ̶
+            //14th +5 Destroy Undead(CR 3) 5 4 3 3 3 2 1 1 ̶ ̶
             new ClericFeatureLevelEntry
             {
                 Level = 14,
                 BaseProficiency = 5,
-                CantripsKnown = 4,
-                SpellsKnown = 18,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 0, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 0, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.MagicalSecrets,
-                    ClassFeatureEnum.ClericCollegeFeature
+                    ClassFeatureEnum.DestroyUndead,
                 ],
             },
             #endregion
 
             #region 15th Level
-            //15th +5 Clericic  Inspiration (d12) 4 19 4 3 3 3 2 1 1 1 ̶
+            //15th +5 ̶ 5 4 3 3 3 2 1 1 1 ̶
             new ClericFeatureLevelEntry
             {
                 Level = 15,
                 BaseProficiency = 5,
-                CantripsKnown = 4,
-                SpellsKnown = 19,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 0],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.ClericicInspiration
                 ],
             },
             #endregion
 
             #region 16th Level
-            //16th +5 Ability Score Improvement 4 19 4 3 3 3 2 1 1 1 ̶
+            //16th +5 Ability Score Improvement 5 4 3 3 3 2 1 1 1 ̶
             new ClericFeatureLevelEntry
             {
                 Level = 16,
                 BaseProficiency = 5,
-                CantripsKnown = 4,
-                SpellsKnown = 19,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 0],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 0],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.AbilityScoreImprovement
@@ -299,47 +284,45 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 17th Level
-            //17th +6 Song of Rest (d12) 4 20 4 3 3 3 2 1 1 1 1
+            //17th +6 Destroy Undead(CR 4),	Divine Domain feature
+            //5 4 3 3 3 2 1 1 1 1
             new ClericFeatureLevelEntry
             {
                 Level = 17,
                 BaseProficiency = 6,
-                CantripsKnown = 4,
-                SpellsKnown = 20,
-                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 1],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 1],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.SongofRest
+                    ClassFeatureEnum.DestroyUndead,
+                    ClassFeatureEnum.DivineDomain
                 ],
             },
             #endregion
 
             #region 18th Level
-            //18th +6 Magical Secrets 4 22 4 3 3 3 3 1 1 1 1
+            //18th +6 Channel Divinity(3/rest) 5 4 3 3 3 3 1 1 1 1
             new ClericFeatureLevelEntry
             {
                 Level = 18,
                 BaseProficiency = 6,
-                CantripsKnown = 4,
-                SpellsKnown = 22,
-                SpellSlots = [4, 4, 3, 3, 3, 3, 1, 1, 1, 1],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 3, 1, 1, 1, 1],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.MagicalSecrets
+                    ClassFeatureEnum.ChannelDivinity
                 ],
             },
             #endregion
 
             #region 19th Level
-            //19th +6 Ability Score Improvement
-            //4 22 4 3 3 3 3 2 1 1 1
+            //19th +6 Ability Score Improvement 5 4 3 3 3 3 2 1 1 1
             new ClericFeatureLevelEntry
             {
                 Level = 19,
                 BaseProficiency = 6,
-                CantripsKnown = 4,
-                SpellsKnown = 22,
-                SpellSlots = [4, 4, 3, 3, 3, 3, 2, 1, 1, 1],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 3, 2, 1, 1, 1],
                 ClassFeatures =
                 [
                     ClassFeatureEnum.AbilityScoreImprovement
@@ -348,21 +331,21 @@ public class ClericLevelTable : GameTable, IClericLevelTable
             #endregion
 
             #region 20th Level
-            //20th +6 Superior Inspiration
-            //4 22 4 3 3 3 3 2 2 1 1    
+            //20th +6 Divine Intervention improvement
+            //5 4 3 3 3 3 2 2 1 1
             new ClericFeatureLevelEntry
             {
                 Level = 20,
                 BaseProficiency = 6,
-                CantripsKnown = 4,
-                SpellsKnown = 22,
-                SpellSlots = [4, 4, 3, 3, 3, 3, 2, 2, 1, 1],
+                CantripsKnown = 5,
+                SpellSlots = [5, 4, 3, 3, 3, 3, 2, 2, 1, 1],
                 ClassFeatures =
                 [
-                    ClassFeatureEnum.SuperiorInspiration
+                    ClassFeatureEnum.DivineIntervention
                 ],
             },
             #endregion
         ];
     }
 }
+//The Cleric
