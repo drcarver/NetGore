@@ -52,5 +52,7 @@ public enum EquipmentCategoryEnum
     /// your Armor Class by 2. You can benefit from only
     /// one shield at a time
     /// </summary>
-    Shields
+    Shields,
+    SimpleWeapon,
+    MartialWeapon
 }

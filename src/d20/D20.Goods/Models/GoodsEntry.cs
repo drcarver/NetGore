@@ -18,5 +18,5 @@ public class GoodsEntry : GameTableEntry, IGoodsTableEntry
     /// <summary>
     /// The cost of the good
     /// </summary>
-    public GoodsCost Cost { get; set; }
+    public GoodsCost? Cost { get; set; }
 }
