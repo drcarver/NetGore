@@ -4,13 +4,13 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class Ammunition : GoodsTableEntry, IAmmunition
+public class MiscellaneousItem : GoodsTableEntry, IMiscellaneousItem
 {
     /// <summary>
     /// A good to be purchased
     /// </summary>
     [SetsRequiredMembers]
-    public Ammunition()
+    public MiscellaneousItem()
     {
     }
 

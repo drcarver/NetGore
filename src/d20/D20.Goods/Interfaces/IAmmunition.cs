@@ -1,6 +1,6 @@
 ﻿namespace D20.Goods.Interfaces;
 
-public interface IMiscellaneousItem : IGoodsTableEntry
+public interface IAmmunition : IGoodsTableEntry
 {
     /// <summary>
     /// The weight of the gear

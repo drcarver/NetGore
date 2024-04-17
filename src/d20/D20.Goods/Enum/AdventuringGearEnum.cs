@@ -50,4 +50,5 @@ public enum AdventuringGearEnum
     ComponentPouch = 46,
     Crowbar = 47,
     SprigOfMistletoe = 48,
+    Wand = 49,
 }
