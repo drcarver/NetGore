@@ -1,6 +1,4 @@
-﻿using D20.Goods.Interfaces;
-
-namespace D20.Goods.Models;
+﻿namespace D20.Goods.Interfaces;
 
 public interface IGearTableEntry : IGoodsTableEntry
 {

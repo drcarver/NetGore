@@ -13,15 +13,15 @@ public class Coin : BaseObject
     /// <param name="name">The name of the coin</param>
     /// <param name="abbreviation">The abbreviation</param>
     [SetsRequiredMembers]
-    public Coin(string name, string abbreviation, CoinEnum coin)
+    public Coin(string abbreviation, CoinEnum coin)
     {
-        Name = name;
+        Name = nameof(coin);
         Abbreviation = abbreviation;
         CoinEnum = coin;
     }
 
     /// <summary>
-    /// THe coin enum
+    /// The coin enum
     /// </summary>
     public CoinEnum CoinEnum { get; set; }
     

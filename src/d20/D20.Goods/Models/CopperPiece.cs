@@ -9,7 +9,7 @@ public class CopperPiece : Coin
     /// </summary>
     [SetsRequiredMembers]
     public CopperPiece()
-        : base("Copper", "cp", Enum.CoinEnum.Copper)
+        : base("cp", Enum.CoinEnum.Copper)
     {
     }
 }

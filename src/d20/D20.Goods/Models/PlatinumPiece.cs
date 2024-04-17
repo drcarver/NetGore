@@ -9,7 +9,7 @@ public class PlatinumPiece : Coin
     /// </summary>
     [SetsRequiredMembers]
     public PlatinumPiece()
-        : base("Platinum", "pp", Enum.CoinEnum.Platinum)
+        : base("pp", Enum.CoinEnum.Platinum)
     {
     }
 }
