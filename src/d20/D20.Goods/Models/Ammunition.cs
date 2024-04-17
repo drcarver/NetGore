@@ -1,17 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Core.Models;
 using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class GearTableEntry : GoodsTableEntry, IGearTableEntry
+public class MiscellaneousItem : GoodsTableEntry, IMiscellaneousItem
 {
     /// <summary>
     /// A good to be purchased
     /// </summary>
     [SetsRequiredMembers]
-    public GearTableEntry()
+    public MiscellaneousItem()
     {
     }
 
@@ -19,4 +18,9 @@ public class GearTableEntry : GoodsTableEntry, IGearTableEntry
     /// The weight of the gear
     /// </summary>
     public decimal Weight { get; set; }
+
+    /// <summary>
+    /// The quantity of the ammunition
+    /// </summary>
+    public int Quantity { get; set; }
 }

@@ -1,5 +1,4 @@
-﻿using D20.Core.Interfaces;
-using D20.Goods.Enum;
+﻿using D20.Goods.Enum;
 using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;

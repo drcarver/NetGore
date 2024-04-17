@@ -2,7 +2,6 @@
 
 using D20.Core.Enum;
 using D20.Core.Models;
-using D20.Goods.Enum;
 using D20.Goods.Models;
 
 namespace D20.Goods.Tables;

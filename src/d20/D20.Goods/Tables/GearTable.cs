@@ -1,13 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 
+using D20.Core.Abilities;
 using D20.Core.Enum;
 using D20.Core.Models;
 using D20.Goods.Enum;
 using D20.Goods.Interfaces;
 using D20.Goods.Models;
 
-using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+
+using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace D20.Goods.Tables;
 
@@ -26,9 +28,9 @@ public class GearTable : GameTable, IGearTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a separate method so 
+    /// Initialize the game table. This is a separate method so 
     /// we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of 
+    /// with out creating the actual able values. A bit of 
     /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
@@ -36,7 +38,7 @@ public class GearTable : GameTable, IGearTable
         Table =
         [
             #region Abacus
-            //Abacus 2	gp 2	lb.
+            //Abacus 2gp 2lb.
             new GearTableEntry
             {
                 Name = nameof(AdventuringGearEnum.Abacus),
@@ -46,129 +48,623 @@ public class GearTable : GameTable, IGearTable
             },
             #endregion
 
-            #region Acid(vial)
-            //Acid(vial) 25	gp 1lb.
+            #region Acid
+            //Acid(vial) 25gp 1lb.
             new GearTableEntry
             {
-                Name = nameof(AdventuringGearEnum.AcidVial),
-                ProperName = "Acid (vial)",
+                Name = nameof(AdventuringGearEnum.Acid),
+                ProperName = "Acid",
                 Cost = new GoodsCost(25, new GoldPiece()),
                 Weight = 1,
+                Container = AdventuringGearEnum.Vial,
+                Description =
+                    "As an action, you can splash the contents of " +
+                    "this vial onto a creature within 5 feet of you or throw " +
+                    "the vial up to 20 feet, shattering it on impact. In " +
+                    "either case, make a ranged attack against a creature " +
+                    "or object, treating the acid as an improvised weapon. " +
+                    "On a hit, the target takes 2d6 acid damage.",
             },
+
             #endregion
 
-            #region Alchemist’s fire(flask)
-            //Alchemist’s fire(flask) 50	gp 1	lb.
+            #region Alchemist’s fire
+            //Alchemist’s fire(flask) 50gp 1lb.
             new GearTableEntry
             {
                 Name = nameof(AdventuringGearEnum.Alchemistsfire),
-                ProperName = "Alchemist’s fire(flask)",
+                ProperName = "Alchemist’s fire",
                 Cost = new GoodsCost(50, new GoldPiece()),
                 Weight = 1,
+                Container= AdventuringGearEnum.Flask,
+                Description =
+                    "This sticky, adhesive fluid ignites " +
+                    "when exposed to air.As an action, you can throw this " +
+                    "flask up to 20 feet, shattering it on impact. Make a " +
+                    "ranged attack against a creature or object, treating " +
+                    "the alchemist's fire as an improvised weapon. On a  " +
+                    "hit, the target takes 1d4 fire damage at the start of " +
+                    "each of its turns. A creature can end this damage by " +
+                    "using its action to make a DC 10 Dexterity check to " +
+                    "extinguish the flames",
+            },
+            #endregion
+
+            #region Arrows
+            //Arrows(20) 1gp 1lb.
+            new Ammunition
+            {
+                Name = nameof(AdventuringGearEnum.Arrows),
+                ProperName = "Arrows",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 1,
+                Quantity = 20
+            },
+            #endregion
+
+            #region Blowgun needles
+            //Blowgun needles(50) 1gp 1lb.
+            new Ammunition
+            {
+                Name = nameof(AdventuringGearEnum.BlowgunNeedles),
+                ProperName = "Blowgun needles",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 1,
+                Quantity = 50
+            },
+            #endregion
+
+            #region Crossbow bolts
+            //Crossbow bolts(20) 1gp 1½lb.
+            new Ammunition
+            {
+                Name = nameof(AdventuringGearEnum.Crossbowbolts),
+                ProperName = "Crossbow bolts",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = Convert.ToDecimal("1.5"),
+                Quantity = 20
+            },
+            #endregion
+
+            #region Sling bullets
+            //Sling bullets(20) 4cp 1½lb.
+            new Ammunition
+            {
+                Name = nameof(AdventuringGearEnum.Slingbullets),
+                ProperName = "Sling bullets",
+                Cost = new GoodsCost(4, new CopperPiece()),
+                Weight = Convert.ToDecimal("1.5"),
+                Quantity = 20
+            },
+            #endregion
+
+            #region Antitoxin
+            //Antitoxin(vial) 50gp —
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Antitoxin),
+                ProperName = "Antitoxin",
+                Cost = new GoodsCost(50, new GoldPiece()),
+                Weight = 0,
+                Container = AdventuringGearEnum.Vial,
+                Description =
+                    "A creature that drinks this vial of liquid " +
+                    "gains advantage on saving throws against poison for " +
+                    "1 hour. It confers no benefit to undead or constructs"
+            },
+            #endregion
+
+            #region Crystal
+            //Crystal 10gp 1lb.
+            new ArcaneFocus
+            {
+                Name = nameof(AdventuringGearEnum.Crystal),
+                ProperName = "Crystal",
+                Cost = new GoodsCost(10, new GoldPiece()),
+                Weight = 1,
+                Description =
+                    "An arcane focus is a special item— " +
+                    "an orb, a crystal, a rod, a specially constructed staff, a " +
+                    "wand-like length of wood, or some similar item— " +
+                    "designed to channel the power of arcane spells. A " +
+                    "sorcerer, warlock, or wizard can use such an item as " +
+                    "a spellcasting focus.",
+            },
+            #endregion
+
+            #region Orb
+            //Orb 20gp 3lb.
+            new ArcaneFocus
+            {
+                Name = nameof(AdventuringGearEnum.Orb),
+                ProperName = "Orb",
+                Cost = new GoodsCost(20, new GoldPiece()),
+                Weight = 2,
+                Description =
+                    "An arcane focus is a special item— " +
+                    "an orb, a crystal, a rod, a specially constructed staff, a " +
+                    "wand-like length of wood, or some similar item— " +
+                    "designed to channel the power of arcane spells. A " +
+                    "sorcerer, warlock, or wizard can use such an item as " +
+                    "a spellcasting focus.",
+            },
+            #endregion
+
+            #region Rod
+            //Rod 10gp 2lb.
+            new ArcaneFocus
+            {
+                Name = nameof(AdventuringGearEnum.Rod),
+                ProperName = "Rod",
+                Cost = new GoodsCost(10, new GoldPiece()),
+                Weight = 2,
+                Description =
+                    "An arcane focus is a special item— " +
+                    "an orb, a crystal, a rod, a specially constructed staff, a " +
+                    "wand-like length of wood, or some similar item— " +
+                    "designed to channel the power of arcane spells. A " +
+                    "sorcerer, warlock, or wizard can use such an item as " +
+                    "a spellcasting focus.",
+            },
+            #endregion
+
+            #region Staff
+            //Staff 5gp 4lb.
+            new ArcaneFocus
+            {
+                Name = nameof(AdventuringGearEnum.Staff),
+                ProperName = "Staff",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 4,
+                Description =
+                    "An arcane focus is a special item— " +
+                    "an orb, a crystal, a rod, a specially constructed staff, a " +
+                    "wand-like length of wood, or some similar item— " +
+                    "designed to channel the power of arcane spells. A " +
+                    "sorcerer, warlock, or wizard can use such an item as " +
+                    "a spellcasting focus.",
+            },
+            #endregion
+
+            #region Wand
+            //Wand 10gp 1lb.
+            new ArcaneFocus
+            {
+                Name = nameof(AdventuringGearEnum.Wand),
+                ProperName = "Wand",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 4,
+                Description =
+                    "An arcane focus is a special item— " +
+                    "an orb, a crystal, a rod, a specially constructed staff, a " +
+                    "wand-like length of wood, or some similar item— " +
+                    "designed to channel the power of arcane spells. A " +
+                    "sorcerer, warlock, or wizard can use such an item as " +
+                    "a spellcasting focus.",
+            },
+            #endregion
+
+            #region Backpack
+            //Backpack 2gp 5lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Backpack),
+                ProperName = "Backpack",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 5,
+            },
+            #endregion
+
+            #region Ball bearings
+            //Ball bearings(bag of	1,000) 1gp 2lb.
+            new BagOf
+            {
+                Name = nameof(AdventuringGearEnum.Ballbearings),
+                ProperName = "Ball bearings",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 21,
+                Quantity = 1000,
+                Description =
+                    "As an action, you can spill these " +
+                    "tiny metal balls from their pouch to cover a level, " +
+                    "square area that is 10 feet on a side. A creature " +
+                    "moving across the covered area must succeed on a " +
+                    "DC 10 Dexterity saving throw or fall prone. A " +
+                    "creature moving through the area at half speed " +
+                    "doesn’t need to make the save.",
+            },
+            #endregion
+
+            #region Barrel
+            //Barrel 2gp 70lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Barrel),
+                ProperName = "Barrel",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 70,
+            },
+            #endregion
+
+            #region Basket
+            //Basket 4sp 2lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Basket),
+                ProperName = "Basket",
+                Cost = new GoodsCost(2, new SilverPiece()),
+                Weight = 2,
+            },
+            #endregion
+
+            #region Bedroll
+            //Bedroll 1gp 7lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Bedroll),
+                ProperName = "Bedroll",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 7,
+            },
+            #endregion
+
+            #region Bell
+            //Bell 1gp —
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Bell),
+                ProperName = "Bell",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 0,
+            },
+            #endregion
+
+            #region Blanket
+            //Blanket 5sp 3lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Blanket),
+                ProperName = "Blanket",
+                Cost = new GoodsCost(5, new SilverPiece()),
+                Weight = 3,
+            },
+            #endregion
+
+            #region Block and tackle
+            //Block and tackle 1gp 5lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Blockandtackle),
+                ProperName = "Block and tackle",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 5,
+                Description =
+                    "A set of pulleys with a cable " +
+                    "threaded through them and a hook to attach to " +
+                    "objects, a block and tackle allows you to hoist up to " +
+                    "four times the weight you can normally lift.",
+            },
+            #endregion
+
+            #region Book
+            //Book 25gp 5lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Book),
+                ProperName = "Book",
+                Cost = new GoodsCost(25, new GoldPiece()),
+                Weight = 5,
+                Description =
+                    "A book might contain poetry, historical " +
+                    "accounts, information pertaining to a particular field " +
+                    "of lore, diagrams and notes on gnomish contraptions, " +
+                    "or just about anything else that can be represented " +
+                    "using text or pictures.",
+            },
+            #endregion
+
+            #region Glass Bottle
+            //Glass Bottle 2gp 2lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.GlassBottle),
+                ProperName = "Glass Bottle",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 2,
+            },
+            #endregion
+
+            #region Bucket
+            //Bucket 5cp 2lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Bucket),
+                ProperName = "Bucket",
+                Cost = new GoodsCost(5, new CopperPiece()),
+                Weight = 2,
+            },
+            #endregion
+
+            #region Caltrops
+            //Caltrops(bag of 20) 1gp 2lb.
+            new BagOf
+            {
+                Name = nameof(AdventuringGearEnum.Caltrops),
+                ProperName = "Caltrops",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 2,
+                Quantity = 20,
+                Description =
+                    "As an action, you can spread a bag of " +
+                    "caltrops to cover a square area that is 5 feet on a side. " +
+                    "Any creature that enters the area must succeed on a " +
+                    "DC 15 Dexterity saving throw or stop moving this " +
+                    "turn and take 1 piercing damage. Taking this damage " +
+                    "reduces the creature’s walking speed by 10 feet until " +
+                    "the creature regains at least 1 hit point. A creature " +
+                    "moving through the area at half speed doesn’t need " +
+                    "to make the save."
+            },
+            #endregion
+
+            #region Candle
+            //Candle 1cp —
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Candle),
+                ProperName = "Candle",
+                Cost = new GoodsCost(1, new CopperPiece()),
+                Weight = 0,
+                Description =
+                    "For 1 hour, a candle sheds bright light in a " +
+                    "5-foot radius and dim light for an additional 5 feet.",
+            },
+            #endregion
+
+            #region Crossbow bolt Case
+            //Crossbow bolt Case  1gp 1lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.CrossbowboltCase),
+                ProperName = "Crossbow Case",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 1,
+                Description = "This wooden case can hold up to twenty crossbow bolts.",
+            },
+            #endregion
+
+            #region Map or scroll Case
+            //Case,	map or scroll 1gp 1lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.MapOrScroll),
+                ProperName = "Map or scroll Case",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 1,
+                Description =
+                    "This cylindrical leather case can hold up " +
+                    "to ten rolled-up sheets of paper or five " +
+                    "rolled-up sheets of parchment.",
+            },
+            #endregion
+
+            #region Chain
+            //Chain(10 feet) 5gp 10lb.
+            new ByLength
+            {
+                Name = nameof(AdventuringGearEnum.Chain),
+                ProperName = "Chain",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 10,
+                Length = new Height(10, 0),
+                Description =
+                    "A chain has 10 hit points. It can be burst " +
+                    "with a successful DC 20 Strength check.",
+            },
+            #endregion
+
+            #region Chalk
+            //Chalk(1 piece) 1cp —
+            new MiscellaneousItem
+            {
+                Name = nameof(AdventuringGearEnum.Chalk),
+                ProperName = "Chalk",
+                Cost = new GoodsCost(1, new CopperPiece()),
+                Weight = 0,
+                Quantity = 1,
+                Description = "1 Piece",
+            },
+            #endregion
+
+            #region Chest
+            //Chest 5gp 25lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Chest),
+                ProperName = "Chest",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 25,
+                Container = AdventuringGearEnum.Chest,
+            },
+            #endregion
+
+            #region Climber’s kit
+            //Climber’s kit 25gp 12lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Climberskit),
+                ProperName = "Climber’s kit",
+                Cost = new GoodsCost(25, new GoldPiece()),
+                Weight = 12,
+                Description =
+                    "A climber’s kit includes special " +
+                    "pitons, boot tips, gloves, and a harness.You can use " +
+                    "the climber’s kit as an action to anchor yourself; " +
+                    "when you do, you can’t fall more than 25 feet from " +
+                    "the point where you anchored yourself, and you " +
+                    "can’t climb more than 25 feet away from that point " +
+                    "without undoing the anchor.",
+            },
+            #endregion
+
+            #region Common Clothes
+            //Common Clothes 5sp 3lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.CommonClothes),
+                ProperName = "Common Clothes",
+                Cost = new GoodsCost(5, new SilverPiece()),
+                Weight = 3,
+            },
+            #endregion
+
+            #region Costume Clothes
+            //Costume Clothes 5gp 4lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.CostumeClothes),
+                ProperName = "Costume Clothes",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 4,
+            },
+            #endregion
+
+            #region Fine Clothes
+            //Clothes, fine 15gp 6lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.FineClothes),
+                ProperName = "Fine Clothes",
+                Cost = new GoodsCost(15, new GoldPiece()),
+                Weight = 6,
+            },
+            #endregion
+
+            #region Traveler’s Clothes
+            //Clothes,	traveler’s 2gp 4lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.TravelersClothes),
+                ProperName = "Traveler’s Clothes",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 4,
+            },
+            #endregion
+
+            #region Component Pouch
+            //Component pouch 25gp 2lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.ComponentPouch),
+                ProperName = "Component Pouch",
+                Cost = new GoodsCost(25, new GoldPiece()),
+                Weight = 2,
+                Description =
+                    "A component pouch is a small, " +
+                    "watertight leather belt pouch that has compartments " +
+                    "to hold all the material components and other " +
+                    "special items you need to cast your spells, except for " +
+                    "those components that have a specific cost(as " +
+                    "indicated in a spell's description).",
+            },
+            #endregion
+
+            #region Crowbar
+            //Crowbar 2gp 5lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Crowbar),
+                ProperName = "Crowbar",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 5,
+                Description =
+                    "Using a crowbar grants advantage to " +
+                    "Strength checks where the crowbar’s leverage can " +
+                    "be applied.",
+            },
+            #endregion
+
+            #region Sprig of mistletoe
+            //Sprig of mistletoe 1gp —
+            new DruidicFocus
+            {
+                Name = nameof(AdventuringGearEnum.SprigOfMistletoe),
+                ProperName = "Sprig of mistletoe",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 0,
+                Description =
+                    "A druidic focus might be a sprig of " +
+                    "mistletoe or holly, a wand or scepter made of yew or " +
+                    "another special wood, a staff drawn whole out of a " +
+                    "living tree, or a totem object incorporating feathers, " +
+                    "fur, bones, and teeth from sacred animals.A druid " +
+                    "can use such an object as a spellcasting focus.",
             },
             #endregion
         ];
     }
 }
 
-//Ammunition
-//Arrows(20) 1	gp 1	lb.
-//Blowgun needles(50) 1	gp 1	lb.
-//Crossbow bolts(20) 1	gp 1½	lb.
-//Sling bullets(20) 4	cp 1½	lb.
-//Antitoxin(vial) 50	gp —
-//Arcane focus
-//Crystal 10	gp 1	lb.
-//Orb 20	gp 3	lb.
-//Rod 10	gp 2	lb.
-//Staff 5	gp 4	lb.
-//Wand 10	gp 1	lb.
-//Backpack 2	gp 5	lb.
-//Ball bearings(bag of	1,000) 1	gp 2	lb.
-//Barrel 2	gp 70	lb.
-//Basket 4	sp 2	lb.
-//Bedroll 1	gp 7	lb.
-//Bell 1	gp —
-//Blanket 5	sp 3	lb.
-//Block and tackle 1	gp 5	lb.
-//Book 25	gp 5	lb.
-//Bottle,	glass 2	gp 2	lb.
-//Bucket 5	cp 2	lb.
-//Caltrops(bag of  20) 1	gp 2	lb.
-//Candle 1	cp —
-//Case,	crossbow bolt 1	gp 1	lb.
-//Case,	map or  scroll 1	gp 1	lb.
-//Chain(10	feet) 5	gp 10	lb.
-//Chalk(1	piece) 1	cp —
-//Chest 5	gp 25	lb.
-//Climber’s kit 25	gp 12	lb.
-//Clothes,	common 5	sp 3	lb.
-//Clothes,	costume 5	gp 4	lb.
-//Clothes,	fine 15	gp 6	lb.
-//Clothes,	traveler’s 2	gp 4	lb.
-//Component pouch 25	gp 2	lb.
-//Crowbar 2	gp 5	lb.
 //Druidic focus
-//Sprig of  mistletoe 1	gp —
-//Totem 1	gp —
-//Wooden staff 5	gp 4	lb.
-//Yew wand 10	gp 1	lb.
-//Fishing tackle 1	gp 4	lb.
-//Flask or  tankard 2	cp 1	lb.
-//Grappling hook 2	gp 4	lb.
-//Hammer 1	gp 3	lb.
-//Hammer,	sledge 2	gp 10	lb.
-//Healer’s kit 5	gp 3	lb.
+//Totem 1gp —
+//Wooden staff 5gp 4lb.
+//Yew wand 10gp 1lb.
+//Fishing tackle 1gp 4lb.
+//Flask or tankard 2cp 1lb.
+//Grappling hook 2gp 4lb.
+//Hammer 1gp 3lb.
+//Hammer, sledge 2gp 10lb.
+//Healer’s kit 5gp 3lb.
 //Holy symbol
-//Amulet 5	gp 1	lb.
-//Emblem 5	gp —
-//Reliquary 5	gp 2	lb.
-//Holy water(flask) 25	gp 1	lb
-//Hourglass 25	gp 1	lb.
-//Hunting trap 5	gp 25	lb.
-//Ink(1	ounce bottle) 10	gp —
-//Ink pen 2	cp —
-//Jug or  pitcher 2	cp 4	lb.
-//Ladder(10-foot) 1	sp 25	lb.
-//Lamp 5	sp 1	lb.
-//Lantern,	bullseye 10	gp 2	lb.
-//Lantern,	hooded 5	gp 2	lb.
-//Lock 10	gp 1	lb.
-//Magnifying glass 100	gp —
-//Manacles 2	gp 6	lb.
-//Mess kit 2	sp 1	lb.
-//Mirror,	steel 5	gp 1/2	lb.
-//Oil(flask) 1	sp 1	lb.
-//Paper(one sheet) 2	sp —
-//Parchment(one sheet) 1	sp —
-//Perfume(vial) 5	gp —
-//Pick,	miner’s 2	gp 10	lb.
-//Piton 5	cp 1/4	lb.
-//Poison,basic(vial) 100	gp —
-//Pole(10-foot) 5	cp 7	lb.
-//Pot,	iron 2	gp 10	lb.
-//Potion of  healing 50	gp 1/2	lb.
-//Pouch 5	sp 1	lb.
-//Quiver 1	gp 1	lb.
-//Ram,	portable 4	gp 35	lb.
-//Rations(1	day) 5	sp 2	lb.
-//Robes 1	gp 4	lb.
-//Rope,	hempen(50	feet) 1	gp 10	lb.
-//Rope,	silk(50	feet) 10	gp 5	lb.
-//Sack 1	cp 1/2	lb.
-//Scale,	merchant’s 5	gp 3	lb.
-//Sealing wax 5	sp —
-//Shovel 2	gp 5	lb.
-//Signal whistle 5	cp —
-//Signet ring 5	gp —
-//Soap 2	cp —
-//Spellbook 50	gp 3	lb.
-//Spikes,	iron(10) 1	gp 5	lb.
-//Spyglass 1,000	gp 1	lb.
-//Tent,	two
-//-person 2	gp 20	lb.
-//Tinderbox 5	sp 1	lb.
-//Torch 1	cp 1	lb.
-//Vial 1	gp —
-//Waterskin 2	sp 5	lb. (full)
-//Whetstone 1	cp 1	lb.
+//Amulet 5gp 1lb.
+//Emblem 5gp —
+//Reliquary 5gp 2lb.
+//Holy water(flask) 25gp 1lb
+//Hourglass 25gp 1lb.
+//Hunting trap 5gp 25lb.
+//Ink(1	ounce bottle) 10gp —
+//Ink pen 2cp —
+//Jug or pitcher 2cp 4lb.
+//Ladder(10-foot) 1sp 25lb.
+//Lamp 5sp 1lb.
+//Lantern, bullseye 10gp 2lb.
+//Lantern, hooded 5gp 2lb.
+//Lock 10gp 1lb.
+//Magnifying glass 100gp —
+//Manacles 2gp 6lb.
+//Mess kit 2sp 1lb.
+//Mirror, steel 5gp 1/2lb.
+//Oil(flask) 1sp 1lb.
+//Paper(one sheet) 2sp —
+//Parchment(one sheet) 1sp —
+//Perfume(vial) 5gp —
+//Pick,	miner’s 2gp 10lb.
+//Piton 5cp 1/4	lb.
+//Poison,basic(vial) 100gp —
+//Pole(10-foot) 5cp 7lb.
+//Pot, iron 2gp 10lb.
+//Potion of healing 50gp 1/2	lb.
+//Pouch 5sp 1lb.
+//Quiver 1gp 1lb.
+//Ram,	portable 4gp 35lb.
+//Rations(1	day) 5sp 2lb.
+//Robes 1gp 4lb.
+//Rope,	hempen(50 feet) 1gp 10lb.
+//Rope,	silk(50	feet) 10gp 5lb.
+//Sack 1cp 1/2lb.
+//Scale, merchant’s 5gp 3lb.
+//Sealing wax 5sp —
+//Shovel 2gp 5lb.
+//Signal whistle 5cp —
+//Signet ring 5gp —
+//Soap 2cp —
+//Spell book 50gp 3lb.
+//Spikes, iron(10) 1gp 5lb.
+//Spyglass 1000gp 1lb.
+//Tent,	two-person 2gp 20lb.
+//Tinderbox 5sp 1lb.
+//Torch 1cp 1lb.
+//Vial 1gp —
+//Waterskin 2sp 5lb. (full)
+//Whetstone 1cp 1lb.
+

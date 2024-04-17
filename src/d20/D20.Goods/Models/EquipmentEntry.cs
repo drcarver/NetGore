@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Core.Enum;
 using D20.Goods.Enum;
 using D20.Goods.Interfaces;
 

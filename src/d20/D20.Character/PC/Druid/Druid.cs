@@ -39,9 +39,10 @@ public class Druid : CharacterClassBase
         serviceProvider = services;
         Name = nameof(Druid);
         Description =
-            "Druids have a talent for song and story, and they come to " +
-            "their careers by developing this talent as they pick up " +
-            "on a smattering of other skills.";
+            "Druids come by their primal power in various " +
+            "ways. One druid might receive her power from " +
+            "an elemental creature, and another might learn " +
+            "it from a beast or the fey.";
         HitDice = "1d8";
         ArmorProficiency =
         [
