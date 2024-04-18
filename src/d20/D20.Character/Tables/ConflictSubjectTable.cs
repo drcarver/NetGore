@@ -36,7 +36,7 @@ namespace D20.Character.Tables;
 /// child or a young person does the subject affect 
 /// the accumulation of CP.
 /// </summary>
-public class ConflictSubjectTable : GameTable, IConflictSubjectTable
+public class ConflictSubjectTable : NamedTable, IConflictSubjectTable
 {
     /// <summary>
     /// Conflict Subject Table

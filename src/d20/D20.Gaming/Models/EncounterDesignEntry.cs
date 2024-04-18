@@ -5,7 +5,7 @@ using D20.Gaming.Interfaces;
 
 namespace D20.Gaming.Models;
 
-public class EncounterDesignEntry : GameTableEntry, IEncounterDesignEntry
+public class EncounterDesignEntry : NamedTableEntry, IEncounterDesignEntry
 {
     /// <summary>
     /// Constructor

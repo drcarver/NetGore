@@ -9,7 +9,7 @@ using D20.Core.Models;
 
 namespace D20.Character.PC.Bard;
 
-public class BardLevelTable : GameTable, IBardLevelTable
+public class BardLevelTable : NamedTable, IBardLevelTable
 {
     /// <summary>
     /// Constructor

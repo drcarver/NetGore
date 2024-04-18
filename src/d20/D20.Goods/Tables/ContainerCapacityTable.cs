@@ -7,7 +7,7 @@ using D20.Goods.Models;
 
 namespace D20.Goods.Tables;
 
-public class ContainerCapacityTable : GameTable, IContainerCapacityTable
+public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
 {
     /// <summary>
     /// Constructor

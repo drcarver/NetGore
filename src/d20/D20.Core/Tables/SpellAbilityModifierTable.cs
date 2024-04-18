@@ -10,7 +10,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// The gender table.  
 /// </summary>
-public class SpellAbilityModifierTable : GameTable
+public class SpellAbilityModifierTable : NamedTable
 {
     /// <summary>
     /// Constructor

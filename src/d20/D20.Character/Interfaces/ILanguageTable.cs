@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-internal interface ILanguageTable : IGameTable
+internal interface ILanguageTable : INamedTable
 {
 }

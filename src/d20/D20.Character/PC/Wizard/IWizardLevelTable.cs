@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Wizard;
 
-public interface IWizardLevelTable : IGameTable
+public interface IWizardLevelTable : INamedTable
 {
 }

@@ -7,7 +7,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Models;
 
-public class DeitiesTable : GameTable, IDeitiesTable
+public class DeitiesTable : NamedTable, IDeitiesTable
 {
     /// <summary>
     /// The deities for a particular pantheon

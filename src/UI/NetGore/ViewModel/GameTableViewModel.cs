@@ -15,7 +15,7 @@ public partial class GameTableViewModel : ObservableObject
 
     private Guid? Id { get; set; }
 
-    public GameTableViewModel(GameTable table)
+    public GameTableViewModel(NamedTable table)
     {
         Id = table.Id;
         Name = table.ProperName ?? table.Name;

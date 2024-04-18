@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Cleric;
 
-public interface IClericLevelTable : IGameTable
+public interface IClericLevelTable : INamedTable
 {
 }

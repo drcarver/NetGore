@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Druid;
 
-public interface IDruidLevelTable : IGameTable
+public interface IDruidLevelTable : INamedTable
 {
 }

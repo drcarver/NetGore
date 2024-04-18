@@ -5,7 +5,7 @@ using D20.Core.Interfaces;
 
 namespace D20.Core.Models;
 
-public class RandomTable : GameTable, IRandomTable
+public class RandomTable : NamedTable, IRandomTable
 {
     /// <summary>
     /// The random table is used for those tables

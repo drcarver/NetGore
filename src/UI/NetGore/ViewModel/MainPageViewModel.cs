@@ -18,7 +18,7 @@ public partial class MainPageViewModel : ObservableObject
     /// <summary>
     /// The list of tables in the DI
     /// </summary>
-    private List<IGameTable> _tables = [];
+    private List<INamedTable> _tables = [];
 
     /// <summary>
     /// The name of the table

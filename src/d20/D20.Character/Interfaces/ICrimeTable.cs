@@ -6,6 +6,6 @@ namespace D20.Character.Interfaces;
 /// Empty interface to allow add the table as a transient
 /// in the DI
 /// </summary>
-public interface ICrimeTable : IGameTable
+public interface ICrimeTable : INamedTable
 {
 }

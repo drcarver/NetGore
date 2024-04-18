@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-internal interface INobilityTable : IGameTable
+internal interface INobilityTable : INamedTable
 {
 }

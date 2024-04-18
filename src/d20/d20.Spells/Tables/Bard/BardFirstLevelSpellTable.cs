@@ -6,7 +6,7 @@ using D20.Spells.Enum;
 
 namespace D20.Spells.Tables.Bard;
 
-public class BardFirstLevelSpellTable : GameTable, IBardFirstLevelSpellTable
+public class BardFirstLevelSpellTable : NamedTable, IBardFirstLevelSpellTable
 {
     /// <summary>
     /// Constructor

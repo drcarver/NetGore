@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IRomanticRelationshipsTable : IGameTable
+public interface IRomanticRelationshipsTable : INamedTable
 {
 }

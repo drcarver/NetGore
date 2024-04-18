@@ -9,7 +9,7 @@ namespace D20.Character.Tables;
 /// <summary>
 /// The list of features for the class
 /// </summary>
-public class ClassFeatureTable : GameTable, IClassFeatureTable
+public class ClassFeatureTable : NamedTable, IClassFeatureTable
 {
     /// <summary>
     /// Class feature list 

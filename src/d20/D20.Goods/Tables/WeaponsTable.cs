@@ -16,7 +16,7 @@ namespace D20.Goods.Tables;
 /// effectively can mean the difference between life and
 /// death while adventuring,
 /// </summary>
-public class WeaponsTable : GameTable, IWeaponsTable
+public class WeaponsTable : NamedTable, IWeaponsTable
 {
     /// <summary>
     /// Constructor

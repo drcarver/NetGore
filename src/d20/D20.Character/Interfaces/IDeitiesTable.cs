@@ -3,7 +3,7 @@ using D20.Core.Interfaces;
 
 namespace D20.Character.Interfaces;
 
-public interface IDeitiesTable : IGameTable
+public interface IDeitiesTable : INamedTable
 {
     /// <summary>
     /// Get deities by suggested class and alignment

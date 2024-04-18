@@ -10,7 +10,7 @@ namespace D20.Character.Tables;
 /// <summary>
 /// Beyond 1st Level
 /// </summary>
-public class CharacterAdvancementTable : GameTable, ICharacterAdvancementTable
+public class CharacterAdvancementTable : NamedTable, ICharacterAdvancementTable
 {
     /// <summary>
     /// Determine the character advancement.

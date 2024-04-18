@@ -5,7 +5,7 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class ContainerCapacityEntry : GameTableEntry, IContainerCapacityEntry
+public class ContainerCapacityEntry : NamedTableEntry, IContainerCapacityEntry
 {
     /// <summary>
     /// Constructor

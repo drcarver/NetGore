@@ -2,6 +2,6 @@
 
 namespace NetGore.Interfaces;
 
-public interface IMainNavigationTable : IGameTable
+public interface IMainNavigationTable : INamedTable
 {
 }

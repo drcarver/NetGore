@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Ranger;
 
-public interface IRangerLevelTable : IGameTable
+public interface IRangerLevelTable : INamedTable
 {
 }

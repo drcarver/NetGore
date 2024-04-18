@@ -2,6 +2,6 @@
 
 namespace D20.Goods.Interfaces;
 
-public interface IArmorTable : IGameTable
+public interface IArmorTable : INamedTable
 {
 }

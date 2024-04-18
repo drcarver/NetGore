@@ -5,7 +5,7 @@ using D20.Core.Models;
 
 namespace D20.Character.Tables;
 
-public class LanguageTable : GameTable, ILanguageTable
+public class LanguageTable : NamedTable, ILanguageTable
 {
     /// <summary>
     /// The Language Table

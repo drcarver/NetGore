@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Monk;
 
-public interface IMonkLevelTable : IGameTable
+public interface IMonkLevelTable : INamedTable
 {
 }

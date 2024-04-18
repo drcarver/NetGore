@@ -36,17 +36,7 @@ public class GameTable : BaseObject, IGameTable
     /// <summary>
     /// The table itself
     /// </summary>
-    public GameTableList<IGameTableEntry> Table { get; set; } = [];
-
-    /// <summary>
-    /// Get a entry from the table by it's name
-    /// </summary>
-    /// <returns>The selected RandomTableEntry.</returns>
-    public IGameTableEntry GetEntryByName(string Name)
-    {
-        var te = Table.First(t => t.Name == Name);
-        return te;
-    }
+    public List<IGameTableEntry> Table { get; set; } = [];
 
     /// <summary>
     /// Get a random entry from the table 

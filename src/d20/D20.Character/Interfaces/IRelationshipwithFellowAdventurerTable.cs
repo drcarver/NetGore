@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IRelationshipwithFellowAdventurerTable : IGameTable
+public interface IRelationshipwithFellowAdventurerTable : INamedTable
 {
 }

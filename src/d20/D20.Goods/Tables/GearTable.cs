@@ -16,7 +16,7 @@ using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace D20.Goods.Tables;
 
-public class GearTable : GameTable, IGearTable
+public class GearTable : NamedTable, IGearTable
 {
     /// <summary>
     /// Constructor

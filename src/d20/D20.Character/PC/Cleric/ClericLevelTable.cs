@@ -10,7 +10,7 @@ using Microsoft.Maui.Controls;
 
 namespace D20.Character.PC.Cleric;
 
-public class ClericLevelTable : GameTable, IClericLevelTable
+public class ClericLevelTable : NamedTable, IClericLevelTable
 {
     /// <summary>
     /// Constructor

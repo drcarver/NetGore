@@ -11,7 +11,7 @@ using NetGore.Core.Models;
 
 namespace D20.Character.PC.Druid;
 
-public class DruidLevelTable : GameTable, IDruidLevelTable
+public class DruidLevelTable : NamedTable, IDruidLevelTable
 {
     /// <summary>
     /// Constructor

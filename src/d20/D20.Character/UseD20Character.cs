@@ -15,7 +15,7 @@ public static class DataServices
     private static List<Type> GetGameTables() => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
-        .Where(t => t.IsSubclassOf(typeof(GameTable)) && t.Name != nameof(DeitiesTable))
+        .Where(t => t.IsSubclassOf(typeof(NamedTable)) && t.Name != nameof(DeitiesTable))
         .ToList();
 
     /// <summary>

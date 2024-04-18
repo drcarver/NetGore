@@ -2,6 +2,6 @@
 
 namespace D20.Gaming.Interfaces;
 
-internal interface IExperiencePointAwardsTable : IGameTable
+internal interface IExperiencePointAwardsTable : INamedTable
 {
 }

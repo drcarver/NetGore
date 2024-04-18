@@ -1,6 +1,6 @@
 ﻿namespace D20.Core.Interfaces;
 
-public interface IRandomTable : IGameTable
+public interface IRandomTable : INamedTable
 {
     /// <summary>
     /// The dice to roll

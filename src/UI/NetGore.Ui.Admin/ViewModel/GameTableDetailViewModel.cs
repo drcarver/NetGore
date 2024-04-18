@@ -45,7 +45,7 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(D20.Core.Models.GameTable)];
+        var table = (IGameTable) query[nameof(D20.Core.Models.NamedTable)];
         if (table == null)
             return;
 

@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Sorcerer;
 
-public interface ISorcererLevelTable : IGameTable
+public interface ISorcererLevelTable : INamedTable
 {
 }

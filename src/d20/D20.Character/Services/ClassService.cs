@@ -3,6 +3,7 @@ using D20.Character.PC.Barbarian;
 using D20.Character.PC.Bard;
 using D20.Character.PC.Cleric;
 using D20.Core;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 using Microsoft.Extensions.Logging;
@@ -21,7 +22,7 @@ public class ClassService : IClassService
     /// <summary>
     /// The class table
     /// </summary>
-    private static GameTable ClassTable { get; set; } = new()
+    private static NamedTable ClassTable { get; set; } = new()
     {
         Table =
         [
@@ -117,7 +118,7 @@ public class ClassService : IClassService
     /// <param name="character">The character class</param>
     public void SetClass(ICharacter character)
     {
-        var tableentry = ClassTable.GetRandomEntry();
+        var tableentry = (INamedTableEntry) ClassTable.GetRandomEntry();
         Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 
         // Set the class on the creature

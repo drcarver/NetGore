@@ -17,7 +17,7 @@ namespace D20.Character.PC.Barbarian;
 /// select few can channel that purest, deepest rage into 
 /// overpowering combat.
 /// </summary>
-public class BarbarianLevelTable : GameTable, IBarbarianLevelTable
+public class BarbarianLevelTable : NamedTable, IBarbarianLevelTable
 {
     /// <summary>
     /// Constructor

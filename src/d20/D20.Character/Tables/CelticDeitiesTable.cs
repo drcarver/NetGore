@@ -26,7 +26,7 @@ namespace D20.Character.Tables;
 /// nature that druids revere.
 /// </para>
 /// </summary>
-public class CelticDeitiesTable : GameTable, ICelticDeitiesTable
+public class CelticDeitiesTable : NamedTable, ICelticDeitiesTable
 {
     /// <summary>
     /// Constructor

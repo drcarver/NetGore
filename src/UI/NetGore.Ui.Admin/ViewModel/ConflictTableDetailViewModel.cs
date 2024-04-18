@@ -46,7 +46,7 @@ public partial class ConflictTableDetailViewModel : ObservableObject, IQueryAttr
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IConflictTable) query[nameof(GameTable)];
+        var table = (IConflictTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

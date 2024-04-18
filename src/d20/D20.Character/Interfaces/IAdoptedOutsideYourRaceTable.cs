@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IAdoptedOutsideYourRaceTable : IGameTable
+public interface IAdoptedOutsideYourRaceTable : INamedTable
 {
 }

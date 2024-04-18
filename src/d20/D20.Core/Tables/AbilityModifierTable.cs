@@ -10,7 +10,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// The ability modifier table.  
 /// </summary>
-public class AbilityModifierTable : GameTable
+public class AbilityModifierTable : NamedTable
 {
     /// <summary>
     /// Constructor

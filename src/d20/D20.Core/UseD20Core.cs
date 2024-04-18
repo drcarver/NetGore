@@ -14,7 +14,7 @@ public static class DataServices
     private static List<Type> GetGameTables() => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
-        .Where(t => t.IsSubclassOf(typeof(GameTable)) && t.Name != nameof(RandomTable))
+        .Where(t => t.IsSubclassOf(typeof(NamedTable)) && t.Name != nameof(RandomTable))
         .ToList();
 
     /// <summary>
@@ -36,7 +36,7 @@ public static class DataServices
         foreach (var table in list)
         {
             if (table.Name != nameof(RandomTable)
-                || table.Name != nameof(GameTable))
+                || table.Name != nameof(NamedTable))
             {
                 var t = collection.AddTransient(table);
             }

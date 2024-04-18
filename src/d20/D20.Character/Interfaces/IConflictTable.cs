@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IConflictTable : IGameTable
+public interface IConflictTable : INamedTable
 {
 }

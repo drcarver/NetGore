@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Paladin;
 
-public interface IPaladinLevelTable : IGameTable
+public interface IPaladinLevelTable : INamedTable
 {
 }

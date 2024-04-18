@@ -2,6 +2,6 @@
 
 namespace D20.Goods.Tables;
 
-public interface IContainerCapacityTable : IGameTable
+public interface IContainerCapacityTable : INamedTable
 {
 }

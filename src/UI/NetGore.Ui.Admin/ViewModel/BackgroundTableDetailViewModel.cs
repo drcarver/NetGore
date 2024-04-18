@@ -57,7 +57,7 @@ public partial class BackgroundTableDetailViewModel : ObservableObject, IQueryAt
     /// <param name="query">The navigation query</param>
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IRandomTable) query[nameof(GameTable)];
+        var table = (IRandomTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

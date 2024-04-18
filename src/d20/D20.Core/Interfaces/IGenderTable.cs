@@ -1,5 +1,5 @@
 ﻿namespace D20.Core.Interfaces;
 
-public interface IGenderTable : IGameTable
+public interface IGenderTable : INamedTable
 {
 }

@@ -18,7 +18,7 @@ namespace D20.Goods.Tables;
 //supplement their armor with a shield. The Armor
 //table shows the cost, weight, and other properties
 //of the common types of armor.
-public class ArmorTable : GameTable, IArmorTable
+public class ArmorTable : NamedTable, IArmorTable
 {
     /// <summary>
     /// Constructor

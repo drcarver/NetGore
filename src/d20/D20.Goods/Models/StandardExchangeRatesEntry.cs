@@ -7,7 +7,7 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class StandardExchangeRatesEntry : GameTableEntry, IStandardExchangeRatesEntry
+public class StandardExchangeRatesEntry : NamedTableEntry, IStandardExchangeRatesEntry
 {
     /// <summary>
     /// Constructor

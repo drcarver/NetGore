@@ -12,7 +12,7 @@ namespace D20.Core.Models;
 /// range to access the entries by number or 
 /// randomly
 /// </summary>
-public class StandardTableEntry : GameTableEntry, IStandardTableEntry
+public class StandardTableEntry : NamedTableEntry, IStandardTableEntry
 {
     /// <summary>
     /// Constructor
@@ -26,9 +26,4 @@ public class StandardTableEntry : GameTableEntry, IStandardTableEntry
     /// The English name for the entry
     /// </summary>
     public string? ProperName { get; set; }
-
-    /// <summary>
-    /// THe description of the entry
-    /// </summary>
-    public string? Description { get; set; }
 }

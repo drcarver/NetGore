@@ -14,7 +14,7 @@ namespace D20.Character.PC.Bard;
 /// trap, hazard, or other encounter—the higher the CR, 
 /// the more dangerous the encounter.
 /// </summary>
-public class EncounterDesignTable : GameTable, IEncounterDesignTable
+public class EncounterDesignTable : NamedTable, IEncounterDesignTable
 {
     /// <summary>
     /// Constructor

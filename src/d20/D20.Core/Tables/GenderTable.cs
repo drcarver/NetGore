@@ -8,7 +8,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// The gender table.  
 /// </summary>
-public class GenderTable : GameTable, IGenderTable
+public class GenderTable : NamedTable, IGenderTable
 {
     /// <summary>
     /// Constructor
@@ -27,7 +27,7 @@ public class GenderTable : GameTable, IGenderTable
     /// <returns>The selected Gender</returns>
     public GenderEnum GetGender()
     {
-        switch (GetRandomEntry().Name)
+        switch (((NamedTableEntry) GetRandomEntry()).Name)
         {
             case nameof(GenderEnum.Male):
                 return GenderEnum.Male;
@@ -39,20 +39,22 @@ public class GenderTable : GameTable, IGenderTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it;s meta properties
-    /// with out creating the table.  A bit of optimiation to conserve memeory
+    /// Initialize the game table.  This is a separate method 
+    /// so we can create a game table for it;s meta properties
+    /// with out creating the table.  A bit of optimization to 
+    /// conserve memory
     /// </summary>
     public override void InitializeTable()
     {
         Table =
         [
-            new StandardTableEntry
+            new NamedTableEntry
             {
                 Name = nameof(GenderEnum.Male),
                 Description = "The Male of the species",
             },
 
-            new StandardTableEntry
+            new NamedTableEntry
             {
                 Name = nameof(GenderEnum.Female),
                 Description = "The Female of the species",

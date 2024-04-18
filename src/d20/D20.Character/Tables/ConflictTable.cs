@@ -43,7 +43,7 @@ namespace D20.Character.Tables;
 /// Table: Conflict Subject and to the tables and 
 /// sections subsequent to it.
 /// </summary>
-public class ConflictTable : GameTable, IConflictTable
+public class ConflictTable : NamedTable, IConflictTable
 {
     /// <summary>
     /// Conflicts Table

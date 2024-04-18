@@ -19,7 +19,7 @@ namespace D20.Character.PC.Bard;
 /// highest CR challenges to the encounter first, filling 
 /// out the remaining total with lesser challenges.
 /// </summary>
-public class ExperiencePointAwardsTable : GameTable, IExperiencePointAwardsTable
+public class ExperiencePointAwardsTable : NamedTable, IExperiencePointAwardsTable
 {
     /// <summary>
     /// Constructor

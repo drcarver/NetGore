@@ -6,7 +6,7 @@ using D20.Goods.Models;
 
 namespace D20.Goods.Tables;
 
-public class StandardExchangeRatesTable : GameTable
+public class StandardExchangeRatesTable : NamedTable
 {
     /// <summary>
     /// Constructor

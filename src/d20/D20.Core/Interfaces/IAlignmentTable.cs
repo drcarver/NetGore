@@ -1,5 +1,5 @@
 ﻿namespace D20.Core.Interfaces;
 
-public interface IAlignmentTable : IGameTable
+public interface IAlignmentTable : INamedTable
 {
 }

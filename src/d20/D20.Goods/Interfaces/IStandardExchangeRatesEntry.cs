@@ -4,7 +4,7 @@ using D20.Goods.Models;
 
 namespace D20.Goods.Interfaces;
 
-public interface IStandardExchangeRatesEntry : IGameTableEntry
+public interface IStandardExchangeRatesEntry : INamedTableEntry
 {
     /// <summary>
     /// The coin (cp, sp, ep, gp, pp)

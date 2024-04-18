@@ -7,7 +7,7 @@ using D20.Spells.Interfaces;
 
 namespace D20.Spells.Tables;
 
-public class SpellsBeggingWithATable : GameTable, ISpellsBeggingWithATable
+public class SpellsBeggingWithATable : NamedTable, ISpellsBeggingWithATable
 {
     /// <summary>
     /// Constructor

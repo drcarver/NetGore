@@ -32,7 +32,7 @@ namespace D20.Character.PC.Rogue;
 /// any who desire to shape their fates and live life on
 /// their own terms might come to be called rogues.
 /// </summary>
-public class RogueLevelTable : GameTable, IRogueLevelTable
+public class RogueLevelTable : NamedTable, IRogueLevelTable
 {
     /// <summary>
     /// Constructor

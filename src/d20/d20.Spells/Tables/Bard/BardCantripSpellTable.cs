@@ -6,7 +6,7 @@ using D20.Spells.Enum;
 
 namespace D20.Spells.Tables.Bard;
 
-public class BardCantripSpellTable : GameTable, IBardCantripSpellTable
+public class BardCantripSpellTable : NamedTable, IBardCantripSpellTable
 {
     /// <summary>
     /// Constructor

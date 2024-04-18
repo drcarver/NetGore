@@ -1,6 +1,7 @@
 ﻿using D20.Character.Interfaces;
 using D20.Character.Race;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 using Microsoft.Extensions.Logging;
@@ -22,7 +23,7 @@ public class RaceService : IRaceService
     private readonly ILoggerFactory LoggerFactory;
 
     //Table: Race
-    public static GameTable RaceTable { get; set; } = new()
+    public static NamedTable RaceTable { get; set; } = new()
     {
         Table =
         [
@@ -79,7 +80,7 @@ public class RaceService : IRaceService
     /// </summary>
     public void SetRace(ICharacter creature)
     {
-        var tableentry = RaceTable.GetRandomEntry();
+        var tableentry = (IStandardTableEntry) RaceTable.GetRandomEntry();
 
         Logger.LogInformation($"Got random table entry Name={tableentry?.Name}");
 

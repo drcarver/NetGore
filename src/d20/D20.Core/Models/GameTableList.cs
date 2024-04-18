@@ -2,7 +2,7 @@
 
 namespace D20.Core.Models;
 
-public class GameTableList<T> : List<T> where T : IGameTableEntry
+public class GameTableList<T> : List<T> where T : INamedTableEntry
 {
     public new void Add(T entry)
     {

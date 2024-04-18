@@ -14,7 +14,7 @@ using NetGore.Views;
 
 namespace NetGore.Tables;
 
-public class MainNavigationTable : GameTable, IMainNavigationTable
+public class MainNavigationTable : NamedTable, IMainNavigationTable
 {
     /// <summary>
     /// Constructor

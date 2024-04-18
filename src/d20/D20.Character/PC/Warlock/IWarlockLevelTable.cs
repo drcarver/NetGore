@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Warlock;
 
-public interface IWarlockLevelTable : IGameTable
+public interface IWarlockLevelTable : INamedTable
 {
 }

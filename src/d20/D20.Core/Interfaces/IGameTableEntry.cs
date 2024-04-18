@@ -2,8 +2,4 @@
 
 public interface IGameTableEntry
 {
-    /// <summary>
-    /// The name of the table entry
-    /// </summary>
-    string Name { get; set; }
 }

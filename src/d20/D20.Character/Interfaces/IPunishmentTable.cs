@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IPunishmentTable : IGameTable
+public interface IPunishmentTable : INamedTable
 {
 }

@@ -51,7 +51,7 @@ public partial class CharacterAdvancementDetailViewModel : ObservableObject, IQu
     /// <param name="query">The navigation query</param>
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (ICharacterAdvancementTable) query[nameof(GameTable)];
+        var table = (ICharacterAdvancementTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

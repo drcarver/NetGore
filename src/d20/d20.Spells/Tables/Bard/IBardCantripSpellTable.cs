@@ -2,6 +2,6 @@
 
 namespace D20.Spells.Tables.Bard;
 
-public interface IBardCantripSpellTable : IGameTable
+public interface IBardCantripSpellTable : INamedTable
 {
 }

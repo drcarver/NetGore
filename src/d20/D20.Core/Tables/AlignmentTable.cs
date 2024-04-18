@@ -9,7 +9,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// Determine your character's alignment
 /// </summary>
-public class AlignmentTable : GameTable, IAlignmentTable
+public class AlignmentTable : NamedTable, IAlignmentTable
 {
     /// <summary>
     /// Alignment Table

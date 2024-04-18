@@ -11,13 +11,13 @@ namespace D20.Core.Models;
 /// uses a enumerated type as a name (or key).  The table entries
 /// can be accessed by name or their number in the list.
 /// </summary>
-public class GameTableEntry : IGameTableEntry
+public class NamedTableEntry : BaseObject, INamedTableEntry
 {
     /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public GameTableEntry()
+    public NamedTableEntry()
     {
     }
 }

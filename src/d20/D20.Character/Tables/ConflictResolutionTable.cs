@@ -37,7 +37,7 @@ namespace D20.Character.Tables;
 /// that would adjust your character to an evil 
 /// alignment.
 /// </summary>
-public class ConflictResolutionTable : GameTable, IConflictResolutionTable
+public class ConflictResolutionTable : NamedTable, IConflictResolutionTable
 {
     /// <summary>
     /// Conflict Resolution Table
