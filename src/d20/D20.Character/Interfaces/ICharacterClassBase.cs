@@ -1,15 +1,27 @@
-﻿using D20.Core.Enum;
+﻿using D20.Character.Enum;
+using D20.Character.Interfaces;
+using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Goods.Enum;
 
 namespace D20.Character.Models;
 
-interface ICharacterClassBase : IBaseObject
+public interface ICharacterClassBase : IBaseObject
 {
     /// <summary>
     /// The ability score prerequisite's for the class.   
     /// </summary>
     List<ClassPrerequisite> ClassPrerequisites { get; set; }
+
+    /// <summary>
+    /// The class level
+    /// </summary>
+    int Level { get; set; }
+
+    /// <summary>
+    /// The class enum
+    /// </summary>
+    ClassEnum ClassEnum { get; set; }
 
     /// <summary>
     /// Hit Dice
@@ -42,18 +54,13 @@ interface ICharacterClassBase : IBaseObject
     List<SkillEnum> Skills { get; set; }
 
     /// <summary>
-    /// Equipment
-    /// </summary>
-    List<EquipmentEnum> Equipment { get; set; }
-
-    /// <summary>
-    /// Equipment
-    /// </summary>
-    List<EquipmentEnum> Armor { get; set; }
-
-    /// <summary>
     /// The description of the class background.  Used to provide
     /// a background for the character selecting this class
     /// </summary>
-    string? BackgroundDescription { get; set; }
+    IBackgroundTableEntry Background { get; set; }
+
+    /// <summary>
+    /// The level table for the class
+    /// </summary>
+    public IClassLevelTable? ClassLevelTable { get; set; }
 }

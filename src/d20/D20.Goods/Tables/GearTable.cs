@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Intrinsics.X86;
 
 using D20.Core.Abilities;
 using D20.Core.Enum;
@@ -9,6 +11,7 @@ using D20.Goods.Models;
 
 using Microsoft.Maui.Controls.Compatibility;
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace D20.Goods.Tables;
@@ -601,30 +604,324 @@ public class GearTable : GameTable, IGearTable
                     "can use such an object as a spellcasting focus.",
             },
             #endregion
+
+            #region Totem
+            //Totem 1gp —
+            new DruidicFocus
+            {
+                Name = nameof(AdventuringGearEnum.Totem),
+                ProperName = "Totem",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 0,
+                Description =
+                    "A druidic focus might be a sprig of " +
+                    "mistletoe or holly, a wand or scepter made of yew or " +
+                    "another special wood, a staff drawn whole out of a " +
+                    "living tree, or a totem object incorporating feathers, " +
+                    "fur, bones, and teeth from sacred animals.A druid " +
+                    "can use such an object as a spellcasting focus.",
+            },
+            #endregion
+
+            #region Wooden staff
+            //Wooden staff 5gp 4lb.
+            new DruidicFocus
+            {
+                Name = nameof(AdventuringGearEnum.Woodenstaff),
+                ProperName = "Wooden staff",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 4,
+                Description =
+                    "A druidic focus might be a sprig of " +
+                    "mistletoe or holly, a wand or scepter made of yew or " +
+                    "another special wood, a staff drawn whole out of a " +
+                    "living tree, or a totem object incorporating feathers, " +
+                    "fur, bones, and teeth from sacred animals.A druid " +
+                    "can use such an object as a spellcasting focus.",
+            },
+            #endregion
+
+            #region Yew wand
+            //Yew wand 10gp 1lb.
+            new DruidicFocus
+            {
+                Name = nameof(AdventuringGearEnum.Yewwand),
+                ProperName = "Yew wand",
+                Cost = new GoodsCost(10, new GoldPiece()),
+                Weight = 1,
+                Description =
+                    "A druidic focus might be a sprig of " +
+                    "mistletoe or holly, a wand or scepter made of yew or " +
+                    "another special wood, a staff drawn whole out of a " +
+                    "living tree, or a totem object incorporating feathers, " +
+                    "fur, bones, and teeth from sacred animals.A druid " +
+                    "can use such an object as a spellcasting focus.",
+            },
+            #endregion
+
+            #region Fishing tackle
+            //Fishing tackle 1gp 4 lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Fishingtackle),
+                ProperName = "Fishing tackle",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 4,
+                Description =
+                    "This kit includes a wooden rod, " +
+                    "silken line, corkwood bobbers, steel hooks, lead " +
+                    "sinkers, velvet lures, and narrow netting.",
+
+            },
+            #endregion
+
+            #region Flask
+            //Flask or tankard 2cp 1lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Flask),
+                ProperName = "Flask",
+                Cost = new GoodsCost(2, new CopperPiece()),
+                Weight = 1,
+                Container = AdventuringGearEnum.Flask
+            },
+            #endregion
+
+            #region Tankard
+            //Flask or tankard 2cp 1lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Tankard),
+                ProperName = "Tankard",
+                Cost = new GoodsCost(2, new CopperPiece()),
+                Weight = 1,
+                Container = AdventuringGearEnum.Tankard
+            },
+            #endregion
+
+            #region Grappling hook
+            //Grappling hook 2gp 4lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Grapplinghook),
+                ProperName = "Grappling hook",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 4,
+            },
+            #endregion
+
+            #region Hammer
+            //Hammer 1gp 3lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Hammer),
+                ProperName = "Hammer",
+                Cost = new GoodsCost(1, new GoldPiece()),
+                Weight = 3,
+            },
+            #endregion        
+
+            #region Sledge Hammer 
+            //Hammer, sledge 2gp 10lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.SledgeHammer),
+                ProperName = "Sledge Hammer",
+                Cost = new GoodsCost(2, new GoldPiece()),
+                Weight = 10,
+            },
+            #endregion        
+
+            #region Healer’s kit 
+            //Healer’s kit 5gp 3lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.HealersKit),
+                ProperName = "Healer’s kit",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 3,
+                Description =
+                    "This kit is a leather pouch containing " +
+                    "bandages, salves, and splints. The kit has ten uses. As " +
+                    "an action, you can expend one use of the kit to " +
+                    "stabilize a creature that has 0 hit points, without " +
+                    "needing to make a Wisdom (Medicine) check.",
+            },
+            #endregion        
+
+            #region Amulet 
+            //Amulet 5gp 1lb.
+            new HolySymbol
+            {
+                Name = nameof(AdventuringGearEnum.Amulet),
+                ProperName = "Amulet",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 1,
+                Description =
+                    "A holy symbol is a representation of " +
+                    "a god or pantheon.It might be an amulet depicting a " +
+                    "symbol representing a deity, the same symbol " +
+                    "carefully engraved or inlaid as an emblem on a " +
+                    "shield, or a tiny box holding a fragment of a sacred " +
+                    "relic. A cleric or paladin can use a " +
+                    "holy symbol as a spellcasting focus.To use the " +
+                    "symbol in this way, the caster must hold it in hand, " +
+                    "wear it visibly, or bear it on a shield.",
+            },
+            #endregion        
+
+            #region Emblem 
+            //Emblem 5gp —
+            new HolySymbol
+            {
+                Name = nameof(AdventuringGearEnum.Emblem),
+                ProperName = "Emblem",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 0,
+                Description =
+                    "A holy symbol is a representation of " +
+                    "a god or pantheon.It might be an amulet depicting a " +
+                    "symbol representing a deity, the same symbol " +
+                    "carefully engraved or inlaid as an emblem on a " +
+                    "shield, or a tiny box holding a fragment of a sacred " +
+                    "relic. A cleric or paladin can use a " +
+                    "holy symbol as a spellcasting focus.To use the " +
+                    "symbol in this way, the caster must hold it in hand, " +
+                    "wear it visibly, or bear it on a shield.",
+            },
+            #endregion        
+
+            #region Reliquary 
+            //Reliquary 5gp 2lb.
+            new HolySymbol
+            {
+                Name = nameof(AdventuringGearEnum.Reliquary),
+                ProperName = "Reliquary",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 2,
+                Description =
+                    "A holy symbol is a representation of " +
+                    "a god or pantheon.It might be an amulet depicting a " +
+                    "symbol representing a deity, the same symbol " +
+                    "carefully engraved or inlaid as an emblem on a " +
+                    "shield, or a tiny box holding a fragment of a sacred " +
+                    "relic. A cleric or paladin can use a " +
+                    "holy symbol as a spellcasting focus.To use the " +
+                    "symbol in this way, the caster must hold it in hand, " +
+                    "wear it visibly, or bear it on a shield.",
+            },
+            #endregion        
+
+            #region Holy water 
+            //Holy water(flask) 25gp 1lb
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Holywater),
+                ProperName = "Holy water",
+                Cost = new GoodsCost(25, new GoldPiece()),
+                Weight = 1,
+                Container = AdventuringGearEnum.Flask,
+                Description =
+                    "As an action, you can splash the " +
+                    "contents of this flask onto a creature within 5 feet of " +
+                    "you or throw it up to 20 feet, shattering it on impact. " +
+                    "In either case, make a ranged attack against a target " +
+                    "creature, treating the holy water as an improvised " +
+                    "weapon.If the target is a fiend or undead, it takes " +
+                    "2d6 radiant damage.\r\n " +
+                    "A cleric or paladin may create holy water by " +
+                    "performing a special ritual.The ritual takes 1 hour to " +
+                    "perform, uses 25 gp worth of powdered silver, and " +
+                    "requires the caster to expend a 1st-level spell slot.",
+            },
+            #endregion        
+
+            #region Hourglass
+            //Hourglass 25gp 1lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Hourglass),
+                ProperName = "Hourglass",
+                Cost = new GoodsCost(25, new GoldPiece()),
+                Weight = 1,
+            },
+            #endregion        
+
+            #region Hunting trap
+            //Hunting trap 5gp 25lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Huntingtrap),
+                ProperName = "Hunting trap",
+                Cost = new GoodsCost(5, new GoldPiece()),
+                Weight = 25,
+                Description =
+                    "When you use your action to set it, " +
+                    "this trap forms a saw-toothed steel ring that snaps " +
+                    "shut when a creature steps on a pressure plate in the " +
+                    "center. The trap is affixed by a heavy chain to an " +
+                    "immobile object, such as a tree or a spike driven into " +
+                    "the ground. A creature that steps on the plate must " +
+                    "succeed on a DC 13 Dexterity saving throw or take " +
+                    "1d4 piercing damage and stop moving. Thereafter, " +
+                    "until the creature breaks free of the trap, its " +
+                    "movement is limited by the length of the chain " +
+                    "(typically 3 feet long). A creature can use its action " +
+                    "to make a DC 13 Strength check, freeing itself or " +
+                    "another creature within its reach on a success. Each " +
+                    "failed check deals 1 piercing damage to the trapped " +
+                    "creature",
+            },
+            #endregion        
+
+            #region Ink
+            //Ink(1	ounce bottle) 10gp —
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Ink),
+                ProperName = "Ink",
+                Cost = new GoodsCost(10, new GoldPiece()),
+                Weight = 0,
+                Container = AdventuringGearEnum.Bottle1Ounce
+            },
+            #endregion        
+
+            #region Ink pen
+            //Ink pen 2cp —
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Inkpen),
+                ProperName = "Ink pen",
+                Cost = new GoodsCost(2, new CopperPiece()),
+                Weight = 0,
+            },
+            #endregion        
+
+            #region Jug
+            //Jug or pitcher 2cp 4lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Jug),
+                ProperName = "Jug",
+                Cost = new GoodsCost(2, new CopperPiece()),
+                Weight = 4,
+            },
+            #endregion        
+
+            #region Pitcher
+            //Jug or pitcher 2cp 4lb.
+            new GearTableEntry
+            {
+                Name = nameof(AdventuringGearEnum.Pitcher),
+                ProperName = "Pitcher",
+                Cost = new GoodsCost(2, new CopperPiece()),
+                Weight = 4,
+            },
+            #endregion        
         ];
     }
 }
 
-//Druidic focus
-//Totem 1gp —
-//Wooden staff 5gp 4lb.
-//Yew wand 10gp 1lb.
-//Fishing tackle 1gp 4lb.
-//Flask or tankard 2cp 1lb.
-//Grappling hook 2gp 4lb.
-//Hammer 1gp 3lb.
-//Hammer, sledge 2gp 10lb.
-//Healer’s kit 5gp 3lb.
-//Holy symbol
-//Amulet 5gp 1lb.
-//Emblem 5gp —
-//Reliquary 5gp 2lb.
-//Holy water(flask) 25gp 1lb
-//Hourglass 25gp 1lb.
-//Hunting trap 5gp 25lb.
-//Ink(1	ounce bottle) 10gp —
-//Ink pen 2cp —
-//Jug or pitcher 2cp 4lb.
 //Ladder(10-foot) 1sp 25lb.
 //Lamp 5sp 1lb.
 //Lantern, bullseye 10gp 2lb.

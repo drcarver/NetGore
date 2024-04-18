@@ -14,11 +14,6 @@ namespace D20.Character.Models;
 public class D20Character : Creature, ICharacter
 {
     /// <summary>
-    /// Get the character class
-    /// </summary>
-    private IClassService ClassService { get; }
-
-    /// <summary>
     /// The character class
     /// </summary>
     public ICharacterClass? CharacterClass { get; set; }
@@ -44,29 +39,29 @@ public class D20Character : Creature, ICharacter
     public List<ICreature> Siblings { get; set; } = [];
 
     /// <summary>
-    /// Hit Dice
-    /// </summary>
-    public string? HitDice { get; set; }
-
-    /// <summary>
     /// Armor Proficiency
     /// </summary>
-    public List<EquipmentCategoryEnum> ArmorProficiency { get; set; }
+    public List<EquipmentCategoryEnum> ArmorProficiency { get; set; } = [];
 
     /// <summary>
     /// THe weapon Proficiency for this class
     /// </summary>
-    public List<WeaponProficiencyEnum> WeaponProficiency { get; set; }
+    public List<WeaponProficiencyEnum> WeaponProficiency { get; set; } = [];
 
     /// <summary>
     /// Tools for the creation of the character
     /// </summary>
-    public List<EquipmentEnum> ToolProficiency { get; set; }
+    public List<EquipmentEnum> ToolProficiency { get; set; } = [];
 
     /// <summary>
     /// The inventory for the creature
     /// </summary>
-    public List<EquipmentEnum> Equipment { get; set; }
+    public List<EquipmentEnum> Equipment { get; set; } = [];
+
+    /// <summary>
+    /// Saving Throws
+    /// </summary>
+    public List<AbilityEnum> SavingThrows { get; set; } = [];
 
     /// <summary>
     /// Constructor

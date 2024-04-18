@@ -33,11 +33,6 @@ public interface ICharacter : ICreature
     List<ICreature> Siblings { get; set; }
 
     /// <summary>
-    /// Hit Dice
-    /// </summary>
-    string? HitDice { get; set; }
-
-    /// <summary>
     /// Armor Proficiency
     /// </summary>
     List<EquipmentCategoryEnum> ArmorProficiency { get; set; }
@@ -56,4 +51,9 @@ public interface ICharacter : ICreature
     /// The inventory for the creature
     /// </summary>
     List<EquipmentEnum> Equipment { get; set; }
+
+    /// <summary>
+    /// Saving Throws
+    /// </summary>
+    List<AbilityEnum> SavingThrows { get; set; }
 }

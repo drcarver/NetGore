@@ -91,8 +91,7 @@ public class Rogue : CharacterClassBase
         ];
 
         // Generate the class background
-        var classBackground = backgroundTable.GetRandomRangeEntry();
-        BackgroundDescription = classBackground.Description;
+        Background = (IBackgroundTableEntry)backgroundTable.GetRandomRangeEntry();
     }
 }
 

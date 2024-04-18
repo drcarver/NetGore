@@ -78,8 +78,7 @@ public class Paladin : CharacterClassBase
         ];
 
         // Generate the class background
-        var classBackground = backgroundTable.GetRandomRangeEntry();
-        BackgroundDescription = classBackground.Description;
+        Background = (IBackgroundTableEntry)backgroundTable.GetRandomRangeEntry();
     }
 }
 

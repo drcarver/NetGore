@@ -7,7 +7,7 @@ using D20.Goods.Enum;
 
 namespace D20.Character.PC.Barbarian;
 
-public class Barbarian : CharacterClassBase
+public class Barbarian : CharacterClassBase, ICharacterClass
 {
     /// <summary>
     /// The DI service provider
@@ -18,9 +18,8 @@ public class Barbarian : CharacterClassBase
     /// Level up the character with this class
     /// </summary>
     /// <param name="character"></param>
-    public void LevelUp(ICharacter character)
+    public override void LevelUp(ICharacter character)
     {
-        var barbarianLevelTable = serviceProvider.GetService<IBarbarianLevelTable>();
     }
 
     /// <summary>
@@ -28,6 +27,7 @@ public class Barbarian : CharacterClassBase
     /// </summary>
     [SetsRequiredMembers]
     public Barbarian(IServiceProvider services, 
+        IBarbarianLevelTable levelTable,
         IBarbarianBackgroundTable backgroundTable)
     {
         serviceProvider = services;
@@ -68,20 +68,11 @@ public class Barbarian : CharacterClassBase
             SkillEnum.Perception,
             SkillEnum.Survival,
         ];
-        Equipment =
-        [
-            EquipmentEnum.GreatAxe,
-            EquipmentEnum.HandAxe,
-            EquipmentEnum.HandAxe,
-            EquipmentEnum.Javelin,
-            EquipmentEnum.Javelin,
-            EquipmentEnum.Javelin,
-            EquipmentEnum.Javelin,
-            EquipmentEnum.ExplorersPack,
-        ];
 
-        // Generate the class background
-        var classBackground = backgroundTable.GetRandomRangeEntry();
-        BackgroundDescription = classBackground.Description;
+        // Generate the class background entry
+        Background = (BackgroundTableEntry) backgroundTable.GetRandomRangeEntry();
+
+        // Set the class level table
+        ClassLevelTable = levelTable;
     }
 }

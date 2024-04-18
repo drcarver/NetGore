@@ -12,4 +12,5 @@ public enum TableTypeEnum
     PantheonTable,
     RaceTable,
     SpellTable,
+    GamingTable,
 }

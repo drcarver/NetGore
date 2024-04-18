@@ -1,5 +1,7 @@
-﻿namespace D20.Character.Interfaces;
+﻿using D20.Core.Interfaces;
 
-internal interface IClassLevelTable
+namespace D20.Character.Interfaces;
+
+public interface IClassLevelTable : IGameTable
 {
 }

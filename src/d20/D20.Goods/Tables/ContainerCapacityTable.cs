@@ -107,7 +107,25 @@ public class ContainerCapacityTable : GameTable, IContainerCapacityTable
             },
             #endregion
 
-            #region Bottle
+            #region Bottle 1 Ounce
+            //Bottle 1 Ounce liquid
+            new ContainerCapacityEntry
+            {
+                Name = nameof(AdventuringGearEnum.Bottle1Ounce),
+                ProperName = "Bottle 1 Ounce",
+                Capacity =
+                [
+                    new Capacity
+                    {
+                        Quantity = Convert.ToDecimal("1"),
+                        CapacityUnitType =  CapacityUnitTypeEnum.Ounce,
+                        Description = "Ounce liquid"
+                    },
+                ]
+            },
+            #endregion
+
+            #region Bottle - 1.5 Pints
             //Bottle 1½	pints liquid
             new ContainerCapacityEntry
             {
