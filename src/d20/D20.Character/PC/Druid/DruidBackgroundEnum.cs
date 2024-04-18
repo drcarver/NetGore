@@ -2,4 +2,14 @@
 
 public enum DruidBackgroundEnum
 {
+    LostintheWild,
+    FeyMeeting,
+    SpiritofNature,
+    TreeTender,
+    DruidCircle,
+    CivilizedOutcast,
+    Savage,
+    RaisedbyBeasts,
+    Avatar,
+    Beastlord
 }

@@ -3,15 +3,19 @@
 using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Character.PC.Druid;
+using D20.Character.Race;
 using D20.Core.Enum;
 using D20.Goods.Enum;
+
+using static System.Reflection.Metadata.BlobBuilder;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace D20.Character.PC.Druid;
 
 /// <summary>
-/// Druids have a talent for song and story, and they come to 
-/// their careers by developing this talent as they pick up 
-/// on a smattering of other skills. 
+/// Druids come by their primal power in various ways. One 
+/// druid might receive her power from an elemental creature, 
+/// and another might learn it from a beast or the fey. 
 /// </summary>
 public class Druid : CharacterClassBase
 {
@@ -47,27 +51,40 @@ public class Druid : CharacterClassBase
         ArmorProficiency =
         [
             EquipmentCategoryEnum.LightArmor,
+            EquipmentCategoryEnum.MediumArmor,
+            EquipmentCategoryEnum.Shields,
         ];
         WeaponProficiency =
         [
-            WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.HandCrossbows,
-            WeaponProficiencyEnum.LongSwords,
-            WeaponProficiencyEnum.Rapiers,
-            WeaponProficiencyEnum.ShortSwords,
+            WeaponProficiencyEnum.Clubs,
+            WeaponProficiencyEnum.Daggers,
+            WeaponProficiencyEnum.Darts,
+            WeaponProficiencyEnum.Javelins,
+            WeaponProficiencyEnum.Maces,
+            WeaponProficiencyEnum.Quarterstaffs,
+            WeaponProficiencyEnum.Scimitars,
+            WeaponProficiencyEnum.Sickles,
+            WeaponProficiencyEnum.Slings,
+            WeaponProficiencyEnum.Spears,
         ];
         SavingThrows =
         [
-            AbilityEnum.Dexterity,
-            AbilityEnum.Charisma,
+            AbilityEnum.Intelligence,
+            AbilityEnum.Wisdom,
+        ];
+        ToolProficiency =
+        [
+            EquipmentEnum.HerbalismKit
         ];
         Skills =
         [
+            SkillEnum.Arcana,
             SkillEnum.AnimalHandling,
-            SkillEnum.Athletics,
-            SkillEnum.Intimidation,
+            SkillEnum.Insight,
+            SkillEnum.Medicine,
             SkillEnum.Nature,
             SkillEnum.Perception,
+            SkillEnum.Religion,
             SkillEnum.Survival,
         ];
         Equipment =
@@ -84,3 +101,10 @@ public class Druid : CharacterClassBase
         BackgroundDescription = classBackground.Description;
     }
 }
+//Equipment
+//You start with    the following   equipment,	in	addition
+//to  the equipment   granted by  your background:
+//• (a) a   wooden shield  or(b) any simple  weapon
+//• (a) a   scimitar or(b) any simple  melee weapon
+//• Leather armor, an  explorer’s pack, and a druidic
+//focus

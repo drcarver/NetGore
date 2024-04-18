@@ -1191,5 +1191,6 @@ public enum TraitEnum
     FearlessZeal = 1121,
     BattlefieldHealer = 1122,
     Arisen = 1123,
+    FeralHeart = 1124,
     #endregion
 }

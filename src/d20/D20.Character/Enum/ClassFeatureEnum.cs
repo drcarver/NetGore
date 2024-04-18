@@ -47,6 +47,17 @@ public enum ClassFeatureEnum
     DivineIntervention,
     #endregion
 
+    #region Druid
+    Druidic,
+    WildShape,
+    DruidCircle,
+    WildShapeImprovement,
+    DruidCircleFeature,
+    TimelessBody,
+    BeastSpells,
+    Archdruid,
+    #endregion
+
     #region Rogue
     SneakAttack,
     ThievesCant,

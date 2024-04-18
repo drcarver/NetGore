@@ -7,5 +7,15 @@ public enum WeaponProficiencyEnum
     HandCrossbows,
     LongSwords,
     Rapiers,
-    ShortSwords
+    ShortSwords,
+    Clubs,
+    Daggers,
+    Darts,
+    Javelins,
+    Maces,
+    Quarterstaffs,
+    Scimitars,
+    Sickles,
+    Slings,
+    Spears
 }

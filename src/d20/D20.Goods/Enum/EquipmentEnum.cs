@@ -55,5 +55,6 @@ public enum EquipmentEnum
     HandCrossbow,
     HeavyCrossbow,
     Longbow,
-    Net
+    Net,
+    HerbalismKit
 }

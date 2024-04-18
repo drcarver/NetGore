@@ -146,7 +146,7 @@ public class BardLevelTable : GameTable, IBardLevelTable
                 BaseProficiency = 3,
                 CantripsKnown = 3,
                 SpellsKnown = 10,
-                SpellSlots = [2, 4, 3, 3, 0, 0, 0, 0, 0, 0],
+                SpellSlots = [3, 4, 3, 3, 0, 0, 0, 0, 0, 0],
                 ClassFeatures =
                 [
                 ],

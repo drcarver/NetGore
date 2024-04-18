@@ -34,4 +34,5 @@ public enum SkillEnum
     History,
     Medicine,
     Religion,
+    Arcana,
 }
