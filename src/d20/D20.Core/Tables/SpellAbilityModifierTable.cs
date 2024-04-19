@@ -10,7 +10,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// The gender table.  
 /// </summary>
-public class SpellAbilityModifierTable : NamedTable
+public class SpellAbilityModifierTable : GameTable, ISpellAbilityModifierTable
 {
     /// <summary>
     /// Constructor
@@ -43,8 +43,10 @@ public class SpellAbilityModifierTable : NamedTable
     //28–29	+9	—	3	2	2	2	2	1	1	1	1
     //30–31	+10	—	3	3	2	2	2	2	1	1	1
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it;s meta properties
-    /// with out creating the table.  A bit of optimiation to conserve memeory
+    /// Initialize the game table.  This is a separate method 
+    /// so we can create a game table for it;s meta properties
+    /// with out creating the table.  A bit of optimization to 
+    /// conserve memory
     /// </summary>
     public override void InitializeTable()
     {

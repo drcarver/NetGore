@@ -18,7 +18,7 @@ public class GenderTable : NamedTable, IGenderTable
     {
         Name = nameof(GenderTable);
         ProperName = "Gender Table";
-        TableType = TableTypeEnum.CharacterTable;
+        TableType = TableTypeEnum.CoreTable;
     }
 
     /// <summary>

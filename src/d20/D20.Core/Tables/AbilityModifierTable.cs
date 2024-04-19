@@ -10,7 +10,7 @@ namespace D20.Core.Tables;
 /// <summary>
 /// The ability modifier table.  
 /// </summary>
-public class AbilityModifierTable : NamedTable
+public class AbilityModifierTable : GameTable, IAbilityModifierTable
 {
     /// <summary>
     /// Constructor
@@ -20,7 +20,7 @@ public class AbilityModifierTable : NamedTable
     {
         Name = nameof(AbilityModifierTable);
         ProperName = "Ability Modifiers Table";
-        TableType = TableTypeEnum.CharacterTable;
+        TableType = TableTypeEnum.CoreTable;
     }
 
     //Table: Ability Modifiers
@@ -43,8 +43,10 @@ public class AbilityModifierTable : NamedTable
     //28–29	+9
     //30–31	+10
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it;s meta properties
-    /// with out creating the table.  A bit of optimiation to conserve memeory
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it;s meta properties
+    /// with out creating the table.  A bit of optimization to 
+    /// conserve memory
     /// </summary>
     public override void InitializeTable()
     {
