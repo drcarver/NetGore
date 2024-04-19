@@ -32,7 +32,7 @@ namespace D20.Character.PC.Rogue;
 /// any who desire to shape their fates and live life on
 /// their own terms might come to be called rogues.
 /// </summary>
-public class RogueLevelTable : NamedTable, IRogueLevelTable
+public class RogueLevelTable : GameTable, IRogueLevelTable
 {
     /// <summary>
     /// Constructor
@@ -41,7 +41,7 @@ public class RogueLevelTable : NamedTable, IRogueLevelTable
     public RogueLevelTable()
     {
         Name = nameof(RogueLevelTable);
-        ProperName = "Rogue Features and Proficencies by Level";
+        ProperName = "Rogue Features and Proficiencies by Level";
         TableType = TableTypeEnum.CharacterTable;
         Description =
             "Life is an endless adventure for those who live by " +
@@ -64,8 +64,10 @@ public class RogueLevelTable : NamedTable, IRogueLevelTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

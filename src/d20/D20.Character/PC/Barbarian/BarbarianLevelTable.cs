@@ -26,7 +26,7 @@ public class BarbarianLevelTable : NamedTable, IBarbarianLevelTable
     public BarbarianLevelTable()
     {
         Name = nameof(BarbarianLevelTable);
-        ProperName = "Barabrian Features and Proficencies by Level";
+        ProperName = "Barbarian Features and Proficiencies by Level";
         TableType = TableTypeEnum.CharacterTable;
         Description =
             "Barbarians are fueled by an almost supernatural rage that " +

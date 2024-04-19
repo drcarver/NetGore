@@ -9,7 +9,7 @@ using D20.Core.Models;
 
 namespace D20.Character.PC.Bard;
 
-public class BardLevelTable : NamedTable, IBardLevelTable
+public class BardLevelTable : GameTable, IBardLevelTable
 {
     /// <summary>
     /// Constructor
@@ -18,7 +18,7 @@ public class BardLevelTable : NamedTable, IBardLevelTable
     public BardLevelTable()
     {
         Name = nameof(BardLevelTable);
-        ProperName = "Bard Features and Proficencies by Level";
+        ProperName = "Bard Features and Proficiencies by Level";
         TableType = TableTypeEnum.CharacterTable;
         Description =
             "Bards have a talent for song and story, and they " +
@@ -27,8 +27,10 @@ public class BardLevelTable : NamedTable, IBardLevelTable
     }
 
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

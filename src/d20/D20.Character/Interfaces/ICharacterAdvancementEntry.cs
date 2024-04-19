@@ -2,7 +2,7 @@
 
 namespace D20.Character.Interfaces;
 
-public interface ICharacterAdvancementEntry : IStandardTableEntry
+public interface ICharacterAdvancementEntry : IGameTableEntry
 {
     /// <summary>
     /// The experience points for the range

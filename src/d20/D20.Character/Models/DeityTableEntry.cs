@@ -22,7 +22,7 @@ public class DeityTableEntry : StandardTableEntry, IDeityTableEntry
     /// <summary>
     /// The suggested classes for this deity
     /// </summary>
-    public List<ClassEnum> SuggestedClasses { get; set; }
+    public List<ClassEnum> SuggestedClasses { get; set; } = [];
 
     /// <summary>
     /// Constructor
