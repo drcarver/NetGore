@@ -115,18 +115,6 @@ public class ExperiencePointAwardsTable : NamedTable, IExperiencePointAwardsTabl
             },
             #endregion
 
-            #region 1/6
-            //1/6	65	20	15	10
-            new ExperiencePointAwardEntry
-            {
-                ChallengeRating = Convert.ToDecimal(1/6),
-                TotalXP = 65,
-                Individual1to3XP = 20,
-                Individual4to5XP = 15,
-                Individual6PlusXP = 10
-            },
-            #endregion
-
             #region 1/4
             //1/4	100	35	25	15
             new ExperiencePointAwardEntry
@@ -175,7 +163,7 @@ public class ExperiencePointAwardsTable : NamedTable, IExperiencePointAwardsTabl
             },
             #endregion
 
-            #region 2
+            #region ChallengeRating = 2
             //2	600	200	150	100
             new ExperiencePointAwardEntry
             {
@@ -187,7 +175,19 @@ public class ExperiencePointAwardsTable : NamedTable, IExperiencePointAwardsTabl
             },
             #endregion
 
-            #region 4
+            #region ChallengeRating = 3
+            //3	800	265	200	135
+            new ExperiencePointAwardEntry
+            {
+                ChallengeRating = 3,
+                TotalXP = 800,
+                Individual1to3XP = 265,
+                Individual4to5XP = 200,
+                Individual6PlusXP = 135
+            },
+            #endregion
+
+            #region ChallengeRating = 4
             //4	1,200	400	300	200
             new ExperiencePointAwardEntry
             {
