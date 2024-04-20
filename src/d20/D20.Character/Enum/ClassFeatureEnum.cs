@@ -71,4 +71,12 @@ public enum ClassFeatureEnum
     StrokeofLuck,
     Elusive,
     #endregion
+
+    #region Fighter
+    FightingStyle,
+    SecondWind,
+    ActionSurge,
+    MartialArchetype,
+    Indomitable,
+    #endregion
 }

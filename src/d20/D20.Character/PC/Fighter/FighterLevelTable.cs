@@ -1,355 +1,345 @@
-﻿//using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
+using System.Threading;
 
-//using D20.Character.Enum;
-//using D20.Core.Enum;
-//using D20.Core.Models;
+using D20.Character.Enum;
+using D20.Core;
+using D20.Core.Abilities;
+using D20.Core.Enum;
+using D20.Core.Models;
 
-//namespace D20.Character.PC.Fighter;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel.Communication;
 
-///// <summary>
-///// Fighters are fueled by an almost supernatural rage that 
-///// helps them loose the volatile stores of adrenaline within 
-///// their bodies.This rage stays with the Fighter throughout 
-///// their life as an adventurer, and they learn to refine their
-///// fits of passionate anger only over time. Yet each Fighter’s
-///// rage is different and personal. It comes from the primal 
-///// depths of their soul, and cannot be manufactured. Only a 
-///// select few can channel that purest, deepest rage into 
-///// overpowering combat.
-///// </summary>
-//public class FighterLevelTable : GameTable, IFighterLevelTable
-//{
-//    /// <summary>
-//    /// Constructor
-//    /// </summary>
-//    [SetsRequiredMembers]
-//    public FighterLevelTable()
-//    {
-//        Name = nameof(FighterLevelTable);
-//        ProperName = "Barabrian Features and Proficencies by Level";
-//        TableType = TableTypeEnum.CharacterTable;
-//        Description =
-//            "Fighters are fueled by an almost supernatural rage that " +
-//            "helps them loose the volatile stores of adrenaline within " +
-//            "their bodies.This rage stays with the Fighter throughout " +
-//            "their life as an adventurer, and they learn to refine their " +
-//            "fits of passionate anger only over time. Yet each Fighter’s " +
-//            "rage is different and personal. It comes from the primal " +
-//            "depths of their soul, and cannot be manufactured. Only a " +
-//            "select few can channel that purest, deepest rage into " +
-//            "overpowering combat. ";
-//    }
+using Microsoft.Maui.Controls;
 
-//    /// <summary>
-//    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-//    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
-//    /// </summary>
-//    public override void InitializeTable()
-//    {
-//        Table =
-//        [
-//            #region 1st Level
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 1,
-//                BaseProficiency = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.Rage,
-//                    ClassFeatureEnum.UnarmoredDefense
-//                ],
-//            },
-//            #endregion
+using static System.Collections.Specialized.BitVector32;
+using static System.Reflection.Metadata.BlobBuilder;
 
-//            #region 2nd Level
-//            //2nd +2 Reckless Attack, Danger Sense 2 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 2,
-//                BaseProficiency = 2,
-//                Rages = 2,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.RecklessAttack,
-//                    ClassFeatureEnum.DangerSense
-//                ],
-//            },
-//            #endregion
+namespace D20.Character.PC.Fighter;
 
-//            #region 3rd Level
-//            //3rd +2 Primal Path 3 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 3,
-//                BaseProficiency = 2,
-//                Rages = 3,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.PrimalPath,
-//                    ClassFeatureEnum.PathoftheBerserker,
-//                    ClassFeatureEnum.Frenzy,
-//                ],
-//            },
-//            #endregion
+/// <summary>
+/// Those who become fighters take up the sword for many reasons.
+/// Some fight for coin, others for duty, and others for survival. 
+/// </summary>
+public class FighterLevelTable : GameTable, IFighterLevelTable
+{
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    [SetsRequiredMembers]
+    public FighterLevelTable()
+    {
+        Name = nameof(FighterLevelTable);
+        ProperName = "Fighter Features and Proficiencies by Level";
+        TableType = TableTypeEnum.CharacterTable;
+        Description =
+            "Fighters excel at combat—defeating their enemies, " +
+            "controlling the flow of battle, and surviving " +
+            "such sorties themselves. While their specific " +
+            "weapons and methods grant them a wide variety " +
+            "of tactics, few can match fighters for sheer " +
+            "battle prowess.";
+    }
 
-//            #region 4th Level
-//            //4th +2 Ability Score Improvement 3 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 4,
-//                BaseProficiency = 2,
-//                Rages = 3,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
-//            },
-//            #endregion
+    //Level Proficiency Bonus Features
+    //1st +2 Fighting Style, Second  Wind
+    //2nd +2 Action Surge(one use)
+    //3rd +2 Martial Archetype
+    //4th +2 Ability Score   Improvement
+    //5th +3 Extra Attack
+    //6th +3 Ability Score   Improvement
+    //7th +3 Martial Archetype   feature
+    //8th +3 Ability Score   Improvement
+    //9th +4 Indomitable(one use)
+    //10th +4 Martial Archetype   feature
+    //11th +4 Extra Attack(2)
+    //12th +4 Ability Score   Improvement
+    //13th +5 Indomitable(two uses)
+    //14th +5 Ability Score   Improvement
+    //15th +5 Martial Archetype   feature
+    //16th +5 Ability Score   Improvement
+    //17th +6 Action Surge(two uses),	
+    //Indomitable(three uses)
+    //18th +6 Martial Archetype   feature
+    //19th +6 Ability Score   Improvement
+    //20th +6 Extra Attack(3)
+    /// <summary>
+    /// Initialize the game table.  This is a separate method 
+    /// so we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
+    /// </summary>
+    public override void InitializeTable()
+    {
+        Table =
+        [
+            #region 1st Level
+            //1st +2 Fighting Style, Second  Wind
+            new FighterFeatureLevelEntry
+            {
+                Level = 1,
+                BaseProficiency = 2,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.FightingStyle,
+                    ClassFeatureEnum.SecondWind
+                ],
+            },
+            #endregion
 
-//            #region 5th Level
-//            //5th +3 Extra Attack, Fast Movement 3 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 5,
-//                BaseProficiency = 3,
-//                Rages = 3,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.ExtraAttack,
-//                    ClassFeatureEnum.FastMovement,
-//                ],
-//            },
-//            #endregion
+            #region 2nd Level
+            //2nd +2 Action Surge(one use)
+            new FighterFeatureLevelEntry
+            {
+                Level = 2,
+                BaseProficiency = 2,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.ActionSurge,
+                ],
+            },
+            #endregion
 
-//            #region 6th Level
-//            //6th +3 Path feature 4 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 6,
-//                BaseProficiency = 3,
-//                Rages = 4,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.MindlessRage
-//                ],
-//            },
-//            #endregion
+            #region 3rd Level
+            //3rd +2 Martial Archetype
+            new FighterFeatureLevelEntry
+            {
+                Level = 3,
+                BaseProficiency = 2,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.MartialArchetype,
+                ],
+            },
+            #endregion
 
-//            #region 7th Level
-//            //7th +3 Feral Instinct 4 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 7,
-//                BaseProficiency = 3,
-//                Rages = 4,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.FeralInstinct
-//                ],
-//            },
-//            #endregion
+            #region 4th Level
+            //4th +2 Ability Score Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 4,
+                BaseProficiency = 2,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
 
-//            #region 8th Level
-//            //8th +3 Ability Score Improvement 4 +2
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 8,
-//                BaseProficiency = 3,
-//                Rages = 4,
-//                RageDamage = 2,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
-//            },
-//            #endregion
+            #region 5th Level
+            //5th +3 Extra Attack
+            new FighterFeatureLevelEntry
+            {
+                Level = 5,
+                BaseProficiency = 3,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.ExtraAttack,
+                ],
+            },
+            #endregion
 
-//            #region 9th Level
-//            //9th +4 Brutal Critical (1	die) 4 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 8,
-//                BaseProficiency = 4,
-//                Rages = 4,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.BrutalCritical
-//                ],
-//            },
-//            #endregion
+            #region 6th Level
+            //6th +3 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 6,
+                BaseProficiency = 3,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
 
-//            #region 10th Level
-//            //10th +4 Path feature 4 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 10,
-//                BaseProficiency = 4,
-//                Rages = 4,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.IntimidatingPresence
-//                ],
-//            },
-//        #endregion
+            #region 7th Level
+            //7th +3 Martial Archetype   feature
+            new FighterFeatureLevelEntry
+            {
+                Level = 7,
+                BaseProficiency = 3,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.MartialArchetype
+                ],
+            },
+            #endregion
 
-//            #region 11th Level
-//            //11th +4 Relentless	 4 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 11,
-//                BaseProficiency = 4,
-//                Rages = 4,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.Relentless
-//                ],
-//            },
-//        #endregion
+            #region 8th Level
+            //8th +3 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 8,
+                BaseProficiency = 3,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
 
-//            #region 12th Level
-//            //12th +4 Ability Score Improvement 5 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 12,
-//                BaseProficiency = 4,
-//                Rages = 5,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
-//            },
-//        #endregion
+            #region 9th Level
+            //9th +4 Indomitable(one use)
+            new FighterFeatureLevelEntry
+            {
+                Level = 8,
+                BaseProficiency = 4,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.Indomitable
+                ],
+            },
+            #endregion
 
-//            #region 13th Level
-//            //13th +5 Brutal Critical (2 dice) 5 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 13,
-//                BaseProficiency = 5,
-//                Rages = 5,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.BrutalCritical
-//                ],
-//            },
-//            #endregion
+            #region 10th Level
+            //10th +4 Martial Archetype   feature
+            new FighterFeatureLevelEntry
+            {
+                Level = 10,
+                BaseProficiency = 4,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.MartialArchetype
+                ],
+            },
+            #endregion
 
-//            #region 14th Level
-//            //14th +5 Path feature 5 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 14,
-//                BaseProficiency = 5,
-//                Rages = 5,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.Retaliation,
-//                ],
-//            },
-//            #endregion
+            #region 11th Level
+            //11th +4 Extra Attack(2)
+            new FighterFeatureLevelEntry
+            {
+                Level = 11,
+                BaseProficiency = 4,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.ExtraAttack
+                ],
+            },
+            #endregion
 
-//            #region 15th Level
-//            //15th +5 Persistent Rage 5 +3
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 15,
-//                BaseProficiency = 5,
-//                Rages = 5,
-//                RageDamage = 3,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.PersistentRage
-//                ],
-//            },
-//            #endregion
+            #region 12th Level
+            //12th +4 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 12,
+                BaseProficiency = 4,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
 
-//            #region 16th Level
-//            //16th +5 Ability Score Improvement 5 +4
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 16,
-//                BaseProficiency = 5,
-//                Rages = 5,
-//                RageDamage = 4,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
-//            },
-//            #endregion
+            #region 13th Level
+            //13th +5 Indomitable(two uses)
+            new FighterFeatureLevelEntry
+            {
+                Level = 13,
+                BaseProficiency = 5,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.Indomitable
+                ],
+            },
+            #endregion
 
-//            #region 17th Level
-//            //17th +6 Brutal Critical (3 dice) 6 +4
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 17,
-//                BaseProficiency = 6,
-//                Rages = 6,
-//                RageDamage = 4,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.BrutalCritical
-//                ],
-//            },
-//            #endregion
+            #region 14th Level
+            //14th +5 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 14,
+                BaseProficiency = 5,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement,
+                ],
+            },
+            #endregion
 
-//            #region 18th Level
-//            // 18th +6 Indomitable Might 6 +4
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 18,
-//                BaseProficiency = 6,
-//                Rages = 6,
-//                RageDamage = 4,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.IndomitableMight
-//                ],
-//            },
-//            #endregion
+            #region 15th Level
+            //15th +5 Martial Archetype   feature
+            new FighterFeatureLevelEntry
+            {
+                Level = 15,
+                BaseProficiency = 5,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.MartialArchetype
+                ],
+            },
+            #endregion
 
-//            #region 19th Level
-//            //19th +6 Ability Score Improvement 6 +4
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 19,
-//                BaseProficiency = 6,
-//                Rages = 6,
-//                RageDamage = 4,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
-//            },
-//            #endregion
+            #region 16th Level
+            //16th +5 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 16,
+                BaseProficiency = 5,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
 
-//            #region 20th Level
-//            //20th +6 Primal Champion Unlimited +4
-//            new FighterFeatureLevelEntry
-//            {
-//                Level = 20,
-//                BaseProficiency = 6,
-//                Rages = 6,
-//                RageDamage = 4,
-//                ClassFeatures =
-//                [
-//                    ClassFeatureEnum.PrimalChampionUnlimited
-//                ],
-//            },
-//            #endregion
-//        ];
-//    }
-//}
+            #region 17th Level
+            //17th +6 Action Surge(two uses), Indomitable(three uses)
+            new FighterFeatureLevelEntry
+            {
+                Level = 17,
+                BaseProficiency = 6,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.ActionSurge,
+                    ClassFeatureEnum.Indomitable
+                ],
+            },
+            #endregion
 
+            #region 18th Level
+            //18th +6 Martial Archetype   feature
+            new FighterFeatureLevelEntry
+            {
+                Level = 18,
+                BaseProficiency = 6,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.MartialArchetype
+                ],
+            },
+            #endregion
+
+            #region 19th Level
+            //19th +6 Ability Score   Improvement
+            new FighterFeatureLevelEntry
+            {
+                Level = 19,
+                BaseProficiency = 6,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.AbilityScoreImprovement
+                ],
+            },
+            #endregion
+
+            #region 20th Level
+            //20th +6 Extra Attack(3)
+            new FighterFeatureLevelEntry
+            {
+                Level = 20,
+                BaseProficiency = 6,
+                ClassFeatures =
+                [
+                    ClassFeatureEnum.ExtraAttack
+                ],
+            },
+            #endregion
+        ];
+    }
+}

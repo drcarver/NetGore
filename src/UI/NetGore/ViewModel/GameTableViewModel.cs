@@ -25,5 +25,6 @@ public partial class GameTableViewModel : ObservableObject
     public GameTableViewModel()
     {
         Id = Guid.NewGuid();
+        Name = string.Empty;
     }
 }
