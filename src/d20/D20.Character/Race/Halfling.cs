@@ -95,15 +95,14 @@ public class Halfling : D20Character, ICharacterRace
         IRandomTable relativeAgeofSiblingTable)
     {
         #region Homeland
-        var homeland = (IBackgroundTableEntry)homelandTable.GetRandomRangeEntry();
-        if (homeland.Name == "UnusualHomeland")
+        Homeland = (IBackgroundTableEntry)homelandTable.GetRandomRangeEntry();
+        if (Homeland.Name == "UnusualHomeland")
         {
-            homeland = (IBackgroundTableEntry)unusualHomelandTable.GetRandomRangeEntry();
+            Homeland = (IBackgroundTableEntry)unusualHomelandTable.GetRandomRangeEntry();
         }
-        Homeland = homeland.Description;
-        if (homeland.Traits != null)
+        if (Homeland.Traits != null)
         {
-            foreach (var trait in homeland.Traits)
+            foreach (var trait in Homeland.Traits)
             {
                 if (!Traits.Contains(trait))
                 {
@@ -114,11 +113,10 @@ public class Halfling : D20Character, ICharacterRace
         #endregion
 
         #region Parents
-        var parents = (BackgroundTableEntry)parentsTable.GetRandomRangeEntry();
-        Parents = parents.Description;
-        if (parents?.Traits != null)
+        Parents = (BackgroundTableEntry)parentsTable.GetRandomRangeEntry();
+        if (Parents?.Traits != null)
         {
-            foreach (var trait in parents.Traits)
+            foreach (var trait in Parents.Traits)
             {
                 if (Traits.Contains(trait))
                 {

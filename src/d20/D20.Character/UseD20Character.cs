@@ -3,7 +3,6 @@
 using D20.Character.Models;
 using D20.Character.PC.Barbarian;
 using D20.Character.PC.Bard;
-using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace D20.Character;

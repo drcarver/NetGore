@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Bard;
 
-public interface IBardLevelTable : INamedTable
+public interface IBardLevelTable : IGameTable
 {
 }

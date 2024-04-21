@@ -117,7 +117,7 @@ public class HitPoints : DataObject
     /// The constructor
     /// </summary>
     [SetsRequiredMembers]
-    public HitPoints(string hitDie, Creature creature)
+    public HitPoints(string hitDie, ICreature creature)
         : this(creature)
     {
         // Save off the hit dice (for example: 1d8)
@@ -131,7 +131,7 @@ public class HitPoints : DataObject
     /// The constructor
     /// </summary>
     [SetsRequiredMembers]
-    public HitPoints(int hitPoints, Creature creature)
+    public HitPoints(int hitPoints, ICreature creature)
         : this(creature)
     {
         // Save off the hit dice (for example: 1d8)

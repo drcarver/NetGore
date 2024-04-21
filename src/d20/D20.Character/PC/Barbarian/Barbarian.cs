@@ -26,11 +26,10 @@ public class Barbarian : CharacterClassBase, IBarbarian
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Barbarian(IServiceProvider services, 
-        IBarbarianLevelTable levelTable,
-        IBarbarianBackgroundTable backgroundTable)
+    public Barbarian(IServiceProvider services)
     {
         serviceProvider = services;
+
         Name = nameof(Barbarian);
         Description = "Barbarians excel in " +
             "combat, possessing the martial " +
@@ -42,37 +41,5 @@ public class Barbarian : CharacterClassBase, IBarbarian
             "barbarians charge furiously into " +
             "battle and ruin all who would " +
             "stand in their way.";
-        HitDice = "1d12";
-        ArmorProficiency =
-        [
-            EquipmentCategoryEnum.LightArmor,
-            EquipmentCategoryEnum.MediumArmor,
-            EquipmentCategoryEnum.Shields,
-        ];
-        WeaponProficiency =
-        [
-            WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.MartialWeapons,
-        ];
-        SavingThrows =
-        [
-            AbilityEnum.Strength,
-            AbilityEnum.Constitution
-        ];
-        Skills =
-        [
-            SkillEnum.AnimalHandling,
-            SkillEnum.Athletics,
-            SkillEnum.Intimidation,
-            SkillEnum.Nature,
-            SkillEnum.Perception,
-            SkillEnum.Survival,
-        ];
-
-        // Generate the class background entry
-        Background = (BackgroundTableEntry) backgroundTable.GetRandomRangeEntry();
-
-        // Set the class level table
-        ClassLevelTable = levelTable;
     }
 }

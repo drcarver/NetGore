@@ -2,6 +2,6 @@
 
 namespace D20.Gaming.Interfaces;
 
-public interface IEncounterDesignTable : INamedTable
+public interface IEncounterDesignTable : IGameTable
 {
 }

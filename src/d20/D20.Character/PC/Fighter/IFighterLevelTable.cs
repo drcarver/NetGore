@@ -2,6 +2,6 @@
 
 namespace D20.Character.PC.Fighter;
 
-public interface IFighterLevelTable : INamedTable
+public interface IFighterLevelTable : IGameTable
 {
 }

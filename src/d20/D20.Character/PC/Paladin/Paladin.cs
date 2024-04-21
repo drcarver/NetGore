@@ -32,8 +32,7 @@ public class Paladin : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Paladin(IServiceProvider services,
-        IPaladinBackgroundTable backgroundTable)
+    public Paladin(IServiceProvider services)
     {
         serviceProvider = services;
         Name = nameof(Paladin);
@@ -41,44 +40,6 @@ public class Paladin : CharacterClassBase
             "Paladins have a talent for song and story, and they come to " +
             "their careers by developing this talent as they pick up " +
             "on a smattering of other skills.";
-        HitDice = "1d8";
-        ArmorProficiency =
-        [
-            EquipmentCategoryEnum.LightArmor,
-        ];
-        WeaponProficiency =
-        [
-            WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.HandCrossbows,
-            WeaponProficiencyEnum.LongSwords,
-            WeaponProficiencyEnum.Rapiers,
-            WeaponProficiencyEnum.ShortSwords,
-        ];
-        SavingThrows =
-        [
-            AbilityEnum.Dexterity,
-            AbilityEnum.Charisma,
-        ];
-        Skills =
-        [
-            SkillEnum.AnimalHandling,
-            SkillEnum.Athletics,
-            SkillEnum.Intimidation,
-            SkillEnum.Nature,
-            SkillEnum.Perception,
-            SkillEnum.Survival,
-        ];
-        Equipment =
-        [
-            EquipmentEnum.Dagger
-        ];
-        Armor =
-        [
-            EquipmentEnum.Leather
-        ];
-
-        // Generate the class background
-        Background = (IBackgroundTableEntry)backgroundTable.GetRandomRangeEntry();
     }
 }
 

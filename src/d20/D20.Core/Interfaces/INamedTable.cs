@@ -8,4 +8,9 @@ namespace D20.Core.Interfaces;
 /// </summary>
 public interface INamedTable : IGameTable
 {
+    /// <summary>
+    /// Get a entry from the table by it's name
+    /// </summary>
+    /// <returns>The selected RandomTableEntry.</returns>
+    INamedTableEntry GetEntryByName(string Name);
 }

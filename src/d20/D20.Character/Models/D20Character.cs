@@ -16,52 +16,62 @@ public class D20Character : Creature, ICharacter
     /// <summary>
     /// The character class
     /// </summary>
-    public ICharacterClass? CharacterClass { get; set; }
+    public ICharacterClass? CharacterClass { get; protected set; }
 
     /// <summary>
     /// The characters homeland.  Automatically generated
     /// </summary>
-    public string? Homeland { get; set; }
+    public IBackgroundTableEntry? Homeland { get; internal set; }
 
     /// <summary>
     /// The character racial traits
     /// </summary>
-    public List<TraitEnum> Traits { get; set; } = [];
+    public List<TraitEnum> Traits { get; } = [];
 
     /// <summary>
     /// The player character parents
     /// </summary>
-    public string? Parents { get; set; }
+    public IBackgroundTableEntry? Parents { get; internal set; }
 
     /// <summary>
     /// The characters siblings
     /// </summary>
-    public List<ICreature> Siblings { get; set; } = [];
+    public List<ICreature> Siblings { get; } = [];
 
     /// <summary>
     /// Armor Proficiency
     /// </summary>
-    public List<EquipmentCategoryEnum> ArmorProficiency { get; set; } = [];
+    public List<EquipmentEnum> ArmorProficiency { get; } = [];
 
     /// <summary>
     /// THe weapon Proficiency for this class
     /// </summary>
-    public List<WeaponProficiencyEnum> WeaponProficiency { get; set; } = [];
+    public List<EquipmentEnum> WeaponProficiency { get; } = [];
 
     /// <summary>
     /// Tools for the creation of the character
     /// </summary>
-    public List<EquipmentEnum> ToolProficiency { get; set; } = [];
+    public List<EquipmentEnum> ToolProficiency { get; } = [];
 
     /// <summary>
     /// The inventory for the creature
     /// </summary>
-    public List<EquipmentEnum> Equipment { get; set; } = [];
+    public List<EquipmentEnum> Equipment { get; } = [];
 
     /// <summary>
     /// Saving Throws
     /// </summary>
-    public List<AbilityEnum> SavingThrows { get; set; } = [];
+    public List<AbilityEnum> SavingThrows { get; } = [];
+
+    /// <summary>
+    /// The inventory for the creature
+    /// </summary>
+    public Dictionary<IInventoryEntry, InventoryEntry> Inventory { get; } = [];
+
+    /// <summary>
+    /// The character level
+    /// </summary>
+    public int Level { get; protected set; }
 
     /// <summary>
     /// Constructor

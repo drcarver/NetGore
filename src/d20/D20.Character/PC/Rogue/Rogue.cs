@@ -20,7 +20,7 @@ public class Rogue : CharacterClassBase
     /// Level up the character with this class
     /// </summary>
     /// <param name="character"></param>
-    public void LevelUp(ICharacter character)
+    public override void LevelUp(ICharacter character)
     {
         var rogueLevelTable = serviceProvider.GetService<IRogueLevelTable>();
     }
@@ -29,8 +29,7 @@ public class Rogue : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Rogue(IServiceProvider services,
-        IRogueBackgroundTable backgroundTable)
+    public Rogue(IServiceProvider services)
     {
         serviceProvider = services;
         Name = nameof(Rogue);
@@ -52,55 +51,5 @@ public class Rogue : CharacterClassBase
             "and facing fantastic danger in pursuit of equally fantastic " +
             "riches. In the end, any who desire to shape their fates and " +
             "live life on their own terms might come to be called rogues.";
-
-        HitDice = "1d8";
-        ArmorProficiency =
-        [
-            EquipmentCategoryEnum.LightArmor,
-        ];
-        WeaponProficiency =
-        [
-            WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.HandCrossbows,
-            WeaponProficiencyEnum.LongSwords,
-            WeaponProficiencyEnum.Rapiers,
-            WeaponProficiencyEnum.ShortSwords,
-        ];
-        SavingThrows =
-        [
-            AbilityEnum.Dexterity,
-            AbilityEnum.Intelligence
-        ];
-        ToolProficiency =
-        [
-            EquipmentEnum.ThievesTools,
-        ];
-        Skills =
-        [
-            SkillEnum.Acrobatics,
-            SkillEnum.Athletics,
-            SkillEnum.Deception,
-            SkillEnum.Insight,
-            SkillEnum.Intimidation,
-            SkillEnum.Investigation,
-            SkillEnum.Perception,
-            SkillEnum.Performance,
-            SkillEnum.Persuasion,
-            SkillEnum.SleightofHand,
-            SkillEnum.Stealth,
-        ];
-
-        // Generate the class background
-        Background = (IBackgroundTableEntry)backgroundTable.GetRandomRangeEntry();
     }
 }
-
-//Equipment
-//You start with    the following   equipment,	in	addition
-//to  the equipment   granted by  your background:
-//• (a) a   rapier or(b) a shortsword
-//• (a) a   shortbow and quiver of  20	arrows or(b) a
-//shortsword
-//• (a) a   burglar’s pack,   (b)	a dungeoneer’s pack, or
-//(c) an explorer’s pack
-//• (a) Leather armor,	two daggers, and thieves’	tools

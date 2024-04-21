@@ -1,4 +1,6 @@
-﻿using D20.Core.Enum;
+﻿using System.Security.Cryptography;
+
+using D20.Core.Enum;
 using D20.Core.Models;
 
 namespace D20.Core.Interfaces;
@@ -26,8 +28,11 @@ public interface IGameTable : IBaseObject
     /// with out creating the actual able values.  A bit of 
     /// initialize to conserve memory on big tables
     /// </summary>
-    virtual void InitializeTable()
-    {
-    }
+    void InitializeTable();
 
+    /// <summary>
+    /// Get a random entry from the table 
+    /// </summary>
+    /// <returns>The selected TableEntry.</returns>
+    public IGameTableEntry GetRandomEntry();
 }

@@ -23,7 +23,7 @@ public class Wizard : CharacterClassBase
     /// Level up the character with this class
     /// </summary>
     /// <param name="character"></param>
-    public void LevelUp(ICharacter character)
+    public override void LevelUp(ICharacter character)
     {
         var WizardLevelTable = serviceProvider.GetService<IWizardLevelTable>();
     }
@@ -32,8 +32,7 @@ public class Wizard : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Wizard(IServiceProvider services,
-        IWizardBackgroundTable backgroundTable)
+    public Wizard(IServiceProvider services)
     {
         serviceProvider = services;
         Name = nameof(Wizard);
@@ -41,55 +40,5 @@ public class Wizard : CharacterClassBase
             "Wizards have a talent for song and story, and they come to " +
             "their careers by developing this talent as they pick up " +
             "on a smattering of other skills.";
-        HitDice = "1d8";
-        ArmorProficiency =
-        [
-            EquipmentCategoryEnum.LightArmor,
-        ];
-        WeaponProficiency =
-        [
-            WeaponProficiencyEnum.SimpleWeapons,
-            WeaponProficiencyEnum.HandCrossbows,
-            WeaponProficiencyEnum.LongSwords,
-            WeaponProficiencyEnum.Rapiers,
-            WeaponProficiencyEnum.ShortSwords,
-        ];
-        SavingThrows =
-        [
-            AbilityEnum.Dexterity,
-            AbilityEnum.Charisma,
-        ];
-        Skills =
-        [
-            SkillEnum.AnimalHandling,
-            SkillEnum.Athletics,
-            SkillEnum.Intimidation,
-            SkillEnum.Nature,
-            SkillEnum.Perception,
-            SkillEnum.Survival,
-        ];
-        Equipment =
-        [
-            EquipmentEnum.Dagger
-        ];
-        Armor =
-        [
-            EquipmentEnum.Leather
-        ];
-
-        // Generate the class background
-        Background = (IBackgroundTableEntry)backgroundTable.GetRandomRangeEntry();
     }
 }
-
-//Tools: Three musical instruments of  your choice
-//Skills: Choose any three
-//Equipment
-//You start   with the following equipment,  in	addition
-//to  the equipment   granted by  your background:
-//• (a) a   rapier,	(b) a   longsword,	or(c) any simple
-//weapon
-//• (a) a   diplomat’s pack    or(b) an entertainer’s pack
-//• (a) a   lute or(b) any other   musical instrument
-//• Leather armor   and a   dagger
-//The Wizard

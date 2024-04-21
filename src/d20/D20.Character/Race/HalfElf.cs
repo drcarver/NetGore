@@ -253,18 +253,17 @@ public class HalfElf : ICharacterRace
     /// <summary>
     /// Generate the character background
     /// </summary>
-    public void GenerateRaceBackground(ICharacter character)
+    public void GenerateRaceBackground(D20Character character)
     {
         #region Homeland
-        var homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (homeland?.Name == "Unusual Homeland")
+        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
+        if (character.Homeland?.Name == "Unusual Homeland")
         {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
+            //character.Homeland = (BackgroundTableEntry?) UnusualHomelandTable.GetRandomEntry();
         }
-        character.Homeland = homeland?.Name;
-        if (homeland?.Traits != null)
+        if (character.Homeland?.Traits != null)
         {
-            foreach (var trait in homeland.Traits)
+            foreach (var trait in character.Homeland.Traits)
             {
                 if (!character.Traits.Contains(trait))
                 {
@@ -275,11 +274,10 @@ public class HalfElf : ICharacterRace
         #endregion
 
         #region Parents
-        var parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        character.Parents = parents?.Description;
-        if (parents?.Traits != null)
+        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
+        if (character.Parents?.Traits != null)
         {
-            foreach (var trait in parents.Traits)
+            foreach (var trait in character.Parents.Traits)
             {
                 if (!character.Traits.Contains(trait))
                 {
