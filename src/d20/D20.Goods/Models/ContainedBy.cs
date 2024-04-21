@@ -6,27 +6,25 @@ using D20.Goods.Interfaces;
 
 namespace D20.Goods.Models;
 
-public class ContainerCapacityEntry : NamedTableEntry, IContainerCapacityEntry
+public class ContainedBy : GoodsTableEntry, IContainedBy
 {
     /// <summary>
-    /// Constructor
+    /// A good to be purchased
     /// </summary>
     [SetsRequiredMembers]
-    public ContainerCapacityEntry()
+    public ContainedBy()
     {
-        ProperName = string.Empty;
-        Description = string.Empty;
     }
 
     /// <summary>
-    /// The capacities of the container in various units
+    /// The weight of the gear
     /// </summary>
-    public List<Capacity> Capacity { get; set; } = [];
+    public decimal Weight { get; set; }
 
     /// <summary>
-    /// The proper name of the container
+    /// The container for the gear
     /// </summary>
-    public string ProperName { get; set; }
+    public EquipmentEnum Container { get; set; }
 
     /// <summary>
     /// The equipment Category
@@ -37,5 +35,4 @@ public class ContainerCapacityEntry : NamedTableEntry, IContainerCapacityEntry
     /// The equipment name
     /// </summary>
     public EquipmentEnum Equipment { get; set; }
-
 }

@@ -54,7 +54,7 @@ public class ArmorTable : NamedTable, IArmorTable
     public override void InitializeTable()
     {
         Table =
-[
+        [
             #region Light - Padded
             //Padded 5	gp 11+Dex modifier — Disadvantage 8	lb.
             new ArmorEntry

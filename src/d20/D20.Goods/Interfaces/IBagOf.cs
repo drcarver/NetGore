@@ -1,4 +1,6 @@
-﻿namespace D20.Goods.Interfaces;
+﻿using D20.Goods.Enum;
+
+namespace D20.Goods.Interfaces;
 
 public interface IBagOf
 {
@@ -11,4 +13,14 @@ public interface IBagOf
     /// The quantity of the BagOf
     /// </summary>
     int Quantity { get; set; }
+
+    /// <summary>
+    /// The equipment Category
+    /// </summary>
+    EquipmentCategoryEnum EquipmentCategory { get; set; }
+
+    /// <summary>
+    /// The equipment name
+    /// </summary>
+    EquipmentEnum Equipment { get; set; }
 }

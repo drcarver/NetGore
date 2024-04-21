@@ -13,7 +13,7 @@ public interface IWeaponEntry
     /// The type of damage caused by the weapon
     /// the armor
     /// </summary>
-    DamageType DamageType { get; set; }
+    DamageTypeEnum DamageType { get; set; }
 
     /// When making an attack with a finesse
     /// weapon, you use your choice of your Strength or

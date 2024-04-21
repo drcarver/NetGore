@@ -57,7 +57,7 @@ public interface ICharacterClassBase : IBaseObject
     /// The description of the class background.  Used to provide
     /// a background for the character selecting this class
     /// </summary>
-    IBackgroundTableEntry Background { get; set; }
+    IBackgroundTableEntry? Background { get; set; }
 
     /// <summary>
     /// The level table for the class

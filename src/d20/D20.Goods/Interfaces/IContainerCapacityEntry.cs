@@ -1,4 +1,5 @@
-﻿using D20.Goods.Models;
+﻿using D20.Goods.Enum;
+using D20.Goods.Models;
 
 namespace D20.Goods.Interfaces;
 
@@ -15,7 +16,12 @@ public interface IContainerCapacityEntry
     string ProperName { get; set; }
 
     /// <summary>
-    /// A description for the container
+    /// The equipment Category
     /// </summary>
-    string Description { get; set; }
+    EquipmentCategoryEnum EquipmentCategory { get; set; }
+
+    /// <summary>
+    /// The equipment name
+    /// </summary>
+    EquipmentEnum Equipment { get; set; }
 }

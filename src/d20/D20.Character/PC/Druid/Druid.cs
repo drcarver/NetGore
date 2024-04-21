@@ -74,7 +74,7 @@ public class Druid : CharacterClassBase
         ];
         ToolProficiency =
         [
-            EquipmentEnum.HerbalismKit
+            EquipmentEnum.Bagpipes
         ];
         Skills =
         [

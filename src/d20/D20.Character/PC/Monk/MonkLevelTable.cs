@@ -7,15 +7,12 @@
 //namespace D20.Character.PC.Monk;
 
 ///// <summary>
-///// Monks are fueled by an almost supernatural rage that 
-///// helps them loose the volatile stores of adrenaline within 
-///// their bodies.This rage stays with the Monk throughout 
-///// their life as an adventurer, and they learn to refine their
-///// fits of passionate anger only over time. Yet each Monk’s
-///// rage is different and personal. It comes from the primal 
-///// depths of their soul, and cannot be manufactured. Only a 
-///// select few can channel that purest, deepest rage into 
-///// overpowering combat.
+///// Monks excel at overcoming even the most daunting 
+///// perils, striking where it’s least expected, and 
+///// taking advantage of enemy vulnerabilities. Fleet 
+///// of foot and skilled in combat, monks can navigate 
+///// any battlefield with ease, aiding allies wherever 
+///// they are needed most.
 ///// </summary>
 //public class MonkLevelTable : GameTable, IMonkLevelTable
 //{
@@ -26,23 +23,22 @@
 //    public MonkLevelTable()
 //    {
 //        Name = nameof(MonkLevelTable);
-//        ProperName = "Barabrian Features and Proficencies by Level";
+//        ProperName = "Monk Features and Proficiencies by Level";
 //        TableType = TableTypeEnum.CharacterTable;
 //        Description =
-//            "Monks are fueled by an almost supernatural rage that " +
-//            "helps them loose the volatile stores of adrenaline within " +
-//            "their bodies.This rage stays with the Monk throughout " +
-//            "their life as an adventurer, and they learn to refine their " +
-//            "fits of passionate anger only over time. Yet each Monk’s " +
-//            "rage is different and personal. It comes from the primal " +
-//            "depths of their soul, and cannot be manufactured. Only a " +
-//            "select few can channel that purest, deepest rage into " +
-//            "overpowering combat. ";
+//            "Monks excel at overcoming even the most daunting " +
+//            "perils, striking where it’s least expected, and " +
+//            "taking advantage of enemy vulnerabilities. Fleet " +
+//            "of foot and skilled in combat, monks can navigate " +
+//            "any battlefield with ease, aiding allies wherever " +
+//            "they are needed most.";
 //    }
 
 //    /// <summary>
-//    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-//    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+//    /// Initialize the game table.  This is a separate method 
+//    /// so we can create a game table for it's meta properties
+//    /// with out creating the actual able values.  A bit of 
+//    /// optimization to conserve memory on big tables
 //    /// </summary>
 //    public override void InitializeTable()
 //    {

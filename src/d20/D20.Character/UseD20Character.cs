@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 
 using D20.Character.Models;
+using D20.Character.PC.Barbarian;
+using D20.Character.PC.Bard;
 using D20.Core.Interfaces;
 using D20.Core.Models;
 
@@ -41,6 +43,10 @@ public static class DataServices
                 var t = collection.AddTransient(table);
             }
         }
+
+        // Now add the PC Classes
+        collection.AddTransient<IBarbarian, Barbarian>();
+        collection.AddTransient<IBard, Bard>();
 
         return collection;
     }

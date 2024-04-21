@@ -1,9 +1,8 @@
-﻿using D20.Core.Models;
-using D20.Goods.Enum;
+﻿using D20.Goods.Enum;
 
 namespace D20.Goods.Interfaces;
 
-public interface IByLength
+internal interface IContainedBy
 {
     /// <summary>
     /// The weight of the gear
@@ -11,9 +10,9 @@ public interface IByLength
     decimal Weight { get; set; }
 
     /// <summary>
-    /// The Length of the object
+    /// The container for the gear
     /// </summary>
-    Height? Length { get; set; }
+    EquipmentEnum Container { get; set; }
 
     /// <summary>
     /// The equipment Category

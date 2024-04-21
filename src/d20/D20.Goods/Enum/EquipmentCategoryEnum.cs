@@ -13,46 +13,19 @@
 /// </summary>
 public enum EquipmentCategoryEnum
 {
-    /// <summary>
-    /// Heavier armor interferes with the
-    /// wearer’s ability to move quickly, stealthily, 
-    /// and freely.	If the Armor table shows “Str 13”
-    /// or  “Str 15” in the Strength column for	an 
-    /// armor type, the armor reduces the wearer’s 
-    /// speed by 10	feet unless the wearer has a
-    /// Strength score equal to or higher than
-    /// the listed score
-    /// </summary>
     HeavyArmor,
-
-    /// <summary>
-    /// Medium armor offers more protection than light
-    /// armor, but it also impairs movement more.If you
-    /// wear medium  armor,	you add your Dexterity
-    /// modifier, to a maximum of +2, to the base	
-    /// number from your armor type to determine your
-    /// Armor Class.
-    /// </summary>
     MediumArmor,
-
-    /// <summary>
-    /// Made from supple and thin materials, light 
-    /// armor favors agile adventurers since it 
-    /// offers some protection without sacrificing 
-    /// mobility.If you wear light armor, you add 
-    /// your Dexterity modifier to the base number 
-    /// from your armor type to determine your
-    /// Armor Class.
-    /// </summary>
     LightArmor,
-
-    /// <summary>
-    /// A shield is made from wood or metal and
-    /// is carried in	one hand.Wielding a shield increases
-    /// your Armor Class by 2. You can benefit from only
-    /// one shield at a time
-    /// </summary>
     Shields,
     SimpleWeapon,
-    MartialWeapon
+    MartialWeapon,
+    Gear,
+    Ammunition,
+    ArcaneFocus,
+    Container,
+    DruidicFocus,
+    HolySymbol,
+    Artisanstools,
+    Tools,
+    MusicalInstrument
 }

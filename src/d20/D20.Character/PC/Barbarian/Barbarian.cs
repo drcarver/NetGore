@@ -7,7 +7,7 @@ using D20.Goods.Enum;
 
 namespace D20.Character.PC.Barbarian;
 
-public class Barbarian : CharacterClassBase, ICharacterClass
+public class Barbarian : CharacterClassBase, IBarbarian
 {
     /// <summary>
     /// The DI service provider

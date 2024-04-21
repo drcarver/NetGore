@@ -12,7 +12,7 @@ namespace D20.Character.PC.Bard;
 /// their careers by developing this talent as they pick up 
 /// on a smattering of other skills. 
 /// </summary>
-public class Bard : CharacterClassBase
+public class Bard : CharacterClassBase, IBard
 {
     /// <summary>
     /// The DI service provider

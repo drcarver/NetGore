@@ -24,7 +24,7 @@ public class WeaponEntry : EquipmentEntry, IWeaponEntry
     /// The strength ability score required for
     /// the armor
     /// </summary>
-    public DamageType DamageType { get; set; }
+    public DamageTypeEnum DamageType { get; set; }
 
     /// When making an attack with a finesse
     /// weapon, you use your choice of your Strength or

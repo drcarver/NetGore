@@ -21,7 +21,12 @@ public class GearTableEntry : GoodsTableEntry, IGearTableEntry
     public decimal Weight { get; set; }
 
     /// <summary>
-    /// The container for the item
+    /// The equipment Category
     /// </summary>
-    public AdventuringGearEnum? Container { get; set; }
+    public EquipmentCategoryEnum EquipmentCategory { get; set; }
+
+    /// <summary>
+    /// The equipment name
+    /// </summary>
+    public EquipmentEnum Equipment { get; set; }
 }

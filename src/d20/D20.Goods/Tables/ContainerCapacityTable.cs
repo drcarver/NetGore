@@ -35,8 +35,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Backpack* 1	cubic foot/30	pounds of  gear
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Backpack),
-                ProperName = "Backpack",
+                Name = nameof(EquipmentEnum.Backpack),
+                ProperName = nameof(EquipmentEnum.Backpack),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Backpack,
                 Description =
                     "You can also strap items, such as a bedroll " +
                     "or a coil of rope, to the outside of a " +
@@ -63,8 +65,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Barrel 40	gallons liquid, 4	cubic feet    solid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Barrel),
-                ProperName = "Barrel",
+                Name = nameof(EquipmentEnum.Barrel),
+                ProperName = nameof(EquipmentEnum.Barrel),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Barrel,
                 Capacity =
                 [
                     new Capacity
@@ -87,8 +91,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Basket 2 cubic feet/40 pounds of  gear
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Basket),
-                ProperName = "Basket",
+                Name = nameof(EquipmentEnum.Basket),
+                ProperName = nameof(EquipmentEnum.Basket),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Basket,
                 Capacity =
                 [
                     new Capacity
@@ -111,7 +117,9 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Bottle 1 Ounce liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Bottle1Ounce),
+                Name = nameof(EquipmentEnum.Bottle1Ounce),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Bottle1Ounce,
                 ProperName = "Bottle 1 Ounce",
                 Capacity =
                 [
@@ -129,8 +137,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Bottle 1½	pints liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Bottle),
-                ProperName = "Bottle",
+                Name = nameof(EquipmentEnum.Bottle),
+                ProperName = nameof(EquipmentEnum.Bottle),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Bottle,
                 Capacity =
                 [
                     new Capacity
@@ -147,8 +157,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Bucket 3	gallons liquid, 1/2	cubic foot    solid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Bucket),
-                ProperName = "Bucket",
+                Name = nameof(EquipmentEnum.Bucket),
+                ProperName = nameof(EquipmentEnum.Bucket),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Bucket,
                 Capacity =
                 [
                     new Capacity
@@ -171,8 +183,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Chest 12	cubic feet/300	pounds of  gear
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Chest),
-                ProperName = "Chest",
+                Name = nameof(EquipmentEnum.Chest),
+                ProperName = nameof(EquipmentEnum.Chest),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Chest,
                 Capacity =
                 [
                     new Capacity
@@ -195,8 +209,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Flask   or tankard 1	pint liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Flask),
-                ProperName = "Flask",
+                Name = nameof(EquipmentEnum.Flask),
+                ProperName = nameof(EquipmentEnum.Flask),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Flask,
                 Capacity =
                 [
                     new Capacity
@@ -213,8 +229,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Flask   or tankard 1	pint liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Tankard),
-                ProperName = "Tankard",
+                Name = nameof(EquipmentEnum.Tankard),
+                ProperName = nameof(EquipmentEnum.Tankard),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Tankard,
                 Capacity =
                 [
                     new Capacity
@@ -231,8 +249,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Jug or  pitcher 1	gallon liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Jug),
-                ProperName = "Jug",
+                Name = nameof(EquipmentEnum.Jug),
+                ProperName = nameof(EquipmentEnum.Jug),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Jug,
                 Capacity =
                 [
                     new Capacity
@@ -249,8 +269,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Jug or  pitcher 1	gallon liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Pitcher),
-                ProperName = "Pitcher",
+                Name = nameof(EquipmentEnum.Pitcher),
+                ProperName = nameof(EquipmentEnum.Pitcher),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Pitcher,
                 Capacity =
                 [
                     new Capacity
@@ -267,8 +289,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Pot,	iron 1	gallon liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.IronPot),
+                Name = nameof(EquipmentEnum.IronPot),
                 ProperName = "Iron Pot",
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.IronPot,
                 Capacity =
                 [
                     new Capacity
@@ -285,8 +309,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Pouch 1/5	cubic foot/6	pounds of  gear
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Pouch),
-                ProperName = "Pouch",
+                Name = nameof(EquipmentEnum.Pouch),
+                ProperName = nameof(EquipmentEnum.Pouch),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Pouch,
                 Capacity =
                 [
                     new Capacity
@@ -309,8 +335,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Sack 1	cubic foot/30	pounds of  gear
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Sack),
-                ProperName = "Sack",
+                Name = nameof(EquipmentEnum.Sack),
+                ProperName = nameof(EquipmentEnum.Sack),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Sack,
                 Capacity =
                 [
                     new Capacity
@@ -333,8 +361,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Vial 4	ounces liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Vial),
-                ProperName = "Vial",
+                Name = nameof(EquipmentEnum.Vial),
+                ProperName = nameof(EquipmentEnum.Vial),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Vial,
                 Capacity =
                 [
                     new Capacity
@@ -351,8 +381,10 @@ public class ContainerCapacityTable : NamedTable, IContainerCapacityTable
             //Waterskin 4	pints liquid
             new ContainerCapacityEntry
             {
-                Name = nameof(AdventuringGearEnum.Waterskin),
-                ProperName = "Waterskin",
+                Name = nameof(EquipmentEnum.Waterskin),
+                ProperName = nameof(EquipmentEnum.Waterskin),
+                EquipmentCategory = EquipmentCategoryEnum.Container,
+                Equipment = EquipmentEnum.Waterskin,
                 Capacity =
                 [
                     new Capacity

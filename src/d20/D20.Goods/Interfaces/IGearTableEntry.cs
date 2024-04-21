@@ -8,9 +8,4 @@ public interface IGearTableEntry : IGoodsTableEntry
     /// The weight of the gear
     /// </summary>
     decimal Weight { get; set; }
-
-    /// <summary>
-    /// The container for the item
-    /// </summary>
-    AdventuringGearEnum? Container { get; set; }
 }
