@@ -64,8 +64,10 @@ public class NobilityTable : RandomTable, INobilityTable
     //97–99	Minor Prince    You are the child of a prince or princess, and part of the royal family. You aren’t the next in succession, but your power and wealth are grand indeed.
     //100	Regent You are a prince or princess, the son or daughter of the monarch.You owe fealty directly to your parents, and to no one else. Few command the power and wealth you do, and your presence inspires great respect, if not total awe, among those who kneel before the crown
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

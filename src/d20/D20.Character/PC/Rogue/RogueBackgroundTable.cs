@@ -1,32 +1,9 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Runtime.Intrinsics.X86;
-using System.Threading.Tasks;
-using CommunityToolkit.Maui.ApplicationModel;
-using CommunityToolkit.Maui.Core;
+﻿using System.Diagnostics.CodeAnalysis;
+
 using D20.Character.Enum;
 using D20.Character.Models;
-using D20.Character.PC.Barbarian;
-using D20.Character.Race;
 using D20.Core.Enum;
 using D20.Core.Models;
-
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
-using Microsoft.Maui.Controls.Shapes;
-
-using Microsoft.Maui.Controls;
-
-using NetGore.Core.Enum;
-
-using NetGore.Core.Models;
-
-using static Microsoft.Maui.ApplicationModel.Permissions;
-
-using static System.Formats.Asn1.AsnWriter;
-using Microsoft.Maui.Animations;
 
 namespace D20.Character.PC.Rogue;
 

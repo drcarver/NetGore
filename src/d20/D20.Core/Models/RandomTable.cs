@@ -29,11 +29,12 @@ public class RandomTable : NamedTable, IRandomTable
     /// dice roll
     /// </summary>
     /// <returns>The selected TableEntry.</returns>
-    public IRandomTableEntry GetRandomRangeEntry()
+    public virtual IRandomTableEntry GetRandomRangeEntry(int dice = 0)
     {
+        int diceSides  = dice > 0 ? dice : DiceSides;
         using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
         {
-            return GetRangeEntryByNumber(RandomNumberGenerator.GetInt32(DiceSides) + 1);
+            return GetRangeEntryByNumber(RandomNumberGenerator.GetInt32(diceSides) + 1);
         }
     }
 

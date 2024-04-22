@@ -20,11 +20,13 @@
 #endregion
 
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography;
 
 using D20.Character.Enum;
 using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
 namespace D20.Character.Tables;
@@ -51,6 +53,21 @@ public class ProfessionTable : RandomTable, IProfessionTable
         Description = "Most of the time, your parents both come from the same social stratum. It’s uncommon, but not unheard of, for people to marry outside their caste. Roll on Table: Profession to determine the principal profession of your parents.";
         DiceSides = 100;
     }
+    /// <summary>
+    /// Override GetRandomRangeEntry to allow for us to get 
+    /// slave/serfs/peasants separately from everyone else
+    /// </summary>
+    /// <param name="dice">The dice to roll</param>
+    /// <returns>The profession</returns>
+    public override IRandomTableEntry GetRandomRangeEntry(int dice = 0)
+    {
+        int diceSides = dice > 0 ? dice : 75;
+        int starting = dice <= 20 ? 1 : 26;
+        using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+        {
+            return GetRangeEntryByNumber(RandomNumberGenerator.GetInt32(diceSides) + starting);
+        }
+    }
 
     //Table: Profession
     //d%	Result
@@ -66,8 +83,10 @@ public class ProfessionTable : RandomTable, IProfessionTable
     //86–95	Merchants You gain access to the Merchant social trait.
     //96–100	Clergy or Cultists You gain access to the Child of the Temple faith trait.}
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {
@@ -178,6 +197,7 @@ public class ProfessionTable : RandomTable, IProfessionTable
                     "Savanna Child regional trait.",
                 Traits =
                 {
+                    TraitEnum.SavannahChild
                 },
             },
             #endregion

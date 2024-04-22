@@ -12,7 +12,7 @@ public interface IRandomTable : INamedTable
     /// sides to determine the type of dice to roll
     /// </summary>
     /// <returns>The entry in the given range</returns>
-    IRandomTableEntry GetRandomRangeEntry();
+    IRandomTableEntry GetRandomRangeEntry(int dice = 0);
 
     /// <summary>
     /// Get a entry where the number is in the entries

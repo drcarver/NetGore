@@ -392,9 +392,4 @@ public class Gnome : ICharacterRace
     private static void SetAge(ICharacter creature)
     {
     }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
-    }
 }

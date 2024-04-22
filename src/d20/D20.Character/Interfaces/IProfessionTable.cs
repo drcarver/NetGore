@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface IProfessionTable : INamedTable
+public interface IProfessionTable : IRandomTable
 {
 }

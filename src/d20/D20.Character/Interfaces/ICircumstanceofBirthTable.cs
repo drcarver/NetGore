@@ -2,6 +2,6 @@
 
 namespace D20.Character.Interfaces;
 
-public interface ICircumstanceofBirthTable : INamedTable
+public interface ICircumstanceofBirthTable : IRandomTable
 {
 }

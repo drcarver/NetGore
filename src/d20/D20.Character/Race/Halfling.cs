@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿// Ignore Spelling: Halfling
+
+using System.Diagnostics.CodeAnalysis;
 
 using D20.Character.Enum;
 using D20.Character.Interfaces;
@@ -6,7 +8,6 @@ using D20.Character.Models;
 using D20.Character.Tables.Halfling;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
 
 using Microsoft.Extensions.Logging;
@@ -56,51 +57,35 @@ public class Halfling : D20Character, ICharacterRace
     /// Constructor
     /// </summary>
     /// <param name="loggerFactory"></param>
-    /// <param name="homelandTable"></param>
-    /// <param name="unusualHomelandTable"></param>
-    /// <param name="halflingParentsTable"></param>
-    /// <param name="halflingSiblingsTable"></param>
+    /// <param name="services"></param>
     [SetsRequiredMembers]
     public Halfling(ILoggerFactory loggerFactory,
-        IHalflingHomelandTable homelandTable,
-        IUnusualHomelandTable unusualHomelandTable,
-        IHalflingParentsTable halflingParentsTable,
-        IHalflingSiblingsTable halflingSiblingsTable,
-        IInfluentialAssociatesTable influentialAssociatesTable,
-        IRelativeAgeofSiblingTable relativeAgeofSiblingTable)
+        IServiceProvider services)
         : base(loggerFactory)
     {
         // Initialize  the creature
         Initialize();
 
         // Now generate the characters background
-        GenerateBackground(
-            homelandTable, 
-            unusualHomelandTable,
-            halflingParentsTable,
-            halflingSiblingsTable,
-            influentialAssociatesTable,
-            relativeAgeofSiblingTable);
+        GenerateRaceBackground(services);
     }
 
     /// <summary>
     /// Generate the character background
     /// </summary>
-    public void GenerateBackground(
-        IRandomTable homelandTable,
-        IRandomTable unusualHomelandTable,
-        IRandomTable parentsTable,
-        IRandomTable siblingsTable,
-        IRandomTable influentialAssociatesTable,
-        IRandomTable relativeAgeofSiblingTable)
+    private void GenerateRaceBackground(IServiceProvider services)
     {
         #region Homeland
-        Homeland = (IBackgroundTableEntry)homelandTable.GetRandomRangeEntry();
-        if (Homeland.Name == "UnusualHomeland")
+        var homelandTable = services.GetService<IHalflingHomelandTable>();
+        homelandTable?.InitializeTable();
+        Homeland = (IBackgroundTableEntry?) homelandTable?.GetRandomRangeEntry();
+        if (Homeland?.Name == nameof(HalflingHomelandEnum.UnusualHomeland))
         {
-            Homeland = (IBackgroundTableEntry)unusualHomelandTable.GetRandomRangeEntry();
+            var unusualHomelandTable = services.GetService<IUnusualHomelandTable>();
+            homelandTable?.InitializeTable();
+            Homeland = (IBackgroundTableEntry?)unusualHomelandTable?.GetRandomRangeEntry();
         }
-        if (Homeland.Traits != null)
+        if (Homeland?.Traits != null)
         {
             foreach (var trait in Homeland.Traits)
             {
@@ -113,7 +98,9 @@ public class Halfling : D20Character, ICharacterRace
         #endregion
 
         #region Parents
-        Parents = (BackgroundTableEntry)parentsTable.GetRandomRangeEntry();
+        var parentsTable = services.GetService<IHalflingParentsTable>();
+        parentsTable?.InitializeTable();
+        Parents = (BackgroundTableEntry?)parentsTable?.GetRandomRangeEntry();
         if (Parents?.Traits != null)
         {
             foreach (var trait in Parents.Traits)
@@ -126,36 +113,53 @@ public class Halfling : D20Character, ICharacterRace
         }
         #endregion
 
-        #region Siblings
-        var siblings = (BackgroundTableEntry?) siblingsTable.GetRandomRangeEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
+        #region Circumstances of Birth
+        var circumstanceofBirthTable = services.GetService<ICircumstanceofBirthTable>();
+        circumstanceofBirthTable?.InitializeTable();
+        CircumstanceOfBirth = (BackgroundTableEntry?)circumstanceofBirthTable?.GetRandomRangeEntry();
+        if (CircumstanceOfBirth?.Traits != null)
         {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
+            foreach (var trait in CircumstanceOfBirth.Traits)
             {
-                var creatureSiblings = new Halfling();
-
-               // Set relative age of sibling
-               var relativeAge = relativeAgeofSiblingTable.GetRandomRangeEntry();
-                if (relativeAge?.Name == "Younger")
+                if (Traits.Contains(trait))
                 {
-                    creatureSiblings.Age -= new Dice("1d4").Total;
-                }
-                if (relativeAge?.Name == "Older")
-                {
-                    creatureSiblings.Age += new Dice("1d4").Total;
-                }
-
-                Siblings.Add(creatureSiblings);
-            }
-            if (Siblings.Count > 0)
-            {
-                if (!Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    Traits.Add(TraitEnum.KinGuardian);
+                    Traits.Add(trait);
                 }
             }
         }
+
+        #endregion
+
+        #region Siblings
+        //var siblings = (BackgroundTableEntry?) siblingsTable.GetRandomRangeEntry();
+        //if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
+        //{
+        //    var total = new Dice(siblings.Name).Total;
+        //    for (int i = 0; i < total; i++)
+        //    {
+        //        var creatureSiblings = new Halfling();
+
+        //       // Set relative age of sibling
+        //       var relativeAge = relativeAgeofSiblingTable.GetRandomRangeEntry();
+        //        if (relativeAge?.Name == "Younger")
+        //        {
+        //            creatureSiblings.Age -= new Dice("1d4").Total;
+        //        }
+        //        if (relativeAge?.Name == "Older")
+        //        {
+        //            creatureSiblings.Age += new Dice("1d4").Total;
+        //        }
+
+        //        Siblings.Add(creatureSiblings);
+        //    }
+        //    if (Siblings.Count > 0)
+        //    {
+        //        if (!Traits.Contains(TraitEnum.KinGuardian))
+        //        {
+        //            Traits.Add(TraitEnum.KinGuardian);
+        //        }
+        //    }
+        //}
         #endregion
     }
 
@@ -192,12 +196,7 @@ public class Halfling : D20Character, ICharacterRace
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
-    private void SetAge(ICharacter creature)
+    public void SetAge(ICharacter creature)
     {
-    }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
     }
 }

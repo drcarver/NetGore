@@ -52,8 +52,10 @@ public class HalflingHomelandTable : RandomTable, IHalflingHomelandTable
     //81–95	Traveling Band or Caravan   You gain access to the Friend in Every Town social trait.
     //96–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {
@@ -84,7 +86,7 @@ public class HalflingHomelandTable : RandomTable, IHalflingHomelandTable
             {
                 Range = new Range(51,80),
                 Name = nameof(HalflingHomelandEnum.HumanHomeland),
-                ProperName = "Halfling Settlement",
+                ProperName = "Human Settlement",
                 Description =
                     "You gain access to the Child of the Streets social trait and the Well-Informed race trait.",
                 Traits =

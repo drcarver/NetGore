@@ -1,40 +1,18 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using D20.Character.Interfaces;
-using D20.Character.Models;
 
 using Microsoft.Extensions.Logging;
 
-using NetGore.Core.Interfaces;
-
 namespace D20.Character.Models;
 
-public class PlayerCharacter : D20Character, IPlayerCharacter
+public class PlayerCharacter : D20Character, ICharacter
 {
     /// <summary>
     /// The account for the player who owns this
     /// character
     /// </summary>
-    public IAccount? Account { get; set; }
-
-    /// <summary>
-    /// The experience points for the player character
-    /// </summary>
-    public int ExperiencePoints { get; set; }
-
-    /// <summary>
-    /// The character level
-    /// </summary>
-    public int Level { get; set; }
-
-    /// <summary>
-    /// Level Up the character
-    /// </summary>
-    public void LevelUp()
-    {
-
-        //switch (Level)
-    }
+    //public IAccount? Account { get; set; }
 
     /// <summary>
     /// The Player Character

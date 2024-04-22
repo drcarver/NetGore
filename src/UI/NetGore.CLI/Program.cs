@@ -1,7 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+
+using D20.Character;
+using D20.Core;
+using D20.Goods;
+using D20.MagicItems;
+using D20.Monsters;
+using D20.Spells;
 
 // Configuration
 var builder = new ConfigurationBuilder()
@@ -23,15 +28,13 @@ var services = new ServiceCollection()
     {
         loggingBuilder.AddConsole();
     })
-    //.AddSingleton(configuration)
-    //.AddSingleton<IExampleService, ExampleService>()
-    //.AddSingleton<IAccountService, AccountService>()
-    //.AddSingleton<IRaceService, RaceService>()
-    //.AddSingleton<ICharacterService, CharacterService>()
-    //.AddSingleton<IClassService, ClassService>()
-    //.AddSingleton<IPlayerCharacter, PlayerCharacter>()
-    //.AddDbContextPool<NETGoreDbContext>(options =>
-    //    options.UseSqlite(configuration.GetConnectionString("DefaultConnection")))
+    .UseD20Core()
+    .UseD20Character()
+    //.UseD20Data()
+    .UseD20Goods()
+    .UseD20MagicItems()
+    .UseD20Monsters()
+    .UseD20Spells()
     .BuildServiceProvider();
 
 var logger = (services.GetService<ILoggerFactory>() 

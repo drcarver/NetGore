@@ -1192,5 +1192,11 @@ public enum TraitEnum
     BattlefieldHealer = 1122,
     Arisen = 1123,
     FeralHeart = 1124,
+    Shamed = 1125,
+    Accursed = 1126,
+    LostLegacy = 1127,
+    Redemption = 1128,
+    ForgottenPast = 1129,
+    Prophet = 1130,
     #endregion
 }

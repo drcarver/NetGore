@@ -425,8 +425,11 @@ public class Elf : ICharacterRace
     {
     }
 
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
+    /// <summary>
+    /// Generate the character background
+    /// </summary>
+    /// <param name="character">The character we are generating  a background for.</param>
+    public void GenerateBackground(D20Character character)
     {
-        throw new NotImplementedException();
     }
 }

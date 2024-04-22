@@ -451,9 +451,4 @@ public class Dwarf : ICharacterRace
         }
         #endregion
     }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
-    }
 }

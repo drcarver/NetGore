@@ -49,8 +49,10 @@ public class HalflingParentsTable : RandomTable, IHalflingParentsTable
     //81–90	Only your mother is alive.
     //91–100	Both of your parents are dead.You gain access to the Orphaned social trait
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so 
+    /// we can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

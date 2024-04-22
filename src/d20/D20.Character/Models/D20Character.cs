@@ -34,6 +34,11 @@ public class D20Character : Creature, ICharacter
     public IBackgroundTableEntry? Parents { get; internal set; }
 
     /// <summary>
+    /// The player character circumstance of birth
+    /// </summary>
+    public IBackgroundTableEntry? CircumstanceOfBirth { get; internal set; }
+
+    /// <summary>
     /// The characters siblings
     /// </summary>
     public List<ICreature> Siblings { get; } = [];

@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 
 using D20.Core;
 using D20.Core.Enum;
@@ -7,13 +6,6 @@ using D20.Core.Models;
 using D20.Gaming.Enum;
 using D20.Gaming.Interfaces;
 using D20.Gaming.Models;
-
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
-
-using NetGore.Core.Interfaces;
-
-using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace D20.Gaming.Tables;
 
