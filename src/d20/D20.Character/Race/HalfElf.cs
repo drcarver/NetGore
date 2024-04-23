@@ -1,13 +1,17 @@
-﻿using D20.Character.Enum;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Character.Interfaces;
-using D20.Character.Models;
-using D20.Character.Tables;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
 
-namespace D20.Character.Race;
+using Microsoft.Extensions.Logging;
+
+namespace D20.Race;
 
 /// <summary>
 /// The capricious and carefree gnomes of the world 
@@ -15,43 +19,42 @@ namespace D20.Character.Race;
 /// form their own gnome communities or integrate 
 /// themselves into other humanoid societies.
 /// </summary>
-public class HalfElf : ICharacterRace
+public class HalfElf : CharacterRace, ICharacterRace
 {
     /// <summary>
     /// Set the race traits for the creature.
     /// </summary>
-    /// <param name="creature"></param>
-    public HalfElf(ICharacter creature)
+    [SetsRequiredMembers]
+    public HalfElf(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize the creature
     /// </summary>
-    /// <param name="creature"></param>
-    public void Initialize(ICharacter creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.HalfElf;
+        Race = RaceEnum.HalfElf;
 
         //Ability Score Increase. Your Charisma
         //score increases by 2, and two other
         //ability scores of your choice increase
         //by 1.
-        creature.Charisma.RacialModifier += 2;
-        creature.Intelligence.RacialModifier += 1;
-        creature.Dexterity.RacialModifier += 1;
+        Charisma.RacialModifier += 2;
+        Intelligence.RacialModifier += 1;
+        Dexterity.RacialModifier += 1;
 
         // Size. Elves stand between 4 and 5 feet tall
         // and average about 150 pounds. Your size is Medium.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Medium;
+        SetHeightAndWeight();
+        Size = SizeEnum.Medium;
 
         // Speed.Your base walking speed is 25 feet.
         // Your speed is not reduced by wearing
         // heavy armor
-        creature.Speed = 30;
+        Speed = 30;
     }
 
     //Table: Half-Elf Homeland
@@ -116,7 +119,6 @@ public class HalfElf : ICharacterRace
             {
                 Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -250,77 +252,6 @@ public class HalfElf : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //character.Homeland = (BackgroundTableEntry?) UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(loggerFactory, classService);
-                //Initialize(creaturesiblings);
-
-                // Set relative age of sibling
-                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                //if (relativeage?.Name == "Younger")
-                //{
-                //    creaturesiblings.Age -= new Dice("1d4").Total;
-                //}
-                //if (relativeage?.Name == "Older")
-                //{
-                //    creaturesiblings.Age += new Dice("1d4").Total;
-                //}
-
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Table: Random Height and Weight
     //Gender Base Height   Height Modifier Base Weight Weight Modifier
     //Male	 5 ft. 2 in.	+2d8 in.        100 lbs.    +(2d8×5 lbs.)
@@ -368,24 +299,5 @@ public class HalfElf : ICharacterRace
             // 90 lbs. +(2d8×5 lbs.)
             creature.Weight = 90 + new Dice("2d8").Total * 5;
         }
-    }
-
-    // Table: Random Starting Ages
-    // Adulthood   Intuitive1 Self-Taught2 Trained3
-    // 20 years	   +1d6 years  +2d6 years  +3d6 years
-    /// <summary>
-    /// Set the age
-    /// </summary>
-    /// <param name="creature"></param>
-    private static void SetAge(ICharacter creature)
-    {
-    }
-
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    /// <param name="character">The character we are generating  a background for.</param>
-    public void GenerateBackground(D20Character character)
-    {
     }
 }

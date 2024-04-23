@@ -1,5 +1,6 @@
-﻿using D20.Core.Models;
-using System.Reflection;
+﻿using System.Reflection;
+
+using D20.Core.Models;
 
 namespace D20.Spells;
 
@@ -12,7 +13,7 @@ public static class DataServices
     private static List<Type> GetGameTables() => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
-        .Where(t => t.IsSubclassOf(typeof(NamedTable)))
+        .Where(t => t.IsSubclassOf(typeof(GameTable)))
         .ToList();
 
     /// <summary>

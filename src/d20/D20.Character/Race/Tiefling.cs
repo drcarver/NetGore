@@ -1,10 +1,14 @@
-﻿using D20.Character.Enum;
-using D20.Character.Interfaces;
-using D20.Character.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
+
+using Microsoft.Extensions.Logging;
 
 namespace NetGore.Data.Race;
 
@@ -31,49 +35,48 @@ namespace NetGore.Data.Race;
 /// succubus can become a saint and the 
 /// grandchild of a pit fiend an unsuspecting hero.
 /// </summary>
-public class Tiefling : ICharacterRace
+public class Tiefling : CharacterRace, ICharacterRace
 {
     /// <summary>
-    /// Set the race traits for the creature.
+    /// Set the race traits for the 
     /// </summary>
-    /// <param name="creature"></param>
-    public Tiefling(D20Character creature)
+    [SetsRequiredMembers]
+    public Tiefling(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize the creature
     /// </summary>
-    /// <param name="creature"></param>
-    public void Initialize(D20Character creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.Tiefling;
+        Race = RaceEnum.Tiefling;
 
         //Ability Score Modifiers: Tieflings are quick
         //in body and mind, but are inherently strange
         //and unnerving. They gain +2 Dexterity,
         //+2 Intelligence, and –2 Charisma.
-        creature.Intelligence.RacialModifier = 2;
-        creature.Dexterity.RacialModifier = 2;
-        creature.Charisma.RacialModifier = -2;
+        Intelligence.RacialModifier = 2;
+        Dexterity.RacialModifier = 2;
+        Charisma.RacialModifier = -2;
 
         //Type: Tieflings are outsiders with the
         //native subtype.
-        creature.RaceType = RaceType.Outsiders;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Native);
+        RaceType = RaceType.Outsiders;
+        RaceSubType.Add(RaceSubTypeEnum.Native);
 
         //Size: Tieflings are Medium creatures and
         //thus receive no bonuses or penalties due
         //to their size.
-        creature.Size = SizeEnum.Medium;
+        Size = SizeEnum.Medium;
 
         // Set the height and weight
-        SetHeightAndWeight(creature);
-        SetAge(creature);
+        SetHeightAndWeight();
 
         //Speed: Tieflings have a base speed of 30 feet.
-        creature.Speed = 30;
+        Speed = 30;
 
         //Languages: Tieflings begin play speaking
         //Common and either Abyssal or Infernal.
@@ -83,9 +86,9 @@ public class Tiefling : ICharacterRace
         //Halfling, Infernal, and Orc. See the
         //Linguistics skill page for more information
         //about these languages.
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Abyssal);
-        creature.Languages.Add(LanguageEnum.Infernal);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Abyssal);
+        Languages.Add(LanguageEnum.Infernal);
     }
 
     //Table: Tiefling Homeland
@@ -165,7 +168,6 @@ public class Tiefling : ICharacterRace
             {
                 Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(IUnusualHomelandTable),
             },
             #endregion
         ],
@@ -308,65 +310,6 @@ public class Tiefling : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?) ParentsTable?.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-            //    var creaturesiblings = new Character(loggerFactory, classService);
-            //    Initialize(creaturesiblings);
-            //    character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Random Tiefling Height and Weight
     //Gender  Base Height Height Modifier Base Weight Weight Modifier
     //Male	    4 ft. 10 in.	+2d10 in.   120 lbs.    +(2d10×5 lbs.)
@@ -374,23 +317,22 @@ public class Tiefling : ICharacterRace
     /// <summary>
     /// The Height
     /// </summary>
-    /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(D20Character creature)
+    private void SetHeightAndWeight()
     {
-        if (creature?.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
-            creature.Height = new Height(4, 10).Add("2d10");
+            Height = new Height(4, 10).Add("2d10");
 
             // 120 lbs.    +(2d10×5 lbs.)
-            creature.Weight = 120 + (new Dice("2d10").Total * 5);
+            Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.Gender == GenderEnum.Female)
+        if (Gender == GenderEnum.Female)
         {
-            creature.Height = new Height(4, 5).Add("2d10");
+            Height = new Height(4, 5).Add("2d10");
 
             // 85 lbs. +(2d10×5 lbs.)
-            creature.Weight = 85 + (new Dice("2d10").Total * 5);
+            Weight = 85 + (new Dice("2d10").Total * 5);
         }
     }
 
@@ -401,17 +343,7 @@ public class Tiefling : ICharacterRace
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
-    private static void SetAge(D20Character creature)
+    private void SetAge()
     {
-    }
-
-    public void GenerateRaceBackground(ICharacter character)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
     }
 }

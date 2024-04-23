@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Intrinsics.X86;
 
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Character.Enum;
 using D20.Character.Models;
 using D20.Character.PC.Ranger;

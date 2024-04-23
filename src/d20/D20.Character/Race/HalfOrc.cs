@@ -1,12 +1,16 @@
-﻿using D20.Character.Enum;
-using D20.Character.Interfaces;
-using D20.Character.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
 
-namespace D20.Character.Race;
+using Microsoft.Extensions.Logging;
+
+namespace D20.Race;
 
 /// <summary>
 /// Only rarely the result of a happy union between 
@@ -16,55 +20,55 @@ namespace D20.Character.Race;
 /// cherished as much as the young of any other race, 
 /// even more extraordinary.
 /// </summary>
-public class HalfOrc : ICharacterRace
+public class HalfOrc : CharacterRace, ICharacterRace
 {
     /// <summary>
-    /// Set the race traits for the creature.
+    /// Set the race traits for the 
     /// </summary>
-    /// <param name="creature"></param>
-    public HalfOrc(ICharacter creature)
+    [SetsRequiredMembers]
+    public HalfOrc(ILoggerFactory logger)
+        : base(logger)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize the creature
     /// </summary>
     /// <param name="creature"></param>
-    public void Initialize(ICharacter creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.HalfOrc;
+        Race = RaceEnum.HalfOrc;
 
         //Ability Score Modifiers: Half - orc
         //characters gain a + 2 bonus to Strength
         //and +1 bonus to constitution
-        creature.Strength.RacialModifier = 2;
-        creature.Constitution.RacialModifier = 1;
+        Strength.RacialModifier = 2;
+        Constitution.RacialModifier = 1;
 
         //Size: Half - orcs are Medium creatures
         //and thus have no bonuses or penalties due
         //to their size.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Medium;
+        SetHeightAndWeight();
+        Size = SizeEnum.Medium;
 
         //Base Speed: Half - orcs have a base
         //speed of 30 feet.
-        creature.Speed = 30;
+        Speed = 30;
 
         //Type: Half - orcs are Humanoid creatures
         //with both the human and orc subtypes.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Human);
-        creature.RaceSubType.Add(RaceSubTypeEnum.Orc);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Human);
+        RaceSubType.Add(RaceSubTypeEnum.Orc);
 
         //Languages: Half - orcs begin play speaking
         //Common and Orc. Half - orcs with high
         //Intelligence scores can choose from the
         //following: Abyssal, Draconic, Giant, Gnoll,
         //and Goblin.
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Orc);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Orc);
     }
 
     //Table: Half-Orc Homeland
@@ -152,7 +156,6 @@ public class HalfOrc : ICharacterRace
             {
                 Range = new Range(91,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(IUnusualHomelandTable),
             },
             #endregion
         ],
@@ -297,65 +300,6 @@ public class HalfOrc : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        character.Parents = (BackgroundTableEntry?)ParentsTable?.GetRandomEntry();
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(loggerFactory, classService);
-                //Initialize(creaturesiblings);
-
-                // Set relative age of sibling
-                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                //if (relativeage?.Name == "Younger")
-                //{
-                //    creaturesiblings.Age -= new Dice("1d4").Total;
-                //}
-                //if (relativeage?.Name == "Older")
-                //{
-                //    creaturesiblings.Age += new Dice("1d4").Total;
-                //}
-
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Table: Random Height and Weight
     //Gender    Base Height    Height Modifier Base Weight Weight Modifier
     //Male	    4 ft. 10 in.	+2d12 in.       150 lbs.    +(2d12×7 lbs.)
@@ -364,71 +308,52 @@ public class HalfOrc : ICharacterRace
     /// The Height
     /// </summary>
     /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(ICharacter creature)
+    private void SetHeightAndWeight()
     {
-        if (creature?.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 1)
             {
-                //creature.Height = $"4 ft. {modifier + 10} in.";
+                //Height = $"4 ft. {modifier + 10} in.";
             }
             else if (modifier == 2)
             {
-                //creature.Height = $"5 ft.";
+                //Height = $"5 ft.";
             }
             else if (modifier <= 13 && modifier >= 3)
             {
-                //creature.Height = $"5 ft. {modifier - 2} in.";
+                //Height = $"5 ft. {modifier - 2} in.";
             }
             else
             {
-                //creature.Height = $"6 ft. {modifier - 13} in.";
+                //Height = $"6 ft. {modifier - 13} in.";
             }
             // 150 lbs.    +(2d12×7 lbs.)
-            creature.Weight = 150 + new Dice("2d12").Total * 7;
+            Weight = 150 + new Dice("2d12").Total * 7;
         }
 
-        if (creature?.Gender == GenderEnum.Female)
+        if (Gender == GenderEnum.Female)
         {
             var modifier = new Dice("2d10").Total;
             if (modifier <= 6)
             {
-                //creature.Height = $"4 ft. {modifier + 5} in.";
+                //Height = $"4 ft. {modifier + 5} in.";
             }
             else if (modifier == 7)
             {
-                //creature.Height = $"5 ft.";
+                //Height = $"5 ft.";
             }
             else if (modifier <= 19 && modifier >= 8)
             {
-                //creature.Height = $"5 ft. {modifier - 8} in.";
+                //Height = $"5 ft. {modifier - 8} in.";
             }
             else
             {
-                //creature.Height = $"6 ft.";
+                //Height = $"6 ft.";
             }
             // 110 lbs. +(2d12×7 lbs.)
-            creature.Weight = 110 + new Dice("2d12").Total * 7;
+            Weight = 110 + new Dice("2d12").Total * 7;
         }
-    }
-
-    //Table: Random Starting Ages
-    //Adulthood   Intuitive1    Self-Taught2   Trained3
-    //14 years	    +1d4 years    +1d6 years  +2d6 years
-    //1 This category includes barbarians, oracles, rogues, and sorcerers.
-    //2 This category includes bards, cavaliers, fighters, gunslingers, paladins, rangers, summoners, and witches.
-    //3 This category includes alchemists, clerics, druids, inquisitors, magi, monks, and wizards.    /// <summary>
-    /// <summary>
-    /// The age
-    /// </summary>
-    /// <param name="creature"></param>
-    private static void SetAge(ICharacter creature)
-    {
-    }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
     }
 }

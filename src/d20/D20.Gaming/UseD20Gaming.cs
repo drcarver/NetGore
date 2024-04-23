@@ -13,7 +13,7 @@ public static class DataServices
     private static List<Type> GetGameTables() => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
-        .Where(t => t.IsSubclassOf(typeof(NamedTable)))
+        .Where(t => t.IsSubclassOf(typeof(GameTable)))
         .ToList();
 
     /// <summary>

@@ -1,37 +1,16 @@
-﻿using D20.Character.Enum;
-using D20.Character.Models;
+﻿using D20.Character.Models;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Goods.Enum;
+using D20.Monsters.Interfaces;
 
 namespace D20.Character.Interfaces;
 
-public interface ICharacter : ICreature
+public interface ICharacter : ICharacterRace
 {
     /// <summary>
     /// The character class
     /// </summary>
     ICharacterClass? CharacterClass { get; }
-
-    /// <summary>
-    /// The characters homeland.  Automatically generated
-    /// </summary>
-    IBackgroundTableEntry? Homeland { get; }
-
-    /// <summary>
-    /// The character racial traits
-    /// </summary>
-    List<TraitEnum> Traits { get; }
-
-    /// <summary>
-    /// The player character parents
-    /// </summary>
-    IBackgroundTableEntry? Parents { get; }
-
-    /// <summary>
-    /// The characters siblings
-    /// </summary>
-    List<ICreature> Siblings { get; }
 
     /// <summary>
     /// Armor Proficiency

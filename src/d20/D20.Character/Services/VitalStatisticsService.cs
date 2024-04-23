@@ -19,9 +19,10 @@
 //
 #endregion
 
-using D20.Character.Enum;
+using D20.Background.Interfaces;
 using D20.Character.Interfaces;
 using D20.Core;
+using D20.Core.Enum;
 
 namespace D20.Character.Services;
 

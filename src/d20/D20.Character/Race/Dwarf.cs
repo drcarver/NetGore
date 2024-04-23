@@ -1,11 +1,15 @@
-﻿using D20.Character.Enum;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
+using D20.Background.Tables;
 using D20.Character.Interfaces;
 using D20.Character.Models;
-using D20.Character.Tables;
 using D20.Core;
 using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Models;
 
 using Microsoft.Extensions.Logging;
 
@@ -24,70 +28,60 @@ namespace D20.Character.Race;
 /// realms below the earth, constantly at war with 
 /// giants, goblins, and other such horrors.
 /// </summary>
-public class Dwarf : ICharacterRace
+public class Dwarf : CharacterRace, IDwarf
 {
     private ILogger? _logger;
     private readonly ILoggerFactory loggerFactory;
 
     /// <summary>
-    /// Constructor for the character.
-    /// </summary>
-    /// <param name = "character" > The character (NPC or Player)</param>
-    public Dwarf(ICharacter character)
-    {
-        //Initialize(character);
-    }
-
-    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="logger">The logging service</param>
-    /// <param name="characterService"></param>
-    public Dwarf(ILoggerFactory logger, ICharacterService characterService)
+    [SetsRequiredMembers]
+    public Dwarf(ILoggerFactory logger)
+        : base(logger)
     {
         _logger = logger.CreateLogger<Dwarf>();
         loggerFactory = logger;
-        Initialize(characterService);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize all the race properties of the character
     /// </summary>
-    /// <param name="creature"></param>
-    public void Initialize(ICharacterService characterService)
+    public void Initialize()
     {
-        ICharacter creature = characterService.CreateCharacter();
-        creature.Race = RaceEnum.Dwarf;
+        Race = RaceEnum.Dwarf;
 
         //Ability Score Increase. Your Constitution score
         //increases by 2.
-        creature.Constitution.RacialModifier = 2;
+        Constitution.RacialModifier = 2;
 
         //Size: Dwarves are Medium creatures and
         //thus receive no bonuses or penalties due
         //to their size.
-        creature.Size = SizeEnum.Medium;
+        Size = SizeEnum.Medium;
 
         // Height, Weight and Age
-        GetVitalStatistics(creature);
+        //GetVitalStatistics();
 
         //Base Speed: (Slow and Steady) Dwarves have
         //a base speed of 20 feet, but their speed
         //is never modified by armor or encumbrance.
-        creature.Speed = 20;
+        Speed = 20;
 
         //Type: Dwarves are humanoids with the
         //dwarf subtype.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Dwarf);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
         //Languages: Dwarves begin play speaking
         //Common and Dwarven. Dwarves with high
         //Intelligence scores can choose from the
         //following: Giant, Gnome, Goblin, Orc,
         //Terran, and Undercommon. 
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Dwarvish);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Dwarvish);
     }
 
     /// <summary>
@@ -99,13 +93,13 @@ public class Dwarf : ICharacterRace
         int feet = 3, inches = 9, weight = 150;
         string heightdice = "2d4";
         string weightdice = "2D4";
-        if (creature.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
             //BackgroundTables.HeightAndWeight(
             //    ref feet, ref inches, ref weight,
             //    heightdice, weightdice, 7);
-            creature.Weight = weight;
-            //creature.Height = $"{feet} ft. {inches} in.";
+            Weight = weight;
+            //Height = $"{feet} ft. {inches} in.";
         }
         else
         {
@@ -113,15 +107,15 @@ public class Dwarf : ICharacterRace
             //BackgroundTables.HeightAndWeight(
             //    ref feet, ref inches, ref weight,
             //    heightdice, weightdice, 7);
-            creature.Weight = weight;
-            //creature.Height = $"{feet} ft. {inches} in.";
+            Weight = weight;
+            //Height = $"{feet} ft. {inches} in.";
         }
 
         string intuitiveDice = "3d6";
         string selftaughtDice = "5d6";
         string trainedDice = "7d6";
         int startingAge = 40;
-        //creature.Age = BackgroundTables.CalculateCharacterAge(
+        //Age = BackgroundTables.CalculateCharacterAge(
         //    ClassEnum.Any, startingAge, intuitiveDice,
         //    selftaughtDice, trainedDice);
     }
@@ -380,75 +374,4 @@ public class Dwarf : ICharacterRace
             #endregion
         ],
     };
-
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(logger, classService);
-                //Initialize(creaturesiblings);
-
-                // Set relative age of sibling
-                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                //if (relativeage?.Name == "Younger")
-                //{
-                //    creaturesiblings.Age -= new Dice("1d4").Total;
-                //}
-                //if (relativeage?.Name == "Older")
-                //{
-                //    creaturesiblings.Age += new Dice("1d4").Total;
-                //}
-
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-}
+ }

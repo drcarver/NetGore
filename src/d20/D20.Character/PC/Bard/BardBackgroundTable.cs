@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Character.Enum;
 using D20.Character.Models;
 using D20.Core.Enum;

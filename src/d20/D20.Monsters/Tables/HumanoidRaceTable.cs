@@ -24,13 +24,14 @@ using System.Diagnostics.CodeAnalysis;
 using D20.Core.Enum;
 using D20.Core.Models;
 using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
 
 namespace D20.Character.Tables;
 
 /// <summary>
 /// The table of humanoid races
 /// </summary>
-public class HumanoidRaceTable : RandomTable, IHumanoidRace
+public class HumanoidRaceTable : RandomTable, IHumanoidRaceTable
 {
     /// <summary>
     /// Allowed character races
@@ -83,338 +84,379 @@ public class HumanoidRaceTable : RandomTable, IHumanoidRace
     //99	Vishkanya
     //100	Wayang
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of optimiation to conserve memeory on big tables
+    /// Initialize the game table.  This is a separate method so we 
+    /// can create a game table for it's meta properties
+    /// with out creating the actual able values.  A bit of 
+    /// optimization to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {
-        Table =
-        [
-            #region "Aasimar"
-            //01	Aasimar
-            new RandomTableEntry
-            {
-                Range = new Range(01, 01),
-                Name = nameof(RaceEnum.Aasimar),
-            },
-            #endregion
+        if (Table.Count == 0)
+        {
+            Table =
+            [
+                #region "Aasimar"
+                //01	Aasimar
+                new RaceTableEntry
+                {
+                    Range = new Range(01, 01),
+                    Name = nameof(RaceEnum.Aasimar),
+                    Race = RaceEnum.Aasimar,
+                },
+                #endregion
 
-            #region "Catfolk"
-            //02	Catfolk
-            new RandomTableEntry
-            {
-                Range = new Range(02, 02),
-                Name = nameof(RaceEnum.Catfolk),
-            },
-            #endregion
+                #region "Catfolk"
+                //02	Catfolk
+                new RaceTableEntry
+                {
+                    Range = new Range(02, 02),
+                    Name = nameof(RaceEnum.Catfolk),
+                    Race= RaceEnum.Catfolk,
+                },
+                #endregion
 
-            #region "Changeling"
-            //03–04	Changeling
-            new RandomTableEntry
-            {
-                Range = new Range(03, 04),
-                Name = nameof(RaceEnum.Changeling),
-            },
-            #endregion
+                #region "Changeling"
+                //03–04	Changeling
+                new RaceTableEntry
+                {
+                    Range = new Range(03, 04),
+                    Name = nameof(RaceEnum.Changeling),
+                    Race = RaceEnum.Changeling
+                },
+                #endregion
 
-            #region "Dhampir"
-            //05	Dhampir
-            new RandomTableEntry
-            {
-                Range = new Range(05, 05),
-                Name = nameof(RaceEnum.Dhampir),
-            },
-            #endregion
+                #region "Dhampir"
+                //05	Dhampir
+                new RaceTableEntry
+                {
+                    Range = new Range(05, 05),
+                    Name = nameof(RaceEnum.Dhampir),
+                    Race = RaceEnum.Dhampir
+                },
+                #endregion
 
-            #region "Duergar"
-            //06	Duergar
-            new RandomTableEntry
-            {
-                Range = new Range(06, 06),
-                Name = nameof(RaceEnum.Duergar),
-            },
-            #endregion
+                #region "Duergar"
+                //06	Duergar
+                new RaceTableEntry
+                {
+                    Range = new Range(06, 06),
+                    Name = nameof(RaceEnum.Duergar),
+                    Race= RaceEnum.Duergar,
+                },
+                #endregion
 
-            #region "Dwarf"
-            //07–16	Dwarf
-            new RandomTableEntry
-            {
-                Range = new Range(07, 16),
-                Name = nameof(RaceEnum.Dwarf),
-            },
-            #endregion
+                #region "Dwarf"
+                //07–16	Dwarf
+                new RaceTableEntry
+                {
+                    Range = new Range(07, 16),
+                    Name = nameof(RaceEnum.Dwarf),
+                    Race= RaceEnum.Dwarf,
+                },
+                #endregion
 
-            #region "Elf"
-            //17–26	Elf
-            new RandomTableEntry
-            {
-                Range = new Range(17, 26),
-                Name = nameof(RaceEnum.Elf),
-            },
-            #endregion
+                #region "Elf"
+                //17–26	Elf
+                new RaceTableEntry
+                {
+                    Range = new Range(17, 26),
+                    Name = nameof(RaceEnum.Elf),
+                    Race= RaceEnum.Elf,
+                },
+                #endregion
 
-            #region "Fetchling"
-            //27	Fetchling
-            new RandomTableEntry
-            {
-                Range = new Range(27, 27),
-                Name = nameof(RaceEnum.Fetchling),
-            },
-            #endregion
+                #region "Fetchling"
+                //27	Fetchling
+                new RaceTableEntry
+                {
+                    Range = new Range(27, 27),
+                    Name = nameof(RaceEnum.Fetchling),
+                    Race= RaceEnum.Fetchling,
+                },
+                #endregion
 
-            #region "Gillman"
-            //28	Gillman
-            new RandomTableEntry
-            {
-                Range = new Range(28, 28),
-                Name = nameof(RaceEnum.Gillman),
-            },
-            #endregion
+                #region "Gillman"
+                //28	Gillman
+                new RaceTableEntry
+                {
+                    Range = new Range(28, 28),
+                    Name = nameof(RaceEnum.Gillman),
+                    Race = RaceEnum.Gillman,
+                },
+                #endregion
 
-            #region "Gnome"
-            //29–38	Gnome
-            new RandomTableEntry
-            {
-                Range = new Range(29, 38),
-                Name = nameof(RaceEnum.Gnome),
-            },
-            #endregion
+                #region "Gnome"
+                //29–38	Gnome
+                new RaceTableEntry
+                {
+                    Range = new Range(29, 38),
+                    Name = nameof(RaceEnum.Gnome),
+                    Race = RaceEnum.Gnome
+                },
+                #endregion
 
-            #region "Goblin"
-            //39	Goblin
-            new RandomTableEntry
-            {
-                Range = new Range(39, 39),
-                Name = nameof(RaceEnum.Goblin),
-            },
-            #endregion
+                #region "Goblin"
+                //39	Goblin
+                new RaceTableEntry
+                {
+                    Range = new Range(39, 39),
+                    Name = nameof(RaceEnum.Goblin),
+                    Race = RaceEnum.Goblin,
+                },
+                #endregion
 
-            #region "Grippli"
-            //40	Grippli
-            new RandomTableEntry
-            {
-                Range = new Range(40, 40),
-                Name = nameof(RaceEnum.Grippli),
-            },
-            #endregion
+                #region "Grippli"
+                //40	Grippli
+                new RaceTableEntry
+                {
+                    Range = new Range(40, 40),
+                    Name = nameof(RaceEnum.Grippli),
+                    Race = RaceEnum.Grippli
+                },
+                #endregion
 
-            #region "Half-Elf"
-            //41–50	Half-Elf
-            new RandomTableEntry
-            {
-                Range = new Range(41, 50),
-                Name = nameof(RaceEnum.HalfElf),
-                ProperName = "Half-Elf"
-            },
-            #endregion
+                #region "Half-Elf"
+                //41–50	Half-Elf
+                new RaceTableEntry
+                {
+                    Range = new Range(41, 50),
+                    Name = nameof(RaceEnum.HalfElf),
+                    ProperName = "Half-Elf",
+                    Race = RaceEnum.HalfElf,
+                },
+                #endregion
 
-            #region "Half-orc"
-            //51–60	Half-orc
-            new RandomTableEntry
-            {
-                Range = new Range(51, 60),
-                Name = nameof(RaceEnum.HalfOrc),
-                ProperName = "Half-orc"
-            },
-            #endregion
+                #region "Half-orc"
+                //51–60	Half-orc
+                new RaceTableEntry
+                {
+                    Range = new Range(51, 60),
+                    Name = nameof(RaceEnum.HalfOrc),
+                    ProperName = "Half-orc",
+                    Race= RaceEnum.HalfOrc,
+                },
+                #endregion
 
-            #region "Halfling"
-            //61–70	Halfling
-            new RandomTableEntry
-            {
-                Range = new Range(61, 70),
-                Name = nameof(RaceEnum.Halfling),
-            },
-            #endregion
+                #region "Halfling"
+                //61–70	Halfling
+                new RaceTableEntry
+                {
+                    Range = new Range(61, 70),
+                    Name = nameof(RaceEnum.Halfling),
+                    Race= RaceEnum.Halfling,
+                },
+                #endregion
 
-            #region "Hobgoblin"
-            //71	Hobgoblin
-            new RandomTableEntry
-            {
-                Range = new Range(71, 71),
-                Name = nameof(RaceEnum.Hobgoblin),
-            },
-            #endregion
+                #region "Hobgoblin"
+                //71	Hobgoblin
+                new RaceTableEntry
+                {
+                    Range = new Range(71, 71),
+                    Name = nameof(RaceEnum.Hobgoblin),
+                    Race = RaceEnum.Hobgoblin,
+                },
+                #endregion
 
-            #region "Human"
-            //72–81	Human
-            new RandomTableEntry
-            {
-                Range = new Range(72, 81),
-                Name = nameof(RaceEnum.Human),
-            },
-            #endregion
+                #region "Human"
+                //72–81	Human
+                new RaceTableEntry
+                {
+                    Range = new Range(72, 81),
+                    Name = nameof(RaceEnum.Human),
+                    Race = RaceEnum.Human
+                },
+                #endregion
 
-            #region "Ifrit"
-            //82	Ifrit
-            new RandomTableEntry
-            {
-                Range = new Range(82, 82),
-                Name = nameof(RaceEnum.Ifrit),
-            },
-            #endregion
+                #region "Ifrit"
+                //82	Ifrit
+                new RaceTableEntry
+                {
+                    Range = new Range(82, 82),
+                    Name = nameof(RaceEnum.Ifrit),
+                    Race = RaceEnum.Ifrit
+                },
+                #endregion
 
-            #region "Kitsune"
-            //83	Kitsune
-            new RandomTableEntry
-            {
-                Range = new Range(83, 83),
-                Name = nameof(RaceEnum.Kitsune),
-            },
-            #endregion
+                #region "Kitsune"
+                //83	Kitsune
+                new RaceTableEntry
+                {
+                    Range = new Range(83, 83),
+                    Name = nameof(RaceEnum.Kitsune),
+                    Race = RaceEnum.Kitsune
+                },
+                #endregion
 
-            #region "Kobold"
-            //84	Kobold
-            new RandomTableEntry
-            {
-                Range = new Range(84, 84),
-                Name = nameof(RaceEnum.Kobold),
-            },
-            #endregion
+                #region "Kobold"
+                //84	Kobold
+                new RaceTableEntry
+                {
+                    Range = new Range(84, 84),
+                    Name = nameof(RaceEnum.Kobold),
+                    Race = RaceEnum.Kobold,
+                },
+                #endregion
 
-            #region "Merfolk"
-            //85	Merfolk
-            new RandomTableEntry
-            {
-                Range = new Range(85, 85),
-                Name = nameof(RaceEnum.Merfolk),
-            },
-            #endregion
+                #region "Merfolk"
+                //85	Merfolk
+                new RaceTableEntry
+                {
+                    Range = new Range(85, 85),
+                    Name = nameof(RaceEnum.Merfolk),
+                    Race = RaceEnum.Merfolk
+                },
+                #endregion
 
-            #region "Nagaji"
-            //86	Nagaji
-            new RandomTableEntry
-            {
-                Range = new Range(86, 86),
-                Name = nameof(RaceEnum.Nagaji),
-            },
-            #endregion
+                #region "Nagaji"
+                //86	Nagaji
+                new RaceTableEntry
+                {
+                    Range = new Range(86, 86),
+                    Name = nameof(RaceEnum.Nagaji),
+                    Race = RaceEnum.Nagaji
+                },
+                #endregion
 
-            #region "Orc"
-            //87	Orc
-            new RandomTableEntry
-            {
-                Range = new Range(87, 87),
-                Name = nameof(RaceEnum.Orc),
-            },
-            #endregion
+                #region "Orc"
+                //87	Orc
+                new RaceTableEntry
+                {
+                    Range = new Range(87, 87),
+                    Name = nameof(RaceEnum.Orc),
+                    Race = RaceEnum.Orc,
+                },
+                #endregion
 
-            #region "Oread"
-            //88	Oread
-            new RandomTableEntry
-            {
-                Range = new Range(88, 88),
-                Name = nameof(RaceEnum.Oread),
-            },
-            #endregion
+                #region "Oread"
+                //88	Oread
+                new RaceTableEntry
+                {
+                    Range = new Range(88, 88),
+                    Name = nameof(RaceEnum.Oread),
+                    Race = RaceEnum.Oread,
+                },
+                #endregion
 
-            #region "Ratfolk"
-            //89	Ratfolk
-            new RandomTableEntry
-            {
-                Range = new Range(89, 89),
-                Name = nameof(RaceEnum.Ratfolk),
-            },
-            #endregion
+                #region "Ratfolk"
+                //89	Ratfolk
+                new RaceTableEntry
+                {
+                    Range = new Range(89, 89),
+                    Name = nameof(RaceEnum.Ratfolk),
+                    Race = RaceEnum.Ratfolk
+                },
+                #endregion
 
-            #region "Samsaran"
-            //90	Samsaran
-            new RandomTableEntry
-            {
-                Range = new Range(90, 90),
-                Name = nameof(RaceEnum.Samsaran),
-            },
-            #endregion
+                #region "Samsaran"
+                //90	Samsaran
+                new RaceTableEntry
+                {
+                    Range = new Range(90, 90),
+                    Name = nameof(RaceEnum.Samsaran),
+                    Race = RaceEnum.Samsaran
+                },
+                #endregion
 
-            #region "Strix"
-            //91	Strix
-            new RandomTableEntry
-            {
-                Range = new Range(91, 91),
-                Name = nameof(RaceEnum.Strix),
-            },
-            #endregion
+                #region "Strix"
+                //91	Strix
+                new RaceTableEntry
+                {
+                    Range = new Range(91, 91),
+                    Name = nameof(RaceEnum.Strix),
+                    Race = RaceEnum.Strix,
+                },
+                #endregion
 
-            #region "Suli"
-            //92	Suli
-            new RandomTableEntry
-            {
-                Range = new Range(92, 92),
-                Name = nameof(RaceEnum.Suli),
-            },
-            #endregion
+                #region "Suli"
+                //92	Suli
+                new RaceTableEntry
+                {
+                    Range = new Range(92, 92),
+                    Name = nameof(RaceEnum.Suli),
+                    Race = RaceEnum.Suli,
+                },
+                #endregion
 
-            #region "Svirfneblin"
-            //93	Svirfneblin
-            new RandomTableEntry
-            {
-                Range = new Range(93, 93),
-                Name = nameof(RaceEnum.Svirfneblin),
-            },
-            #endregion
+                #region "Svirfneblin"
+                //93	Svirfneblin
+                new RaceTableEntry
+                {
+                    Range = new Range(93, 93),
+                    Name = nameof(RaceEnum.Svirfneblin),
+                    Race = RaceEnum.Svirfneblin
+                },
+                #endregion
 
-            #region "Sylph"
-            //94	Sylph
-            new RandomTableEntry
-            {
-                Range = new Range(94, 94),
-                Name = nameof(RaceEnum.Sylph),
-            },
-            #endregion
+                #region "Sylph"
+                //94	Sylph
+                new RaceTableEntry
+                {
+                    Range = new Range(94, 94),
+                    Name = nameof(RaceEnum.Sylph),
+                    Race = RaceEnum.Sylph
+                },
+                #endregion
 
-            #region "Tengu"
-            //95	Tengu
-            new RandomTableEntry
-            {
-                Range = new Range(95, 95),
-                Name = nameof(RaceEnum.Tengu),
-            },
-            #endregion
+                #region "Tengu"
+                //95	Tengu
+                new RaceTableEntry
+                {
+                    Range = new Range(95, 95),
+                    Name = nameof(RaceEnum.Tengu),
+                    Race = RaceEnum.Tengu,
+                },
+                #endregion
 
-            #region "Tiefling"
-            //96	Tiefling
-            new RandomTableEntry
-            {
-                Range = new Range(96, 96),
-                Name = nameof(RaceEnum.Tiefling),
-            },
-            #endregion
+                #region "Tiefling"
+                //96	Tiefling
+                new RaceTableEntry
+                {
+                    Range = new Range(96, 96),
+                    Name = nameof(RaceEnum.Tiefling),
+                    Race = RaceEnum.Tiefling
+                },
+                #endregion
 
-            #region "Undine"
-            //97	Undine
-            new RandomTableEntry
-            {
-                Range = new Range(97, 97),
-                Name = nameof(RaceEnum.Undine),
-            },
-            #endregion
+                #region "Undine"
+                //97	Undine
+                new RaceTableEntry
+                {
+                    Range = new Range(97, 97),
+                    Name = nameof(RaceEnum.Undine),
+                    Race = RaceEnum.Undine,
+                },
+                #endregion
 
-            #region "Vanara"
-            //98	Vanara
-            new RandomTableEntry
-            {
-                Range = new Range(98, 98),
-                Name = nameof(RaceEnum.Vanara),
-            },
-            #endregion
+                #region "Vanara"
+                //98	Vanara
+                new RaceTableEntry
+                {
+                    Range = new Range(98, 98),
+                    Name = nameof(RaceEnum.Vanara),
+                    Race = RaceEnum.Vanara
+                },
+                #endregion
 
-            #region "Vishkanya"
-            //99	Vishkanya
-            new RandomTableEntry
-            {
-                Range = new Range(99, 99),
-                Name = nameof(RaceEnum.Vishkanya),
-            },
-            #endregion
+                #region "Vishkanya"
+                //99	Vishkanya
+                new RaceTableEntry
+                {
+                    Range = new Range(99, 99),
+                    Name = nameof(RaceEnum.Vishkanya),
+                    Race = RaceEnum.Vishkanya
+                },
+                #endregion
 
-            #region "Wayang"
-            //100	Wayang
-            new RandomTableEntry
-            {
-                Range = new Range( 100,100),
-                Name = nameof(RaceEnum.Wayang),
-            },
-            #endregion
-        ];
+                #region "Wayang"
+                //100	Wayang
+                new RaceTableEntry
+                {
+                    Range = new Range( 100,100),
+                    Name = nameof(RaceEnum.Wayang),
+                    Race = RaceEnum.Wayang,
+                },
+                #endregion
+            ];
+        }
     }
 }

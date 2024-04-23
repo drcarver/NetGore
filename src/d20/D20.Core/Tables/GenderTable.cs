@@ -27,6 +27,7 @@ public class GenderTable : NamedTable, IGenderTable
     /// <returns>The selected Gender</returns>
     public GenderEnum GetGender()
     {
+        InitializeTable();
         switch (((NamedTableEntry) GetRandomEntry()).Name)
         {
             case nameof(GenderEnum.Male):

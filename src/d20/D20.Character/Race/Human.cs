@@ -1,65 +1,69 @@
-﻿using D20.Character.Enum;
-using D20.Character.Interfaces;
-using D20.Character.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
+
+using Microsoft.Extensions.Logging;
 
 namespace NetGore.Data.Race;
 
 /// <summary>
 /// As diverse as they are widespread, humans tend to grow up in small or large societies of people with similar origins and histories, though individuals’ paths may run the gamut from idealized to tragic.
 /// </summary>
-public class Human : ICharacterRace
+public class Human : CharacterRace, ICharacterRace
 {
     /// <summary>
-    /// Set the race traits for the creature.
+    /// Set the race traits for the 
     /// </summary>
-    /// <param name="creature"></param>
-    public Human(D20Character creature)
+    [SetsRequiredMembers]
+    public Human(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize the creature
     /// </summary>
-    /// <param name="creature"></param>
-    public void Initialize(D20Character creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.Human;
+        Race = RaceEnum.Human;
 
         //Ability Score Modifiers: Human characters
         //gain a +1 racial bonus to every ability
         //score at creation to represent their
         //varied nature.
-        creature.Strength.RacialModifier += 1;
-        creature.Intelligence.RacialModifier += 1;
-        creature.Wisdom.RacialModifier += 1;
-        creature.Dexterity.RacialModifier += 1;
-        creature.Constitution.RacialModifier += 1;
-        creature.Charisma.RacialModifier += 1;
+        Strength.RacialModifier += 1;
+        Intelligence.RacialModifier += 1;
+        Wisdom.RacialModifier += 1;
+        Dexterity.RacialModifier += 1;
+        Constitution.RacialModifier += 1;
+        Charisma.RacialModifier += 1;
 
         //Size: Humans are Medium creatures and
         //thus receive no bonuses or penalties
         //due to their size.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Medium;
+        SetHeightAndWeight();
+        SetAge();
+        Size = SizeEnum.Medium;
 
         //Base Speed: Humans have a base speed of 30
         //feet.
-        creature.Speed = 30;
+        Speed = 30;
 
         //Type: Humans are humanoids with the
         //human subtype.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Human);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Human);
 
         //Languages: Humans begin play speaking
         //Common. 
-        creature.Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Common);
     }
 
     //Table: Human Homeland
@@ -131,7 +135,6 @@ public class Human : ICharacterRace
             {
                 Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(IUnusualHomelandTable),
             },
             #endregion
         ],
@@ -274,65 +277,6 @@ public class Human : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(loggerFactory, classService);
-                //Initialize(creaturesiblings);
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Table: Random Height and Weight
     //Gender Base Height        Height Modifier Base Weight Weight Modifier
     //Male	    4 ft. 10 in.	+2d10 in.       120 lbs.    +(2d10×5 lbs.)
@@ -341,22 +285,22 @@ public class Human : ICharacterRace
     /// The Height
     /// </summary>
     /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(D20Character creature)
+    private void SetHeightAndWeight()
     {
-        if (creature?.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
-            creature.Height = new Height(4, 10).Add("2d10");
+            Height = new Height(4, 10).Add("2d10");
 
             // 120 lbs.    +(2d10×5 lbs.)
-            creature.Weight = 120 + (new Dice("2d10").Total * 5);
+            Weight = 120 + (new Dice("2d10").Total * 5);
         }
 
-        if (creature?.Gender == GenderEnum.Female)
+        if (Gender == GenderEnum.Female)
         {
-            creature.Height = new Height(4, 5).Add("2d10");
+            Height = new Height(4, 5).Add("2d10");
 
             // 85 lbs. +(2d10×5 lbs.)
-            creature.Weight = 85 + (new Dice("2d10").Total * 5);
+            Weight = 85 + (new Dice("2d10").Total * 5);
         }
     }
 
@@ -370,17 +314,7 @@ public class Human : ICharacterRace
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
-    private static void SetAge(D20Character creature)
+    private static void SetAge()
     {
-    }
-
-    public void GenerateRaceBackground(ICharacter character)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void GenerateBackground(IRandomTable homelandTable, IRandomTable unusualHomelandTable, IRandomTable parentsTable, IRandomTable siblingsTable, IRandomTable relativeAgeofSiblings)
-    {
-        throw new NotImplementedException();
     }
 }

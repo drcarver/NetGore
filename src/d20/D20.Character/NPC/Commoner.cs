@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using D20.Background.Models;
 using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Character.Tables;
@@ -65,9 +66,6 @@ public class Commoner : D20Character
         Size = SizeEnum.Medium;
         Speed = 30;
         //IRaceService.SetRace(this);
-
-        // The commoner profession
-        Profession = (BackgroundTableEntry) new ProfessionTable().GetRandomEntry();
 
         //Commoner
         //Medium humanoid(any race),	any alignment

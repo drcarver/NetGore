@@ -1,9 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
+using D20.Character.Interfaces;
+using D20.Character.Tables;
 using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
 
 using NetGore.Interfaces;
 using NetGore.UI.Admin.Views;
@@ -60,11 +63,23 @@ public partial class MainPageViewModel : ObservableObject
     /// Constructor
     /// </summary>
     /// <param name="navigationTable">The navigation table</param>
-    public MainPageViewModel(IMainNavigationTable navigationTable, IServiceProvider services)
+    public MainPageViewModel(IMainNavigationTable navigationTable, 
+        IServiceProvider services)
     {
         navigationTable.InitializeTable();
         Name = navigationTable.ProperName ?? navigationTable.Name;
         Description = navigationTable.Description ?? navigationTable.Name;
         Items = navigationTable.Table.Cast<GameNavigationTableEntry>().ToList();
+
+        IHumanoidRaceTable? raceTable = services.GetService<IHumanoidRaceTable>();
+        if (raceTable == null)
+        {
+            raceTable = new HumanoidRaceTable();
+        }
+
+        IHumanoidRaceFactory? raceFactory = services.GetService<IHumanoidRaceFactory>();
+        var halfling = raceFactory?.Create(RaceEnum.Halfling);
+        var randomRace = raceFactory?.CreateRandom();
+        var gametables = services.GetServices<IRandomTable>().ToList(); 
     }
 }

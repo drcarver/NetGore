@@ -1,45 +1,50 @@
 ﻿// Ignore Spelling: Dragonborn
 
+using System.Diagnostics.CodeAnalysis;
+
 using D20.Character.Interfaces;
-using D20.Character.Models;
 using D20.Core;
 using D20.Core.Enum;
-using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
+
+using Microsoft.Extensions.Logging;
 
 namespace D20.Character.Race;
 
-public class Dragonborn : ICharacterRace
+public class Dragonborn : CharacterRace, ICharacterRace
 {
     /// <summary>
-    /// Set the race traits for the creature.
+    /// Set the race traits for the 
     /// </summary>
     /// <param name="creature"></param>
-    public Dragonborn(ICharacter creature)
+    [SetsRequiredMembers]
+    public Dragonborn(LoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        creature.Race = RaceEnum.Dragonborn;
+        Race = RaceEnum.Dragonborn;
 
         // Ability Score Increase.Your Strength
         // score increases by 2, and your Charisma
         // score increases by 1.
-        creature.Strength.RacialModifier += 2;
-        creature.Charisma.RacialModifier += 1;
+        Strength.RacialModifier += 2;
+        Charisma.RacialModifier += 1;
 
         //Size.Dragonborn are taller and heavier
         //than humans, standing well over 6 feet
         //tall and averaging almost 250 pounds.
         //Your size is Medium.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Medium;
+        SetHeightAndWeight();
+        Size = SizeEnum.Medium;
 
         //Speed.Your base walking speed is 30 feet.
-        creature.Speed = 30;
+        Speed = 30;
 
         //Type: Dragonborn are humanoids with the
         //Dragonborn subtype.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Dragonborn);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Dragonborn);
 
         // Languages. You can speak, read, and write
         // Common and Draconic. Draconic is thought
@@ -48,8 +53,8 @@ public class Dragonborn : ICharacterRace
         // The language sounds harsh to most other
         // creatures and includes numerous hard
         // consonants and sibilants.
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Draconic);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Draconic);
     }
 
     //Table: Random Height and Weight
@@ -60,25 +65,25 @@ public class Dragonborn : ICharacterRace
     /// The Height
     /// </summary>
     /// <param name="creature">The player character</param>
-    private static void SetHeightAndWeight(ICharacter creature)
+    private void SetHeightAndWeight(ICharacter creature)
     {
         if (creature?.Gender == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 9)
             {
-                creature.Height = new Height(6 + modifier, 2);
+                Height = new Height(6 + modifier, 2);
             }
             else if (modifier == 10)
             {
-                creature.Height = new Height(7, 0);
+                Height = new Height(7, 0);
             }
             else
             {
-                creature.Height = new Height(7, modifier - 10);
+                Height = new Height(7, modifier - 10);
             }
             // 100 lbs. +(2d8×5 lbs.)
-            creature.Weight = 200 + new Dice("2d8").Total * 5;
+            Weight = 200 + new Dice("2d8").Total * 5;
         }
 
         if (creature?.Gender == GenderEnum.Female)
@@ -86,18 +91,18 @@ public class Dragonborn : ICharacterRace
             var modifier = new Dice("2d8").Total;
             if (modifier <= 11)
             {
-                creature.Height = new Height(5, modifier);
+                Height = new Height(5, modifier);
             }
             else if (modifier == 12)
             {
-                creature.Height = new Height(6, 0);
+                Height = new Height(6, 0);
             }
             else
             {
-                creature.Height = new Height(6, modifier - 12);
+                Height = new Height(6, modifier - 12);
             }
             // 180 lbs. +(2d8×5 lbs.)
-            creature.Weight = 180 + new Dice("2d8").Total * 5;
+            Weight = 180 + new Dice("2d8").Total * 5;
         }
     }
 

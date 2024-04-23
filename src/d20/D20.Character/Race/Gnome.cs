@@ -1,13 +1,17 @@
-﻿using D20.Character.Enum;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Character.Interfaces;
-using D20.Character.Models;
-using D20.Character.Tables;
 using D20.Core;
 using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Models;
 
-namespace D20.Character.Race;
+using Microsoft.Extensions.Logging;
+
+namespace D20.Race;
 
 /// <summary>
 /// The capricious and carefree gnomes of the 
@@ -16,28 +20,28 @@ namespace D20.Character.Race;
 /// communities or integrate themselves into 
 /// other humanoid societies.
 /// </summary>
-public class Gnome : ICharacterRace
+public class Gnome : CharacterRace, IGnome
 {
     /// <summary>
     /// Set the race traits for the creature.
     /// </summary>
-    /// <param name="creature"></param>
-    public Gnome(ICharacter creature)
+    [SetsRequiredMembers]
+    public Gnome(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize all the race properties of the character
     /// </summary>
-    /// <param name="character"></param>
-    public void Initialize(ICharacter creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.Gnome;
+        Race = RaceEnum.Gnome;
 
         //Ability Score Increase.Your Intelligence
         //score increases by 2.
-        creature.Intelligence.RacialModifier = 2;
+        Intelligence.RacialModifier = 2;
 
         //Size: Gnomes are Small creatures and
         //thus gain a +1 size bonus to their
@@ -45,27 +49,26 @@ public class Gnome : ICharacterRace
         //a –1 penalty to their Combat Maneuver
         //Bonus and Combat Maneuver Defense,
         //and a + 4 size bonus on Stealth checks.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Small;
+        SetHeightAndWeight();
+        Size = SizeEnum.Small;
 
         //Base Speed: (Slow Speed) Gnomes have a
         //base speed of 20 feet.
-        creature.Speed = 20;
+        Speed = 20;
 
         //Type: Gnomes are Humanoid creatures with
         //the gnome subtype.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Gnome);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Gnome);
 
         //Languages: Gnomes begin play speaking
         //Common, Gnome, and Sylvan. Gnomes with
         //high Intelligence scores can choose from
         //the following: Draconic, Dwarven, Elven,
         //Giant, Goblin, and Orc.
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Gnomish);
-        creature.Languages.Add(LanguageEnum.Sylvan);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Gnomish);
+        Languages.Add(LanguageEnum.Sylvan);
     }
 
     //Table: Gnome Homeland
@@ -138,8 +141,7 @@ public class Gnome : ICharacterRace
             {
                 Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(UnusualHomelandTable),
-            },
+             },
             #endregion
         ],
     };
@@ -272,77 +274,6 @@ public class Gnome : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(loggerFactory, classService);
-                //Initialize(creaturesiblings);
-
-                // Set relative age of sibling
-                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                //if (relativeage?.Name == "Younger")
-                //{
-                //    creaturesiblings.Age -= new Dice("1d4").Total;
-                //}
-                //if (relativeage?.Name == "Older")
-                //{
-                //    creaturesiblings.Age += new Dice("1d4").Total;
-                //}
-
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Table: Random Height and Weight
     //Gender Base Height Height Modifier Base Weight Weight Modifier
     //Male	 3 ft. 0 in.	+2d4 in.  35 lbs. +(2d4 lbs.)
@@ -351,9 +282,9 @@ public class Gnome : ICharacterRace
     /// The Height
     /// </summary>
     /// <param name="creature">The dwarf</param>
-    private static void SetHeightAndWeight(ICreature creature)
+    private void SetHeightAndWeight()
     {
-        if (creature?.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
             // 3 ft. 0 in.	+2d4 in.
             //creature.Height = $"3 ft. {new Dice("2d8").Total} in.";
@@ -363,7 +294,7 @@ public class Gnome : ICharacterRace
         }
 
         // Female 2 ft. 10 in.	+2d4 in.
-        if (creature?.Gender == GenderEnum.Female)
+        if (Gender == GenderEnum.Female)
         {
             var modifier = new Dice("2d4").Total;
             if (modifier == 2)
@@ -375,7 +306,7 @@ public class Gnome : ICharacterRace
                 //creature.Height = $"3 ft. {modifier - 3} in.";
             }
             // 30 lbs. +(2d4 lbs.)
-            creature.Weight = 30 + new Dice("2d4").Total;
+            Weight = 30 + new Dice("2d4").Total;
         }
     }
 

@@ -1,5 +1,4 @@
-﻿using D20.Character.Enum;
-using D20.Core.Enum;
+﻿using D20.Core.Enum;
 using D20.Core.Interfaces;
 
 namespace D20.Character.Interfaces;

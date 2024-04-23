@@ -1,11 +1,17 @@
-﻿using D20.Character.Enum;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using D20.Background.Enum;
+using D20.Background.Models;
 using D20.Character.Interfaces;
 using D20.Character.Models;
-using D20.Character.Tables;
 using D20.Core;
 using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
+using D20.Monsters.Interfaces;
+using D20.Monsters.Models;
+
+using Microsoft.Extensions.Logging;
 
 namespace D20.Character.Race;
 
@@ -16,44 +22,44 @@ namespace D20.Character.Race;
 /// grow up with the help of a large social 
 /// network.
 /// </summary>
-public class Elf : ICharacterRace
+public class Elf : CharacterRace, ICharacterRace
 {
     /// <summary>
-    /// Set the race traits for the creature.
+    /// Set the race traits for the 
     /// </summary>
-    /// <param name="creature"></param>
-    public Elf(ICharacter creature)
+    [SetsRequiredMembers]
+    public Elf(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
-        Initialize(creature);
+        Initialize();
     }
 
     /// <summary>
     /// Initialize the character
     /// </summary>
-    /// <param name="creature"></param>
-    public void Initialize(ICharacter creature)
+    public void Initialize()
     {
-        creature.Race = RaceEnum.Elf;
+        Race = RaceEnum.Elf;
 
         //Ability Score Increase.Your Dexterity
-        //score increases by 2.creature.
-        creature.Dexterity.RacialModifier = 2;
+        //score increases by 2.
+        Dexterity.RacialModifier = 2;
 
         //Size: Elves are Medium creatures and thus
         //receive no bonuses or penalties due to
         //their size.
-        SetHeightAndWeight(creature);
-        SetAge(creature);
-        creature.Size = SizeEnum.Medium;
+        SetHeightAndWeight();
+        SetAge();
+        Size = SizeEnum.Medium;
 
         //Base Speed: Elves have a base speed of
         //30 feet.
-        creature.Speed = 30;
+        Speed = 30;
 
         //Type: Elves are Humanoids with the elf
         //subtype.
-        creature.RaceType = RaceType.Humanoid;
-        creature.RaceSubType.Add(RaceSubTypeEnum.Elf);
+        RaceType = RaceType.Humanoid;
+        RaceSubType.Add(RaceSubTypeEnum.Elf);
 
         //Languages: Elves begin play speaking Common
         //and Elven .Elves with high Intelligence
@@ -62,8 +68,8 @@ public class Elf : ICharacterRace
         //Orc, and Sylvan. See the Linguistics skill
         //page for more information about these
         //languages.
-        creature.Languages.Add(LanguageEnum.Common);
-        creature.Languages.Add(LanguageEnum.Elvish);
+        Languages.Add(LanguageEnum.Common);
+        Languages.Add(LanguageEnum.Elvish);
 
     }
 
@@ -139,7 +145,6 @@ public class Elf : ICharacterRace
             {
                 Range = new Range(96,100),
                 Name = "Unusual Homeland",
-                AlternateTable = typeof(UnusualHomelandTable),
             },
             #endregion
         ],
@@ -291,77 +296,6 @@ public class Elf : ICharacterRace
         ],
     };
 
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    public void GenerateRaceBackground(D20Character character)
-    {
-        #region Homeland
-        character.Homeland = (BackgroundTableEntry?)HomelandTable.GetRandomEntry();
-        if (character.Homeland?.Name == "Unusual Homeland")
-        {
-            //homeland = (BackgroundTableEntry?)BackgroundTables.UnusualHomelandTable.GetRandomEntry();
-        }
-        if (character.Homeland?.Traits != null)
-        {
-            foreach (var trait in character.Homeland.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Parents
-        character.Parents = (BackgroundTableEntry?)ParentsTable.GetRandomEntry();
-        if (character.Parents?.Traits != null)
-        {
-            foreach (var trait in character.Parents.Traits)
-            {
-                if (!character.Traits.Contains(trait))
-                {
-                    character.Traits.Add(trait);
-                }
-            }
-        }
-        #endregion
-
-        #region Siblings
-        var siblings = (BackgroundTableEntry?)SiblingsTable.GetRandomEntry();
-        if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-        {
-            var total = new Dice(siblings.Name).Total;
-            for (int i = 0; i < total; i++)
-            {
-                //var creaturesiblings = new Character(LoggerFactory, classService);
-                //Initialize(creaturesiblings);
-
-                // Set relative age of sibling
-                //var relativeage = BackgroundTables.RelativeAgeofSiblingTable.GetRandomEntry();
-                //if (relativeage?.Name == "Younger")
-                //{
-                //    creaturesiblings.Age -= new Dice("1d4").Total;
-                //}
-                //if (relativeage?.Name == "Older")
-                //{
-                //    creaturesiblings.Age += new Dice("1d4").Total;
-                //}
-
-                //character.Siblings.Add(creaturesiblings);
-            }
-            if (character.Siblings.Count > 0)
-            {
-                if (!character.Traits.Contains(TraitEnum.KinGuardian))
-                {
-                    character.Traits.Add(TraitEnum.KinGuardian);
-                }
-            }
-        }
-        #endregion
-    }
-
     //Table: Random Height and Weight
     //Gender Base Height Height Modifier Base Weight Weight Modifier
     //Male	 5 ft. 4 in.    +2d8 in.      110 lbs.    +(2d8×3 lbs.)
@@ -369,45 +303,44 @@ public class Elf : ICharacterRace
     /// <summary>
     /// The Height
     /// </summary>
-    /// <param name="creature">The dwarf</param>
-    private static void SetHeightAndWeight(ICreature creature)
+    private void SetHeightAndWeight()
     {
-        if (creature?.Gender == GenderEnum.Male)
+        if (Gender == GenderEnum.Male)
         {
             var modifier = new Dice("2d8").Total;
             if (modifier <= 7)
             {
-                //creature.Height = $"5 ft. {4 + modifier} in.";
+                //Height = $"5 ft. {4 + modifier} in.";
             }
             else if (modifier == 8)
             {
-                //creature.Height = $"6 ft.";
+                //Height = $"6 ft.";
             }
             else
             {
-                //creature.Height = $"6 ft. {modifier - 9} in.";
+                //Height = $"6 ft. {modifier - 9} in.";
             }
             // 110 lbs. +(2d8×3 lbs.)
-            creature.Weight = 110 + new Dice("2d8").Total * 3;
+            Weight = 110 + new Dice("2d8").Total * 3;
         }
 
-        if (creature?.Gender == GenderEnum.Female)
+        if (Gender == GenderEnum.Female)
         {
             var modifier = new Dice("2d6").Total;
             if (modifier <= 7)
             {
-                //creature.Height = $"5 ft. {4 + modifier} in.";
+                //Height = $"5 ft. {4 + modifier} in.";
             }
             else if (modifier == 8)
             {
-                //creature.Height = $"6 ft.";
+                //Height = $"6 ft.";
             }
             else
             {
-                //creature.Height = $"6 ft. {modifier - 9} in.";
+                //Height = $"6 ft. {modifier - 9} in.";
             }
             // 90 lbs. +(2d6×3 lbs.)
-            creature.Weight = 90 + new Dice("2d6").Total * 3;
+            Weight = 90 + new Dice("2d6").Total * 3;
         }
     }
 
@@ -421,15 +354,7 @@ public class Elf : ICharacterRace
     /// Set the age
     /// </summary>
     /// <param name="creature"></param>
-    private static void SetAge(ICharacter creature)
-    {
-    }
-
-    /// <summary>
-    /// Generate the character background
-    /// </summary>
-    /// <param name="character">The character we are generating  a background for.</param>
-    public void GenerateBackground(D20Character character)
+    private void SetAge()
     {
     }
 }

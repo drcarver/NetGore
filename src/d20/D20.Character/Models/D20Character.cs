@@ -6,6 +6,7 @@ using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
 using D20.Goods.Enum;
+using D20.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
 
@@ -17,31 +18,6 @@ public class D20Character : Creature, ICharacter
     /// The character class
     /// </summary>
     public ICharacterClass? CharacterClass { get; protected set; }
-
-    /// <summary>
-    /// The characters homeland.  Automatically generated
-    /// </summary>
-    public IBackgroundTableEntry? Homeland { get; internal set; }
-
-    /// <summary>
-    /// The character racial traits
-    /// </summary>
-    public List<TraitEnum> Traits { get; } = [];
-
-    /// <summary>
-    /// The player character parents
-    /// </summary>
-    public IBackgroundTableEntry? Parents { get; internal set; }
-
-    /// <summary>
-    /// The player character circumstance of birth
-    /// </summary>
-    public IBackgroundTableEntry? CircumstanceOfBirth { get; internal set; }
-
-    /// <summary>
-    /// The characters siblings
-    /// </summary>
-    public List<ICreature> Siblings { get; } = [];
 
     /// <summary>
     /// Armor Proficiency

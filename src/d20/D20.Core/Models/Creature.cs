@@ -81,7 +81,7 @@ public class Creature : DataObject, ICreature
     public Charisma Charisma { get; set; }
 
     /// <summary>
-    /// THe size of the creature
+    /// The size of the creature
     /// </summary>
     public SizeEnum Size { get; set; }
 
@@ -108,16 +108,18 @@ public class Creature : DataObject, ICreature
     /// <summary>
     /// The creature's speed in feet
     /// </summary>
-    public int Speed {
-        get 
+    public int Speed
+    {
+        get
         {
             if (DragOrPushWeight > CarryingCapacity)
             {
-                return 5;             
+                return 5;
             }
-            return speed; 
-        } 
-        set => speed = value; }
+            return speed;
+        }
+        set => speed = value;
+    }
 
     /// <summary>
     /// Wealth in gold pieces
@@ -193,7 +195,7 @@ public class Creature : DataObject, ICreature
     /// dragging weight in excess of your carrying capacity, 
     /// your speed drops to 5 feet
     /// </summary>
-    public float CanDrag => Capacity(30); 
+    public float CanDrag => Capacity(30);
 
     /// <summary>
     /// Your carrying capacity is your Strength score 
@@ -269,5 +271,9 @@ public class Creature : DataObject, ICreature
         WillSave = new WillSave(this);
         FortitudeSave = new FortitudeSave(this);
         ReflexSave = new ReflexSave(this);
+
+        var alignmenttable = new RandomAlignmentTable();
+        alignmenttable.InitializeTable();
+        Alignment = ((AlignmentTableEntry)alignmenttable.GetRandomRangeEntry()).Alignment;
     }
 }
