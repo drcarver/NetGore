@@ -12,7 +12,7 @@ namespace NetGore.Tests.NetGore.Collections
     public class IFactoryTests
     {
         static IEnumerable<ICache<TKey, TValue>> CreateFactories<TKey, TValue>(Func<TKey, TValue> valueCreator,
-                                                                               IEqualityComparer<TKey> equalityComparer = null)
+                                                                               IEqualityComparer<TKey> equalityComparer)
             where TValue : class
         {
             yield return new HashCache<TKey, TValue>(valueCreator, equalityComparer);

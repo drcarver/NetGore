@@ -74,17 +74,21 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="3.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Maui.Graphics" Version="8.0.14" />
-		<PackageReference Include="Syncfusion.Maui.Core" Version="25.1.38" />
-		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.38" />
+		<PackageReference Include="Microsoft.Maui.Graphics" Version="8.0.20" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="25.1.39" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="25.1.39" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
-	  <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Character\D20.Character.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Core\D20.Core.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Goods\D20.Goods.csproj" />
+	  <ProjectReference Include="..\..\d20\d20.MagicItems\D20.MagicItems.csproj" />
+	  <ProjectReference Include="..\..\d20\D20.Monsters\D20.Monsters.csproj" />
+	  <ProjectReference Include="..\..\d20\d20.Spells\D20.Spells.csproj" />
 	  <ProjectReference Include="..\NetGore.Ui.Admin\NetGore.UI.Admin.csproj" />
 	</ItemGroup>
 

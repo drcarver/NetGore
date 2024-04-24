@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetGore.UI.Admin.Views.GameTableAdminPage"
+             xmlns:viewmodel="clr-namespace:NetGore.UI.Admin.ViewModel"
+             xmlns:model="clr-namespace:D20.Core.Models;assembly=D20.Core"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:sfavatar="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="{Binding Name}"
+             x:DataType="viewmodel:GameTableAdminViewModel">
+
+    <!--Margin="Left,Top,Right,Bottom"-->
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <syncfusion:SfDataGrid x:Name="GameTableGrid"
+                ItemsSource="{Binding Items}"
+                AutoGenerateColumnsMode="None"
+                GridLinesVisibility="Both"
+                SortingMode="Single"
+                SelectionMode="Single"
+                Grid.Row="1"
+                SelectedRow="{Binding SelectedItem}" >
+            <syncfusion:SfDataGrid.SortColumnDescriptions>
+                <syncfusion:SortColumnDescription ColumnName="Name" SortDirection="Ascending" />
+            </syncfusion:SfDataGrid.SortColumnDescriptions>
+            <syncfusion:SfDataGrid.Behaviors>
+                <toolkit:EventToCommandBehavior
+                    EventName="SelectionChanged"
+                    Command="{Binding TapCommand}"/>
+            </syncfusion:SfDataGrid.Behaviors>
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn
+                    MappingName="Name"
+                    HeaderText="Table Name"
+                    ColumnWidthMode="LastColumnFill"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+   </Grid>
+</ContentPage>

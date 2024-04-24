@@ -3,8 +3,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using NetGore.Core.Interfaces;
-using NetGore.Data.Models;
+using D20.Core.Interfaces;
+using D20.Core.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
@@ -45,7 +45,7 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(GameTable)];
+        var table = (IGameTable) query[nameof(D20.Core.Models.NamedTable)];
         if (table == null)
             return;
 
@@ -54,7 +54,10 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
 
         foreach (var entry in table.Table)
         {
-            Table.Add(new GameTableEntryViewModel(entry));
+            if (entry is IStandardTableEntry)
+            {
+                Table.Add(new GameTableEntryViewModel((IStandardTableEntry) entry));
+            }
         }
     }
 }

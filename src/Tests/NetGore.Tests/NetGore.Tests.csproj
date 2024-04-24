@@ -34,9 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\d20\NetGore.Core\NetGore.Core.csproj" />
-    <ProjectReference Include="..\..\d20\NetGore.Data\NetGore.Data.csproj" />
+    <ProjectReference Include="..\..\d20\D20.Character\D20.Character.csproj" />
     <ProjectReference Include="..\..\NetGore\.NetGore\NetGore.csproj" />
+    <ProjectReference Include="..\..\NetGore\NetGore.Core\NetGore.Core.csproj" />
     <ProjectReference Include="..\..\NetGore\NetGore.Db\NetGore.Db.csproj" />
     <ProjectReference Include="..\..\NetGore\NetGore.Features.Client\NetGore.Features.Client.csproj" />
     <ProjectReference Include="..\..\NetGore\NetGore.Features.Server\NetGore.Features.Server.csproj" />

@@ -1,5 +1,6 @@
-﻿using NetGore.Data;
-using NetGore.Data.Models;
+﻿using D20.Core.Models;
+
+using NetGore.Data;
 
 using NUnit.Framework.Legacy;
 

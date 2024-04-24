@@ -1,8 +1,5 @@
-﻿using System.Linq;
+﻿using NetGore.Core.Enum;
 
-using NetGore.Core.Enum;
-
-using NUnit.Framework;
 using NUnit.Framework.Legacy;
 
 using SFML.Graphics;

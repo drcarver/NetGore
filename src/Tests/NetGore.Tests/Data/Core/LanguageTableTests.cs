@@ -1,5 +1,5 @@
-﻿using NetGore.Core.Enum;
-using NetGore.Data.Core;
+﻿using D20.Core.Enum;
+using D20.Core.Tables;
 
 using NUnit.Framework.Legacy;
 
@@ -16,7 +16,7 @@ public class LanguageTableTests
     public void AreTableEntriesCorrect()
     {
         var languages = new List<string>();
-        foreach (var language in Enum.GetValues(typeof(AlignmentEnum)).Cast<AlignmentEnum>())
+        foreach (var language in Enum.GetValues(typeof(LanguageEnum)).Cast<LanguageEnum>())
         {
             languages.Add(language.ToString());
         }

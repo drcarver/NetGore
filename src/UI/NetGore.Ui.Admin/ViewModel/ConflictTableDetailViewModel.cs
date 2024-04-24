@@ -3,9 +3,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using NetGore.Core.Interfaces;
-using NetGore.Data.Interfaces;
-using NetGore.Data.Models;
+using D20.Background.Interfaces;
+using D20.Background.Models;
+using D20.Core.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
@@ -46,7 +46,7 @@ public partial class ConflictTableDetailViewModel : ObservableObject, IQueryAttr
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IConflictTable) query[nameof(GameTable)];
+        var table = (IConflictTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

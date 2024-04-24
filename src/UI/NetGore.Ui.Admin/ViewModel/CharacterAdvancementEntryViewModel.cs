@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using NetGore.Data.Interfaces;
+using D20.Character.Interfaces;
 
 namespace NetGore.UI.Admin.ViewModel;
 
@@ -11,12 +11,6 @@ public partial class CharacterAdvancementEntryViewModel : ObservableObject
     /// </summary>
     [ObservableProperty]
     Range experiencePoints;
-
-    /// <summary>
-    /// The description of the entry
-    /// </summary>
-    [ObservableProperty]
-    string? description;
 
     /// <summary>
     /// The character level
@@ -31,21 +25,13 @@ public partial class CharacterAdvancementEntryViewModel : ObservableObject
     int proficiencyBonus;
 
     /// <summary>
-    /// The title of the table
-    /// </summary>
-    [ObservableProperty]
-    string properName;
-
-    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="model">The model to be loaded</param>
     public CharacterAdvancementEntryViewModel(ICharacterAdvancementEntry model)
     {
         ExperiencePoints = model.ExperiencePoints;
-        Description = model.Description;
         ProficiencyBonus = model.ProficiencyBonus;
         Level = model.Level;
-        ProperName = model.ProperName ?? model.Name;
     }
 }

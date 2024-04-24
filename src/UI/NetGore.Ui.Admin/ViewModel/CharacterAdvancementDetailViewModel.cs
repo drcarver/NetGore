@@ -3,9 +3,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-using NetGore.Core.Interfaces;
-using NetGore.Data.Interfaces;
-using NetGore.Data.Models;
+using D20.Character.Interfaces;
+using D20.Character.Models;
+using D20.Core.Models;
 
 namespace NetGore.UI.Admin.ViewModel;
 
@@ -51,7 +51,7 @@ public partial class CharacterAdvancementDetailViewModel : ObservableObject, IQu
     /// <param name="query">The navigation query</param>
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (ICharacterAdvancementTable) query[nameof(GameTable)];
+        var table = (ICharacterAdvancementTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

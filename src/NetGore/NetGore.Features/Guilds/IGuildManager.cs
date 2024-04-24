@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 using NetGore.Core.Enum;
 
 namespace NetGore.Features.Guilds
