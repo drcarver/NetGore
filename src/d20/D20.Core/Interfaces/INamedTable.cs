@@ -1,16 +1,14 @@
-﻿using D20.Core.Enum;
-using D20.Core.Models;
-
-namespace D20.Core.Interfaces;
-
-/// <summary>
-/// The interface for the table
-/// </summary>
-public interface INamedTable : IGameTable
+﻿namespace D20.Core.Interfaces
 {
     /// <summary>
-    /// Get a entry from the table by it's name
+    /// The interface for the table
     /// </summary>
-    /// <returns>The selected RandomTableEntry.</returns>
-    INamedTableEntry GetEntryByName(string Name);
+    public interface INamedTable : IGameTable
+    {
+        /// <summary>
+        /// Get a entry from the table by it's name
+        /// </summary>
+        /// <returns>The selected RandomTableEntry.</returns>
+        INamedTableEntry GetEntryByName(string Name);
+    }
 }

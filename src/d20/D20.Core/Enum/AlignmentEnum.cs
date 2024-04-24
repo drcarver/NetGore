@@ -1,15 +1,16 @@
-﻿namespace D20.Core.Enum;
-
-public enum AlignmentEnum
+﻿namespace D20.Core.Enum
 {
-    NonAligned = 0,
-    LawfulGood,
-    LawfulEvil,
-    LawfulNeutral,
-    ChaoticGood,
-    ChaoticEvil,
-    ChaoticNeutral,
-    NeutralEvil,
-    NeutralGood,
-    Neutral
+    public enum AlignmentEnum
+    {
+        NonAligned = 0,
+        LawfulGood,
+        LawfulEvil,
+        LawfulNeutral,
+        ChaoticGood,
+        ChaoticEvil,
+        ChaoticNeutral,
+        NeutralEvil,
+        NeutralGood,
+        Neutral
+    }
 }

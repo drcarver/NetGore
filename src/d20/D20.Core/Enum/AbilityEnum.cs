@@ -1,11 +1,12 @@
-﻿namespace D20.Core.Enum;
-
-public enum AbilityEnum
+﻿namespace D20.Core.Enum
 {
-    Strength,
-    Constitution,
-    Intelligence,
-    Wisdom,
-    Dexterity,
-    Charisma
+    public enum AbilityEnum
+    {
+        Strength,
+        Constitution,
+        Intelligence,
+        Wisdom,
+        Dexterity,
+        Charisma
+    }
 }

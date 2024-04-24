@@ -1,8 +1,9 @@
-﻿namespace D20.Core.Enum;
-
-public enum RaceType
+﻿namespace D20.Core.Enum
 {
-    None = 0,
-    Humanoid = 1,
-    Outsiders = 2,
+    public enum RaceType
+    {
+        None = 0,
+        Humanoid = 1,
+        Outsiders = 2,
+    }
 }

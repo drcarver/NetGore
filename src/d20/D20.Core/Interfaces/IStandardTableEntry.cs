@@ -1,12 +1,13 @@
-﻿namespace D20.Core.Interfaces;
-
-/// <summary>
-/// A Game Table Entry
-/// </summary>
-public interface IStandardTableEntry : INamedTableEntry, IBaseObject
+﻿namespace D20.Core.Interfaces
 {
     /// <summary>
-    /// The English name for the entry
+    /// A Game Table Entry
     /// </summary>
-    string? ProperName { get; set; }
+    public interface IStandardTableEntry : INamedTableEntry, IBaseObject
+    {
+        /// <summary>
+        /// The English name for the entry
+        /// </summary>
+        string? ProperName { get; set; }
+    }
 }

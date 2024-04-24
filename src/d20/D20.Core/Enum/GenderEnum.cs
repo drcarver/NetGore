@@ -1,8 +1,9 @@
-﻿namespace D20.Core.Enum;
-
-public enum GenderEnum
+﻿namespace D20.Core.Enum
 {
-    None = 0,
-    Male = 1,
-    Female = 2,
+    public enum GenderEnum
+    {
+        None = 0,
+        Male = 1,
+        Female = 2,
+    }
 }

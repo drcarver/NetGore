@@ -1,65 +1,69 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
+
 using D20.Core.Enum;
 using D20.Core.Interfaces;
 using D20.Core.Models;
 
-namespace D20.Core.Tables;
-
-/// <summary>
-/// The gender table.  
-/// </summary>
-public class GenderTable : NamedTable, IGenderTable
+namespace D20.Core.Tables
 {
     /// <summary>
-    /// Constructor
+    /// The gender table.  
     /// </summary>
-    [SetsRequiredMembers]
-    public GenderTable()
+    public class GenderTable : NamedTable, IGenderTable
     {
-        Name = nameof(GenderTable);
-        ProperName = "Gender Table";
-        TableType = TableTypeEnum.CoreTable;
-    }
-
-    /// <summary>
-    /// Get the Gender of the creature
-    /// </summary>
-    /// <returns>The selected Gender</returns>
-    public GenderEnum GetGender()
-    {
-        InitializeTable();
-        switch (((NamedTableEntry) GetRandomEntry()).Name)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public GenderTable()
         {
-            case nameof(GenderEnum.Male):
-                return GenderEnum.Male;
-            case nameof(GenderEnum.Female):
-                return GenderEnum.Female;
-
+            Name = nameof(GenderTable);
+            ProperName = "Gender Table";
+            TableType = TableTypeEnum.CoreTable;
         }
-        return GenderEnum.Male;
-    }
 
-    /// <summary>
-    /// Initialize the game table.  This is a separate method 
-    /// so we can create a game table for it;s meta properties
-    /// with out creating the table.  A bit of optimization to 
-    /// conserve memory
-    /// </summary>
-    public override void InitializeTable()
-    {
-        Table =
-        [
-            new NamedTableEntry
+        /// <summary>
+        /// Get the Gender of the creature
+        /// </summary>
+        /// <returns>The selected Gender</returns>
+        public GenderEnum GetGender()
+        {
+            InitializeTable();
+            switch (((NamedTableEntry) GetRandomEntry()).Name)
             {
-                Name = nameof(GenderEnum.Male),
-                Description = "The Male of the species",
-            },
+                case nameof(GenderEnum.Male):
+                    return GenderEnum.Male;
+                case nameof(GenderEnum.Female):
+                    return GenderEnum.Female;
 
-            new NamedTableEntry
+            }
+            return GenderEnum.Male;
+        }
+
+        /// <summary>
+        /// Initialize the game table.  This is a separate method 
+        /// so we can create a game table for it;s meta properties
+        /// with out creating the table.  A bit of optimization to 
+        /// conserve memory
+        /// </summary>
+        public override void InitializeTable()
+        {
+            if (Table.Count == 0)
             {
-                Name = nameof(GenderEnum.Female),
-                Description = "The Female of the species",
-            },
-        ];
+                Table = new List<IGameTableEntry>
+                {
+                    new NamedTableEntry
+                    {
+                        Name = nameof(GenderEnum.Male),
+                        Description = "The Male of the species",
+                    },
+
+                    new NamedTableEntry
+                    {
+                        Name = nameof(GenderEnum.Female),
+                        Description = "The Female of the species",
+                    },
+                };
+            }
+        }
     }
 }

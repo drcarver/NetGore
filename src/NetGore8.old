@@ -46,7 +46,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.MagicItems", "d20\d20.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.Gaming", "d20\D20.Gaming\D20.Gaming.csproj", "{D145D6DF-BD88-4B58-A174-658F375A1D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D20.Background", "d20\D20.Bacground\D20.Background.csproj", "{FBE6D5B0-38B2-46DB-B70F-C0C170A69583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D20.Background", "d20\D20.Bacground\D20.Background.csproj", "{FBE6D5B0-38B2-46DB-B70F-C0C170A69583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraaryTest", "LibraaryTest\LibraaryTest.csproj", "{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -340,6 +342,30 @@ Global
 		{FBE6D5B0-38B2-46DB-B70F-C0C170A69583}.ReleaseSideScroller|Any CPU.Build.0 = Release|Any CPU
 		{FBE6D5B0-38B2-46DB-B70F-C0C170A69583}.ReleaseSideScroller|x86.ActiveCfg = Release|Any CPU
 		{FBE6D5B0-38B2-46DB-B70F-C0C170A69583}.ReleaseSideScroller|x86.Build.0 = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.DebugSideScroller|Any CPU.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.DebugSideScroller|Any CPU.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.DebugSideScroller|x86.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.DebugSideScroller|x86.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Mono|Any CPU.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Mono|Any CPU.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Mono|x86.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Mono|x86.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.MonoSideScroller|Any CPU.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.MonoSideScroller|Any CPU.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.MonoSideScroller|x86.ActiveCfg = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.MonoSideScroller|x86.Build.0 = Debug|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.Release|x86.Build.0 = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.ReleaseSideScroller|Any CPU.ActiveCfg = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.ReleaseSideScroller|Any CPU.Build.0 = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.ReleaseSideScroller|x86.ActiveCfg = Release|Any CPU
+		{463E8044-10B3-4DF8-8A6E-3AFE5DAA88A7}.ReleaseSideScroller|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

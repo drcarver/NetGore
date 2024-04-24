@@ -1,19 +1,22 @@
-﻿namespace D20.Core.Interfaces;
+﻿using System;
 
-public interface IDataObject
+namespace D20.Core.Interfaces
 {
-    /// <summary>
-    /// Is the object marked for deletion?
-    /// </summary>
-    bool IsDeleted { get; set; }
+    public interface IDataObject
+    {
+        /// <summary>
+        /// Is the object marked for deletion?
+        /// </summary>
+        bool IsDeleted { get; set; }
 
-    /// <summary>
-    /// Date and Time the object was created
-    /// </summary>
-    DateTime CreatedAt { get; set; }
+        /// <summary>
+        /// Date and Time the object was created
+        /// </summary>
+        DateTime CreatedAt { get; set; }
 
-    /// <summary>
-    /// Date and Time the object was last updated
-    /// </summary>
-    DateTime UpdatedAt { get; set; }
+        /// <summary>
+        /// Date and Time the object was last updated
+        /// </summary>
+        DateTime UpdatedAt { get; set; }
+    }
 }

@@ -1,38 +1,33 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using D20.Core.Interfaces;
 
-using D20.Core.Interfaces;
-
-using Microsoft.Extensions.Logging;
-
-namespace D20.Core.Abilities;
-
-/// <summary>
-/// Constitution measures health, stamina, and vital 
-/// force.
-/// </summary>
-public class Constitution : AbilityBase
+namespace D20.Core.Abilities
 {
     /// <summary>
-    /// Constructor
+    /// Constitution measures health, stamina, and vital 
+    /// force.
     /// </summary>
-    [SetsRequiredMembers]
-    public Constitution(ICreature parent)
-        : base(parent)
+    public class Constitution : AbilityBase
     {
-        Name = "Constitution";
-        Description = "Constitution measures health, stamina, and vital force.";
-        Abbreviation = "CON";
-    }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Constitution(ICreature parent)
+            : base(parent)
+        {
+            Name = "Constitution";
+            Description = "Constitution measures health, stamina, and vital force.";
+            Abbreviation = "CON";
+        }
 
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public Constitution(int baseAbility, ICreature parent)
-        : base(baseAbility, parent)
-    {
-        Name = "Constitution";
-        Description = "Constitution measures health, stamina, and vital force.";
-        Abbreviation = "CON";
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Constitution(int baseAbility, ICreature parent)
+            : base(baseAbility, parent)
+        {
+            Name = "Constitution";
+            Description = "Constitution measures health, stamina, and vital force.";
+            Abbreviation = "CON";
+        }
     }
 }

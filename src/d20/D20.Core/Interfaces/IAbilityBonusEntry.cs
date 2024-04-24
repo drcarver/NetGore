@@ -1,14 +1,17 @@
-﻿namespace D20.Core.Interfaces;
+﻿using System;
 
-public interface IAbilityBonusEntry
+namespace D20.Core.Interfaces
 {
-    /// <summary>
-    /// The range of a ability scores for this entry
-    /// </summary>
-    public Range Score { get; set; }
+    public interface IAbilityBonusEntry
+    {
+        /// <summary>
+        /// The range of a ability scores for this entry
+        /// </summary>
+        public Range Score { get; set; }
 
-    /// <summary>
-    /// The ability modifier
-    /// </summary>
-    public int Modifier { get; set; }
+        /// <summary>
+        /// The ability modifier
+        /// </summary>
+        public int Modifier { get; set; }
+    }
 }

@@ -1,15 +1,16 @@
-﻿namespace D20.Core.Enum;
-
-public enum AcrobaticsModifiersEnum
+﻿namespace D20.Core.Enum
 {
-    LightlyObstructed,
-    SeverelyObstructed,
-    SlightlySlippery,
-    SeverelySlippery,
-    SlightlySloped,
-    SeverelySloped,
-    SlightlyUnsteady,
-    MildlyUnsteady,
-    SeverelyUnsteady,
-    MoveAtFullSpeedOnNarrowOrUnevenSurfaces
+    public enum AcrobaticsModifiersEnum
+    {
+        LightlyObstructed,
+        SeverelyObstructed,
+        SlightlySlippery,
+        SeverelySlippery,
+        SlightlySloped,
+        SeverelySloped,
+        SlightlyUnsteady,
+        MildlyUnsteady,
+        SeverelyUnsteady,
+        MoveAtFullSpeedOnNarrowOrUnevenSurfaces
+    }
 }

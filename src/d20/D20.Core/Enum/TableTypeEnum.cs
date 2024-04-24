@@ -1,16 +1,17 @@
-﻿namespace D20.Core.Enum;
-
-public enum TableTypeEnum
+﻿namespace D20.Core.Enum
 {
-    BackgroundTable,
-    CharacterTable,
-    ConflictTable,
-    CoreTable,
-    GoodsTable,
-    MagicItemTable,
-    MonsterTable,
-    PantheonTable,
-    RaceTable,
-    SpellTable,
-    GamingTable,
+    public enum TableTypeEnum
+    {
+        BackgroundTable,
+        CharacterTable,
+        ConflictTable,
+        CoreTable,
+        GoodsTable,
+        MagicItemTable,
+        MonsterTable,
+        PantheonTable,
+        RaceTable,
+        SpellTable,
+        GamingTable,
+    }
 }

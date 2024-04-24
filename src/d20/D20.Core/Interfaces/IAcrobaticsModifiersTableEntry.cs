@@ -1,9 +1,10 @@
-﻿namespace D20.Core.Interfaces;
-
-public interface IAcrobaticsModifiersTableEntry : INamedTableEntry
+﻿namespace D20.Core.Interfaces
 {
-    /// <summary>
-    /// The difficulty check modifier
-    /// </summary>
-    int DifficultyCheckModifier { get; }
+    public interface IAcrobaticsModifiersTableEntry : INamedTableEntry
+    {
+        /// <summary>
+        /// The difficulty check modifier
+        /// </summary>
+        int DifficultyCheckModifier { get; }
+    }
 }

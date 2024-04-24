@@ -1,5 +1,6 @@
-﻿namespace D20.Core.Interfaces;
-
-public interface IRandomAlignmentTable : IRandomTable
+﻿namespace D20.Core.Interfaces
 {
+    public interface IRandomAlignmentTable : IRandomTable
+    {
+    }
 }

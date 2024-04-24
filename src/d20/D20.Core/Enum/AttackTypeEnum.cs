@@ -1,8 +1,9 @@
-﻿namespace D20.Core.Enum;
-
-public enum AttackTypeEnum
+﻿namespace D20.Core.Enum
 {
-    Mele,
-    Ranged,
-    Touch
+    public enum AttackTypeEnum
+    {
+        Mele,
+        Ranged,
+        Touch
+    }
 }

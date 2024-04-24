@@ -1,5 +1,6 @@
-﻿namespace D20.Core.Interfaces;
-
-public interface IAlignmentTable : INamedTable
+﻿namespace D20.Core.Interfaces
 {
+    public interface IAlignmentTable : INamedTable
+    {
+    }
 }
