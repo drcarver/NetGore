@@ -7,6 +7,8 @@ using D20.Character.PC.Barbarian;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Rogue;
 
 public class Rogue : CharacterClassBase
@@ -29,7 +31,10 @@ public class Rogue : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Rogue(IServiceProvider services)
+    public Rogue(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Rogue);

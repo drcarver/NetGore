@@ -5,7 +5,6 @@
 /// </summary>
 public enum SkillEnum
 {
-    None,
     Acrobatics,
     Appraise,
     Bluff,

@@ -51,7 +51,7 @@ public class DeitiesTable : NamedTable, IDeitiesTable
                 return deityList.Where(de =>
                     evilOnlyList.Contains(de.Alignment))
                     .ToList();
-            case AlignmentFilterEnum.GoodOrNeutral:
+            case AlignmentFilterEnum.NonEvil:
                 return deityList.Where(de =>
                     goodOrNeutralList.Contains(de.Alignment))
                     .ToList();

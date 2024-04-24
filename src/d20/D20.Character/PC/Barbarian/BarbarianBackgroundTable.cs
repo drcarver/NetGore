@@ -2,8 +2,6 @@
 
 using D20.Background.Enum;
 using D20.Background.Models;
-using D20.Character.Enum;
-using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Core.Models;
 
@@ -39,10 +37,10 @@ public class BarbarianBackgroundTable : RandomTable, IBarbarianBackgroundTable
     //81–90	Chaos Embraced  You grew up in wild lands where there were no laws except for those of nature—the laws of the predator and the prey. You searched for meaning in the world, in the gods, in the prayers of priests, in the patterns of the stars, but you found nothing. There is no true order to the natural universe except for that of raw and unbridled power. Chaos is the natural state of all things, and that’s how you like it.You gain access to the Unpredictable social trait.
     //91–100	Bloodthirsty The first time you spilled a deserving foe’s blood and watched the thing’s life ebb out onto the hard ground, you found yourself filled with a mad, euphoric ecstasy like none other.The memory of this visceral experience returns to you in every battle, like an insatiable addiction that can only be abated with further bloodshed. You gain access to the Bloodthirsty combat trait and the Innocent Blood story feat.
     /// <summary>
-    /// Initialize the game table.  This is a seperate method so 
+    /// Initialize the game table.  This is a separate method so 
     /// we can create a game table for it's meta properties with 
-    /// out creating the actual able values.  A bit of optimiation 
-    /// to conserve memeory on big tables
+    /// out creating the actual able values.  A bit of optimization 
+    /// to conserve memory on big tables
     /// </summary>
     public override void InitializeTable()
     {

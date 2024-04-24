@@ -7,16 +7,20 @@ using D20.Core.Base;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 using D20.Goods.Interfaces;
+using D20.Monsters.Models;
+
+using Microsoft.Extensions.Logging;
 
 namespace D20.Character.Models;
 
-public class CharacterClassBase : BaseObject, ICharacterClass
+public class CharacterClassBase : CharacterRace, ICharacterClass
 {
     /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public CharacterClassBase()
+    public CharacterClassBase(ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
     }
 

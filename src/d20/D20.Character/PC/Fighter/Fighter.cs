@@ -1,18 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
+using D20.Background.Interfaces;
 using D20.Character.Interfaces;
 using D20.Character.Models;
-using D20.Core.Enum;
-using D20.Goods.Enum;
+
+using Microsoft.Extensions.Logging;
 
 namespace D20.Character.PC.Fighter;
 
-public class Fighter : CharacterClassBase
+public class Fighter : CharacterClassBase, IFighter
 {
-    /// <summary>
-    /// The DI service provider
-    /// </summary>
-    private readonly IServiceProvider serviceProvider;
+    private ILogger logger;
 
     /// <summary>
     /// Level up the character with this class
@@ -20,16 +18,30 @@ public class Fighter : CharacterClassBase
     /// <param name="character"></param>
     public override void LevelUp(ICharacter character)
     {
-        var FighterLevelTable = serviceProvider.GetService<IFighterLevelTable>();
     }
 
     /// <summary>
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Fighter(IServiceProvider services)
+    public Fighter(
+        ILoggerFactory loggerFactory,
+        IFighterLevelTable fighterLevelTable,
+        IFighterBackgroundTable fighterBackgroundTable)
+        : base(loggerFactory)
     {
-        serviceProvider = services;
+        // The logger
+        logger = loggerFactory.CreateLogger<Fighter>();
+
+        // The fighter levels
+        ClassLevelTable = (IClassLevelTable) fighterLevelTable;
+        ClassLevelTable.InitializeTable();
+
+        // The fighter background
+        fighterBackgroundTable.InitializeTable();
+        Background = (IBackgroundTableEntry?)fighterBackgroundTable.GetRandomRangeEntry();
+
+        // Name and description
         Name = nameof(Fighter);
         Description =
             "Fighters excel at combat—defeating their enemies, " +

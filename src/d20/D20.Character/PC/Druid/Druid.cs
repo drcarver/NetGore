@@ -3,6 +3,8 @@
 using D20.Character.Interfaces;
 using D20.Character.Models;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Druid;
 
 /// <summary>
@@ -10,7 +12,7 @@ namespace D20.Character.PC.Druid;
 /// druid might receive her power from an elemental creature, 
 /// and another might learn it from a beast or the fey. 
 /// </summary>
-public class Druid : CharacterClassBase
+public class Druid : CharacterClassBase, IDruid
 {
     /// <summary>
     /// The DI service provider
@@ -30,7 +32,10 @@ public class Druid : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Druid(IServiceProvider services)
+    public Druid(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Druid);

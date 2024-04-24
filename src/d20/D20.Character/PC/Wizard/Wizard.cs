@@ -5,6 +5,8 @@ using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Wizard;
 
 /// <summary>
@@ -32,7 +34,10 @@ public class Wizard : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Wizard(IServiceProvider services)
+    public Wizard(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Wizard);

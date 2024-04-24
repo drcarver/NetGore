@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Interfaces;
 using D20.Core.Enum;
+using D20.Core.Interfaces;
 using D20.Core.Models;
 
-namespace D20.Character.Tables;
+namespace D20.Core.Tables;
 
 public class LanguageTable : NamedTable, ILanguageTable
 {

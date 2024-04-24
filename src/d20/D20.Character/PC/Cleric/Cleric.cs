@@ -7,6 +7,8 @@ using D20.Core.Models;
 using D20.Goods.Enum;
 using D20.Goods.Interfaces;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Cleric;
 
 /// <summary>
@@ -142,7 +144,10 @@ public class Cleric : CharacterClassBase, ICleric
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Cleric(IServiceProvider services)
+    public Cleric(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Cleric);

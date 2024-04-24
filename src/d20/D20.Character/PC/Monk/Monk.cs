@@ -7,6 +7,8 @@ using D20.Core.Enum;
 using D20.Goods.Enum;
 using D20.Goods.Models;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Monk;
 
 public class Monk : CharacterClassBase
@@ -53,7 +55,10 @@ public class Monk : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Monk(IServiceProvider services)
+    public Monk(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Monk);

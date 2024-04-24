@@ -1,25 +1,8 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Metrics;
-using System.Reflection.Metadata;
-using System.Runtime.ConstrainedExecution;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
-using System.Threading;
+﻿using System.Diagnostics.CodeAnalysis;
 
 using D20.Character.Enum;
-using D20.Core;
-using D20.Core.Abilities;
 using D20.Core.Enum;
 using D20.Core.Models;
-
-using Microsoft.Maui;
-using Microsoft.Maui.ApplicationModel.Communication;
-
-using Microsoft.Maui.Controls;
-
-using static System.Collections.Specialized.BitVector32;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace D20.Character.PC.Fighter;
 
@@ -77,269 +60,272 @@ public class FighterLevelTable : GameTable, IFighterLevelTable
     /// </summary>
     public override void InitializeTable()
     {
-        Table =
-        [
-            #region 1st Level
-            //1st +2 Fighting Style, Second  Wind
-            new FighterFeatureLevelEntry
-            {
-                Level = 1,
-                BaseProficiency = 2,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.FightingStyle,
-                    ClassFeatureEnum.SecondWind
-                ],
-            },
-            #endregion
+        if (Table.Count == 0)
+        {
+            Table =
+            [
+                #region 1st Level
+                //1st +2 Fighting Style, Second  Wind
+                new FighterFeatureLevelEntry
+                {
+                    Level = 1,
+                    BaseProficiency = 2,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.FightingStyle,
+                        ClassFeatureEnum.SecondWind
+                    ],
+                },
+                #endregion
 
-            #region 2nd Level
-            //2nd +2 Action Surge(one use)
-            new FighterFeatureLevelEntry
-            {
-                Level = 2,
-                BaseProficiency = 2,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.ActionSurge,
-                ],
-            },
-            #endregion
+                #region 2nd Level
+                //2nd +2 Action Surge(one use)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 2,
+                    BaseProficiency = 2,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.ActionSurge,
+                    ],
+                },
+                #endregion
 
-            #region 3rd Level
-            //3rd +2 Martial Archetype
-            new FighterFeatureLevelEntry
-            {
-                Level = 3,
-                BaseProficiency = 2,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.MartialArchetype,
-                ],
-            },
-            #endregion
+                #region 3rd Level
+                //3rd +2 Martial Archetype
+                new FighterFeatureLevelEntry
+                {
+                    Level = 3,
+                    BaseProficiency = 2,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.MartialArchetype,
+                    ],
+                },
+                #endregion
 
-            #region 4th Level
-            //4th +2 Ability Score Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 4,
-                BaseProficiency = 2,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 4th Level
+                //4th +2 Ability Score Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 4,
+                    BaseProficiency = 2,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 5th Level
-            //5th +3 Extra Attack
-            new FighterFeatureLevelEntry
-            {
-                Level = 5,
-                BaseProficiency = 3,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.ExtraAttack,
-                ],
-            },
-            #endregion
+                #region 5th Level
+                //5th +3 Extra Attack
+                new FighterFeatureLevelEntry
+                {
+                    Level = 5,
+                    BaseProficiency = 3,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.ExtraAttack,
+                    ],
+                },
+                #endregion
 
-            #region 6th Level
-            //6th +3 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 6,
-                BaseProficiency = 3,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 6th Level
+                //6th +3 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 6,
+                    BaseProficiency = 3,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 7th Level
-            //7th +3 Martial Archetype   feature
-            new FighterFeatureLevelEntry
-            {
-                Level = 7,
-                BaseProficiency = 3,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.MartialArchetype
-                ],
-            },
-            #endregion
+                #region 7th Level
+                //7th +3 Martial Archetype   feature
+                new FighterFeatureLevelEntry
+                {
+                    Level = 7,
+                    BaseProficiency = 3,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.MartialArchetype
+                    ],
+                },
+                #endregion
 
-            #region 8th Level
-            //8th +3 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 8,
-                BaseProficiency = 3,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 8th Level
+                //8th +3 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 8,
+                    BaseProficiency = 3,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 9th Level
-            //9th +4 Indomitable(one use)
-            new FighterFeatureLevelEntry
-            {
-                Level = 8,
-                BaseProficiency = 4,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.Indomitable
-                ],
-            },
-            #endregion
+                #region 9th Level
+                //9th +4 Indomitable(one use)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 8,
+                    BaseProficiency = 4,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.Indomitable
+                    ],
+                },
+                #endregion
 
-            #region 10th Level
-            //10th +4 Martial Archetype   feature
-            new FighterFeatureLevelEntry
-            {
-                Level = 10,
-                BaseProficiency = 4,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.MartialArchetype
-                ],
-            },
-            #endregion
+                #region 10th Level
+                //10th +4 Martial Archetype   feature
+                new FighterFeatureLevelEntry
+                {
+                    Level = 10,
+                    BaseProficiency = 4,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.MartialArchetype
+                    ],
+                },
+                #endregion
 
-            #region 11th Level
-            //11th +4 Extra Attack(2)
-            new FighterFeatureLevelEntry
-            {
-                Level = 11,
-                BaseProficiency = 4,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.ExtraAttack
-                ],
-            },
-            #endregion
+                #region 11th Level
+                //11th +4 Extra Attack(2)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 11,
+                    BaseProficiency = 4,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.ExtraAttack
+                    ],
+                },
+                #endregion
 
-            #region 12th Level
-            //12th +4 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 12,
-                BaseProficiency = 4,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 12th Level
+                //12th +4 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 12,
+                    BaseProficiency = 4,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 13th Level
-            //13th +5 Indomitable(two uses)
-            new FighterFeatureLevelEntry
-            {
-                Level = 13,
-                BaseProficiency = 5,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.Indomitable
-                ],
-            },
-            #endregion
+                #region 13th Level
+                //13th +5 Indomitable(two uses)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 13,
+                    BaseProficiency = 5,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.Indomitable
+                    ],
+                },
+                #endregion
 
-            #region 14th Level
-            //14th +5 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 14,
-                BaseProficiency = 5,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement,
-                ],
-            },
-            #endregion
+                #region 14th Level
+                //14th +5 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 14,
+                    BaseProficiency = 5,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement,
+                    ],
+                },
+                #endregion
 
-            #region 15th Level
-            //15th +5 Martial Archetype   feature
-            new FighterFeatureLevelEntry
-            {
-                Level = 15,
-                BaseProficiency = 5,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.MartialArchetype
-                ],
-            },
-            #endregion
+                #region 15th Level
+                //15th +5 Martial Archetype   feature
+                new FighterFeatureLevelEntry
+                {
+                    Level = 15,
+                    BaseProficiency = 5,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.MartialArchetype
+                    ],
+                },
+                #endregion
 
-            #region 16th Level
-            //16th +5 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 16,
-                BaseProficiency = 5,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 16th Level
+                //16th +5 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 16,
+                    BaseProficiency = 5,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 17th Level
-            //17th +6 Action Surge(two uses), Indomitable(three uses)
-            new FighterFeatureLevelEntry
-            {
-                Level = 17,
-                BaseProficiency = 6,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.ActionSurge,
-                    ClassFeatureEnum.Indomitable
-                ],
-            },
-            #endregion
+                #region 17th Level
+                //17th +6 Action Surge(two uses), Indomitable(three uses)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 17,
+                    BaseProficiency = 6,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.ActionSurge,
+                        ClassFeatureEnum.Indomitable
+                    ],
+                },
+                #endregion
 
-            #region 18th Level
-            //18th +6 Martial Archetype   feature
-            new FighterFeatureLevelEntry
-            {
-                Level = 18,
-                BaseProficiency = 6,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.MartialArchetype
-                ],
-            },
-            #endregion
+                #region 18th Level
+                //18th +6 Martial Archetype   feature
+                new FighterFeatureLevelEntry
+                {
+                    Level = 18,
+                    BaseProficiency = 6,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.MartialArchetype
+                    ],
+                },
+                #endregion
 
-            #region 19th Level
-            //19th +6 Ability Score   Improvement
-            new FighterFeatureLevelEntry
-            {
-                Level = 19,
-                BaseProficiency = 6,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.AbilityScoreImprovement
-                ],
-            },
-            #endregion
+                #region 19th Level
+                //19th +6 Ability Score   Improvement
+                new FighterFeatureLevelEntry
+                {
+                    Level = 19,
+                    BaseProficiency = 6,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.AbilityScoreImprovement
+                    ],
+                },
+                #endregion
 
-            #region 20th Level
-            //20th +6 Extra Attack(3)
-            new FighterFeatureLevelEntry
-            {
-                Level = 20,
-                BaseProficiency = 6,
-                ClassFeatures =
-                [
-                    ClassFeatureEnum.ExtraAttack
-                ],
-            },
-            #endregion
-        ];
+                #region 20th Level
+                //20th +6 Extra Attack(3)
+                new FighterFeatureLevelEntry
+                {
+                    Level = 20,
+                    BaseProficiency = 6,
+                    ClassFeatures =
+                    [
+                        ClassFeatureEnum.ExtraAttack
+                    ],
+                },
+                #endregion
+            ];
+        }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
 using D20.Core.Base;
 using D20.Core.Interfaces;
 
-namespace D20.Core.Abilities;
+namespace D20.Core.Models;
 
 public class AbilityBonusSpellEntry : AbilityBonusEntry, IAbilityBonusSpellEntry
 {

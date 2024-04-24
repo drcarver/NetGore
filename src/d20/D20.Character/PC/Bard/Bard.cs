@@ -5,6 +5,8 @@ using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Bard;
 
 /// <summary>
@@ -32,7 +34,10 @@ public class Bard : CharacterClassBase, IBard
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Bard(IServiceProvider services)
+    public Bard(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Bard);

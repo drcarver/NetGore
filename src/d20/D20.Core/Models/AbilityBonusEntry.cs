@@ -1,10 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
 using D20.Core.Base;
 using D20.Core.Interfaces;
-using D20.Core.Models;
 
-namespace D20.Core.Abilities;
+namespace D20.Core.Models;
 
 public class AbilityBonusEntry : GameTableEntry, IAbilityBonusEntry
 {

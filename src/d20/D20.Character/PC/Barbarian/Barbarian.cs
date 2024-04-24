@@ -5,6 +5,8 @@ using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Barbarian;
 
 public class Barbarian : CharacterClassBase, IBarbarian
@@ -26,7 +28,8 @@ public class Barbarian : CharacterClassBase, IBarbarian
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Barbarian(IServiceProvider services)
+    public Barbarian(ILoggerFactory loggerFactory, ServiceProvider services)
+        : base(loggerFactory)
     {
         serviceProvider = services;
 

@@ -1,8 +1,12 @@
 ﻿using System.Reflection;
 
+using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Character.PC.Barbarian;
 using D20.Character.PC.Bard;
+using D20.Character.PC.Cleric;
+using D20.Character.PC.Druid;
+using D20.Character.Tables;
 using D20.Core.Models;
 
 namespace D20.Character;
@@ -13,16 +17,13 @@ public static class DataServices
     /// Get all the IGameable entries
     /// </summary>
     /// <returns></returns>
-    private static List<Type> GetGameTables() => Assembly
+    public static List<Type> CharacterTables => Assembly
         .GetExecutingAssembly()
         .GetExportedTypes()
-        .Where(t => t.IsSubclassOf(typeof(GameTable)) && t.Name != nameof(DeitiesTable))
+        .Where(t => 
+                t.IsSubclassOf(typeof(GameTable)) 
+            &&  t.Name != nameof(DeitiesTable))
         .ToList();
-
-    /// <summary>
-    /// The list of game table entries
-    /// </summary>
-    public static List<Type> CharacterTables { get; set; } = [];
 
     /// <summary>
     /// The D20 Character tables and services
@@ -33,19 +34,29 @@ public static class DataServices
     {
         //collection
         // Add all the game table types as transient
-        var list = GetGameTables();
-        CharacterTables.AddRange(list);
-        foreach (var table in list)
-        {
-            if (table.Name != nameof(DeitiesTable))
-            {
-                var t = collection.AddTransient(table);
-            }
-        }
+        collection.AddTransient<ICelticDeitiesTable, CelticDeitiesTable>();
+        collection.AddTransient<ICharacterAdvancementTable, CharacterAdvancementTable>();
+        collection.AddTransient<IClassFeatureTable, ClassFeatureTable>();
 
-        // Now add the PC Classes
+        // Now add the Barbarian Class
         collection.AddTransient<IBarbarian, Barbarian>();
+        collection.AddTransient<IBarbarianBackgroundTable, BarbarianBackgroundTable>();
+        collection.AddTransient<IBarbarianLevelTable, BarbarianLevelTable>();
+
+        // Now add the Bard Class
         collection.AddTransient<IBard, Bard>();
+        collection.AddTransient<IBardBackgroundTable, BardBackgroundTable>();
+        collection.AddTransient<IBardLevelTable, BardLevelTable>();
+
+        // Now add the Cleric Class
+        collection.AddTransient<ICleric, Cleric>();
+        collection.AddTransient<IClericBackgroundTable, ClericBackgroundTable>();
+        collection.AddTransient<IClericLevelTable, ClericLevelTable>();
+
+        // Now add the Druid Class
+        collection.AddTransient<IDruid, Druid>();
+        collection.AddTransient<IDruidBackgroundTable, DruidBackgroundTable>();
+        collection.AddTransient<IDruidLevelTable, DruidLevelTable>();
 
         return collection;
     }

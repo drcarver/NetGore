@@ -5,6 +5,8 @@ using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Goods.Enum;
 
+using Microsoft.Extensions.Logging;
+
 namespace D20.Character.PC.Paladin;
 
 /// <summary>
@@ -32,7 +34,10 @@ public class Paladin : CharacterClassBase
     /// Constructor
     /// </summary>
     [SetsRequiredMembers]
-    public Paladin(IServiceProvider services)
+    public Paladin(
+        IServiceProvider services,
+        ILoggerFactory loggerFactory)
+        : base(loggerFactory)
     {
         serviceProvider = services;
         Name = nameof(Paladin);
