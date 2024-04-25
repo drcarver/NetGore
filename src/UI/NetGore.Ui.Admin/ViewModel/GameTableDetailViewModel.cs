@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 using D20.Core.Interfaces;
-using D20.Core.Models;
+using D20.Core.Tables;
 
 namespace NetGore.UI.Admin.ViewModel;
 
@@ -45,7 +45,7 @@ public partial class GameTableDetailViewModel : ObservableObject, IQueryAttribut
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        var table = (IGameTable) query[nameof(D20.Core.Models.NamedTable)];
+        var table = (IGameTable) query[nameof(NamedTable)];
         if (table == null)
             return;
 

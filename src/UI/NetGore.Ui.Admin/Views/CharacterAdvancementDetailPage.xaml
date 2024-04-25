@@ -60,6 +60,4 @@
                 VerticalOptions="Center"
                 Command="{Binding GobackCommand}" />
     </Grid>
-    
-    
 </ContentPage>
