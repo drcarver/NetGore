@@ -3,7 +3,7 @@
     /// <summary>
     /// A Game Table Entry
     /// </summary>
-    public interface IStandardTableEntryViewModel : INamedTableEntry
+    public interface IStandardTableEntry : INamedTableEntry
     {
         /// <summary>
         /// The English name for the entry

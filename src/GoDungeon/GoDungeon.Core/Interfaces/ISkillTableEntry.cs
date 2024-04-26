@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface ISkillTableEntry : IStandardTableEntryViewModel
+    public interface ISkillTableEntry : IStandardTableEntry
     {
         /// <summary>
         /// The skill

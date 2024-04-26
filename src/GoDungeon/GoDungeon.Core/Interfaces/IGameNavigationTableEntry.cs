@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface IGameNavigationTableEntry : IStandardTableEntryViewModel
+    public interface IGameNavigationTableEntry : IStandardTableEntry
     {
         /// <summary>
         /// The table type

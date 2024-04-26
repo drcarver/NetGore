@@ -32,7 +32,8 @@ namespace GoDungeon.Core.Tables
         /// <summary>
         /// The table itself
         /// </summary>
-        public ObservableCollection<IGameTableEntry>? Table { get; set; }
+        [ObservableProperty]
+        private ObservableCollection<IGameTableEntry>? table;
 
         /// <summary>
         /// Get a random entry from the table 

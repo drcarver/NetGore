@@ -11,7 +11,7 @@ namespace GoDungeon.Core.ViewModels
     /// range to access the entries by number or 
     /// randomly
     /// </summary>
-    public partial class StandardTableEntryViewModel : NamedTableEntryViewModel, IStandardTableEntryViewModel
+    public partial class StandardTableEntryViewModel : NamedTableEntryViewModel, IStandardTableEntry
     {
         /// <summary>
         /// The English name for the entry

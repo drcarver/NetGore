@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface IRandomTableEntry : IStandardTableEntryViewModel
+    public interface IRandomTableEntry : IStandardTableEntry
     {
         /// <summary>
         /// The range for this entry
