@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Gaming.Interfaces
 {
-    public interface ITreasureTable : IGameTable
+    public interface IChallengeRatingEquivalenceTable : IGameTable
     {
     }
 }

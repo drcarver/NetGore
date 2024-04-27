@@ -1,7 +1,8 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Gaming.Interfaces;
-
-internal interface IExperiencePointAwardsTable : INamedTable
+namespace GoDungeon.Gaming.Interfaces
 {
+    internal interface IExperiencePointAwardsTable : INamedTable
+    {
+    }
 }

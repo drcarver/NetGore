@@ -1,16 +1,17 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Gaming.Interfaces;
-
-public interface ICharacterWealthByLevelEntry : IGameTableEntry
+namespace GoDungeon.Gaming.Interfaces
 {
-    /// <summary>
-    /// Character level
-    /// </summary>
-    public int Level { get; set; }
+    public interface ICharacterWealthByLevelEntry : IGameTableEntry
+    {
+        /// <summary>
+        /// Character level
+        /// </summary>
+        public int Level { get; set; }
 
-    /// <summary>
-    /// Wealth in gold pieces
-    /// </summary>
-    public int Wealth { get; set; }
+        /// <summary>
+        /// Wealth in gold pieces
+        /// </summary>
+        public int Wealth { get; set; }
+    }
 }

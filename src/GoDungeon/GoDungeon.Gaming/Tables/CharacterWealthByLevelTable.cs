@@ -1,231 +1,234 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.ObjectModel;
 
-using D20.Core.Enum;
-using D20.Core.Models;
-using D20.Gaming.Interfaces;
-using D20.Gaming.Models;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
+using GoDungeon.Gaming.Interfaces;
+using GoDungeon.Gaming.ViewModels;
 
-namespace D20.Gaming.Tables;
-
-/// <summary>
-/// Character wealth by level 
-/// </summary>
-public class CharacterWealthByLevelTable : GameTable, ICharacterWealthByLevelTable
+namespace GoDungeon.Gaming.Tables
 {
     /// <summary>
-    /// Constructor
+    /// Character wealth by level 
     /// </summary>
-    [SetsRequiredMembers]
-    public CharacterWealthByLevelTable()
+    public class CharacterWealthByLevelTable : GameTable, ICharacterWealthByLevelTable
     {
-        Name = nameof(CharacterWealthByLevelTable);
-        ProperName = "Character Wealth By Level Table";
-        TableType = TableTypeEnum.GamingTable;
-        Description = "Character wealth by level.";
-    }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public CharacterWealthByLevelTable()
+        {
+            Name = nameof(CharacterWealthByLevelTable);
+            ProperName = "Character Wealth By Level Table";
+            TableType = TableTypeEnum.GamingTable;
+            Description = "Character wealth by level.";
+        }
 
-    //Table: Character Wealth by Level
-    //PC Level* Wealth
-    //2	1,000 gp
-    //3	3,000 gp
-    //4	6,000 gp
-    //5	10,500 gp
-    //6	16,000 gp
-    //7	23,500 gp
-    //8	33,000 gp
-    //9	46,000 gp
-    //10	62,000 gp
-    //11	82,000 gp
-    //12	108,000 gp
-    //13	140,000 gp
-    //14	185,000 gp
-    //15	240,000 gp
-    //16	315,000 gp
-    //17	410,000 gp
-    //18	530,000 gp
-    //19	685,000 gp
-    //20	880,000 gp    
-    /// <summary>
-    /// Initialize the game table.  This is a separate method so 
-    /// we can create a game table for it's meta properties
-    /// with out creating the actual able values.  A bit of 
-    /// optimization to conserve memory on big tables
-    /// </summary>
-    public override void InitializeTable()
-    {
-        Table =
-        [
-            #region 2 1,000 gp
-            //2	1,000 gp
-            new CharacterWealthByLevelEntry
+        //Table: Character Wealth by Level
+        //PC Level* Wealth
+        //2	1,000 gp
+        //3	3,000 gp
+        //4	6,000 gp
+        //5	10,500 gp
+        //6	16,000 gp
+        //7	23,500 gp
+        //8	33,000 gp
+        //9	46,000 gp
+        //10	62,000 gp
+        //11	82,000 gp
+        //12	108,000 gp
+        //13	140,000 gp
+        //14	185,000 gp
+        //15	240,000 gp
+        //16	315,000 gp
+        //17	410,000 gp
+        //18	530,000 gp
+        //19	685,000 gp
+        //20	880,000 gp    
+        /// <summary>
+        /// Initialize the game table.  This is a separate method so 
+        /// we can create a game table for it's meta properties
+        /// with out creating the actual able values.  A bit of 
+        /// optimization to conserve memory on big tables
+        /// </summary>
+        public override void InitializeTable()
+        {
+            if (Table == null || Table.Count == 0)
             {
-                Level = 2,
-                Wealth = 1000
-            },
-            #endregion
+                Table = new ObservableCollection<IGameTableEntry>
+                {
+                    #region 2 1,000 gp
+                    //2	1,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 2,
+                        Wealth = 1000
+                    },
+                    #endregion
 
-            #region 3 3,000 gp
-            //3	3,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 3,
-                Wealth = 3000
-            },
-            #endregion
+                    #region 3 3,000 gp
+                    //3	3,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 3,
+                        Wealth = 3000
+                    },
+                    #endregion
 
-            #region 4 6,000 gp
-            //4	6,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 4,
-                Wealth = 6000
-            },
-            #endregion
+                    #region 4 6,000 gp
+                    //4	6,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 4,
+                        Wealth = 6000
+                    },
+                    #endregion
 
-            #region 5 10,500 gp
-            //5	10,500 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 5,
-                Wealth = 10500
-            },
-            #endregion
+                    #region 5 10,500 gp
+                    //5	10,500 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 5,
+                        Wealth = 10500
+                    },
+                    #endregion
 
-            #region 6 16,000 gp
-            //6	16,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 6,
-                Wealth = 16000
-            },
-            #endregion
+                    #region 6 16,000 gp
+                    //6	16,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 6,
+                        Wealth = 16000
+                    },
+                    #endregion
 
-            #region 7 23,500 gp
-            //7	23,500 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 7,
-                Wealth = 23500
-            },
-            #endregion
+                    #region 7 23,500 gp
+                    //7	23,500 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 7,
+                        Wealth = 23500
+                    },
+                    #endregion
 
-            #region 8 33,000 gp
-            //8	33,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 8,
-                Wealth = 33000
-            },
-            #endregion
+                    #region 8 33,000 gp
+                    //8	33,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 8,
+                        Wealth = 33000
+                    },
+                    #endregion
 
-            #region 9 46,000 gp
-            //9	46,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 9,
-                Wealth = 46000
-            },
-            #endregion
+                    #region 9 46,000 gp
+                    //9	46,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 9,
+                        Wealth = 46000
+                    },
+                    #endregion
 
-            #region 10 62,000 gp
-            //10	62,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 10,
-                Wealth = 62000
-            },
-            #endregion
+                    #region 10 62,000 gp
+                    //10	62,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 10,
+                        Wealth = 62000
+                    },
+                    #endregion
 
-            #region 11 82,000 gp
-            //11	82,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 11,
-                Wealth = 82000
-            },
-            #endregion
+                    #region 11 82,000 gp
+                    //11	82,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 11,
+                        Wealth = 82000
+                    },
+                    #endregion
 
-            #region 12 108,000 gp
-            //12	108,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 12,
-                Wealth = 108000
-            },
-            #endregion
+                    #region 12 108,000 gp
+                    //12	108,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 12,
+                        Wealth = 108000
+                    },
+                    #endregion
 
-            #region 13 140,000 gp
-            //13	140,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 13,
-                Wealth = 140000
-            },
-            #endregion
+                    #region 13 140,000 gp
+                    //13	140,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 13,
+                        Wealth = 140000
+                    },
+                    #endregion
 
-            #region 14 185,000 gp
-            //14	185,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 14,
-                Wealth = 185000
-            },
-            #endregion
+                    #region 14 185,000 gp
+                    //14	185,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 14,
+                        Wealth = 185000
+                    },
+                    #endregion
 
-            #region 15 240,000 gp
-            //15	240,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 15,
-                Wealth = 240000
-            },
-            #endregion
+                    #region 15 240,000 gp
+                    //15	240,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 15,
+                        Wealth = 240000
+                    },
+                    #endregion
 
-            #region 16 315,000 gp
-            //16 315,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 16,
-                Wealth = 315000
-            },
-            #endregion
+                    #region 16 315,000 gp
+                    //16 315,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 16,
+                        Wealth = 315000
+                    },
+                    #endregion
 
-            #region 17 410,000 gp
-            //17	410,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 17,
-                Wealth = 410000
-            },
-            #endregion
+                    #region 17 410,000 gp
+                    //17	410,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 17,
+                        Wealth = 410000
+                    },
+                    #endregion
 
-            #region 18 530,000 gp
-            //18	530,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 18,
-                Wealth = 530000
-            },
-            #endregion
+                    #region 18 530,000 gp
+                    //18	530,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 18,
+                        Wealth = 530000
+                    },
+                    #endregion
 
-            #region 19 685,000 gp
-            //19	685,000 gp
-            new CharacterWealthByLevelEntry
-            {
-                Level = 19,
-                Wealth = 685000
-            },
-            #endregion
+                    #region 19 685,000 gp
+                    //19	685,000 gp
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 19,
+                        Wealth = 685000
+                    },
+                    #endregion
 
-            #region 20 880,000 gp
-            //20	880,000 gp    
-            new CharacterWealthByLevelEntry
-            {
-                Level = 20,
-                Wealth = 880000
-            },
-            #endregion
-        ];
+                    #region 20 880,000 gp
+                    //20	880,000 gp    
+                    new CharacterWealthByLevelEntryViewModel
+                    {
+                        Level = 20,
+                        Wealth = 880000
+                    },
+                    #endregion
+                };
+            }
+        }
     }
 }
-

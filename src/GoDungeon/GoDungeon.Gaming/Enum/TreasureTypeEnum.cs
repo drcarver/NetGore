@@ -1,14 +1,15 @@
-﻿namespace D20.Gaming.Enum;
-
-public enum TreasureTypeEnum
+﻿namespace GoDungeon.Gaming.Enum
 {
-    SemiPreciousGem,
-    LowQualityGem,
-    MediumQualityGem,
-    HighQualityGem,
-    Jewels,
-    GrandJewel,
-    MinorJewelry,
-    NormalJewelry,
-    PreciousJewelry
+    public enum TreasureTypeEnum
+    {
+        SemiPreciousGem,
+        LowQualityGem,
+        MediumQualityGem,
+        HighQualityGem,
+        Jewels,
+        GrandJewel,
+        MinorJewelry,
+        NormalJewelry,
+        PreciousJewelry
+    }
 }

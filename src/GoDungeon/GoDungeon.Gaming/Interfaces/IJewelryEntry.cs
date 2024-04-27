@@ -1,22 +1,25 @@
-﻿using D20.Core.Interfaces;
-using D20.Gaming.Enum;
+﻿using System.Collections.ObjectModel;
 
-namespace D20.Gaming.Interfaces;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Gaming.Enum;
 
-public interface IJewelryEntry : IGameTableEntry
+namespace GoDungeon.Gaming.Interfaces
 {
-    /// <summary>
-    /// The type of treasure
-    /// </summary>
-    TreasureTypeEnum TreasureType { get; set; }
+    public interface IJewelryEntry : IGameTableEntry
+    {
+        /// <summary>
+        /// The type of treasure
+        /// </summary>
+        TreasureTypeEnum TreasureType { get; set; }
 
-    /// <summary>
-    /// The value of the stone in gold pieces
-    /// </summary>
-    int Value { get; set; }
+        /// <summary>
+        /// The value of the stone in gold pieces
+        /// </summary>
+        int Value { get; set; }
 
-    /// <summary>
-    /// The list of jewelry at this value
-    /// </summary>
-    List<string> Jewelry { get; set; }
+        /// <summary>
+        /// The list of jewelry at this value
+        /// </summary>
+        ObservableCollection<string> Jewelry { get; set; }
+    }
 }

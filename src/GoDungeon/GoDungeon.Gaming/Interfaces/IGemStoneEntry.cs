@@ -1,16 +1,20 @@
-﻿using D20.Core.Interfaces;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
-namespace D20.Gaming.Interfaces;
+using GoDungeon.Core.Interfaces;
 
-public interface IGemStoneEntry : IGameTableEntry
+namespace GoDungeon.Gaming.Interfaces
 {
-    /// <summary>
-    /// The vale of the stone in gold pieces
-    /// </summary>
-    int Value { get; set; }
+    public interface IGemStoneEntry : IGameTableEntry
+    {
+        /// <summary>
+        /// The vale of the stone in gold pieces
+        /// </summary>
+        int Value { get; set; }
 
-    /// <summary>
-    /// The list of gem stones at this value
-    /// </summary>
-    List<string>? GemStones { get; set; }
+        /// <summary>
+        /// The list of gem stones at this value
+        /// </summary>
+        ObservableCollection<string>? GemStones { get; set; }
+    }
 }

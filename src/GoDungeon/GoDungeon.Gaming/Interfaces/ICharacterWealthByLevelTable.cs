@@ -1,7 +1,8 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Gaming.Interfaces;
-
-public interface ICharacterWealthByLevelTable : IGameTable
+namespace GoDungeon.Gaming.Interfaces
 {
+    public interface ICharacterWealthByLevelTable : IGameTable
+    {
+    }
 }
