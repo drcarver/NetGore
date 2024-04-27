@@ -1,5 +1,6 @@
-﻿namespace D20.Spells.Tables.Bard;
-
-internal interface IBardFirstLevelSpellTable
+﻿namespace GoDungeon.Spells.Tables.Bard
 {
+    public interface IBardFirstLevelSpellTable
+    {
+    }
 }

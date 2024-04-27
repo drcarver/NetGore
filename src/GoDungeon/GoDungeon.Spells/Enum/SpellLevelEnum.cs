@@ -1,8 +1,9 @@
-﻿namespace D20.Spells.Enum;
-
-public enum SpellLevelEnum
+﻿namespace GoDungeon.Spells.Enum
 {
-    Cantrip,
-    FirstLevel,
-    SecondLevel,
+    public enum SpellLevelEnum
+    {
+        Cantrip,
+        FirstLevel,
+        SecondLevel,
+    }
 }

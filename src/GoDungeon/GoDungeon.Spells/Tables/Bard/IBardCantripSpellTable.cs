@@ -1,7 +1,8 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Spells.Tables.Bard;
-
-public interface IBardCantripSpellTable : INamedTable
+namespace GoDungeon.Spells.Tables.Bard
 {
+    public interface IBardCantripSpellTable : INamedTable
+    {
+    }
 }

@@ -1,5 +1,6 @@
-﻿namespace D20.Spells.Interfaces;
-
-internal interface ISpellsBeggingWithATable
+﻿namespace GoDungeon.Spells.Interfaces
 {
+    public interface ISpellsBeggingWithATable
+    {
+    }
 }
