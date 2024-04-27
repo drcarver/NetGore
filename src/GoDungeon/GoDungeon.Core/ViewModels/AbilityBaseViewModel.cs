@@ -4,6 +4,7 @@ using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 
 namespace GoDungeon.Core.ViewModels
 {
@@ -13,7 +14,7 @@ namespace GoDungeon.Core.ViewModels
         /// The creature with this ability
         /// </summary>
         [ObservableProperty]
-        public ICreature creature;
+        private ICreature? creature;
 
         /// <summary>
         /// The base ability from the total of dice roll
@@ -58,9 +59,14 @@ namespace GoDungeon.Core.ViewModels
         /// <returns>The current ability score with all modifiers</returns>
         public int Score()
         {
+            AbilityBonusEntryViewModel? modifier = GetModifier();
+            if (modifier?.Modifier == null)
+            {
+                return 0;
+            }
             return BaseAbility
                 + RacialModifier
-                + GetModifier().Modifier
+                + modifier.Modifier
                 + TemporaryModifier;
         }
 
@@ -71,10 +77,12 @@ namespace GoDungeon.Core.ViewModels
         /// <returns>The modifier for this score</returns>
         public AbilityBonusEntryViewModel? GetModifier()
         {
-            //return ModifierTable.First(t =>
-            //                t.Score.Start.Value >= Score()
-            //             && t.Score.End.Value <= Score());
-            return null;
+            var modifierTable = new AbilityModifierTable();
+            modifierTable.InitializeTable();
+            return modifierTable.Table
+                .Cast<AbilityBonusEntryViewModel>()
+                .First(t => t.Score.Start.Value >= BaseAbility + RacialModifier
+                        &&  t.Score.End.Value   <= BaseAbility + RacialModifier);
         }
 
         /// <summary>
@@ -92,7 +100,7 @@ namespace GoDungeon.Core.ViewModels
             retval += $"BaseAbility({BaseAbility}) + ";
             retval += $"RacialModifier({RacialModifier}) + ";
             retval += $"TemporaryModifier({TemporaryModifier}) = ";
-            retval += $"AbilityModifier({GetModifier().Modifier}) = ";
+            retval += $"AbilityModifier({GetModifier()?.Modifier}) = ";
             retval += $" Total({Score()})";
             return retval;
         }
@@ -103,6 +111,7 @@ namespace GoDungeon.Core.ViewModels
         /// <param name="creature">The creature that has this ability</param>
         protected AbilityBaseViewModel(ICreature creature)
         {
+            Creature = creature;
             var dice = new Dice("4d6");
             Rolls = new int[3];
             for (int i = 0; i <= 2; i++)
@@ -110,7 +119,6 @@ namespace GoDungeon.Core.ViewModels
                 Rolls[i] = dice.Rolls[i];
             }
             BaseAbility = Rolls.Sum();
-            Creature = creature;
         }
 
         /// <summary>

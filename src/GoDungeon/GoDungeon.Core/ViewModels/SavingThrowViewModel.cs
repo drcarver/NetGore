@@ -60,8 +60,11 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="ability">The ability for this saving throw</param>
-        public SavingThrowViewModel(ICreature creature, IAbilityBase ability)
+        /// <param name="creature">The creature with the saving throw</param>
+        /// <param name="ability">The ability for the saving throw</param>
+        public SavingThrowViewModel(
+            ICreature creature, 
+            IAbilityBase ability)
         {
             Ability = ability;
             Creature = creature;
