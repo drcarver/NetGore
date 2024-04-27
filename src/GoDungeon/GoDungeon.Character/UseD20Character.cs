@@ -9,6 +9,8 @@ using D20.Character.PC.Druid;
 using D20.Character.Tables;
 using D20.Core.Models;
 
+using GoDungeon.Character.Interfaces;
+
 namespace D20.Character;
 
 public static class DataServices

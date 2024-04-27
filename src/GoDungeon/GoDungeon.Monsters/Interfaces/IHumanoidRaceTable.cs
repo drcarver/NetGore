@@ -1,7 +1,8 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Monsters.Interfaces;
-
-public interface IHumanoidRaceTable : IRandomTable
+namespace GoDungeon.Monsters.Interfaces
 {
+    public interface IHumanoidRaceTable : IRandomTable
+    {
+    }
 }

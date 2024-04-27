@@ -1,12 +1,9 @@
-﻿using D20.Core.Enum;
-using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 
-namespace D20.Monsters.Interfaces;
-
-public interface IHumanoidRace : ICreature
+namespace GoDungeon.Monsters.Interfaces
 {
-    /// <summary>
-    /// The race
-    /// </summary>
-    public RaceEnum Race { get; set; }
+    public interface IHumanoidRace : ICreature
+    {
+    }
 }

@@ -1,19 +1,20 @@
-﻿namespace D20.Character.Enum;
-
-public enum CelticDeitiesEnum
+﻿namespace GoDungeon.Character.Enum
 {
-    TheDaghdha,
-    Arawn,
-    Belenus,
-    Brigantia,
-    Diancecht,
-    Dunatis,
-    Goibhniu,
-    Lugh,
-    ManannanmacLir,
-    MathMathonwy,
-    Morrigan,
-    Nuada,
-    Oghma,
-    Silvanus
+    public enum CelticDeitiesEnum
+    {
+        TheDaghdha,
+        Arawn,
+        Belenus,
+        Brigantia,
+        Diancecht,
+        Dunatis,
+        Goibhniu,
+        Lugh,
+        ManannanmacLir,
+        MathMathonwy,
+        Morrigan,
+        Nuada,
+        Oghma,
+        Silvanus
+    }
 }

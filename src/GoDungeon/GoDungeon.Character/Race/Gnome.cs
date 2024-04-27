@@ -9,6 +9,8 @@ using D20.Core.Interfaces;
 using D20.Core.Models;
 using D20.Monsters.Models;
 
+using GoDungeon.Character.Interfaces;
+
 using Microsoft.Extensions.Logging;
 
 namespace D20.Race;

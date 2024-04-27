@@ -4,6 +4,8 @@ using D20.Background.Interfaces;
 using D20.Character.Interfaces;
 using D20.Character.Models;
 
+using GoDungeon.Character.Interfaces;
+
 using Microsoft.Extensions.Logging;
 
 namespace D20.Character.PC.Fighter;

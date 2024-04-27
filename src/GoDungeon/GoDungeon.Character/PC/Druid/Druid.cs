@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Interfaces;
 using D20.Character.Models;
+
+using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
 

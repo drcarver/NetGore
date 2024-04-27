@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Equipment", "GoDu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Gaming", "GoDungeon\GoDungeon.Gaming\GoDungeon.Gaming.csproj", "{6142DA66-3112-4795-9F67-80FBCD53D0F2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MagicItems", "GoDungeon\GoDungeon.MagicItems\GoDungeon.MagicItems.csproj", "{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Monsters", "GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj", "{37DFCB10-B42E-4F98-9676-2D4A3BF55A05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{6142DA66-3112-4795-9F67-80FBCD53D0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6142DA66-3112-4795-9F67-80FBCD53D0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6142DA66-3112-4795-9F67-80FBCD53D0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DFCB10-B42E-4F98-9676-2D4A3BF55A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DFCB10-B42E-4F98-9676-2D4A3BF55A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DFCB10-B42E-4F98-9676-2D4A3BF55A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DFCB10-B42E-4F98-9676-2D4A3BF55A05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{577C0545-2235-41CA-A069-56256C0F401E} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
 		{C4CE8F6A-7D53-416C-8F88-D8A65710D889} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
 		{6142DA66-3112-4795-9F67-80FBCD53D0F2} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
+		{047CDB4A-B4CF-40E4-9B0B-08A504A26AA1} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
+		{37DFCB10-B42E-4F98-9676-2D4A3BF55A05} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {327517B2-8B9C-4CA3-AC89-441B0FCE5B94}

@@ -1,5 +1,6 @@
-﻿namespace D20.Character.Interfaces;
-
-public interface IClassFeature
+﻿namespace GoDungeon.Character.Interfaces
 {
+    public interface IClassFeature
+    {
+    }
 }

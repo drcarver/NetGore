@@ -2,12 +2,13 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Interfaces;
 using D20.Core;
 using D20.Core.Enum;
 using D20.Core.Models;
 using D20.Monsters.Interfaces;
 using D20.Monsters.Models;
+
+using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
 

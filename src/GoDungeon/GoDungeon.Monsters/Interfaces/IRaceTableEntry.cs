@@ -1,11 +1,12 @@
-﻿using D20.Core.Enum;
+﻿using GoDungeon.Core.Enum;
 
-namespace D20.Monsters.Interfaces;
-
-public interface IRaceTableEntry
+namespace GoDungeon.Monsters.Interfaces
 {
-    /// <summary>
-    /// The humanoid race to create
-    /// </summary>
-    public RaceEnum Race { get; set; }
+    public interface IRaceTableEntry
+    {
+        /// <summary>
+        /// The humanoid race to create
+        /// </summary>
+        public RaceEnum Race { get; set; }
+    }
 }

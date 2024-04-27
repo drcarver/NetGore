@@ -1,4 +1,6 @@
-﻿namespace D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
+
+namespace D20.Character.Interfaces;
 
 public interface IClassService
 {

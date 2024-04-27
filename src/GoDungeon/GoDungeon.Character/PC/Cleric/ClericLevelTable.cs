@@ -2,9 +2,10 @@
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Channels;
 
-using D20.Character.Enum;
 using D20.Core.Enum;
 using D20.Core.Models;
+
+using GoDungeon.Character.Enum;
 
 using Microsoft.Maui.Controls;
 

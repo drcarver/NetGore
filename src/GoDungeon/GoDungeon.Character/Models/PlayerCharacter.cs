@@ -2,6 +2,8 @@
 
 using D20.Character.Interfaces;
 
+using GoDungeon.Character.Interfaces;
+
 using Microsoft.Extensions.Logging;
 
 namespace D20.Character.Models;

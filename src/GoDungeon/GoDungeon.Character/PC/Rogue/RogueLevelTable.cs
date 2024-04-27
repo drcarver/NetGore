@@ -4,10 +4,11 @@ using System.Security.AccessControl;
 using CommunityToolkit.Maui.ApplicationModel;
 using CommunityToolkit.Maui.Core;
 
-using D20.Character.Enum;
 using D20.Character.PC.Barbarian;
 using D20.Core.Enum;
 using D20.Core.Models;
+
+using GoDungeon.Character.Enum;
 
 namespace D20.Character.PC.Rogue;
 

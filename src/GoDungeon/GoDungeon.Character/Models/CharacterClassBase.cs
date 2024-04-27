@@ -9,6 +9,8 @@ using D20.Goods.Enum;
 using D20.Goods.Interfaces;
 using D20.Monsters.Models;
 
+using GoDungeon.Character.Interfaces;
+
 using Microsoft.Extensions.Logging;
 
 namespace D20.Character.Models;

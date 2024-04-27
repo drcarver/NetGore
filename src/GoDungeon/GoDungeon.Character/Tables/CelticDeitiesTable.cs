@@ -1,10 +1,15 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Enum;
-using D20.Character.Interfaces;
 using D20.Character.Models;
 using D20.Core.Enum;
 using D20.Core.Models;
+
+using GoDungeon.Character.Enum;
+using GoDungeon.Character.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 
 namespace D20.Character.Tables;
 
@@ -31,7 +36,6 @@ public class CelticDeitiesTable : NamedTable, ICelticDeitiesTable
     /// <summary>
     /// Constructor
     /// </summary>
-    [SetsRequiredMembers]
     public CelticDeitiesTable()
     {
         Name = nameof(CelticDeitiesTable);
@@ -58,8 +62,8 @@ public class CelticDeitiesTable : NamedTable, ICelticDeitiesTable
     /// </summary>
     public override void InitializeTable()
     {
-        Table =
-        [
+        Table = new ObservableCollection<IGameTableEntry>
+        {
             #region The Daghdha
             new DeityTableEntry
             {
@@ -345,6 +349,6 @@ public class CelticDeitiesTable : NamedTable, ICelticDeitiesTable
                 ],
             },
             #endregion
-        ];
+        };
     }
 }

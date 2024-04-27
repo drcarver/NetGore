@@ -4,6 +4,8 @@ using D20.Character.PC.Bard;
 using D20.Core.Interfaces;
 using D20.Core.Models;
 
+using GoDungeon.Character.Interfaces;
+
 using Microsoft.Extensions.Logging;
 
 namespace NetGore.Data.Services;
