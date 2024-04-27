@@ -2463,7 +2463,7 @@ namespace GoDungeon.Equipment.Tables
 
                     #endregion
                 };
-                }
+            }
         }
     }
 
