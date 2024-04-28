@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
 public interface IBarbarian : ICharacterClass
 {

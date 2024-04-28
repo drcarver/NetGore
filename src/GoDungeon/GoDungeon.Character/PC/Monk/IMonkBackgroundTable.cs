@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Monk;
+namespace GoDungeon.Character.PC.Monk;
 
 public interface IMonkBackgroundTable : IRandomTable
 {

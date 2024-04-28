@@ -1,16 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
-using D20.Character.Models;
-using D20.Core.Enum;
-using D20.Goods.Enum;
+using GoDungeon.Core.Enum;
+using GoDungeon.Goods.Enum;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
-public class Barbarian : CharacterClassBase, IBarbarian
+public class Barbarian : CharacterClassBaseViewModel, IBarbarian
 {
     /// <summary>
     /// The DI service provider

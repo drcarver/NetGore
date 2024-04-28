@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
 using GoDungeon.Character.Enum;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
 /// <summary>
 /// Barbarians are fueled by an almost supernatural rage that 

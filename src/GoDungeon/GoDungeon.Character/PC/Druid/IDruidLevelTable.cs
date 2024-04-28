@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Druid;
+namespace GoDungeon.Character.PC.Druid;
 
 public interface IDruidLevelTable : IGameTable
 {

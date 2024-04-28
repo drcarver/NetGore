@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Barbarian;
+﻿namespace GoDungeon.Character.PC.Barbarian;
 
 public enum BarbarianBackgroundEnum
 {

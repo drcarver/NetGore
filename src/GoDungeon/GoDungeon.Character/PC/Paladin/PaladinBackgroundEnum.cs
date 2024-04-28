@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Paladin;
+﻿namespace GoDungeon.Character.PC.Paladin;
 
 public enum PaladinBackgroundEnum
 {

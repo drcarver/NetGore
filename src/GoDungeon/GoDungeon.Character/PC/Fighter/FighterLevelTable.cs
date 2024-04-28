@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
 using GoDungeon.Character.Enum;
 
-namespace D20.Character.PC.Fighter;
+namespace GoDungeon.Character.PC.Fighter;
 
 /// <summary>
 /// Those who become fighters take up the sword for many reasons.

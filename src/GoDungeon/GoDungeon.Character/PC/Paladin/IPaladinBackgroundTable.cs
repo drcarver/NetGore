@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Paladin;
+namespace GoDungeon.Character.PC.Paladin;
 
 public interface IPaladinBackgroundTable : IRandomTable
 {

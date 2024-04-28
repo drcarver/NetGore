@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Ranger;
+namespace GoDungeon.Character.PC.Ranger;
 
 public interface IRangerLevelTable : INamedTable
 {

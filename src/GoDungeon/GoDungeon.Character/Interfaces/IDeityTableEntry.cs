@@ -1,23 +1,25 @@
-﻿using D20.Core.Enum;
-using D20.Core.Interfaces;
+﻿using System.Collections.ObjectModel;
 
-namespace D20.Character.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 
-public interface IDeityTableEntry : IStandardTableEntry
+namespace GoDungeon.Character.Interfaces
 {
-    /// <summary>
-    /// The deity alignment
-    /// </summary>
-    AlignmentEnum Alignment { get; set; }
+    public interface IDeityTableEntry : IStandardTableEntry
+    {
+        /// <summary>
+        /// The deity alignment
+        /// </summary>
+        AlignmentEnum Alignment { get; set; }
 
-    /// <summary>
-    /// The deity symbol(s)
-    /// </summary>
-    string? Symbol { get; set; }
+        /// <summary>
+        /// The deity symbol(s)
+        /// </summary>
+        string? Symbol { get; set; }
 
-    /// <summary>
-    /// The suggested classes for this deity
-    /// </summary>
-    List<ClassEnum> SuggestedClasses { get; set; }
-
+        /// <summary>
+        /// The suggested classes for this deity
+        /// </summary>
+        ObservableCollection<ClassEnum> SuggestedClasses { get; set; }
+    }
 }

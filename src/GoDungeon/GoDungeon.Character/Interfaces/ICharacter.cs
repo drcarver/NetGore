@@ -1,5 +1,11 @@
-﻿using GoDungeon.Monsters.Interfaces;
-using D20.Character.Models;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Character.Interfaces;
+using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Enum;
+using GoDungeon.Equipment.Enum;
+using GoDungeon.Monsters.Interfaces;
 
 namespace GoDungeon.Character.Interfaces
 {
@@ -13,27 +19,27 @@ namespace GoDungeon.Character.Interfaces
         /// <summary>
         /// Armor Proficiency
         /// </summary>
-        List<EquipmentEnum> ArmorProficiency { get; }
+        ObservableCollection<EquipmentEnum> ArmorProficiency { get; }
 
         /// <summary>
         /// The weapon Proficiency for this class
         /// </summary>
-        List<EquipmentEnum> WeaponProficiency { get; }
+        ObservableCollection<EquipmentEnum> WeaponProficiency { get; }
 
         /// <summary>
         /// Tools for the creation of the character
         /// </summary>
-        List<EquipmentEnum> ToolProficiency { get; }
+        ObservableCollection<EquipmentEnum> ToolProficiency { get; }
 
         /// <summary>
         /// The inventory for the creature
         /// </summary>
-        Dictionary<IInventoryEntry, InventoryEntry> Inventory { get; }
+        Dictionary<IInventoryEntry, InventoryEntryViewModel> Inventory { get; }
 
         /// <summary>
         /// Saving Throws
         /// </summary>
-        List<AbilityEnum> SavingThrows { get; }
+        ObservableCollection<AbilityEnum> SavingThrows { get; }
 
         /// <summary>
         /// The character level

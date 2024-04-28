@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Paladin;
+namespace GoDungeon.Character.PC.Paladin;
 
 public class PaladinFeatureLevelEntry : SpellCasterLevelEntry
 {

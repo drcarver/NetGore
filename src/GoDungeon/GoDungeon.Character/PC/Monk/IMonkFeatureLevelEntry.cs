@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Monk;
+namespace GoDungeon.Character.PC.Monk;
 
 public interface IMonkFeatureLevelEntry : IClassFeatureLevelEntry
 {

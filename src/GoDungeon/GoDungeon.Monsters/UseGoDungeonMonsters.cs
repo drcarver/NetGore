@@ -31,23 +31,19 @@ namespace GoDungeon.Monsters
         public static IServiceCollection UseGoDungeonMonsters(this IServiceCollection collection)
         {
             //collection
-            collection.AddTransient<IHumanoidRaceTable, HumanoidRaceTable>();
-            collection.AddTransient<IHalfling, HalflingViewModel>();
-            collection.AddTransient<IHalflingHomelandTable, HalflingHomelandTable>();
-            collection.AddTransient<IHalflingParentsTable, HalflingParentsTable>();
-            collection.AddTransient<IUnusualHomelandTable, UnusualHomelandTable>();
-            collection.AddTransient<ICircumstanceofBirthTable, CircumstanceofBirthTable>();
-            collection.AddTransient<IProfessionTable, ProfessionTable>();
-            collection.AddTransient<INobilityTable, NobilityTable>();
-            collection.AddTransient<IAdoptedOutsideYourRaceTable, AdoptedOutsideYourRaceTable>();
-            collection.AddSingleton<IHumanoidRaceFactory, HumanoidRaceFactory>();
-
-            //// Add all the humanoid races
-            //foreach (RaceEnum race in Enum.GetValues(typeof(RaceEnum)).Cast<RaceEnum>())
-            //{
-            //    collection.AddKeyedTransient<IHumanoidRace, HumanoidRace>(race.ToString());
-            //}
-
+            collection
+                .AddTransient<IHumanoidRaceTable, HumanoidRaceTable>()
+                .AddTransient<IDragonborn, DragonbornViewModel>()
+                .AddTransient<IDwarf, DwarfViewModel>()
+                .AddTransient<IElf, ElfViewModel>()
+                .AddTransient<IGnome, GnomeViewModel>()
+                .AddTransient<IHalfElf, HalfElfViewModel>()
+                .AddTransient<IHalfling, HalflingViewModel>()
+                .AddTransient<IHalfOrc, HalfOrcViewModel>()
+                .AddTransient<IHuman, HumanViewModel>()
+                .AddTransient<ITiefling, TieflingViewModel>()
+                .AddSingleton<IHumanoidRaceFactory, HumanoidRaceFactory>()
+            ;
             return collection;
         }
     }

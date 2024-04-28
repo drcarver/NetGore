@@ -1,9 +1,10 @@
-﻿using D20.Character.Interfaces;
-using D20.Character.Models;
+﻿using GoDungeon.Character.Interfaces;
+using GoDungeon.Character.Models;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.Services;
 
 namespace NetGore.Data.Services;
 

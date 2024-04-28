@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Warlock;
+﻿namespace GoDungeon.Character.PC.Warlock;
 
 public enum WarlockBackgroundEnum
 {

@@ -1,58 +1,59 @@
-﻿using D20.Background.Interfaces;
-using D20.Character.Interfaces;
-using D20.Core.Abilities;
-using D20.Core.Enum;
-using D20.Core.Interfaces;
-using D20.Goods.Enum;
-using D20.Goods.Interfaces;
+﻿using System.Collections.Generic;
 
-namespace D20.Character.Models;
+using GoDungeon.Background.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Equipment.Enum;
+using GoDungeon.Equipment.Interfaces;
 
-public interface ICharacterClassBase : IBaseObject
+namespace GoDungeon.Character.Interfaces
 {
-    /// <summary>
-    /// The class level
-    /// </summary>
-    int Level { get; }
+    public interface ICharacterClassBase : IBaseObject
+    {
+        /// <summary>
+        /// The class level
+        /// </summary>
+        int Level { get; }
 
-    /// <summary>
-    /// Hit Dice
-    /// </summary>
-    string? HitDice { get; }
+        /// <summary>
+        /// Hit Dice
+        /// </summary>
+        string? HitDice { get; }
 
-    /// <summary>
-    /// Armor Proficiency
-    /// </summary>
-    Dictionary<EquipmentEnum, IArmorEntry> ArmorProficiency { get; }
+        /// <summary>
+        /// Armor Proficiency
+        /// </summary>
+        Dictionary<EquipmentEnum, IArmorEntry> ArmorProficiency { get; }
 
-    /// <summary>
-    /// Weapon Proficiency
-    /// </summary>
-    Dictionary<EquipmentEnum, IWeaponEntry> WeaponProficiency { get; }
+        /// <summary>
+        /// Weapon Proficiency
+        /// </summary>
+        Dictionary<EquipmentEnum, IWeaponEntry> WeaponProficiency { get; }
 
-    /// <summary>
-    /// Tools
-    /// </summary>
-    Dictionary<EquipmentEnum, IGoodsTableEntry> ToolProficiency { get; }
+        /// <summary>
+        /// Tools
+        /// </summary>
+        Dictionary<EquipmentEnum, IEquipmentTableEntry> ToolProficiency { get; }
 
-    /// <summary>
-    /// Saving Throws
-    /// </summary>
-    Dictionary<AbilityEnum, AbilityBase> SavingThrows { get; }
+        /// <summary>
+        /// Saving Throws
+        /// </summary>
+        Dictionary<AbilityEnum, IAbilityBase> SavingThrows { get; }
 
-    /// <summary>
-    /// Skills
-    /// </summary>
-    Dictionary<SkillEnum, ISkill> Skills { get; }
+        /// <summary>
+        /// Skills
+        /// </summary>
+        Dictionary<SkillEnum, ISkill> Skills { get; }
 
-    /// <summary>
-    /// The description of the class background.  Used to provide
-    /// a background for the character selecting this class
-    /// </summary>
-    IBackgroundTableEntry? Background { get; }
+        /// <summary>
+        /// The description of the class background.  Used to provide
+        /// a background for the character selecting this class
+        /// </summary>
+        IBackgroundTableEntry? Background { get; }
 
-    /// <summary>
-    /// The level table for the class
-    /// </summary>
-    public IClassLevelTable? ClassLevelTable { get; }
+        /// <summary>
+        /// The level table for the class
+        /// </summary>
+        public IClassLevelTable? ClassLevelTable { get; }
+    }
 }

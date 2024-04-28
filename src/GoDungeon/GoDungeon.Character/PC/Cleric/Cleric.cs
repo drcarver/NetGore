@@ -1,16 +1,15 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
-using D20.Character.Models;
-using D20.Core.Enum;
-using D20.Core.Models;
-using D20.Goods.Enum;
-using D20.Goods.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
+using GoDungeon.Goods.Enum;
+using GoDungeon.Goods.Interfaces;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Cleric;
+namespace GoDungeon.Character.PC.Cleric;
 
 /// <summary>
 /// Clerics are not merely people of religious faith—they are 
@@ -19,7 +18,7 @@ namespace D20.Character.PC.Cleric;
 /// their faith can mean the difference between a demon-worshiping 
 /// cultist and a lawful harbinger of her deity’s blessed faith.
 /// </summary>
-public class Cleric : CharacterClassBase, ICleric
+public class Cleric : CharacterClassBaseViewModel, ICleric
 {
     /// <summary>
     /// The DI service provider

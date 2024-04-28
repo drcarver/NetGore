@@ -1,16 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Background.Interfaces;
-using D20.Character.Interfaces;
-using D20.Character.Models;
+using GoDungeon.Background.Interfaces;
+using GoDungeon.Character.Interfaces;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Fighter;
+namespace GoDungeon.Character.PC.Fighter;
 
-public class Fighter : CharacterClassBase, IFighter
+public class Fighter : CharacterClassBaseViewModel, IFighter
 {
     private ILogger logger;
 

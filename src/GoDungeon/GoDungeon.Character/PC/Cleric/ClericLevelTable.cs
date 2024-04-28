@@ -2,14 +2,14 @@
 using System.Runtime.ConstrainedExecution;
 using System.Threading.Channels;
 
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
 using GoDungeon.Character.Enum;
 
 using Microsoft.Maui.Controls;
 
-namespace D20.Character.PC.Cleric;
+namespace GoDungeon.Character.PC.Cleric;
 
 public class ClericLevelTable : GameTable, IClericLevelTable
 {

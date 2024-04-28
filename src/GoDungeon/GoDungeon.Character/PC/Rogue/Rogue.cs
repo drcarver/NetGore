@@ -1,18 +1,18 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Enum;
-using D20.Character.Models;
-using D20.Character.PC.Barbarian;
-using D20.Core.Enum;
-using D20.Goods.Enum;
+using GoDungeon.Character.Enum;
+using GoDungeon.Character.PC.Barbarian;
+using GoDungeon.Core.Enum;
+using GoDungeon.Goods.Enum;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Rogue;
+namespace GoDungeon.Character.PC.Rogue;
 
-public class Rogue : CharacterClassBase
+public class Rogue : CharacterClassBaseViewModel
 {
     /// <summary>
     /// The DI service provider

@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Fighter;
+﻿namespace GoDungeon.Character.PC.Fighter;
 
 public enum FighterBackgroundEnum
 {

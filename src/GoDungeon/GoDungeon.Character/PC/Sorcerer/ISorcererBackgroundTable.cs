@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Sorcerer;
+namespace GoDungeon.Character.PC.Sorcerer;
 
 public interface ISorcererBackgroundTable : IRandomTable
 {

@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Rogue;
+namespace GoDungeon.Character.PC.Rogue;
 
-public class RogueFeatureLevelEntry : ClassFeatureLevelEntry, IRogueFeatureLevelEntry
+public class RogueFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IRogueFeatureLevelEntry
 {
     /// <summary>
     /// Constructor

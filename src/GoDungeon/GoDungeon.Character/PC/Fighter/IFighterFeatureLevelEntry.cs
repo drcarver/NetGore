@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Fighter;
+namespace GoDungeon.Character.PC.Fighter;
 
 public interface IFighterFeatureLevelEntry : IClassFeatureLevelEntry
 {

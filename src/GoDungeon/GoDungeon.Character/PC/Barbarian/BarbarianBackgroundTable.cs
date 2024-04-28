@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Background.Enum;
-using D20.Background.Models;
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Background.Enum;
+using GoDungeon.Background.Models;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
 public class BarbarianBackgroundTable : RandomTable, IBarbarianBackgroundTable
 {

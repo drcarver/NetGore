@@ -1,17 +1,17 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Intrinsics.X86;
 
-using D20.Background.Enum;
-using D20.Background.Models;
-using D20.Character.Enum;
-using D20.Character.Models;
-using D20.Character.PC.Ranger;
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Background.Enum;
+using GoDungeon.Background.Models;
+using GoDungeon.Character.Enum;
+using GoDungeon.Character.Models;
+using GoDungeon.Character.PC.Ranger;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
 using Microsoft.Maui.Controls.PlatformConfiguration;
 
-namespace D20.Character.PC.Monk;
+namespace GoDungeon.Character.PC.Monk;
 
 /// <summary>
 /// Masters of the martial arts, monks are the pinnacle of 

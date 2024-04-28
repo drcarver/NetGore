@@ -1,8 +1,9 @@
-﻿using D20.Character.Models;
-using D20.Monsters.Interfaces;
+﻿using GoDungeon.Character.Models;
+using GoDungeon.Monsters.Interfaces;
 
-namespace D20.Character.Interfaces;
-
-public interface IGnome : ICharacterRace
+namespace GoDungeon.Character.Interfaces
 {
+    public interface IGnome : ICharacterRace
+    {
+    }
 }

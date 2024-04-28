@@ -1,7 +1,7 @@
-﻿using D20.Character.Interfaces;
-using D20.Core.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
+using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Rogue;
+namespace GoDungeon.Character.PC.Rogue;
 
 public interface IRogueLevelTable : IGameTable
 {

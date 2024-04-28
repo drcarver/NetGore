@@ -1,18 +1,17 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
-using D20.Character.Models;
-using D20.Core;
-using D20.Core.Enum;
-using D20.Goods.Enum;
-using D20.Goods.Models;
+using GoDungeon.Core;
+using GoDungeon.Core.Enum;
+using GoDungeon.Goods.Enum;
+using GoDungeon.Goods.Models;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Monk;
+namespace GoDungeon.Character.PC.Monk;
 
-public class Monk : CharacterClassBase
+public class Monk : CharacterClassBaseViewModel
 {
     /// <summary>
     /// The DI service provider

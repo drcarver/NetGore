@@ -1,7 +1,7 @@
-﻿using D20.Character.Interfaces;
-using D20.Core.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
+using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
 public interface IBarbarianLevelTable : IGameTable, IClassLevelTable
 {

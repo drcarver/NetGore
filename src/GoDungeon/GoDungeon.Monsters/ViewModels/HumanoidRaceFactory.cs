@@ -62,8 +62,24 @@ namespace GoDungeon.Monsters.ViewModels
         {
             switch (race)
             {
+                case RaceEnum.Dragonborn:
+                    return Services?.GetService<IDragonborn>();
+                case RaceEnum.Dwarf:
+                    return Services?.GetService<IDwarf>();
+                case RaceEnum.Elf:
+                    return Services?.GetService<IElf>();
+                case RaceEnum.Gnome:
+                    return Services?.GetService<IGnome>();
+                case RaceEnum.HalfElf:
+                    return Services?.GetService<IHalfElf>();
                 case RaceEnum.Halfling:
                     return Services?.GetService<IHalfling>();
+                case RaceEnum.HalfOrc:
+                    return Services?.GetService<IHalfOrc>();
+                case RaceEnum.Human:
+                    return Services?.GetService<IHuman>();
+                case RaceEnum.Tiefling:
+                    return Services?.GetService<ITiefling>();
                 default:
                     return new HumanoidRaceViewModel() { Race = race };
             }

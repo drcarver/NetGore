@@ -4,13 +4,13 @@ using System.Security.AccessControl;
 using CommunityToolkit.Maui.ApplicationModel;
 using CommunityToolkit.Maui.Core;
 
-using D20.Character.PC.Barbarian;
-using D20.Core.Enum;
-using D20.Core.Models;
+using GoDungeon.Character.PC.Barbarian;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Models;
 
 using GoDungeon.Character.Enum;
 
-namespace D20.Character.PC.Rogue;
+namespace GoDungeon.Character.PC.Rogue;
 
 /// <summary>
 /// Life is an endless adventure for those who live by

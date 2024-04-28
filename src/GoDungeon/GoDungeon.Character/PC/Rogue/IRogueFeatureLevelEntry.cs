@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Rogue;
+namespace GoDungeon.Character.PC.Rogue;
 
 public interface IRogueFeatureLevelEntry : IClassFeatureLevelEntry
 {

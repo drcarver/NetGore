@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Fighter;
+namespace GoDungeon.Character.PC.Fighter;
 
 public interface IFighterBackgroundTable : IRandomTable
 {

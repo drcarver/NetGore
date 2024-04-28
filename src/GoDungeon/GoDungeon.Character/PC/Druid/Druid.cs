@@ -1,19 +1,18 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
-
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Druid;
+namespace GoDungeon.Character.PC.Druid;
 
 /// <summary>
 /// Druids come by their primal power in various ways. One 
 /// druid might receive her power from an elemental creature, 
 /// and another might learn it from a beast or the fey. 
 /// </summary>
-public class Druid : CharacterClassBase, IDruid
+public class Druid : CharacterClassBaseViewModel, IDruid
 {
     /// <summary>
     /// The DI service provider

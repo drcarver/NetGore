@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Cleric;
+namespace GoDungeon.Character.PC.Cleric;
 
 public class ClericFeatureLevelEntry : SpellCasterLevelEntry
 {

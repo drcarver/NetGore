@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Warlock;
+namespace GoDungeon.Character.PC.Warlock;
 
 public interface IWarlockLevelTable : INamedTable
 {

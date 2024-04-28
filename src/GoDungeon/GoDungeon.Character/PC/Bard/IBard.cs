@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Bard;
+namespace GoDungeon.Character.PC.Bard;
 
 public interface IBard : ICharacterClass
 {

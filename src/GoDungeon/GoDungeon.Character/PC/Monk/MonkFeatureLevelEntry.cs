@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Monk;
+namespace GoDungeon.Character.PC.Monk;
 
-public class MonkFeatureLevelEntry : ClassFeatureLevelEntry, IMonkFeatureLevelEntry
+public class MonkFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IMonkFeatureLevelEntry
 {
     /// <summary>
     /// Constructor

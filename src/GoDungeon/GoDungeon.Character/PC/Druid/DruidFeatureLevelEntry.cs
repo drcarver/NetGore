@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Druid;
+namespace GoDungeon.Character.PC.Druid;
 
 public class DruidFeatureLevelEntry : SpellCasterLevelEntry
 {

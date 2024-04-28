@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Warlock;
+namespace GoDungeon.Character.PC.Warlock;
 
 public class WarlockFeatureLevelEntry : SpellCasterLevelEntry
 {

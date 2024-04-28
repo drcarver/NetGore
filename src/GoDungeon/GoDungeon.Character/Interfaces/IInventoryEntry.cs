@@ -1,16 +1,18 @@
-﻿using D20.Goods.Enum;
+﻿using GoDungeon.Core.Interfaces;
+using GoDungeon.Equipment.Enum;
 
-namespace D20.Character.Interfaces;
-
-public interface IInventoryEntry
+namespace GoDungeon.Character.Interfaces
 {
-    /// <summary>
-    /// The quantity of this item in the inventory
-    /// </summary>
-    public int Quantity { get; set; }
+    public interface IInventoryEntry : IGameTableEntry
+    {
+        /// <summary>
+        /// The quantity of this item in the inventory
+        /// </summary>
+        int Quantity { get; set; }
 
-    /// <summary>
-    /// The equipment item
-    /// </summary>
-    public EquipmentEnum Equipment { get; set; }
+        /// <summary>
+        /// The equipment item
+        /// </summary>
+        EquipmentEnum Equipment { get; set; }
+    }
 }

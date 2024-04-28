@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Barbarian;
+namespace GoDungeon.Character.PC.Barbarian;
 
-public class BarbarianFeatureLevelEntry : ClassFeatureLevelEntry, IBarbarianFeatureLevelEntry
+public class BarbarianFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IBarbarianFeatureLevelEntry
 {
     /// <summary>
     /// Constructor

@@ -1,17 +1,18 @@
-﻿using D20.Character.Enum;
-using D20.Core.Enum;
-using D20.Core.Interfaces;
+﻿using System.Collections.ObjectModel;
 
-namespace D20.Character.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 
-public interface IDeitiesTable : INamedTable
+namespace GoDungeon.Character.Interfaces
 {
-    /// <summary>
-    /// Get deities by suggested class and alignment
-    /// </summary>
-    /// <param name="d20class">The suggested class</param>
-    /// <param name="alignment">The alignment filter</param>
-    /// <returns></returns>
-    List<IDeityTableEntry> GetDeitiesByClass(ClassEnum d20class, AlignmentFilterEnum alignment);
-
+    public interface IDeitiesTable : INamedTable
+    {
+        /// <summary>
+        /// Get deities by suggested class and alignment
+        /// </summary>
+        /// <param name="d20class">The suggested class</param>
+        /// <param name="alignment">The alignment filter</param>
+        /// <returns></returns>
+        ObservableCollection<IDeityTableEntry> GetDeitiesByClass(ClassEnum d20class, AlignmentFilterEnum alignment);
+    }
 }

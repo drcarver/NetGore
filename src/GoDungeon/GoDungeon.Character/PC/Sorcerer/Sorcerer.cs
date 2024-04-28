@@ -1,21 +1,20 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
-using D20.Character.Models;
-using D20.Core.Enum;
-using D20.Goods.Enum;
+using GoDungeon.Core.Enum;
+using GoDungeon.Goods.Enum;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Sorcerer;
+namespace GoDungeon.Character.PC.Sorcerer;
 
 /// <summary>
 /// Sorcerers have a talent for song and story, and they come to 
 /// their careers by developing this talent as they pick up 
 /// on a smattering of other skills. 
 /// </summary>
-public class Sorcerer : CharacterClassBase
+public class Sorcerer : CharacterClassBaseViewModel
 {
     /// <summary>
     /// The DI service provider

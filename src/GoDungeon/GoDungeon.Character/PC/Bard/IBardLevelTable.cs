@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Bard;
+namespace GoDungeon.Character.PC.Bard;
 
 public interface IBardLevelTable : IGameTable
 {

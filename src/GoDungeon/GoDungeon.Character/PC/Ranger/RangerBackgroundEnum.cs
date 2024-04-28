@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Ranger;
+﻿namespace GoDungeon.Character.PC.Ranger;
 
 public enum RangerBackgroundEnum
 {

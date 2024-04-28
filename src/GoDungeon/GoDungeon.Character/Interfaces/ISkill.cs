@@ -1,5 +1,6 @@
-﻿namespace D20.Character.Interfaces;
-
-public interface ISkill
+﻿namespace GoDungeon.Character.Interfaces
 {
+    public interface ISkill
+    {
+    }
 }

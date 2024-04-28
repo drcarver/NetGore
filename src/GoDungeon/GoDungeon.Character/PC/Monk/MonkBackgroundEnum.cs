@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Monk;
+﻿namespace GoDungeon.Character.PC.Monk;
 
 public enum MonkBackgroundEnum
 {

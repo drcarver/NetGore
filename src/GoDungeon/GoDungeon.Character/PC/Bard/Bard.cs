@@ -1,21 +1,20 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-
-using D20.Character.Models;
-using D20.Core.Enum;
-using D20.Goods.Enum;
+using GoDungeon.Core.Enum;
+using GoDungeon.Goods.Enum;
 
 using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Bard;
+namespace GoDungeon.Character.PC.Bard;
 
 /// <summary>
 /// Bards have a talent for song and story, and they come to 
 /// their careers by developing this talent as they pick up 
 /// on a smattering of other skills. 
 /// </summary>
-public class Bard : CharacterClassBase, IBard
+public class Bard : CharacterClassBaseViewModel, IBard
 {
     /// <summary>
     /// The DI service provider

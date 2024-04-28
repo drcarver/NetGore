@@ -6,8 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GoDungeon.Background\GoDungeon.Background.csproj" />
     <ProjectReference Include="..\GoDungeon.Core\GoDungeon.Core.csproj" />
+    <ProjectReference Include="..\GoDungeon.Equipment\GoDungeon.Equipment.csproj" />
+    <ProjectReference Include="..\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Race\" />
   </ItemGroup>
 
 </Project>

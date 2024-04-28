@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC;
+namespace GoDungeon.Character.PC;
 
-public class SpellCasterLevelEntry : ClassFeatureLevelEntry
+public class SpellCasterLevelEntry : ClassFeatureLevelEntryViewModel
 {
     /// <summary>
     /// Constructor

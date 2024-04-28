@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Wizard;
+namespace GoDungeon.Character.PC.Wizard;
 
 public class WizardFeatureLevelEntry : SpellCasterLevelEntry
 {

@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using D20.Character.Models;
+using GoDungeon.Character.ViewModels;
 
-namespace D20.Character.PC.Fighter;
+namespace GoDungeon.Character.PC.Fighter;
 
-public class FighterFeatureLevelEntry : ClassFeatureLevelEntry, IFighterFeatureLevelEntry
+public class FighterFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IFighterFeatureLevelEntry
 {
     /// <summary>
     /// Constructor

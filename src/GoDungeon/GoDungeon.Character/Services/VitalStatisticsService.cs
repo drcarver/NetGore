@@ -19,12 +19,12 @@
 //
 #endregion
 
-using D20.Background.Interfaces;
-using D20.Character.Interfaces;
-using D20.Core;
-using D20.Core.Enum;
+using GoDungeon.Background.Interfaces;
+using GoDungeon.Character.Interfaces;
+using GoDungeon.Core;
+using GoDungeon.Core.Enum;
 
-namespace D20.Character.Services;
+namespace GoDungeon.Character.Services;
 
 public class VitalStatisticsService : IVitalStatisticsService
 {

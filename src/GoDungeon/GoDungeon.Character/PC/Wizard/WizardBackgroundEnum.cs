@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Wizard;
+﻿namespace GoDungeon.Character.PC.Wizard;
 
 public enum WizardBackgroundEnum
 {

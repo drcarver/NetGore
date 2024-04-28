@@ -1,7 +1,8 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.Interfaces;
-
-public interface IClassLevelTable : IGameTable
+namespace GoDungeon.Character.Interfaces
 {
+    public interface IClassLevelTable : IGameTable
+    {
+    }
 }

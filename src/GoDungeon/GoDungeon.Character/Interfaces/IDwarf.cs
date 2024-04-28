@@ -1,5 +1,6 @@
-﻿namespace D20.Character.Race;
-
-public interface IDwarf
+﻿namespace GoDungeon.Character.Interfaces
 {
+    public interface IDwarf
+    {
+    }
 }

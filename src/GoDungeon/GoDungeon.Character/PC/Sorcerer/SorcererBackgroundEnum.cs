@@ -1,4 +1,4 @@
-﻿namespace D20.Character.PC.Sorcerer;
+﻿namespace GoDungeon.Character.PC.Sorcerer;
 
 public enum SorcererBackgroundEnum
 {

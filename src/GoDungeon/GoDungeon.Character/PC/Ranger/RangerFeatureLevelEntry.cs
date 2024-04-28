@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace D20.Character.PC.Ranger;
+namespace GoDungeon.Character.PC.Ranger;
 
 public class RangerFeatureLevelEntry : SpellCasterLevelEntry
 {

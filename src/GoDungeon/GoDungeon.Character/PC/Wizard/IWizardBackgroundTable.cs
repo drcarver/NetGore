@@ -1,6 +1,6 @@
-﻿using D20.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
-namespace D20.Character.PC.Wizard;
+namespace GoDungeon.Character.PC.Wizard;
 
 public interface IWizardBackgroundTable : IRandomTable
 {

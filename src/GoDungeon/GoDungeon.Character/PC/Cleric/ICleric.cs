@@ -1,6 +1,6 @@
-﻿using D20.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 
-namespace D20.Character.PC.Cleric;
+namespace GoDungeon.Character.PC.Cleric;
 
 public interface ICleric : ICharacterClass
 {
