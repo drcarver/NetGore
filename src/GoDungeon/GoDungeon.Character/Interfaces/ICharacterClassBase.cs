@@ -3,8 +3,6 @@
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Equipment.Enum;
-using GoDungeon.Equipment.Interfaces;
 
 namespace GoDungeon.Character.Interfaces
 {
@@ -49,7 +47,7 @@ namespace GoDungeon.Character.Interfaces
         /// The description of the class background.  Used to provide
         /// a background for the character selecting this class
         /// </summary>
-        IBackgroundTableEntry? Background { get; }
+        IBackgroundTableEntryViewModel? Background { get; }
 
         /// <summary>
         /// The level table for the class

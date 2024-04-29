@@ -1,5 +1,5 @@
 ﻿using GoDungeon.Character.Models;
-using GoDungeon.Monsters.Interfaces;
+using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.Character.Interfaces
 {

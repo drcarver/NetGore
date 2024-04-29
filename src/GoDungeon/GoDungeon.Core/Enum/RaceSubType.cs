@@ -10,5 +10,6 @@
         Human = 5,
         Orc = 6,
         Dragonborn = 7,
+        Halfling = 8,
     }
 }

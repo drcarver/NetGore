@@ -1,14 +1,8 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using GoDungeon.Character.PC.Warlock;
 
-namespace GoDungeon.Character.PC.Ranger;
-
-public class RangerFeatureLevelEntry : SpellCasterLevelEntry
+namespace GoDungeon.Character.PC.Ranger
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public RangerFeatureLevelEntry()
+    public class RangerFeatureLevelEntry : SpellCasterLevelEntry
     {
     }
 }

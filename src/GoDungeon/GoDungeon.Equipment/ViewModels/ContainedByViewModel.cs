@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Equipment.Enum;
+using GoDungeon.Core.Enum;
 using GoDungeon.Equipment.Interfaces;
 
 namespace GoDungeon.Equipment.ViewModels

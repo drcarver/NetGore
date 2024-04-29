@@ -1,16 +1,8 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using GoDungeon.Character.ViewModels;
 
-using GoDungeon.Character.ViewModels;
-
-namespace GoDungeon.Character.PC.Monk;
-
-public class MonkFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IMonkFeatureLevelEntry
+namespace GoDungeon.Character.PC.Monk
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public MonkFeatureLevelEntry()
+    public class MonkFeatureLevelEntry : ClassFeatureLevelEntryViewModel, IMonkFeatureLevelEntry
     {
     }
 }

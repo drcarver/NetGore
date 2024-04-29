@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -21,6 +22,20 @@ namespace GoDungeon.Core.Tables
             Name = nameof(AbilityModifierTable);
             ProperName = "Ability Modifiers Table";
             TableType = TableTypeEnum.CoreTable;
+        }
+
+        /// <summary>
+        /// Get a entry from the table by it's number within
+        /// a range
+        /// </summary>
+        /// <returns>The selected Table Entry.</returns>
+        public IAbilityBonusEntry GetEntryByScore(int number)
+        {
+            var te = Table.Cast<IAbilityBonusEntry>()
+                .First(t =>
+                    t.Score.Start.Value <= number
+                        && t.Score.End.Value >= number);
+            return te;
         }
 
         //Table: Ability Modifiers

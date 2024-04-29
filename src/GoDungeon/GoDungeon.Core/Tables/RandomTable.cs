@@ -41,7 +41,7 @@ namespace GoDungeon.Core.Tables
         /// a range
         /// </summary>
         /// <returns>The selected RandomTableEntry.</returns>
-        public IRandomTableEntry GetRangeEntryByNumber(int number)
+        public virtual IRandomTableEntry GetRangeEntryByNumber(int number)
         {
             var te = Table.Cast<IRandomTableEntry>()
                 .First(t =>

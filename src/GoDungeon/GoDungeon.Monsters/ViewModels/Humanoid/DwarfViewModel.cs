@@ -1,7 +1,12 @@
-﻿using GoDungeon.Background.Enum;
+﻿using System;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables;
+using GoDungeon.Background.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -42,7 +47,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// </summary>
         public void Initialize()
         {
+            //Type: Dwarves are humanoids with the dwarf subtype.
             Race = RaceEnum.Dwarf;
+            RaceType = RaceType.Humanoid;
+            RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
             //Ability Score Increase. Your Constitution score
             //increases by 2.
@@ -52,19 +60,12 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //thus receive no bonuses or penalties due
             //to their size.
             Size = SizeEnum.Medium;
-
-            // Height, Weight and Age
-            //GetVitalStatistics();
+            SetHeightAndWeight();
 
             //Base Speed: (Slow and Steady) Dwarves have
             //a base speed of 20 feet, but their speed
             //is never modified by armor or encumbrance.
             Speed = 20;
-
-            //Type: Dwarves are humanoids with the
-            //dwarf subtype.
-            RaceType = RaceType.Humanoid;
-            RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
             //Languages: Dwarves begin play speaking
             //Common and Dwarven. Dwarves with high
@@ -121,16 +122,16 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The homeland table
         /// </summary>
-        private static RandomTable HomelandTable { get; set; } = new()
+        private static RandomTable HomelandTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Hills or Mountains"
                 //01–40	Hills or Mountains You gain
                 //access to the Goldsniffer race trait
                 //and the Highlander regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,40),
                     Name = "Hills or Mountains",
@@ -138,7 +139,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You gain access to the " +
                         "Goldsniffer race trait and " +
                         "the Highlander regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Goldsniffer,
                         TraitEnum.Highlander
@@ -150,7 +151,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //41–80	Underground You gain access to
                 //the Surface Stranger regional trait
                 //and the Tunnel Fighter race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(41,80),
                     Name = "Underground",
@@ -158,7 +159,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You gain access to the Surface " +
                         "Stranger regional trait and the " +
                         "Tunnel Fighter race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.SurfaceStranger,
                         TraitEnum.TunnelFighter,
@@ -172,7 +173,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //gain access to the Brewmaster race
                 //trait and the Militia Veteran regional
                 //trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(81,87),
                     Name = "Non-Dwarven Town or Village",
@@ -180,7 +181,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You gain access to the Brewmaster " +
                         "race trait and the Militia Veteran " +
                         "regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Brewmaster,
                         TraitEnum.MilitiaVeteran,
@@ -193,7 +194,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 // You gain access to the Brewmaster race
                 // trait and the Vagabond Child regional
                 // trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(88,95),
                     Name = "Non-Dwarven City or Metropolis",
@@ -201,7 +202,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You gain access to the Brewmaster " +
                         "race trait and the Vagabond Child " +
                         "regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Brewmaster,
                         TraitEnum.VagabondChild,
@@ -212,14 +213,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Unusual Homeland."
                 //96–100 Unusual Homeland.	Roll on Table:
                 //Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "Unusual Homeland",
-                    AlternateTable = typeof(UnusualHomelandTable),
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Dwarf Parents
@@ -231,14 +231,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The parents table
         /// </summary>
-        private static RandomTable ParentsTable { get; set; } = new()
+        private static RandomTable ParentsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Both"
                 //01–60	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,60),
                     Name = "Both Alive",
@@ -248,7 +248,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //61–73	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,73),
                     Name = "Father Only",
@@ -258,7 +258,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //74–86	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(74,86),
                     Name = "Mother Only",
@@ -270,7 +270,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //87–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.    
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(87,100),
                     Name = "Both Dead",
@@ -278,14 +278,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Both of your parents are dead. " +
                         "You gain access to the Orphaned " +
                         "social trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Orphaned,
                     },
 
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Dwarf Siblings
@@ -297,14 +297,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The siblings table
         /// </summary>
-        private static RandomTable SiblingsTable { get; set; } = new()
+        private static RandomTable SiblingsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "1d4"
                 //01–80	1d4 biological siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,80),
                     Name = "1d4",
@@ -312,7 +312,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "1d4 biological siblings. With two " +
                         "or more siblings, you gain access " +
                         "to the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -321,14 +321,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4+1"
                 //81–90	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(81,90),
                     Name = "1d4+1",
                     Description =
                         "1d4+1 biological siblings. You gain access to " +
                         "the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -337,7 +337,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d3–1 and 1d3–1"
                 //91–95	1d3–1 biological siblings and 1d3–1 adopted siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,95),
                     Name = "1d3",
@@ -347,7 +347,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Kin Guardian combat trait. Roll on Table: " +
                         "Race Table to determine the " +
                         "race of any adopted siblings.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -356,14 +356,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //96–100 No siblings    
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "No siblings",
                     Description = "No siblings",
                 },
                 #endregion
-            ],
+            },
         };
     }
 }

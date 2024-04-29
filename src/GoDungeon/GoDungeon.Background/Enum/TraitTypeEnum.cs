@@ -30,6 +30,7 @@ namespace GoDungeon.Background.Enum
         Race,
         Regional,
         Religion,
-        Social
+        Social,
+        CharacterRace
     }
 }

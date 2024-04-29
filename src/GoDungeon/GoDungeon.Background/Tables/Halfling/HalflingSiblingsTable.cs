@@ -22,7 +22,6 @@
 using System;
 using System.Collections.ObjectModel;
 
-using GoDungeon.Background.Enum;
 using GoDungeon.Background.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;

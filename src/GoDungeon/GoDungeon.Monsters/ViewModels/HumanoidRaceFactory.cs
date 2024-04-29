@@ -1,6 +1,7 @@
 ﻿using System;
 
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.ViewModels.Humanoid;
 

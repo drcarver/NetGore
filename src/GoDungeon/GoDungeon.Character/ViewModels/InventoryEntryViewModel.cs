@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Character.Interfaces;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
-using GoDungeon.Equipment.Enum;
 
 namespace GoDungeon.Character.ViewModels
 {

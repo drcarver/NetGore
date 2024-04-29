@@ -1,15 +1,12 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Collections.ObjectModel;
 
-using GoDungeon.Background.Enum;
-using GoDungeon.Background.Models;
-using GoDungeon.Character.Interfaces;
-using GoDungeon.Character.Models;
+using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Models;
+using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
-using GoDungeon.Monsters.Models;
 
 using Microsoft.Extensions.Logging;
 
@@ -80,22 +77,22 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The homeland table
         /// </summary>
-        public static RandomTable HomelandTable { get; set; } = new()
+        public static RandomTable HomelandTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Forest"
                 //01–60	Forest You gain access to the
                 //Log Roller regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,60),
                     Name = "Forest",
                     Description =
                         "You gain access to the " +
                         "Log Roller regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                     },
                 },
@@ -103,7 +100,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Non-Elven City or Metropolis"
                 //61–80	Non-Elven City or Metropolis    
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,80),
                     Name = "Non-Elven City or Metropolis",
@@ -114,7 +111,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "a half-elf, you gain access to the " +
                         "Civilized social trait and the " +
                         "Failed Apprentice race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Civilized
                     },
@@ -124,13 +121,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Non-Elven Town or Village"
                 //81–95	Non-Elven Town or Village
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(81,95),
                     Name = "Non-Dwarven Town or Village",
                     Description =
                         "You gain access to the Forlorn race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Forlorn,
                     },
@@ -139,13 +136,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         
                 #region "Unusual Homeland."
                 //96–100	Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "Unusual Homeland",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Elf Parents
@@ -157,14 +154,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The parents table
         /// </summary>
-        private static RandomTable ParentsTable { get; set; } = new()
+        private static RandomTable ParentsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Both"
                 //01–79	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,79),
                     Name = "Both Alive",
@@ -174,7 +171,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //80–87	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(80,87),
                     Name = "Father Only",
@@ -184,7 +181,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //88–95	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(88,95),
                     Name = "Mother Only",
@@ -196,7 +193,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //96–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.    
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "Both Dead",
@@ -204,14 +201,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Both of your parents are dead. " +
                         "You gain access to the Orphaned " +
                         "social trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Orphaned,
                     },
 
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Elf Siblings
@@ -223,21 +220,21 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The siblings table
         /// </summary>
-        private static RandomTable SiblingsTable { get; set; } = new()
+        private static RandomTable SiblingsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "1d2"
                 //01–80	1d2 biological siblings.If you roll 2 siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,80),
                     Name = "1d2",
                     Description =
                         "With two or more siblings, you gain access " +
                         "to the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -246,14 +243,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4+1"
                 //81–85	1d4+1 biological siblings. You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(81,85),
                     Name = "1d4+1",
                     Description =
                         "You gain access to " +
                         "the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -262,7 +259,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4+1 "
                 //86–90	1d4+1 biological siblings. 1d3–1 of these siblings are half-elves, adopted, or a mix of the two (your choice). You gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(86,90),
                     Name = "1d3",
@@ -275,7 +272,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Race Table to determine the " +
                         "race of any adopted siblings.",
                     //AlternateTable = typeof(RaceTable),
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -284,14 +281,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //91–100 No siblings    
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,100),
                     Name = "No siblings",
                     Description = "No siblings",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Random Height and Weight

@@ -1,19 +1,13 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace GoDungeon.Character.PC.Bard;
-
-public class BardFeatureLevelEntry : SpellCasterLevelEntry
+namespace GoDungeon.Character.PC.Bard
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public BardFeatureLevelEntry()
+    public partial class BardFeatureLevelEntryViewModel : SpellCasterLevelEntryViewModel
     {
+        /// <summary>
+        /// 1st to 9th level spells known
+        /// </summary>
+        [ObservableProperty]
+        private int spellsKnown;
     }
-
-    /// <summary>
-    /// 1st to 9th level spells known
-    /// </summary>
-    public int SpellsKnown { get; set; }
 }

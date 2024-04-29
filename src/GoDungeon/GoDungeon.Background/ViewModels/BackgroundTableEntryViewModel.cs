@@ -24,9 +24,8 @@ using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Background.Enum;
-using GoDungeon.Background.Interfaces;
-
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Background.ViewModels

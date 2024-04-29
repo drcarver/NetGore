@@ -1,10 +1,9 @@
 ﻿using GoDungeon.Character.Interfaces;
 using GoDungeon.Character.Models;
 
-using GoDungeon.Character.Interfaces;
-
 using Microsoft.Extensions.Logging;
 using GoDungeon.Character.Services;
+using GoDungeon.Core.Interfaces;
 
 namespace NetGore.Data.Services;
 

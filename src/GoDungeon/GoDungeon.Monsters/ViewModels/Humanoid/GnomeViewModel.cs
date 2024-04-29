@@ -1,6 +1,11 @@
-﻿using GoDungeon.Background.Enum;
+﻿using System;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -72,24 +77,24 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The homeland table
         /// </summary>
-        private static RandomTable HomelandTable { get; set; } = new()
+        private static RandomTable HomelandTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Forest"
                 //01–30	Forest You gain access to the
                 //Log Roller regional trait and the
                 //Animal Friend race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
-                    Range = new Range(01,30),
+                    Range = new Range(01, 30),
                     Name = "Forest",
                     Description =
                         "You gain access to the " +
                         "Log Roller regional trait and " +
                         "the Animal Friend race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.AnimalFriend
                     },
@@ -98,13 +103,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Non-Gnome Town or Village"
                 //31–65	Non-Gnome Town or Village   You gain access to the Animal Friend race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
-                    Range = new Range(31,65),
+                    Range = new Range(31, 65),
                     Name = "Non-Gnome Town or Village",
                     Description =
                         "You gain access to the Animal Friend race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.AnimalFriend,
                     },
@@ -113,29 +118,29 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Non-Gnome City or Metropolis"
                 //66–95	Non-Gnome City or Metropolis You gain access to the Rapscallion race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
-                    Range = new Range(66,95),
+                    Range = new Range(66, 95),
                     Name = "Non-Gnome City or Metropolis",
                     Description =
                         "You gain access to the Rapscallion race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum> 
                     {
                         TraitEnum.Rapscallion,
                     },
                 },
                 #endregion
-                        
+
                 #region "Unusual Homeland."
                 //96–100 Unusual Homeland.	Roll on Table:
                 //Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
-                    Range = new Range(96,100),
+                    Range = new Range(96, 100),
                     Name = "Unusual Homeland",
-                 },
+                },
                 #endregion
-            ],
+            },
         };
 
         //Table: Gnome Parents
@@ -147,14 +152,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The parents table
         /// </summary>
-        private static RandomTable ParentsTable { get; set; } = new()
+        private static RandomTable ParentsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Both"
                 //01–90	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,90),
                     Name = "Both Alive",
@@ -164,7 +169,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //91–93	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,93),
                     Name = "Father Only",
@@ -174,7 +179,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //94–96	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(94,96),
                     Name = "Mother Only",
@@ -186,7 +191,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //97–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(97,100),
                     Name = "Both Dead",
@@ -194,13 +199,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Both of your parents are dead. " +
                         "You gain access to the Orphaned " +
                         "social trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Orphaned,
                     },
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Gnome Siblings
@@ -211,14 +216,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The siblings table
         /// </summary>
-        private static RandomTable SiblingsTable { get; set; } = new()
+        private static RandomTable SiblingsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "1d4"
                 //01–50	1d4 biological siblings.With two or more siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,50),
                     Name = "1d4",
@@ -226,7 +231,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "With two or more siblings, you " +
                         "gain access to the Kin Guardian " +
                         "combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -235,7 +240,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4-1"
                 //51–60	1d4–1 biological siblings and one adopted sibling. With two or more siblings, you gain access to the Kin Guardian combat trait.Roll on Table: Race of Adopted Sibling to determine the race of any adopted siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(51,60),
                     Name = "1d4",
@@ -247,7 +252,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "combat trait. Roll on Table: " +
                         "Race to determine the race " +
                         "of any adopted siblings.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -256,14 +261,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //61–100	No siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,100),
                     Name = "No siblings",
                     Description = "No siblings",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Random Height and Weight

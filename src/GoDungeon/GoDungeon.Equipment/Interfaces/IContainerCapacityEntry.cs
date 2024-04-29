@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
+using GoDungeon.Core.Interfaces;
+
 namespace GoDungeon.Equipment.Interfaces
 {
     public interface IContainerCapacityEntry : IEquipmentTableEntry

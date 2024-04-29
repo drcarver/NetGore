@@ -1,4 +1,4 @@
-﻿using GoDungeon.Equipment.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.Equipment.ViewModels
 {
@@ -8,7 +8,7 @@ namespace GoDungeon.Equipment.ViewModels
         /// Constructor
         /// </summary>
         public SilverPieceViewModel()
-            : base("sp", Enum.CoinEnum.Silver)
+            : base("sp", Core.Enum.CoinEnum.Silver)
         {
         }
     }

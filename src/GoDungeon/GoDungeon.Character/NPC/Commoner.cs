@@ -29,7 +29,7 @@ namespace GoDungeon.Character.NPC
         /// <summary>
         /// The commoner's profession
         /// </summary>
-        public IBackgroundTableEntry Profession { get; private set; }
+        public IBackgroundTableEntryViewModel Profession { get; private set; }
 
         /// <summary>
         /// The race Service

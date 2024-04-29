@@ -1,56 +1,53 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using GoDungeon.Background.Interfaces;
-using GoDungeon.Character.Interfaces;
-
-using GoDungeon.Character.Interfaces;
 
 using Microsoft.Extensions.Logging;
 using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.Character.PC.Fighter;
-
-public class Fighter : CharacterClassBaseViewModel, IFighter
+namespace GoDungeon.Character.PC.Fighter
 {
-    private ILogger logger;
-
-    /// <summary>
-    /// Level up the character with this class
-    /// </summary>
-    /// <param name="character"></param>
-    public override void LevelUp(ICharacter character)
+    public class Fighter : CharacterClassBaseViewModel, IFighter
     {
-    }
+        private ILogger logger;
 
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public Fighter(
-        ILoggerFactory loggerFactory,
-        IFighterLevelTable fighterLevelTable,
-        IFighterBackgroundTable fighterBackgroundTable)
-        : base(loggerFactory)
-    {
-        // The logger
-        logger = loggerFactory.CreateLogger<Fighter>();
+        /// <summary>
+        /// Level up the character with this class
+        /// </summary>
+        /// <param name="character"></param>
+        public override void LevelUp(ICharacter character)
+        {
+        }
 
-        // The fighter levels
-        ClassLevelTable = (IClassLevelTable) fighterLevelTable;
-        ClassLevelTable.InitializeTable();
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Fighter(
+            ILoggerFactory loggerFactory,
+            IFighterLevelTable fighterLevelTable,
+            IFighterBackgroundTable fighterBackgroundTable)
+        {
+            // The logger
+            logger = loggerFactory.CreateLogger<Fighter>();
 
-        // The fighter background
-        fighterBackgroundTable.InitializeTable();
-        Background = (IBackgroundTableEntry?)fighterBackgroundTable.GetRandomRangeEntry();
+            // The fighter levels
+            ClassLevelTable = (IClassLevelTable) fighterLevelTable;
+            ClassLevelTable.InitializeTable();
 
-        // Name and description
-        Name = nameof(Fighter);
-        Description =
-            "Fighters excel at combat—defeating their enemies, " +
-            "controlling the flow of battle, and surviving " +
-            "such sorties themselves. While their specific " +
-            "weapons and methods grant them a wide variety " +
-            "of tactics, few can match fighters for sheer " +
-            "battle prowess.";
+            // The fighter background
+            fighterBackgroundTable.InitializeTable();
+            Background = (IBackgroundTableEntry?)fighterBackgroundTable.GetRandomRangeEntry();
+
+            // Name and description
+            Name = nameof(Fighter);
+            Description =
+                "Fighters excel at combat—defeating their enemies, " +
+                "controlling the flow of battle, and surviving " +
+                "such sorties themselves. While their specific " +
+                "weapons and methods grant them a wide variety " +
+                "of tactics, few can match fighters for sheer " +
+                "battle prowess.";
+        }
     }
 }

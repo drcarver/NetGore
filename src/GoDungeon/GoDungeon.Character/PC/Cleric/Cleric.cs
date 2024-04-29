@@ -4,10 +4,11 @@ using GoDungeon.Core.Models;
 using GoDungeon.Goods.Enum;
 using GoDungeon.Goods.Interfaces;
 
-using GoDungeon.Character.Interfaces;
-
 using Microsoft.Extensions.Logging;
 using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
+using System.Collections.Generic;
 
 namespace GoDungeon.Character.PC.Cleric;
 
@@ -21,17 +22,11 @@ namespace GoDungeon.Character.PC.Cleric;
 public class Cleric : CharacterClassBaseViewModel, ICleric
 {
     /// <summary>
-    /// The DI service provider
-    /// </summary>
-    private readonly IServiceProvider serviceProvider;
-
-    /// <summary>
     /// Level up the character with this class
     /// </summary>
     /// <param name="character"></param>
     public override void LevelUp(ICharacter character)
     {
-        var ClericLevelTable = serviceProvider.GetService<IClericLevelTable>();
     }
 
     //Weapons: Simple weapons
@@ -68,10 +63,10 @@ public class Cleric : CharacterClassBaseViewModel, ICleric
         //Hit Points at  1st Level: 8 +	your Constitution modifier
         //Hit Points at  Higher Levels: 1d8	(or 5) + your Constitution
         //  modifier per cleric level   after	1st
-        character.HitPoints = new HitPoints("1d8", character);
+        character.HitPoints = new HitPointsViewModel("1d8", character);
 
         //Saving  Throws:	Wisdom,	Charisma
-        SavingThrows = new()
+        SavingThrows = new Dictionary<AbilityEnum, IAbilityBase>
         {
             { AbilityEnum.Wisdom, character.Wisdom },
             { AbilityEnum.Charisma, character.Charisma }
@@ -83,7 +78,7 @@ public class Cleric : CharacterClassBaseViewModel, ICleric
         {
             ArmorProficiency.Add(EquipmentEnum.Shield, shield);
         }
-        var armorList = clericGoodsTable?.Table?.Cast<IEquipmentEntry>().Where(cg =>
+        var armorList = clericGoodsTable?.Table?.Cast<IEquipmentTableEntry>().Where(cg =>
                    cg.EquipmentCategory == EquipmentCategoryEnum.LightArmor
                 && cg.EquipmentCategory == EquipmentCategoryEnum.MediumArmor)
             .ToList();
@@ -143,13 +138,9 @@ public class Cleric : CharacterClassBaseViewModel, ICleric
     /// <summary>
     /// Constructor
     /// </summary>
-    [SetsRequiredMembers]
     public Cleric(
-        IServiceProvider services,
         ILoggerFactory loggerFactory)
-        : base(loggerFactory)
     {
-        serviceProvider = services;
         Name = nameof(Cleric);
         Description =
             "Clerics are not merely people of religious " +

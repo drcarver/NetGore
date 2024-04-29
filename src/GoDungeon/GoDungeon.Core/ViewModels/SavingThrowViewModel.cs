@@ -20,13 +20,6 @@ namespace GoDungeon.Core.ViewModels
         private IAbilityBase ability;
 
         /// <summary>
-        /// The modifier for this saving throw (mainly from
-        /// the level
-        /// </summary>
-        [ObservableProperty]
-        private int proficiencyModifier = 0;
-
-        /// <summary>
         /// Any class modifiers
         /// </summary>
         [ObservableProperty]
@@ -39,11 +32,17 @@ namespace GoDungeon.Core.ViewModels
         private int otherModifiers = 0;
 
         /// <summary>
+        /// Any race modifiers
+        /// </summary>
+        [ObservableProperty]
+        private int racialModifier;
+
+        /// <summary>
         /// Roll the saving throw against the give dc
         /// </summary>
         /// <param name="dc">The difficulty check for this roll</param>
         /// <returns>True if the saving throw succeeds</returns>
-        public bool Roll(int dc)
+        public bool Roll(int dc, int proficiencyModifier = 0)
         {
             var roll = new Dice("1d20").Total;
             if (roll == 1)
@@ -54,7 +53,12 @@ namespace GoDungeon.Core.ViewModels
             {
                 return true;
             }
-            return roll + Ability.Score() >= dc;
+            return roll
+                + RacialModifier
+                + proficiencyModifier
+                + ClassModifier
+                + OtherModifiers
+                + Ability.Score() >= dc;
         }
 
         /// <summary>

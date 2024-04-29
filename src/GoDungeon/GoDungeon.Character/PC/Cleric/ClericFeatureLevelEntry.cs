@@ -1,14 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace GoDungeon.Character.PC.Cleric;
-
-public class ClericFeatureLevelEntry : SpellCasterLevelEntry
+namespace GoDungeon.Character.PC.Cleric
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public ClericFeatureLevelEntry()
+    public class ClericFeatureLevelEntryViewModel : SpellCasterLevelEntryViewModel
     {
     }
 }

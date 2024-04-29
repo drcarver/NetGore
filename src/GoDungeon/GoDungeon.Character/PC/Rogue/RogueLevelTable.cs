@@ -1,14 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Security.AccessControl;
-
-using CommunityToolkit.Maui.ApplicationModel;
-using CommunityToolkit.Maui.Core;
-
-using GoDungeon.Character.PC.Barbarian;
-using GoDungeon.Core.Enum;
-using GoDungeon.Core.Models;
+﻿using System.Collections.ObjectModel;
 
 using GoDungeon.Character.Enum;
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 
 namespace GoDungeon.Character.PC.Rogue;
 
@@ -38,7 +33,6 @@ public class RogueLevelTable : GameTable, IRogueLevelTable
     /// <summary>
     /// Constructor
     /// </summary>
-    [SetsRequiredMembers]
     public RogueLevelTable()
     {
         Name = nameof(RogueLevelTable);
@@ -72,289 +66,289 @@ public class RogueLevelTable : GameTable, IRogueLevelTable
     /// </summary>
     public override void InitializeTable()
     {
-        Table =
-        [
+        Table = new ObservableCollection<IGameTableEntry>
+        {
             #region 1st Level
             //1st +2 1d6 Expertise,	Sneak Attack, Thievesʼ Cant
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 1,
                 BaseProficiency = 2,
                 SneakAttack = "1d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.Expertise,
                     ClassFeatureEnum.SneakAttack,
                     ClassFeatureEnum.ThievesCant
-                ],
+                },
             },
             #endregion
 
             #region 2nd Level
             //2nd +2 1d6 Cunning Action
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 2,
                 BaseProficiency = 2,
                 SneakAttack = "1d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.CunningAction,
-                ],
+                },
             },
             #endregion
 
             #region 3rd Level
             //3rd +2 2d6 Roguish Archetype
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 3,
                 BaseProficiency = 2,
                 SneakAttack = "2d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.RoguishArchetype,
-                ],
+                },
             },
             #endregion
 
             #region 4th Level
             //4th +2 2d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 4,
                 BaseProficiency = 2,
                 SneakAttack = "2d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 5th Level
             //5th +3 3d6 Uncanny Dodge
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 5,
                 BaseProficiency = 3,
                 SneakAttack = "3d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.UncannyDodge,
-                ],
+                },
             },
             #endregion
 
             #region 6th Level
             //6th +3 3d6 Expertise
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 6,
                 BaseProficiency = 3,
                 SneakAttack = "3d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.Expertise,
-                ],
+                },
             },
             #endregion
 
             #region 7th Level
             //7th +3 4d6 Evasion
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 7,
                 BaseProficiency = 3,
                 SneakAttack = "4d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.Evasion
-                ],
+                },
             },
             #endregion
 
             #region 8th Level
             //8th +3 4d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 8,
                 BaseProficiency = 3,
                 SneakAttack = "4d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 9th Level
             //9th +4 5d6 Roguish Archetype feature
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 8,
                 BaseProficiency = 4,
                 SneakAttack = "5d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.RoguishArchetype
-                ],
+                },
             },
             #endregion
 
             #region 10th Level
             //10th +4 5d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 10,
                 BaseProficiency = 4,
                 SneakAttack = "5d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 11th Level
             //11th +4 6d6 Reliable Talent
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 11,
                 BaseProficiency = 4,
                 SneakAttack = "6d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.ReliableTalent
-                ],
+                },
             },
             #endregion
 
             #region 12th Level
             //12th +4 6d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 12,
                 BaseProficiency = 4,
                 SneakAttack = "6d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 13th Level
             //13th +5 7d6 Roguish Archetype feature
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 13,
                 BaseProficiency = 5,
                 SneakAttack = "7d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.RoguishArchetype
-                ],
+                },
             },
             #endregion
 
             #region 14th Level
             //14th +5 7d6 Blindsense
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 14,
                 BaseProficiency = 5,
                 SneakAttack = "7d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.Blindsense,
-                ],
+                },
             },
             #endregion
 
             #region 15th Level
             //15th +5 8d6 Slippery Mind
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 15,
                 BaseProficiency = 5,
                 SneakAttack = "8d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.SlipperyMind
-                ],
+                },
             },
             #endregion
 
             #region 16th Level
             //16th +5 8d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 16,
                 BaseProficiency = 5,
                 SneakAttack = "8d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 17th Level
             //17th +6 9d6 Roguish Archetype feature
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 17,
                 BaseProficiency = 6,
                 SneakAttack = "9d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.RoguishArchetype
-                ],
+                },
             },
             #endregion
 
             #region 18th Level
             //18th +6 9d6 Elusive
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 18,
                 BaseProficiency = 6,
                 SneakAttack = "9d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.Elusive
-                ],
+                },
             },
             #endregion
 
             #region 19th Level
             //19th +6 10d6 Ability Score Improvement
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 19,
                 BaseProficiency = 6,
                 SneakAttack = "10d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.AbilityScoreImprovement
-                ],
+                },
             },
             #endregion
 
             #region 20th Level
             //20th +6 10d6 Stroke of  Luck
-            new RogueFeatureLevelEntry
+            new RogueFeatureLevelEntryViewModel
             {
                 Level = 20,
                 BaseProficiency = 6,
                 SneakAttack = "10d6",
-                ClassFeatures =
-                [
+                ClassFeatures = new ObservableCollection<ClassFeatureEnum>
+                {
                     ClassFeatureEnum.StrokeofLuck
-                ],
+                },
             },
             #endregion
-        ];
+        };
     }
 }

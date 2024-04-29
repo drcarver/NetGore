@@ -5,12 +5,6 @@ namespace GoDungeon.Core.Interfaces
     public interface ISavingThrow : IBaseObject
     {
         /// <summary>
-        /// The modifier for this saving throw (mainly from
-        /// the level
-        /// </summary>
-        int ProficiencyModifier { get; set; }
-
-        /// <summary>
         /// Any class modifiers
         /// </summary>
         int ClassModifier { get; set; }
@@ -19,6 +13,11 @@ namespace GoDungeon.Core.Interfaces
         /// Any Other modifiers
         /// </summary>
         int OtherModifiers { get; set; }
+
+        /// <summary>
+        /// Any race modifiers
+        /// </summary>
+        int RacialModifier { get; set; }
 
         /// <summary>
         /// Roll the saving throw against the give dc

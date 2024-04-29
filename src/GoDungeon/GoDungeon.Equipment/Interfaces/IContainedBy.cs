@@ -1,4 +1,5 @@
-﻿using GoDungeon.Equipment.Enum;
+﻿using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.Equipment.Interfaces
 {

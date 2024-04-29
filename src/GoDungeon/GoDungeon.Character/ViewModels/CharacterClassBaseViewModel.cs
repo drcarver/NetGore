@@ -3,12 +3,8 @@ using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Background.Interfaces;
-using GoDungeon.Character.Interfaces;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Equipment.Enum;
-using GoDungeon.Equipment.Interfaces;
 using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.Character.ViewModels
@@ -61,7 +57,7 @@ namespace GoDungeon.Character.ViewModels
         /// Skills
         /// </summary>
         [ObservableProperty]
-        private Dictionary<SkillEnum, ISkill> skills = new Dictionary<SkillEnum, ISkill>();
+        private ObservableCollection<SkillEnum> skills = new ObservableCollection<SkillEnum>();
 
         /// <summary>
         /// The description of the class background.  Used to provide

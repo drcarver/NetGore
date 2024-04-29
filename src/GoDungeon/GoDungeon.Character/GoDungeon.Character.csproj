@@ -16,8 +16,4 @@
     <ProjectReference Include="..\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Race\" />
-  </ItemGroup>
-
 </Project>

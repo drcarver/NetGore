@@ -1,5 +1,4 @@
-﻿using GoDungeon.Background.Enum;
-using GoDungeon.Core;
+﻿using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Monsters.Interfaces;
 
@@ -76,7 +75,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Town or Village"
                 //01–50	Town or Village You gain access
                 //to the Militia Veteran regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,50),
                     Name = "Town or Village",
@@ -94,7 +93,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //human, you gain access to the Civilized
                 //social trait and the Vagabond Child
                 //regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(51,85),
                     Name = "City or Metropolis",
@@ -109,7 +108,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Frontier"
                 //86–95	Frontier You gain access to the Frontier-Forged regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(86,95),
                     Name = "Frontier",
@@ -124,7 +123,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Unusual Homeland."
                 //96–100 Unusual Homeland.	Roll on Table:
                 //Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "Unusual Homeland",
@@ -149,7 +148,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             [
                 #region "Both"
                 //01–50	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,50),
                     Name = "Both Alive",
@@ -159,7 +158,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //51–70	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(51,70),
                     Name = "Father Only",
@@ -169,7 +168,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //71–90	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(71,90),
                     Name = "Mother Only",
@@ -181,7 +180,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //91–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,100),
                     Name = "Both Dead",
@@ -214,7 +213,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             [
                 #region "1d2"
                 //01–40	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,40),
                     Name = "1d4",
@@ -231,7 +230,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4"
                 //41–70	1d2 siblings and 1d2 half-siblings(roll d% to determine each one’s race)
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(41,70),
                     Name = "1d4",
@@ -244,7 +243,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "2d4"
                 //71–90	2d4 siblings.You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(71,90),
                     Name = "2d4",
@@ -260,7 +259,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //91–100	No siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,100),
                     Name = "No siblings",

@@ -1,5 +1,5 @@
-﻿using GoDungeon.Core.ViewModels;
-using GoDungeon.Monsters.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Monsters.ViewModels.Humanoid
 {

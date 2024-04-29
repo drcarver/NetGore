@@ -19,7 +19,7 @@
 //    /// <summary>
 //    /// Constructor
 //    /// </summary>
-//    [SetsRequiredMembers]
+//    {SetsRequiredMembers}
 //    public MonkLevelTable()
 //    {
 //        Name = nameof(MonkLevelTable);
@@ -43,17 +43,17 @@
 //    public override void InitializeTable()
 //    {
 //        Table =
-//        [
+//        {
 //            #region 1st Level
 //            new MonkFeatureLevelEntry
 //            {
 //                Level = 1,
 //                BaseProficiency = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.Rage,
 //                    ClassFeatureEnum.UnarmoredDefense
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -66,10 +66,10 @@
 //                Rages = 2,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.RecklessAttack,
 //                    ClassFeatureEnum.DangerSense
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -82,11 +82,11 @@
 //                Rages = 3,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.PrimalPath,
 //                    ClassFeatureEnum.PathoftheBerserker,
 //                    ClassFeatureEnum.Frenzy,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -99,9 +99,9 @@
 //                Rages = 3,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -114,10 +114,10 @@
 //                Rages = 3,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.ExtraAttack,
 //                    ClassFeatureEnum.FastMovement,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -130,9 +130,9 @@
 //                Rages = 4,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.MindlessRage
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -145,9 +145,9 @@
 //                Rages = 4,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.FeralInstinct
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -160,9 +160,9 @@
 //                Rages = 4,
 //                RageDamage = 2,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -175,9 +175,9 @@
 //                Rages = 4,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.BrutalCritical
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -190,9 +190,9 @@
 //                Rages = 4,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.IntimidatingPresence
-//                ],
+//                },
 //            },
 //        #endregion
 
@@ -205,9 +205,9 @@
 //                Rages = 4,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.Relentless
-//                ],
+//                },
 //            },
 //        #endregion
 
@@ -220,9 +220,9 @@
 //                Rages = 5,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //        #endregion
 
@@ -235,9 +235,9 @@
 //                Rages = 5,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.BrutalCritical
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -250,9 +250,9 @@
 //                Rages = 5,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.Retaliation,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -265,9 +265,9 @@
 //                Rages = 5,
 //                RageDamage = 3,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.PersistentRage
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -280,9 +280,9 @@
 //                Rages = 5,
 //                RageDamage = 4,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -295,9 +295,9 @@
 //                Rages = 6,
 //                RageDamage = 4,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.BrutalCritical
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -310,9 +310,9 @@
 //                Rages = 6,
 //                RageDamage = 4,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.IndomitableMight
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -325,9 +325,9 @@
 //                Rages = 6,
 //                RageDamage = 4,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -340,12 +340,12 @@
 //                Rages = 6,
 //                RageDamage = 4,
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.PrimalChampionUnlimited
-//                ],
+//                },
 //            },
 //            #endregion
-//        ];
+//        };
 //    }
 //}
 

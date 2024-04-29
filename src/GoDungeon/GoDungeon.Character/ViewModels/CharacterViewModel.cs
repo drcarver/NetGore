@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Character.Interfaces;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
-using GoDungeon.Equipment.Enum;
 
 namespace GoDungeon.Character.ViewModels
 {
@@ -52,7 +50,7 @@ namespace GoDungeon.Character.ViewModels
         /// The inventory for the creature
         /// </summary>
         [ObservableProperty]
-        private Dictionary<IInventoryEntry, InventoryEntryViewModel> inventory = new Dictionary<IInventoryEntry, InventoryEntryViewModel>();
+        private ObservableCollection<IInventoryEntry> inventory = new ObservableCollection<IInventoryEntry>();
 
         /// <summary>
         /// The character level

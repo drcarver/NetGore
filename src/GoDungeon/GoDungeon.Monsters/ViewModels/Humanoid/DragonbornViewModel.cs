@@ -76,7 +76,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         private void GenerateRaceBackground(IServiceProvider services)
         {
             #region Siblings
-            //var siblings = (BackgroundTableEntry?) siblingsTable.GetRandomRangeEntry();
+            //var siblings = (BackgroundTableEntryViewModel?) siblingsTable.GetRandomRangeEntry();
             //if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
             //{
             //    var total = new Dice(siblings.Name).Total;

@@ -1,6 +1,11 @@
-﻿using GoDungeon.Background.Enum;
+﻿using System;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -58,15 +63,15 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The homeland table
         /// </summary>
-        private static RandomTable HomelandTable { get; set; } = new()
+        private static RandomTable HomelandTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Raised in an Elven Homeland."
                 //01–25	Raised in an Elven Homeland. Roll
                 //on Table: Elf Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,25),
                     Name = "Raised in an Elven Homeland",
@@ -79,7 +84,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Raised in a Human Homeland"
                 //26–75	Raised in a Human Homeland.Roll on Table: Human Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(26,75),
                     Name = "Raised in a Human Homeland",
@@ -92,13 +97,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Forest"
                 //76–95	Forest You gain access to the Log
                 //Roller regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(76,95),
                     Name = "Forest",
                     Description =
                         "You gain access to the Log Roller regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                     },
                 },
@@ -107,13 +112,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Unusual Homeland."
                 //96–100 Unusual Homeland.	Roll on Table:
                 //Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(96,100),
                     Name = "Unusual Homeland",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Half-Elf Parents
@@ -125,14 +130,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The parents table
         /// </summary>
-        private static RandomTable ParentsTable { get; set; } = new()
+        private static RandomTable ParentsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Both"
                 //01–20	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,20),
                     Name = "Both Alive",
@@ -142,7 +147,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //21–55	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(21,55),
                     Name = "Father Only",
@@ -152,7 +157,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //56–90	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(56,90),
                     Name = "Mother Only",
@@ -164,7 +169,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //91–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,100),
                     Name = "Both Dead",
@@ -172,13 +177,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Both of your parents are dead. " +
                         "You gain access to the Orphaned " +
                         "social trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Orphaned,
                     },
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Half-Elf Siblings
@@ -189,17 +194,17 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The siblings table
         /// </summary>
-        private static RandomTable SiblingsTable { get; set; } = new()
+        private static RandomTable SiblingsTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "1d2"
                 //01–20	1d2 half-siblings(either elf or
                 //human, your choice). With two or more
                 //siblings, you gain access to the Kin
                 //Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,50),
                     Name = "1d2",
@@ -208,7 +213,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "human, your choice). With two " +
                         "or more siblings, you gain access " +
                         "to the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -217,7 +222,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d1"
                 //21–30	One half-elf sibling.You gain access to the Kin Bond magic trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(21,30),
                     Name = "1d1",
@@ -225,7 +230,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "One half-elf sibling. You gain " +
                         "access to the Kin Bond magic " +
                         "trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinBond,
                     },
@@ -234,14 +239,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //31–100	No siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(31,100),
                     Name = "No siblings",
                     Description = "No siblings",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Random Height and Weight

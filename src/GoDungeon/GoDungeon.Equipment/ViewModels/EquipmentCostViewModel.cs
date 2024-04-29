@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Equipment.Interfaces;
+using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.Equipment.ViewModels
 {

@@ -1,6 +1,11 @@
-﻿using GoDungeon.Background.Enum;
+﻿using System;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -74,16 +79,16 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// The homeland table
         /// </summary>
-        private static RandomTable HomelandTable { get; set; } = new()
+        private static RandomTable HomelandTable { get; set; } = new RandomTable
         {
             DiceSides = 100,
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region "Subterranean"
                 //01–25	Subterranean You gain access to
                 //either the Scrapper race trait or the
                 //Surface Stranger regional trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,25),
                     Name = "Subterranean",
@@ -91,7 +96,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You gain access to either the " +
                         "Scrapper race trait or the " +
                         "Surface Stranger regional trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Scrapper,
                         TraitEnum.SurfaceStranger,
@@ -101,7 +106,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region Raised in a Human Homeland
                 // 61–75	Raised in a Human Homeland.	Roll on Table: Human Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,75),
                     Name = "Raised in a Human Homeland",
@@ -112,13 +117,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Orc Settlement"
                 //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(26,60),
                     Name = "Orc Settlement",
                     Description =
                         "You gain access to the Scrapper race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Scrapper,
                     },
@@ -127,7 +132,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No True Homeland"
                 //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(76,90),
                     Name = "No True Homeland",
@@ -135,7 +140,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "You have lived a life on the run " +
                         "and gain access to the Outcast " +
                         "race trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum> 
                     {
                         TraitEnum.Outcast,
                     },
@@ -145,13 +150,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 #region "Unusual Homeland."
                 //91–100 Unusual Homeland.	Roll on Table:
                 //Unusual Homeland.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(91,100),
                     Name = "Unusual Homeland",
                 },
                 #endregion
-            ],
+            },
         };
 
         //Table: Half-Orc Parents
@@ -170,7 +175,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             [
                 #region "Both"
                 //01–10	Both of your parents are alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,10),
                     Name = "Both Alive",
@@ -180,7 +185,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Father Only"
                 //11–35	Only your father is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(11,35),
                     Name = "Father Only",
@@ -190,7 +195,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "Mother Only"
                 //36–60	Only your mother is alive.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(36,60),
                     Name = "Mother Only",
@@ -202,7 +207,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                 //61–100 Both of your parents are dead.
                 //You gain access to the Orphaned social
                 //trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,100),
                     Name = "Both Dead",
@@ -210,7 +215,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "Both of your parents are dead. " +
                         "You gain access to the Orphaned " +
                         "social trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.Orphaned,
                     },
@@ -235,14 +240,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             [
                 #region "1d6+1"
                 //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(01,60),
                     Name = "1d6+1",
                     Description =
                         "1d6+1 orc siblings.You gain access " +
                         "to the Kin Guardian combat trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinGuardian,
                     },
@@ -251,7 +256,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d4"
                 //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(61,70),
                     Name = "1d4",
@@ -259,7 +264,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
                         "One half-elf sibling. You gain " +
                         "access to the Kin Bond magic " +
                         "trait.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinBond,
                     },
@@ -268,13 +273,13 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "1d1"
                 //71–80	One half-orc sibling.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(71,80),
                     Name = "1d1",
                     Description =
                         "One half-orc sibling.",
-                    Traits =
+                    Traits = new ObservableCollection<TraitEnum>
                     {
                         TraitEnum.KinBond,
                     },
@@ -283,7 +288,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
                 #region "No siblings"
                 //81–100	No siblings.
-                new BackgroundTableEntry
+                new BackgroundTableEntryViewModel
                 {
                     Range = new Range(81,100),
                     Name = "No siblings",

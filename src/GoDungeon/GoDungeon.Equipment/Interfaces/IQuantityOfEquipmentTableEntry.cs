@@ -1,7 +1,8 @@
-﻿using GoDungeon.Equipment.Enum;
+﻿using GoDungeon.Core.Interfaces;
+using GoDungeon.Equipment.Enum;
 
 namespace GoDungeon.Equipment.Interfaces
-{ 
+{
     public interface IQuantityOfEquipmentTableEntry : IEquipmentTableEntry
     {
         /// <summary>

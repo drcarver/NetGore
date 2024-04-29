@@ -45,7 +45,6 @@ namespace GoDungeon.Character.Tables
             return te;
         }
 
-
         //Character Advancement
         //Experience Points Level Proficiency Bonus
         //0 1 +2

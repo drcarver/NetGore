@@ -1,4 +1,5 @@
 ﻿using GoDungeon.Character.Interfaces;
+using GoDungeon.Core.Interfaces;
 
 using Microsoft.Extensions.Logging;
 

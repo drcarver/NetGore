@@ -10,7 +10,7 @@ namespace GoDungeon.Core.ViewModels
     /// uses a enumerated type as a name (or key).  The table entries
     /// can be accessed by name or their number in the list.
     /// </summary>
-    public class GameTableEntryViewModel : ObservableValidator, IGameTableEntry
+    public partial class GameTableEntryViewModel : ObservableValidator, IGameTableEntry
     {
     }
 }

@@ -1,14 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using GoDungeon.Character.PC.Warlock;
 
-namespace GoDungeon.Character.PC.Sorcerer;
-
-public class SorcererFeatureLevelEntry : SpellCasterLevelEntry
+namespace GoDungeon.Character.PC.Sorcerer
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public SorcererFeatureLevelEntry()
+    public class SorcererFeatureLevelEntry : SpellCasterLevelEntry
     {
+
     }
 }

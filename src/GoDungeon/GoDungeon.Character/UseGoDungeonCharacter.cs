@@ -43,7 +43,7 @@ namespace GoDungeon.Character
             collection.AddTransient<IClassFeatureTable, ClassFeatureTable>();
 
             // Now add the Barbarian Class
-            collection.AddTransient<IBarbarian, Barbarian>();
+            collection.AddTransient<IBarbarian, BarbarianViewModel>();
             collection.AddTransient<IBarbarianBackgroundTable, BarbarianBackgroundTable>();
             collection.AddTransient<IBarbarianLevelTable, BarbarianLevelTable>();
 
@@ -58,7 +58,7 @@ namespace GoDungeon.Character
             collection.AddTransient<IClericLevelTable, ClericLevelTable>();
 
             // Now add the Druid Class
-            collection.AddTransient<IDruid, Druid>();
+            collection.AddTransient<IDruid, DruidViewModel>();
             collection.AddTransient<IDruidBackgroundTable, DruidBackgroundTable>();
             collection.AddTransient<IDruidLevelTable, DruidLevelTable>();
 

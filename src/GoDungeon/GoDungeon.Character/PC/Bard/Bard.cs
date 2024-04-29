@@ -1,50 +1,37 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using GoDungeon.Core.Enum;
-using GoDungeon.Goods.Enum;
-
-using GoDungeon.Character.Interfaces;
+﻿using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Interfaces;
 
 using Microsoft.Extensions.Logging;
-using GoDungeon.Character.ViewModels;
 
-namespace GoDungeon.Character.PC.Bard;
-
-/// <summary>
-/// Bards have a talent for song and story, and they come to 
-/// their careers by developing this talent as they pick up 
-/// on a smattering of other skills. 
-/// </summary>
-public class Bard : CharacterClassBaseViewModel, IBard
+namespace GoDungeon.Character.PC.Bard
 {
     /// <summary>
-    /// The DI service provider
+    /// Bards have a talent for song and story, and they come to 
+    /// their careers by developing this talent as they pick up 
+    /// on a smattering of other skills. 
     /// </summary>
-    private readonly IServiceProvider serviceProvider;
-
-    /// <summary>
-    /// Level up the character with this class
-    /// </summary>
-    /// <param name="character"></param>
-    public override void LevelUp(ICharacter character)
+    public class Bard : CharacterClassBaseViewModel, IBard
     {
-        var bardLevelTable = serviceProvider.GetService<IBardLevelTable>();
+        /// <summary>
+        /// Level up the character with this class
+        /// </summary>
+        /// <param name="character"></param>
+        public override void LevelUp(ICharacter character)
+        {
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public Bard(
+            ILoggerFactory loggerFactory)
+        {
+            Name = nameof(Bard);
+            Description =
+                "Bards have a talent for song and story, and they come to " +
+                "their careers by developing this talent as they pick up " +
+                "on a smattering of other skills.";
+        }
     }
 
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    [SetsRequiredMembers]
-    public Bard(
-        IServiceProvider services,
-        ILoggerFactory loggerFactory)
-        : base(loggerFactory)
-    {
-        serviceProvider = services;
-        Name = nameof(Bard);
-        Description =
-            "Bards have a talent for song and story, and they come to " +
-            "their careers by developing this talent as they pick up " +
-            "on a smattering of other skills.";
-    }
-}
-   
+}   

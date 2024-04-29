@@ -11,7 +11,7 @@
 //    /// <summary>
 //    /// Constructor
 //    /// </summary>
-//    [SetsRequiredMembers]
+//    {SetsRequiredMembers}
 //    public SorcererLevelTable()
 //    {
 //        Name = nameof(SorcererLevelTable);
@@ -30,7 +30,7 @@
 //    public override void InitializeTable()
 //    {
 //        Table =
-//        [
+//        {
 //            #region 1st Level
 //            //1st +2 Spellcasting, Sorcereric Inspiration (d6)
 //            new SorcererFeatureLevelEntry
@@ -39,12 +39,12 @@
 //                BaseProficiency = 2,
 //                SpellsKnown = 4,
 //                CantripsKnown = 2,
-//                SpellSlots = [2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.Spellcasting,
 //                    ClassFeatureEnum.SorcerericInspiration
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -57,12 +57,12 @@
 //                BaseProficiency = 2,
 //                CantripsKnown = 2,
 //                SpellsKnown = 5,
-//                SpellSlots = [2, 3, 0, 0, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {2, 3, 0, 0, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.JackofAllTrades,
 //                    ClassFeatureEnum.SongofRest
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -74,12 +74,12 @@
 //                BaseProficiency = 2,
 //                CantripsKnown = 2,
 //                SpellsKnown = 6,
-//                SpellSlots = [2, 4, 2, 0, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {2, 4, 2, 0, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SorcererCollege,
 //                    ClassFeatureEnum.Expertise,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -91,11 +91,11 @@
 //                BaseProficiency = 2,
 //                CantripsKnown = 3,
 //                SpellsKnown = 7,
-//                SpellSlots = [3, 4, 3, 0, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {3, 4, 3, 0, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -108,12 +108,12 @@
 //                BaseProficiency = 3,
 //                CantripsKnown = 3,
 //                SpellsKnown = 8,
-//                SpellSlots = [3, 4, 3, 2, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {3, 4, 3, 2, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SorcerericInspiration,
 //                    ClassFeatureEnum.FontofInspiration,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -126,12 +126,12 @@
 //                BaseProficiency = 3,
 //                CantripsKnown = 2,
 //                SpellsKnown = 9,
-//                SpellSlots = [3, 4, 3, 3, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {3, 4, 3, 3, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.CounterCharm,
 //                    ClassFeatureEnum.SorcererCollegeFeature,
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -143,10 +143,10 @@
 //                BaseProficiency = 3,
 //                CantripsKnown = 3,
 //                SpellsKnown = 10,
-//                SpellSlots = [2, 4, 3, 3, 0, 0, 0, 0, 0, 0],
+//                SpellSlots = {2, 4, 3, 3, 0, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
-//                ],
+//                {
+//                },
 //            },
 //            #endregion
 
@@ -158,11 +158,11 @@
 //                BaseProficiency = 3,
 //                CantripsKnown = 3,
 //                SpellsKnown = 11,
-//                SpellSlots = [3, 4, 3, 3, 2, 0, 0, 0, 0, 0],
+//                SpellSlots = {3, 4, 3, 3, 2, 0, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -174,11 +174,11 @@
 //                BaseProficiency = 4,
 //                CantripsKnown = 3,
 //                SpellsKnown = 12,
-//                SpellSlots = [3, 4, 3, 3, 3, 1, 0, 0, 0, 0],
+//                SpellSlots = {3, 4, 3, 3, 3, 1, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SongofRest
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -191,13 +191,13 @@
 //                BaseProficiency = 4,
 //                CantripsKnown = 4,
 //                SpellsKnown = 14,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 0, 0, 0, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 0, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SorcerericInspiration,
 //                    ClassFeatureEnum.Expertise,
 //                    ClassFeatureEnum.MagicalSecrets
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -209,10 +209,10 @@
 //                BaseProficiency = 4,
 //                CantripsKnown = 4,
 //                SpellsKnown = 15,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 0, 0, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
 //                ClassFeatures =
-//                [
-//                ],
+//                {
+//                },
 //            },
 //            #endregion
 
@@ -224,11 +224,11 @@
 //                BaseProficiency = 4,
 //                CantripsKnown = 4,
 //                SpellsKnown = 15,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 0, 0, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -240,11 +240,11 @@
 //                BaseProficiency = 5,
 //                CantripsKnown = 4,
 //                SpellsKnown = 16,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 0, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SongofRest
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -257,12 +257,12 @@
 //                BaseProficiency = 5,
 //                CantripsKnown = 4,
 //                SpellsKnown = 18,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 0, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.MagicalSecrets,
 //                    ClassFeatureEnum.SorcererCollegeFeature
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -274,11 +274,11 @@
 //                BaseProficiency = 5,
 //                CantripsKnown = 4,
 //                SpellsKnown = 19,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SorcerericInspiration
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -290,11 +290,11 @@
 //                BaseProficiency = 5,
 //                CantripsKnown = 4,
 //                SpellsKnown = 19,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 0],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -306,11 +306,11 @@
 //                BaseProficiency = 6,
 //                CantripsKnown = 4,
 //                SpellsKnown = 20,
-//                SpellSlots = [4, 4, 3, 3, 3, 2, 1, 1, 1, 1],
+//                SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 1},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SongofRest
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -322,11 +322,11 @@
 //                BaseProficiency = 6,
 //                CantripsKnown = 4,
 //                SpellsKnown = 22,
-//                SpellSlots = [4, 4, 3, 3, 3, 3, 1, 1, 1, 1],
+//                SpellSlots = {4, 4, 3, 3, 3, 3, 1, 1, 1, 1},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.MagicalSecrets
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -339,11 +339,11 @@
 //                BaseProficiency = 6,
 //                CantripsKnown = 4,
 //                SpellsKnown = 22,
-//                SpellSlots = [4, 4, 3, 3, 3, 3, 2, 1, 1, 1],
+//                SpellSlots = {4, 4, 3, 3, 3, 3, 2, 1, 1, 1},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.AbilityScoreImprovement
-//                ],
+//                },
 //            },
 //            #endregion
 
@@ -356,13 +356,13 @@
 //                BaseProficiency = 6,
 //                CantripsKnown = 4,
 //                SpellsKnown = 22,
-//                SpellSlots = [4, 4, 3, 3, 3, 3, 2, 2, 1, 1],
+//                SpellSlots = {4, 4, 3, 3, 3, 3, 2, 2, 1, 1},
 //                ClassFeatures =
-//                [
+//                {
 //                    ClassFeatureEnum.SuperiorInspiration
-//                ],
+//                },
 //            },
 //            #endregion
-//        ];
+//        };
 //    }
 //}

@@ -4511,7 +4511,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
                 Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/noble-born"),
-                Description = "Choose one of the following:      You ignore the movement penalty for the first 5 feet of rocky difficult terrain you move through per round. This applies only to terrain made difficult by rocks or ruins. In addition, you gain a +2 trait bonus on Appraise checks to assess the value of natural stones or metals. Your family motto is “Strong as the Mountains.”     You gain one of the following languages as a bonus language: Dwarven, Elven, Hallit, Gnome, Giant, Halfling, Skald, or Sylvan. Your family motto is “Success through Grace.”     You gain a +1 trait bonus on Swim checks, and Swim is always treated as a class skill for you. Your family motto is “The Waters, Our Fields.”     You gain a +2 trait bonus on all Diplomacy checks made to deal with fey creatures and a +1 trait bonus on Will saves made against their spells and supernatural abilities. Your family motto is “Endurance Overcomes All.”     You gain a +1 trait bonus on your CMD. In addition, choose Acrobatics, Diplomacy, or Stealth—you gain a +1 trait bonus on this skill. Your family motto is “High Above.”     You deal +2 damage when attacking a flat-footed opponent while wielding a light or one-handed weapon. Your family motto is “Ours is the Right.”)",
+                Description = "Choose one of the following: You ignore the movement penalty for the first 5 feet of rocky difficult terrain you move through per round. This applies only to terrain made difficult by rocks or ruins. In addition, you gain a +2 trait bonus on Appraise checks to assess the value of natural stones or metals. Your family motto is “Strong as the Mountains.”     You gain one of the following languages as a bonus language: Dwarven, Elven, Hallit, Gnome, Giant, Halfling, Skald, or Sylvan. Your family motto is “Success through Grace.”     You gain a +1 trait bonus on Swim checks, and Swim is always treated as a class skill for you. Your family motto is “The Waters, Our Fields.”     You gain a +2 trait bonus on all Diplomacy checks made to deal with fey creatures and a +1 trait bonus on Will saves made against their spells and supernatural abilities. Your family motto is “Endurance Overcomes All.”     You gain a +1 trait bonus on your CMD. In addition, choose Acrobatics, Diplomacy, or Stealth—you gain a +1 trait bonus on this skill. Your family motto is “High Above.”     You deal +2 damage when attacking a flat-footed opponent while wielding a light or one-handed weapon. Your family motto is “Ours is the Right.”)",
             },
             #endregion
 
@@ -12263,10 +12263,47 @@ namespace GoDungeon.Background.Tables
                 TraitType = TraitTypeEnum.Basic,
                 Url = new Uri("https://www.d20pfsrd.com/traits/social-traits/self-reliant/"),
                 Description = "When attempting Craft checks, you take no penalty when using improvised tools. At the GM's discretion, you can attempt certain Craft checks even when no tools are available, though you take a –2 penalty.)",
-            }
+            },
             #endregion
 
             #endregion
-    	};
+
+            #region Character Race Traits            
+            
+            #region Lucky
+            new TraitViewModel
+            {
+                Name = nameof(TraitEnum.Lucky),
+                ProperName = "Lucky",
+                TraitType = TraitTypeEnum.CharacterRace,
+                Description = "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
+            },
+            #endregion
+            
+            #region Halfling Nimbleness
+            //Halfling Nimbleness. You can move through the space of any creature that is of a size larger than yours.
+            new TraitViewModel
+            {
+                Name = nameof(TraitEnum.HalflingNimbleness),
+                ProperName = "Halfling Nimbleness",
+                TraitType = TraitTypeEnum.CharacterRace,
+                Description = "You can move through the space of any creature that is of a size larger than yours.",
+            },
+            #endregion
+
+            #region Naturally Stealthy 
+            // Naturally Stealthy. You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you
+            new TraitViewModel
+            {
+                Name = nameof(TraitEnum.NaturallyStealthy),
+                ProperName = "Naturally Stealthy",
+                TraitType = TraitTypeEnum.CharacterRace,
+                Description = "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
+            },
+            #endregion
+
+            #endregion
+
+        };
     }
 }
