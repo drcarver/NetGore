@@ -1,5 +1,6 @@
-﻿namespace GoDungeon.Character.PC.Paladin;
-
-public enum PaladinBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Paladin
 {
+    public enum PaladinBackgroundEnum
+    {
+    }
 }

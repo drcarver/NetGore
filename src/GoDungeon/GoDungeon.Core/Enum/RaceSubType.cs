@@ -11,5 +11,6 @@
         Orc = 6,
         Dragonborn = 7,
         Halfling = 8,
+        HalfElf = 9,
     }
 }

@@ -1,15 +1,17 @@
-﻿namespace GoDungeon.Character.PC.Barbarian;
-
-public enum BarbarianBackgroundEnum
+﻿
+namespace GoDungeon.Character.PC.Barbarian
 {
-    Vengeance,
-    ChampionofaGod,
-    Conquest,
-    HatedFoe,
-    PersonalFlaw,
-    HatredofCivilization,
-    Persecution,
-    OneofaDyingBreed,
-    ChaosEmbraced,
-    Bloodthirsty
+    public enum BarbarianBackgroundEnum
+    {
+        Vengeance,
+        ChampionofaGod,
+        Conquest,
+        HatedFoe,
+        PersonalFlaw,
+        HatredofCivilization,
+        Persecution,
+        OneofaDyingBreed,
+        ChaosEmbraced,
+        Bloodthirsty
+    }
 }

@@ -1,8 +1,8 @@
-﻿using GoDungeon.Background.Interfaces;
-using GoDungeon.Character.Interfaces;
+﻿using GoDungeon.Character.Interfaces;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 
 using Microsoft.Extensions.Logging;
@@ -29,12 +29,7 @@ namespace GoDungeon.Character.NPC
         /// <summary>
         /// The commoner's profession
         /// </summary>
-        public IBackgroundTableEntryViewModel Profession { get; private set; }
-
-        /// <summary>
-        /// The race Service
-        /// </summary>
-        //public IRaceService RaceService { get; }
+        public IBackgroundTableEntry Profession { get; private set; }
 
         /// <summary>
         /// Initialize the class 

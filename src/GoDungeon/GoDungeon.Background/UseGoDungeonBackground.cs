@@ -5,7 +5,9 @@ using System.Reflection;
 
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables;
+using GoDungeon.Background.Tables.Dragonborn;
 using GoDungeon.Background.Tables.Halfling;
+using GoDungeon.Background.Tables.Human;
 using GoDungeon.Core.Tables;
 
 using Microsoft.Extensions.DependencyInjection;

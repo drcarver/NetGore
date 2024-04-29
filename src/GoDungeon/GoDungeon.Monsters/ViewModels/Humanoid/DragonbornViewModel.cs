@@ -1,8 +1,5 @@
-﻿using System;
-
-using GoDungeon.Background.Interfaces;
+﻿using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables.Dragonborn;
-using GoDungeon.Background.Tables.Halfling;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
@@ -28,7 +25,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <param name="services"></param>
         public DragonbornViewModel(
             ILoggerFactory loggerFactory,
-            IDagonbornHomelandTable homelandTable,
+            IDragonbornHomelandTable homelandTable,
             IUnusualHomelandTable unusualHomelandTable,
             IDragonbornParentsTable parentsTable,
             ICircumstanceofBirthTable circumstanceofBirthTable,
@@ -68,44 +65,6 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             // Speed. Your base walking speed is 25 feet.
             Speed = 25;
-        }
-
-        /// <summary>
-        /// Generate the character background
-        /// </summary>
-        private void GenerateRaceBackground(IServiceProvider services)
-        {
-            #region Siblings
-            //var siblings = (BackgroundTableEntryViewModel?) siblingsTable.GetRandomRangeEntry();
-            //if (siblings?.Name != "No siblings" && !string.IsNullOrEmpty(siblings?.Name))
-            //{
-            //    var total = new Dice(siblings.Name).Total;
-            //    for (int i = 0; i < total; i++)
-            //    {
-            //        var creatureSiblings = new Halfling();
-
-            //       // Set relative age of sibling
-            //       var relativeAge = relativeAgeofSiblingTable.GetRandomRangeEntry();
-            //        if (relativeAge?.Name == "Younger")
-            //        {
-            //            creatureSiblings.Age -= new Dice("1d4").Total;
-            //        }
-            //        if (relativeAge?.Name == "Older")
-            //        {
-            //            creatureSiblings.Age += new Dice("1d4").Total;
-            //        }
-
-            //        Siblings.Add(creatureSiblings);
-            //    }
-            //    if (Siblings.Count > 0)
-            //    {
-            //        if (!Traits.Contains(TraitEnum.KinGuardian))
-            //        {
-            //            Traits.Add(TraitEnum.KinGuardian);
-            //        }
-            //    }
-            //}
-            #endregion
         }
 
         //Table: Random Height and Weight

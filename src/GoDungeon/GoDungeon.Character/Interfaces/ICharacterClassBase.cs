@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Core.Enum;
@@ -21,33 +22,33 @@ namespace GoDungeon.Character.Interfaces
         /// <summary>
         /// Armor Proficiency
         /// </summary>
-        Dictionary<EquipmentEnum, IArmorEntry> ArmorProficiency { get; }
+        ObservableCollection<IArmorEntry> ArmorProficiency { get; }
 
         /// <summary>
         /// Weapon Proficiency
         /// </summary>
-        Dictionary<EquipmentEnum, IWeaponEntry> WeaponProficiency { get; }
+        ObservableCollection<IWeaponEntry> WeaponProficiency { get; }
 
         /// <summary>
         /// Tools
         /// </summary>
-        Dictionary<EquipmentEnum, IEquipmentTableEntry> ToolProficiency { get; }
+        ObservableCollection<IEquipmentTableEntry> ToolProficiency { get; }
 
         /// <summary>
         /// Saving Throws
         /// </summary>
-        Dictionary<AbilityEnum, IAbilityBase> SavingThrows { get; }
+        ObservableCollection<AbilityEnum> SavingThrows { get; }
 
         /// <summary>
         /// Skills
         /// </summary>
-        Dictionary<SkillEnum, ISkill> Skills { get; }
+        ObservableCollection<SkillEnum> Skills { get; }
 
         /// <summary>
         /// The description of the class background.  Used to provide
         /// a background for the character selecting this class
         /// </summary>
-        IBackgroundTableEntryViewModel? Background { get; }
+        IBackgroundTableEntry? Background { get; }
 
         /// <summary>
         /// The level table for the class

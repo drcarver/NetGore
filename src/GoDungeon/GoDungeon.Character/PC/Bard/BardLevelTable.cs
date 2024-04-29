@@ -31,7 +31,7 @@ namespace GoDungeon.Character.PC.Bard
         /// </summary>
         public override void InitializeTable()
         {
-            Table = new ObservableCollection<IGameTable>
+            Table = new ObservableCollection<IGameTableEntry>
             {
                 #region 1st Level
                 //1st +2 Spellcasting, Bardic Inspiration (d6)
@@ -41,8 +41,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 2,
                     SpellsKnown = 4,
                     CantripsKnown = 2,
-                    SpellSlots = {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {2, 2, 0, 0, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.Spellcasting,
                         ClassFeatureEnum.BardicInspiration
@@ -59,8 +59,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 2,
                     CantripsKnown = 2,
                     SpellsKnown = 5,
-                    SpellSlots = {2, 3, 0, 0, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {2, 3, 0, 0, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.JackofAllTrades,
                         ClassFeatureEnum.SongofRest
@@ -76,8 +76,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 2,
                     CantripsKnown = 2,
                     SpellsKnown = 6,
-                    SpellSlots = {2, 4, 2, 0, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {2, 4, 2, 0, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.BardCollege,
                         ClassFeatureEnum.Expertise,
@@ -93,8 +93,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 2,
                     CantripsKnown = 3,
                     SpellsKnown = 7,
-                    SpellSlots = {3, 4, 3, 0, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 0, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
                     },
@@ -110,8 +110,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 3,
                     CantripsKnown = 3,
                     SpellsKnown = 8,
-                    SpellSlots = {3, 4, 3, 2, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 2, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.BardicInspiration,
                         ClassFeatureEnum.FontofInspiration,
@@ -128,8 +128,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 3,
                     CantripsKnown = 2,
                     SpellsKnown = 9,
-                    SpellSlots = {3, 4, 3, 3, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 3, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.CounterCharm,
                         ClassFeatureEnum.BardCollegeFeature,
@@ -145,8 +145,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 3,
                     CantripsKnown = 3,
                     SpellsKnown = 10,
-                    SpellSlots = {3, 4, 3, 3, 0, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 3, 0, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
                 },
@@ -160,8 +160,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 3,
                     CantripsKnown = 3,
                     SpellsKnown = 11,
-                    SpellSlots = {3, 4, 3, 3, 2, 0, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 3, 2, 0, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
                     },
@@ -176,8 +176,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 4,
                     CantripsKnown = 3,
                     SpellsKnown = 12,
-                    SpellSlots = {3, 4, 3, 3, 3, 1, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {3, 4, 3, 3, 3, 1, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.SongofRest
                     },
@@ -193,8 +193,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 4,
                     CantripsKnown = 4,
                     SpellsKnown = 14,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 0, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 0, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.BardicInspiration,
                         ClassFeatureEnum.Expertise,
@@ -211,8 +211,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 4,
                     CantripsKnown = 4,
                     SpellsKnown = 15,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
                 },
@@ -226,8 +226,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 4,
                     CantripsKnown = 4,
                     SpellsKnown = 15,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 0, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
                     },
@@ -242,8 +242,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 5,
                     CantripsKnown = 4,
                     SpellsKnown = 16,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.SongofRest
                     },
@@ -259,8 +259,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 5,
                     CantripsKnown = 4,
                     SpellsKnown = 18,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 1, 0, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.MagicalSecrets,
                         ClassFeatureEnum.BardCollegeFeature
@@ -276,8 +276,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 5,
                     CantripsKnown = 4,
                     SpellsKnown = 19,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.BardicInspiration
                     },
@@ -292,8 +292,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 5,
                     CantripsKnown = 4,
                     SpellsKnown = 19,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 1, 1, 0},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
                     },
@@ -308,8 +308,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 6,
                     CantripsKnown = 4,
                     SpellsKnown = 20,
-                    SpellSlots = {4, 4, 3, 3, 3, 2, 1, 1, 1, 1},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 2, 1, 1, 1, 1},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.SongofRest
                     },
@@ -324,8 +324,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 6,
                     CantripsKnown = 4,
                     SpellsKnown = 22,
-                    SpellSlots = {4, 4, 3, 3, 3, 3, 1, 1, 1, 1},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 3, 1, 1, 1, 1},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.MagicalSecrets
                     },
@@ -341,8 +341,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 6,
                     CantripsKnown = 4,
                     SpellsKnown = 22,
-                    SpellSlots = {4, 4, 3, 3, 3, 3, 2, 1, 1, 1},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 3, 2, 1, 1, 1},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
                     },
@@ -358,8 +358,8 @@ namespace GoDungeon.Character.PC.Bard
                     BaseProficiency = 6,
                     CantripsKnown = 4,
                     SpellsKnown = 22,
-                    SpellSlots = {4, 4, 3, 3, 3, 3, 2, 2, 1, 1},
-                    ClassFeatures =
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 3, 2, 2, 1, 1},
+                    ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.SuperiorInspiration
                     },

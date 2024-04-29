@@ -1,5 +1,6 @@
-﻿namespace GoDungeon.Character.PC.Ranger;
-
-public enum RangerBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Ranger
 {
+    public enum RangerBackgroundEnum
+    {
+    }
 }

@@ -45,7 +45,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 1,
                     BaseProficiency = 2,
                     CantripsKnown = 3,
-                    SpellSlots = [3, 2, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {3, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.Spellcasting,
@@ -62,7 +62,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 2,
                     BaseProficiency = 2,
                     CantripsKnown = 3,
-                    SpellSlots = [3, 3, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {3, 3, 0, 0, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.ChannelDivinity,
@@ -78,7 +78,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 3,
                     BaseProficiency = 2,
                     CantripsKnown = 3,
-                    SpellSlots = [3, 4, 2, 0, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {3, 4, 2, 0, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
@@ -92,7 +92,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 4,
                     BaseProficiency = 2,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 0, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 0, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
@@ -107,7 +107,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 5,
                     BaseProficiency = 3,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 2, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 2, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DestroyUndead,
@@ -123,7 +123,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 6,
                     BaseProficiency = 4,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 3, 0, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 3, 0, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.ChannelDivinity,
@@ -139,7 +139,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 7,
                     BaseProficiency = 3,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 3, 1, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 3, 1, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
@@ -154,7 +154,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 8,
                     BaseProficiency = 3,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 3, 2, 0, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 3, 2, 0, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement,
@@ -171,7 +171,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 8,
                     BaseProficiency = 4,
                     CantripsKnown = 4,
-                    SpellSlots = [4, 4, 3, 3, 3, 1, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {4, 4, 3, 3, 3, 1, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.SongofRest
@@ -186,7 +186,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 10,
                     BaseProficiency = 4,
                     CantripsKnown = 4,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 0, 0, 0, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 0, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DivineIntervention,
@@ -201,7 +201,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 11,
                     BaseProficiency = 4,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DestroyUndead,
@@ -216,7 +216,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 12,
                     BaseProficiency = 4,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 0, 0, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 0, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
@@ -231,7 +231,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 13,
                     BaseProficiency = 5,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 1, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
@@ -245,7 +245,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 14,
                     BaseProficiency = 5,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 0, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 1, 0, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DestroyUndead,
@@ -260,7 +260,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 15,
                     BaseProficiency = 5,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 1, 1, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                     },
@@ -274,7 +274,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 16,
                     BaseProficiency = 5,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 0 ],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 1, 1, 0 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
@@ -290,7 +290,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 17,
                     BaseProficiency = 6,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 2, 1, 1, 1, 1],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 2, 1, 1, 1, 1 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DestroyUndead,
@@ -306,7 +306,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 18,
                     BaseProficiency = 6,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 3, 1, 1, 1, 1],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 3, 1, 1, 1, 1 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.ChannelDivinity
@@ -321,7 +321,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 19,
                     BaseProficiency = 6,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 3, 2, 1, 1, 1],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 3, 2, 1, 1, 1 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.AbilityScoreImprovement
@@ -337,7 +337,7 @@ namespace GoDungeon.Character.PC.Cleric
                     Level = 20,
                     BaseProficiency = 6,
                     CantripsKnown = 5,
-                    SpellSlots = [5, 4, 3, 3, 3, 3, 2, 2, 1, 1],
+                    SpellSlots = new int[] {5, 4, 3, 3, 3, 3, 2, 2, 1, 1 },
                     ClassFeatures = new ObservableCollection<ClassFeatureEnum>
                     {
                         ClassFeatureEnum.DivineIntervention

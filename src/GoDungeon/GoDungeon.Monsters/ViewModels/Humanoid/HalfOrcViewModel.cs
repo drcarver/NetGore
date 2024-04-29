@@ -36,7 +36,12 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <param name="creature"></param>
         public void Initialize()
         {
+            //Type: Half - orcs are Humanoid creatures
+            //with both the human and orc subtypes.
             Race = RaceEnum.HalfOrc;
+            RaceType = RaceType.Humanoid;
+            RaceSubType.Add(RaceSubTypeEnum.Human);
+            RaceSubType.Add(RaceSubTypeEnum.Orc);
 
             //Ability Score Modifiers: Half - orc
             //characters gain a + 2 bonus to Strength
@@ -54,12 +59,6 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //speed of 30 feet.
             Speed = 30;
 
-            //Type: Half - orcs are Humanoid creatures
-            //with both the human and orc subtypes.
-            RaceType = RaceType.Humanoid;
-            RaceSubType.Add(RaceSubTypeEnum.Human);
-            RaceSubType.Add(RaceSubTypeEnum.Orc);
-
             //Languages: Half - orcs begin play speaking
             //Common and Orc. Half - orcs with high
             //Intelligence scores can choose from the
@@ -69,235 +68,6 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             Languages.Add(LanguageEnum.Orc);
         }
 
-        //Table: Half-Orc Homeland
-        //d%	Result
-        //01–25	Subterranean You gain access to either the Scrapper race trait or the Surface Stranger regional trait.
-        //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-        //61–75	Raised in a Human Homeland.Roll on Table: Human Homeland.
-        //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-        //91–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
-        /// <summary>
-        /// The homeland table
-        /// </summary>
-        private static RandomTable HomelandTable { get; set; } = new RandomTable
-        {
-            DiceSides = 100,
-            Table = new ObservableCollection<IGameTableEntry>
-            {
-                #region "Subterranean"
-                //01–25	Subterranean You gain access to
-                //either the Scrapper race trait or the
-                //Surface Stranger regional trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,25),
-                    Name = "Subterranean",
-                    Description =
-                        "You gain access to either the " +
-                        "Scrapper race trait or the " +
-                        "Surface Stranger regional trait.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.Scrapper,
-                        TraitEnum.SurfaceStranger,
-                    },
-                },
-                #endregion
-
-                #region Raised in a Human Homeland
-                // 61–75	Raised in a Human Homeland.	Roll on Table: Human Homeland.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(61,75),
-                    Name = "Raised in a Human Homeland",
-                    Description = "Roll on Table: Human Homeland",
-                    //AlternateTable = Human.HomelandTable
-                },
-                #endregion
-
-                #region "Orc Settlement"
-                //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(26,60),
-                    Name = "Orc Settlement",
-                    Description =
-                        "You gain access to the Scrapper race trait.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.Scrapper,
-                    },
-                },
-                #endregion
-
-                #region "No True Homeland"
-                //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(76,90),
-                    Name = "No True Homeland",
-                    Description =
-                        "You have lived a life on the run " +
-                        "and gain access to the Outcast " +
-                        "race trait.",
-                    Traits = new ObservableCollection<TraitEnum> 
-                    {
-                        TraitEnum.Outcast,
-                    },
-                },
-                #endregion
-                        
-                #region "Unusual Homeland."
-                //91–100 Unusual Homeland.	Roll on Table:
-                //Unusual Homeland.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(91,100),
-                    Name = "Unusual Homeland",
-                },
-                #endregion
-            },
-        };
-
-        //Table: Half-Orc Parents
-        //d%	Result
-        //01–10	Both of your parents are alive.
-        //11–35	Only your father is alive.
-        //36–60	Only your mother is alive.
-        //61–100	Both of your parents are dead. You gain access to the Orphaned social trait.
-        /// <summary>
-        /// The parents table
-        /// </summary>
-        private static RandomTable ParentsTable { get; set; } = new()
-        {
-            DiceSides = 100,
-            Table =
-            [
-                #region "Both"
-                //01–10	Both of your parents are alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,10),
-                    Name = "Both Alive",
-                    Description = "Both of your parents are alive.",
-                },
-                #endregion
-
-                #region "Father Only"
-                //11–35	Only your father is alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(11,35),
-                    Name = "Father Only",
-                    Description = "Only your father is alive.",
-                },
-                #endregion
-
-                #region "Mother Only"
-                //36–60	Only your mother is alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(36,60),
-                    Name = "Mother Only",
-                    Description = "Only your mother is alive.",
-                },
-                #endregion
-
-                #region "Both Dead"
-                //61–100 Both of your parents are dead.
-                //You gain access to the Orphaned social
-                //trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(61,100),
-                    Name = "Both Dead",
-                    Description =
-                        "Both of your parents are dead. " +
-                        "You gain access to the Orphaned " +
-                        "social trait.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.Orphaned,
-                    },
-                },
-                #endregion
-            ],
-        };
-
-        //Table: Half-Orc Siblings
-        //d%	Result
-        //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
-        //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-        //71–80	One half-orc sibling.
-        //81–100	No siblings.
-        /// <summary>
-        /// The siblings table
-        /// </summary>
-        private static RandomTable SiblingsTable { get; set; } = new()
-        {
-            DiceSides = 100,
-            Table =
-            [
-                #region "1d6+1"
-                //01–60	1d6+1 orc siblings.You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,60),
-                    Name = "1d6+1",
-                    Description =
-                        "1d6+1 orc siblings.You gain access " +
-                        "to the Kin Guardian combat trait.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.KinGuardian,
-                    },
-                },
-                #endregion
-
-                #region "1d4"
-                //61–70	1d4 human siblings. With two or more siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(61,70),
-                    Name = "1d4",
-                    Description =
-                        "One half-elf sibling. You gain " +
-                        "access to the Kin Bond magic " +
-                        "trait.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.KinBond,
-                    },
-                },
-                #endregion
-
-                #region "1d1"
-                //71–80	One half-orc sibling.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(71,80),
-                    Name = "1d1",
-                    Description =
-                        "One half-orc sibling.",
-                    Traits = new ObservableCollection<TraitEnum>
-                    {
-                        TraitEnum.KinBond,
-                    },
-                },
-                #endregion
-
-                #region "No siblings"
-                //81–100	No siblings.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(81,100),
-                    Name = "No siblings",
-                    Description = "No siblings",
-                },
-                #endregion
-            ],
-        };
-
         //Table: Random Height and Weight
         //Gender    Base Height    Height Modifier Base Weight Weight Modifier
         //Male	    4 ft. 10 in.	+2d12 in.       150 lbs.    +(2d12×7 lbs.)
@@ -306,7 +76,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// The Height
         /// </summary>
         /// <param name="creature">The player character</param>
-        private void SetHeightAndWeight()
+        public override void SetHeightAndWeight()
         {
             if (Gender == GenderEnum.Male)
             {

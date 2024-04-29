@@ -10,7 +10,7 @@ namespace GoDungeon.Core.Tables
     /// <summary>
     /// The gender table.  
     /// </summary>
-    public class SpellAbilityModifierTable : GameTable, ISpellAbilityModifierTable
+    public class SpellAbilityModifierTable : AbilityModifierTable, ISpellAbilityModifierTable
     {
         /// <summary>
         /// Constructor

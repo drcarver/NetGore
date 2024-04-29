@@ -20,105 +20,105 @@
 #endregion
 
 using GoDungeon.Background.Interfaces;
-using GoDungeon.Character.Interfaces;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 
-namespace GoDungeon.Character.Services;
-
-public class VitalStatisticsService : IVitalStatisticsService
+namespace GoDungeon.Character.Services
 {
-    /// <summary>
-    /// Convert feet and inches to inches
-    /// </summary>
-    /// <param name="feet">The height in feet</param>
-    /// <param name="inches">The additional inches</param>
-    /// <returns>The height in inches only</returns>
-    public int CalculateHeightInInches(int feet, int inches)
+    public class VitalStatisticsService : IVitalStatisticsService
     {
-        return feet * 12 + inches;
-    }
-
-    /// <summary>
-    /// Convert inches to feet and inches
-    /// </summary>
-    /// <param name="inches">The height in inches</param>
-    /// <returns>The string with the height in feet and inches.</returns>
-    public void ConvertInchesToFeetAndInches(int totalInches, ref int feet, ref int inches)
-    {
-        feet = totalInches / 12;
-        var feet2 = feet * 12;
-        inches = totalInches - feet2;
-    }
-
-    /// <summary>
-    /// Compute the height and weight for a creature;
-    /// </summary>
-    /// <param name="feet">Starting height in feet</param>
-    /// <param name="inches">Starting height in inches</param>
-    /// <param name="startingweight">Starting weight in lbs.</param>
-    /// <param name="additionalHeightDice">Additional height</param>
-    /// <param name="additionalWeightDie">Additional weight</param>
-    public void HeightAndWeight(
-        ref int feet,
-        ref int inches,
-        ref int Weight,
-        string additionalHeightDice,
-        string additionalWeightDice,
-        int weightMultiplier = 1)
-    {
-        var totalInches = CalculateHeightInInches(feet, inches)
-            + new Dice(additionalHeightDice).Total;
-        ConvertInchesToFeetAndInches(totalInches, ref feet, ref inches);
-
-        Weight += new Dice(additionalWeightDice).Total *
-            weightMultiplier;
-    }
-
-    /// <summary>
-    /// Calculate the age of a creature
-    /// </summary>
-    /// <param name="characterClass">The character class</param>
-    /// <param name="StartingAge">The starting age</param>
-    /// <param name="IntuitiveAgeDice">Dice for intuitive classes</param>
-    /// <param name="SelfTaughtAgeDice">Dice for self-taught</param>
-    /// <param name="TrainedAgeDice">Dice for trained</param>
-    /// <returns></returns>
-    public int CalculateCharacterAge(
-        ClassEnum characterClass,
-        int StartingAge,
-        string IntuitiveAgeDice,
-        string SelfTaughtAgeDice,
-        string TrainedAgeDice)
-    {
-        // barbarians, rogues, sorcerers and warlocks.
-        if (characterClass == ClassEnum.Barbarian ||
-            characterClass == ClassEnum.Rogue ||
-            characterClass == ClassEnum.Sorcerer ||
-            characterClass == ClassEnum.Warlock)
+        /// <summary>
+        /// Convert feet and inches to inches
+        /// </summary>
+        /// <param name="feet">The height in feet</param>
+        /// <param name="inches">The additional inches</param>
+        /// <returns>The height in inches only</returns>
+        public int CalculateHeightInInches(int feet, int inches)
         {
-            var age = StartingAge + new Dice(IntuitiveAgeDice).Total;
-            return age;
+            return feet * 12 + inches;
         }
 
-        // bards, fighters, paladins and rangers.
-        if (characterClass == ClassEnum.Bard ||
-            characterClass == ClassEnum.Fighter ||
-            characterClass == ClassEnum.Paladin ||
-            characterClass == ClassEnum.Ranger)
+        /// <summary>
+        /// Convert inches to feet and inches
+        /// </summary>
+        /// <param name="inches">The height in inches</param>
+        /// <returns>The string with the height in feet and inches.</returns>
+        public void ConvertInchesToFeetAndInches(int totalInches, ref int feet, ref int inches)
         {
-            return StartingAge + new Dice(SelfTaughtAgeDice).Total;
+            feet = totalInches / 12;
+            var feet2 = feet * 12;
+            inches = totalInches - feet2;
         }
 
-        // clerics, druids, monks, and wizards.
-        if (characterClass == ClassEnum.Cleric ||
-            characterClass == ClassEnum.Druid ||
-            characterClass == ClassEnum.Monk ||
-            characterClass == ClassEnum.Wizard)
+        /// <summary>
+        /// Compute the height and weight for a creature;
+        /// </summary>
+        /// <param name="feet">Starting height in feet</param>
+        /// <param name="inches">Starting height in inches</param>
+        /// <param name="startingweight">Starting weight in lbs.</param>
+        /// <param name="additionalHeightDice">Additional height</param>
+        /// <param name="additionalWeightDie">Additional weight</param>
+        public void HeightAndWeight(
+            ref int feet,
+            ref int inches,
+            ref int Weight,
+            string additionalHeightDice,
+            string additionalWeightDice,
+            int weightMultiplier = 1)
         {
-            return StartingAge + new Dice(TrainedAgeDice).Total;
+            var totalInches = CalculateHeightInInches(feet, inches)
+                + new Dice(additionalHeightDice).Total;
+            ConvertInchesToFeetAndInches(totalInches, ref feet, ref inches);
+
+            Weight += new Dice(additionalWeightDice).Total *
+                weightMultiplier;
         }
 
-        return StartingAge;
+        /// <summary>
+        /// Calculate the age of a creature
+        /// </summary>
+        /// <param name="characterClass">The character class</param>
+        /// <param name="StartingAge">The starting age</param>
+        /// <param name="IntuitiveAgeDice">Dice for intuitive classes</param>
+        /// <param name="SelfTaughtAgeDice">Dice for self-taught</param>
+        /// <param name="TrainedAgeDice">Dice for trained</param>
+        /// <returns></returns>
+        public int CalculateCharacterAge(
+            ClassEnum characterClass,
+            int StartingAge,
+            string IntuitiveAgeDice,
+            string SelfTaughtAgeDice,
+            string TrainedAgeDice)
+        {
+            // barbarians, rogues, sorcerers and warlocks.
+            if (characterClass == ClassEnum.Barbarian ||
+                characterClass == ClassEnum.Rogue ||
+                characterClass == ClassEnum.Sorcerer ||
+                characterClass == ClassEnum.Warlock)
+            {
+                var age = StartingAge + new Dice(IntuitiveAgeDice).Total;
+                return age;
+            }
+
+            // bards, fighters, paladins and rangers.
+            if (characterClass == ClassEnum.Bard ||
+                characterClass == ClassEnum.Fighter ||
+                characterClass == ClassEnum.Paladin ||
+                characterClass == ClassEnum.Ranger)
+            {
+                return StartingAge + new Dice(SelfTaughtAgeDice).Total;
+            }
+
+            // clerics, druids, monks, and wizards.
+            if (characterClass == ClassEnum.Cleric ||
+                characterClass == ClassEnum.Druid ||
+                characterClass == ClassEnum.Monk ||
+                characterClass == ClassEnum.Wizard)
+            {
+                return StartingAge + new Dice(TrainedAgeDice).Total;
+            }
+
+            return StartingAge;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace GoDungeon.Character.ViewModels
         /// The ability score prerequisite's for the class.   
         /// </summary>
         [ObservableProperty]
-        protected ObservableCollection<IClassPrerequisite> classPrerequisites = new ObservableCollection<IClassPrerequisite>();
+        public ObservableCollection<IClassPrerequisite> classPrerequisites = new ObservableCollection<IClassPrerequisite>();
 
         /// <summary>
         /// The class level

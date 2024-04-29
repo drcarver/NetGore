@@ -1,7 +1,8 @@
 ﻿using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.Character.PC.Bard;
-
-public interface IBardLevelTable : IGameTable
+namespace GoDungeon.Character.PC.Bard
 {
+    public interface IBardLevelTable : IGameTable
+    {
+    }
 }

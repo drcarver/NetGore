@@ -1,5 +1,6 @@
-﻿namespace GoDungeon.Character.PC.Warlock;
-
-public enum WarlockBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Warlock
 {
+    public enum WarlockBackgroundEnum
+    {
+    }
 }

@@ -10,7 +10,7 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// The ability score prerequisite's for the class.   
         /// </summary>
-        protected ObservableCollection<IClassPrerequisite> ClassPrerequisites { get; set; }
+        public ObservableCollection<IClassPrerequisite> ClassPrerequisites { get; set; }
 
         /// <summary>
         /// The class level

@@ -1,15 +1,16 @@
-﻿namespace GoDungeon.Character.PC.Cleric;
-
-public enum ClericBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Cleric
 {
-    Atonement,
-    Converted,
-    Devoted,
-    Healed,
-    Reborn,
-    ReligiousColony,
-    Revelation,
-    Sanctuary,
-    TakeninbytheChurch,
-    AngelicEncounter
+    public enum ClericBackgroundEnum
+    {
+        Atonement,
+        Converted,
+        Devoted,
+        Healed,
+        Reborn,
+        ReligiousColony,
+        Revelation,
+        Sanctuary,
+        TakeninbytheChurch,
+        AngelicEncounter
+    }
 }

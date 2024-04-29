@@ -1,15 +1,16 @@
-﻿namespace GoDungeon.Character.PC.Fighter;
-
-public enum FighterBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Fighter
 {
-    Adventure,
-    Conscripted,
-    Duty,
-    Gladiator,
-    JoinedTheWatch,
-    Knighted,
-    Mercenary,
-    OnTheStreet,
-    Schooled,
-    Survival
+    public enum FighterBackgroundEnum
+    {
+        Adventure,
+        Conscripted,
+        Duty,
+        Gladiator,
+        JoinedTheWatch,
+        Knighted,
+        Mercenary,
+        OnTheStreet,
+        Schooled,
+        Survival
+    }
 }
