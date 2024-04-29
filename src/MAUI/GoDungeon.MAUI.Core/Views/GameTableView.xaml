@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
+             x:Class="GoDungeon.MAUI.Core.Views.GameTableView"
+             x:DataType="viewmodel:MAUICoreTableViewModel"
+             Title="{Binding ProperName}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="75*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="Description"
+        VerticalTextAlignment="Start"
+        HorizontalOptions="Start"
+        Margin="10,10,10,10"
+        Grid.Row="0" Grid.Column="0" />
+        <Label Text="{Binding Description}"
+        VerticalTextAlignment="Start"
+        HorizontalOptions="Start"
+        Margin="10,10,10,10"
+        Grid.Row="0" Grid.Column="1" />
+
+        <syncfusion:SfDataGrid x:Name="GameTableGrid"
+            ItemsSource="{Binding Table}"
+            AutoGenerateColumnsMode="None"
+            GridLinesVisibility="Both"
+            SelectionMode="None"
+            Grid.Row="1"
+            Grid.ColumnSpan="2">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn
+                MappingName="ProperName"
+                HeaderText="Name"
+                ColumnWidthMode="Auto"/>
+                <syncfusion:DataGridTextColumn
+                MappingName="Description"
+                HeaderText="Description"
+                ColumnWidthMode="LastColumnFill" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</ContentPage>

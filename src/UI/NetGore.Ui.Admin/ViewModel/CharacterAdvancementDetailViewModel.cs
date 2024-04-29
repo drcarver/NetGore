@@ -5,7 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 
 using D20.Character.Interfaces;
 using D20.Character.Models;
-using D20.Core.Models;
+using D20.Core.Tables;
 
 namespace NetGore.UI.Admin.ViewModel;
 
