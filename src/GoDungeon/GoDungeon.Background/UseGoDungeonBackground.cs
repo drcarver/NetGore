@@ -6,8 +6,14 @@ using System.Reflection;
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables;
 using GoDungeon.Background.Tables.Dragonborn;
+using GoDungeon.Background.Tables.Dwarf;
+using GoDungeon.Background.Tables.Elf;
+using GoDungeon.Background.Tables.Gnome;
+using GoDungeon.Background.Tables.HalfElf;
 using GoDungeon.Background.Tables.Halfling;
+using GoDungeon.Background.Tables.HalfOrc;
 using GoDungeon.Background.Tables.Human;
+using GoDungeon.Background.Tables.Tiefling;
 using GoDungeon.Core.Tables;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -38,13 +44,37 @@ namespace GoDungeon.Background
         {
             //collection
             // The race tables
-            #region Halfling
+            #region Race Background Tables
+            collection.AddTransient<IDragonbornHomelandTable, DragonbornHomelandTable>();
+            collection.AddTransient<IDragonbornParentsTable, DragonbornParentsTable>();
+            collection.AddTransient<IDragonbornSiblingsTable, DragonbornSiblingsTable>();
+            collection.AddTransient<IDwarfHomelandTable, DwarfHomelandTable>();
+            collection.AddTransient<IDwarfParentsTable, DwarfParentsTable>();
+            collection.AddTransient<IDwarfSiblingsTable, DwarfSiblingsTable>();
+            collection.AddTransient<IElfHomelandTable, ElfHomelandTable>();
+            collection.AddTransient<IElfParentsTable, ElfParentsTable>();
+            collection.AddTransient<IElfSiblingsTable, ElfSiblingsTable>();
+            collection.AddTransient<IGnomeHomelandTable, GnomeHomelandTable>();
+            collection.AddTransient<IGnomeParentsTable, GnomeParentsTable>();
+            collection.AddTransient<IGnomeSiblingsTable, GnomeSiblingsTable>();
+            collection.AddTransient<IHalfElfHomelandTable, HalfElfHomelandTable>();
+            collection.AddTransient<IHalfElfParentsTable, HalfElfParentsTable>();
+            collection.AddTransient<IHalfElfSiblingsTable, HalfElfSiblingsTable>();
             collection.AddTransient<IHalflingHomelandTable, HalflingHomelandTable>();
             collection.AddTransient<IHalflingParentsTable, HalflingParentsTable>();
             collection.AddTransient<IHalflingSiblingsTable, HalflingSiblingsTable>();
+            collection.AddTransient<IHalfOrcHomelandTable, HalfOrcHomelandTable>();
+            collection.AddTransient<IHalfOrcParentsTable, HalfOrcParentsTable>();
+            collection.AddTransient<IHalfOrcSiblingsTable, HalfOrcSiblingsTable>();
+            collection.AddTransient<IHumanHomelandTable, HumanHomelandTable>();
+            collection.AddTransient<IHumanParentsTable, HumanParentsTable>();
+            collection.AddTransient<IHumanSiblingsTable, HumanSiblingsTable>();
+            collection.AddTransient<ITieflingHomelandTable, TieflingHomelandTable>();
+            collection.AddTransient<ITieflingParentsTable, TieflingParentsTable>();
+            collection.AddTransient<ITieflingSiblingsTable, TieflingSiblingsTable>();
             #endregion
 
-            // The background table
+            // The background tables
             #region Background Tables
             collection.AddTransient<IAdoptedOutsideYourRaceTable, AdoptedOutsideYourRaceTable>();
             collection.AddTransient<ICharacterDrawbackTable, CharacterDrawbackTable>();

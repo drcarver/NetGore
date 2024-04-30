@@ -42,12 +42,6 @@ namespace GoDungeon.Background.Tables.Tiefling
             TableType = TableTypeEnum.RaceTable;
         }
 
-        //Table: Half-Orc Parents
-        //d%	Result
-        //01–10	Both of your parents are alive.
-        //11–35	Only your father is alive.
-        //36–60	Only your mother is alive.
-        //61–100	Both of your parents are dead. You gain access to the Orphaned social trait.
         /// <summary>
         /// Initialize the game table.  This is a separate method so 
         /// we can create a game table for it's meta properties
@@ -60,54 +54,6 @@ namespace GoDungeon.Background.Tables.Tiefling
             {
                 Table = new ObservableCollection<IGameTableEntry>
                 {
-                    #region "Both"
-                    //01–10	Both of your parents are alive.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(01,10),
-                        Name = "Both Alive",
-                        Description = "Both of your parents are alive.",
-                    },
-                    #endregion
-
-                    #region "Father Only"
-                    //11–35	Only your father is alive.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(11,35),
-                        Name = "Father Only",
-                        Description = "Only your father is alive.",
-                    },
-                    #endregion
-
-                    #region "Mother Only"
-                    //36–60	Only your mother is alive.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(36,60),
-                        Name = "Mother Only",
-                        Description = "Only your mother is alive.",
-                    },
-                    #endregion
-
-                    #region "Both Dead"
-                    //61–100 Both of your parents are dead.
-                    //You gain access to the Orphaned social
-                    //trait.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(61,100),
-                        Name = "Both Dead",
-                        Description =
-                            "Both of your parents are dead. " +
-                            "You gain access to the Orphaned " +
-                            "social trait.",
-                        Traits = new ObservableCollection<TraitEnum>
-                        {
-                            TraitEnum.Orphaned,
-                        },
-                    },
-                    #endregion
                 };
             }
         }

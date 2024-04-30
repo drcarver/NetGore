@@ -45,13 +45,6 @@ namespace GoDungeon.Background.Tables.Tiefling
             TableType = TableTypeEnum.RaceTable;
         }
 
-        //Table: Half-Orc Homeland
-        //d%	Result
-        //01–25	Subterranean You gain access to either the Scrapper race trait or the Surface Stranger regional trait.
-        //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-        //61–75	Raised in a Human Homeland.Roll on Table: Human Homeland.
-        //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-        //91–100	Unusual Homeland.	Roll on Table: Unusual Homeland.
         /// <summary>
         /// Initialize the game table.  This is a separate method so 
         /// we can create a game table for it's meta properties
@@ -64,78 +57,6 @@ namespace GoDungeon.Background.Tables.Tiefling
             {
                 Table = new ObservableCollection<IGameTableEntry>
                 {
-                    #region "Subterranean"
-                    //01–25	Subterranean You gain access to
-                    //either the Scrapper race trait or the
-                    //Surface Stranger regional trait.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(01,25),
-                        Name = "Subterranean",
-                        Description =
-                            "You gain access to either the " +
-                            "Scrapper race trait or the " +
-                            "Surface Stranger regional trait.",
-                        Traits = new ObservableCollection<TraitEnum>
-                        {
-                            TraitEnum.Scrapper,
-                            TraitEnum.SurfaceStranger,
-                        },
-                    },
-                    #endregion
-
-                    #region Raised in a Human Homeland
-                    // 61–75	Raised in a Human Homeland.	Roll on Table: Human Homeland.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(61,75),
-                        Name = "Raised in a Human Homeland",
-                        Description = "Roll on Table: Human Homeland",
-                        //AlternateTable = Human.HomelandTable
-                    },
-                    #endregion
-
-                    #region "Orc Settlement"
-                    //26–60	Orc Settlement  You gain access to the Scrapper race trait.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(26,60),
-                        Name = "Orc Settlement",
-                        Description =
-                            "You gain access to the Scrapper race trait.",
-                        Traits = new ObservableCollection<TraitEnum>
-                        {
-                            TraitEnum.Scrapper,
-                        },
-                    },
-                    #endregion
-
-                    #region "No True Homeland"
-                    //76–90	No True Homeland You have lived a life on the run and gain access to the Outcast race trait.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(76,90),
-                        Name = "No True Homeland",
-                        Description =
-                            "You have lived a life on the run " +
-                            "and gain access to the Outcast " +
-                            "race trait.",
-                        Traits = new ObservableCollection<TraitEnum>
-                        {
-                            TraitEnum.Outcast,
-                        },
-                    },
-                    #endregion
-                        
-                    #region "Unusual Homeland."
-                    //91–100 Unusual Homeland.	Roll on Table:
-                    //Unusual Homeland.
-                    new BackgroundTableEntryViewModel
-                    {
-                        Range = new Range(91,100),
-                        Name = "Unusual Homeland",
-                    },
-                    #endregion
                 };
             }
         }

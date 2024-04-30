@@ -29,15 +29,15 @@ using GoDungeon.Core.Tables;
 
 namespace GoDungeon.Background.Tables.Dragonborn
 {
-    public class DragonBornSiblingsTable : RandomTable, IDragonbornSiblingsTable
+    public class DragonbornSiblingsTable : RandomTable, IDragonbornSiblingsTable
     {
         /// <summary>
         /// The siblings table
         /// </summary>
-        public DragonBornSiblingsTable()
+        public DragonbornSiblingsTable()
         {
             DiceSides = 100;
-            Name = nameof(DragonBornSiblingsTable);
+            Name = nameof(DragonbornSiblingsTable);
             ProperName = "Dragonborn Siblings Table";
             TableType = TableTypeEnum.RaceTable;
         }
