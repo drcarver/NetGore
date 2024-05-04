@@ -1,13 +1,15 @@
-﻿using GoDungeon.MAUI.ViewModels;
+﻿using GoDungeon.MAUI.Interfaces;
+using GoDungeon.MAUI.ViewModels;
 
 namespace GoDungeon.MAUI.Views;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage(MainPageViewModel vm)
+    public MainPage(IMainMenu vm)
     {
         InitializeComponent();
 
         BindingContext = vm;
+        vm.InitializeTable();
     }
 }

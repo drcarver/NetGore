@@ -19,7 +19,7 @@ namespace GoDungeon.Equipment.Tables
         {
             Name = nameof(ContainerCapacityTable);
             ProperName = "Container Capacity Table";
-            TableType = TableTypeEnum.GoodsTable;
+            TableType = TableTypeEnum.EquipmentTable;
             Description = "Container Capacity";
         }
 

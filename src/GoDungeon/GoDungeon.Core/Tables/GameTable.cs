@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -35,6 +36,12 @@ namespace GoDungeon.Core.Tables
         [ObservableProperty]
         private ObservableCollection<IGameTableEntry>? table;
 
+        /// <summary>
+        /// The selected table entry
+        /// </summary>
+        [ObservableProperty]
+        private IGameTableEntry? selectedItem;
+        
         /// <summary>
         /// Get a random entry from the table 
         /// </summary>

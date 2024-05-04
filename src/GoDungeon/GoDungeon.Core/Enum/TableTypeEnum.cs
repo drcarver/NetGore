@@ -6,7 +6,7 @@
         CharacterTable,
         ConflictTable,
         CoreTable,
-        GoodsTable,
+        EquipmentTable,
         MagicItemTable,
         MonsterTable,
         PantheonTable,

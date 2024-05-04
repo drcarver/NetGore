@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
+using CommunityToolkit.Mvvm.ComponentModel;
+
 using GoDungeon.Core.Enum;
 
 namespace GoDungeon.Core.Interfaces
@@ -20,6 +22,11 @@ namespace GoDungeon.Core.Interfaces
         /// The table itself
         /// </summary>
         ObservableCollection<IGameTableEntry>? Table { get; set; }
+
+        /// <summary>
+        /// The selected table entry
+        /// </summary>
+        IGameTableEntry? SelectedItem { get; set; }
 
         /// <summary>
         /// Initialize the game table.  This is a separate method so 

@@ -19,7 +19,7 @@ namespace GoDungeon.Equipment.Tables
         {
             Name = nameof(EquipmentTable);
             ProperName = "Equipment Table";
-            TableType = TableTypeEnum.GoodsTable;
+            TableType = TableTypeEnum.EquipmentTable;
             Description = "Equipment including armor and weapons";
         }
 

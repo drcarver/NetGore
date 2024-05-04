@@ -29,22 +29,7 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// The actual game table
         /// </summary>
-        private IGameTable? GameTable { get; }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public GameNavigationEntryViewModel(
-            IGameTable? gameTable)
-        {
-            if (gameTable != null)
-            {
-                Name = gameTable.Name;
-                ProperName = gameTable.ProperName;
-                Description = gameTable.Description;
-                Route = $"{gameTable.Name}View";
-                GameTable = gameTable;
-            }
-        }
+        [ObservableProperty]
+        private IGameTable? gameTable;
     }
 }

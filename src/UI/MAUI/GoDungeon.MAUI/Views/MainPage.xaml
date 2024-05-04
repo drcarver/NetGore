@@ -3,46 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
              xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.ViewModels"
-             xmlns:model="clr-namespace:GoDungeon.Core.Models;assembly=GoDungeon.Core"
+             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
+             xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="viewmodel:MainPageViewModel"
-             Title="{Binding Name}">
+             x:DataType="tables:MainMenuTable"
+             Title="{Binding ProperName}">
 
-    <!--Margin="Left,Top,Right,Bottom"-->
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"  />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <CollectionView ItemsSource="{Binding Table}"
+                    SelectedItem="{Binding SelectedItem}"
+                    SelectionMode="Single"
+                    SelectionChangedCommand="{Binding SelectionChangedCommand}"
+                    x:DataType="tables:MainMenuTable">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
+                <HorizontalStackLayout>
+                    <Label Text="{Binding Description}" />
+                </HorizontalStackLayout> 
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 
-        <Label Text="{Binding Description}" 
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Margin="0,30,0,20"
-               Grid.Row="0" />
-
-        <!--<syncfusion:SfDataGrid x:Name="GameTableGrid"
-                ItemsSource="{Binding Items}"
-                HeaderRowHeight="0"
-                AutoGenerateColumnsMode="None"
-                GridLinesVisibility="Both"
-                SortingMode="Single"
-                SelectionMode="Single"
-                Grid.Row="1"
-                SelectedRow="{Binding SelectedItem}" >
-            <syncfusion:SfDataGrid.SortColumnDescriptions>
-                <syncfusion:SortColumnDescription ColumnName="Name" SortDirection="Ascending" />
-            </syncfusion:SfDataGrid.SortColumnDescriptions>
-            <syncfusion:SfDataGrid.Behaviors>
-                <toolkit:EventToCommandBehavior
-                    EventName="SelectionChanged"
-                    Command="{Binding TapCommand}"/>
-            </syncfusion:SfDataGrid.Behaviors>
-            <syncfusion:SfDataGrid.Columns>
-                <syncfusion:DataGridTextColumn
-                    MappingName="ProperName"
-                    ColumnWidthMode="LastColumnFill"/>
-            </syncfusion:SfDataGrid.Columns>
-        </syncfusion:SfDataGrid>-->
-   </Grid>
+    <!--Margin="Left,Top,Right,Bottom" -->
+    <!--<TableView Intent="Menu">
+        <TableRoot>
+            <ViewCell>
+                <CollectionView ItemsSource="{Binding Table}"
+                                SelectedItem="{Binding SelectedItem}"
+                                SelectionMode="Single"
+                                SelectionChangedCommand="{Binding SelectionChangedCommand}"
+                                x:DataType="tables:MainMenuTable">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
+                            <TextCell Text="{Binding ProperName}"
+                                        Detail="{Binding Description}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ViewCell>
+        </TableRoot>
+    </TableView>-->
 </ContentPage>

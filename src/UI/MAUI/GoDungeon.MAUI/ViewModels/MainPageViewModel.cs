@@ -1,9 +1,12 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
+
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
+using GoDungeon.MAUI.Interfaces;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.Tables;
 
@@ -11,11 +14,6 @@ namespace GoDungeon.MAUI.ViewModels;
 
 public partial class MainPageViewModel : ObservableObject
 {
-    /// <summary>
-    /// The list of tables in the DI
-    /// </summary>
-    private List<INamedTable> _tables = [];
-
     /// <summary>
     /// The name of the table
     /// </summary>
@@ -27,12 +25,6 @@ public partial class MainPageViewModel : ObservableObject
     /// </summary>
     [ObservableProperty]
     string description;
-
-    /// <summary>
-    /// The Navigation Table list
-    /// </summary>
-    [ObservableProperty]
-    List<GameNavigationEntryViewModel> items = [];
 
     /// <summary>
     /// The currently selected row
@@ -56,13 +48,13 @@ public partial class MainPageViewModel : ObservableObject
     /// Constructor
     /// </summary>
     /// <param name="navigationTable">The navigation table</param>
-    public MainPageViewModel(IGameTable navigationTable, 
+    public MainPageViewModel(
+        IMainMenu navigationTable, 
         IServiceProvider services)
     {
         navigationTable.InitializeTable();
         Name = navigationTable.ProperName ?? navigationTable.Name;
         Description = navigationTable.Description ?? navigationTable.Name;
-        //Items = navigationTable.Table.Cast<GameNavigationEntryViewModel>().ToList();
 
         IHumanoidRaceTable? raceTable = services.GetService<IHumanoidRaceTable>();
         if (raceTable == null)

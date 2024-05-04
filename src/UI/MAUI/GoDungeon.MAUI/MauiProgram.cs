@@ -6,6 +6,8 @@ using GoDungeon.Core;
 using GoDungeon.Equipment;
 using GoDungeon.Gaming;
 using GoDungeon.MagicItems;
+using GoDungeon.MAUI.Interfaces;
+using GoDungeon.MAUI.Tables;
 using GoDungeon.MAUI.ViewModels;
 using GoDungeon.MAUI.Views;
 using GoDungeon.Monsters;
@@ -38,7 +40,7 @@ public static class MauiProgram
 
         // Services
         builder.Services
-            //.AddSingleton<IMainNavigationTable, MainNavigationTable>()
+            .AddSingleton<IMainMenu, MainMenuTable>()
             .AddSingletonWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
