@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoDungeon.MAUI.Core.Views.SpellAbilityModifierTablePage"
+             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
+             xmlns:tables="clr-namespace:GoDungeon.Core.Tables;assembly=GoDungeon.Core"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="tables:AlignmentTable"
+             Title="{Binding ProperName}">
+
+    <CollectionView ItemsSource="{Binding Table}"
+                    BackgroundColor="PapayaWhip"
+                    SelectionMode="None">
+        <CollectionView.Header>
+            <Grid ColumnSpacing="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Ability Score" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Grid.Column="0" />
+                <Label Text="Modifier" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Grid.Column="1" />
+                <Label Text="Bonus Spells per Day(by Spell Level)" 
+                       HorizontalOptions="Center" Grid.ColumnSpan="10"
+                       Grid.Column="2"/>
+                <Label Text="0th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="2" />
+                <Label Text="1st" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="3" />
+                <Label Text="2nd" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="4" />
+                <Label Text="3rd" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="5" />
+                <Label Text="4th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="6" />
+                <Label Text="5th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="7" />
+                <Label Text="6th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="8" />
+                <Label Text="7th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="9" />
+                <Label Text="8th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="10" />
+                <Label Text="9th" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" Grid.Column="11" />
+            </Grid>
+        </CollectionView.Header>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="coreviewmodel:AbilityBonusSpellEntryViewModel">
+                <Grid ColumnSpacing="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Score}" Margin="10,10,0,0" 
+                           Grid.Column="0" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Modifier}" Margin="10,10,0,0"
+                           Grid.Column="1" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[0]}" Margin="10,10,0,0"
+                           Grid.Column="2" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[1]}" Margin="10,10,0,0"
+                           Grid.Column="3" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[2]}" Margin="10,10,0,0"
+                           Grid.Column="4" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[3]}" Margin="10,10,0,0"
+                           Grid.Column="4" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[4]}" Margin="10,10,0,0"
+                           Grid.Column="5" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[5]}" Margin="10,10,0,0"
+                           Grid.Column="6" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[6]}" Margin="10,10,0,0"
+                           Grid.Column="7" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[7]}" Margin="10,10,0,0"
+                           Grid.Column="8" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[8]}" Margin="10,10,0,0"
+                           Grid.Column="9" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[9]}" Margin="10,10,0,0"
+                           Grid.Column="10" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding BonusSpells[10]}" Margin="10,10,0,0"
+                           Grid.Column="11" HorizontalTextAlignment="Start"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

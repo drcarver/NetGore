@@ -44,7 +44,7 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
                     Name = nameof(AlignmentTable),
                     ProperName = "Acrobatics Modifier Table",
                     Description = "Acrobatics Modifier",
-                    TableType = TableTypeEnum.CharacterTable,
+                    TableType = TableTypeEnum.CoreTable,
                     Route = nameof(AcrobaticsModifierTablePage)
                 },
                 #endregion
@@ -55,8 +55,19 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
                     Name = nameof(AlignmentTable),
                     ProperName = "Alignment Table",
                     Description = "Creature Alignment",
-                    TableType = TableTypeEnum.CharacterTable,
+                    TableType = TableTypeEnum.CoreTable,
                     Route = nameof(AlignmentTablePage)
+                },
+                #endregion
+
+                #region Spell Ability Modifier Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(SpellAbilityModifierTable),
+                    ProperName = "Spell Ability Modifier Table",
+                    Description = "Spell Ability Modifier Table",
+                    TableType = TableTypeEnum.CoreTable,
+                    Route = nameof(SpellAbilityModifierTablePage)
                 },
                 #endregion
             ];
