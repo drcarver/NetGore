@@ -37,6 +37,28 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
                     Route = nameof(AbilityModifierTablePage)
                 },
                 #endregion
+
+                #region Ability Modifier Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(AlignmentTable),
+                    ProperName = "Acrobatics Modifier Table",
+                    Description = "Acrobatics Modifier",
+                    TableType = TableTypeEnum.CharacterTable,
+                    Route = nameof(AcrobaticsModifierTablePage)
+                },
+                #endregion
+
+                #region Alignment Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(AlignmentTable),
+                    ProperName = "Alignment Table",
+                    Description = "Creature Alignment",
+                    TableType = TableTypeEnum.CharacterTable,
+                    Route = nameof(AlignmentTablePage)
+                },
+                #endregion
             ];
         }
     }

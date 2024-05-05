@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoDungeon.MAUI.Core.Views.AbilityModifierTablePage"
+             x:Class="GoDungeon.MAUI.Core.Views.AcrobaticsModifierTablePage"
              xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
              xmlns:tables="clr-namespace:GoDungeon.Core.Tables;assembly=GoDungeon.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -13,24 +13,24 @@
         <CollectionView.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="400" />
+                    <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Ability Score" HorizontalOptions="CenterAndExpand" Grid.Column="0" />
-                <Label Text="Modifier" HorizontalOptions="Start" Grid.Column="1" />
+                <Label Text="Surface" HorizontalOptions="Start" Grid.Column="0" />
+                <Label Text="Difficulty Check Modifier" HorizontalOptions="Start" Grid.Column="1" />
             </Grid>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="coreviewmodel:AbilityBonusEntryViewModel">
+            <DataTemplate x:DataType="coreviewmodel:AcrobaticsModifierViewModel">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="400" />
+                        <ColumnDefinition Width="200" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="{Binding Score}" Margin="10,10,0,0" 
+                    <Label Text="{Binding ProperName}" Margin="10,10,0,0" 
                            Grid.Column="0" HorizontalTextAlignment="Start"/>
-                    <Label Text="{Binding Modifier}" Margin="10,10,0,0"
-                           Grid.Column="1" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding  DifficultyCheckModifier}" Margin="10,10,0,0"
+                           Grid.Column="1" HorizontalTextAlignment="Center"/>
                 </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>

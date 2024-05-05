@@ -27,7 +27,7 @@ public partial class MenuTable : GameTable, IMenuTable
     /// <returns>True if the selection can change</returns>
     protected override bool CanChangeSelection()
     {
-        return SelectedItem != null && Table != null && Table.Count > 0;
+        return SelectedItem != null && (Table != null || Table.Count == 0);
     }
 
     /// <summary>

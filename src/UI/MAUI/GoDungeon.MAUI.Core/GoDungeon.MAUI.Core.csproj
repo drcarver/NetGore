@@ -33,6 +33,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\AlignmentTablePage.xaml.cs">
+	    <DependentUpon>AlignmentTablePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\CoreMenuTablePage.xaml.cs">
 	    <DependentUpon>CoreMenuTablePage.xaml</DependentUpon>
 	  </Compile>
@@ -40,6 +43,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\AbilityModifierTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AcrobaticsModifierTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AlignmentTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\CoreMenuTablePage.xaml">

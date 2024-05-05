@@ -42,7 +42,7 @@ namespace GoDungeon.Core.Tables
         /// </summary>
         public override void InitializeTable()
         {
-            if (Table?.Count == 0)
+            if (Table == null || Table.Count == 0)
             {
                 Table = new ObservableCollection<IGameTableEntry>
                 {
