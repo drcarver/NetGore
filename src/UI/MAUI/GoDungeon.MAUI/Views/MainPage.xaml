@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
-             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.ViewModels"
-             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
+             xmlns:coreviewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
              xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
+             xmlns:enum="clr-namespace:GoDungeon.Core.Enum;assembly=GoDungeon.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="tables:MainMenuTable"
+             x:DataType="coreviewmodel:MenuTable"
              Title="{Binding ProperName}">
 
     <CollectionView ItemsSource="{Binding Table}"
@@ -17,8 +17,8 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
                 <HorizontalStackLayout>
-                    <Label Text="{Binding Description}" />
-                </HorizontalStackLayout> 
+                    <Label Text="{Binding Description}" Margin="10,10,0,0" />
+                </HorizontalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
@@ -26,20 +26,41 @@
     <!--Margin="Left,Top,Right,Bottom" -->
     <!--<TableView Intent="Menu">
         <TableRoot>
-            <ViewCell>
-                <CollectionView ItemsSource="{Binding Table}"
-                                SelectedItem="{Binding SelectedItem}"
-                                SelectionMode="Single"
-                                SelectionChangedCommand="{Binding SelectionChangedCommand}"
-                                x:DataType="tables:MainMenuTable">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
-                            <TextCell Text="{Binding ProperName}"
-                                        Detail="{Binding Description}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </ViewCell>
+            <TableSection>
+                <ViewCell>
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
+                        <Label Text="Core Tables" Margin="10,10,0,0"
+                               Grid.Column="1" HorizontalTextAlignment="Start" />
+                        <Label Text="Player Character core tables" Margin="10,10,0,0" 
+                               Grid.Column="2" HorizontalTextAlignment="Start" />
+                    </Grid>
+                </ViewCell>
+                <ViewCell>
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
+                        <Label Text="Background Tables" Margin="10,10,0,0"
+                               Grid.Column="1" HorizontalTextAlignment="Start"/>
+                        <Label Text="Player Character background tables"  Margin="10,10,0,0" 
+                               Grid.Column="2" HorizontalTextAlignment="Start" />
+                    </Grid>
+                </ViewCell>
+                </ViewCell>
+                <TextCell
+                    Text="Core Tables"
+                    Detail="Core Tables for the game"
+                    Command="{Binding SelectedMenuCommand}" CommandParameter="CoreTable"/>
+                <TextCell
+                    Text="Background Tables"
+                    Detail="Tables for generating the Player Charcters background" />
+                <TextCell
+                    Text="Character Tables"
+                    Detail="Tables for generating the Player Charcter" />
+                <TextCell
+                    Text="Equipment Tables"
+                    Detail="Equipment you can carry" />
+                <TextCell
+                    Text="Gaming Tables"
+                    Detail="Encouter and Treasure tables" />
+            </TableSection>
         </TableRoot>
     </TableView>-->
 </ContentPage>

@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -63,7 +63,7 @@ namespace GoDungeon.Background.Tables
         //31–35	Fall of a Major Power In your early years, an old power with far-reaching influence fell into decline.This could have been an empire, a major organization or gang, or a person such as a benevolent king or evil dictator. Your early memories were founded in a world where this great power affected your region for good or ill.You gain access to the Worldly social trait.
         //36–40	Fell in with a Bad Crowd    In your youth, you ran with a brutal, evil, or sadistic crowd.You might have belonged to a gang, a thieves’ guild, or some other nefarious organization.It was easy to cave in to pressure and do whatever they told you to do, and your outlook is colored by moral ambiguity. You gain access to the Child of the Streets social trait.
         //41–45	First Kill  You’ve had blood on your hands since your youth, when you first took the life of another creature.Whether this act repulsed you or gave you pleasure, it was a formative experience.You gain access to the Killer combat trait and the Innocent Blood story feat.
-        //46–50	Troubled First Love Your first love was everything you imagined it would be.That is, until you were separated from your beloved.This may have been the result of distance, changing perspectives, death, or differences in class or family.Some have said this made you jaded—you think it has granted you insight on how the world really works.You gain access to the Worldly social trait and you roll a d12 instead of a d20 on Table: Romantic Relationships.
+        //46–50	Troubled First Love Your first love was everything you imagined it would be.That is, until you were separated from your beloved.This may have been the result of distance, changing perspectives, death, or differences in class or family.Some have said this made you jaded—you think it has granted you insight on how the world really works.You gain access to the Worldly social trait and you roll a d12 instead of a GoDungeon on Table: Romantic Relationships.
         //51–55	Imprisoned Your criminal record began when you were young.You were imprisoned, punished, and possibly displayed in public as a criminal.Whether or not you committed the crime, the experience has stayed with you. You gain access to the Criminal social trait. See the Crime and Punishment section. You also gain access to the Liberator story feat.
         //56–60	Inheritance A great sum of wealth or property was bequeathed to you at an early age, providing you with extraordinary means.Daily costs of living have ceased to concern you, and you’ve learned that there is little that money cannot buy.You gain access to the Rich Parents social trait.
         //61–65	Kidnapped You were kidnapped at some point in your childhood. The kidnappers might have been pirates, slavers, thieves looking for ransom, a powerful guild seeking to blackmail your parents, a cult, and so on else. Before you were released, were ransomed, or escaped, you picked up on various aspects of the criminal underworld. You gain access to the Canter social trait and the Liberator story feat.
@@ -320,7 +320,7 @@ namespace GoDungeon.Background.Tables
                     #endregion
 
                     #region "Troubled First Love"
-                    //46–50	Troubled First Love Your first love was everything you imagined it would be.That is, until you were separated from your beloved.This may have been the result of distance, changing perspectives, death, or differences in class or family.Some have said this made you jaded—you think it has granted you insight on how the world really works.You gain access to the Worldly social trait and you roll a d12 instead of a d20 on Table: Romantic Relationships.
+                    //46–50	Troubled First Love Your first love was everything you imagined it would be.That is, until you were separated from your beloved.This may have been the result of distance, changing perspectives, death, or differences in class or family.Some have said this made you jaded—you think it has granted you insight on how the world really works.You gain access to the Worldly social trait and you roll a d12 instead of a GoDungeon on Table: Romantic Relationships.
                     new BackgroundTableEntryViewModel
                     {
                         Range = new Range(46,50),
@@ -339,7 +339,7 @@ namespace GoDungeon.Background.Tables
                             "the world really works .You gain " +
                             "access to the Worldly social trait " +
                             "and you roll a d12 instead of a " +
-                            "d20 on Table: Romantic Relationships.",
+                            "GoDungeon on Table: Romantic Relationships.",
                         Traits = new ObservableCollection<TraitEnum>
                         {
                             TraitEnum.Worldly,

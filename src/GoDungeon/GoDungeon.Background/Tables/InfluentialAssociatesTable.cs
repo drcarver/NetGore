@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -66,7 +66,7 @@ namespace GoDungeon.Background.Tables
         //11–15	The Confidante  There was a person in your life to whom you could tell anything. She knows your deepest secrets and your emotional weaknesses and vulnerabilities just as you know hers.This person could be a valuable friend and a frightening enemy, so you make sure to never divulge her secrets or give her a reason to do so with yours.You gain access to the Trustworthy social trait.
         //16–20	The Mentor  You had a mentor who taught you everything worth knowing about life. This could have been the person who taught you the heroic abilities you possess, or simply a kindred spirit who helped form your worldview. You gain access to the Mentored social trait.
         //21–25	The Mercenary   With this person, there was always a cost.No deed was done making a trade for something of equal or greater value. Whether this individual’s actions tended toward good, evil, or pure balance, he was always fair in his dealings. You respected this trait and it influenced your own philosophy.You gain access to the Mercenary social trait.
-        //26–30	The Lover   You had a romantic connection in your adolescent years, and this person deeply influenced your personality.Perhaps this was a first love, a casual partner you grew close to, or the one who got away. The experience bolstered your confidence in romantic interactions even though you often find your thoughts still straying toward that special someone from so long ago. You gain access to the Charming social trait and the True Love story feat. Roll a d12 instead of a d20 on Table: Romantic Relationships.
+        //26–30	The Lover   You had a romantic connection in your adolescent years, and this person deeply influenced your personality.Perhaps this was a first love, a casual partner you grew close to, or the one who got away. The experience bolstered your confidence in romantic interactions even though you often find your thoughts still straying toward that special someone from so long ago. You gain access to the Charming social trait and the True Love story feat. Roll a d12 instead of a GoDungeon on Table: Romantic Relationships.
         //31–35	The Fool    One of your close associates was a clown who mocked propriety and custom, instead engaging in wild and somewhat random actions from time to time.After a while, you learned that there was simple wisdom to this foolery—a careless worldview that taught you how to cast off concern.You gain access to the Unpredictable social trait.
         //36–40	The Liege Lord You became close with someone you were bound to serve, be it a minor lord or lady, master (in the case of a slave), prince or princess, king or queen.Though this person held power over you, she held you closer than a subject or servant.As a result, you’re used to dealing with and being close to power, and your name is known among the ranks of the privileged.You gain access to the Influence social trait.
         //41–45	The Relative    There is a relative you were especially close to.To you, this person was the meaning of family. He helped shepherd you into adulthood, teaching you everything you know about the world. You are bound to this person or his memory, and you strive to keep a promise, vow, or oath that you made to him.You gain access to the Oathbound faith trait.
@@ -222,7 +222,7 @@ namespace GoDungeon.Background.Tables
                     #endregion
 
                     #region "The Lover"
-                    //26–30	The Lover   You had a romantic connection in your adolescent years, and this person deeply influenced your personality.Perhaps this was a first love, a casual partner you grew close to, or the one who got away. The experience bolstered your confidence in romantic interactions even though you often find your thoughts still straying toward that special someone from so long ago. You gain access to the Charming social trait and the True Love story feat. Roll a d12 instead of a d20 on Table: Romantic Relationships.
+                    //26–30	The Lover   You had a romantic connection in your adolescent years, and this person deeply influenced your personality.Perhaps this was a first love, a casual partner you grew close to, or the one who got away. The experience bolstered your confidence in romantic interactions even though you often find your thoughts still straying toward that special someone from so long ago. You gain access to the Charming social trait and the True Love story feat. Roll a d12 instead of a GoDungeon on Table: Romantic Relationships.
                     new BackgroundTableEntryViewModel
                     {
                         Range = new Range(26,30),
@@ -245,7 +245,7 @@ namespace GoDungeon.Background.Tables
                             "gain access to the Charming " +
                             "social trait and the True Love " +
                             "story feat. Roll a d12 instead " +
-                            "of a d20 on Table: Romantic " +
+                            "of a GoDungeon on Table: Romantic " +
                             "Relationships.",
                         Traits = new ObservableCollection<TraitEnum>
                         {

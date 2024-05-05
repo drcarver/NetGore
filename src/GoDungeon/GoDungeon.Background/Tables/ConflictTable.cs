@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -37,7 +37,7 @@ namespace GoDungeon.Background.Tables
     /// the campaign as well as your character’s 
     /// starting class. First, consult with your GM; 
     /// If you can play any alignment in the campaign, 
-    /// roll a d20. If your campaign allows only nonevil 
+    /// roll a GoDungeon. If your campaign allows only nonevil 
     /// characters, roll a d12. If you are playing a 
     /// paladin or some other character who must be good, 
     /// roll a d6. Once you are done, proceed to 
@@ -54,11 +54,11 @@ namespace GoDungeon.Background.Tables
             Name = nameof(ConflictTable);
             ProperName = "Conflicts Table";
             TableType = TableTypeEnum.ConflictTable;
-            Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
+            Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a GoDungeon. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
         }
 
         //Table: Conflicts
-        //d20 Result CP
+        //GoDungeon Result CP
         //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.  1
         //2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
         //3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1

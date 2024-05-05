@@ -1,6 +1,7 @@
 ﻿using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.Core.Interfaces
+namespace GoDungeon.MAUI.Core.Interfaces
 {
     public interface IGameNavigationTableEntry : IStandardTableEntry
     {

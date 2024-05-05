@@ -6,9 +6,11 @@ using GoDungeon.Core;
 using GoDungeon.Equipment;
 using GoDungeon.Gaming;
 using GoDungeon.MagicItems;
+using GoDungeon.MAUI.Core;
+using GoDungeon.MAUI.Core.Tables;
+using GoDungeon.MAUI.Core.Views;
 using GoDungeon.MAUI.Interfaces;
 using GoDungeon.MAUI.Tables;
-using GoDungeon.MAUI.ViewModels;
 using GoDungeon.MAUI.Views;
 using GoDungeon.Monsters;
 using GoDungeon.Spells;
@@ -40,8 +42,8 @@ public static class MauiProgram
 
         // Services
         builder.Services
-            .AddSingleton<IMainMenu, MainMenuTable>()
-            .AddSingletonWithShellRoute<MainPage, MainPageViewModel>(nameof(MainPage))
+            .AddTransient<IMainMenuTable, MainMenuTable>()
+            .AddSingletonWithShellRoute<MainPage, MainMenuTable>(nameof(MainPage))
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
             .UseGoDungeonCore()
@@ -50,6 +52,8 @@ public static class MauiProgram
             .UseGoDungeonMagicItems()
             .UseGoDungeonMonsters()
             .UseGoDungeonSpells()
+            // Now the MAUI files
+            .UseGoDungeonMAUICore()
 
             .BuildServiceProvider();
 

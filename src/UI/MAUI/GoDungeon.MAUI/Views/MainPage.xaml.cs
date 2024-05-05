@@ -1,11 +1,11 @@
-﻿using GoDungeon.MAUI.Interfaces;
-using GoDungeon.MAUI.ViewModels;
+﻿using GoDungeon.MAUI.Core.Interfaces;
+using GoDungeon.MAUI.Interfaces;
 
 namespace GoDungeon.MAUI.Views;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage(IMainMenu vm)
+    public MainPage(IMainMenuTable vm)
     {
         InitializeComponent();
 

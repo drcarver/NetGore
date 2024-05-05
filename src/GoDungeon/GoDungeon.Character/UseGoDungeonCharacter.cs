@@ -30,7 +30,7 @@ namespace GoDungeon.Character
             .ToList();
 
         /// <summary>
-        /// The D20 Character tables and services
+        /// The GoDungeon Character tables and services
         /// </summary>
         /// <param name="collection">The DI service collection</param>
         /// <returns>The services collection</returns>

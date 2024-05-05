@@ -1,10 +1,10 @@
 ﻿//using System.Diagnostics.CodeAnalysis;
 
-//using D20.Character.Enum;
-//using D20.Core.Enum;
-//using D20.Core.Models;
+//using GoDungeon.Character.Enum;
+//using GoDungeon.Core.Enum;
+//using GoDungeon.Core.Models;
 
-//namespace D20.Character.PC.Paladin;
+//namespace GoDungeon.Character.PC.Paladin;
 
 //public class PaladinLevelTable : GameTable, IPaladinLevelTable
 //{

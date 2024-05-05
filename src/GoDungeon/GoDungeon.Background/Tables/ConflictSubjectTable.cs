@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -51,7 +51,7 @@ namespace GoDungeon.Background.Tables
         }
 
         //Table: Conflict Subject
-        //d20 Result
+        //GoDungeon Result
         //1	Commoner
         //2	Merchant
         //3	Tradesperson
@@ -66,7 +66,7 @@ namespace GoDungeon.Background.Tables
         //12	Child or young person(increase your CP by 1)
         //13	Family member
         //14	Close friend
-        //15	Lover or former lover(roll a d12 instead of a d20 on Table: Romantic Relationships)
+        //15	Lover or former lover(roll a d12 instead of a GoDungeon on Table: Romantic Relationships)
         //16	Enemy or rival
         //17	Gangster or underworld figure
         //18	Adventurer

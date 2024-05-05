@@ -25,7 +25,7 @@ namespace GoDungeon.Equipment
             .ToList();
 
         /// <summary>
-        /// The D20 Core tables and services
+        /// The GoDungeon Core tables and services
         /// </summary>
         /// <param name="collection">The DI service collection</param>
         /// <returns>The services collection</returns>

@@ -2,8 +2,10 @@
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
+using GoDungeon.MAUI.Core.Interfaces;
 
-namespace GoDungeon.Core.ViewModels
+namespace GoDungeon.MAUI.Core.ViewModels
 {
     /// <summary>
     /// The base Game table entry. This is all some

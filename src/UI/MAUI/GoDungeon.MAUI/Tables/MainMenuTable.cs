@@ -1,36 +1,34 @@
-﻿using CommunityToolkit.Mvvm.Input;
-
-using GoDungeon.Core.Tables;
-using GoDungeon.Core.ViewModels;
+﻿using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.MAUI.Core.ViewModels;
+using GoDungeon.MAUI.Core.Views;
 using GoDungeon.MAUI.Interfaces;
+using GoDungeon.Monsters.Interfaces;
+using GoDungeon.Monsters.Tables;
 
 namespace GoDungeon.MAUI.Tables;
 
-public partial class MainMenuTable : GameTable, IMainMenu
+public partial class MainMenuTable : MenuTable, IMainMenuTable
 {
     /// <summary>
     /// Constructor
     /// </summary>
-    public MainMenuTable()
+    public MainMenuTable(IServiceProvider services)
     {
         Name = nameof(MainMenuTable);
         ProperName = "Main Menu";
         Description = "Available Tables";
-    }
 
-    /// <summary>
-    /// Fired when the selection changes
-    /// </summary>
-    [RelayCommand]
-    private void SelectionChanged()
-    {
-        if (SelectionChanged != null)
+        IHumanoidRaceTable? raceTable = services.GetService<IHumanoidRaceTable>();
+        if (raceTable == null)
         {
-            if (SelectedItem != null)
-            {
-                Shell.Current.GoToAsync(((GameNavigationEntryViewModel)SelectedItem).Route);
-            }
+            raceTable = new HumanoidRaceTable();
         }
+
+        IHumanoidRaceFactory? raceFactory = services.GetService<IHumanoidRaceFactory>();
+        var halfling = raceFactory?.Create(RaceEnum.Halfling);
+        var randomRace = raceFactory?.CreateRandom();
+        var gametables = services.GetServices<IRandomTable>().ToList();
     }
 
     /// <summary>
@@ -48,7 +46,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "BackgroundTable",
                     ProperName = "Background Game Tables",
                     Description = "Background tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.BackgroundTable,
+                    TableType = TableTypeEnum.BackgroundTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -59,7 +57,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "CharacterTable",
                     ProperName = "Character Game Tables",
                     Description = "Character tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.CharacterTable,
+                    TableType = TableTypeEnum.CharacterTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -70,8 +68,8 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "CoreGameTable",
                     ProperName = "Core Game Tables",
                     Description = "Core tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.CoreTable,
-                    Route = $"{nameof(MainMenuTable)}View"
+                    TableType = TableTypeEnum.CoreTable,
+                    Route = nameof(CoreMenuTablePage)
                 },
                 #endregion
 
@@ -81,7 +79,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "EquipmentTable",
                     ProperName = "Equipment Game Tables",
                     Description = "Equipment tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.EquipmentTable,
+                    TableType = TableTypeEnum.EquipmentTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -92,7 +90,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "GamingTable",
                     ProperName = "Gaming Tables",
                     Description = "Gaming tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.GamingTable,
+                    TableType = TableTypeEnum.GamingTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -103,7 +101,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "MagicItemTable",
                     ProperName = "Magic Items Table",
                     Description = "Magic Items table for the game.",
-                    TableType = Core.Enum.TableTypeEnum.MagicItemTable,
+                    TableType = TableTypeEnum.MagicItemTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -114,7 +112,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "MonsterTables",
                     ProperName = "Monster Tables",
                     Description = "Monster tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.MonsterTable,
+                    TableType = TableTypeEnum.MonsterTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 },
                 #endregion
@@ -125,7 +123,7 @@ public partial class MainMenuTable : GameTable, IMainMenu
                     Name = "SpellTables",
                     ProperName = "Spell Tables",
                     Description = "Spell tables for the game.",
-                    TableType = Core.Enum.TableTypeEnum.SpellTable,
+                    TableType = TableTypeEnum.SpellTable,
                     Route = $"{nameof(MainMenuTable)}View"
                 }
                 #endregion

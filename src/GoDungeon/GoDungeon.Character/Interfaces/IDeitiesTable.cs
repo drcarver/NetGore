@@ -10,9 +10,9 @@ namespace GoDungeon.Character.Interfaces
         /// <summary>
         /// Get deities by suggested class and alignment
         /// </summary>
-        /// <param name="d20class">The suggested class</param>
+        /// <param name="GoDungeonclass">The suggested class</param>
         /// <param name="alignment">The alignment filter</param>
         /// <returns></returns>
-        ObservableCollection<IDeityTableEntry> GetDeitiesByClass(ClassEnum d20class, AlignmentFilterEnum alignment);
+        ObservableCollection<IDeityTableEntry> GetDeitiesByClass(ClassEnum GoDungeonclass, AlignmentFilterEnum alignment);
     }
 }

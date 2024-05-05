@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -36,7 +36,7 @@ namespace GoDungeon.Background.Tables
     /// the kinds of romantic relationships you have had 
     /// in the past. You might have a background that 
     /// requires you to roll a d12 on this table instead 
-    /// of a d20.
+    /// of a GoDungeon.
     /// </summary>
     public class RomanticRelationshipsTable : RandomTable, IRomanticRelationshipsTable
     {
@@ -48,12 +48,12 @@ namespace GoDungeon.Background.Tables
             Name = nameof(RomanticRelationshipsTable);
             ProperName = "Romantic Relationships Table";
             TableType = TableTypeEnum.BackgroundTable;
-            Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a d20.";
+            Description = "Roll on Table: Romantic Relationships to determine the kinds of romantic relationships you have had in the past. You might have a background that requires you to roll a d12 on this table instead of a GoDungeon.";
             DiceSides = 20;
         }
 
         //Table: Romantic Relationships
-        //d20 Result
+        //GoDungeon Result
         //1–2	One Significant Relationship You had a true love once, but that time has passed.
         //3–6	a Few Significant Relationships You’ve tried to make deep connections with individuals on several occasions, but it’s never worked out.
         //7–9	Several Significant Relationships You’ve engaged in a number of partnerships, but for some reason or another your relationships always fail.
