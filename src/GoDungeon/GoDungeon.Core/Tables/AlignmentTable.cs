@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(AlignmentTable);
             ProperName = "Alignment Table";
+            Description = "A typical creature in the game world has an alignment, which broadly describes its moral and personal attitudes. Alignment is a combination of two factors: one identifies morality (good, evil, or neutral), and the other describes attitudes toward society and order (lawful, chaotic, or neutral). Thus, nine distinct alignments define the possible combinations.";
             TableType = TableTypeEnum.CoreTable;
         }
 
@@ -38,20 +39,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.LawfulGood),
-                        ProperName = "Lawful Good",
+                        ProperName = "Lawful good (LG)",
                         Alignment = AlignmentEnum.LawfulGood,
                         Description =
-                            "A lawful good character acts as " +
-                            "a good person is expected or " +
-                            "required to act. They combine a " +
-                            "commitment to oppose evil with " +
-                            "the discipline to fight " +
-                            "relentlessly. They tell the " +
-                            "truth, keeps their word, help " +
-                            "those in need, and speak out " +
-                            "against injustice. A lawful " +
-                            "good character hates to see " +
-                            "the guilty go unpunished.",
+                            "Lawful good creatures can be counted on to do the right thing as expected by society. Gold dragons, paladins, and most dwarves are lawful good.",
                     },
                     #endregion
 
@@ -60,15 +51,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.NeutralGood),
-                        ProperName = "Neutral Good",
+                        ProperName = "Neutral good (NG) ",
                         Alignment = AlignmentEnum.NeutralGood,
                         Description =
-                            "A neutral good character does " +
-                            "the best that a good person " +
-                            "can do. They are devoted to " +
-                            "helping others. They work with " +
-                            "kings and magistrates but do " +
-                            "not feel beholden to them.",
+                            "Neutral good folk do the best they can to help others according to their needs. Many celestials, some cloud giants, and most gnomes are neutral good.",
                     },
                     #endregion
 
@@ -77,23 +63,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.ChaoticGood),
-                        ProperName = "Chaotic Good",
+                        ProperName = "Chaotic good (CG)",
                         Alignment = AlignmentEnum.ChaoticGood,
                         Description =
-                            "A chaotic good character acts " +
-                            "as their conscience directs them " +
-                            "with little regard for what " +
-                            "others expect of them. They " +
-                            "make their own way, but are " +
-                            "kind and benevolent. They " +
-                            "believe in goodness and right " +
-                            "but have little use for laws " +
-                            "and regulations. They hate it " +
-                            "when people try to intimidate " +
-                            "others and tell them what to do. " +
-                            "They follow their own moral " +
-                            "compass, which, although good, " +
-                            "may not agree with that of society.",
+                            "Chaotic good creatures act as their conscience directs, with little regard for what others expect. Copper dragons, many elves, and unicorns are chaotic good.",
                     },
                     #endregion
 
@@ -102,18 +75,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.LawfulNeutral),
-                        ProperName = "Lawful Neutral",
+                        ProperName = "Lawful neutral (LN)",
                         Alignment = AlignmentEnum.LawfulNeutral,
                         Description =
-                            "A lawful neutral character acts " +
-                            "as law, tradition, or a personal " +
-                            "code directs them. Order and " +
-                            "organization are paramount. They " +
-                            "may believe in personal order " +
-                            "and live by a code or standard, " +
-                            "or they may believe in order " +
-                            "for all and favor a strong, " +
-                            "organized government.",
+                            "Lawful neutral individuals act in accordance with law, tradition, or personal codes. Many monks and some wizards are lawful neutral.",
                     },
                     #endregion
 
@@ -122,27 +87,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.Neutral),
-                        ProperName = "Neutral",
+                        ProperName = "Neutral (N)",
                         Alignment = AlignmentEnum.Neutral,
                         Description =
-                            "A neutral character does what " +
-                            "seems to be a good idea. They " +
-                            "don’t feel strongly one way or " +
-                            "the other when it comes to " +
-                            "good vs. evil or law vs. chaos " +
-                            "(and thus neutral is sometimes " +
-                            "called “true neutral”). Most " +
-                            "neutral characters exhibit a " +
-                            "lack of conviction or bias " +
-                            "rather than a commitment to " +
-                            "neutrality. Such a character " +
-                            "probably thinks of good as " +
-                            "better than evil—after all, " +
-                            "they would rather have good " +
-                            "neighbors and rulers than evil " +
-                            "ones. Still, their not personally " +
-                            "committed to upholding good in " +
-                            "any abstract or universal way.",
+                            "Neutral is the alignment of those who prefer to steer clear of moral questions and don't take sides, doing what seems best at the time. Lizardfolk, most druids, and many humans are neutral.",
                     },
                     #endregion
 
@@ -151,31 +99,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.ChaoticNeutral),
-                        ProperName = "Chaotic Neutral",
+                        ProperName = "Chaotic neutral (CN)",
                         Alignment = AlignmentEnum.ChaoticNeutral,
                         Description =
-                            "A chaotic neutral character " +
-                            "follows their whims. They are " +
-                            "individualist first and last. " +
-                            "They values their own liberty " +
-                            "but don’t strive to protect " +
-                            "others’ freedom. They avoid " +
-                            "authority, resent restrictions, " +
-                            "and challenge traditions. A " +
-                            "chaotic neutral character does " +
-                            "not intentionally disrupt " +
-                            "organizations as part of a " +
-                            "campaign of anarchy. To do so, " +
-                            "they would have to be motivated " +
-                            "either by good (and a desire " +
-                            "to liberate others) or evil " +
-                            "(and a desire to make those " +
-                            "others suffer). a chaotic " +
-                            "neutral character may be " +
-                            "unpredictable, but their behavior " +
-                            "is not totally random. They are " +
-                            "not likely to jump off a bridge " +
-                            "as they is to cross it.",
+                            "Chaotic neutral creatures follow their whims, holding their personal freedom above all else. Many barbarians and rogues, and some bards, are chaotic neutral.",
                     },
                     #endregion
 
@@ -184,25 +111,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.LawfulEvil),
-                        ProperName = "Lawful Evil",
+                        ProperName = "Lawful evil (LE)",
                         Alignment = AlignmentEnum.LawfulEvil,
                         Description =
-                            "A lawful evil villain methodically " +
-                            "takes what they want within the " +
-                            "limits of his code of conduct " +
-                            "without regard for whom it hurts. " +
-                            "They care about tradition, loyalty, " +
-                            "and order, but not about freedom, " +
-                            "dignity, or life. They play by the " +
-                            "rules but without mercy or " +
-                            "compassion. They are comfortable " +
-                            "in a hierarchy and would like to " +
-                            "rule, but are willing to serve. They " +
-                            "condemn others not according to " +
-                            "their actions but according to race, " +
-                            "religion, homeland, or social rank. " +
-                            "They are loath to break laws or " +
-                            "promises.",
+                            "Lawful evil creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.",
                     },
                     #endregion
 
@@ -211,25 +123,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.NeutralEvil),
-                        ProperName = "Neutral Evil",
+                        ProperName = "Neutral evil (NE)",
                         Alignment = AlignmentEnum.NeutralEvil,
                         Description =
-                            "A lawful evil villain methodically " +
-                            "takes what they want within the " +
-                            "limits of his code of conduct " +
-                            "without regard for whom it hurts. " +
-                            "They care about tradition, loyalty, " +
-                            "and order, but not about freedom, " +
-                            "dignity, or life. They play by the " +
-                            "rules but without mercy or " +
-                            "compassion. They are comfortable " +
-                            "in a hierarchy and would like to " +
-                            "rule, but are willing to serve. They " +
-                            "condemn others not according to " +
-                            "their actions but according to race, " +
-                            "religion, homeland, or social rank. " +
-                            "They are loath to break laws or " +
-                            "promises.",
+                            "Neutral evil is the alignment of those who do whatever they can get away with, without compassion or qualms. Many drow, some cloud giants, and goblins are neutral evil.",
                     },
                     #endregion
 
@@ -238,30 +135,10 @@ namespace GoDungeon.Core.Tables
                     new AlignmentTableEntryViewModel
                     {
                         Name = nameof(AlignmentEnum.ChaoticEvil),
-                        ProperName = "Chaotic Evil",
+                        ProperName = "Chaotic evil (CE)",
                         Alignment = AlignmentEnum.ChaoticEvil,
                         Description =
-                            "A chaotic evil character does " +
-                            "what their greed, hatred, and " +
-                            "lust for destruction drive them " +
-                            "to do. They are vicious, " +
-                            "arbitrarily violent, and " +
-                            "unpredictable. If they are " +
-                            "simply out for whatever their " +
-                            "can get, They are ruthless and " +
-                            "brutal. If they are committed " +
-                            "to the spread of evil and " +
-                            "chaos, they are even worse. " +
-                            "Thankfully, their plans are " +
-                            "haphazard, and any groups they " +
-                            "join are forms are likely to " +
-                            "be poorly organized. Typically, " +
-                            "chaotic evil people can be " +
-                            "made to work together only " +
-                            "by force, and their leader " +
-                            "lasts only as long as they can " +
-                            "thwart attempts to topple or " +
-                            "assassinate him.",
+                            "Chaotic evil creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil.",
                     },
                     #endregion
                 };

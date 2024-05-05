@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(GenderTable);
             ProperName = "Gender Table";
+            Description = "Creature Gender";
             TableType = TableTypeEnum.CoreTable;
         }
 
@@ -56,13 +57,13 @@ namespace GoDungeon.Core.Tables
                     new NamedTableEntryViewModel
                     {
                         Name = nameof(GenderEnum.Male),
-                        Description = "The Male of the species",
+                        Description = "A Male creature",
                     },
 
                     new NamedTableEntryViewModel
                     {
                         Name = nameof(GenderEnum.Female),
-                        Description = "The Female of the species",
+                        Description = "A Female creature",
                     },
                 };
             }

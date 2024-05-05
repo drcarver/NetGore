@@ -57,7 +57,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //the following: Draconic, Dwarven, Elven,
             //Giant, Goblin, and Orc.
             Languages.Add(LanguageEnum.Common);
-            Languages.Add(LanguageEnum.Gnomish);
+            Languages.Add(LanguageEnum.Gnome);
             Languages.Add(LanguageEnum.Sylvan);
         }
 

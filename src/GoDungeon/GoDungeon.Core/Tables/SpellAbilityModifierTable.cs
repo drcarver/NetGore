@@ -10,7 +10,7 @@ namespace GoDungeon.Core.Tables
     /// <summary>
     /// The gender table.  
     /// </summary>
-    public class SpellAbilityModifierTable : AbilityModifierTable, ISpellAbilityModifierTable
+    public class SpellAbilityModifierTable : GameTable, ISpellAbilityModifierTable
     {
         /// <summary>
         /// Constructor
@@ -19,6 +19,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(SpellAbilityModifierTable);
             ProperName = "Ability Modifiers and Bonus Spells Table";
+            Description = "Ability Modifiers and Bonus Spells shows the modifier for each score. The modifier is the number you apply to the die roll when your character tries to do something related to that ability. You also use the modifier with some numbers that aren’t die rolls. A positive modifier is called a bonus, and a negative modifier is called a penalty. The table also shows bonus spells, which you’ll need to know about if your character is a spellcaster.";
             TableType = TableTypeEnum.CharacterTable;
         }
 

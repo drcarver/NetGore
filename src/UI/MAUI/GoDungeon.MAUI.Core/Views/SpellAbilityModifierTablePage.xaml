@@ -11,11 +11,7 @@
     <CollectionView ItemsSource="{Binding Table}"
                     SelectionMode="None">
         <CollectionView.Header>
-            <Grid ColumnSpacing="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+            <Grid Grid.RowDefinitions="Auto,Auto,Auto,Auto"  ColumnSpacing="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="100" />
@@ -31,58 +27,58 @@
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="30" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Ability Score" 
-                       HorizontalOptions="CenterAndExpand" 
-                       BackgroundColor="PapayaWhip"
-                       Grid.Column="0" />
-                <Label Text="Modifier" 
-                       HorizontalOptions="CenterAndExpand" 
-                       BackgroundColor="PapayaWhip"
-                       Grid.Column="1" />
+                <Label Grid.ColumnSpan="12" Margin="10,10,0,0"
+                       Text="{Binding Description}"
+                       HorizontalOptions="Start" />
                 <Label Text="Bonus Spells per Day(by Spell Level)" 
                        HorizontalOptions="Center" Grid.ColumnSpan="10"
-                       BackgroundColor="PapayaWhip"
-                       Grid.Column="2"/>
+                       Grid.Row="2" Grid.Column="2" />
+                <Label Text="Ability Score" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Grid.Row="3" Grid.Column="0" />
+                <Label Text="Modifier" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Grid.Row="3" Grid.Column="1" />
                 <Label Text="0th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="2" />
+                       Grid.Row="3" Grid.Column="2" />
                 <Label Text="1st" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="3" />
+                       Grid.Row="3" Grid.Column="3" />
                 <Label Text="2nd" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="4" />
+                       Grid.Row="3" Grid.Column="4" />
                 <Label Text="3rd" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="5" />
+                       Grid.Row="3" Grid.Column="5" />
                 <Label Text="4th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="6" />
+                       Grid.Row="3" Grid.Column="6" />
                 <Label Text="5th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="7" />
+                       Grid.Row="3" Grid.Column="7" />
                 <Label Text="6th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="8" />
+                       Grid.Row="3" Grid.Column="8" />
                 <Label Text="7th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="9" />
+                       Grid.Row="3" Grid.Column="9" />
                 <Label Text="8th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="10" />
+                       Grid.Row="3" Grid.Column="10" />
                 <Label Text="9th" 
                        HorizontalOptions="Center" 
                        BackgroundColor="PapayaWhip"
-                       Grid.Row="1" Grid.Column="11" />
+                       Grid.Row="3" Grid.Column="11" />
             </Grid>
         </CollectionView.Header>
         <CollectionView.Footer>

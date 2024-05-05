@@ -35,7 +35,6 @@ namespace GoDungeon.Core
         {
             //collection
             // Add all the game table types as transient
-            collection.AddTransient<IAbilityBonusEntry, AbilityBonusEntryViewModel>();
             collection.AddTransient<IAbilityBonusSpellEntry, AbilityBonusSpellEntryViewModel>();
             collection.AddTransient<IAcrobaticsModifiersTableEntry, AcrobaticsModifierViewModel>();
             collection.AddTransient<IAlignmentEntry, AlignmentTableEntryViewModel>();
@@ -51,7 +50,6 @@ namespace GoDungeon.Core
             collection.AddTransient<IStandardTableEntry, StandardTableEntryViewModel>();
 
             // The tables
-            collection.AddTransient<IAbilityModifierTable, AbilityModifierTable>();
             collection.AddTransient<IAcrobaticsModifiersTable, AcrobaticsModifierTable>();
             collection.AddTransient<IAlignmentTable, AlignmentTable>();
             collection.AddTransient<IGenderTable, GenderTable>();

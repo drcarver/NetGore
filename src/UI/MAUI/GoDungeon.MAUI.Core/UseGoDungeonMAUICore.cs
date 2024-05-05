@@ -39,9 +39,10 @@ namespace GoDungeon.MAUI.Core
 
             // The tables
             collection.AddTransientWithShellRoute<CoreMenuTablePage, CoreMenuTable>(nameof(CoreMenuTablePage));
-            collection.AddTransientWithShellRoute<AbilityModifierTablePage, AbilityModifierTable>(nameof(AbilityModifierTablePage));
             collection.AddTransientWithShellRoute<AcrobaticsModifierTablePage, AcrobaticsModifierTable>(nameof(AcrobaticsModifierTablePage));
             collection.AddTransientWithShellRoute<AlignmentTablePage, AlignmentTable>(nameof(AlignmentTablePage));
+            collection.AddTransientWithShellRoute<GenderTablePage, GenderTable>(nameof(GenderTablePage));
+            collection.AddTransientWithShellRoute<LanguageTablePage, LanguageTable>(nameof(LanguageTablePage));
             collection.AddTransientWithShellRoute<SpellAbilityModifierTablePage, SpellAbilityModifierTable>(nameof(SpellAbilityModifierTablePage));
 
             return collection;

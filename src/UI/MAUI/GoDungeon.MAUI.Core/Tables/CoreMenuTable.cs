@@ -27,18 +27,7 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
         {
             Table =
             [
-                #region Ability Modifier Table
-                new GameNavigationEntryViewModel
-                {
-                    Name = nameof(AbilityModifierTable),
-                    ProperName = "Ability Modifier Table",
-                    Description = "Ability modifiers for Player Character.",
-                    TableType = TableTypeEnum.CharacterTable,
-                    Route = nameof(AbilityModifierTablePage)
-                },
-                #endregion
-
-                #region Ability Modifier Table
+                #region Acrobatics Modifier Table
                 new GameNavigationEntryViewModel
                 {
                     Name = nameof(AlignmentTable),
@@ -57,6 +46,28 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
                     Description = "Creature Alignment",
                     TableType = TableTypeEnum.CoreTable,
                     Route = nameof(AlignmentTablePage)
+                },
+                #endregion
+
+                #region Gender Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(GenderTable),
+                    ProperName = "Gender Table",
+                    Description = "Creature Gender",
+                    TableType = TableTypeEnum.CoreTable,
+                    Route = nameof(GenderTablePage)
+                },
+                #endregion
+
+                #region Language Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(LanguageTable),
+                    ProperName = "Language Table",
+                    Description = "Creature Languages",
+                    TableType = TableTypeEnum.CoreTable,
+                    Route = nameof(LanguageTablePage)
                 },
                 #endregion
 

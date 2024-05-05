@@ -62,7 +62,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //page for more information about these
             //languages.
             Languages.Add(LanguageEnum.Common);
-            Languages.Add(LanguageEnum.Elvish);
+            Languages.Add(LanguageEnum.Elven);
         }
 
         //Table: Random Height and Weight

@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(AcrobaticsModifierTable);
             ProperName = "Misc. Acrobatics Modifiers";
+            Description = "The following modifiers apply to all Acrobatics skill checks. The modifiers stack with one another, but only the most severe modifier for any given condition applies.";
             TableType = TableTypeEnum.CoreTable;
         }
 

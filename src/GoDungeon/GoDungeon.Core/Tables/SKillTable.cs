@@ -37,7 +37,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Acrobatics),
-                        ProperName = nameof(SkillEnum.Acrobatics),
+                        ProperName = "Acrobatics",
                         Ability = AbilityEnum.Dexterity,
                         Description =
                             "You can keep your balance while traversing " +
@@ -51,7 +51,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Appraise),
-                        ProperName = nameof(SkillEnum.Appraise),
+                        ProperName = "Appraise",
                         Ability = AbilityEnum.Intelligence,
                         Description =
                             "A DC 20 Appraise check determines the " +
@@ -79,7 +79,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Diplomacy),
-                        ProperName = nameof(SkillEnum.Diplomacy),
+                        ProperName = "Diplomacy",
                         Ability = AbilityEnum.Charisma,
                         Description =
                             "You can use this skill to persuade others " +
