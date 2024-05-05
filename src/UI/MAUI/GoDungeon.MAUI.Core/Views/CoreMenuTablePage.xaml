@@ -13,6 +13,7 @@
                     SelectedItem="{Binding SelectedItem}"
                     SelectionMode="Single"
                     SelectionChangedCommand="{Binding SelectionChangedCommand}"
+                    BackgroundColor="PapayaWhip"
                     x:DataType="coreviewmodel:MenuTable">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">

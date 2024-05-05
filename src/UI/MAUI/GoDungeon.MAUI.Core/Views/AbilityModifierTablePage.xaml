@@ -9,28 +9,35 @@
              Title="{Binding ProperName}">
 
     <CollectionView ItemsSource="{Binding Table}"
+                    BackgroundColor="PapayaWhip"
                     SelectionMode="None">
         <CollectionView.Header>
-            <Grid>
+            <Grid ColumnSpacing="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Ability Score" HorizontalOptions="CenterAndExpand" Grid.Column="0" />
-                <Label Text="Modifier" HorizontalOptions="Start" Grid.Column="1" />
+                <Label Text="Ability Score" 
+                        HorizontalOptions="CenterAndExpand"
+                        Grid.Column="0" />
+                <Label Text="Modifier" 
+                       HorizontalOptions="CenterAndExpand" 
+                       Grid.Column="1" />
             </Grid>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="coreviewmodel:AbilityBonusEntryViewModel">
-                <Grid>
+                <Grid ColumnSpacing="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
                         <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="{Binding Score}" Margin="10,10,0,0" 
-                           Grid.Column="0" HorizontalTextAlignment="Start"/>
-                    <Label Text="{Binding Modifier}" Margin="10,10,0,0"
-                           Grid.Column="1" HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Score}"
+                           Grid.Column="0" 
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding Modifier}" 
+                           Grid.Column="1" 
+                           HorizontalTextAlignment="Center"/>
                 </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>

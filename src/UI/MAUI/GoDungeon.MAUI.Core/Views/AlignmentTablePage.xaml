@@ -9,6 +9,7 @@
              Title="{Binding ProperName}">
 
     <CollectionView ItemsSource="{Binding Table}"
+                    BackgroundColor="PapayaWhip"
                     SelectionMode="None">
         <CollectionView.Header>
             <Grid>
