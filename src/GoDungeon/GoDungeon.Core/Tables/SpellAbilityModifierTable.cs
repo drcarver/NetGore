@@ -94,77 +94,77 @@ namespace GoDungeon.Core.Tables
                     {
                         Score = new Range(10, 11),
                         Modifier = 0,
-                        BonusSpells = new int[] {0,0,0,0,0,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //12–13	+1	—	1	—	—	—	—	—	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(12, 13),
                         Modifier = 1,
-                        BonusSpells = new int[] {1,0,0,0,0,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,1,0,0,0,0,0,0,0,0 },
                     },
                     //14–15	+2	—	1	1	—	—	—	—	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(14, 15),
                         Modifier = 2,
-                        BonusSpells = new int[] {1,1,0,0,0,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,1,1,0,0,0,0,0,0,0 },
                     },
                     //16–17	+3	—	1	1	1	—	—	—	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(16, 17),
                         Modifier = 3,
-                        BonusSpells = new int[] {1,1,1,0,0,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,1,1,1,0,0,0,0,0,0 },
                     },
                     //18–19	+4	—	1	1	1	1	—	—	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(18, 19),
                         Modifier = 4,
-                        BonusSpells = new int[] {1,1,1,1,0,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,1,1,1,1,0,0,0,0,0 },
                     },
                     //20–21	+5	—	2	1	1	1	1	—	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(20, 21),
                         Modifier = 5,
-                        BonusSpells = new int[] {2,1,1,1,1,0,0,0,0, 0 },
+                        BonusSpells = new int[] { 0,2,1,1,1,1,0,0,0,0 },
                     },
                     //22–23	+6	—	2	2	1	1	1	1	—	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(22, 23),
                         Modifier = 6,
-                        BonusSpells = new int[] {2,2,1,1,1,1,0,0, 0, 0 },
+                        BonusSpells = new int[] { 0,2,2,1,1,1,1,0,0,0 },
                     },
                     //24–25	+7	—	2	2	2	1	1	1	1	—	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(24, 25),
                         Modifier = 7,
-                        BonusSpells = new int[] {2,2,2,1,1,1,1,0, 0, 0 },
+                        BonusSpells = new int[] { 0,2,2,2,1,1,1,1,0,0 },
                     },
                     //26–27	+8	—	2	2	2	2	1	1	1	1	—
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(26, 27),
                         Modifier = 8,
-                        BonusSpells = new int[] {2,2,2,2,1,1,1,1,0, 0 },
+                        BonusSpells = new int[] { 0,2,2,2,2,1,1,1,1,0 },
                     },
                     //28–29	+9	—	3	2	2	2	2	1	1	1	1
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(28, 29),
                         Modifier = 9,
-                        BonusSpells = new int[] {0,3,2,2,2,2,1,1,1,1},
+                        BonusSpells = new int[] { 0,3,2,2,2,2,1,1,1,1 },
                     },
                     //30–31	+10	—	3	3	2	2	2	2	1	1	1
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(30, 31),
                         Modifier = 10,
-                        BonusSpells = new int[] {0,3,3,2,2,2,2,1,1,1},
+                        BonusSpells = new int[] { 0,3,3,2,2,2,2,1,1,1 },
                     },
                 };
             }
