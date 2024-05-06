@@ -17,7 +17,7 @@ namespace GoDungeon.MAUI.Core
         /// Get all the IGameable entries
         /// </summary>
         /// <returns></returns>
-        public static List<Type> CoreTables => Assembly
+        public static List<Type> MAUICoreTables => Assembly
             .GetExecutingAssembly()
             .GetExportedTypes()
             .Where(t => 
