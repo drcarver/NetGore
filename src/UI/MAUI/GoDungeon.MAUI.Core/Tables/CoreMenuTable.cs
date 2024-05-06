@@ -11,7 +11,8 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
     /// <summary>
     /// Constructor
     /// </summary>
-    public CoreMenuTable()
+    public CoreMenuTable(IServiceProvider services)
+        : base(services)
     {
         Name = nameof(CoreMenuTable);
         ProperName = "Core Table Menu";

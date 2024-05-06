@@ -29,9 +29,9 @@ namespace GoDungeon.MAUI.Core.ViewModels
         private string? route;
 
         /// <summary>
-        /// The actual game table
+        /// The page detail type
         /// </summary>
         [ObservableProperty]
-        private IGameTable? gameTable;
+        private Type? pageDetailType;
     }
 }

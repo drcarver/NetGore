@@ -1,4 +1,5 @@
-﻿using GoDungeon.Background.Tables;
+﻿using GoDungeon.Background.Interfaces;
+using GoDungeon.Background.Tables;
 using GoDungeon.Core.Enum;
 using GoDungeon.MAUI.Background.Interfaces;
 using GoDungeon.MAUI.Background.Views;
@@ -11,7 +12,8 @@ public partial class BackgroundMenuTable : MenuTable, IBackgroundMenuTable
     /// <summary>
     /// Constructor
     /// </summary>
-    public BackgroundMenuTable()
+    public BackgroundMenuTable(IServiceProvider services)
+        : base(services)
     {
         Name = nameof(BackgroundMenuTable);
         ProperName = "Background Table Menu";
@@ -30,22 +32,36 @@ public partial class BackgroundMenuTable : MenuTable, IBackgroundMenuTable
                 #region Adopted Outside Your Race Table
                 new GameNavigationEntryViewModel
                 {
-                    Name = nameof(AdoptedOutsideYourRaceTablePage),
+                    Name = nameof(AdoptedOutsideYourRaceTable),
                     ProperName = "Adopted Outside Your Race Table",
                     Description = "Adopted Outside Your Race Table",
                     TableType = TableTypeEnum.BackgroundTable,
-                    Route = nameof(AdoptedOutsideYourRaceTablePage)
+                    Route = nameof(BackgroundTablePage),
+                    PageDetailType = typeof(IAdoptedOutsideYourRaceTable)
                 },
                 #endregion
  
                 #region Character Drawback Table
                 new GameNavigationEntryViewModel
                 {
-                    Name = nameof(CharacterDrawbackTablePage),
+                    Name = nameof(CharacterDrawbackTable),
                     ProperName = "Character Drawback Table",
                     Description = "Character Drawback Table",
                     TableType = TableTypeEnum.BackgroundTable,
-                    Route = nameof(CharacterDrawbackTablePage)
+                    Route = nameof(BackgroundTablePage),
+                    PageDetailType = typeof(ICharacterDrawbackTable)
+                },
+                #endregion
+ 
+                #region Circumstance of Birth Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(CircumstanceofBirthTable),
+                    ProperName = "Circumstance of Birth Table",
+                    Description = "Circumstance of Birth Table",
+                    TableType = TableTypeEnum.BackgroundTable,
+                    Route = nameof(BackgroundTablePage),
+                    PageDetailType = typeof(ICircumstanceofBirthTable)
                 },
                 #endregion
             ];

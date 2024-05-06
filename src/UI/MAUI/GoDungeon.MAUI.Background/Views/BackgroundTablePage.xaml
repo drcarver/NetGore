@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoDungeon.MAUI.Background.Views.AdoptedOutsideYourRaceTablePage"
+             x:Class="GoDungeon.MAUI.Background.Views.BackgroundTablePage"
              xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
              xmlns:viewmodel="clr-namespace:GoDungeon.Background.ViewModels;assembly=GoDungeon.Background"
              xmlns:tables="clr-namespace:GoDungeon.Core.Tables;assembly=GoDungeon.Core"
@@ -15,7 +15,7 @@
             <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="100,100,400">
                 <Label Text="{Binding Description}" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
-                       Grid.ColumnSpan="2" />
+                       Grid.ColumnSpan="3" />
                 <Label Text="Range" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="1" Grid.Column="0" />
@@ -24,14 +24,14 @@
                        Grid.Row="1" Grid.Column="1" />
                 <Label Text="Description" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
-                       Grid.Row="1" Grid.Column="1" />
+                       Grid.Row="1" Grid.Column="2" />
             </Grid>
         </CollectionView.Header>
         <!--This footer is for Pathfinder content-->
         <CollectionView.Footer>
             <Grid RowDefinitions="Auto,Auto,Auto">
                 <Label Grid.Row="0" Text="" Margin="10,10,0,0" />
-                <Label Grid.Row="1" Text="This content is from the url: https://www.d20pfsrd.com/skills/acrobatics" 
+                <Label Grid.Row="1" Text="This content is from the url: https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator" 
                        Margin="10,10,0,0" />
                 <Label Grid.Row="2" Text="
 Copyright Notice: Pathfinder RPG Core Rulebook. Copyright 2009, Paizo Publishing, LLC; Author: Jason Bulmahn, based on material by Jonathan Tweet, Monte Cook, and Skip Williams."

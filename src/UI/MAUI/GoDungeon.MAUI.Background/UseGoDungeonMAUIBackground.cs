@@ -35,8 +35,9 @@ namespace GoDungeon.MAUI.Core
             //collection
             // The tables
             collection.AddTransientWithShellRoute<BackgroundMenuTablePage, BackgroundMenuTable>(nameof(BackgroundMenuTablePage));
-            collection.AddTransientWithShellRoute<AdoptedOutsideYourRaceTablePage, AdoptedOutsideYourRaceTable>(nameof(AdoptedOutsideYourRaceTablePage));
-            collection.AddTransientWithShellRoute<CharacterDrawbackTablePage, CharacterDrawbackTable>(nameof(CharacterDrawbackTablePage));
+
+            // Register additional detail routes
+            Routing.RegisterRoute(nameof(BackgroundTablePage), typeof(BackgroundTablePage));
 
             return collection;
         }

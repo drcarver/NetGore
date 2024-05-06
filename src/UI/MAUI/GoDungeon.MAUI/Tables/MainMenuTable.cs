@@ -15,6 +15,7 @@ public partial class MainMenuTable : MenuTable, IMainMenuTable
     /// Constructor
     /// </summary>
     public MainMenuTable(IServiceProvider services)
+        : base(services)
     {
         Name = nameof(MainMenuTable);
         ProperName = "Main Menu";

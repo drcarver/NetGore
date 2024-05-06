@@ -31,11 +31,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\AdoptedOutsideYourRaceTablePage.xaml.cs">
-	    <DependentUpon>AdoptedOutsideYourRaceTablePage.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\CharacterDrawbackTablePage.xaml.cs">
-	    <DependentUpon>CharacterDrawbackTablePage.xaml</DependentUpon>
+	  <Compile Update="Views\BackgroundTablePage.xaml.cs">
+	    <DependentUpon>BackgroundTablePage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -43,10 +40,7 @@
 	  <MauiXaml Update="Views\BackgroundMenuTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CharacterDrawbackTablePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\AdoptedOutsideYourRaceTablePage.xaml">
+	  <MauiXaml Update="Views\BackgroundTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

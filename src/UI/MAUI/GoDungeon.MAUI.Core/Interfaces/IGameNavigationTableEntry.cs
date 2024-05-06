@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core.Enum;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.MAUI.Core.Interfaces
@@ -14,5 +16,10 @@ namespace GoDungeon.MAUI.Core.Interfaces
         /// Route for the entry
         /// </summary>
         string? Route { get; set; }
+
+        /// <summary>
+        /// The page detail type
+        /// </summary>
+        Type? PageDetailType { get; set; }
     }
 }
