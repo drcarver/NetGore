@@ -64,6 +64,18 @@ public partial class BackgroundMenuTable : MenuTable, IBackgroundMenuTable
                     PageDetailType = typeof(ICircumstanceofBirthTable)
                 },
                 #endregion
+ 
+                #region Circumstance of Birth Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(CircumstanceofBirthTable),
+                    ProperName = "Circumstance of Birth Table",
+                    Description = "Circumstance of Birth Table",
+                    TableType = TableTypeEnum.BackgroundTable,
+                    Route = nameof(BackgroundTablePage),
+                    PageDetailType = typeof(ICircumstanceofBirthTable)
+                },
+                #endregion
             ];
         }
     }

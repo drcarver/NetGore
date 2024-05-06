@@ -12,19 +12,27 @@
     <CollectionView ItemsSource="{Binding Table}"
                     SelectionMode="None">
         <CollectionView.Header>
-            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="100,100,400">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="100,100,400">
                 <Label Text="{Binding Description}" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
+                       Grid.Row="0" Grid.Column="0"
                        Grid.ColumnSpan="3" />
-                <Label Text="Range" Margin="10,10,0,0" 
+                <Label Text="Dice" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding Dice}" Margin="10,10,0,0" 
+                       HorizontalOptions="Start" 
+                       Grid.Row="1" Grid.Column="1"
+                       Grid.ColumnSpan="2" />
+                <Label Text="Range" Margin="10,10,0,0" 
+                       HorizontalOptions="Start" 
+                       Grid.Row="2" Grid.Column="0" />
                 <Label Text="Name" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
-                       Grid.Row="1" Grid.Column="1" />
+                       Grid.Row="2" Grid.Column="1" />
                 <Label Text="Description" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
-                       Grid.Row="1" Grid.Column="2" />
+                       Grid.Row="2" Grid.Column="2" />
             </Grid>
         </CollectionView.Header>
         <!--This footer is for Pathfinder content-->

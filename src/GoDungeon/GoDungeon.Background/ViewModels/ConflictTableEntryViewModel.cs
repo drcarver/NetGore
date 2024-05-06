@@ -27,7 +27,7 @@ using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Background.ViewModels
 {
-    public partial class ConflictTableEntryViewModel : StandardTableEntryViewModel, IConflictTableEntryViewModel
+    public partial class ConflictTableEntryViewModel : RandomTableEntryViewModel, IConflictTableEntryViewModel
     {
         /// <summary>
         /// Conflict points

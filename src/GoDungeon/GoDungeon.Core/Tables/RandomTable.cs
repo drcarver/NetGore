@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Security.Cryptography;
 
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -20,7 +21,13 @@ namespace GoDungeon.Core.Tables
         /// entries from the table
         /// </summary>
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(Dice))]
         private int diceSides;
+
+        /// <summary>
+        /// The dice to be rolled
+        /// </summary>
+        public string Dice => $"d{DiceSides}";
 
         /// <summary>
         /// Get a entry from the table based on a random 
