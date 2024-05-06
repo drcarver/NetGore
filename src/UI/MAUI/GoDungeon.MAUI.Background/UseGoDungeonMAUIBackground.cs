@@ -38,6 +38,7 @@ namespace GoDungeon.MAUI.Core
 
             // Register additional detail routes
             Routing.RegisterRoute(nameof(BackgroundTablePage), typeof(BackgroundTablePage));
+            Routing.RegisterRoute(nameof(ConflictTablePage), typeof(ConflictTablePage));
 
             return collection;
         }

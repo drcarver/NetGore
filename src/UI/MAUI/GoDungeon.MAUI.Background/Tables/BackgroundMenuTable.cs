@@ -65,15 +65,51 @@ public partial class BackgroundMenuTable : MenuTable, IBackgroundMenuTable
                 },
                 #endregion
  
-                #region Circumstance of Birth Table
+                #region Conflict Motivation Table
                 new GameNavigationEntryViewModel
                 {
-                    Name = nameof(CircumstanceofBirthTable),
-                    ProperName = "Circumstance of Birth Table",
-                    Description = "Circumstance of Birth Table",
-                    TableType = TableTypeEnum.BackgroundTable,
-                    Route = nameof(BackgroundTablePage),
-                    PageDetailType = typeof(ICircumstanceofBirthTable)
+                    Name = nameof(ConflictMotivationTable),
+                    ProperName = "Conflict Motivation Table",
+                    Description = "Conflict Motivation Table",
+                    TableType = TableTypeEnum.ConflictTable,
+                    Route = nameof(ConflictTablePage),
+                    PageDetailType = typeof(IConflictMotivationTable)
+                },
+                #endregion
+ 
+                #region Conflict Resolution Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(ConflictResolutionTable),
+                    ProperName = "Conflict Resolution Table",
+                    Description = "Conflict Resolution Table",
+                    TableType = TableTypeEnum.ConflictTable,
+                    Route = nameof(ConflictTablePage),
+                    PageDetailType = typeof(IConflictResolutionTable)
+                },
+                #endregion
+ 
+                #region Conflict Subject Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(ConflictSubjectTable),
+                    ProperName = "Conflict Subject Table",
+                    Description = "Conflict Subject Table",
+                    TableType = TableTypeEnum.ConflictTable,
+                    Route = nameof(ConflictTablePage),
+                    PageDetailType = typeof(IConflictSubjectTable)
+                },
+                #endregion
+ 
+                #region Conflict Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(ConflictTable),
+                    ProperName = "Conflict Table",
+                    Description = "Conflict Table",
+                    TableType = TableTypeEnum.ConflictTable,
+                    Route = nameof(ConflictTablePage),
+                    PageDetailType = typeof(IConflictTable)
                 },
                 #endregion
             ];

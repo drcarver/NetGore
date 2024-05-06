@@ -31,6 +31,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\ConflictTablePage.xaml.cs">
+	    <DependentUpon>ConflictTablePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\BackgroundTablePage.xaml.cs">
 	    <DependentUpon>BackgroundTablePage.xaml</DependentUpon>
 	  </Compile>
@@ -38,6 +41,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\BackgroundMenuTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ConflictTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\BackgroundTablePage.xaml">
