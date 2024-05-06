@@ -118,6 +118,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(06, 10),
                         Name = nameof(MajorChildhoodEventEnum.Betrayal),
+                        ProperName = nameof(MajorChildhoodEventEnum.Betrayal),
                         Description =
                             "A friend or family member whom " +
                             "you trusted more than anyone " +
@@ -141,6 +142,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(11,15),
                         Name = nameof(MajorChildhoodEventEnum.Bullied),
+                        ProperName = nameof(MajorChildhoodEventEnum.Bullied),
                         Description =
                             "In your early life, you were a " +
                             "victim—easy prey for those " +

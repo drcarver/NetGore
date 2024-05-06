@@ -12,7 +12,7 @@
     <CollectionView ItemsSource="{Binding Table}"
                     SelectionMode="None">
         <CollectionView.Header>
-            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="100,100,400">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="100,200,400">
                 <Label Text="{Binding Description}" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="0" Grid.Column="0"
@@ -48,7 +48,7 @@ Copyright Notice: Pathfinder RPG Core Rulebook. Copyright 2009, Paizo Publishing
         </CollectionView.Footer>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="viewmodel:BackgroundTableEntryViewModel">
-                <Grid BackgroundColor="PapayaWhip" ColumnDefinitions="100,100,400">
+                <Grid BackgroundColor="PapayaWhip" ColumnDefinitions="100,200,400">
                     <Label Text="{Binding Range}" Margin="10,10,0,0" 
                            Grid.Column="0" HorizontalTextAlignment="Start"/>
                     <Label Text="{Binding ProperName}" Margin="10,10,0,0" 

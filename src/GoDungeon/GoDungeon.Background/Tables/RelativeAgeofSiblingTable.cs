@@ -75,6 +75,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01,48),
                         Name = nameof(RelativeAgeofSiblingEnum.Older),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Older),
                         Description = "Your sibling is older than you.",
                     },
                     #endregion
@@ -85,6 +86,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(49,96),
                         Name = nameof(RelativeAgeofSiblingEnum.Younger),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Younger),
                         Description = "Your sibling is younger than you.",
                     },
                     #endregion
@@ -95,6 +97,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(97,100),
                         Name = nameof(RelativeAgeofSiblingEnum.Twins),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Twins),
                         Description = "You and a sibling are twins " +
                             "(identical or fraternal, your " +
                             "choice). Roll on this table again. " +

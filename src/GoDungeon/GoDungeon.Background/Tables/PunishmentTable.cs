@@ -83,6 +83,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01,10),
                         Name = nameof(PunishmentEnum.Beating),
+                        ProperName = nameof(PunishmentEnum.Beating),
                     },
                     #endregion
 
@@ -92,6 +93,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(11,20),
                         Name = nameof(PunishmentEnum.Branding),
+                        ProperName = nameof(PunishmentEnum.Branding),
                     },
                     #endregion
 
@@ -101,6 +103,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(21,30),
                         Name = nameof(PunishmentEnum.Exile),
+                        ProperName = nameof(PunishmentEnum.Exile),
                     },
                     #endregion
 
@@ -110,6 +113,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(31,40),
                         Name = nameof(PunishmentEnum.Fine),
+                        ProperName = nameof(PunishmentEnum.Fine),
                     },
                     #endregion
 
@@ -119,6 +123,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(41,50),
                         Name = nameof(PunishmentEnum.Imprisonment),
+                        ProperName = nameof(PunishmentEnum.Imprisonment),
                     },
                     #endregion
 
@@ -128,6 +133,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(51,60),
                         Name = nameof(PunishmentEnum.Stocks),
+                        ProperName = nameof(PunishmentEnum.Stocks),
                     },
                     #endregion
 
@@ -137,6 +143,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(61,70),
                         Name = nameof(PunishmentEnum.Torture),
+                        ProperName = nameof(PunishmentEnum.Torture),
                     },
                     #endregion
 

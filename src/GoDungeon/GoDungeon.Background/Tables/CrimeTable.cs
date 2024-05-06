@@ -83,6 +83,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01, 10),
                         Name = nameof(CrimeEnum.Adultery),
+                        ProperName = nameof(CrimeEnum.Adultery),
                     },
                     #endregion
 
@@ -92,6 +93,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(11, 20),
                         Name = nameof(CrimeEnum.Arson),
+                        ProperName = nameof(CrimeEnum.Arson),
                     },
                     #endregion
 
@@ -101,6 +103,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(21, 30),
                         Name = nameof(CrimeEnum.Burglary),
+                        ProperName = nameof(CrimeEnum.Burglary),
                     },
                     #endregion
 
@@ -110,6 +113,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(31, 40),
                         Name = nameof(CrimeEnum.Heresy),
+                        ProperName = nameof(CrimeEnum.Heresy),
                     },
                     #endregion
 
@@ -129,6 +133,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(51, 60),
                         Name = nameof(CrimeEnum.Murder),
+                        ProperName = nameof(CrimeEnum.Murder),
                     },
                     #endregion
 
@@ -148,6 +153,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(71, 80),
                         Name = nameof(CrimeEnum.Robbery),
+                        ProperName = nameof(CrimeEnum.Robbery),
                     },
                     #endregion
 
@@ -157,6 +163,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(81, 90),
                         Name = nameof(CrimeEnum.Smuggling),
+                        ProperName = nameof(CrimeEnum.Smuggling),
                     },
                     #endregion
 

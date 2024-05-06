@@ -82,6 +82,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01, 60),
                         Name = nameof(NobilityEnum.Gentry),
+                        ProperName = nameof(NobilityEnum.Gentry),
                         Description =
                             "You are the child of a minor " +
                             "lord, lady, or noble with an " +
@@ -100,6 +101,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(61, 78),
                         Name = nameof(NobilityEnum.Knight),
+                        ProperName = nameof(NobilityEnum.Knight),
                         Description =
                             "You are the child of a knight, " +
                             "a noble with estates, titles, " +
@@ -122,6 +124,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(79, 85),
                         Name = nameof(NobilityEnum.Baron),
+                        ProperName = nameof(NobilityEnum.Baron),
                         Description =
                             "You are the child of a baron or " +
                             "baroness, a noble responsible " +
@@ -142,6 +145,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(68, 91),
                         Name = nameof(NobilityEnum.Count),
+                        ProperName = nameof(NobilityEnum.Count),
                         Description =
                             "You are the noble child of a " +
                             "count or countess.Your family " +
@@ -163,6 +167,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(92, 96),
                         Name = nameof(NobilityEnum.Duke),
+                        ProperName = nameof(NobilityEnum.Duke),
                         Description =
                             "You are the child of a duke or " +
                             "duchess, the most powerful noble " +
