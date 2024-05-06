@@ -4,6 +4,7 @@ using GoDungeon.Core.Enum;
 using GoDungeon.MAUI.Background.Interfaces;
 using GoDungeon.MAUI.Background.Views;
 using GoDungeon.MAUI.Core.ViewModels;
+using GoDungeon.MAUI.Core.Views;
 
 namespace GoDungeon.MAUI.Background.Tables;
 
@@ -29,6 +30,18 @@ public partial class BackgroundMenuTable : MenuTable, IBackgroundMenuTable
         {
             Table =
             [
+                #region Racial Background Menu Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(RacialBackgroundMenuTable),
+                    ProperName = "Racial Background Menu",
+                    Description = "Racial Background Menu",
+                    TableType = TableTypeEnum.BackgroundTable,
+                    Route = nameof(MenuTablePage),
+                    PageDetailType = typeof(IRacialBackgroundMenuTable)
+                },
+                #endregion
+
                 #region Adopted Outside Your Race Table
                 new GameNavigationEntryViewModel
                 {

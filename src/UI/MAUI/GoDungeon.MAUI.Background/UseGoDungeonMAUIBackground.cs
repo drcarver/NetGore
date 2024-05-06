@@ -5,6 +5,7 @@ using CommunityToolkit.Maui;
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables;
 using GoDungeon.Core.Tables;
+using GoDungeon.MAUI.Background.Interfaces;
 using GoDungeon.MAUI.Background.Tables;
 using GoDungeon.MAUI.Background.Views;
 
@@ -33,8 +34,13 @@ namespace GoDungeon.MAUI.Core
         public static IServiceCollection UseGoDungeonMAUIBackground(this IServiceCollection collection)
         {
             //collection
-            // The tables
-            collection.AddTransientWithShellRoute<BackgroundMenuTablePage, BackgroundMenuTable>(nameof(BackgroundMenuTablePage));
+            // The menu pages (not in the shell)
+            //collection.AddTransientWithShellRoute<BackgroundMenuTablePage, BackgroundMenuTable>(nameof(BackgroundMenuTablePage));
+            //collection.AddTransientWithShellRoute<RacialBackgroundMenuTablePage, RacialBackgroundMenuTable>(nameof(RacialBackgroundMenuTablePage));
+
+            // Add the menu tables
+            collection.AddTransient<IBackgroundMenuTable, BackgroundMenuTable>();
+            collection.AddTransient<IRacialBackgroundMenuTable, RacialBackgroundMenuTable>();
 
             // Register additional detail routes
             Routing.RegisterRoute(nameof(BackgroundTablePage), typeof(BackgroundTablePage));

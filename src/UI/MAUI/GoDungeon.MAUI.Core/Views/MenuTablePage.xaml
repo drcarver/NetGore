@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoDungeon.MAUI.Background.Views.BackgroundMenuTablePage"
+             x:Class="GoDungeon.MAUI.Core.Views.MenuTablePage"
              xmlns:coreviewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
              xmlns:tables="clr-namespace:GoDungeon.MAUI.Core.Tables;assembly=GoDungeon.MAUI.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"

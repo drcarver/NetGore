@@ -22,45 +22,4 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-
-    <!--Margin="Left,Top,Right,Bottom" -->
-    <!--<TableView Intent="Menu">
-        <TableRoot>
-            <TableSection>
-                <ViewCell>
-                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
-                        <Label Text="Core Tables" Margin="10,10,0,0"
-                               Grid.Column="1" HorizontalTextAlignment="Start" />
-                        <Label Text="Player Character core tables" Margin="10,10,0,0" 
-                               Grid.Column="2" HorizontalTextAlignment="Start" />
-                    </Grid>
-                </ViewCell>
-                <ViewCell>
-                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto">
-                        <Label Text="Background Tables" Margin="10,10,0,0"
-                               Grid.Column="1" HorizontalTextAlignment="Start"/>
-                        <Label Text="Player Character background tables"  Margin="10,10,0,0" 
-                               Grid.Column="2" HorizontalTextAlignment="Start" />
-                    </Grid>
-                </ViewCell>
-                </ViewCell>
-                <TextCell
-                    Text="Core Tables"
-                    Detail="Core Tables for the game"
-                    Command="{Binding SelectedMenuCommand}" CommandParameter="CoreTable"/>
-                <TextCell
-                    Text="Background Tables"
-                    Detail="Tables for generating the Player Charcters background" />
-                <TextCell
-                    Text="Character Tables"
-                    Detail="Tables for generating the Player Charcter" />
-                <TextCell
-                    Text="Equipment Tables"
-                    Detail="Equipment you can carry" />
-                <TextCell
-                    Text="Gaming Tables"
-                    Detail="Encouter and Treasure tables" />
-            </TableSection>
-        </TableRoot>
-    </TableView>-->
 </ContentPage>

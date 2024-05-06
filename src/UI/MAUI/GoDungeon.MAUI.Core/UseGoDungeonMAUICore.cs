@@ -46,6 +46,9 @@ namespace GoDungeon.MAUI.Core
             collection.AddTransientWithShellRoute<SkillsTablePage, SkillTable>(nameof(SkillsTablePage));
             collection.AddTransientWithShellRoute<SpellAbilityModifierTablePage, SpellAbilityModifierTable>(nameof(SpellAbilityModifierTablePage));
 
+            // Add non shell routes
+            Routing.RegisterRoute(nameof(MenuTablePage), typeof(MenuTablePage));
+
             return collection;
         }
     }

@@ -36,6 +36,9 @@
 	  <Compile Update="Views\AlignmentTablePage.xaml.cs">
 	    <DependentUpon>AlignmentTablePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\MenuTablePage.xaml.cs">
+	    <DependentUpon>MenuTablePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\CoreMenuTablePage.xaml.cs">
 	    <DependentUpon>CoreMenuTablePage.xaml</DependentUpon>
 	  </Compile>
@@ -46,6 +49,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\AlignmentTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MenuTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\CoreMenuTablePage.xaml">
