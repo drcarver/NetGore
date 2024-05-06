@@ -43,6 +43,7 @@ namespace GoDungeon.MAUI.Core
             collection.AddTransientWithShellRoute<AlignmentTablePage, AlignmentTable>(nameof(AlignmentTablePage));
             collection.AddTransientWithShellRoute<GenderTablePage, GenderTable>(nameof(GenderTablePage));
             collection.AddTransientWithShellRoute<LanguageTablePage, LanguageTable>(nameof(LanguageTablePage));
+            collection.AddTransientWithShellRoute<SkillsTablePage, SkillTable>(nameof(SkillsTablePage));
             collection.AddTransientWithShellRoute<SpellAbilityModifierTablePage, SpellAbilityModifierTable>(nameof(SpellAbilityModifierTablePage));
 
             return collection;

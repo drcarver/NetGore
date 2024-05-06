@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(SkillTable);
             ProperName = "Skill Table";
+            Description = "Skills represent some of the most basic and yet most fundamental abilities your character possesses. As your character advances in level, he can gain new skills and improve his existing skills dramatically. This table describes each skill, including common uses and typical modifiers. Characters can sometimes use skills for purposes other than those noted here, at the GM’s discretion.";
             TableType = TableTypeEnum.CoreTable;
         }
 

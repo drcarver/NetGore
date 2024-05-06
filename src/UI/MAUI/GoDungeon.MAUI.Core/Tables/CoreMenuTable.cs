@@ -71,6 +71,17 @@ public partial class CoreMenuTable : MenuTable, ICoreMenuTable
                 },
                 #endregion
 
+                #region Skills Table
+                new GameNavigationEntryViewModel
+                {
+                    Name = nameof(SkillTable),
+                    ProperName = "Skills Table",
+                    Description = "Creature Skills Table",
+                    TableType = TableTypeEnum.CoreTable,
+                    Route = nameof(SkillsTablePage)
+                },
+                #endregion
+
                 #region Spell Ability Modifier Table
                 new GameNavigationEntryViewModel
                 {
