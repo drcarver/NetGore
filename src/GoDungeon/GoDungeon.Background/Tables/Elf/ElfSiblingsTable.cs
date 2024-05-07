@@ -66,6 +66,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(01,80),
                         Name = "1d2",
+                        ProperName = "1d2",
                         Description =
                             "With two or more siblings, you gain access " +
                             "to the Kin Guardian combat trait.",
@@ -82,6 +83,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(81,85),
                         Name = "1d4+1",
+                        ProperName = "1d4+1",
                         Description =
                             "You gain access to " +
                             "the Kin Guardian combat trait.",
@@ -98,6 +100,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(86,90),
                         Name = "1d4+1 and 1d3–1 are Half Elves",
+                        ProperName = "1d4+1 and 1d3–1 are Half Elves",
                         Description = "1d4+1 biological " +
                             "siblings. 1d3–1 of these siblings " +
                             "are half-elves, adopted, or a mix " +
@@ -120,6 +123,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(91,100),
                         Name = "No siblings",
+                        ProperName = "No siblings",
                         Description = "No siblings",
                     },
                     #endregion

@@ -26,15 +26,23 @@
 
 	<ItemGroup>
 	  <Folder Include="Enum\" />
+	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Background\GoDungeon.Background.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Views\AlignmentTablePage.xaml.cs">
 	    <DependentUpon>AlignmentTablePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BackgroundTablePage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ConflictTablePage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\MenuTablePage.xaml.cs">
 	    <DependentUpon>MenuTablePage.xaml</DependentUpon>
@@ -49,6 +57,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\AlignmentTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BackgroundTablePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ConflictTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MenuTablePage.xaml">

@@ -1,24 +1,25 @@
-﻿using GoDungeon.Background.Interfaces;
-using GoDungeon.Background.Tables;
+﻿using System.Collections.ObjectModel;
+
+using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables.Dragonborn;
 using GoDungeon.Background.Tables.Dwarf;
 using GoDungeon.Background.Tables.Elf;
 using GoDungeon.Background.Tables.Gnome;
 using GoDungeon.Background.Tables.HalfElf;
 using GoDungeon.Core.Enum;
-using GoDungeon.MAUI.Background.Interfaces;
-using GoDungeon.MAUI.Background.Views;
-using GoDungeon.MAUI.Core.ViewModels;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
+using GoDungeon.Core.ViewModels;
+using GoDungeon.MAUI.Core.Views;
 
-namespace GoDungeon.MAUI.Background.Tables;
+namespace GoDungeon.MAUI.Core.Tables;
 
-public partial class RacialBackgroundMenuTable : MenuTable, IRacialBackgroundMenuTable
+public partial class RacialBackgroundMenuTable : GameTable, IMenuTable, IRacialBackgroundMenuTable
 {
     /// <summary>
     /// Constructor
     /// </summary>
-    public RacialBackgroundMenuTable(IServiceProvider services)
-        : base(services)
+    public RacialBackgroundMenuTable()
     {
         Name = nameof(RacialBackgroundMenuTable);
         ProperName = "Racial Background Table Menu";
@@ -32,8 +33,8 @@ public partial class RacialBackgroundMenuTable : MenuTable, IRacialBackgroundMen
     {
         if (Table == null || Table.Count == 0)
         {
-            Table =
-            [
+            Table = new ObservableCollection<IGameTableEntry>
+            {
                 #region Dragonborn Homeland Table
                 new GameNavigationEntryViewModel
                 {
@@ -213,7 +214,7 @@ public partial class RacialBackgroundMenuTable : MenuTable, IRacialBackgroundMen
                     PageDetailType = typeof(IHalfElfSiblingsTable)
                 },
                 #endregion
-            ];
+            };
         }
     }
 }

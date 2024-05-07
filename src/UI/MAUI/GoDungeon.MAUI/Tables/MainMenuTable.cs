@@ -1,8 +1,7 @@
-﻿using GoDungeon.Background.Interfaces;
-using GoDungeon.Core.Enum;
+﻿using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.MAUI.Background.Interfaces;
-using GoDungeon.MAUI.Background.Views;
+using GoDungeon.Core.ViewModels;
+using GoDungeon.MAUI.Core.Interfaces;
 using GoDungeon.MAUI.Core.ViewModels;
 using GoDungeon.MAUI.Core.Views;
 using GoDungeon.MAUI.Interfaces;

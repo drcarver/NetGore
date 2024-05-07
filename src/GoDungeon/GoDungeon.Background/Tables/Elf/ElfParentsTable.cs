@@ -66,6 +66,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(01,79),
                         Name = "Both Alive",
+                        ProperName = "Both Alive",
                         Description = "Both of your parents are alive.",
                     },
                     #endregion
@@ -76,6 +77,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(80,87),
                         Name = "Father Only",
+                        ProperName = "Father Only",
                         Description = "Only your father is alive.",
                     },
                     #endregion
@@ -86,6 +88,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(88,95),
                         Name = "Mother Only",
+                        ProperName = "Mother Only",
                         Description = "Only your mother is alive.",
                     },
                     #endregion
@@ -98,6 +101,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(96,100),
                         Name = "Both Dead",
+                        ProperName = "Both Dead",
                         Description =
                             "Both of your parents are dead. " +
                             "You gain access to the Orphaned " +

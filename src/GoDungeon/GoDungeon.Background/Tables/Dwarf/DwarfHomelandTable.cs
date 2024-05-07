@@ -72,6 +72,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(01,40),
                         Name = "Hills or Mountains",
+                        ProperName = "Hills or Mountains",
                         Description =
                             "You gain access to the " +
                             "Goldsniffer race trait and " +
@@ -92,6 +93,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(41,80),
                         Name = "Underground",
+                        ProperName = "Underground",
                         Description =
                             "You gain access to the Surface " +
                             "Stranger regional trait and the " +
@@ -114,6 +116,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(81,87),
                         Name = "Non-Dwarven Town or Village",
+                        ProperName = "Non-Dwarven Town or Village",
                         Description =
                             "You gain access to the Brewmaster " +
                             "race trait and the Militia Veteran " +
@@ -135,6 +138,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(88,95),
                         Name = "Non-Dwarven City or Metropolis",
+                        ProperName = "Non-Dwarven City or Metropolis",
                         Description =
                             "You gain access to the Brewmaster " +
                             "race trait and the Vagabond Child " +
@@ -154,6 +158,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(96,100),
                         Name = "Unusual Homeland",
+                        ProperName = "Unusual Homeland",
                     },
                     #endregion
                 };

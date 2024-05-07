@@ -1,9 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System;
 
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.MAUI.Core.Interfaces
+namespace GoDungeon.Core.Interfaces
 {
     public interface IGameNavigationTableEntry : IStandardTableEntry
     {

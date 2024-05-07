@@ -2,6 +2,6 @@
 
 namespace GoDungeon.MAUI.Core.Interfaces;
 
-public interface ICoreMenuTable : IMenuTable
+public interface IBackgroundMenuTable : IMenuTable
 {
 }

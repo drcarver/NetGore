@@ -1,6 +1,6 @@
 using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.MAUI.Background.Views;
+namespace GoDungeon.MAUI.Core.Views;
 
 public partial class ConflictTablePage : ContentPage, IQueryAttributable
 {

@@ -2,11 +2,10 @@
 
 using CommunityToolkit.Maui;
 
-using GoDungeon.Core.Interfaces;
+using GoDungeon.Background.Interfaces;
 using GoDungeon.Core.Tables;
 using GoDungeon.MAUI.Core.Interfaces;
 using GoDungeon.MAUI.Core.Tables;
-using GoDungeon.MAUI.Core.ViewModels;
 using GoDungeon.MAUI.Core.Views;
 
 namespace GoDungeon.MAUI.Core
@@ -46,7 +45,13 @@ namespace GoDungeon.MAUI.Core
             collection.AddTransientWithShellRoute<SkillsTablePage, SkillTable>(nameof(SkillsTablePage));
             collection.AddTransientWithShellRoute<SpellAbilityModifierTablePage, SpellAbilityModifierTable>(nameof(SpellAbilityModifierTablePage));
 
-            // Add non shell routes
+            // Add the menu tables
+            collection.AddTransient<IBackgroundMenuTable, BackgroundMenuTable>();
+            collection.AddTransient<IRacialBackgroundMenuTable, RacialBackgroundMenuTable>();
+
+            // Register additional detail routes
+            Routing.RegisterRoute(nameof(BackgroundTablePage), typeof(BackgroundTablePage));
+            Routing.RegisterRoute(nameof(ConflictTablePage), typeof(ConflictTablePage));
             Routing.RegisterRoute(nameof(MenuTablePage), typeof(MenuTablePage));
 
             return collection;

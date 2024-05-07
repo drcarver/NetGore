@@ -66,6 +66,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(01,80),
                         Name = "1d4",
+                        ProperName = "You have 1d4 Siblings",
                         Description =
                             "1d4 biological siblings. With two " +
                             "or more siblings, you gain access " +
@@ -83,6 +84,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(81,90),
                         Name = "1d4+1",
+                        ProperName = "You have 1d4+1 Siblings",
                         Description =
                             "1d4+1 biological siblings. You gain access to " +
                             "the Kin Guardian combat trait.",
@@ -99,6 +101,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(91,95),
                         Name = "1d3",
+                        ProperName = "1d3–1 Biological siblings and 1d3–1 adopted siblings",
                         Description = "1d3–1 Biological siblings and " +
                             "1d3–1 adopted siblings. With two or " +
                             "more siblings, you gain access to the " +
@@ -118,6 +121,7 @@ namespace GoDungeon.Background.Tables.Dwarf
                     {
                         Range = new Range(96,100),
                         Name = "No siblings",
+                        ProperName = "No siblings",
                         Description = "No siblings",
                     },
                     #endregion

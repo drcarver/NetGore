@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoDungeon.MAUI.Background.Views.ConflictTablePage"
+             x:Class="GoDungeon.MAUI.Core.Views.BackgroundTablePage"
              xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
              xmlns:viewmodel="clr-namespace:GoDungeon.Background.ViewModels;assembly=GoDungeon.Background"
              xmlns:tables="clr-namespace:GoDungeon.Core.Tables;assembly=GoDungeon.Core"
@@ -12,11 +12,11 @@
     <CollectionView ItemsSource="{Binding Table}"
                     SelectionMode="None">
         <CollectionView.Header>
-            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="100,300,100,400">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="100,200,400">
                 <Label Text="{Binding Description}" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="0" Grid.Column="0"
-                       Grid.ColumnSpan="4" />
+                       Grid.ColumnSpan="3" />
                 <Label Text="Dice" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="1" Grid.Column="0" />
@@ -30,12 +30,9 @@
                 <Label Text="Name" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
                        Grid.Row="2" Grid.Column="1" />
-                <Label Text="Conflict Points" Margin="10,10,0,0" 
-                       HorizontalOptions="Center" 
-                       Grid.Row="2" Grid.Column="2" />
                 <Label Text="Description" Margin="10,10,0,0" 
                        HorizontalOptions="Start" 
-                       Grid.Row="2" Grid.Column="3" />
+                       Grid.Row="2" Grid.Column="2" />
             </Grid>
         </CollectionView.Header>
         <!--This footer is for Pathfinder content-->
@@ -50,16 +47,14 @@ Copyright Notice: Pathfinder RPG Core Rulebook. Copyright 2009, Paizo Publishing
             </Grid>
         </CollectionView.Footer>
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="viewmodel:ConflictTableEntryViewModel">
-                <Grid BackgroundColor="PapayaWhip" ColumnDefinitions="100,300,100,400">
+            <DataTemplate x:DataType="viewmodel:BackgroundTableEntryViewModel">
+                <Grid BackgroundColor="PapayaWhip" ColumnDefinitions="100,200,400">
                     <Label Text="{Binding Range}" Margin="10,10,0,0" 
                            Grid.Column="0" HorizontalTextAlignment="Start"/>
                     <Label Text="{Binding ProperName}" Margin="10,10,0,0" 
                            Grid.Column="1" HorizontalTextAlignment="Start"/>
-                    <Label Text="{Binding  ConflictPoints}" Margin="10,10,0,0"
-                           Grid.Column="2" HorizontalTextAlignment="Center"/>
                     <Label Text="{Binding  Description}" Margin="10,10,0,0"
-                           Grid.Column="3" HorizontalTextAlignment="Start"/>
+                           Grid.Column="2" HorizontalTextAlignment="Start"/>
                 </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>

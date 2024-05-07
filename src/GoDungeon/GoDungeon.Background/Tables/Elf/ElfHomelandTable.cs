@@ -70,6 +70,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(01,60),
                         Name = "Forest",
+                        ProperName = "Forest",
                         Description =
                             "You gain access to the " +
                             "Log Roller regional trait.",
@@ -85,6 +86,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(61,80),
                         Name = "Non-Elven City or Metropolis",
+                        ProperName = "Non-Elven City or Metropolis",
                         Description =
                             "If you’re an elf, you gain access " +
                             "to the Civilized social trait and " +
@@ -105,7 +107,8 @@ namespace GoDungeon.Background.Tables.Elf
                     new BackgroundTableEntryViewModel
                     {
                         Range = new Range(81,95),
-                        Name = "Non-Dwarven Town or Village",
+                        Name = "Non-Elven Town or Village",
+                        ProperName = "Non-Elven Town or Village",
                         Description =
                             "You gain access to the Forlorn race trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -121,6 +124,7 @@ namespace GoDungeon.Background.Tables.Elf
                     {
                         Range = new Range(96,100),
                         Name = "Unusual Homeland",
+                        ProperName = "Unusual Homeland",
                     },
                     #endregion
                 };

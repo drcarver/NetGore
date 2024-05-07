@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
-             xmlns:coreviewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
+             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
              xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
              xmlns:enum="clr-namespace:GoDungeon.Core.Enum;assembly=GoDungeon.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="coreviewmodel:MenuTable"
+             x:DataType="viewmodel:MenuTable"
              Title="{Binding ProperName}">
 
     <CollectionView ItemsSource="{Binding Table}"
