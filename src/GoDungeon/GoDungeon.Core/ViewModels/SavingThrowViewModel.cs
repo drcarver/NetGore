@@ -44,7 +44,7 @@ namespace GoDungeon.Core.ViewModels
         /// <returns>True if the saving throw succeeds</returns>
         public bool Roll(int dc, int proficiencyModifier = 0)
         {
-            var roll = new Dice("1d20").Total;
+            var roll = new Dice("1GoDungeon").Total;
             if (roll == 1)
             {
                 return false;

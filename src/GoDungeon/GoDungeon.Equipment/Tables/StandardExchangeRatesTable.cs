@@ -17,7 +17,7 @@ namespace GoDungeon.Equipment.Tables
         {
             Name = nameof(StandardExchangeRatesTable);
             ProperName = "Standard Exchange Rates Table";
-            TableType = TableTypeEnum.GoodsTable;
+            TableType = TableTypeEnum.EquipmentTable;
             Description =
                 "Common coins come in several different " +
                 "denominations based on the relative worth of the " +

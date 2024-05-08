@@ -61,7 +61,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             }
 
             //Languages Dwarvish, Undercommon
-            Languages.Add(LanguageEnum.Dwarvish);
+            Languages.Add(LanguageEnum.Dwarven);
             Languages.Add(LanguageEnum.Undercommon);
 
             ////Challenge 1(200    XP)

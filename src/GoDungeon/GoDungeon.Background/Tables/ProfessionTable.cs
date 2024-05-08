@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -100,6 +100,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01, 05),
                         Name = nameof(ProfessionEnum.Slaves),
+                        ProperName = nameof(ProfessionEnum.Slaves),
                         Description =
                             "You gain access to the Life of Toil social " +
                             "trait.",
@@ -133,6 +134,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(26, 30),
                         Name = nameof(ProfessionEnum.Entertainers),
+                        ProperName = nameof(ProfessionEnum.Entertainers),
                         Description =
                             "You gain access to the Talented social trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -148,6 +150,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(31, 34),
                         Name = nameof(ProfessionEnum.Soldiers),
+                        ProperName = nameof(ProfessionEnum.Soldiers),
                         Description =
                             "You gain access to the Tactician combat trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -163,6 +166,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(35, 37),
                         Name = nameof(ProfessionEnum.Sailors),
+                        ProperName = nameof(ProfessionEnum.Sailors),
                         Description =
                             "You gain access to the Worldly social trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -178,6 +182,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(38, 40),
                         Name = nameof(ProfessionEnum.Thieves),
+                        ProperName = nameof(ProfessionEnum.Thieves),
                         Description =
                             "You gain access to the Child of " +
                             "the Streets social trait.",
@@ -194,6 +199,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(41, 55),
                         Name = nameof(ProfessionEnum.Yeomen),
+                        ProperName = nameof(ProfessionEnum.Yeomen),
                         Description =
                             "You gain access to the " +
                             "Savanna Child regional trait.",
@@ -210,6 +216,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(56, 70),
                         Name = nameof(ProfessionEnum.Tradespeople),
+                        ProperName = nameof(ProfessionEnum.Tradespeople),
                         Description =
                             "You gain access to the Artisan " +
                             "social trait and the Life of Toil " +
@@ -228,6 +235,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(71, 85),
                         Name = nameof(ProfessionEnum.Artisans),
+                        ProperName = nameof(ProfessionEnum.Artisans),
                         Description =
                             "You gain access to the Artisan social trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -243,6 +251,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(86, 95),
                         Name = nameof(ProfessionEnum.Merchants),
+                        ProperName = nameof(ProfessionEnum.Merchants),
                         Description =
                             "You gain access to the Merchant social trait.",
                         Traits = new ObservableCollection<TraitEnum>

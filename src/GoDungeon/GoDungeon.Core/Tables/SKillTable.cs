@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(SkillTable);
             ProperName = "Skill Table";
+            Description = "Skills represent some of the most basic and yet most fundamental abilities your character possesses. As your character advances in level, he can gain new skills and improve his existing skills dramatically. This table describes each skill, including common uses and typical modifiers. Characters can sometimes use skills for purposes other than those noted here, at the GM’s discretion.";
             TableType = TableTypeEnum.CoreTable;
         }
 
@@ -37,7 +38,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Acrobatics),
-                        ProperName = nameof(SkillEnum.Acrobatics),
+                        ProperName = "Acrobatics",
                         Ability = AbilityEnum.Dexterity,
                         Description =
                             "You can keep your balance while traversing " +
@@ -51,7 +52,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Appraise),
-                        ProperName = nameof(SkillEnum.Appraise),
+                        ProperName = "Appraise",
                         Ability = AbilityEnum.Intelligence,
                         Description =
                             "A DC 20 Appraise check determines the " +
@@ -79,7 +80,7 @@ namespace GoDungeon.Core.Tables
                     new SkillTableEntryViewModel
                     {
                         Name = nameof(SkillEnum.Diplomacy),
-                        ProperName = nameof(SkillEnum.Diplomacy),
+                        ProperName = "Diplomacy",
                         Ability = AbilityEnum.Charisma,
                         Description =
                             "You can use this skill to persuade others " +

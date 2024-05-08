@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System;
+
+using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -27,24 +29,9 @@ namespace GoDungeon.Core.ViewModels
         private string? route;
 
         /// <summary>
-        /// The actual game table
+        /// The page detail type
         /// </summary>
-        private IGameTable? GameTable { get; }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public GameNavigationEntryViewModel(
-            IGameTable? gameTable)
-        {
-            if (gameTable != null)
-            {
-                Name = gameTable.Name;
-                ProperName = gameTable.ProperName;
-                Description = gameTable.Description;
-                Route = $"{gameTable.Name}View";
-                GameTable = gameTable;
-            }
-        }
+        [ObservableProperty]
+        private Type? pageDetailType;
     }
 }

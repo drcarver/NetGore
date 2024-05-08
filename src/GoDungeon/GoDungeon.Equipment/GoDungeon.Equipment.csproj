@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoDungeon.Core\GoDungeon..Core.csproj" />
     <ProjectReference Include="..\GoDungeon.Core\GoDungeon.Core.csproj" />
   </ItemGroup>
 

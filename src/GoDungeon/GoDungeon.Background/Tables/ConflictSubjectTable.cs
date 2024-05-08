@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -19,6 +19,7 @@
 //
 #endregion
 
+using System;
 using System.Collections.ObjectModel;
 
 using GoDungeon.Background.Enum;
@@ -46,12 +47,13 @@ namespace GoDungeon.Background.Tables
         {
             Name = nameof(ConflictSubjectTable);
             ProperName = "Conflicts Subject Table";
+            DiceSides = 20;
             TableType = TableTypeEnum.ConflictTable;
             Description = "To determine the key person (or people) involved in the conflict, roll on Table: Conflict Subject. Only on the rare occasion that the subject was a child or a young person does the subject affect the accumulation of CP.";
         }
 
         //Table: Conflict Subject
-        //d20 Result
+        //D20 Result
         //1	Commoner
         //2	Merchant
         //3	Tradesperson
@@ -66,7 +68,7 @@ namespace GoDungeon.Background.Tables
         //12	Child or young person(increase your CP by 1)
         //13	Family member
         //14	Close friend
-        //15	Lover or former lover(roll a d12 instead of a d20 on Table: Romantic Relationships)
+        //15	Lover or former lover(roll a d12 instead of a GoDungeon on Table: Romantic Relationships)
         //16	Enemy or rival
         //17	Gangster or underworld figure
         //18	Adventurer
@@ -88,7 +90,9 @@ namespace GoDungeon.Background.Tables
                     //1	Commoner
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(1,1),
                         Name = nameof(ConflictSubjectEnum.Commoner),
+                        ProperName = nameof(ConflictSubjectEnum.Commoner),
                         ConflictPoints = 0
                     },
                     #endregion
@@ -97,7 +101,9 @@ namespace GoDungeon.Background.Tables
                     //2	Merchant
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(2,2),
                         Name = nameof(ConflictSubjectEnum.Merchant),
+                        ProperName = nameof(ConflictSubjectEnum.Merchant),
                         ConflictPoints = 0
                     },
                     #endregion
@@ -106,7 +112,9 @@ namespace GoDungeon.Background.Tables
                     //3	Tradesperson
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(3,3),
                         Name = nameof(ConflictSubjectEnum.Tradesperson),
+                        ProperName = nameof(ConflictSubjectEnum.Tradesperson),
                         ConflictPoints = 0
                     },
                     #endregion
@@ -115,6 +123,8 @@ namespace GoDungeon.Background.Tables
                     //4	Artisan
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(4,4),
+                        ProperName = nameof(ConflictSubjectEnum.Artisan),
                         Name = nameof(ConflictSubjectEnum.Artisan),
                         ConflictPoints = 0
                     },
@@ -124,6 +134,8 @@ namespace GoDungeon.Background.Tables
                     //5	Civic or military official
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(5,5),
+                        ProperName = "Civic or military official",
                         Name = nameof(ConflictSubjectEnum.Civicormilitaryofficial),
                         ConflictPoints = 0
                     },
@@ -133,6 +145,8 @@ namespace GoDungeon.Background.Tables
                     //6	Noble
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(6,6),
+                        ProperName = nameof(ConflictSubjectEnum.Noble),
                         Name = nameof(ConflictSubjectEnum.Noble),
                         ConflictPoints = 0
                     },
@@ -142,6 +156,8 @@ namespace GoDungeon.Background.Tables
                     //7	Leader
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(7,7),
+                        ProperName = nameof(ConflictSubjectEnum.Leader),
                         Name = nameof(ConflictSubjectEnum.Leader),
                         ConflictPoints = 0
                     },
@@ -151,6 +167,8 @@ namespace GoDungeon.Background.Tables
                     //8	Clergy
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(8,8),
+                        ProperName = nameof(ConflictSubjectEnum.Clergy),
                         Name = nameof(ConflictSubjectEnum.Clergy),
                         ConflictPoints = 0
                     },
@@ -160,6 +178,7 @@ namespace GoDungeon.Background.Tables
                     //9	Soldier or warrior
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(9,9),
                         Name = nameof(ConflictSubjectEnum.Soldierorwarrior),
                         ProperName = "Soldier or warrior",
                         ConflictPoints = 0
@@ -170,6 +189,7 @@ namespace GoDungeon.Background.Tables
                     //10	Spellcaster
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(10,10),
                         Name = nameof(ConflictSubjectEnum.Spellcaster),
                         ProperName = "Spellcaster",
                         ConflictPoints = 0
@@ -180,6 +200,7 @@ namespace GoDungeon.Background.Tables
                     //11	Scoundrel
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(11,11),
                         Name = nameof(ConflictSubjectEnum.Scoundrel),
                         ProperName = "Scoundrel",
                         ConflictPoints = 0
@@ -190,6 +211,7 @@ namespace GoDungeon.Background.Tables
                     //12	Child or young person
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(12,12),
                         Name = nameof(ConflictSubjectEnum.Child),
                         ProperName = "Child or young person",
                         ConflictPoints = 1
@@ -200,6 +222,7 @@ namespace GoDungeon.Background.Tables
                     //13	Family member
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(13,13),
                         Name = nameof(ConflictSubjectEnum.Familymember),
                         ProperName = "Family member",
                         ConflictPoints = 0
@@ -210,6 +233,7 @@ namespace GoDungeon.Background.Tables
                     //14	Close friend
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(14,14),
                         Name = nameof(ConflictSubjectEnum.Closefriend),
                         ProperName = "Close friend",
                         ConflictPoints = 0
@@ -220,6 +244,7 @@ namespace GoDungeon.Background.Tables
                     //15	Lover or former lover
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(15,15),
                         Name = nameof(ConflictSubjectEnum.Loverorformerlover),
                         ProperName = "Lover or former lover",
                         ConflictPoints = 0
@@ -230,6 +255,7 @@ namespace GoDungeon.Background.Tables
                     //16	Enemy or rival
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(16,16),
                         Name = nameof(ConflictSubjectEnum.Enemyorrival),
                         ProperName = "Enemy or rival",
                         ConflictPoints = 0
@@ -240,6 +266,7 @@ namespace GoDungeon.Background.Tables
                     //17	Gangster or underworld figure
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(17,17),
                         Name = nameof(ConflictSubjectEnum.Gangsterorunderworldfigure),
                         ProperName = "Gangster or underworld figure",
                         ConflictPoints = 0
@@ -250,6 +277,7 @@ namespace GoDungeon.Background.Tables
                     //18	Adventurer
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(18,18),
                         Name = nameof(ConflictSubjectEnum.Adventurer),
                         ProperName = "Adventurer",
                         ConflictPoints = 0
@@ -260,6 +288,7 @@ namespace GoDungeon.Background.Tables
                     //19	Humanoid monster
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(19,19),
                         Name = nameof(ConflictSubjectEnum.Humanoidmonster),
                         ProperName = "Humanoid monster",
                         ConflictPoints = 0
@@ -270,6 +299,7 @@ namespace GoDungeon.Background.Tables
                     //20	Non-humanoid monster    
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(20,20),
                         Name = nameof(ConflictSubjectEnum.Nonhumanoidmonster),
                         ProperName = "Non-humanoid monster",
                         ConflictPoints = 0

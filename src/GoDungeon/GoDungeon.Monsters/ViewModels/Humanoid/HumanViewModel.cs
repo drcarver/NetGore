@@ -1,5 +1,13 @@
-﻿using GoDungeon.Core;
+﻿using System;
+using System.Collections.ObjectModel;
+
+using GoDungeon.Background.Tables.Human;
+using GoDungeon.Background.ViewModels;
+using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -14,7 +22,11 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the 
         /// </summary>
-        public HumanViewModel(ILoggerFactory loggerFactory)
+        public HumanViewModel(
+            ILoggerFactory loggerFactory,
+            IHumanHomelandTable humanHomeLandTable,
+            IHumanParentsTable humanParentsTable,
+            IHumanSiblingsTable humanSiblingsTable)
         {
             Initialize();
         }
@@ -58,230 +70,19 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             Languages.Add(LanguageEnum.Common);
         }
 
-        //Table: Human Homeland
-        //d%	Result
-        //01–50	Town or Village You gain access to the Militia Veteran regional trait.
-        //51–85	City or Metropolis If you’re a human, you gain access to the Civilized social trait and the Vagabond Child regional trait. If you’re a half-elf, you gain access to the Civilized social trait and the Failed Apprentice race trait. If you’re a half-orc, you gain access to the Brute race trait and the Vagabond Child regional trait.
-        //86–95	Frontier You gain access to the Frontier-Forged regional trait.
-        //96–100 Unusual Homeland.	Roll on Table: Unusual Homeland.
-        /// <summary>
-        /// The homeland table
-        /// </summary>
-        public static RandomTable HomelandTable { get; } = new()
-        {
-            DiceSides = 100,
-            Table =
-            [
-                #region "Town or Village"
-                //01–50	Town or Village You gain access
-                //to the Militia Veteran regional trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,50),
-                    Name = "Town or Village",
-                    Description =
-                    "You gain access to the Militia Veteran regional trait.",
-                    Traits =
-                    {
-                        TraitEnum.MilitiaVeteran,
-                    },
-                },
-                #endregion
-
-                #region "City or Metropolis"
-                //51–85	City or Metropolis If you’re a
-                //human, you gain access to the Civilized
-                //social trait and the Vagabond Child
-                //regional trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(51,85),
-                    Name = "City or Metropolis",
-                    Description = "If you’re a human, you gain access to the Civilized social trait and the Vagabond Child regional trait",
-                    Traits =
-                    {
-                        TraitEnum.Civilized,
-                        TraitEnum.VagabondChild,
-                    },
-                },
-                #endregion
-
-                #region "Frontier"
-                //86–95	Frontier You gain access to the Frontier-Forged regional trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(86,95),
-                    Name = "Frontier",
-                    Description = "You gain access to the Frontier-Forged regional trait.",
-                    Traits =
-                    {
-                        TraitEnum.FrontierForged,
-                    },
-                },
-                #endregion
-                        
-                #region "Unusual Homeland."
-                //96–100 Unusual Homeland.	Roll on Table:
-                //Unusual Homeland.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(96,100),
-                    Name = "Unusual Homeland",
-                },
-                #endregion
-            ],
-        };
-
-        //Table: Human Parents
-        //d%	Result
-        //01–50	Both of your parents are alive.
-        //51–70	Only your father is alive.
-        //71–90	Only your mother is alive.
-        //91–100	Both of your parents are dead. You gain access to the Orphaned social trait.
-        /// <summary>
-        /// The parents table
-        /// </summary>
-        private static RandomTable ParentsTable { get; } = new()
-        {
-            DiceSides = 100,
-            Table =
-            [
-                #region "Both"
-                //01–50	Both of your parents are alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,50),
-                    Name = "Both Alive",
-                    Description = "Both of your parents are alive.",
-                },
-                #endregion
-
-                #region "Father Only"
-                //51–70	Only your father is alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(51,70),
-                    Name = "Father Only",
-                    Description = "Only your father is alive.",
-                },
-                #endregion
-
-                #region "Mother Only"
-                //71–90	Only your mother is alive.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(71,90),
-                    Name = "Mother Only",
-                    Description = "Only your mother is alive.",
-                },
-                #endregion
-
-                #region "Both Dead"
-                //91–100 Both of your parents are dead.
-                //You gain access to the Orphaned social
-                //trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(91,100),
-                    Name = "Both Dead",
-                    Description =
-                        "Both of your parents are dead. " +
-                        "You gain access to the Orphaned " +
-                        "social trait.",
-                    Traits =
-                    {
-                        TraitEnum.Orphaned,
-                    },
-                },
-                #endregion
-            ],
-        };
-
-        //Table: Human Siblings
-        //d%	Result
-        //01–40	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
-        //41–70	1d2 siblings and 1d2 half-siblings(roll d% to determine each one’s race; 01–50: half-elf, 51–100: half-orc). You gain access to the Kin Guardian combat trait.
-        //71–90	2d4 siblings.You gain access to the Kin Guardian combat trait.
-        //91–100	No siblings.
-        /// <summary>
-        /// The siblings table
-        /// </summary>
-        private static RandomTable SiblingsTable { get; } = new()
-        {
-            DiceSides = 100,
-            Table =
-            [
-                #region "1d2"
-                //01–40	1d2 siblings.With two siblings, you gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(01,40),
-                    Name = "1d4",
-                    Description =
-                        "With two or more siblings, you " +
-                        "gain access to the Kin Guardian " +
-                        "combat trait.",
-                    Traits =
-                    {
-                        TraitEnum.KinGuardian,
-                    },
-                },
-                #endregion
-
-                #region "1d4"
-                //41–70	1d2 siblings and 1d2 half-siblings(roll d% to determine each one’s race)
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(41,70),
-                    Name = "1d4",
-                    Description =
-                        "1d2 siblings and 1d2 " +
-                        "half-siblings (roll d% to " +
-                        "determine each one’s race)",
-                },
-                #endregion
-
-                #region "2d4"
-                //71–90	2d4 siblings.You gain access to the Kin Guardian combat trait.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(71,90),
-                    Name = "2d4",
-                    Description =
-                        "2d4 siblings.You gain access to " +
-                        "the Kin Guardian combat trait.",
-                    Traits =
-                    {
-                        TraitEnum.KinGuardian,
-                    },
-                },
-                #endregion
-
-                #region "No siblings"
-                //91–100	No siblings.
-                new BackgroundTableEntryViewModel
-                {
-                    Range = new Range(91,100),
-                    Name = "No siblings",
-                    Description = "No siblings",
-                },
-                #endregion
-            ],
-        };
-
         //Table: Random Height and Weight
         //Gender Base Height        Height Modifier Base Weight Weight Modifier
         //Male	    4 ft. 10 in.	+2d10 in.       120 lbs.    +(2d10×5 lbs.)
-        //Female	4 ft. 5 in.	    +2d10 in.        85 lbs. +(2d10×5 lbs.)
+        //Female	4 ft. 5 in.	    +2d10 in.        85 lbs.    +(2d10×5 lbs.)
         /// <summary>
         /// The Height
         /// </summary>
         /// <param name="creature">The player character</param>
-        private void SetHeightAndWeight()
+        public override void SetHeightAndWeight()
         {
             if (Gender == GenderEnum.Male)
             {
-                Height = new Height(4, 10).Add("2d10");
+                Height = new HeightViewModel(4, 10).Add("2d10");
 
                 // 120 lbs.    +(2d10×5 lbs.)
                 Weight = 120 + new Dice("2d10").Total * 5;
@@ -289,7 +90,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             if (Gender == GenderEnum.Female)
             {
-                Height = new Height(4, 5).Add("2d10");
+                Height = new HeightViewModel(4, 5).Add("2d10");
 
                 // 85 lbs. +(2d10×5 lbs.)
                 Weight = 85 + new Dice("2d10").Total * 5;

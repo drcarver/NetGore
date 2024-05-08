@@ -84,7 +84,7 @@ namespace GoDungeon.Core.Tables
             }
         }
 
-        //d20 Alignment
+        //GoDungeon Alignment
         //1–2 Chaotic evil
         //3-4 Neutral evil
         //5–6 Lawful evil

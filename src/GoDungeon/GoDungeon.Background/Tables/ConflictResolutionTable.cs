@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -19,6 +19,7 @@
 //
 #endregion
 
+using System;
 using System.Collections.ObjectModel;
 
 using GoDungeon.Background.Enum;
@@ -47,6 +48,7 @@ namespace GoDungeon.Background.Tables
         {
             Name = nameof(ConflictResolutionTable);
             ProperName = "Conflict Resolution Table";
+            DiceSides = 8;
             TableType = TableTypeEnum.ConflictTable;
             Description = "Once you determine the nature and CP for the event, the next step is to determine the resolution. Instead of rolling for the conflict’s resolution, you choose how you dealt with it, and your choice can affect the number of CP the conflict is worth. In games that do not allow evil characters, you cannot take a resolution that would adjust your character to an evil alignment.";
         }
@@ -83,6 +85,7 @@ namespace GoDungeon.Background.Tables
                     //or whom to ask.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(1, 1),
                         Name = nameof(ConflictResolutionEnum.RegretandPenance),
                         ProperName = "Regret and Penance",
                         Description = "Not only do you regret your action, but you have publicly admitted to it and did your best to make amends for the wrongdoing. Most know of the conflict’s details and those who don’t can easily find them out if they know where to look or whom to ask.",
@@ -100,6 +103,7 @@ namespace GoDungeon.Background.Tables
                     //discretion.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(2, 2),
                         Name = nameof(ConflictResolutionEnum.SincereRegret),
                         ProperName = "Sincere Regret",
                         Description = "Though you feel sincere regret for the event and its memory affects your behavior, it’s still a secret. Only your trusted companions know of the conflict, and they have promised a degree of discretion.",
@@ -116,6 +120,7 @@ namespace GoDungeon.Background.Tables
                     //of your involvement in the conflict.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(3, 3),
                         Name = nameof(ConflictResolutionEnum.SecretRegret),
                         ProperName = "Secret Regret",
                         Description = "You regret the conflict, but go to great lengths to keep it secret and try desperately to forget it ever happened.Only you and maybe a select few people know of your involvement in the conflict.",
@@ -127,6 +132,7 @@ namespace GoDungeon.Background.Tables
                     //Mixed Feelings (0 cp) Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(4, 5),
                         Name = nameof(ConflictResolutionEnum.MixedFeelings),
                         ProperName = "Mixed Feelings",
                         Description = "Sometimes you regret the conflict, but other times you feel as if you didn’t have a choice in the matter or that you made the right decision.Most of the time, you just avoid thinking about the conflict.Only you and maybe a select few people know of your involvement.",
@@ -138,6 +144,7 @@ namespace GoDungeon.Background.Tables
                     //Denial (+1 cp) You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(6, 6),
                         Name = nameof(ConflictResolutionEnum.Denial),
                         ProperName = "Denial",
                         Description = "You feel little if any regret, and deny the event mostly so others won’t judge you.Few if any know of your part in the conflict, and your constant denials are meant to keep it that way.",
@@ -149,6 +156,7 @@ namespace GoDungeon.Background.Tables
                     //No Guilt (+2 cp) Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(7, 7),
                         Name = nameof(ConflictResolutionEnum.NoGuilt),
                         ProperName = "No Guilt",
                         Description = "Either guilt is for the weak, or you know you made the right decision.You might not openly brag about your part in the conflict, but you don’t deny it when confronted either.",
@@ -160,6 +168,7 @@ namespace GoDungeon.Background.Tables
                     //You Enjoyed It (+3 cp) Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(8, 8),
                         Name = nameof(ConflictResolutionEnum.YouEnjoyedIt),
                         ProperName = "You Enjoyed It",
                         Description = "Those who cling to petty morals have no understanding of what true freedom and power is. The fact is, you enjoyed your part in the conflict and would do it all over again if the opportunity presented itself.Many people know of your misdeed, and they also realize your complete lack of remorse",

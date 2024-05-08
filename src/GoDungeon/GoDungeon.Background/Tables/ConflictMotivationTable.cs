@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -49,6 +49,7 @@ namespace GoDungeon.Background.Tables
         {
             Name = nameof(ConflictMotivationTable);
             ProperName = "Conflict Motivation Table";
+            DiceSides = 10;
             TableType = TableTypeEnum.ConflictTable;
             Description = "To determine the source of your motivation for the conflict, roll on Table: Motivation. If the campaign allows the full spectrum of alignments, roll a d10 on this table. If the campaign allows only nonevil alignments, roll a d8. If you’re a paladin, roll a d4. The motivation affects the CP gained from the conflict.";
         }
@@ -81,7 +82,9 @@ namespace GoDungeon.Background.Tables
                     //1	Justice	1
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(1,1),
                         Name = nameof(ConflictMotivationEnum.Justice),
+                        ProperName = nameof(ConflictMotivationEnum.Justice),
                         ConflictPoints = 1
                     },
                     #endregion
@@ -90,7 +93,9 @@ namespace GoDungeon.Background.Tables
                     //2	Love	1
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(2,2),
                         Name = nameof(ConflictMotivationEnum.Love),
+                        ProperName = nameof(ConflictMotivationEnum.Love),
                         ConflictPoints = 1
                     },
                     #endregion
@@ -99,6 +104,7 @@ namespace GoDungeon.Background.Tables
                     //3	Pressured or Manipulated	2
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(3,3),
                         Name = nameof(ConflictMotivationEnum.PressuredorManipulated),
                         ProperName = "Pressured or Manipulated",
                         ConflictPoints = 2
@@ -109,8 +115,9 @@ namespace GoDungeon.Background.Tables
                     //4	Religion	2
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(4,4),
                         Name = nameof(ConflictMotivationEnum.Religion),
-                        ProperName = "Religion",
+                        ProperName = nameof(ConflictMotivationEnum.Religion),
                         ConflictPoints = 2
                     },
                     #endregion
@@ -119,8 +126,9 @@ namespace GoDungeon.Background.Tables
                     //5	Family	3
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(5,5),
                         Name = nameof(ConflictMotivationEnum.Family),
-                        ProperName = "Family",
+                        ProperName = nameof(ConflictMotivationEnum.Family),
                         ConflictPoints = 3
                     },
                     #endregion
@@ -129,8 +137,9 @@ namespace GoDungeon.Background.Tables
                     //6	Money	3
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(6,6),
                         Name = nameof(ConflictMotivationEnum.Money),
-                        ProperName = "Money",
+                        ProperName = nameof(ConflictMotivationEnum.Money),
                         ConflictPoints = 3
                     },
                     #endregion
@@ -139,8 +148,9 @@ namespace GoDungeon.Background.Tables
                     //7	Jealousy	4
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(7,7),
                         Name = nameof(ConflictMotivationEnum.Jealousy),
-                        ProperName = "Jealousy",
+                        ProperName = nameof(ConflictMotivationEnum.Jealousy),
                         ConflictPoints = 4
                     },
                     #endregion
@@ -149,6 +159,7 @@ namespace GoDungeon.Background.Tables
                     //8	Hatred or Malice	4
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(8,8),
                         Name = nameof(ConflictMotivationEnum.HatredorMalice),
                         ProperName = "Hatred or Malice",
                         ConflictPoints = 4
@@ -159,8 +170,9 @@ namespace GoDungeon.Background.Tables
                     //9	Pleasure	5
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(9,9),
                         Name = nameof(ConflictMotivationEnum.Pleasure),
-                        ProperName = "Pleasure",
+                        ProperName = nameof(ConflictMotivationEnum.Pleasure),
                         ConflictPoints = 5
                     },
                     #endregion
@@ -169,8 +181,9 @@ namespace GoDungeon.Background.Tables
                     //10	Amusement or Entertainment	5    
                     new ConflictTableEntryViewModel
                     {
+                        Range = new System.Range(10,10),
                         Name = nameof(ConflictMotivationEnum.AmusementorEntertainment),
-                        ProperName = "Pleasure",
+                        ProperName = "Amusement or Entertainment",
                         ConflictPoints = 5
                     },
                     #endregion

@@ -1,10 +1,10 @@
 ﻿//using System.Diagnostics.CodeAnalysis;
 
-//using D20.Character.Enum;
-//using D20.Core.Enum;
-//using D20.Core.Models;
+//using GoDungeon.Character.Enum;
+//using GoDungeon.Core.Enum;
+//using GoDungeon.Core.Models;
 
-//namespace D20.Character.PC.Wizard;
+//namespace GoDungeon.Character.PC.Wizard;
 
 //public class WizardLevelTable : GameTable, IWizardLevelTable
 //{

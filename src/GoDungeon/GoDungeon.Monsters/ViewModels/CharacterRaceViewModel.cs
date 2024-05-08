@@ -13,7 +13,7 @@ namespace GoDungeon.Monsters.ViewModels
         /// <summary>
         /// The creatures homeland
         /// </summary>
-        public IBackgroundTableEntryViewModel? Homeland { get; private set; }
+        public IBackgroundTableEntry? Homeland { get; private set; }
 
         /// <summary>
         /// The traits for this creature
@@ -23,22 +23,22 @@ namespace GoDungeon.Monsters.ViewModels
         /// <summary>
         /// The creature's parents
         /// </summary>
-        public IBackgroundTableEntryViewModel? Parents { get; private set; }
+        public IBackgroundTableEntry? Parents { get; private set; }
 
         /// <summary>
         /// The creature's circumstance of birth
         /// </summary>
-        public IBackgroundTableEntryViewModel? CircumstanceOfBirth { get; private set; }
+        public IBackgroundTableEntry? CircumstanceOfBirth { get; private set; }
 
         /// <summary>
         /// THe creature's parents profession
         /// </summary>
-        public IBackgroundTableEntryViewModel? ParentProfession { get; private set; }
+        public IBackgroundTableEntry? ParentProfession { get; private set; }
 
         /// <summary>
         /// Adopted parents if needed
         /// </summary>
-        public IBackgroundTableEntryViewModel? AdoptedParents { get; private set; }
+        public IBackgroundTableEntry? AdoptedParents { get; private set; }
 
         /// <summary>
         /// Set the character background
@@ -50,11 +50,11 @@ namespace GoDungeon.Monsters.ViewModels
             IRandomTable unusualHomelandTable)
         {
             homelandTable?.InitializeTable();
-            Homeland = (IBackgroundTableEntryViewModel?)homelandTable?.GetRandomRangeEntry();
+            Homeland = (IBackgroundTableEntry?)homelandTable?.GetRandomRangeEntry();
             if (Homeland?.Name == "UnusualHomeland")
             {
                 unusualHomelandTable?.InitializeTable();
-                Homeland = (IBackgroundTableEntryViewModel?)unusualHomelandTable?.GetRandomRangeEntry();
+                Homeland = (IBackgroundTableEntry?)unusualHomelandTable?.GetRandomRangeEntry();
             }
             if (Homeland?.Traits != null)
             {
@@ -75,7 +75,7 @@ namespace GoDungeon.Monsters.ViewModels
         protected virtual void GetParents(IRandomTable parentsTable)
         {
             parentsTable?.InitializeTable();
-            Parents = (IBackgroundTableEntryViewModel?)parentsTable?.GetRandomRangeEntry();
+            Parents = (IBackgroundTableEntry?)parentsTable?.GetRandomRangeEntry();
             if (Parents?.Traits != null)
             {
                 foreach (var trait in Parents.Traits)
@@ -101,22 +101,22 @@ namespace GoDungeon.Monsters.ViewModels
         {
             circumstanceofBirthTable.InitializeTable();
             professionTable.InitializeTable();
-            CircumstanceOfBirth = (IBackgroundTableEntryViewModel?)circumstanceofBirthTable?.GetRandomRangeEntry();
+            CircumstanceOfBirth = (IBackgroundTableEntry?)circumstanceofBirthTable?.GetRandomRangeEntry();
             switch (CircumstanceOfBirth?.Name)
             {
                 case nameof(CircumstanceofBirthEnum.LowerClassBirth):
-                    ParentProfession = (IBackgroundTableEntryViewModel?)professionTable?.GetRandomRangeEntry(20);
+                    ParentProfession = (IBackgroundTableEntry?)professionTable?.GetRandomRangeEntry(20);
                     break;
                 case nameof(CircumstanceofBirthEnum.NobleBirth):
                     nobilityTable.InitializeTable();
-                    ParentProfession = (IBackgroundTableEntryViewModel?)nobilityTable?.GetRandomRangeEntry();
+                    ParentProfession = (IBackgroundTableEntry?)nobilityTable?.GetRandomRangeEntry();
                     break;
                 case nameof(CircumstanceofBirthEnum.AdoptedOutsideYourRace):
                     adoptedOutsideYourRaceTable.InitializeTable();
-                    AdoptedParents = (IBackgroundTableEntryViewModel?)adoptedOutsideYourRaceTable?.GetRandomRangeEntry();
+                    AdoptedParents = (IBackgroundTableEntry?)adoptedOutsideYourRaceTable?.GetRandomRangeEntry();
                     break;
                 default:
-                    ParentProfession = (IBackgroundTableEntryViewModel?)professionTable?.GetRandomRangeEntry();
+                    ParentProfession = (IBackgroundTableEntry?)professionTable?.GetRandomRangeEntry();
                     break;
             }
 

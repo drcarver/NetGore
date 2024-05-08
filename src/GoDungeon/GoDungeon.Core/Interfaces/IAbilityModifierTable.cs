@@ -7,6 +7,6 @@
         /// </summary>
         /// <param name="number">The ability score</param>
         /// <returns>The ability bonus entry</returns>
-        IAbilityBonusEntry GetEntryByScore(int number);
+        IAbilityBonusSpellEntry GetEntryByScore(int number);
     }
 }

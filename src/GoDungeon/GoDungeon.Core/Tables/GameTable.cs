@@ -1,7 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -36,6 +39,39 @@ namespace GoDungeon.Core.Tables
         private ObservableCollection<IGameTableEntry>? table;
 
         /// <summary>
+        /// The selected table entry
+        /// </summary>
+        [ObservableProperty]
+        private IGameTableEntry? selectedItem;
+
+        /// <summary>
+        /// Command to execute on a selection changed event
+        /// </summary>
+        /// <param name="execute">The method to execute</param>
+        /// <param name="canExecute">Can the command execute</param>
+        /// <returns></returns>
+        public AsyncRelayCommand SelectionChangedCommand { get; set; }
+
+        /// <summary>
+        /// The method to execute when the selection changes
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        protected virtual async Task SelectionChanged()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Return true if the selection can change
+        /// </summary>
+        /// <returns>True if selection can change</returns>
+        protected virtual bool CanChangeSelection()
+        {
+            return false;
+        }
+
+        /// <summary>
         /// Get a random entry from the table 
         /// </summary>
         /// <returns>The selected TableEntry.</returns>
@@ -55,6 +91,14 @@ namespace GoDungeon.Core.Tables
         /// </summary>
         public virtual void InitializeTable()
         {
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public GameTable()
+        {
+             SelectionChangedCommand = new AsyncRelayCommand(SelectionChanged, CanChangeSelection);
         }
     }
 }

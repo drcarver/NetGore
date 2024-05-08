@@ -10,7 +10,7 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// The ability score prerequisite's for the class.   
         /// </summary>
-        protected ObservableCollection<IClassPrerequisite> ClassPrerequisites { get; set; }
+        public ObservableCollection<IClassPrerequisite> ClassPrerequisites { get; set; }
 
         /// <summary>
         /// The class level
@@ -25,22 +25,22 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// Armor Proficiency
         /// </summary>
-        public Dictionary<EquipmentEnum, IArmorEntry> ArmorProficiency { get; set; }
+        public ObservableCollection<int> ArmorProficiency { get; set; }
 
         /// <summary>
         /// Weapon Proficiency
         /// </summary>
-        public Dictionary<EquipmentEnum, IWeaponEntry> WeaponProficiency { get; set; }
+        public ObservableCollection<int> WeaponProficiency { get; set; }
 
         /// <summary>
         /// Tools
         /// </summary>
-        public Dictionary<EquipmentEnum, IEquipmentTableEntry> ToolProficiency { get; set; }
+        public ObservableCollection<int> ToolProficiency { get; set; }
 
         /// <summary>
         /// Saving Throws
         /// </summary>
-        public Dictionary<AbilityEnum, IAbilityBase> SavingThrows { get; set; }
+        public ObservableCollection<AbilityEnum> SavingThrows { get; set; }
 
         /// <summary>
         /// The description of the class background.  Used to provide
@@ -57,6 +57,6 @@ namespace GoDungeon.Core.Interfaces
         /// Level up the character with this class
         /// </summary>
         /// <param name="character">The character we are leveling</param>
-        public void LevelUp(ICharacter character);
+        public void LevelUp(ICharacterClass character);
     }
 }

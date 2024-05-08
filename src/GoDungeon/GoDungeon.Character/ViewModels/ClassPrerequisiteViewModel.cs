@@ -26,7 +26,7 @@ namespace GoDungeon.Character.ViewModels
         private int score;
 
         /// <summary>
-        /// Does the ability have a high enough score?
+        /// Does the creature have a high enough ability score?
         /// </summary>
         /// <param name="creature">The creature to test</param>
         /// <returns>True if the ability is high enough</returns>

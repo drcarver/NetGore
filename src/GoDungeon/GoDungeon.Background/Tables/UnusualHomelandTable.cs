@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -86,6 +86,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01, 10),
                         Name = nameof(UnusualHomelandEnum.Subterranean),
+                        ProperName = nameof(UnusualHomelandEnum.Subterranean),
                         Description =
                             "You gain access to the Surface " +
                             "Stranger regional trait.",
@@ -103,6 +104,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(11, 25),
                         Name = nameof(UnusualHomelandEnum.Mountains),
+                        ProperName = nameof(UnusualHomelandEnum.Mountains),
                         Description =
                             "You gain access to the Highlander " +
                             "regional trait.",
@@ -120,6 +122,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(26, 40),
                         Name = nameof(UnusualHomelandEnum.Plains),
+                        ProperName = nameof(UnusualHomelandEnum.Plains),
                         Description =
                             "You gain access to the Savanna " +
                             "Child regional trait.",
@@ -176,6 +179,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(61, 70),
                         Name = nameof(UnusualHomelandEnum.Forest),
+                        ProperName = nameof(UnusualHomelandEnum.Forest),
                         Description =
                             "You gain access to the Log Jumper " +
                             "regional trait.",
@@ -210,6 +214,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(81, 85),
                         Name = nameof(UnusualHomelandEnum.Desert),
+                        ProperName = nameof(UnusualHomelandEnum.Desert),
                         Description =
                             "You gain access to the Desert Child regional trait.",
                         Traits = new ObservableCollection<TraitEnum>
@@ -243,6 +248,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(91, 95),
                         Name = nameof(UnusualHomelandEnum.Tundra),
+                        ProperName = nameof(UnusualHomelandEnum.Tundra),
                         Description =
                             "You gain access to the Tundra Child regional trait.",
                         Traits = new ObservableCollection<TraitEnum>

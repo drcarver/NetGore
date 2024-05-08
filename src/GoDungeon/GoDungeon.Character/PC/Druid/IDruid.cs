@@ -1,7 +1,8 @@
 ﻿using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.Character.PC.Druid;
-
-public interface IDruid : ICharacterClass
+namespace GoDungeon.Character.PC.Druid
 {
+    public interface IDruid : ICharacterClass
+    {
+    }
 }

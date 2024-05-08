@@ -27,7 +27,7 @@ namespace GoDungeon.Core
             .ToList();
 
         /// <summary>
-        /// The D20 Core tables and services
+        /// The GoDungeon Core tables and services
         /// </summary>
         /// <param name="collection">The DI service collection</param>
         /// <returns>The services collection</returns>
@@ -35,13 +35,11 @@ namespace GoDungeon.Core
         {
             //collection
             // Add all the game table types as transient
-            collection.AddTransient<IAbilityBonusEntry, AbilityBonusEntryViewModel>();
             collection.AddTransient<IAbilityBonusSpellEntry, AbilityBonusSpellEntryViewModel>();
             collection.AddTransient<IAcrobaticsModifiersTableEntry, AcrobaticsModifierViewModel>();
             collection.AddTransient<IAlignmentEntry, AlignmentTableEntryViewModel>();
             collection.AddTransient<IBaseObject, BaseObjectViewModel>();
             collection.AddTransient<IDataObject, DataObjectViewModel>();
-            collection.AddTransient<IGameNavigationTableEntry, GameNavigationEntryViewModel>();
             collection.AddTransient<IGameTableEntry, GameTableEntryViewModel>();
             collection.AddTransient<IGameTable, GameTable>();
             collection.AddTransient<INamedTableEntry, NamedTableEntryViewModel>();
@@ -52,7 +50,6 @@ namespace GoDungeon.Core
             collection.AddTransient<IStandardTableEntry, StandardTableEntryViewModel>();
 
             // The tables
-            collection.AddTransient<IAbilityModifierTable, AbilityModifierTable>();
             collection.AddTransient<IAcrobaticsModifiersTable, AcrobaticsModifierTable>();
             collection.AddTransient<IAlignmentTable, AlignmentTable>();
             collection.AddTransient<IGenderTable, GenderTable>();

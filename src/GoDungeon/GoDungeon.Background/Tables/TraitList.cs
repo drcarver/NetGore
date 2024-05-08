@@ -23,7 +23,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Absolute Loyalty",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/absolute-loyalty"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/absolute-loyalty"),
                 Description = "You gain the one-time ability to immediately cast atonement upon yourself as a spell-like ability upon performing an act or being subjected to an effect that spell affects. This ability can only be used while you are acting in the service of your liege (an individual of higher social standing chosen when you take this feat).)",
             },
             #endregion
@@ -35,7 +35,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Accelerated Drinker",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/accelerated-drinker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/accelerated-drinker"),
                 Description = "You may drink a potion as a move action instead of a standard as long as you start your turn with the potion in your hand.)",
             },
             #endregion
@@ -47,7 +47,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Acrobat",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/acrobat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/acrobat"),
                 Description = "You gain a +1 bonus on Acrobatics checks, and you take only a –2 penalty instead of the normal – 5 penalty when using the Climb skill to attempt an accelerated climb.)",
             },
             #endregion
@@ -59,7 +59,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Adopted",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/adopted"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/adopted"),
                 Description = "You may select a race trait from your adoptive parents’ race.)",
             },
             #endregion
@@ -71,7 +71,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Affable",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/affable-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/affable-social"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks to gather information, and can do so in half the normal time. In addition, Diplomacy and Knowledge (local) are always class skills for you.)",
             },
             #endregion
@@ -83,7 +83,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Air-Touched",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/air-touched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/air-touched"),
                 Description = "You gain DR 1/— against creatures and attacks with the air type.)",
             },
             #endregion
@@ -95,7 +95,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Alchemical Adept",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/alchemical-adept"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/alchemical-adept"),
                 Description = "You gain a +2 trait bonus on all Craft (alchemy) checks made to craft alchemical items. Furthermore, when you fail a Craft (alchemy) check by 5 or more but don't roll a natural 1, you don't ruin any raw materials or have to pay that cost again.)",
             },
             #endregion
@@ -107,7 +107,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Alchemical Intuition",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/alchemical-intuition"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/alchemical-intuition"),
                 Description = "Once per day as a free action, you may gain a trait bonus equal to your Charisma modifier (minimum 0) on a Craft (alchemy) check you make. You can apply this bonus after you roll the check, possibly turning a failure into a success.)",
             },
             #endregion
@@ -130,7 +130,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ambitious",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/ambitious"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/ambitious"),
                 Description = "You gain a +4 trait bonus on Diplomacy checks made to influence creatures with at least 5 Hit Dice more than you possess.)",
             },
             #endregion
@@ -142,7 +142,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ambush Training",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/ambush-training"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/ambush-training"),
                 Description = "You gain a +1 trait bonus on initiative checks and a +1 trait bonus on weapon damage rolls during any surprise round in which you act.)",
             },
             #endregion
@@ -154,7 +154,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Amiable Blunder",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/amiable-blunder-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/amiable-blunder-social"),
                 Description = "Once per day when you fail a Diplomacy check by 5 or more and would cause an NPC's attitude toward you to worsen, you can immediately attempt another Diplomacy check against the same DC as a free action. If you succeed at this second Diplomacy check, the character's attitude doesn't change, as though you had failed the original check by 4 or less.)",
             },
             #endregion
@@ -166,7 +166,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Anatomist",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/anatomist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/anatomist"),
                 Description = "You gain a +1 trait bonus on all rolls made to confirm critical hits.)",
             },
             #endregion
@@ -178,7 +178,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Arcane Revitalization",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/arcane-revitalization"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/arcane-revitalization"),
                 Description = "Once per day, when you confirm a critical hit with a weapon attack, you regain 1 arcane pool point. You can't exceed your maximum number of arcane pool points.)",
             },
             #endregion
@@ -190,7 +190,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Arcane Temper",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/arcane-temper"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/arcane-temper"),
                 Description = "You gain a +1 trait bonus on concentration and initiative checks.)",
             },
             #endregion
@@ -202,7 +202,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Armor Expert",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/armor-expert"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/armor-expert"),
                 Description = "Armor check penalties for armor you wear are reduced by 1, to a minimum of 0.)",
             },
             #endregion
@@ -214,7 +214,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Artisan",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/artisan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/artisan"),
                 Description = "You gain a +2 trait bonus on a single Craft skill (your choice).)",
             },
             #endregion
@@ -226,7 +226,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ascendant Recollection",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/ascendant-recollection"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/ascendant-recollection"),
                 Description = "Your sorcerer level is considered to be 1 level higher when determining the effects of your 1st-level bloodline power.)",
             },
             #endregion
@@ -238,7 +238,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Authoritarian",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/authoritarian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/authoritarian"),
                 Description = "As long as you are acting in the service of a liege or leader you recognize as legitimate, you gain a +2 trait bonus on saving throws against fear and compulsion effects.)",
             },
             #endregion
@@ -250,7 +250,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Avid Reader",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/avid-reader"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/avid-reader"),
                 Description = "Choose one Knowledge skill. You can always choose to take 10 on checks with the chosen Knowledge skill, even when distracted or threatened.)",
             },
             #endregion
@@ -262,7 +262,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Axe to Grind",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/axe-to-grind"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/axe-to-grind"),
                 Description = "You gain a +1 trait bonus on damage against foes who are threatened by only you.)",
             },
             #endregion
@@ -274,7 +274,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Balancers Banishing",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/balancer-s-banishing-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/balancer-s-banishing-magic"),
                 Description = "As long as you remain neutral, whenever you cast a spell that would send an outsider with the chaotic, evil, good, or lawful subtype back to its home plane, the spell's saving throw DC increases by 1.)",
             },
             #endregion
@@ -286,7 +286,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bastard",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/bastard"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/bastard"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive is always a class skill for you.)",
             },
             #endregion
@@ -298,7 +298,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Battlefield Disciple",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/battlefield-disciple"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/battlefield-disciple"),
                 Description = "You gain a +2 trait bonus on Heal checks made to stabilize a dying creature. In addition, when you successfully use the aid another action in combat to grant an ally a bonus on her next attack roll, the bonus you grant increases by 1.)",
             },
             #endregion
@@ -310,7 +310,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Beacon of Faith",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/beacon-of-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/beacon-of-faith"),
                 Description = "Once per day as a free action, you may treat your caster level as if it were 2 levels higher when using one of the granted powers of your domain or inquisition, or when casting one of your domain spells.)",
             },
             #endregion
@@ -322,7 +322,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Beast Bond",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/beast-bond"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/beast-bond"),
                 Description = "You gain a +1 bonus on Handle Animal checks and Ride checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -335,7 +335,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Druid,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/beast-of-the-society-druid-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/beast-of-the-society-druid-pathfinder-society"),
                 Description = "Whenever you use your wild shape class ability to turn yourself into a Small or Medium-sized animal, the effect lasts for 2 hours per druid level instead of 1 hour per druid level.)",
             },
             #endregion
@@ -348,7 +348,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Barbarian,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/berserker-of-the-society-barbarian-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/berserker-of-the-society-barbarian-pathfinder-society"),
                 Description = "You may use your rage ability for 3 additional rounds per day.)",
             },
             #endregion
@@ -360,7 +360,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Birthmark",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/birthmark"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/birthmark"),
                 Description = "Your birthmark can serve as a divine focus for casting spells and you gain a +2 trait bonus on all saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -372,7 +372,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Black Powder Bravado",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/black-powder-bravado"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/black-powder-bravado"),
                 Description = "Once per day, when you perform a deed that requires an attack roll and you miss with that roll, you can reroll it. You must take the second result even if it is worse.)",
             },
             #endregion
@@ -384,7 +384,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Black Powder Fortune",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/black-powder-fortune"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/black-powder-fortune"),
                 Description = "As long as you are wielding a firearm, you gain a +2 trait bonus on all saving throws against curse, fear, and emotion effects.)",
             },
             #endregion
@@ -396,7 +396,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Black Powder Interjection",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/black-powder-interjection"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/black-powder-interjection"),
                 Description = "Once per day, when you interrupt the casting of a spell with a firearm attack, you may regain 1 grit point.)",
             },
             #endregion
@@ -408,7 +408,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bladed Magic",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/bladed-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/bladed-magic"),
                 Description = "You gain a +1 trait bonus on Craft checks made to craft magic or masterwork weapons. In addition, when you use your arcane pool class ability to grant a weapon an enhancement bonus, that bonus lasts for 2 minutes instead of 1.)",
             },
             #endregion
@@ -421,7 +421,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Rogue,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/blade-of-the-society-rogue-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/blade-of-the-society-rogue-pathfinder-society"),
                 Description = "You gain a +1 trait bonus to damage rolls from sneak attacks.)",
             },
             #endregion
@@ -433,7 +433,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Blessed",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/blessed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/blessed"),
                 Description = "Once per day as a swift action, you gain a +1 trait bonus on all saving throws for 1 round.)",
             },
             #endregion
@@ -445,7 +445,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Blessed Touch",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/blessed-touch-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/blessed-touch-faith"),
                 Description = "You heal 1 additional point of damage when using lay on hands, channeling energy, or casting a cure spell.)",
             },
             #endregion
@@ -457,7 +457,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bloodthirsty",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/bloodthirsty"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/bloodthirsty"),
                 Description = "Whenever you make an attack that reduces a foe to 0 hit points or fewer or you confirm a critical hit, your attack deals 1 additional point of damage. The additional damage is a trait bonus, and is multiplied by your weapon's critical hit multiplier.)",
             },
             #endregion
@@ -469,7 +469,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bloody-Minded",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/bloody-minded-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/bloody-minded-combat"),
                 Description = "You gain a +1 trait bonus on initiative and Intimidate checks.)",
             },
             #endregion
@@ -492,7 +492,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bruising Intellect",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/bruising-intellect"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/bruising-intellect"),
                 Description = "Intimidate is always a class skill for you, and you may use your Intelligence modifier when making Intimidate checks instead of your Charisma modifier.)",
             },
             #endregion
@@ -504,7 +504,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bullied",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/bullied"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/bullied"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity attack rolls made with unarmed strikes.)",
             },
             #endregion
@@ -516,7 +516,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bully",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/bully"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/bully"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -528,7 +528,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Calculated Bribe",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/calculated-bribe"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/calculated-bribe"),
                 Description = "Once per day while negotiating with another intelligent creature, you can spend a number of gold pieces equal to your level × 10 in order to reroll a Diplomacy check you just made, before the results are revealed. You must take the result of the reroll, even if it's worse than the original roll. In addition, you begin play with a set of extravagant noble's clothes worth 100 gp.)",
             },
             #endregion
@@ -540,7 +540,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Called",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/called"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/called"),
                 Description = "Once per day upon rolling a natural 1 on an attack roll, you may reroll the die and take the second result instead.)",
             },
             #endregion
@@ -552,7 +552,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Canter",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/canter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/canter"),
                 Description = "Anyone who attempts to use Bluff to deliver a secret message to you gains a +5 bonus on his Bluff check. When you attempt to intercept a secret message using Sense Motive, you gain a +5 trait bonus on the attempt.)",
             },
             #endregion
@@ -564,7 +564,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Careful Combatant",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/careful-combatant-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/careful-combatant-combat"),
                 Description = "When using the withdraw action, both the first and second squares of your movement are not considered threatened by any opponents you can see, rather than just the first square.)",
             },
             #endregion
@@ -576,7 +576,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Caretaker",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/caretaker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/caretaker"),
                 Description = "You gain a +1 trait bonus on Heal checks, and Heal is always a class skill for you.)",
             },
             #endregion
@@ -588,7 +588,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Charlatan",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/charlatan-gnome-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/charlatan-gnome-magic"),
                 Description = "As a swift action, you may expend one prepared spell or spell slot to gain a bonus on the next Bluff check you make, provided the check takes place before the beginning of your next turn. The bonus on this check is equal to the level of the spell consumed. You may use this ability 3 times per day.)",
             },
             #endregion
@@ -600,7 +600,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Charming",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/charming"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/charming"),
                 Description = "You gain a +1 trait bonus when you use Bluff or Diplomacy on a character that is (or could be) sexually attracted to you, and a +1 trait bonus to the save DC of any language-dependent spell you cast on such characters or creatures.)",
             },
             #endregion
@@ -612,7 +612,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Child of the Moon",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/child-of-the-moon-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/child-of-the-moon-magic"),
                 Description = "Choose either Climb, Stealth, or Swim. You gain a +1 trait bonus on checks made with the chosen skill. On dates during and after the first quarter of a lunar phase but before end of the last quarter (the half of the lunar cycle where the moon is fuller), this bonus increases to +2. During the full moon, this bonus increases to +4.)",
             },
             #endregion
@@ -624,7 +624,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Child of the Streets",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/child-of-the-streets"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/child-of-the-streets"),
                 Description = "You gain a +1 trait bonus on Sleight of Hand checks, and Sleight of Hand is always a class skill for you.)",
             },
             #endregion
@@ -636,7 +636,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Child of the Temple",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/child-of-the-temple"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/child-of-the-temple"),
                 Description = "You gain a +1 trait bonus on Knowledge (nobility and royalty) and Knowledge (religion) checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -648,7 +648,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Chosen One",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/chosen-one-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/chosen-one-faith"),
                 Description = "You may cast light once per day as a spell-like ability (caster level 1st), and you begin play with a masterwork longsword. In addition, whenever light is cast upon this sword, the radius of light and its duration is doubled.)",
             },
             #endregion
@@ -660,7 +660,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Civilized",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/civilized"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/civilized"),
                 Description = "You gain a +1 trait bonus on Knowledge (nobility) checks and Knowledge (local) checks. Knowledge (local) is always a class skill for you.)",
             },
             #endregion
@@ -672,7 +672,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Classically Schooled",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/classically-schooled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/classically-schooled"),
                 Description = "You gain a +1 trait bonus on Spellcraft checks, and Spellcraft is always a class skill for you.)",
             },
             #endregion
@@ -684,7 +684,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Clever Wordplay",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/clever-wordplay"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/clever-wordplay"),
                 Description = "Choose one Charisma-based skill. You attempt checks with that skill using your Intelligence modifier instead of your Charisma modifier.)",
             },
             #endregion
@@ -696,7 +696,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Coherent Rage",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/coherent-rage-ulfen-guard"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/coherent-rage-ulfen-guard"),
                 Description = "Select one of the following skills: Bluff, Escape Artist, Handle Animal, or Stealth. You may use this skill normally while raging.)",
             },
             #endregion
@@ -708,7 +708,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Cold and Calculating",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/cold-and-calculating"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/cold-and-calculating"),
                 Description = "You gain a +1 trait bonus on all Bluff checks against favored enemies that share one of your subtypes. You also gain a +1 trait bonus on attack rolls made against such favored enemies during the surprise round.)",
             },
             #endregion
@@ -720,7 +720,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Collector",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/collector-gnome-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/collector-gnome-social"),
                 Description = "Select one of the following skills: Craft (any one), Disable Device, Escape Artist, Perform (any one), Spellcraft. Whenever you have your collection within 5 feet of you, you gain a +2 trait bonus on all checks made with the selected skill. Once this skill has been selected, it cannot be changed, nor can you gain it for any other collection you begin amassing.)",
             },
             #endregion
@@ -732,7 +732,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Competitive",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/competitive"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/competitive"),
                 Description = "Whenever another creature within 30 feet attempts a skill check and you attempt a check with the same skill before the start of that creature's next turn, you gain a +1 trait bonus on your check (this includes attempting an opposed skill check against the creature).)",
             },
             #endregion
@@ -744,7 +744,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Contagious Mettle",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/contagious-mettle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/contagious-mettle"),
                 Description = "If you follow this code, you gain a +1 trait bonus on Will saving throws against fear. In addition, any allies adjacent to you receive a +1 morale bonus on Will saving throws against fear.)",
             },
             #endregion
@@ -756,7 +756,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Convincing Liar",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/convincing-liar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/convincing-liar"),
                 Description = "You gain a +1 trait bonus on Bluff or Intimidate checks and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -779,7 +779,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Courageous",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/courageous"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/courageous"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -791,7 +791,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Criminal",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/criminal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/criminal"),
                 Description = "Select one of the following skills: Disable Device, Intimidate, or Sleight of Hand. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -803,7 +803,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Cross-Disciplined",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/cross-disciplined"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/cross-disciplined"),
                 Description = "Once per day, you may cast a spell you have prepared that appears on both the magus and wizard spell lists as if your caster level were 1 level higher.)",
             },
             #endregion
@@ -815,7 +815,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Cross-Knowledge",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/cross-knowledge"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/cross-knowledge"),
                 Description = "Once per day, you may treat an extract you drink as if your caster level were 1 level higher as long as that extract appears on the wizard spell list and the alchemist list of formulae.)",
             },
             #endregion
@@ -827,7 +827,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Crowd Dodger",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/crowd-dodger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/crowd-dodger"),
                 Description = "You gain a +2 trait bonus on Acrobatics checks to move through another creature's space and to avoid attacks of opportunity for leaving a threatened square.)",
             },
             #endregion
@@ -839,7 +839,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Cynical Ear",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/cynical-ear-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/cynical-ear-social"),
                 Description = "Add 2 when determining your Hit Dice for Intimidate checks, and increase the DC or all Diplomacy checks against you by 2.)",
             },
             #endregion
@@ -851,7 +851,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dangerously Curious",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/dangerously-curious"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/dangerously-curious"),
                 Description = "You gain a +1 bonus on Use Magic Device checks, and Use Magic Device is always a class skill for you.)",
             },
             #endregion
@@ -863,7 +863,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dedicated Defender",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/dedicated-defender"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/dedicated-defender"),
                 Description = "You gain a +1 trait bonus on attack rolls and on checks made to overcome spell resistance while you are adjacent to a dying or disabled ally, animal companion, eidolon, familiar, or mount.)",
             },
             #endregion
@@ -875,7 +875,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Deep Guardian",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/deep-guardian-dwarf-magic-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/deep-guardian-dwarf-magic-trait"),
                 Description = "Any creature you conjure with a summon spell that has the earth subtype or a burrow speed gains a +1 morale bonus on attack rolls and a +1 enhancement bonus to Armor Class for the duration of the spell that summoned it.)",
             },
             #endregion
@@ -888,7 +888,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Fighter,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/defender-of-the-society-fighter-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/defender-of-the-society-fighter-pathfinder-society"),
                 Description = "You gain a +1 trait bonus to Armor Class when wearing medium or heavy armor.)",
             },
             #endregion
@@ -900,7 +900,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Deft Dodger",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/deft-dodger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/deft-dodger"),
                 Description = "You gain a +1 trait bonus on Reflex saving throws.)",
             },
             #endregion
@@ -912,7 +912,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Demon Slayer",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/demon-slayer-mendev-crusaders"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/demon-slayer-mendev-crusaders"),
                 Description = "You can attempt a Knowledge (planes) check to find a demon’s weak spot. (DC 10 + the demon’s CR). If you succeed, you gain a +3 trait bonus on rolls to confirm critical hits against that demon until the end of the battle. This effect only works on demons.)",
             },
             #endregion
@@ -924,7 +924,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Demon Smiter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/demon-smiter-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/demon-smiter-combat"),
                 Description = "Once per day when fighting demons, you gain a +4 trait bonus on a single attack roll.)",
             },
             #endregion
@@ -936,7 +936,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Desperate Resolve",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/desperate-resolve"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/desperate-resolve"),
                 Description = "You gain a +1 trait bonus on concentration checks. This trait bonus increases to + 4 when you are grappled, pinned, in violent weather, or entangled.)",
             },
             #endregion
@@ -948,7 +948,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Desperate Speed",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/desperate-speed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/desperate-speed"),
                 Description = "Your eidolon receives a +5-foot enhancement bonus to one type of speed it has that you do not, such as a climb or swim speed. If your eidolon doesn't already possess such a mode of movement, you may apply this trait bonus later if it gains an evolution that grants it such a mode. Once this bonus is applied to a mode of movement, it can't be switched to another mode.)",
             },
             #endregion
@@ -960,7 +960,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Destined Diplomat",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/destined-diplomat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/destined-diplomat"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks toward outsiders, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -972,7 +972,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Detect Disobedience",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/detect-disobedience-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/detect-disobedience-social"),
                 Description = "You gain a +2 trait bonus on Sense Motive checks to detect when an underling is trying to hide something from you, and can attempt such checks instead of Perception checks to notice and react to a subordinate's surprise attack against you.)",
             },
             #endregion
@@ -984,7 +984,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Devoted Healer",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/devoted-healer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/devoted-healer"),
                 Description = "Whenever you take 20 on a Heal check to treat deadly wounds, you restore an additional 1d4 hit points to those you aid.)",
             },
             #endregion
@@ -996,7 +996,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Devotee of the Green",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/devotee-of-the-green"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/devotee-of-the-green"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Knowledge (nature) checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -1008,7 +1008,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Diabolical Dabbler",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/diabolical-dabbler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/diabolical-dabbler"),
                 Description = "Fiendish animals you conjure with summon spells gain +1 hp per hit die for the duration of the spell that summoned it.)",
             },
             #endregion
@@ -1020,7 +1020,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dirty Fighter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/dirty-fighter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/dirty-fighter"),
                 Description = "You gain a +1 trait bonus to damage rolls against opponents you are flanking.)",
             },
             #endregion
@@ -1032,7 +1032,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Disdainful Defender",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/disdainful-defender"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/disdainful-defender"),
                 Description = "You gain a +2 trait bonus on all Will saves you attempt against divine spells. This bonus does not apply against divine spells cast by a caster who worships the same deity you do.)",
             },
             #endregion
@@ -1044,7 +1044,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Disillusioned",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/disillusioned"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/disillusioned"),
                 Description = "You gain a +2 trait bonus on Will saving throws against emotion and fear effects.)",
             },
             #endregion
@@ -1056,7 +1056,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dismantle Order",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/dismantle-order"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/dismantle-order"),
                 Description = "Once per day, you can use detect law as a spell-like ability (caster level 1st). If you have levels in a class that can cast detect law, your caster level for this spell-like ability is equal to that class level.)",
             },
             #endregion
@@ -1068,7 +1068,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dispelled Battler",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/dispelled-battler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/dispelled-battler"),
                 Description = "You gain a +1 trait bonus on weapon attack and damage rolls while within an area of antimagic such as that created by an antimagic field. You also gain this bonus for 1 round after you are subject to an area or targeted dispel magic spell, regardless of the effect's success or failure in dispelling your spells and magical effects.)",
             },
             #endregion
@@ -1080,7 +1080,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Distance Aptitude",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/distance-aptitude"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/distance-aptitude"),
                 Description = "Treat your caster level as 1 higher for the purposes of determining the range of spells and spell-like abilities.)",
             },
             #endregion
@@ -1092,7 +1092,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Domineering",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/domineering"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/domineering"),
                 Description = "Choose one 1st-level enchantment spell you are capable of casting. The DC of that spell increases by 1.)",
             },
             #endregion
@@ -1104,7 +1104,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Doublespeak",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/doublespeak-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/doublespeak-social"),
                 Description = "You gain a +2 trait bonus on Bluff checks to pass along secret messages.)",
             },
             #endregion
@@ -1116,7 +1116,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dueling Cloak Adept",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/dueling-cloak-adept"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/dueling-cloak-adept"),
                 Description = "While wearing a cloak and using a dueling sword, you gain a +2 trait bonus on Bluff checks made to feint. Additionally, every time you successfully feint while wearing a cloak, you gain a +1 dodge bonus to your Armor Class until your next turn.)",
             },
             #endregion
@@ -1128,7 +1128,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Earthbound",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/earthbound"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/earthbound"),
                 Description = "Your druid spells use a handful of earth or sand as a divine focus in addition to the normal components. While you are touching the ground, you add a +2 trait bonus to saving throw DCs and on caster level checks to overcome spell resistance for all spells you cast against creatures with the air subtype.)",
             },
             #endregion
@@ -1140,7 +1140,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Earth-Touched",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/earth-touched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/earth-touched"),
                 Description = "You gain DR 1/— against attacks from creatures with the earth subtype.)",
             },
             #endregion
@@ -1152,7 +1152,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ease of Faith",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/ease-of-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/ease-of-faith"),
                 Description = "You gain a +1 bonus on Diplomacy checks, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -1164,7 +1164,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Easy Way or the Hard Way",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/easy-way-or-the-hard-way"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/easy-way-or-the-hard-way"),
                 Description = "Whenever you attack one of your favored enemies with a weapon that deals lethal damage and choose to deal nonlethal damage, you take only a –2 penalty on the attack roll instead of the normal –4 .)",
             },
             #endregion
@@ -1176,7 +1176,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Eldritch Delver",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/eldritch-delver"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/eldritch-delver"),
                 Description = "You gain a +1 trait bonus on all Knowledge (dungeoneering) and Knowledge (history) checks, and you may treat your caster level as 1 level higher for all conjuration spells of the teleportation subschool.)",
             },
             #endregion
@@ -1188,7 +1188,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Eldritch Smith",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/eldritch-smith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/eldritch-smith"),
                 Description = "Whenever you use the Craft skill or a crafting feat to make stone or metal items, or items which include stone or metal in their design, you reduce the cost of making the item by 5%.)",
             },
             #endregion
@@ -1200,7 +1200,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Elemental Endowment",
                 Category = TraitCategoryEnum.Regional,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/elemental-endowment-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/elemental-endowment-regional"),
                 Description = "As an immediate action, once per day when you cast a spell with the air, earth, fire, or water descriptor, you can gain a number of temporary hit points equal to the spell's level. This effect lasts for 1 minute.)",
             },
             #endregion
@@ -1212,7 +1212,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Enduring Mutagen",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/enduring-mutagen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/enduring-mutagen"),
                 Description = "The bonuses and penalties granted by your mutagens last for 1 additional minute per alchemist level.)",
             },
             #endregion
@@ -1224,7 +1224,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Enemy of Slavers",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/enemy-of-slavers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/enemy-of-slavers"),
                 Description = "You gain a +2 trait bonus on Diplomacy and Intimidate checks made to sway the minds of slavers and anyone who otherwise keeps innocent people against their will.)",
             },
             #endregion
@@ -1236,7 +1236,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Etymologist",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/etymologist-gnome-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/etymologist-gnome-social"),
                 Description = "You gain a +1 trait bonus on Linguistics checks, know one additional bonus language, and treat Linguistics as a class skill.)",
             },
             #endregion
@@ -1248,7 +1248,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Evasive Sting",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/evasive-sting"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/evasive-sting"),
                 Description = "You gain a +1 dodge bonus to AC against enemies that are both your favored enemy and at least two size categories larger than you.)",
             },
             #endregion
@@ -1261,7 +1261,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Cleric,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/exalted-of-the-society-cleric-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/exalted-of-the-society-cleric-pathfinder-society"),
                 Description = "You may channel energy 1 additional time per day.)",
             },
             #endregion
@@ -1273,7 +1273,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Excitable",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/excitable"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/excitable"),
                 Description = "You gain a +2 trait bonus on all Initiative checks.)",
             },
             #endregion
@@ -1285,7 +1285,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Explorer",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/explorer-gnome-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/explorer-gnome-social"),
                 Description = "When you gain a level, select a terrain type from the following list: cold, desert, forest, jungle, mountains (including hills), plains, planes (other than the Material Plane), swamp, underground (including caves and dungeons), urban, water. You gain a +2 bonus on all Survival checks made in your desired terrain type. At the beginning of each level, you must select a new desired terrain type to replace the old one (you cannot take the same desired terrain type two levels in a row).)",
             },
             #endregion
@@ -1297,7 +1297,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Faithful Feedback",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/faithful-feedback-any-religion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/faithful-feedback-any-religion"),
                 Description = "Whenever you cast a spell belonging to the healing subschool on someone of your religion, increase the hit points healed by +1.)",
             },
             #endregion
@@ -1309,7 +1309,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Faiths Hunter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/faith-s-hunter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/faith-s-hunter"),
                 Description = "When you confirm a critical hit against a favored enemy, you may extend the duration of any divine spell affecting you by 1 round. The benefits from multiple critical hits stack. Divine spells with an instantaneous duration can't be extended in this manner.)",
             },
             #endregion
@@ -1321,7 +1321,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fast-Talker",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/fast-talker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/fast-talker"),
                 Description = "You gain a +1 trait bonus on Bluff checks, and Bluff is always a class skill for you.)",
             },
             #endregion
@@ -1333,7 +1333,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fates Favored",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/fate-s-favored"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/fate-s-favored"),
                 Description = "Whenever you gain a luck bonus, that bonus increases by 1.)",
             },
             #endregion
@@ -1345,7 +1345,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fearless Defiance",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/fearless-defiance"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/fearless-defiance"),
                 Description = "You gain a +1 trait bonus on all saving throws against fear effects. In addition, if you successfully save against such an effect, you receive a +1 trait bonus on attack rolls against your favored enemies for 1 round.)",
             },
             #endregion
@@ -1357,7 +1357,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fencer",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/fencer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/fencer"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity made with daggers, swords, and similar bladed weapons.)",
             },
             #endregion
@@ -1369,7 +1369,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fey Protection",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/fey-protection"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/fey-protection"),
                 Description = "You gain a +1 trait bonus to AC against attacks of opportunities made by fey and a +1 trait bonus on saving throws against the effects of fey creatures.)",
             },
             #endregion
@@ -1381,7 +1381,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Firebug",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/firebug"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/firebug"),
                 Description = "You gain a +1 trait bonus on attack rolls made with thrown splash weapons and alchemist bombs.)",
             },
             #endregion
@@ -1393,7 +1393,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "First Memories",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/first-memories-gnome-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/first-memories-gnome-faith"),
                 Description = "You do not gain the normal spell-like abilities for the gnome magic racial trait. Instead, if you have a Wisdom of 11 of higher, you gain the following spell-like abilities: 1/day—detect poison, know direction, stabilize, and speak with animals. The caster level for these effects is equal to your character level. The DC for these spells is equal to 10 + the spell’s level + your Wisdom modifier.)",
             },
             #endregion
@@ -1405,7 +1405,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Flame-Touched",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/flame-touched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/flame-touched"),
                 Description = "You gain DR 1/— against creatures and attacks with the fire type.)",
             },
             #endregion
@@ -1417,7 +1417,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Focused Burn",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/focused-burn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/focused-burn"),
                 Description = "Any bombs you have that deal fire damage deal 1 additional point of fire damage on a direct hit per 2d6 of fire damage normally dealt (minimum 1 point). This additional damage does not apply to the bomb's splash damage.)",
             },
             #endregion
@@ -1429,7 +1429,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Focused Disciple",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/focused-disciple"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/focused-disciple"),
                 Description = "You gain a +2 trait bonus on saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -1441,7 +1441,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Focused Mind",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/focused-mind"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/focused-mind"),
                 Description = "You gain a +2 trait bonus on concentration checks.)",
             },
             #endregion
@@ -1453,7 +1453,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fortunate",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/fortunate"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/fortunate"),
                 Description = "Once per day when you use a spell or magic item with a randomized effect (such as confusion, mirror image, prismatic spray, or a bag of tricks), before you roll to determine the result, you may choose to roll twice and pick either result.)",
             },
             #endregion
@@ -1465,7 +1465,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Free Spirit",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/free-spirit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/free-spirit"),
                 Description = "You gain a +1 trait bonus on saving throws against language-dependent and effects with the sonic descriptor. In addition, the DC to Intimidate you increases by 2.)",
             },
             #endregion
@@ -1477,7 +1477,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Friend in Every Town",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/friend-in-every-town"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/friend-in-every-town"),
                 Description = "You gain a +1 trait bonus on all Knowledge (local) checks and Diplomacy checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -1489,7 +1489,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Friends in High Places",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/friends-in-high-places"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/friends-in-high-places"),
                 Description = "Whenever you are in an area in which you have used the Diplomacy skill to gather information, you gain a +1 trait bonus on Diplomacy and Intimidate checks. This bonus increases to +2 when dealing with government officials.)",
             },
             #endregion
@@ -1501,7 +1501,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Friends in Low Places",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/friends-in-low-places-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/friends-in-low-places-social"),
                 Description = "Diplomacy checks to gather information in lower quarters, such as vice dens and poorer districts, takes you 1d2 hours (instead of 1d4 hours). In addition, the attitudes of any destitute or impoverished NPCs you interact with begin one step closer to helpful.)",
             },
             #endregion
@@ -1513,7 +1513,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ghost Sight",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/ghost-sight"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/ghost-sight"),
                 Description = "You receive a +2 trait bonus to Perception checks when trying to locate undead, and can attempt to locate ethereal undead (though they are still considered merely invisible, +20 to Stealth).)",
             },
             #endregion
@@ -1525,7 +1525,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Gifted Adept",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/gifted-adept"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/gifted-adept"),
                 Description = "Pick a spell when you choose this trait—from this point on, whenever you cast that spell, its effects manifest at +1 caster level.)",
             },
             #endregion
@@ -1537,7 +1537,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Gnomish Alchemist",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/businessman-gnome-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/businessman-gnome-social"),
                 Description = "You gain a +2 trait bonus on all Craft (alchemy) checks.)",
             },
             #endregion
@@ -1550,7 +1550,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Wizard,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/greater-adept-of-the-society-wizard-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/greater-adept-of-the-society-wizard-pathfinder-society"),
                 Description = "You gain one additional 0-level spell slot.)",
             },
             #endregion
@@ -1562,7 +1562,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Greater Link",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/greater-link"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/greater-link"),
                 Description = "Your eidolon's current and maximum hit point totals are not reduced by 50% until you are separated by 110 feet or more. Your eidolon's current and maximum hit point totals are not reduced by 75% until you are separated by 1,100 feet or more. All other aspects of your life link class feature are unaffected.)",
             },
             #endregion
@@ -1574,7 +1574,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Greater Purpose",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/greater-purpose"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/greater-purpose"),
                 Description = "You gain a +1 trait bonus on all saving throws to resist death effects and a +1 trait bonus on Constitution checks made to stabilize while dying.)",
             },
             #endregion
@@ -1586,7 +1586,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Gregarious",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/gregarious"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/gregarious"),
                 Description = "Once per day, when you attempt a Diplomacy check to improve a creature's attitude toward you, you may choose to reroll the check after the first roll is made but before the results are revealed. You must take the second result, even if it is worse.)",
             },
             #endregion
@@ -1598,7 +1598,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Grief-Filled",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/grief-filled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/grief-filled"),
                 Description = "You gain a +2 trait bonus on all saving throws against emotion spells and effects.)",
             },
             #endregion
@@ -1610,7 +1610,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Grim Optimism",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/grim-optimi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/grim-optimi"),
                 Description = "As a standard action, you can joke about a troublesome situation to lighten the load of dealing with it for yourself and others. You and all allies within 30 feet who can hear you gain a +2 morale bonus on saving throws against fear and pain effects for 1d4 rounds. A character cannot benefit from this effect more than once in 24 hours.)",
             },
             #endregion
@@ -1622,7 +1622,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hardly a Fool",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/hardly-a-fool-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/hardly-a-fool-social"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks and a +1 trait bonus on saving throws against illusion effects.)",
             },
             #endregion
@@ -1634,7 +1634,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hard to Kill",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/hard-to-kill-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/hard-to-kill-combat"),
                 Description = "When you are attempting a Constitution check to stabilize when dying, the penalty on the check is only half your negative hit point total instead of your full negative hit point total.)",
             },
             #endregion
@@ -1646,7 +1646,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Harvester",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/harvester"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/harvester"),
                 Description = "You gain a +1 trait bonus on Profession (tanner) or Profession (trapper) checks, and you may make these checks as if you were trained in the skill even if you have no ranks. Additionally, you do not risk poisoning yourself whenever you handle or apply poison taken from a venomous creature.)",
             },
             #endregion
@@ -1659,7 +1659,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Sorcerer,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/havoc-of-the-society-sorcerer-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/havoc-of-the-society-sorcerer-pathfinder-society"),
                 Description = "Whenever you cast a spell that deals damage, you gain a +1 trait bonus to the total damage dealt. This damage is considered force damage regardless of the type of damage dealt by the spell.)",
             },
             #endregion
@@ -1671,7 +1671,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hedge Magician",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/hedge-magician"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/hedge-magician"),
                 Description = "Whenever you craft a magic item, you reduce the cost of gp required to make the item by 5%.)",
             },
             #endregion
@@ -1683,7 +1683,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hell Knight Ancestry",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/hellknight-ancestry"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/hellknight-ancestry"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks to influence Hellknights and a +2 trait bonus on Intimidate checks to influence enemies of the Hellknights.)",
             },
             #endregion
@@ -1695,7 +1695,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Helpful",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/helpful-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/helpful-combat"),
                 Description = "When using the aid another action, you grant your ally a +3 bonus instead of a +2 bonus.)",
             },
             #endregion
@@ -1707,7 +1707,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hidden Hand",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/hidden-hand"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/hidden-hand"),
                 Description = "You gain a +1 trait bonus on Sleight of Hand checks made to conceal light weapons and a +1 trait bonus on attack rolls when making an attack with a light weapon during a surprise round.)",
             },
             #endregion
@@ -1719,7 +1719,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hill Fighter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/hill-fighter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/hill-fighter"),
                 Description = "You may run or charge downhill on a steep slope (moving up to your base speed) without making an Acrobatics check to avoid stumbling but if you travel farther than this distance, the normal rules for steep slopes apply.)",
             },
             #endregion
@@ -1731,7 +1731,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "History of Heresy",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/history-of-heresy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/history-of-heresy"),
                 Description = "As long as you do not possess any levels in a class that grants divine spellcasting power, you gain a +1 trait bonus on all saving throws made against divine spells.)",
             },
             #endregion
@@ -1743,7 +1743,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Holdout",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/holdout"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/holdout"),
                 Description = "You gain a +1 trait bonus to your CMD against disarm and steal combat maneuvers.)",
             },
             #endregion
@@ -1755,7 +1755,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Honest",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/honest"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/honest"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks. This bonus increases to +2 when the Diplomacy check is made to influence those who are already friendly or helpful toward you.)",
             },
             #endregion
@@ -1768,7 +1768,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Monk,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/honored-fist-of-the-society-monk-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/honored-fist-of-the-society-monk-pathfinder-society"),
                 Description = "You increase your ki pool by 1 point.)",
             },
             #endregion
@@ -1780,7 +1780,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Horrifying Mind",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/horrifying-mind-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/horrifying-mind-magic"),
                 Description = "When a non-evil humanoid attempts to read your mind via a magical effect, the reader must attempt a Will save opposed by your Wisdom or Charisma check (your choice). If the reader fails this save, she is shaken for 1 round. If she fails by 10 or more, she is instead frightened for 1 round, then shaken for 1 round.)",
             },
             #endregion
@@ -1792,7 +1792,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hunters Blood",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/hunter-s-blood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/hunter-s-blood"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks to gather information, to Knowledge (religion) checks, and to Survival checks to track undead. Choose one as these as a class skill. Undead gain a +1 bonus on any rolls made to determine if they know anything about you.)",
             },
             #endregion
@@ -1804,7 +1804,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hunters Knack",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/hunter-s-knack"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/hunter-s-knack"),
                 Description = "You gain a +1 trait bonus on attack rolls against your favored enemies when you make such attacks as part of a readied action.)",
             },
             #endregion
@@ -1816,7 +1816,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Imposing Scion",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/imposing-scion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/imposing-scion"),
                 Description = "You gain a +1 trait bonus on Intimidate checks. If your bloodline is keyed to a specific creature type, your trait bonus increases to +2 when interacting with creatures of that type.)",
             },
             #endregion
@@ -1828,7 +1828,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Improvised Defense",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/improvised-defense-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/improvised-defense-combat"),
                 Description = "Whenever you wield an improvised weapon, you gain a +1 shield bonus to AC. If you use the improvised weapon to attack, you lose this shield bonus until the beginning of your next turn.)",
             },
             #endregion
@@ -1840,7 +1840,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Indelible Ire",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/indelible-ire"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/indelible-ire"),
                 Description = "Each time a critical hit is confirmed against you, you gain a +1 trait bonus on attack rolls for 1 round.)",
             },
             #endregion
@@ -1852,7 +1852,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Indomitable Faith",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/indomitable-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/indomitable-faith"),
                 Description = "You gain a +1 trait bonus on Will saving throws.)",
             },
             #endregion
@@ -1864,7 +1864,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inexorable Authority",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/inexorable-authority-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/inexorable-authority-social"),
                 Description = "You gain a +2 trait bonus on Intimidate checks when enforcing or pronouncing a lawful judgment that you're legitimately deputed to enforce or pronounce.)",
             },
             #endregion
@@ -1876,7 +1876,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Influence",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/influence"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/influence"),
                 Description = "Choose one of the following skills: Diplomacy, Intimidate, or Sense Motive. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -1888,7 +1888,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Insistent Benefactor",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/insistent-benefactor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/insistent-benefactor"),
                 Description = "Whenever you cast a harmless spell, you gain a +2 trait bonus on caster level checks to overcome spell resistance, and the saving throw DC of the spell (if any) is increased by 2.)",
             },
             #endregion
@@ -1900,7 +1900,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inspired",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/inspired"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/inspired"),
                 Description = "Once per day as a free action, roll twice and take the better result on a skill check or ability check.)",
             },
             #endregion
@@ -1912,8 +1912,8 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inspiring",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/inspiring"),
-                Description = "As a standard action, you can speak words of encouragement to grant a +1 morale bonus to an ally within 30 feet who can see and hear you. The ally can use this bonus on any d20 roll of her choice before the start of your next turn. You cannot use this trait to grant a bonus to yourself or to an ally who has already benefited from this trait within the last 24 hours.)",
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/inspiring"),
+                Description = "As a standard action, you can speak words of encouragement to grant a +1 morale bonus to an ally within 30 feet who can see and hear you. The ally can use this bonus on any GoDungeon roll of her choice before the start of your next turn. You cannot use this trait to grant a bonus to yourself or to an ally who has already benefited from this trait within the last 24 hours.)",
             },
             #endregion
 
@@ -1924,7 +1924,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inspiring Rush",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/inspiring-rush"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/inspiring-rush"),
                 Description = "Once per day when you make a charge attack, you gain a +1 trait bonus on both your attack and damage rolls, as do any allies who make a charge attack before the beginning of your next turn.)",
             },
             #endregion
@@ -1936,7 +1936,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inured to Death",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/inured-to-death"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/inured-to-death"),
                 Description = "You gain a +2 trait bonus on saving throws against death effects.)",
             },
             #endregion
@@ -1948,7 +1948,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Irrepressible",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/irrepressible"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/irrepressible"),
                 Description = "You can use your Charisma modifier in place of your Wisdom modifier when attempting Will saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -1960,7 +1960,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Jungle Fighter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/jungle-fighter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/jungle-fighter"),
                 Description = "Your speed may not be reduced to less than 10 feet by difficult terrain in jungles (meaning you may take a 5-foot step in difficult terrain and not provoke an attack of opportunity).)",
             },
             #endregion
@@ -1972,7 +1972,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Just Like New",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/just-like-new"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/just-like-new"),
                 Description = "Your first attempt to remove the broken condition from your starting firearm and to upgrade it to a masterwork weapon costs 150 gp instead of 300 gp. In addition, when wielding a firearm that has the broken condition or is treated as if it had the broken condition, you take a –1 penalty on attack rolls made with it instead of the normal –2.)",
             },
             #endregion
@@ -1984,7 +1984,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Keen Appraiser",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/keen-appraiser"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/keen-appraiser"),
                 Description = "You gain a +1 trait bonus on Appraise checks. In addition, you need only exceed the DC of an Appraise check by 2 in order to determine whether the item in question has magic properties (although success still does not grant knowledge of the magic item's abilities).)",
             },
             #endregion
@@ -1996,7 +1996,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Killer",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/killer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/killer"),
                 Description = "You gain a trait bonus to damage rolls equal to your weapon’s critical hit modifier when you score a successful critical hit with a weapon; this additional damage is added to the final total.)",
             },
             #endregion
@@ -2008,7 +2008,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Kin Bond",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/kin-bond"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/kin-bond"),
                 Description = "Choose a sibling with whom to share this bond. Once per day when you fail a saving throw while your sibling is within 30 feet, you may reroll that saving throw using your sibling's saving throw modifier. If you and the sibling are twins or otherwise part of a multiple birth, you gain a +2 trait bonus on the rerolled saving throw. Your sibling must be willing to grant you the reroll. If you fail the saving throw, you and your sibling are dazed for 1 round.)",
             },
             #endregion
@@ -2020,7 +2020,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Kin Guardian",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/kin-guardian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/kin-guardian"),
                 Description = "When you use the aid another action to give a member of your family a bonus to AC, increase the bonus by 2. This increase is a trait bonus (and therefore doesn't stack with increases granted by other family members using this trait). This trait has no effect when using the aid another action to increase a family member's next attack roll.)",
             },
             #endregion
@@ -2032,7 +2032,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Knowing the Enemy",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/knowing-the-enemy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/knowing-the-enemy"),
                 Description = "You gain a +1 trait bonus on checks with the Knowledge skill corresponding to your first favored enemy choice, and that Knowledge skill is always a class skill for you.)",
             },
             #endregion
@@ -2044,7 +2044,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Knowledgeable Caster",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/knowledgeable-caster"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/knowledgeable-caster"),
                 Description = "Once per day when you cast a divination spell, you can cast that spell as if your caster level were 1 level higher in the appropriate class. You also gain a +1 trait bonus on any Knowledge checks associated with your sorcerer bloodline, if any.)",
             },
             #endregion
@@ -2056,7 +2056,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Larger Than Life",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/larger-than-life"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/larger-than-life"),
                 Description = "When you use the Intimidate skill on a creature while wielding a firearm, you are considered one size category larger than your actual size.)",
             },
             #endregion
@@ -2068,7 +2068,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Law Enforcer",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/law-enforcer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/law-enforcer"),
                 Description = "You receive a +2 bonus on Sense Motive checks to gain a hunch from social situations, and begin play with a pair of masterwork manacles.)",
             },
             #endregion
@@ -2080,7 +2080,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Life of Toil",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/life-of-toil"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/life-of-toil"),
                 Description = "You gain a +1 trait bonus on Fortitude saves.)",
             },
             #endregion
@@ -2092,7 +2092,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Linked Surge",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/linked-surge"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/linked-surge"),
                 Description = "Once per day, you may make a Strength- or Constitution-based ability check or skill check using you eidolon's ability score in place of your own. Your eidolon must be summoned and with 30 feet for you to use this trait.)",
             },
             #endregion
@@ -2104,7 +2104,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Lost Nobility",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/lost-nobility"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/lost-nobility"),
                 Description = "You gain a +1 trait bonus on attack and damage rolls against government officials of your homeland.)",
             },
             #endregion
@@ -2116,7 +2116,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Loyalty across Lifetimes",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/loyalty-across-lifetimes"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/loyalty-across-lifetimes"),
                 Description = "Your eidolon treats its Constitution score as if it were 2 points higher for the purposes of determining when its negative hit point total sends it back to its home plane. In addition, your eidolon gains a +1 trait bonus on Will saving throws against enchantment spells and effects.)",
             },
             #endregion
@@ -2128,7 +2128,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Lucid Dreamer",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/lucid-dreamer-varisian-wanderers-wonderseekers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/lucid-dreamer-varisian-wanderers-wonderseekers"),
                 Description = "You receive a +1 trait bonus on Knowledge (planes) checks and a +2 trait bonus on Will saving throws against effects on your dreaming mind or subconscious, such as a night hag’s dream haunting ability, the nightmare spell, and illusions of the phantasm subschool.)",
             },
             #endregion
@@ -2152,7 +2152,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Bard,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/maestro-of-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/maestro-of-society"),
                 Description = "You may use bardic performance 3 additional rounds per day.)",
             },
             #endregion
@@ -2164,7 +2164,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Magical Flair",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/magical-flair"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/magical-flair"),
                 Description = "Choose a school of magic. The Spellcraft DC to identify spells you cast from that school of magic increases by 2. Creatures that fail a Spellcraft check to identify your spell by 2 or less incorrectly identify the spell as another randomly selected spell of the same school and level.)",
             },
             #endregion
@@ -2176,7 +2176,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Magical Knack",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/magical-knack"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/magical-knack"),
                 Description = "Pick a class when you gain this trait—your caster level in that class gains a +2 trait bonus as long as this bonus doesn’t increase your caster level higher than your current Hit Dice.)",
             },
             #endregion
@@ -2188,7 +2188,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Magical Lineage",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/magical-lineage"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/magical-lineage"),
                 Description = "Pick one spell when you choose this trait. When you apply metamagic feats to this spell, treat its actual level as 1 lower for determining the spell’s final adjusted level.)",
             },
             #endregion
@@ -2200,7 +2200,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Magical Talent",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/magical-talent"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/magical-talent"),
                 Description = "Choose a 0-level spell. You may cast that spell once per day as a spell-like ability. This spell-like ability is cast at your highest caster level gained; if you have no caster level, it functions at CL 1st. The spell-like ability’s save DC is Charisma-based.)",
             },
             #endregion
@@ -2212,7 +2212,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Magic Crafter",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/magic-crafter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/magic-crafter"),
                 Description = "You gain a +1 trait bonus on Appraise checks and a +1 bonus on any Craft checks attempted while making magic items.)",
             },
             #endregion
@@ -2224,7 +2224,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Malleable Magic",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/malleable-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/malleable-magic"),
                 Description = "Once per day as a swift action, you can lose a single 1st-, 2nd- or 3rd-level magus spell to regain 1 arcane pool point. You can't exceed the maximum number of arcane pool points in your arcane pool by using this trait.)",
             },
             #endregion
@@ -2236,7 +2236,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Marked by Unknown Forces",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/marked-by-unknown-forces-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/marked-by-unknown-forces-social"),
                 Description = "You may cast light three times per day as a spell-like ability, but this ability only targets the palm of your hand, and it manifests as a glowing sigil the appearance of which is determined by you and your GM. Those who recognize this symbol have a starting attitude toward you of one step closer to friendly (if they are followers of or scholars studying the sign) or one step closer to hostile (if they are opposed to the sign or its followers).)",
             },
             #endregion
@@ -2248,7 +2248,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Martial Manuscript",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/martial-manuscript"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/martial-manuscript"),
                 Description = "You gain a +2 trait bonus on rolls to confirm critical hits when you're using an unarmed strike or monk weapon.)",
             },
             #endregion
@@ -2260,7 +2260,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Martial Performer",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/martial-performer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/martial-performer"),
                 Description = "When you gain a monk bonus feat, you may instead take a performance feat for which you meet the prerequisites.)",
             },
             #endregion
@@ -2272,7 +2272,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mathematical Prodigy",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/mathematical-prodigy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/mathematical-prodigy"),
                 Description = "You gain a +1 bonus on Knowledge (arcana) and Knowledge (engineering) checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -2284,7 +2284,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mediator",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/mediator-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/mediator-social"),
                 Description = "You receive a +1 trait bonus on Diplomacy checks. In addition, you receive a +1 trait bonus to the DC of any charm or compulsion effect that does not provide ongoing control and results in peaceful acts, such as calm emotions, sleep, or a suggestion to lay down arms.)",
             },
             #endregion
@@ -2296,7 +2296,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Memorable",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/memorable"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/memorable"),
                 Description = "When you modify a creature's attitude with Diplomacy or Intimidate, the attitude change lasts 1-1/2 times longer than it otherwise would. Your spells or effects with the fear or mind-affecting descriptors that impose a penalty or bonus with a duration of at least 2 rounds, lasts 1 additional round.)",
             },
             #endregion
@@ -2308,7 +2308,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mentored",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/mentored"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/mentored"),
                 Description = "Choose a single Craft, Perform, or Profession skill. You gain a +1 trait bonus on checks with that skill. You also gain a +1 trait bonus when you aid another's skill check with any skill.)",
             },
             #endregion
@@ -2320,7 +2320,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mercenary",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/mercenary"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/mercenary"),
                 Description = "You gain a +2 trait bonus on Diplomacy, Intimidate, and Sense Motive checks made while negotiating payment for a quest or a service that you provide.)",
             },
             #endregion
@@ -2332,7 +2332,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Merchant",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/merchant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/merchant"),
                 Description = "You gain a +1 trait bonus on any Appraise and Sense Motive checks you attempt while bargaining for the price of goods. Appraise is always a class skill for you.)",
             },
             #endregion
@@ -2344,7 +2344,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Meticulous Concoction",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/meticulous-concoction"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/meticulous-concoction"),
                 Description = "Once per day, you can either add a +2 trait bonus to the save DC for one bomb you throw or extend the duration of one extract you imbibe by 2 rounds. Extracts with an instantaneous duration are not affected by this trait.)",
             },
             #endregion
@@ -2356,7 +2356,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Muscle of the Society",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/muscle-of-the-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/muscle-of-the-society"),
                 Description = "You gain a +2 trait bonus on Strength checks made to break doors and lift portcullises, and you treat your Strength score as 2 higher for the purpose of determining your carrying capacity.)",
             },
             #endregion
@@ -2368,7 +2368,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mutant Eye",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/mutant-eye"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/mutant-eye"),
                 Description = "You have a third eye on your forehead. As long as it is uncovered and open, you can get a clearer sense of the emotions of those you see, granting you a +2 trait bonus on Sense Motive checks that increases to +4 on checks to notice whether a character is under a mind-affecting effect. However, the eye is unsettling, and you take a –1 penalty on Bluff and Diplomacy checks against humanoids who can see it.)",
             },
             #endregion
@@ -2380,7 +2380,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mystery Initiate",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/mystery-initiate"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/mystery-initiate"),
                 Description = "Once per day, you may reroll any Knowledge skill check. You must decide to use this ability after the first roll is made but before the results are revealed. You must take the second result, even if it is worse.)",
             },
             #endregion
@@ -2392,7 +2392,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Natural-Born Leader",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/natural-born-leader"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/natural-born-leader"),
                 Description = "All cohorts, followers, or summoned creatures under your leadership gain a +1 morale bonus on Will saves to avoid mind-affecting effects. If you ever take the Leadership feat, you gain a +1 trait bonus to your Leadership score.)",
             },
             #endregion
@@ -2404,7 +2404,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Naturally Gifted",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/naturally-gifted-gnome-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/naturally-gifted-gnome-magic"),
                 Description = "You gain an additional use of one of your gnome magic spell-like abilities each day. This does not always have to be the same spell-like ability—one day you might use dancing lights twice, only to use the additional casting for speak with animals the next day.)",
             },
             #endregion
@@ -2416,7 +2416,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Natures Mimic",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/nature-s-mimic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/nature-s-mimic"),
                 Description = "You gain a +1 trait bonus on all Knowledge (nature) checks, and Knowledge (nature) is always a class skill for you. You can make Knowledge (nature) checks pertaining to animals that correspond to your style feats untrained.)",
             },
             #endregion
@@ -2428,7 +2428,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Necrotic Aura",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/necrotic-aura-whispering-way"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/necrotic-aura-whispering-way"),
                 Description = "You gain a +1 trait bonus on saving throws against spells from the necromancy school or any effect that deals negative energy damage.)",
             },
             #endregion
@@ -2440,7 +2440,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Never Stop Shooting",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/never-stop-shooting"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/never-stop-shooting"),
                 Description = "If your hit point total drops to 0 or lower but you are not dead, you may act as if disabled rather than dying (as if you possessed the Diehard feat). However, you can use your actions only to draw a firearm, reload a firearm, or attack with a firearm. If you have the Diehard feat, this trait also allows you to substitute your Wisdom score for your Constitution score for the purpose of determining the negative hit point total at which you die.)",
             },
             #endregion
@@ -2452,7 +2452,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Noble Savage",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/noble-savage"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/noble-savage"),
                 Description = "You gain a +2 trait bonus on Diplomacy and Perform checks when dealing with people of high social standing.)",
             },
             #endregion
@@ -2464,7 +2464,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "No Escape",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/no-escape-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/no-escape-combat"),
                 Description = "You gain a +1 trait bonus on combat maneuver checks to lawfully and nonlethally restrain a creature you've witnessed commit a crime.)",
             },
             #endregion
@@ -2476,7 +2476,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Nonchalant Thuggery",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/nonchalant-thuggery"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/nonchalant-thuggery"),
                 Description = "You gain a +4 trait bonus on Bluff checks to keep others from noticing your aggressive actions.)",
             },
             #endregion
@@ -2488,7 +2488,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Oathbound",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/oathbound"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/oathbound"),
                 Description = "Once per day, you may reroll a saving throw against a charm or compulsion effect. You must take the second result even if it is worse.)",
             },
             #endregion
@@ -2500,7 +2500,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Omen",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/omen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/omen"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you. Once per day, you may attempt to demoralize an opponent as a swift action.)",
             },
             #endregion
@@ -2512,7 +2512,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ordinary",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/ordinary"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/ordinary"),
                 Description = "You gain a + 4 trait bonus on Stealth checks whenever you attempt to hide in a crowd.)",
             },
             #endregion
@@ -2524,7 +2524,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Orphaned",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/orphaned"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/orphaned"),
                 Description = "You gain a +1 trait bonus on Survival checks, and Survival is always a class skill for you.)",
             },
             #endregion
@@ -2536,7 +2536,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Outcasts Intuition",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/outcast-s-intuition"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/outcast-s-intuition"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive is always a class skill for you. In addition, your caster level is treated as 1 level higher for the purposes of any attempts to dispel your magic.)",
             },
             #endregion
@@ -2548,7 +2548,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Overwhelming Beauty",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/overwhelming-beauty-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/overwhelming-beauty-magic"),
                 Description = "The DC of your mind-affecting effects increases by 1 against creatures that have at least one of the same subtypes as you.)",
             },
             #endregion
@@ -2560,7 +2560,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Partial Protege",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/partial-protege"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/partial-protege"),
                 Description = "You gain a +1 trait bonus on Bluff checks and on Use Magic Device checks made to emulate a class feature.)",
             },
             #endregion
@@ -2572,7 +2572,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Passionate Inertia",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/passionate-inertia-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/passionate-inertia-social"),
                 Description = "You gain a +2 trait bonus on Will saves to resist having your mind changed about something, but you take a –1 penalty on Will saves to resist temptation and compulsions you might reasonably be already inclined toward.)",
             },
             #endregion
@@ -2584,7 +2584,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Pathfinders Focus",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/pathfinder-s-focus"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/pathfinder-s-focus"),
                 Description = "You can select a magnetic compass for your arcane bond class feature; this compass is non-magical, but you can later spend 250 gp to upgrade it into a wayfinder. Choosing this trait allows you to upgrade this wayfinder to a variant or unique wayfinder per the normal rules for improving magic items. A bonded wayfinder must be held in your hand to grant the benefits of being a bonded object.)",
             },
             #endregion
@@ -2596,7 +2596,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Patient Calm",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/patient-calm"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/patient-calm"),
                 Description = "Choose one Craft or Profession skill. Whenever you take 10 with that skill, determine the result as if you had rolled a 12 instead of a 10.)",
             },
             #endregion
@@ -2608,7 +2608,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Perfectionists Brew",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/perfectionist-s-brew"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/perfectionist-s-brew"),
                 Description = "You gain a +2 trait bonus on all Craft (alchemy) checks and on Spellcraft checks made to brew potions.)",
             },
             #endregion
@@ -2620,7 +2620,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Perpetual Companion",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/perpetual-companion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/perpetual-companion"),
                 Description = "You gain a +2 trait bonus on all saving throws against fear effects whenever your eidolon is within 30 feet.)",
             },
             #endregion
@@ -2632,7 +2632,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Pillager",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/pillager"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/pillager"),
                 Description = "You gain a +1 trait bonus on combat maneuver checks to perform disarm and steal combat maneuvers.)",
             },
             #endregion
@@ -2644,7 +2644,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Planar Savant",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/planar-savant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/planar-savant"),
                 Description = "You may use your Charisma modifier when making Knowledge (planes) checks instead of your Intelligence modifier.)",
             },
             #endregion
@@ -2656,7 +2656,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Possessed",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/possessed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/possessed"),
                 Description = "Once per day, you can attempt a Knowledge check of your choice even if you are not trained in that skill and it is not usually possible to use that skill untrained. If you can normally use that skill untrained, you gain a +2 trait bonus on the check.)",
             },
             #endregion
@@ -2668,7 +2668,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Poverty-Stricken",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/poverty-stricken"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/poverty-stricken"),
                 Description = "You gain a +1 bonus to Survival checks, and Survival is always a class skill for you.)",
             },
             #endregion
@@ -2680,7 +2680,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Pragmatic Activator",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/pragmatic-activator"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/pragmatic-activator"),
                 Description = "You may use your Intelligence modifier when making Use Magic Device checks instead of your Charisma modifier.)",
             },
             #endregion
@@ -2692,7 +2692,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Precise Treatment",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/precise-treatment"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/precise-treatment"),
                 Description = "You gain a +1 trait bonus on all Heal checks, and you may use your Intelligence modifier when making Heal checks instead of your Wisdom modifier.)",
             },
             #endregion
@@ -2704,7 +2704,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Prince/Princess",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/princess-female"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/princess-female"),
                 Description = "You gain a +1 trait bonus to Diplomacy and Intimidate checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -2716,7 +2716,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Principled",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/principled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/principled"),
                 Description = "You take a –2 penalty on Bluff checks and gain a +2 trait bonus on saving throws against charm, compulsion, and emotion effects.)",
             },
             #endregion
@@ -2728,7 +2728,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Prophesied",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/prophesied"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/prophesied"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks and Intimidate checks when interacting with anyone familiar with you or your reputation.)",
             },
             #endregion
@@ -2740,7 +2740,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Punish Insurrection",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/punish-insurrection-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/punish-insurrection-combat"),
                 Description = "Against members of the same organization or hierarchy who formally answer to you, you gain a +1 trait bonus on attack and damage rolls. You also gain this bonus against members who have openly defied the authority or rules of that body, provided the infraction is serious enough that their standing is now less than yours.)",
             },
             #endregion
@@ -2752,7 +2752,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reactionary",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/reactionary"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/reactionary"),
                 Description = "You gain a +2 trait bonus to Initiative checks.)",
             },
             #endregion
@@ -2764,7 +2764,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reckless",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/reckless"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/reckless"),
                 Description = "You gain a +1 bonus on Acrobatics checks, and Acrobatics is always a class skill for you.)",
             },
             #endregion
@@ -2776,7 +2776,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reckless Contempt",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/reckless-contempt"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/reckless-contempt"),
                 Description = "Whenever you provoke an attack of opportunity by firing a firearm, you gain a +1 trait bonus on the attack roll that provoked the attack of opportunity.)",
             },
             #endregion
@@ -2788,7 +2788,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Redeemer",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/redeemer-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/redeemer-faith"),
                 Description = "When acting as a sponsor for an evil creature seeking redemption, your patience and kindness grant the creature a +3 bonus on its save rather than a +1 bonus.)",
             },
             #endregion
@@ -2800,7 +2800,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reincarnated",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/reincarnated"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/reincarnated"),
                 Description = "You gain a +2 trait bonus on saving throws against fear and death effects.)",
             },
             #endregion
@@ -2812,7 +2812,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Relic-Proof",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/relic-proof"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/relic-proof"),
                 Description = "You gain a +1 trait bonus on saving throws against effects produced by spell completion and spell trigger items.)",
             },
             #endregion
@@ -2824,7 +2824,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reluctant Apprentice",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/reluctant-apprentice"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/reluctant-apprentice"),
                 Description = "You gain a +1 trait bonus on Knowledge (arcana) checks, and are considered trained in that skill even if you have no ranks in it.)",
             },
             #endregion
@@ -2836,7 +2836,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Resilient",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/resilient"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/resilient"),
                 Description = "You gain a +1 trait bonus on Fortitude saves.)",
             },
             #endregion
@@ -2848,7 +2848,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Resilient Caster",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/resilient-caster"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/resilient-caster"),
                 Description = "Your caster level is treated as 1 level higher whenever someone attempts to dispel one of your spells.)",
             },
             #endregion
@@ -2860,7 +2860,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Resolve of the Rejected",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/resolve-of-the-rejected"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/resolve-of-the-rejected"),
                 Description = "You gain a +1 trait bonus on all saving throws against charm and compulsion effects. Also, once per day when you succeed at a saving throw against such an effect, you regain 1 grit point.)",
             },
             #endregion
@@ -2872,7 +2872,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Rest for the Wicked",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/rest-for-the-wicked-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/rest-for-the-wicked-social"),
                 Description = "You heal temporary ability damage at a rate of 3 points per day of complete bed rest. A normal night of rest (8 hours) still heals you at a rate of only 1 point of temporary ability damage per night of rest.)",
             },
             #endregion
@@ -2884,7 +2884,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Rich Parents",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/rich-parents"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/rich-parents"),
                 Description = "Your starting wealth increases to 900 gp.)",
             },
             #endregion
@@ -2896,7 +2896,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "River Fighter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/river-fighter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/river-fighter"),
                 Description = "You may swim downstream or cross-current as a charge if you make your Swim DC by 5 or more.)",
             },
             #endregion
@@ -2908,7 +2908,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sacred Conduit",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/sacred-conduit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/sacred-conduit"),
                 Description = "Whenever you channel energy, you gain a +1 trait bonus to the save DC of your channeled energy.)",
             },
             #endregion
@@ -2920,7 +2920,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sacred Touch",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/sacred-touch"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/sacred-touch"),
                 Description = "As a standard action, you may automatically stabilize a dying creature merely by touching it.)",
             },
             #endregion
@@ -2932,7 +2932,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Savage",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/savage"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/savage"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) checks and a +1 trait bonus on Survival checks to get along in the wild. Knowledge (nature) is always a class skill for you.)",
             },
             #endregion
@@ -2944,7 +2944,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Savanna Hunter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/savanna-hunter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/savanna-hunter"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity attack rolls made with a shortspear, as well as a +1 racial bonus on Constitution checks to continue running and avoid nonlethal damage from a forced march.)",
             },
             #endregion
@@ -2956,7 +2956,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Savant",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/savant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/savant"),
                 Description = "Chose a performance type. You gain a +2 trait bonus on all Perform checks made using that performance type. Perform is always a class skill for you.)",
             },
             #endregion
@@ -2979,7 +2979,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Scarred Descendant",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/scarred-descendant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/scarred-descendant"),
                 Description = "You gain a +1 trait bonus on rolls to confirm critical hits against favored enemies of your own subtype and on Survival checks made to track such creatures.)",
             },
             #endregion
@@ -2991,7 +2991,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Scholar of the Great Beyond",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/scholar-of-the-great-beyond"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/scholar-of-the-great-beyond"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) and Knowledge (planes) checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -3003,7 +3003,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Schooled Inquisitor",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/schooled-inquisitor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/schooled-inquisitor"),
                 Description = "You gain a +2 trait bonus on all Knowledge (planes) and Knowledge (religion) checks made to identify the abilities and weaknesses of creatures.)",
             },
             #endregion
@@ -3015,7 +3015,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Scorned by Magic",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/scorned-by-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/scorned-by-magic"),
                 Description = "Reduce the caster level of spells and spell-like abilities cast upon you by 1 for the purpose of attempting dispel checks and overcoming your spell resistance (if any).)",
             },
             #endregion
@@ -3027,7 +3027,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Secret-Keeper",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/secret-keeper"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/secret-keeper"),
                 Description = "You gain a +1 trait bonus on Bluff checks and a +1 trait bonus on saving throws against divinations, domination effects, and effects that would compel you to speak the truth.)",
             },
             #endregion
@@ -3039,7 +3039,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Seeker",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/seeker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/seeker"),
                 Description = "You gain a +1 trait bonus on Perception checks, and Perception is always a class skill for you.)",
             },
             #endregion
@@ -3051,7 +3051,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Self-Taught Scholar",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/self-taught-scholar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/self-taught-scholar"),
                 Description = "You gain a +1 trait bonus on Linguistics checks to decipher unfamiliar languages, and Linguistics is always a class skill for you. In addition, you gain a +1 trait bonus on Spellcraft checks made to decipher the writing on a scroll.)",
             },
             #endregion
@@ -3063,7 +3063,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Shrouded Casting",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/shrouded-casting"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/shrouded-casting"),
                 Description = "Choose one school of magic when you pick this trait. You can cast spells from that school as if you had the Eschew Materials feat.)",
             },
             #endregion
@@ -3075,7 +3075,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Signature Moves",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/signature-moves-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/signature-moves-social"),
                 Description = "Your starting equipment includes a single masterwork item worth less than 900 gp, and you gain a +1 trait bonus on Bluff and Intimidate checks while wielding this item in one or both hands.)",
             },
             #endregion
@@ -3087,7 +3087,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Simple Disciple",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/simple-disciple"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/simple-disciple"),
                 Description = "You gain a +1 trait bonus on checks with a Profession or Craft skill of your choice.)",
             },
             #endregion
@@ -3099,7 +3099,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Skeptic",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/skeptic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/skeptic"),
                 Description = "You gain a +2 trait bonus on all saving throws against illusions.)",
             },
             #endregion
@@ -3111,7 +3111,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Slippery",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/slippery-bellflower-network"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/slippery-bellflower-network"),
                 Description = "You gain a +1 trait bonus on Stealth checks and Stealth is always a class skill for you.)",
             },
             #endregion
@@ -3123,7 +3123,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Snowbound",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/snowbound"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/snowbound"),
                 Description = "You gain a +1 trait bonus on saving throws against cold effects and a +2 trait bonus on Fortitude saving throws against the effects of cold weather.)",
             },
             #endregion
@@ -3135,7 +3135,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Soaring Sprinter",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/soaring-sprinter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/soaring-sprinter"),
                 Description = "You gain a +2 trait bonus on Acrobatics checks to keep your balance or jump, and Acrobatics becomes a class skill for you.)",
             },
             #endregion
@@ -3147,7 +3147,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Spark of Creation",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/spark-of-creation-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/spark-of-creation-magic"),
                 Description = "You gain a +1 trait bonus on Craft checks, and the cost of creating magic items is reduced by 5%.)",
             },
             #endregion
@@ -3159,7 +3159,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Spell Intuition",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/spell-intuition"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/spell-intuition"),
                 Description = "You gain a +1 trait bonus on Spellcraft checks, and Spellcraft becomes a class skill for you.)",
             },
             #endregion
@@ -3171,7 +3171,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Spirit Sense",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/spirit-sense"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/spirit-sense"),
                 Description = "You gain a +2 trait bonus on Perception checks to avoid being surprised and to detect invisible or incorporeal creatures.)",
             },
             #endregion
@@ -3183,7 +3183,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sprint",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/sprint-gnome"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/sprint-gnome"),
                 Description = "If you do nothing but move in a turn (that is, if you run or use both of your actions in a round to move your speed) and you are in no armor or light armor, you may move an extra 5 feet.)",
             },
             #endregion
@@ -3196,7 +3196,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Paladin,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/stalwart-of-the-society-paladin-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/stalwart-of-the-society-paladin-pathfinder-society"),
                 Description = "Your aura of courage class ability grants an additional +1 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -3208,7 +3208,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Startling Report",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/startling-report"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/startling-report"),
                 Description = "When you shoot a firearm, you gain a +2 trait bonus on Intimidate checks for 1 round against those who heard the shot.)",
             },
             #endregion
@@ -3220,7 +3220,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Steel Skin",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/steel-skin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/steel-skin"),
                 Description = "You gain the ability to don or remove heavy armor in half the normal time. Additionally, you begin play with a great helm bearing the iconography of your family (this helm grants no special defensive benefits). While wearing this helm with a suit of heavy armor, you gain a +2 trait bonus on Intimidate checks.)",
             },
             #endregion
@@ -3232,7 +3232,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Storm-Touched",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/storm-touched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/storm-touched"),
                 Description = "You gain DR 1/— against creatures and attacks with the electricity type.)",
             },
             #endregion
@@ -3244,7 +3244,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Strength Foretold",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/strength-foretold"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/strength-foretold"),
                 Description = "Once per day as a free action, you gain a +1 trait bonus to the DC of the saving throw of one of your bonus bloodline spells.)",
             },
             #endregion
@@ -3256,7 +3256,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Strength of the Land",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/strength-of-the-land"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/strength-of-the-land"),
                 Description = "You gain a +1 trait bonus on caster level checks while touching the ground or unworked stone. This includes dispel checks and checks to overcome spell resistance.)",
             },
             #endregion
@@ -3268,7 +3268,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Strong Arm, Supple Wrist",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/strong-arm-supple-wrist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/strong-arm-supple-wrist"),
                 Description = "Whenever you move at least 10 feet before making an attack with a thrown weapon, you add 10 feet to the range increment of the weapon thrown. You can only gain this benefit once per round.)",
             },
             #endregion
@@ -3280,7 +3280,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Student of Philosophy",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/student-of-philosophy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/student-of-philosophy"),
                 Description = "You can use your Intelligence modifier in place of your Charisma modifier on Diplomacy checks to persuade others and on Bluff checks to convince others that a lie is true. (This trait does not affect Diplomacy checks to gather information or Bluff checks to feint in combat).)",
             },
             #endregion
@@ -3292,7 +3292,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Style Sage",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/style-sage"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/style-sage"),
                 Description = "You gain a +1 trait bonus on checks with your choice of either Knowledge (local) or Knowledge (history), and the one you choose is always a class skill for you. In addition, you gain a +1 trait bonus on Diplomacy checks made to gather information about any person with levels in monk.)",
             },
             #endregion
@@ -3304,7 +3304,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Subjective Truth",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/subjective-truth-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/subjective-truth-social"),
                 Description = "You gain a +2 trait bonus on Bluff checks to lie, provided the person you're lying to has never known you to lie to him. Failing this check counts as being caught in a lie by the target, negating any future use of this bonus against that person.)",
             },
             #endregion
@@ -3327,7 +3327,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Supportive",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/supportive"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/supportive"),
                 Description = "You gain a +1 trait bonus on skill checks to use the aid another action.)",
             },
             #endregion
@@ -3339,7 +3339,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Surprise Weapon",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/surprise-weapon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/surprise-weapon"),
                 Description = "You gain a +2 trait bonus on attack rolls with improvised weapons.)",
             },
             #endregion
@@ -3351,7 +3351,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Suspicious",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/suspicious"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/suspicious"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive is always a class skill for you.)",
             },
             #endregion
@@ -3363,7 +3363,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sworn Enemy",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/sworn-enemy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/sworn-enemy"),
                 Description = "Choose a creature type from ranger's list of favored enemies. You gain a +1 trait bonus on attacks of opportunity against the chosen creature type.)",
             },
             #endregion
@@ -3375,7 +3375,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tactician",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/tactician"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/tactician"),
                 Description = "You gain a +1 trait bonus on initiative checks. In addition, once per day when you make an attack of opportunity, you gain a +2 trait bonus on the attack roll.)",
             },
             #endregion
@@ -3387,7 +3387,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Talented",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/talented"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/talented"),
                 Description = "You gain a +1 trait bonus on checks with a single Perform skill (your choice), and all Perform skills are always class skills for you.)",
             },
             #endregion
@@ -3399,7 +3399,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tenacious Shifting",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/tenacious-shifting"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/tenacious-shifting"),
                 Description = "Any transmutation spell you cast upon yourself has its duration increased by 2 rounds. Transmutation spells with an instantaneous duration are not affected by this trait.)",
             },
             #endregion
@@ -3411,7 +3411,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Theoretical Magician",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/theoretical-magician"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/theoretical-magician"),
                 Description = "You gain a +2 trait bonus on Spellcraft checks, or a +3 bonus if you aren't a spellcaster.)",
             },
             #endregion
@@ -3423,7 +3423,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Threatening Defender",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/threatening-defender"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/threatening-defender"),
                 Description = "When you use Combat Expertise, reduce the number you subtract from your melee attack rolls by 1.)",
             },
             #endregion
@@ -3435,7 +3435,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tireless Avenger",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/tireless-avenger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/tireless-avenger"),
                 Description = "When you're in pursuit of one of your favored enemies, the DC for the Constitution check to avoid taking lethal damage during a forced march is 10 + 1 per extra hour, instead of 10 + 2 per extra hour.)",
             },
             #endregion
@@ -3447,7 +3447,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tireless Logic",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/tireless-logic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/tireless-logic"),
                 Description = "Once per day when you make an Intelligence-based skill check or ability check, you can roll twice and take the better result.)",
             },
             #endregion
@@ -3460,7 +3460,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 CharacterClass = ClassEnum.Ranger,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/tracker-of-the-society-ranger-pathfinder-society"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/tracker-of-the-society-ranger-pathfinder-society"),
                 Description = "You gain a +1 trait bonus on Initiative checks and a +2 trait bonus on Survival skill checks made while traveling through any of your favored terrains. This is in addition to any bonuses you receive from your Favored Terrain class ability.)",
             },
             #endregion
@@ -3472,7 +3472,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Transmuter",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/transmuter-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/transmuter-magic"),
                 Description = "Whenever you cast a spell from the transmutation school, its effects manifest at +1 caster level. Additionally, select one of the following transmutation spells: bear's endurance, bull's strength, cat's grace, eagle's splendor, fox's cunning, or owl's wisdom. Once per day when you cast that spell, its duration is doubled. A spell affected by this trait cannot be modified further by the Extend Spell metamagic feat or similar abilities.)",
             },
             #endregion
@@ -3484,7 +3484,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Trickster",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/trickster-gnome-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/trickster-gnome-magic"),
                 Description = "You gain a +1 trait bonus to your caster level when determining the duration, range, and area of all spells from the illusion school.)",
             },
             #endregion
@@ -3496,7 +3496,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tropical Upbringing",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/tropical-upbringing"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/tropical-upbringing"),
                 Description = "You gain a +1 trait bonus on saving throws against fire effects and a +2 trait bonus on Fortitude saving throws against the effects of hot weather.)",
             },
             #endregion
@@ -3508,7 +3508,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Trustworthy",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/trustworthy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/trustworthy"),
                 Description = "You gain a +1 trait bonus on Bluff checks made to fool someone. You also gain a +1 trait bonus on Diplomacy checks, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -3520,7 +3520,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Truths Agent",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/truth-s-agent"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/truth-s-agent"),
                 Description = "You gain a +1 trait bonus on all Diplomacy checks made to gather information and all Knowledge (local) checks. Knowledge (local) is always a class skill for you.)",
             },
             #endregion
@@ -3532,7 +3532,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Twinned Presence",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/twinned-presence"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/twinned-presence"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you. In addition, if your eidolon is summoned and within 30 feet, and its size exceeds your own, use its size modifier on any Intimidate checks you make.)",
             },
             #endregion
@@ -3544,7 +3544,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Two-World Magic",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/two-world-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/two-world-magic"),
                 Description = "Select one 0-level spell from a class spell list other than your own. This spell is a 0-level spell on your class spell list (or a 1st-level spell if your class doesn't have 0-level spells). For example, if you are a druid, you could select mage hand and thereafter prepare it as a 0-level druid spell; if you are a sorcerer, you could select know direction as a 0-level sorcerer spell known.)",
             },
             #endregion
@@ -3556,7 +3556,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unabashed Gall",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/unabashed-gall-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/unabashed-gall-social"),
                 Description = "Whenever you commit an unexpected and outrageously unlawful act (such as knowingly destroying or stealing something) that would elicit a hostile response from another creature, you may attempt a Bluff check opposed by the opponent's Sense Motive check. If you're successful, you and any allies who were willfully expecting your unlawful deed may act in a surprise round. For each ally willfully expecting your unlawful deed, you take a cumulative –2 penalty on your Bluff check. If your Bluff check fails, there is no surprise round. Regardless of whether your Bluff check succeeds, you and any allies willfully taking advantage of your unlawful deed treat your initiative checks for the duration of combat as though you had each rolled a 1.)",
             },
             #endregion
@@ -3568,7 +3568,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unblemished Barrel",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/unblemished-barrel"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/unblemished-barrel"),
                 Description = "You gain a +1 trait bonus on Craft (alchemy) and Craft (weapons) checks, and it takes you only 30 minutes to remove the broken condition from a firearm.)",
             },
             #endregion
@@ -3580,7 +3580,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unintentional Linguist",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/unintentional-linguist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/unintentional-linguist"),
                 Description = "You gain a +1 trait bonus on Linguistics checks, and you begin play knowing one of the following languages (in addition to those granted by your race and Intelligence modifier): Abyssal, Aquan, Celestial, Ignan, Infernal, Protean, or Terran.)",
             },
             #endregion
@@ -3592,7 +3592,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unnatural Revenge",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/unnatural-revenge"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/unnatural-revenge"),
                 Description = "You gain a +2 trait bonus on all Intimidate checks against creatures of the animal, fey, or plant type, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -3604,7 +3604,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unpredictable",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/unpredictable"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/unpredictable"),
                 Description = "You gain a +1 trait bonus on Bluff checks, and Bluff is always a class skill for you.)",
             },
             #endregion
@@ -3616,7 +3616,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unpredictable Reactions",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/unpredictable-reactions-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/unpredictable-reactions-combat"),
                 Description = "You gain a +1 trait bonus on attack rolls made during the surprise round of combat.)",
             },
             #endregion
@@ -3628,7 +3628,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unscathed",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/unscathed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/unscathed"),
                 Description = "Each type of energy resistance you have (if any) increases by 2 points.)",
             },
             #endregion
@@ -3640,7 +3640,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unseen but Not Undone",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/unseen-but-not-undone"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/unseen-but-not-undone"),
                 Description = "Once per day, you can cast a bloodline spell as if you had the Still Spell feat. Using this trait does not modify the spell's level.)",
             },
             #endregion
@@ -3652,7 +3652,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unstable Mutagen",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/unstable-mutagen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/unstable-mutagen"),
                 Description = "Once per day, you can create an unstable mutagen. It is like a normal mutagen in most ways, but also gains a single benefit or hindrance due to its instability. Roll 1d6 to determine the result of the instability.  1  The unstable mutagen lasts for 5 minutes per alchemist level. 2  The unstable mutagen lasts for 20 minutes per alchemist level. 3  The unstable mutagen does not grant a natural armor bonus. 4  The natural armor bonus granted by the mutagen increases by 2. 5  The penalty that the mutagen applies to the corresponding mental ability score increases by 2. 6  The unstable mutagen does not apply a penalty to the corresponding mental ability score.)",
             },
             #endregion
@@ -3664,7 +3664,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Veiled Disciple",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/veiled-disciple"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/veiled-disciple"),
                 Description = "You gain a +1 trait bonus on Bluff checks made to pass secret messages and a +1 trait bonus on saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -3676,7 +3676,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Vengeful",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/vengeful"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/vengeful"),
                 Description = "Whenever you strike the last creature that damaged you in the past 24 hours, you gain a +1 trait bonus on damage rolls against that creature.)",
             },
             #endregion
@@ -3688,7 +3688,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Vigilant Battler",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/vigilant-battler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/vigilant-battler"),
                 Description = "You gain a +1 trait bonus on all Sense Motive checks. This trait bonus increases to +2 when used to counter a feint in combat.)",
             },
             #endregion
@@ -3700,7 +3700,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Volatile Conduit",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/volatile-conduit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/volatile-conduit"),
                 Description = "Once per day as a free action, when you cast a spell that deals acid, cold, electricity, or fire damage, you can enhance that spell with volatile energy. When you do, it deals 1d4 points of extra damage of the same energy type.)",
             },
             #endregion
@@ -3712,7 +3712,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Wanderers Shroud",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/wanderer-s-shroud"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/wanderer-s-shroud"),
                 Description = "Efforts to use the Diplomacy skill to gather information about you take a –1 penalty, and you gain a +1 trait bonus on all saving throws against scrying and mind-reading effects that allow saving throws.)",
             },
             #endregion
@@ -3724,7 +3724,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Wanderlust",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/wanderlust"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/wanderlust"),
                 Description = "Treat your base land speed as 10 feet higher when determining your overland speed.)",
             },
             #endregion
@@ -3736,7 +3736,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Water-Touched",
                 Category = TraitCategoryEnum.Magic,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/water-touched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/water-touched"),
                 Description = "You gain DR 1/— against creatures and attacks with the water type.)",
             },
             #endregion
@@ -3748,7 +3748,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Weapon of Peace",
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/weapon-of-peace-combat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/weapon-of-peace-combat"),
                 Description = "When using a melee weapon that deals lethal damage to instead deal nonlethal damage, you take only a –2 attack penalty instead of –4.)",
             },
             #endregion
@@ -3760,7 +3760,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Weathered Emissary",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/weathered-emissary"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/weathered-emissary"),
                 Description = "You gain a +1 trait bonus on Linguistics and Survival checks, and Linguistics is always a class skill for you.)",
             },
             #endregion
@@ -3772,7 +3772,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Wicked Leader",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/wicked-leader-social"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/wicked-leader-social"),
                 Description = "You gain a +1 trait bonus on Charisma checks against evil creatures. If you select the Leadership feat or the Vile Leadership feat at any point when you meet the prerequisites for that feat, you can recruit a cohort who is up to 1 level lower than you (instead of the normal requirement that your cohort must be 2 or more levels lower than you are) as long as your cohort is evil.)",
             },
             #endregion
@@ -3784,7 +3784,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Without a Past",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/without-a-past"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/without-a-past"),
                 Description = "You gain a +1 trait bonus to Bluff and Linguistics when forging documents, and you may choose one of the two as always a class skill for you.)",
             },
             #endregion
@@ -3797,7 +3797,7 @@ namespace GoDungeon.Background.Tables
                 Category = TraitCategoryEnum.Combat,
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.AcademyMembership,
-                Url = new Uri("http://www.d20pfsrd.com/traits/combat-traits/witty-repartee-kitharodian-academy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/combat-traits/witty-repartee-kitharodian-academy"),
                 Description = "You gain a +1 trait bonus on Bluff checks and Bluff is always a class skill for you.)",
             },
             #endregion
@@ -3809,7 +3809,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Worldly",
                 Category = TraitCategoryEnum.Social,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/social-traits/worldly"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/social-traits/worldly"),
                 Description = "Once per day when attempting a skill check for a skill you're untrained in, you can roll twice and take the better result.)",
             },
             #endregion
@@ -3821,7 +3821,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Zealot",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/zealot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/zealot"),
                 Description = "You gain a +1 trait bonus on Knowledge (religion) checks, and that skill is always a class skill for you. As long as you remain completely faithful to the tenets of your faith (as determined by the GM), you never suffer from the negative racial effect normally associated with your race.)",
             },
             #endregion
@@ -3833,7 +3833,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Zealous Striker",
                 Category = TraitCategoryEnum.Faith,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/zealous-striker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/zealous-striker"),
                 Description = "While you have the destruction judgment active, you gain a +1 trait bonus on damage rolls when attacking a foe who can cast divine spells and worships a different deity than you.)",
             },
             #endregion
@@ -3850,7 +3850,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Alabaster Outcast",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/alabaster-outcast"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/alabaster-outcast"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Intimidate checks made within the city. Additionally, you start play with a noble's outfit, a signet ring, and a single additional non-magical item worth no more than 200 gp.)",
             },
             #endregion
@@ -3862,7 +3862,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ancient Explorer",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/ancient-explorer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/ancient-explorer"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) and Knowledge (local) checks, and one of these skills is always a class skill for you. In addition, you gain Cyclops or Polyglot as a bonus language.)",
             },
             #endregion
@@ -3874,7 +3874,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Barroom Talespinner",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/barroom-talespinner"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/barroom-talespinner"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks and one category of Perform checks, and one of these skills is always a class skill for you. In addition, once per week you can make a DC 15 Knowledge (local) or Intelligence check to see if you know a popular legendary pirate tale, the telling of which grants you a +1 trait bonus on checks made to influence NPCs in the area.)",
             },
             #endregion
@@ -3886,7 +3886,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bastard",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/bastard"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/bastard"),
                 Description = "You take a –1 penalty on all Charisma-based skill checks made when dealing with members of nobility but gain a +1 trait bonus on Will saves as a result of your stubbornness and individuality. (The penalty aspect of this trait is removed if you ever manage to establish yourself as a true noble.))",
             },
             #endregion
@@ -3898,7 +3898,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Best Friend",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/best-friend"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/best-friend"),
                 Description = "Choose An NPC. You and the chosen NPC are best friends. You gain a +1 trait bonus on all attack rolls against foes that threaten your friend as well as one of the following (depending on the NPC chosen, consult your GM for specifics): A +2 trait bonus on Diplomacy checks or a +2 trait bonus on Bluff checks. Whichever skill you gain a trait bonus on, that skill is always considered a class skill for you.)",
             },
             #endregion
@@ -3910,7 +3910,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Black Sheep",
                 Category = TraitCategoryEnum.RiseoftheRunelords,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/rise-of-the-runelords/black-sheep"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/rise-of-the-runelords/black-sheep"),
                 Description = "You gain a +1 trait bonus on Knowledge (local) checks, and Knowledge (local) is always a class skill for you. In addition, you can choose any one notorious citizen from below as an ally; depending on the person you pick, you’ll get different benefits. Apothecarist: You start the game with 400 gp worth of poison, and the apothecarist will continue to sell you poison as long as you don’t spread the word. Bitter Nobleman: Choose one of the following skills: Bluff, Sleight of Hand, or Stealth. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -3922,7 +3922,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Blood of Pharaohs",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/blood-of-pharaohs"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/blood-of-pharaohs"),
                 Description = "You gain a +1 trait bonus on Will saves. You also gain a +1 trait bonus on Knowledge (nobility) checks and that skill is always a class skill for you. In addition, you may choose an ancient language as one of your bonus languages.)",
             },
             #endregion
@@ -3934,7 +3934,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Boarded [A]",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-cheliax"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-cheliax"),
                 Description = "You begin with a detailed map of a very large jungle (this grants +2 competence bonus on all Knowledge [geography] checks made regarding this region) and 200 gp worth of mundane equipment to aid your exploration of the jungle.)",
             },
             #endregion
@@ -3946,7 +3946,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Boarded [B]",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-the-mwangi-expanse"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-the-mwangi-expanse"),
                 Description = "You gain Polyglot as a bonus language and receive a +1 trait bonus on all Knowledge (nature) checks regarding the jungle.)",
             },
             #endregion
@@ -3958,7 +3958,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Boarded [C]",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-the-shackles"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-the-shackles"),
                 Description = "Choose Fort, Reflex, or Will. You gain a +1 trait bonus on all saving throws of that type.)",
             },
             #endregion
@@ -3970,7 +3970,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Boarded [D]",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-varisia"),
                 Description = "You gain either a +2 trait bonus on all Bluff checks made against inhabitants of the jungle, or treat your spells with the mind-affecting descriptor as being +1 caster level higher when cast against creatures and natives of the jungle.)",
             },
             #endregion
@@ -3982,7 +3982,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Boarded [E]",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-mediogalti"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/boarded-in-mediogalti"),
                 Description = "Your familiarity with subtle slayings and toxins grants you a +2 trait bonus on all saving throws against poison. In addition, you can pick one type of poison listed below to be immune to, having undergone a long and painful process of building up an immunity to its effects: blue whinnis, giant wasp poison, medium spider venom, small centipede poison, or spider vine poison.)",
             },
             #endregion
@@ -3994,7 +3994,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Brigand",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/brigand"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/brigand"),
                 Description = "You begin with an extra 100 gp in equipment. You also gain a +1 trait bonus on Bluff, Diplomacy, Intimidate, and Sense Motive checks when dealing with brigands, thieves, bandits, and their ilk.)",
             },
             #endregion
@@ -4006,7 +4006,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Buccaneers Blood",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/buccaneer-s-blood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/buccaneer-s-blood"),
                 Description = "You gain a +1 trait bonus on Intimidate and Profession (sailor) checks. In addition, you gain a one-time +1 trait bonus to your Disrepute and Infamy scores.)",
             },
             #endregion
@@ -4018,7 +4018,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Caravan Guard",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/caravan-guard"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/caravan-guard"),
                 Description = "You gain a +1 trait bonus on Survival checks, and Survival becomes a class skill for you.)",
             },
             #endregion
@@ -4030,7 +4030,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Chance Savior",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/chance-savior"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/chance-savior"),
                 Description = "You gain a +2 trait bonus on Initiative checks.)",
             },
             #endregion
@@ -4042,7 +4042,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Childhood Crush",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/childhood-crush"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/childhood-crush"),
                 Description = "You gain a +1 trait bonus on all attack rolls against foes that threaten your crush. Once per day, you may attempt to earn a kind word or a smile from the NPC whom you have a crush on by making a DC 15 Charisma check. If you’re successful, the elation and joy at the attention gives you a +1 trait bonus on all saving throws for the remainder of the day. If you’re ever lucky enough to win the NPC’s love, this +1 trait bonus on saving throws applies at all times, as long as your relationship remains active.)",
             },
             #endregion
@@ -4054,7 +4054,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Child of Infamy",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/child-of-infamy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/child-of-infamy"),
                 Description = "You gain a +1 trait bonus on Perform (act) skill checks, and the skill is always considered a class skill for you. Furthermore, you begin play with an additional 300 gp.)",
             },
             #endregion
@@ -4066,7 +4066,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Colonial",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/colonial"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/colonial"),
                 Description = "You gain a +1 trait bonus on Knowledge (local) checks relating to settlements and politics and a +1 trait bonus on saving throws against disease.)",
             },
             #endregion
@@ -4078,7 +4078,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Conspiracy Hunter",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/conspiracy-hunter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/conspiracy-hunter"),
                 Description = "Choose one of the following skills: Bluff, Diplomacy, Knowledge (local), Perception, Sense Motive, or Stealth. You gain a +1 trait bonus on this skill and it is always considered a class skill for you.)",
             },
             #endregion
@@ -4090,7 +4090,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Devotee of the Old Gods",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/devotee-of-the-old-gods"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/devotee-of-the-old-gods"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) and Knowledge (religion) checks, and one of those skills is always a class skill for you. In addition, your faith in the old gods grants you a +1 trait bonus on saving throws against divine magic.)",
             },
             #endregion
@@ -4102,7 +4102,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Diabolist Raised",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/diabolist-raised"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/diabolist-raised"),
                 Description = "You gain a +1 bonus on Bluff, Diplomacy, Intimidate, and Sense Motive checks made against local nobility, and a +1 bonus on all saving throws made against mind-affecting attacks from devils.)",
             },
             #endregion
@@ -4114,7 +4114,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dockside Brawler",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/dockside-brawler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/dockside-brawler"),
                 Description = "You begin with brass knuckles in addition to your starting wealth. You gain a +1 trait bonus on damage rolls with brass knuckles and improvised weapons.)",
             },
             #endregion
@@ -4126,7 +4126,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Drug Addict",
                 Category = TraitCategoryEnum.CurseoftheCrimsonThrone,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/drug-addict"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/drug-addict"),
                 Description = "Choose 'friend' or 'self'. If you choose 'friend', you gain a +2 bonus on Knowledge (local) checks or Diplomacy checks to gather information (choose one when selecting this trait). If you choose 'self' you were the addict. You gain a +1 bonus on Fortitude saving throws.)",
             },
             #endregion
@@ -4150,7 +4150,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Exchange Agent",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/exchange-agent"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/exchange-agent"),
                 Description = "You gain one language as a bonus language. Additionally, choose one of the following skills: Handle Animal, Knowledge (geography), Linguistics, or Survival. You gain a +1 trait bonus on checks made with this skill and it is always a class skill for you.)",
             },
             #endregion
@@ -4162,7 +4162,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Eye for Plunder",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/eye-for-plunder"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/eye-for-plunder"),
                 Description = "You gain a +1 trait bonus on Appraise and Perception checks to find concealed or secret objects (including doors and traps). In addition, you begin the campaign with a selection mundane trade goods worth 50 gp that you were able to scrounge together during your first day on the ship.)",
             },
             #endregion
@@ -4174,7 +4174,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Favored Child",
                 Category = TraitCategoryEnum.RiseoftheRunelords,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/rise-of-the-runelords/favored-son-daughter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/rise-of-the-runelords/favored-son-daughter"),
                 Description = "You gain a +1 trait bonus on Knowledge (local) checks, and Knowledge (local) is always a class skill for you. In addition, you can choose any one law-abiding citizen from below as an ally; depending on the person you pick, you’ll get different benefits. Local noble and Innkeeper: You gain an additional 10% over the amount of gp you normally would get from selling off treasure. Town Sheriff: You can call in a favor from him once per game session. A favor can either get you out of a legal jam, hook you up with a town guard for help, or give you a one-time +10 bonus on a Bluff, Diplomacy, or Intimidate check made against any local person.)",
             },
             #endregion
@@ -4186,7 +4186,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Finding Your Kin",
                 Category = TraitCategoryEnum.LegacyofFire,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/legacy-of-fire/finding-haleen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/legacy-of-fire/finding-haleen"),
                 Description = "The class you chose at 1st level is always a favored class to you. Every time you take a level in the class, you gain +1 hit point and 1 additional skill point over and above what you would normally gain.)",
             },
             #endregion
@@ -4198,7 +4198,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Firebrand",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/westcrown-firebrand"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/westcrown-firebrand"),
                 Description = "You gain a +1 trait bonus on Initiative checks, and if you act in a surprise round, you gain a +1 trait bonus on all attack rolls.)",
             },
             #endregion
@@ -4210,7 +4210,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fools for Friends",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/fools-for-friends"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/fools-for-friends"),
                 Description = "Whenever you perform the Aid Another action, or whenever an ally aids you in this manner, a successful check grants an additional +1 trait bonus to the check for which aid was being rendered. Additionally, as long as one of your friends is within 30 feet, you gain a +1 trait bonus on all saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -4222,7 +4222,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Foreign Opportunist",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/foreign-opportunist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/foreign-opportunist"),
                 Description = "You gain a +2 trait bonus on Appraise checks, and Appraise is always a class skill for you. In addition, your contacts in the antiquities markets allow you to sell relics for 60% of their listed price, rather than the normal 50% value. What is considered an ancient relic is left to the GM's discretion.)",
             },
             #endregion
@@ -4234,7 +4234,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Former Assassin",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/ex-sczarni"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/ex-sczarni"),
                 Description = "You gain a +2 trait bonus on Bluff checks to pass hidden messages. Also, anytime you deliver a coup de grace, you deal an additional 1d6 points of damage.)",
             },
             #endregion
@@ -4246,7 +4246,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Foster Child",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/foster-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/foster-child"),
                 Description = "You have an adoptive mother. Choose any Knowledge skill—you gain a +2 bonus on skill checks with that Knowledge skill, and it becomes a class skill for you. In addition, you gain a +1 trait bonus on all attack rolls against foes that threaten your adoptive mother.)",
             },
             #endregion
@@ -4270,7 +4270,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Friend of the Family",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/friend-of-the-family"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/friend-of-the-family"),
                 Description = "You have a close family friend. As long as your family friend remains alive, you gain a +1 trait bonus on Perception checks, and Perception becomes a class skill for you. In addition, you gain a +1 trait bonus on all attack rolls against foes that threaten your family friend.)",
             },
             #endregion
@@ -4282,7 +4282,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Get the Cargo Through",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/get-the-cargo-through"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/get-the-cargo-through"),
                 Description = "Your character’s history as a merchant or mercenary has earned her a respectable living, and you begin the campaign with an additional 300 gp in starting wealth.)",
             },
             #endregion
@@ -4294,7 +4294,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Gnoll Killer",
                 Category = TraitCategoryEnum.LegacyofFire,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/legacy-of-fire/gnoll-killer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/legacy-of-fire/gnoll-killer"),
                 Description = "You gain a +1 trait bonus on attack rolls and weapon damage rolls made against gnolls. If you are a barbarian and you’re fighting gnolls, your rage lasts 1 round longer than normal. If you’re a ranger and you select humanoid (gnoll) as a favored enemy, your trait bonus on attack rolls and weapon damage rolls against gnolls increases to +2. If you’re a spellcaster, you gain a +1 trait bonus to spell save DCs for damaging spells against gnolls.)",
             },
             #endregion
@@ -4306,7 +4306,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Hero Worship",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/hero-worship"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/hero-worship"),
                 Description = "You admire an NPC as a hero to respect and attempt to model your life after. You gain one of the following benefits depending on the NPC chosen (consult your GM for details). A +2 bonus on concentration checks. A +1 bonus to your AC against attacks of opportunity.)",
             },
             #endregion
@@ -4318,7 +4318,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Infernal Bastard",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/infernal-bastard"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/infernal-bastard"),
                 Description = "You are a tiefling but you lack a tiefling’s standard resistances to cold, electricity, and fire—instead, you merely have a +2 bonus on all saving throws made against these effects. Likewise, you do not have the ability to use darkness as a spell-like ability once per day—instead, you may choose any one 0-level spell that you can instead use at will as a spell-like ability.)",
             },
             #endregion
@@ -4330,7 +4330,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inquisitive Archaeologist",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/inquisitive-archaeologist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/inquisitive-archaeologist"),
                 Description = "You gain a +2 trait bonus on Knowledge (engineering) checks, and that skill is always a class skill for you. In addition, you gain a +2 trait bonus on Perception checks to find concealed or secret doors in ancient structures.)",
             },
             #endregion
@@ -4342,7 +4342,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Inspired by Greatness",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/inspired-by-greatness"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/inspired-by-greatness"),
                 Description = "Choose one spell you can cast. From now on, you always cast this spell at +1 caster level.)",
             },
             #endregion
@@ -4354,7 +4354,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Into Enemy Territory",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/into-enemy-territory"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/into-enemy-territory"),
                 Description = "Pick one of the three categories of saving throw. You gain a +1 trait bonus on all saving throws of that type.)",
             },
             #endregion
@@ -4366,7 +4366,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Issian",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/issian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/issian"),
                 Description = "You gain a +1 trait bonus on all Will saves made to resist mind-affecting effects.)",
             },
             #endregion
@@ -4378,7 +4378,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Jungle Scholar",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/mwangi-scholar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/mwangi-scholar"),
                 Description = "You gain Polyglot as a bonus language and receive a +1 trait bonus on all Knowledge (history) checks regarding the jungle.)",
             },
             #endregion
@@ -4390,7 +4390,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Looking for Work",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/looking-for-work"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/looking-for-work"),
                 Description = "Pick one of the following skills: Bluff, Craft (any), Diplomacy, Intimidate, Perform (any), Profession (gambler), or Perception. You gain a +1 trait bonus in that skill, and that skill is always considered a class skill for you.)",
             },
             #endregion
@@ -4402,7 +4402,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Love Lost",
                 Category = TraitCategoryEnum.CurseoftheCrimsonThrone,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/love-lost"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/love-lost"),
                 Description = "Choose 'parent' or 'lover'. If you choose 'parent' you gain a +2 bonus on one of the following skills: Craft, Perform, or Profession. If you choose 'lover' you gain a +2 bonus on Intimidate checks.)",
             },
             #endregion
@@ -4414,7 +4414,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Making Good on Promises",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/making-good-on-promises"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/making-good-on-promises"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -4426,7 +4426,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Missing Child",
                 Category = TraitCategoryEnum.CurseoftheCrimsonThrone,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/missing-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/missing-child"),
                 Description = "Choose 'sibling' or 'child'. If you choose 'sibling' Diplomacy and Sense Motive are always class skills for you. If you choose 'child' you gain a +1 trait bonus on Will saves.)",
             },
             #endregion
@@ -4438,7 +4438,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Missionary",
                 Category = TraitCategoryEnum.LegacyofFire,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/legacy-of-fire/missionary"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/legacy-of-fire/missionary"),
                 Description = "Pick one of the following skills: Bluff, Diplomacy, Intimidate, Knowledge (religion), Perform (any), or Sense Motive. You gain a +1 trait bonus on checks using that skill, and it is always considered a class skill for you.)",
             },
             #endregion
@@ -4450,7 +4450,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Monument Scholar",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/monument-scholar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/monument-scholar"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) checks made in your home city. This bonus increases to +2 if the check relates to that city. Additionally, you gain a +2 trait bonus on any skill check made to receive a boon from one of the cities magically imbued monuments.)",
             },
             #endregion
@@ -4462,7 +4462,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mummy-Cursed",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/mummy-cursed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/mummy-cursed"),
                 Description = "You gain a +2 trait bonus on saving throws against curses and curse effects (including mummy rot and spells with the curse descriptor) and a +2 trait bonus on saving throws against a mummy's aura of despair.)",
             },
             #endregion
@@ -4474,7 +4474,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Native",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/ilizmagorti-native"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/ilizmagorti-native"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive is always a class skill for you. In addition, your familiarity with the pirate's life allows you to make untrained Knowledge (local) checks regarding pirates or the region.)",
             },
             #endregion
@@ -4486,7 +4486,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Natural Born Sailor",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/besmara-s-blessing"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/besmara-s-blessing"),
                 Description = "You gain a +1 trait bonus on Perception and Profession (sailor) checks. In addition, once per week you can reroll a Profession (sailor) check and take the higher result (you must announce that you are using this ability before the results of the check are known).)",
             },
             #endregion
@@ -4498,7 +4498,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Necropolis Native",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/necropolis-native"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/necropolis-native"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects. In addition, your knowledge of the city grants you a +1 trait bonus on Knowledge (local) checks, and that skill is always a class skill for you.)",
             },
             #endregion
@@ -4510,7 +4510,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Noble Born",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/noble-born"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/noble-born"),
                 Description = "Choose one of the following: You ignore the movement penalty for the first 5 feet of rocky difficult terrain you move through per round. This applies only to terrain made difficult by rocks or ruins. In addition, you gain a +2 trait bonus on Appraise checks to assess the value of natural stones or metals. Your family motto is “Strong as the Mountains.”     You gain one of the following languages as a bonus language: Dwarven, Elven, Hallit, Gnome, Giant, Halfling, Skald, or Sylvan. Your family motto is “Success through Grace.”     You gain a +1 trait bonus on Swim checks, and Swim is always treated as a class skill for you. Your family motto is “The Waters, Our Fields.”     You gain a +2 trait bonus on all Diplomacy checks made to deal with fey creatures and a +1 trait bonus on Will saves made against their spells and supernatural abilities. Your family motto is “Endurance Overcomes All.”     You gain a +1 trait bonus on your CMD. In addition, choose Acrobatics, Diplomacy, or Stealth—you gain a +1 trait bonus on this skill. Your family motto is “High Above.”     You deal +2 damage when attacking a flat-footed opponent while wielding a light or one-handed weapon. Your family motto is “Ours is the Right.”)",
             },
             #endregion
@@ -4522,7 +4522,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Nontraditional Native",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/nontraditional-native"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/nontraditional-native"),
                 Description = "You gain either a +1 trait bonus on Knowledge (geography) checks made relating to a specific city and a +1 trait bonus on damage rolls made during the surprise round when you're wielding a bladed scarf or starknife, or you gain a +1 trait bonus on Survival checks made while in a specific city and gain a +1 trait bonus on rolls to confirm critical hits made using an earth breaker or a klar.)",
             },
             #endregion
@@ -4534,7 +4534,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "On the Payroll",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/on-the-payroll"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/on-the-payroll"),
                 Description = "You begin play with an additional 150 gp in starting wealth.)",
             },
             #endregion
@@ -4546,7 +4546,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Optimistic Gambler",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/optimistic-gambler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/optimistic-gambler"),
                 Description = "Effects that grant you morale bonuses persist 1d4 rounds longer than they normally would as a result.)",
             },
             #endregion
@@ -4558,7 +4558,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Outlander",
                 Category = TraitCategoryEnum.RiseoftheRunelords,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/rise-of-the-runelords/outlander"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/rise-of-the-runelords/outlander"),
                 Description = "Choose one of the following: Lore Seeker: You gain a +1 trait bonus on Knowledge (arcana) checks, and Knowledge (arcana) is always a class skill for you. If you cast arcane spells, pick three spells on your spell list. You are particularly adept at casting these spells, so they function at +1 caster level when you cast them, and their save DCs (if any) gain a +1 bonus. Exile: You gain a +2 trait bonus on Initiative checks. Missionary: You gain a +1 trait bonus on Knowledge (religion) checks, and Knowledge (religion) is always a class skill for you. If you cast divine spells, pick three spells on your spell list. You are particularly adept at casting these spells, so they function at +1 caster level when you cast them, and their save DCs (if any) gain a +1 bonus.)",
             },
             #endregion
@@ -4570,7 +4570,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Peg Leg",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/peg-leg"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/peg-leg"),
                 Description = "You gain a +1 trait bonus on Fortitude saves and a +1 trait bonus on damage rolls against sharks and other animals with the aquatic subtype.)",
             },
             #endregion
@@ -4582,7 +4582,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Pioneer",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/pioneer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/pioneer"),
                 Description = "You begin play with a horse. Choose one of the following skills: Climb, Handle Animal, Knowledge (nature), Perception, Ride, Survival, or Swim—you gain a +1 trait bonus on this skill.)",
             },
             #endregion
@@ -4594,7 +4594,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Reclaiming your Roots",
                 Category = TraitCategoryEnum.LegacyofFire,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/legacy-of-fire/reclaiming-your-roots"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/legacy-of-fire/reclaiming-your-roots"),
                 Description = "You begin with a piece of jewelry worth 350 gp, or any masterwork weapon or armor worth not more than 350 gp, or a wand containing any 1st-level spell (CL 1st) with 20 charges remaining. If you ever lose this item, you suffer a –1 penalty on Will saves for 1 year.)",
             },
             #endregion
@@ -4606,7 +4606,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Rescued",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/rescued"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/rescued"),
                 Description = "You gain a +1 trait bonus on all attack rolls against foes that threaten your savior as well as one of the following: You gain a +2 trait bonus whenever you use cure spells to heal damage or you gain a +1 trait bonus on Acrobatics checks and Acrobatics is always a class skill for you.)",
             },
             #endregion
@@ -4618,7 +4618,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Researching the Blot",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/researching-the-blot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/researching-the-blot"),
                 Description = "You can use Spellcraft to identify magic items in the same way you can use Spellcraft to identify a potion. The DC to identify a magic item is equal to 20 + the item’s caster level.)",
             },
             #endregion
@@ -4630,7 +4630,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Resurrected",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/resurrected"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/resurrected"),
                 Description = "You gain a +2 trait bonus on saving throws against death effects. In addition, you do not die until your hit points drop to a negative amount equal to or lower than your Constitution score + 4.)",
             },
             #endregion
@@ -4642,7 +4642,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Riverlander",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/rostlander"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/rostlander"),
                 Description = "Your gain a +1 trait bonus on all Fortitude saves.)",
             },
             #endregion
@@ -4654,7 +4654,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ruin Raider",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/ruin-raider"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/ruin-raider"),
                 Description = "You gain a +1 trait bonus on Appraise checks. Additionally, you gain a +4 bonus on Perception checks made to distinguish statue-like creatures (like caryatid columns and gargoyles) from actual sculptures.)",
             },
             #endregion
@@ -4666,7 +4666,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Scouting for Fiends",
                 Category = TraitCategoryEnum.SecondDarkness,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/second-darkness/scouting-for-fiends"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/second-darkness/scouting-for-fiends"),
                 Description = "You gain a +1 trait bonus on all attack rolls made against foes you know to be evil outsiders.)",
             },
             #endregion
@@ -4678,7 +4678,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Seeking Adventure",
                 Category = TraitCategoryEnum.LegacyofFire,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/legacy-of-fire/seeking-adventure"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/legacy-of-fire/seeking-adventure"),
                 Description = "You begin with a wayfinder. A wayfinder is a magical compass that grants you a +2 circumstance bonus on Survival checks to avoid becoming lost, and can be commanded to emit light as the spell (CL 5th) as a standard action.)",
             },
             #endregion
@@ -4690,7 +4690,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Serpent Runner",
                 Category = TraitCategoryEnum.ShatteredStar,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/shattered-star/serpent-runner"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/shattered-star/serpent-runner"),
                 Description = "Choose one of the following benefits: a) Choose a specific type of armor. When wearing armor of that type, you treat its armor check penalty as if it were –1 lower, or b) when fighting with two weapons, the penalty imposed on your primary weapon is reduced by 1, or c) you gain a +2 trait bonus on Intimidate checks to demoralize opponents.)",
             },
             #endregion
@@ -4702,7 +4702,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Shadow Child",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/shadow-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/shadow-child"),
                 Description = "When attacking targets in areas of dim light, you do not suffer the standard 20% miss chance on attack rolls for being in the poorly lit area.)",
             },
             #endregion
@@ -4714,7 +4714,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ships Crew",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/jenivere-crew"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/jenivere-crew"),
                 Description = "Pick one of the following skills: Acrobatics, Climb, Knowledge (nature), Knowledge (geography), Swim, or Survival. You gain a +1 trait bonus on that skill, and that skill is always treated as a class skill for you.)",
             },
             #endregion
@@ -4726,7 +4726,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Ships Surgeon",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/ship-s-surgeon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/ship-s-surgeon"),
                 Description = "You begin play with a fully stocked healer's kit and gain a +1 trait bonus on Craft (carpentry) and Heal checks, and Heal is always a class skill for you.)",
             },
             #endregion
@@ -4738,7 +4738,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sphinx Riddler",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/sphinx-riddler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/sphinx-riddler"),
                 Description = "You gain a +1 trait bonus on Bluff and Diplomacy checks against sphinxes, and a +1 trait bonus on any skill check to decipher a puzzle or riddle. In addition, you may choose Sphinx as one of your bonus languages.)",
             },
             #endregion
@@ -4750,7 +4750,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Stowaway",
                 Category = TraitCategoryEnum.SerpentsSkull,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/serpent-s-skull/stowaway"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/serpent-s-skull/stowaway"),
                 Description = "You gain a +1 trait bonus on Stealth checks and Survival checks to find food.)",
             },
             #endregion
@@ -4762,7 +4762,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Student Survivalist",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/student-survivalist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/student-survivalist"),
                 Description = "You have a helpful mentor NPC. You gain a +2 trait bonus on all Survival checks, and Survival is always a class skill for you. In addition, you gain a +1 trait bonus on all attack rolls against foes that threaten your mentor.)",
             },
             #endregion
@@ -4774,7 +4774,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Subject of Study",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/subject-of-study"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/subject-of-study"),
                 Description = "Choose a non-humanoid creature type (and subtype if outsider). You gain a +1 bonus on damage rolls against creatures of this type.)",
             },
             #endregion
@@ -4786,7 +4786,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sword Scion",
                 Category = TraitCategoryEnum.Kingmaker,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/kingmaker/sword-scion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/kingmaker/sword-scion"),
                 Description = "You begin play with a longsword or dueling sword and gain a +1 trait bonus on all attacks and combat maneuvers made with such weapons.)",
             },
             #endregion
@@ -4798,7 +4798,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Teacher’s Pet",
                 Category = TraitCategoryEnum.CarrionCrown,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/carrion-crown/teacher-s-pet"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/carrion-crown/teacher-s-pet"),
                 Description = "You gain a +2 trait bonus to one Knowledge skill of your choosing and consider it a class skill.)",
             },
             #endregion
@@ -4810,7 +4810,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "The Pathfinders Exile",
                 Category = TraitCategoryEnum.CouncilofThieves,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/council-of-thieves/the-pathfinder-s-exile"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/council-of-thieves/the-pathfinder-s-exile"),
                 Description = "You gain a battered and tarnished, yet functional wayfinder. A wayfinder is a magical compass that grants you a +2 circumstance bonus on Survival checks to avoid becoming lost, and can be commanded to emit light as the spell (CL 5th) as a standard action.)",
             },
             #endregion
@@ -4822,7 +4822,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Touched by the Sea",
                 Category = TraitCategoryEnum.SkullShackles,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/skull-shackles/touched-by-the-sea"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/skull-shackles/touched-by-the-sea"),
                 Description = "You gain a +1 trait bonus on Swim checks and Swim is always a class skill for you. In addition, penalties on attack rolls made underwater are lessened by 1.)",
             },
             #endregion
@@ -4834,7 +4834,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Trap Finder",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/trap-finder"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/trap-finder"),
                 Description = "You gain a +1 trait bonus on Disable Device checks, and that skill is always a class skill for you. In addition, you can use Disable Device to disarm magic traps, like a rogue.)",
             },
             #endregion
@@ -4846,7 +4846,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Undead Crusader",
                 Category = TraitCategoryEnum.MummysMask,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/mummy-s-mask/undead-crusader"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/mummy-s-mask/undead-crusader"),
                 Description = "You gain a +1 trait bonus on damage rolls against undead creatures. In addition, you gain a +1 trait bonus on Knowledge (religion) checks, and that skill is always a class skill for you.)",
             },
             #endregion
@@ -4858,7 +4858,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Unhappy Childhood",
                 Category = TraitCategoryEnum.CurseoftheCrimsonThrone,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/unhappy-childhood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/curse-of-the-crimson-throne/unhappy-childhood"),
                 Description = "You gain a +1 bonus on Reflex saving throws.)",
             },
             #endregion
@@ -4870,7 +4870,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Younger Sibling",
                 Category = TraitCategoryEnum.JadeRegent,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/campaign-traits/jade-regent-traits/younger-sibling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/campaign-traits/jade-regent-traits/younger-sibling"),
                 Description = "You gain a +1 trait bonus on all attack rolls against foes that threaten your older sibling as well as one of the following: You gain a +1 trait bonus on Will saving throws or you gain a +1 trait bonus on all Fortitude saving throws. If you’re the younger sibling of a specific NPC (consult your GM), your quick reflexes give you a +1 trait bonus on all Reflex saving throws.)",
             },
             #endregion
@@ -4886,7 +4886,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AugmentedDisguise),
                 ProperName = "Augmented Disguise",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/augmented-disguise"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/augmented-disguise"),
                 Description = "You gain a +2 trait bonus on Disguise checks when wearing a wig, false beard, or similar large prop, or if you are wearing a special costume or eye-catching bauble that reinforces your disguise.)",
             },
             #endregion
@@ -4897,7 +4897,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Dealmaker),
                 ProperName = "Dealmaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/dealmaker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/dealmaker"),
                 Description = "Once per week, when looking for an item with a price greater than the local community’s base value, make a DC 10 Diplomacy check; add 10 to the DC for each community size category between the current community and the community size with a base value sufficient for that item. Success means (with GM approval) you’re able to sell or purchase that item as if the local community were of sufficient size. Each additional attempt (successful or otherwise) in that community increases the DC by an additional +10.)",
             },
             #endregion
@@ -4908,7 +4908,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ExtremelyFashionable),
                 ProperName = "Extremely Fashionable",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/extremely-fashionable"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/extremely-fashionable"),
                 Description = "Whenever you are wearing clean and presentable clothing and/or jewelry worth at least 150 gp, you gain a +1 trait bonus on Bluff, Diplomacy, and Intimidate checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -4919,7 +4919,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HeirloomWeapon),
                 ProperName = "Heirloom Weapon",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/heirloom-weapon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/heirloom-weapon"),
                 Description = "Choose a non-masterwork simple or martial weapon and one of the following benefits: a) You gain proficiency with that specific weapon; b) You gain a +1 trait bonus on attacks of opportunity with that specific weapon; or c) You gain a +2 trait bonus on one kind of combat maneuver when using that specific weapon. Note: This trait does not give you that item, it must still be purchased normally.)",
             },
             #endregion
@@ -4930,7 +4930,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ImprovisationalEquipment),
                 ProperName = "Improvisational Equipment",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/improvisational-equipment"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/improvisational-equipment"),
                 Description = "When using an item for anything other than its intended purpose—such as using a crowbar as a grappling hook or an old shirt to bandage a deadly wound—reduce the improvisation penalty by 2. This does not apply to improvised weapon penalties. Your GM may rule that some things are just not suitable for use in certain ways; for example, gluing a dead orc’s face to your own face won’t help you disguise yourself as an orc.)",
             },
             #endregion
@@ -4941,7 +4941,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IronLiver),
                 ProperName = "Iron Liver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/iron-liver"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/iron-liver"),
                 Description = "You gain a +2 trait bonus on Fortitude saving throws against poison and drugs, and a +4 trait bonus on Fortitude saves to avoid the effects of alcohol.)",
             },
             #endregion
@@ -4952,7 +4952,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PowerofSuggestion),
                 ProperName = "Power of Suggestion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/power-of-suggestion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/power-of-suggestion"),
                 Description = "You may make a Bluff check to make observers believe that an object in your possession is actually a different object entirely. The DC for the check is 20 for items of a similar size, shape, and color (such as a glaive and a quarterstaff). Items of a different shape, size, or color raise the DC by 5 for each dissimilar aspect, or more if the dissimilarity is extreme. This deception lasts 1 minute; if the item is still in view, the observers may recognize their error unless you make another bluff check.)",
             },
             #endregion
@@ -4963,7 +4963,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PrehensileWhip),
                 ProperName = "Prehensile Whip",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/prehensile-whip"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/prehensile-whip"),
                 Description = "You can use a whip as if it were a rope with a grappling hook at the end. Attaching your whip is a standard action, but detaching it is a full-round action.)",
             },
             #endregion
@@ -4974,7 +4974,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.QuickLearner),
                 ProperName = "Quick Learner",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/quick-learner"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/quick-learner"),
                 Description = "After your first attack in a combat with a weapon in which you are not proficient, the non-proficiency penalty decreases by 2 (to a –2 penalty). This effect lasts only while you have the weapon in hand; you must “relearn” the weapon each time you pick it up.)",
             },
             #endregion
@@ -4985,7 +4985,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RoughandReady),
                 ProperName = "Rough and Ready",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/rough-and-ready"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/rough-and-ready"),
                 Description = "When you use a tool of your trade (requiring at least 1 rank in the appropriate Craft or Profession skill) as a weapon, you do not take the improvised weapon penalty and instead receive a +1 trait bonus on your attack. This trait is commonly used with shovels, picks, blacksmith hammers, and other sturdy tools — lutes and brooms make terribly fragile weapons.)",
             },
             #endregion
@@ -4996,7 +4996,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StageMagic),
                 ProperName = "Stage Magic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/stage-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/stage-magic"),
                 Description = "When you use an alchemical item such as a flask of alchemist’s fire, smokestick, thunderstone, or another appropriate alchemical item (GM’s discretion) as part of a performance, you gain a +2 trait bonus on your Perform check for the duration of that performance. The item is expended without its normal effects and only serves to make your performance more impressive; for example, you could pretend to ignite yourself with alchemist’s fire as part of a Perform (comedy) check or make a dramatic appearance with a smokestick as part of a Perform (act) check, but you would not actually take fire damage or gain concealment from smoke.)",
             },
             #endregion
@@ -5007,7 +5007,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StealthyEscape),
                 ProperName = "Stealthy Escape",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/stealthy-escape"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/stealthy-escape"),
                 Description = "When trying to escape manacles, rope, or other similar restraints (but not grapples or similar attacks), you may make a Sleight of Hand check instead of your Escape Artist modifier. If you free yourself, you gain a +2 trait bonus on Bluff checks to pretend that you are still bound.)",
             },
             #endregion
@@ -5018,7 +5018,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ThrownTogetherFashion),
                 ProperName = "Thrown-Together Fashion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/equipment-traits/thrown-together-fashion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/equipment-traits/thrown-together-fashion"),
                 Description = "With a basic sewing kit or disguise kit, you can make a Disguise check to change one outfit into another outfit. The DC of this check is equal to 10 + the gp difference between costs of the outfits. The alteration takes 10 minutes per 1-gp difference in the cost of the outfits.)",
             },
             #endregion
@@ -5394,7 +5394,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SaintsWard),
                 ProperName = "Saints Ward",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/faith-traits/st-clydwell-s-ward-mendev-crusaders"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/faith-traits/st-clydwell-s-ward-mendev-crusaders"),
                 Description = "As a standard action, you can recite a holy chant that affects demons as if you were under the effect of a sanctuary spell (caster level equal to 1/2 your Hit Dice + your Charisma modifier).)",
             },
             #endregion
@@ -5435,7 +5435,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SottoVoce),
                 ProperName = "Sotto Voce",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/magic-traits/tar-baphon-s-whisper-whispering-way"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/magic-traits/tar-baphon-s-whisper-whispering-way"),
                 Description = "You may cast sotto voce as a spell-like ability three times per day as a spell-like ability. This spell-like ability is cast at your highest caster level; if you have no caster level, it functions at CL 1st.)",
             },
             #endregion
@@ -5541,7 +5541,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AdaptableFlatterer),
                 ProperName = "Adaptable Flatterer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/adaptable-flatterer-fetchling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/adaptable-flatterer-fetchling"),
                 Description = "You gain a +1 trait bonus on Bluff checks and on attack rolls against opponents who are denied their Dexterity bonus to AC against you.)",
             },
             #endregion
@@ -5552,7 +5552,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Adrift),
                 ProperName = "Adrift",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/adrift-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/adrift-aasimar"),
                 Description = "You receive a +1 trait bonus on saving throws made to resist charm and compulsion effects.)",
             },
             #endregion
@@ -5563,7 +5563,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AdvantageousDistraction),
                 ProperName = "Advantageous Distraction",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/advantageous-distraction"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/advantageous-distraction"),
                 Description = "Once per day as a swift action, you can be momentarily distracted in combat—ducking an axe swing to inspect a toadstool, or stooping behind a tree to lick some bark and accidentally avoiding an arrow, and so on. When you activate this ability, you gain a +2 dodge bonus to your AC for 1 round.)",
             },
             #endregion
@@ -5574,7 +5574,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AdventurousExplorer),
                 ProperName = "Adventurous Explorer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/adventurous-explorer-song-o"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/adventurous-explorer-song-o"),
                 Description = "When frightened or shaken, you only take a -1 penalty on your rolls instead of -2.)",
             },
             #endregion
@@ -5596,7 +5596,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AlchemicalBreath),
                 ProperName = "Alchemical Breath",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/alchemical-breath-kobold-green-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/alchemical-breath-kobold-green-scaled"),
                 Description = "You begin play with three pieces of the choking smoke variety of alchemical coal. Eating one of these pellets allows you to exhale noxious vapors, damaging and sickening your enemies. These pellets do not count against your starting character wealth.)",
             },
             #endregion
@@ -5607,7 +5607,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AlmostHuman),
                 ProperName = "Almost Human",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/almost-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/almost-human"),
                 Description = "You gain a + 4 trait bonus on Disguise checks to pass as human, and Disguise is always a class skill for you.)",
             },
             #endregion
@@ -5618,7 +5618,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AnimalFriend),
                 ProperName = "Animal Friend",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/animal-friend-gnome"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/animal-friend-gnome"),
                 Description = "You gain a +1 trait bonus on Will saving throws as long as an animal (Tiny or larger, must be at least indifferent toward you) is within 30 feet, and Handle Animal is always a class skill for you.)",
             },
             #endregion
@@ -5629,7 +5629,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AnimalisticAffliction),
                 ProperName = "Animalistic Affliction",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/animalistic-affliction-ulfen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/animalistic-affliction-ulfen"),
                 Description = "You gain a +1 trait bonus on Handle Animal and wild empathy checks.)",
             },
             #endregion
@@ -5640,7 +5640,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AnticipateEvil),
                 ProperName = "Anticipate Evil",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/anticipate-evil-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/anticipate-evil-tiefling"),
                 Description = "You gain a +1 trait bonus on opposed Dexterity-based skill checks against outsiders with the evil subtype. In addition, when your initiative is tied with such creatures, you always act first regardless of which of you has a higher initiative modifier.)",
             },
             #endregion
@@ -5651,7 +5651,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArcaneDabbler),
                 ProperName = "Arcane Dabbler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/arcane-dabbler-elf-racial-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/arcane-dabbler-elf-racial-trait"),
                 Description = "Choose a 0-level arcane spell. You may cast that spell once per day as a spell-like ability. Your caster level is equal to your highest class level in a spellcasting class; if you have no caster level, it functions at CL 1st. The spell-like ability's save DC is Intelligence- or Charisma-based (chosen when you select this trait).)",
             },
             #endregion
@@ -5662,7 +5662,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArcaneStudent),
                 ProperName = "Arcane Student",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/arcane-student"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/arcane-student"),
                 Description = "You gain a +1 trait bonus on Knowledge (arcana) and Spellcraft checks, and you may make these checks untrained.)",
             },
             #endregion
@@ -5673,7 +5673,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArmsMaster),
                 ProperName = "Arms Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/arms-master-tiefling-faultspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/arms-master-tiefling-faultspawn"),
                 Description = "You take a –2 penalty on attack rolls made with weapons with which you are not proficient instead of the normal –4.)",
             },
             #endregion
@@ -5684,7 +5684,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArtisticDilettante),
                 ProperName = "Artistic Dilettante",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/artistic-dilettante"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/artistic-dilettante"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and on checks for one Craft skill of your choice.)",
             },
             #endregion
@@ -5695,7 +5695,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AspiringBard),
                 ProperName = "Aspiring Bard",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/aspiring-bard-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/aspiring-bard-human"),
                 Description = "You gain a +1 trait bonus to one category of Perform checks and a +2 trait bonus to any Knowledge (local) checks that deal with the music scene.)",
             },
             #endregion
@@ -5707,7 +5707,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Assimilated Native",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/assimilated-native-mwangi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/assimilated-native-mwangi"),
                 Description = "You gain a +2 trait bonus on Intimidate checks to influence natives, but you suffer a -2 on Diplomacy checks to influence them.)",
             },
             #endregion
@@ -5718,7 +5718,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AuspiciousTattoo),
                 ProperName = "Auspicious Tattoo",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/auspicious-tattoo"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/auspicious-tattoo"),
                 Description = "You gain a +1 trait bonus on Will saving throws.)",
             },
             #endregion
@@ -5729,7 +5729,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BalloonHeaded),
                 ProperName = "Balloon Headed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/balloon-headed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/balloon-headed"),
                 Description = "You gain a +1 trait bonus on Perception checks, and Perception is always a class skill for you. Any Escape Artist checks that requires you to squeeze your head through a tight space take a –8 penalty.)",
             },
             #endregion
@@ -5740,7 +5740,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BeastBully),
                 ProperName = "Beast Bully",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/beast-bully-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/beast-bully-tiefling"),
                 Description = "You can make an Intimidate check instead of a Handle Animal check when trying to handle or push an animal.)",
             },
             #endregion
@@ -5751,7 +5751,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BentBody),
                 ProperName = "Bent Body",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/bent-body-tiefling-beastbrood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/bent-body-tiefling-beastbrood"),
                 Description = "You gain a +2 trait bonus to CMD when resisting grapple attempts.)",
             },
             #endregion
@@ -5762,7 +5762,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BigBoned),
                 ProperName = "Big Boned",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/big-boned-tiefling-hungerseed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/big-boned-tiefling-hungerseed"),
                 Description = "You gain a +1 trait bonus on combat maneuver checks made to overrun opponents, as well as a +1 trait bonus to your CMD against trip attempts.)",
             },
             #endregion
@@ -5773,7 +5773,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BigEars),
                 ProperName = "Big Ears",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/big-ears"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/big-ears"),
                 Description = "While this might not quite be the case, you gain a +2 bonus on all Perception checks made to hear noises. Additionally, you can hear noises that normally only dogs or other animals can hear, like the sound of a dog whistle.)",
             },
             #endregion
@@ -5784,7 +5784,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BladeBravado),
                 ProperName = "Blade Bravado",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/blade-bravado"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/blade-bravado"),
                 Description = "When wielding a one-handed weapon and nothing in your off hand, you gain a +1 trait bonus on Acrobatics and Bluff checks.)",
             },
             #endregion
@@ -5795,7 +5795,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BlessingofDarkness),
                 ProperName = "Blessing of Darkness",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/blessing-of-darkness-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/blessing-of-darkness-tiefling"),
                 Description = "Whenever a spellcaster capable of channeling negative energy casts a beneficial spell on you, she acts as if she were one level higher for the purpose of determining that spell’s effects.)",
             },
             #endregion
@@ -5807,7 +5807,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Blood of Dragons",
                 Category = TraitCategoryEnum.Bloodline,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/blood-of-dragons"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/blood-of-dragons"),
                 Description = "Choose one of the following: gain a +1 trait bonus on Perception checks, gain low-light vision, or gain a +2 trait bonus on saving throws against effects that cause sleep or paralysis.)",
             },
             #endregion
@@ -5818,7 +5818,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BloodStalker),
                 ProperName = "Blood Stalker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/blood-stalker-tiefling-hellspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/blood-stalker-tiefling-hellspawn"),
                 Description = "You gain a +4 trait bonus on Survival checks made to track or follow a trail so long as you have dealt damage to the creature you are hunting within the last week.)",
             },
             #endregion
@@ -5829,7 +5829,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BogScamp),
                 ProperName = "Bog Scamp",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/bog-scamp-kobold-black-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/bog-scamp-kobold-black-scaled"),
                 Description = "You can swim through a deep bog at up to half your speed as a move action, instead of the normal quarter speed. Failing a swim check while in a deep bog doesn't cause you to go underwater, even if you fail by 5 or more, though such a failure still results in a lack of progress.)",
             },
             #endregion
@@ -5840,7 +5840,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BornDamned),
                 ProperName = "Born Damned",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/born-damned-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/born-damned-tiefling"),
                 Description = "You gain a +2 trait bonus on saving throws against curses and magical effects that produce curses.)",
             },
             #endregion
@@ -5851,7 +5851,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BornintheLight),
                 ProperName = "Born in the Light",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/born-in-the-light---dhampir"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/born-in-the-light---dhampir"),
                 Description = "You gain a +2 bonus on checks and saves affected by the Endurance feat (this bonus does not stack with the bonus granted by the Endurance feat). When your light sensitivity causes you to become dazzled, you do not take the –1 penalty on sight-based Perception checks.)",
             },
             #endregion
@@ -5862,7 +5862,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BorntotheWater),
                 ProperName = "Born to the Water",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/born-to-the-water-ijo"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/born-to-the-water-ijo"),
                 Description = "You gain a +1 bonus on Swim checks and only need to make Swim checks once every 2 hours to avoid fatigue, instead of once each hour.)",
             },
             #endregion
@@ -5873,7 +5873,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Bouncy),
                 ProperName = "Bouncy",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/bouncy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/bouncy"),
                 Description = "Whenever you take falling damage, the first 1d6 points of lethal damage suffered in the fall are automatically converted to nonlethal damage. You also gain a +2 trait bonus on all Reflex saves made to avoid unexpected falls.)",
             },
             #endregion
@@ -5884,7 +5884,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BralanisStep),
                 ProperName = "Bralanis Step",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/bralani-s-step-aasimar--musetouched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/bralani-s-step-aasimar--musetouched"),
                 Description = "Once per day, you may move an additional 5 feet as part of a move action.)",
             },
             #endregion
@@ -5895,7 +5895,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BredforWar),
                 ProperName = "Bred for War",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/bred-for-war"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/bred-for-war"),
                 Description = "You gain a +1 trait bonus on Intimidate checks and a +1 trait bonus on your CMB because of your great size. You must be at least 6 feet tall.)",
             },
             #endregion
@@ -5906,7 +5906,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Brewmaster),
                 ProperName = "Brewmaster",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/brewmaster"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/brewmaster"),
                 Description = "You gain a +1 trait bonus on Profession (brewer) and Craft (alchemy) checks, but you take a –1 penalty on Diplomacy checks made to change the attitude of dwarves who know that your family has shared brewing secrets with non-dwarves.)",
             },
             #endregion
@@ -5917,7 +5917,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Brute),
                 ProperName = "Brute",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/brute-half-orc"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/brute-half-orc"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -5928,7 +5928,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BuriedAnxiety),
                 ProperName = "Buried Anxiety",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/buried-anxiety-tiefling-spitespawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/buried-anxiety-tiefling-spitespawn"),
                 Description = "Pick a specific sort of object, color, sound, or similar relatively common phenomena. You gain a +2 trait bonus on saving throws made to resist fear effects except when you can see, hear, smell, or taste that which unnerves you.)",
             },
             #endregion
@@ -5939,7 +5939,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BurnishedSkin),
                 ProperName = "Burnished Skin",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/burnished-skin-aasimar--emberkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/burnished-skin-aasimar--emberkin"),
                 Description = "You gain a +2 trait bonus on saving throws made to disbelieve illusions.)",
             },
             #endregion
@@ -5950,7 +5950,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CarefullyHidden),
                 ProperName = "Carefully Hidden",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/carefully-hidden-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/carefully-hidden-human"),
                 Description = "You gain a +1 trait bonus to Will saves and a +2 trait bonus to saving throws versus divination effects.)",
             },
             #endregion
@@ -5961,7 +5961,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CarnationScales),
                 ProperName = "Carnation Scales",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/carnation-scales-kobold"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/carnation-scales-kobold"),
                 Description = "You gain a +1 bonus on Survival checks, and Survival is always a class skill for you. Most kobolds with carnation scales also have the day raider alternate racial trait.)",
             },
             #endregion
@@ -5972,7 +5972,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CelestialTracker),
                 ProperName = "Celestial Tracker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/celestial-tracker-aasimar--angelkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/celestial-tracker-aasimar--angelkin"),
                 Description = "You gain a +1 trait bonus on Survival checks made to follow tracks. In addition, you treat trails as being up to 24 hours fresher than they actually are when using the Survival skill to follow tracks.)",
             },
             #endregion
@@ -5983,7 +5983,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChainMaster),
                 ProperName = "Chain Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/chain-master-tiefling-shackleborn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/chain-master-tiefling-shackleborn"),
                 Description = "You gain a +2 trait bonus on combat maneuver checks made to trip opponents with a spiked chain or whip.)",
             },
             #endregion
@@ -5994,7 +5994,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChildofPlatinum),
                 ProperName = "Child of Platinum",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/trait-race-child-of-zolurket"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/trait-race-child-of-zolurket"),
                 Description = "You gain a +1 trait bonus to weapon damage against undead.)",
             },
             #endregion
@@ -6005,7 +6005,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Clearheaded),
                 ProperName = "Clearheaded",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/clearheaded"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/clearheaded"),
                 Description = "You gain a +1 trait bonus on opposed checks against the Bluff and Disguise skills and a +1 trait bonus on saving throws against illusion effects.)",
             },
             #endregion
@@ -6016,7 +6016,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ClergyMember),
                 ProperName = "Clergy Member",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/clergy-member-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/clergy-member-aasimar"),
                 Description = "You receive a +1 trait bonus on Diplomacy checks when interacting with ordained members of your religion, and once per week you can request aid from a temple of your faith. The GM has final say in what sort of aid you can reasonably request, but in general you may ask for the casting of a 1st-level spell or for a non-magical item worth 50 gp or less.)",
             },
             #endregion
@@ -6027,7 +6027,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ColdFortitude),
                 ProperName = "Cold Fortitude",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/cold-fortitude-kobold-white-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/cold-fortitude-kobold-white-scaled"),
                 Description = "You gain a +4 trait bonus on Fortitude saving throws against nonlethal cold damage.)",
             },
             #endregion
@@ -6038,7 +6038,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ColonialEntitlement),
                 ProperName = "Colonial Entitlement",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/colonial-entitlement-chelish-or-colonial-sargavan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/colonial-entitlement-chelish-or-colonial-sargavan"),
                 Description = "You gain a +2 trait bonus on Intimidate checks against primitives.)",
             },
             #endregion
@@ -6050,7 +6050,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Colonial Sympathizer",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/colonial-sympathizer-mwangi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/colonial-sympathizer-mwangi"),
                 Description = "You gain a +1 trait bonus on Bluff and Diplomacy checks involving colonials and others with this trait.)",
             },
             #endregion
@@ -6061,7 +6061,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ColorThief),
                 ProperName = "Color Thief",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/color-thief"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/color-thief"),
                 Description = "You gain a +2 trait bonus on Stealth checks, providing you wear only light armor or no armor.)",
             },
             #endregion
@@ -6072,7 +6072,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CreativeManipulator),
                 ProperName = "Creative Manipulator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/creative-manipulator-changeling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/creative-manipulator-changeling"),
                 Description = "Once per day, you may reroll a Charisma check you just made. You must take the result of the second roll, even if it is worse.)",
             },
             #endregion
@@ -6083,7 +6083,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DarkMagicAffinity),
                 ProperName = "Dark Magic Affinity",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/dark-magic-affinity-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/dark-magic-affinity-tiefling"),
                 Description = "Whenever you cast a spell with the [evil] descriptor, you act as if you were one level higher for the purpose of determining that spell’s effects.)",
             },
             #endregion
@@ -6094,7 +6094,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DeadlyRush),
                 ProperName = "Deadly Rush",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/deadly-rush-tiefling-pitborn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/deadly-rush-tiefling-pitborn"),
                 Description = "You gain a +2 trait bonus on critical hit confirmation rolls made as part of a charge.)",
             },
             #endregion
@@ -6105,7 +6105,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Deathkeeper),
                 ProperName = "Deathkeeper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/deathkeeper-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/deathkeeper-human"),
                 Description = "You gain a +1 trait bonus on saving throws against the supernatural abilities of undead creatures.)",
             },
             #endregion
@@ -6116,7 +6116,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DeathsDeputy),
                 ProperName = "Death’s Deputy",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/death-s-deputy-tiefling-grimspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/death-s-deputy-tiefling-grimspawn"),
                 Description = "You gain a +2 trait bonus on the damage dealt for any attack that would already reduce your target to negative hit points without this trait.)",
             },
             #endregion
@@ -6128,7 +6128,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Deathtouched",
                 Category = TraitCategoryEnum.Bloodline,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/deathtouched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/deathtouched"),
                 Description = "You gain either a +1 trait bonus on Fortitude saving throws or a +2 trait bonus on saving throws against mind-affecting effects (your choice).)",
             },
             #endregion
@@ -6139,7 +6139,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DeepMarker),
                 ProperName = "Deep Marker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/deep-marker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/deep-marker"),
                 Description = "You gain a +1 trait bonus on Survival checks, and a +1 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -6150,7 +6150,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DilettanteArtist),
                 ProperName = "Dilettante Artist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/dilettante-artist-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/dilettante-artist-elf"),
                 Description = "You gain a +1 trait bonus to one category of Perform checks and a +1 trait bonus to Diplomacy checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -6161,7 +6161,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DogSniffHate),
                 ProperName = "Dog-Sniff-Hate",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/dog-sniff-hate"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/dog-sniff-hate"),
                 Description = "You gain the scent special quality but only against canine creatures, like dogs or wolves, including monstrous hounds such as hell hounds, yeth hounds, and even werewolves. You gain a +2 trait bonus on attack rolls against dogs you can smell.)",
             },
             #endregion
@@ -6172,7 +6172,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Dowsing),
                 ProperName = "Dowsing",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/dowsing-suli"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/dowsing-suli"),
                 Description = "You gain a +1 trait bonus on Survival checks. Whenever you succeed at a Survival check to follow tracks in desert terrain, you can always tell how long ago the tracks were made (though supernatural abilities and spells still impede this ability as appropriate).)",
             },
             #endregion
@@ -6183,7 +6183,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DraconicEcho),
                 ProperName = "Draconic Echo",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/draconic-echo-kobold-blue-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/draconic-echo-kobold-blue-scaled"),
                 Description = "You are able to cast ghost sound twice per day as a spell-like ability. The caster level for this effect is equal to your character level. This spell-like ability's save DC is Intelligence-based.)",
             },
             #endregion
@@ -6194,7 +6194,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DualbornSuli),
                 ProperName = "Dualborn (Suli)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/dualborn-suli"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/dualborn-suli"),
                 Description = "You gain racial energy resistance only to the energy types you choose, and not to others. When using your elemental assault ability, you can only sheath your arms in the energy types selected, but you can choose to sheath your primary hand with one of the selected energy types and your off-hand with the other. Attacks made with each hand (or a weapon held in each hand) deal bonus energy damage of the selected type. While wielding a two-handed weapon, half of the bonus energy damage is one energy type and half is the other.)",
             },
             #endregion
@@ -6205,7 +6205,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EarthsenseOread),
                 ProperName = "Earthsense (Oread)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/earthsense-oread"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/earthsense-oread"),
                 Description = "As a swift action, you can gain tremorsense to a range of 60 feet until the beginning of your next turn. You can use this ability once per day at 1st level, plus one additional time per day at 5th level and every 5 levels thereafter, to a maximum of five times per day at 20th level.)",
             },
             #endregion
@@ -6216,7 +6216,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ElaborateTrapper),
                 ProperName = "Elaborate Trapper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/elaborate-trapper-kobold-blue-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/elaborate-trapper-kobold-blue-scaled"),
                 Description = "When creating a trap, if your Craft (trap) roll exceeds the DC of the check by 5 or more, that trap's Disable Device DC increases by 2.)",
             },
             #endregion
@@ -6227,7 +6227,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ElvenReflexes),
                 ProperName = "Elven Reflexes",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/elven-reflexes-half-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/elven-reflexes-half-elf"),
                 Description = "You gain a +2 trait bonus on Initiative checks.)",
             },
             #endregion
@@ -6238,7 +6238,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ElvenSerenity),
                 ProperName = "Elven Serenity",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/elven-serenity-racial-trait-half-elf-raised-by-elves"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/elven-serenity-racial-trait-half-elf-raised-by-elves"),
                 Description = "You gain a +2 trait bonus on Diplomacy and Handle Animal checks to calm other creatures. You need not speak the same language to attempt a Diplomacy check in this manner.)",
             },
             #endregion
@@ -6249,7 +6249,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EnlightenedWarrior),
                 ProperName = "Enlightened Warrior",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/enlightened-warrior-aasimar--idyllkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/enlightened-warrior-aasimar--idyllkin"),
                 Description = "You may take levels in monk even while maintaining a neutral or neutral good alignment.)",
             },
             #endregion
@@ -6260,7 +6260,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EthicalLeader),
                 ProperName = "Ethical Leader",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ethical-leader-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ethical-leader-aasimar"),
                 Description = "You gain a +1 trait bonus to your Leadership score if all your cohorts and followers have an alignment within one step of your alignment.)",
             },
             #endregion
@@ -6271,7 +6271,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EverHome),
                 ProperName = "Ever Home",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ever-home"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ever-home"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Sleight of Hand checks.)",
             },
             #endregion
@@ -6282,7 +6282,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EverWary),
                 ProperName = "Ever Wary",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ever-wary-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ever-wary-tiefling"),
                 Description = "During the surprise round and before your first action in combat, you can apply half your Dexterity bonus (if any) to your AC. You still count as flat-footed for the purposes of attacks and effects.)",
             },
             #endregion
@@ -6293,7 +6293,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ExpertDistractorIfrit),
                 ProperName = "Expert Distractor (Ifrit)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/expert-distractor-ifrit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/expert-distractor-ifrit"),
                 Description = "Whenever you damage an opponent that is casting a spell with a melee attack that deals fire damage (such as a flaming weapon or a torch), the DC of the concentration check for your opponent to cast the spell is equal to 10 + the non-fire damage dealt + double the fire damage dealt + the spell's level (instead of just 10 + the damage dealt + the spell's level).)",
             },
             #endregion
@@ -6304,7 +6304,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EyesoftheSun),
                 ProperName = "Eyes of the Sun",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/eyes-of-the-sun-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/eyes-of-the-sun-human"),
                 Description = "You gain a +1 trait bonus on saving throws against effects that would cause you to become dazzled or blinded, and once per day when you would be dazzled or blinded by an effect, you can reduce the duration of that effect by half (minimum 1 round). You cannot use this ability if you are already dazzled or blinded or if you have the light sensitivity or light blindness special quality.)",
             },
             #endregion
@@ -6315,7 +6315,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FailedApprentice),
                 ProperName = "Failed Apprentice",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/failed-apprentice-half-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/failed-apprentice-half-elf"),
                 Description = "You gain a +1 trait bonus to saving throws against arcane spells.)",
             },
             #endregion
@@ -6326,7 +6326,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FaithHealer),
                 ProperName = "Faith Healer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/faith-healer-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/faith-healer-aasimar"),
                 Description = "You can make a Heal check weekly to earn money as though making a Profession check. In addition, you gain a +1 trait bonus on Heal checks.)",
             },
             #endregion
@@ -6337,7 +6337,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FamilyConnections),
                 ProperName = "Family Connections",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/family-connections-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/family-connections-tiefling"),
                 Description = "You gain a +2 trait bonus on Bluff and Diplomacy checks made against outsiders belonging to the evil subtype.)",
             },
             #endregion
@@ -6348,7 +6348,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Fanatic),
                 ProperName = "Fanatic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/fanatic-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/fanatic-human"),
                 Description = "You gain +1 to Knowledge (arcana) and Knowledge (history) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -6359,7 +6359,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Fanatic),
                 ProperName = "Fanatic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/fanatic-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/fanatic-human"),
                 Description = "You gain a +1 trait bonus to Knowledge (arcana) and Knowledge (history) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -6371,7 +6371,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Fiend Blood",
                 Category = TraitCategoryEnum.Bloodline,
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/fiend-blood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/fiend-blood"),
                 Description = "Choose one of the following skills: Bluff, Intimidate, or Knowledge (planes). You gain a +1 trait bonus on checks with that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -6382,7 +6382,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FieryGlare),
                 ProperName = "Fiery Glare",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/fiery-glare-ifrit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/fiery-glare-ifrit"),
                 Description = "You can always take 10 on Intimidate checks, even in combat.)",
             },
             #endregion
@@ -6393,7 +6393,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FinalEmbrace),
                 ProperName = "Final Embrace",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/final-embrace-dhampir"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/final-embrace-dhampir"),
                 Description = "You gain a +2 trait bonus on grapple combat maneuver checks to pin an opponent.)",
             },
             #endregion
@@ -6404,7 +6404,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FinishtheFight),
                 ProperName = "Finish the Fight",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/finish-the-fight-racial-trait-half-orc-raised-by-orcs"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/finish-the-fight-racial-trait-half-orc-raised-by-orcs"),
                 Description = "You gain a +1 trait bonus on attack rolls against opponents you already injured in the past 24 hours.)",
             },
             #endregion
@@ -6415,7 +6415,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Firebug),
                 ProperName = "Firebug",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/firebug-kobold-red-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/firebug-kobold-red-scaled"),
                 Description = "You are able to cast spark three times per day as a spell-like ability. The caster level is equal to your character level. This spell-like ability's save DC is Intelligence-based.)",
             },
             #endregion
@@ -6426,7 +6426,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FireTongued),
                 ProperName = "Fire-Tongued",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/fire-tongued-kobold-red-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/fire-tongued-kobold-red-scaled"),
                 Description = "In addition to speaking Draconic, you begin play with the ability to speak Ignan.)",
             },
             #endregion
@@ -6437,7 +6437,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FlairforDestruction),
                 ProperName = "Flair for Destruction",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/flair-for-destruction-tiefling-pitborn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/flair-for-destruction-tiefling-pitborn"),
                 Description = "You gain a +1 trait bonus on weapon damage rolls made against objects and constructs.)",
             },
             #endregion
@@ -6448,7 +6448,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FollowingBreeze),
                 ProperName = "Following Breeze",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/following-breeze-sylph"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/following-breeze-sylph"),
                 Description = "As long as you get a running start, you gain a +2 trait bonus on Acrobatics checks made to jump. Your speed increases by 5 feet when you use the run action.)",
             },
             #endregion
@@ -6459,7 +6459,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Forlorn),
                 ProperName = "Forlorn",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/forlorn-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/forlorn-elf"),
                 Description = "You gain a +1 trait bonus on Fortitude saving throws.)",
             },
             #endregion
@@ -6470,7 +6470,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FoulBelch),
                 ProperName = "Foul Belch",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/foul-belch"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/foul-belch"),
                 Description = "Once per day as a standard action, you can force a particularly odious belch at a single opponent within 5 feet. The character affected must make a DC 12 Fortitude save or be sickened for 1d6 rounds. The save DC is Constitution-based.)",
             },
             #endregion
@@ -6481,7 +6481,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedomFighter),
                 ProperName = "Freedom Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/freedom-fighter-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/freedom-fighter-halfling"),
                 Description = "You gain a +1 trait bonus on any skill check or attack roll made during the process of escaping capture or in helping a slave escape bondage, and Escape Artist is always a class skill for you.)",
             },
             #endregion
@@ -6492,7 +6492,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedomFighter),
                 ProperName = "Freedom Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/freedom-fighter-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/freedom-fighter-halfling"),
                 Description = "You gain a +1 trait bonus on Stealth checks and a +1 trait bonus on attack rolls made during the surprise round.)",
             },
             #endregion
@@ -6503,7 +6503,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedSlave),
                 ProperName = "Freed Slave",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/freed-slave-bellflower-network-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/freed-slave-bellflower-network-halfling"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Knowledge (nobility) checks and Knowledge (nobility) is always a class skill for you.)",
             },
             #endregion
@@ -6514,7 +6514,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Friendless),
                 ProperName = "Friendless",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/friendless-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/friendless-tiefling"),
                 Description = "You can make Heal checks on yourself for the purposes of treating deadly wounds, diseases, and poisons.)",
             },
             #endregion
@@ -6525,7 +6525,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FrostSpitter),
                 ProperName = "Frost Spitter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/frost-spitter-kobold-white-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/frost-spitter-kobold-white-scaled"),
                 Description = "Once per day, you can quickly exhale to produce a frigid cloud of dense fog that quickly sinks to the ground. This freezing mist covers a 10-foot-square area with slippery ice that's as difficult to traverse as an ice sheet.)",
             },
             #endregion
@@ -6536,7 +6536,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GenieBlood),
                 ProperName = "Genie Blood",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/trait-race-human-genie-blood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/trait-race-human-genie-blood"),
                 Description = "Select an element (air, earth, fire, or water). You gain a +1 trait bonus on saving throws against attacks that utilize that element (cold for air, acid for earth, fire for fire, and electricity for water), and gain a +1 trait bonus on Bluff, Diplomacy, Intimidate, and Sense Motive checks made against creatures of that subtype.)",
             },
             #endregion
@@ -6547,7 +6547,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GlibBarrister),
                 ProperName = "Glib Barrister",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/glib-barrister-chelaxian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/glib-barrister-chelaxian"),
                 Description = "You gain a +2 trait bonus on Linguistics checks to create forgeries.)",
             },
             #endregion
@@ -6558,7 +6558,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GoblinFoolhardiness),
                 ProperName = "Goblin Foolhardiness",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/goblin-foolhardiness"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/goblin-foolhardiness"),
                 Description = "When facing an enemy that’s larger than you are, if you have no allies in any adjacent squares, your posturing, bravado, and cussing grant you a +1 trait bonus on attack rolls with non-reach melee weapons.)",
             },
             #endregion
@@ -6569,7 +6569,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GodScorn),
                 ProperName = "God Scorn",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/god-scorn-tiefling-foulspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/god-scorn-tiefling-foulspawn"),
                 Description = "You gain a +1 trait bonus on saving throws against divine spells.)",
             },
             #endregion
@@ -6580,7 +6580,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GoldenScales),
                 ProperName = "Golden Scales",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/golden-scales-kobold"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/golden-scales-kobold"),
                 Description = "You take a –1 penalty on Bluff checks and Diplomacy checks when dealing with other kobolds, but a +2 bonus on Bluff checks and Diplomacy checks when dealing with non-reptilian humanoids.)",
             },
             #endregion
@@ -6591,7 +6591,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Goldsniffer),
                 ProperName = "Goldsniffer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/goldsniffer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/goldsniffer"),
                 Description = "You gain a +2 trait bonus on Perception checks related to metals, jewels, and gemstones.)",
             },
             #endregion
@@ -6602,7 +6602,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GoodInfluence),
                 ProperName = "Good Influence",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/good-influence-aasimar--lawbringers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/good-influence-aasimar--lawbringers"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks when attempting to persuade a nongood creature to make a decision that benefits the cause of good, and when persuading a nonlawful creature to make a decision in line with the laws of the region. These bonuses stack if you attempt to persuade a nongood, nonlawful creature to take a lawful good action.)",
             },
             #endregion
@@ -6613,7 +6613,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Grounded),
                 ProperName = "Grounded",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/grounded"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/grounded"),
                 Description = "You gain a +2 trait bonus on balance-related Acrobatics checks, and a +1 trait bonus on Reflex saving throws.)",
             },
             #endregion
@@ -6624,7 +6624,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HalfForgottenSecrets),
                 ProperName = "Half-Forgotten Secrets",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/half-forgotten-secrets-dhampir---ajibachanas"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/half-forgotten-secrets-dhampir---ajibachanas"),
                 Description = "You gain a +1 trait bonus on checks with two Knowledge skills of your choice, and one of these skills becomes a class skill.)",
             },
             #endregion
@@ -6635,7 +6635,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HarrowBorn),
                 ProperName = "Harrow Born",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/harrow-born-varisian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/harrow-born-varisian"),
                 Description = "You start play with a harrow deck and you gain a +1 trait bonus on initiative checks.)",
             },
             #endregion
@@ -6646,7 +6646,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HarrowChosen),
                 ProperName = "Harrow Chosen",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/harrow-chosen-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/harrow-chosen-varisia"),
                 Description = "You begin play with a harrow deck. If you use this specific harrow deck as an additional focus component when you cast a divination spell, your caster level is treated as being 2 levels higher. Additionally, twice per week, you can spend 10 minutes consulting this harrow deck on a particular action to gain the effects of the spell augury as a spellcaster of your character level. No one other than you gains these benefits from this harrow deck. If your harrow deck is destroyed, it cannot be replaced. However, by returning to your family, paying 300 gp on materials, and spending 1 week immersed in the songs and stories of your people, you can create a new harrow deck that grants half the benefits of the lost heirloom.)",
             },
             #endregion
@@ -6657,7 +6657,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HeatFortitude),
                 ProperName = "Heat Fortitude",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/heat-fortitude-kobold-red-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/heat-fortitude-kobold-red-scaled"),
                 Description = "You gain a +4 trait bonus on Fortitude saving throws against nonlethal damage from heat.)",
             },
             #endregion
@@ -6668,7 +6668,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Helpful),
                 ProperName = "Helpful",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/helpful"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/helpful"),
                 Description = "Whenever you successfully perform an aid another action, you grant your ally a +4 bonus instead of the normal +2.)",
             },
             #endregion
@@ -6679,7 +6679,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Historian),
                 ProperName = "Historian",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/historian-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/historian-human"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) checks and bardic knowledge checks, and Knowledge (history) is always a class skill for you.)",
             },
             #endregion
@@ -6690,7 +6690,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HorseLord),
                 ProperName = "Horse Lord",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/horse-lord-keleshite"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/horse-lord-keleshite"),
                 Description = "You gain a +2 trait bonus on Handle Animal checks, and a +1 trait bonus on Ride checks. This trait applies only to horses.)",
             },
             #endregion
@@ -6701,7 +6701,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IceWalker),
                 ProperName = "Ice Walker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ice-walker-kellid"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ice-walker-kellid"),
                 Description = "You gain a +1 trait bonus on saving throws against attacks that deal cold damage. Furthermore, you may ignore the Acrobatics penalty for ice and can move across ice at normal speed.)",
             },
             #endregion
@@ -6712,7 +6712,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IcyMementos),
                 ProperName = "Icy Mementos",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/icy-mementos-kobold-white-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/icy-mementos-kobold-white-scaled"),
                 Description = "You begin play with three bottles of liquid ice. These don't count against your starting character wealth.)",
             },
             #endregion
@@ -6723,7 +6723,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Inciter),
                 ProperName = "Inciter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/inciter-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/inciter-tiefling"),
                 Description = "You gain a +2 trait bonus on Bluff checks made to convince creatures to attack each other.)",
             },
             #endregion
@@ -6734,7 +6734,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.InfernalInfluence),
                 ProperName = "Infernal Influence",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/infernal-influence-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/infernal-influence-human"),
                 Description = "You gain fire resistance 1 and a +1 trait bonus on Fortitude saving throws against poison.)",
             },
             #endregion
@@ -6745,7 +6745,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Inheritor),
                 ProperName = "Inheritor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/inheritor-gillman"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/inheritor-gillman"),
                 Description = "Whenever you use the aid another action to aid an adjacent ally, increase the bonus you grant your ally by 1. This is a trait bonus.)",
             },
             #endregion
@@ -6756,7 +6756,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Inheritor),
                 ProperName = "Inheritor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/azlanti-inheritor-azlanti"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/azlanti-inheritor-azlanti"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) checks and a +2 trait bonus on Appraise checks related to objects of ancient origin or made to identify ioun stones.)",
             },
             #endregion
@@ -6767,7 +6767,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Innocent),
                 ProperName = "Innocent",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/innocent-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/innocent-aasimar"),
                 Description = "When you make a Bluff check to tell a lie, your target always wants to believe you, granting you the standard +5 bonus on your Bluff check. This bonus only applies if the lie you tell is either believable or unlikely.)",
             },
             #endregion
@@ -6778,7 +6778,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.InstantFriendshipSuli),
                 ProperName = "Instant Friendship (Suli)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/instant-friendship-suli"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/instant-friendship-suli"),
                 Description = "Once per day, you can treat an Intimidate roll to improve a creature's attitude toward you as if you had used Diplomacy instead. You must use this ability after making the check but before the GM has revealed the result. If you continue threatening the target after making the check, the check automatically fails.)",
             },
             #endregion
@@ -6789,7 +6789,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IronControl),
                 ProperName = "Iron Control",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/iron-control-racial-trait-half-orc-raised-by-humans"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/iron-control-racial-trait-half-orc-raised-by-humans"),
                 Description = "Whenever you're confused and roll to determine behavior in a given round, subtract 10 from the result.)",
             },
             #endregion
@@ -6800,7 +6800,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.KeeperoftheAncestralScrolls),
                 ProperName = "Keeper of the Ancestral Scrolls",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/keeper-of-the-ancestral-scrolls-tian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/keeper-of-the-ancestral-scrolls-tian"),
                 Description = "You gain a +1 trait bonus on Knowledge (history), and Knowledge (nobility) checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -6811,7 +6811,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.KoboldFaith),
                 ProperName = "Kobold Faith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/kobold-faith-kobold"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/kobold-faith-kobold"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks when dealing with other kobolds. Additionally, if your deity grants the Artifice, Earth, or Trickery domain, then your kobold faith unlocks a corresponding subdomain: Trap, Radiation, or Ambush.)",
             },
             #endregion
@@ -6822,7 +6822,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.KoboldHerbalist),
                 ProperName = "Kobold Herbalist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/kobold-herbalist-kobold-green-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/kobold-herbalist-kobold-green-scaled"),
                 Description = "Once per day, you can attempt a DC 20 Survival check instead of a Craft (alchemy) check to create a single dose of scent cloak without paying any cost for raw materials. Any scent cloak created using this method must be used within 24 hours, or it becomes inert.)",
             },
             #endregion
@@ -6833,7 +6833,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LanternSpirit),
                 ProperName = "Lantern Spirit",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/lantern-spirit-aasimar--lawbringers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/lantern-spirit-aasimar--lawbringers"),
                 Description = "You feel a strange sense of nostalgia whenever you use your continual flame spell-like ability, and can use it as a move action instead of a standard action.)",
             },
             #endregion
@@ -6844,7 +6844,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LatentPsion),
                 ProperName = "Latent Psion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/latent-psion-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/latent-psion-human"),
                 Description = "You gain a +2 trait bonus on saving throws against mind-affecting effects.)",
             },
             #endregion
@@ -6855,7 +6855,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LegacyofSand),
                 ProperName = "Legacy of Sand",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/legacy-of-sand-half-orc"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/legacy-of-sand-half-orc"),
                 Description = "You gain a +1 trait bonus on all Will saving throws.)",
             },
             #endregion
@@ -6866,7 +6866,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Lettered),
                 ProperName = "Lettered",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/lettered"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/lettered"),
                 Description = "Linguistics is always a class skill for you, and you gain a +1 trait bonus on Linguistics checks made for the purpose of deciphering writing in an unfamiliar language. You never draw a false conclusion if you fail your Linguistics check; instead, you simply realize you cannot make sense of the writing.)",
             },
             #endregion
@@ -6877,7 +6877,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LightningBlessed),
                 ProperName = "Lightning-Blessed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/lightning-blessed-kobold-blue-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/lightning-blessed-kobold-blue-scaled"),
                 Description = "You begin play with three vials of bottled lighting. These don't count against your starting character wealth.)",
             },
             #endregion
@@ -6888,7 +6888,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LillendsHarp),
                 ProperName = "Lillends Harp",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/lillend-s-harp-aasimar--musetouched"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/lillend-s-harp-aasimar--musetouched"),
                 Description = "You gain a +1 trait bonus on Perform (string) checks. This bonus increases to +2 when you make a Perform check as part of a bardic performance.)",
             },
             #endregion
@@ -6899,7 +6899,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LinguisticGenius),
                 ProperName = "Linguistic Genius",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/linguistic-genius-dhampir---ru-shi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/linguistic-genius-dhampir---ru-shi"),
                 Description = "You gain a +1 trait bonus on Linguistics checks, and learn to speak and read one additional language from your list of racial languages. Linguistics is always a class skill for you.)",
             },
             #endregion
@@ -6910,7 +6910,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LiquidTongued),
                 ProperName = "Liquid-Tongued",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/liquid-tongued-kobold-blue-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/liquid-tongued-kobold-blue-scaled"),
                 Description = "In addition to speaking Draconic, you begin play with the ability to speak Aquan.)",
             },
             #endregion
@@ -6921,7 +6921,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MaridsFuryUndine),
                 ProperName = "Marids Fury (Undine)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/marid-s-fury-undine"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/marid-s-fury-undine"),
                 Description = "When you use your hydraulic push spell-like ability, it can extinguish magical fires as well as non-magical fires as long as you succeed at an opposed caster level check (the DC is equal to 11 + the magical fire's caster level).)",
             },
             #endregion
@@ -6932,7 +6932,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MarketRat),
                 ProperName = "Market Rat",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/market-rat-keleshite"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/market-rat-keleshite"),
                 Description = "You gain a +1 trait bonus on Appraise and Knowledge (local) checks.)",
             },
             #endregion
@@ -6943,7 +6943,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MartyrsBlood),
                 ProperName = "Martyrs Blood",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/martyr-s-blood-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/martyr-s-blood-aasimar"),
                 Description = "As long as your current hit point total is less than half of your maximum hit points possible, you gain a +1 trait bonus on attack rolls against evil foes.)",
             },
             #endregion
@@ -6954,7 +6954,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MasterfulDemeanor),
                 ProperName = "Masterful Demeanor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/masterful-demeanor-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/masterful-demeanor-human"),
                 Description = "You gain a +3 trait bonus on Intimidate checks against members of non-human humanoid races.)",
             },
             #endregion
@@ -6965,7 +6965,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MasteroftheSuddenStrike),
                 ProperName = "Master of the Sudden Strike",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/master-of-the-sudden-strike-tian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/master-of-the-sudden-strike-tian"),
                 Description = "When you wield a masterwork version of any sword if you act before your opponent during the surprise round, you gain a +2 trait bonus on weapon damage rolls for the surprise round only. This additional damage is precision damage.)",
             },
             #endregion
@@ -6976,7 +6976,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MilitantMerchant),
                 ProperName = "Militant Merchant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/militant-merchant-dwarf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/militant-merchant-dwarf"),
                 Description = "You gain a +1 trait bonus to Perception checks made to determine surprise, and Perception is always a class skill for you.)",
             },
             #endregion
@@ -6987,7 +6987,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MindTrapper),
                 ProperName = "Mind Trapper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/mind-trapper-dhampir---svetocher"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/mind-trapper-dhampir---svetocher"),
                 Description = "You gain a +2 trait bonus on Charisma checks to convince an ally enchanted by one of your charm spells (such as charm person or charm monster) to do things it wouldn't normally do.)",
             },
             #endregion
@@ -6998,7 +6998,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Motherless),
                 ProperName = "Motherless",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/motherless-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/motherless-tiefling"),
                 Description = "You gain a +2 trait bonus on Bluff and Disguise checks made for the purpose of making you seem injured, sickly, or weak in some other way.)",
             },
             #endregion
@@ -7009,7 +7009,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Nomadic),
                 ProperName = "Nomadic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/nomadic-bas-o"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/nomadic-bas-o"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Survival checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -7020,8 +7020,8 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.NumerologicalGift),
                 ProperName = "Numerological Gift",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/numerological-gift-dhampir---ru-shi"),
-                Description = "When you select this trait, roll 3d6. The resulting number becomes your numerological totem and can never be changed. Once per day, when you roll your totem number on a d20 (such as an attack roll, save, or skill check), you may treat that roll as if you had rolled a natural 20 on the die.)",
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/numerological-gift-dhampir---ru-shi"),
+                Description = "When you select this trait, roll 3d6. The resulting number becomes your numerological totem and can never be changed. Once per day, when you roll your totem number on a GoDungeon (such as an attack roll, save, or skill check), you may treat that roll as if you had rolled a natural 20 on the die.)",
             },
             #endregion
 
@@ -7031,7 +7031,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OldBeforeYourTime),
                 ProperName = "Old Before Your Time",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/old-before-your-time-dhampir---ancient-born"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/old-before-your-time-dhampir---ancient-born"),
                 Description = "Any creature trying to discern your true age must make a Perception or Sense Motive check opposed by your Bluff check; you gain a +5 trait bonus on This check. You gain a +2 trait bonus on Disguise checks if your disguise makes you look at least one age category older, and ignore the check penalty for disguising yourself as a different age category while doing so.)",
             },
             #endregion
@@ -7042,7 +7042,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OozeDefense),
                 ProperName = "Ooze Defense",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ooze-defense-kobold-black-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ooze-defense-kobold-black-scaled"),
                 Description = "You begin play with three alkali flasks. These don't count against your starting character wealth.)",
             },
             #endregion
@@ -7053,7 +7053,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OpenHandandMind),
                 ProperName = "Open Hand and Mind",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/open-hand-and-mind"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/open-hand-and-mind"),
                 Description = "You gain a +1 trait bonus on Acrobatics and Knowledge (religion) checks. If you have a ki pool, once per day as a swift action, you may channel your ki during an unarmed strike, gaining a +2 trait bonus on one damage roll. This additional damage is precision damage.)",
             },
             #endregion
@@ -7064,7 +7064,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Operatic),
                 ProperName = "Operatic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/operatic-chelaxian"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/operatic-chelaxian"),
                 Description = "You gain a +1 trait bonus on Perform (sing) checks. Furthermore you have memorized the works of many sung in an ancient tongue (choose an ancient language), granting you a +2 trait bonus on Linguistics checks when trying to decipher the chosen language.)",
             },
             #endregion
@@ -7075,7 +7075,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Outcast),
                 ProperName = "Outcast",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/outcast"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/outcast"),
                 Description = "You gain a +1 trait bonus on Survival skill checks, and Survival is always a class skill for you.)",
             },
             #endregion
@@ -7086,7 +7086,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PainArtist),
                 ProperName = "Pain Artist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/pain-artist-tiefling-shackleborn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/pain-artist-tiefling-shackleborn"),
                 Description = "You gain a +2 trait bonus on Intimidate checks made against helpless creatures.)",
             },
             #endregion
@@ -7097,7 +7097,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PearlDiver),
                 ProperName = "Pearl Diver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/pearl-diver-half-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/pearl-diver-half-elf"),
                 Description = "You gain a +2 trait bonus on Perception checks while underwater and can hold your breath for a number of rounds equal to three times your Constitution score before you risk drowning.)",
             },
             #endregion
@@ -7108,7 +7108,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PerfectServant),
                 ProperName = "Perfect Servant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/perfect-servant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/perfect-servant"),
                 Description = "You gain a +3 trait bonus on Diplomacy checks made to influence anyone with at least one level of Aristocrat.)",
             },
             #endregion
@@ -7129,7 +7129,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PlanarNegotiator),
                 ProperName = "Planar Negotiator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/planar-negotiator-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/planar-negotiator-aasimar"),
                 Description = "Whenever you cast lesser planar ally, planar ally, or greater planar ally, you receive a 10% discount on the monetary cost required by the summoned outsiders. This bonus has no effect on services the outsiders may demand in order to strike a bargain.)",
             },
             #endregion
@@ -7140,7 +7140,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PlanetarsVisions),
                 ProperName = "Planetars Visions",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/planetar-s-visions-aasimar--angelkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/planetar-s-visions-aasimar--angelkin"),
                 Description = "Whenever you succeed at a critical hit with a melee weapon against an evil outsider, you ignore an amount of the outsider's damage reduction (if any) equal to the critical multiplier of your weapon (this cannot reduce a creature's damage reduction to below 0).)",
             },
             #endregion
@@ -7151,7 +7151,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PracticedImpression),
                 ProperName = "Practiced Impression",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/practiced-impression-suli"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/practiced-impression-suli"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks made against NPCs whom you have known for less than 1 hour.)",
             },
             #endregion
@@ -7162,7 +7162,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PrayerBreaker),
                 ProperName = "Prayer Breaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/prayer-breaker-tiefling-faultspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/prayer-breaker-tiefling-faultspawn"),
                 Description = "If a divine spellcaster makes a concentration check to avoid losing a spell because of an injury you caused, increase the DC of that check by +2.)",
             },
             #endregion
@@ -7173,7 +7173,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PridefulTemper),
                 ProperName = "Prideful Temper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/prideful-temper-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/prideful-temper-tiefling"),
                 Description = "You gain a +1 trait bonus on attack rolls made against creatures that have insulted you until you actually succeed in dealing damage.)",
             },
             #endregion
@@ -7184,7 +7184,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PrideoftheDiamondEmpire),
                 ProperName = "Pride of the Diamond Empire",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/pride-of-the-diamond-empire-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/pride-of-the-diamond-empire-human"),
                 Description = "If you succeed at a Will saving throw against a fear effect that would result in a lesser effect on a successful save (such as causing you to become shaken instead of panicked), you are instead unaffected.)",
             },
             #endregion
@@ -7195,7 +7195,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ProlongMagic),
                 ProperName = "Prolong Magic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/prolong-magic-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/prolong-magic-tiefling"),
                 Description = "Whenever you use a spell-like ability gained through your tiefling heritage, it automatically acts as if affected by the Extend Spell metamagic feat.)",
             },
             #endregion
@@ -7207,7 +7207,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Proud Tribesman",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/proud-tribesman-mwangi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/proud-tribesman-mwangi"),
                 Description = "You gain a +2 bonus on checks to Intimidate colonialists.)",
             },
             #endregion
@@ -7218,7 +7218,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ProvidentialPassenger),
                 ProperName = "Providential Passenger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/providential-passenger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/providential-passenger"),
                 Description = "Improve the starting attitude that ship captains, caravan leaders, and those with similar sorts of responsibilities have toward you by one step.)",
             },
             #endregion
@@ -7229,7 +7229,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PurpleScales),
                 ProperName = "Purple Scales",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/purple-scales-kobold"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/purple-scales-kobold"),
                 Description = "In addition to speaking Draconic, you begin play with the ability to speak one of the following: Aklo, Dwarven, Goblin, or Undercommon.)",
             },
             #endregion
@@ -7240,7 +7240,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Pustular),
                 ProperName = "Pustular",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/pustular"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/pustular"),
                 Description = "Whenever you’re subjected to an effect that causes the sickened condition, you may make two saving throws to avoid the effect (if a saving throw is allowed), taking the better of the two results as your actual saving throw.)",
             },
             #endregion
@@ -7251,7 +7251,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Pyromancer),
                 ProperName = "Pyromancer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/pyromancer-aasimar--emberkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/pyromancer-aasimar--emberkin"),
                 Description = "You gain a +1 trait bonus on damage rolls for any spell you cast with the fire descriptor. Spells that do not deal damage do not benefit from this trait.)",
             },
             #endregion
@@ -7262,7 +7262,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Rapscallion),
                 ProperName = "Rapscallion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/rapscallion-gnome"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/rapscallion-gnome"),
                 Description = "You gain a +1 trait bonus to Escape Artist checks and a +1 trait bonus to initiative checks.)",
             },
             #endregion
@@ -7273,7 +7273,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RelicHunter),
                 ProperName = "Relic Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/relic-hunter-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/relic-hunter-human"),
                 Description = "You gain a +1 trait bonus on Appraise and Knowledge (history) checks made to examine ruined buildings more than 1,000 years old as well as any ruined objects found in them. If such an item is magical, you gain a +1 trait bonus on Spellcraft checks to identify its properties and Use Magical Device checks to activate it.)",
             },
             #endregion
@@ -7284,7 +7284,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RepelSin),
                 ProperName = "Repel Sin",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/repel-sin-tiefling-motherless"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/repel-sin-tiefling-motherless"),
                 Description = "You gain a +2 trait bonus on saving throws made against spells and effects with the [evil] descriptor.)",
             },
             #endregion
@@ -7295,7 +7295,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Repulsive),
                 ProperName = "Repulsive",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/repulsive-tiefling-foulspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/repulsive-tiefling-foulspawn"),
                 Description = "You gain a +1 trait bonus on combat maneuver checks made to overrun and reposition opponents.)",
             },
             #endregion
@@ -7306,7 +7306,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RudeSongs),
                 ProperName = "Rude Songs",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/rude-songs"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/rude-songs"),
                 Description = "Providing an opponent can hear and understand you, you gain a +2 trait bonus on all Perform (song) checks. Perform is always a class skill for you.)",
             },
             #endregion
@@ -7317,7 +7317,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Ruthless),
                 ProperName = "Ruthless",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ruthless"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ruthless"),
                 Description = "You gain a +1 trait bonus on attack rolls to confirm critical hits.)",
             },
             #endregion
@@ -7328,7 +7328,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SandyAmbush),
                 ProperName = "Sandy Ambush",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/sandy-ambush-oread"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/sandy-ambush-oread"),
                 Description = "When prone in desert terrain, you gain a +2 trait bonus on Stealth checks and take only a –2 penalty on attack rolls (rather than –4) when attacking from prone.)",
             },
             #endregion
@@ -7339,7 +7339,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ScholarofRuins),
                 ProperName = "Scholar of Ruins",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/scholar-of-ruins-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/scholar-of-ruins-human"),
                 Description = "You gain a +1 trait bonus to Knowledge (geography) and Knowledge (dungeoneering) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -7350,7 +7350,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Scrapper),
                 ProperName = "Scrapper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/scrapper"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/scrapper"),
                 Description = "You receive a +1 trait bonus on all Intimidate checks made to demoralize opponents and a +1 trait bonus on all Perception checks to avoid being surprised.)",
             },
             #endregion
@@ -7361,7 +7361,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Scrounger),
                 ProperName = "Scrounger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/scrounger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/scrounger"),
                 Description = "You can buy objects with the broken condition at half price (instead of the normal three-quarters price). The value of the unbroken version of these objects cannot exceed four times your character level. The price you pay for this object can never exceed more than twice your character level in gp (for example, at 5th level you can spend up to 10 gp on a broken object, meaning you can buy any object that, if not broken, has a value of 20 gp or less).)",
             },
             #endregion
@@ -7372,7 +7372,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SeekerofBrightness),
                 ProperName = "Seeker of Brightness",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/seeker-of-brightness"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/seeker-of-brightness"),
                 Description = "Choose a Knowledge skill; you gain a +1 trait bonus on Knowledge checks of that type and on Perception checks.)",
             },
             #endregion
@@ -7383,7 +7383,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SelectiveHealth),
                 ProperName = "Selective Health",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/selective-health-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/selective-health-aasimar"),
                 Description = "You gain a +2 trait bonus on Fortitude saving throws against diseases. However, whenever you must make a Fortitude saving throw against a disease inflicted by an undead creature or evil outsider (such as mummy rot or a vrock's spores), you do not gain this bonus, and instead take a –2 penalty on your Fortitude save.)",
             },
             #endregion
@@ -7394,7 +7394,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SensualGraces),
                 ProperName = "Sensual Graces",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/sensual-graces-dhampir---svetocher"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/sensual-graces-dhampir---svetocher"),
                 Description = "You gain a +2 trait bonus on Bluff checks made against humanoids who would be attracted to you.)",
             },
             #endregion
@@ -7405,7 +7405,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ShadowStabber),
                 ProperName = "Shadow Stabber",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/shadow-stabber-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/shadow-stabber-tiefling"),
                 Description = "You gain a +2 trait bonus on melee weapon damage rolls made against foes that cannot see you.)",
             },
             #endregion
@@ -7416,7 +7416,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ShieldBearer),
                 ProperName = "Shield Bearer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/shield-bearer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/shield-bearer"),
                 Description = "When performing a shield bash, you deal 1 additional point of damage. Also, once per day on your turn as a free action, you may provide one adjacent ally a +2 trait bonus to his Armor Class. This bonus lasts for 1 round, so long as you and the target remain adjacent to one another. You can only use this ability if you are using a shield. You retain your shield bonus to your armor class when using this ability.)",
             },
             #endregion
@@ -7427,7 +7427,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ShifttheBlame),
                 ProperName = "Shift the Blame",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/shift-the-blame-tiefling-spitespawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/shift-the-blame-tiefling-spitespawn"),
                 Description = "You gain a +1 trait bonus on Bluff and Diplomacy checks made to convince someone that another person is actually at fault for your actions.)",
             },
             #endregion
@@ -7438,7 +7438,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SkatersBalance),
                 ProperName = "Skaters Balance",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/skater-s-balance-kobold-white-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/skater-s-balance-kobold-white-scaled"),
                 Description = "You don't need to spend extra movement to enter a square of an ice sheet, and the DCs of your Acrobatics checks on ice sheets don't increase by 5.)",
             },
             #endregion
@@ -7449,7 +7449,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Slaver),
                 ProperName = "Slaver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/slaver-ombo"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/slaver-ombo"),
                 Description = "You gain a +2 trait bonus on Intimidate checks to influence primitives, but you suffer a -2 penalty on Bluff or Diplomacy checks to influence them.)",
             },
             #endregion
@@ -7460,7 +7460,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SlaveSmuggler),
                 ProperName = "Slave Smuggler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/slave-smuggler-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/slave-smuggler-halfling"),
                 Description = "When hiding a Medium or smaller creature from an opponent actively searching you or your cargo, both you and the creature to be smuggled can attempt Stealth checks and select the higher of the two results for your smuggled ally to use while hiding.)",
             },
             #endregion
@@ -7471,7 +7471,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SlipperyStep),
                 ProperName = "Slippery Step",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/slippery-step-undine"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/slippery-step-undine"),
                 Description = "You are always considered to have firm footing when fighting underwater, and you gain a +2 trait bonus on Acrobatics checks and Climb checks on wet surfaces or in wet terrain, including bogs, standing or running water, or a storm-tossed ship.)",
             },
             #endregion
@@ -7482,7 +7482,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SlitheringStride),
                 ProperName = "Slithering Stride",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/slithering-stride-kobold-green-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/slithering-stride-kobold-green-scaled"),
                 Description = "For 3 rounds per day, you can move through light or heavy undergrowth at full speed. This ability doesn't work in terrain that has been magically manipulated to impede motion.)",
             },
             #endregion
@@ -7493,7 +7493,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SmokeResistant),
                 ProperName = "Smoke Resistant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/smoke-resistant-kobold-red-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/smoke-resistant-kobold-red-scaled"),
                 Description = "Your vision isn't impaired by non-magical smoke, and you gain a +5 trait bonus on Fortitude saves to avoid coughing and choking because of smoke inhalation. This trait confers no benefits against magically created smoke, such as that produced by pyrotechnics.)",
             },
             #endregion
@@ -7504,7 +7504,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SnakeHater),
                 ProperName = "Snake Hater",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/snake-hater-aasimar--plumekith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/snake-hater-aasimar--plumekith"),
                 Description = "You gain a +2 trait bonus on Knowledge (dungeoneering) checks and Knowledge (dungeoneering) is always a class skill for you.)",
             },
             #endregion
@@ -7515,7 +7515,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SnapIgnition),
                 ProperName = "Snap Ignition",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/snap-ignition-ifrit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/snap-ignition-ifrit"),
                 Description = "As a full-round action, you can produce a small flame at the end of your finger that ignites combustible materials as a tindertwig. Alternatively, you can maintain a flame equivalent to a candle by spending a standard action each round to concentrate on it.)",
             },
             #endregion
@@ -7526,7 +7526,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SneakySwimmer),
                 ProperName = "Sneaky Swimmer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/sneaky-swimmer-kobold-black-scaled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/sneaky-swimmer-kobold-black-scaled"),
                 Description = "Increase the number of rounds you can hold your breath underwater by an amount equal to your Constitution score. You gain a +2 bonus on Stealth checks in swamps and in underwater environments.)",
             },
             #endregion
@@ -7537,7 +7537,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SoulEater),
                 ProperName = "Soul Eater",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/soul-eater-tiefling-grimspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/soul-eater-tiefling-grimspawn"),
                 Description = "Whenever you use a coup de grace action to kill a creature (either by damage or through a failed Fortitude save), you gain a number of temporary hit points equal to half your character level (minimum 1) for 1 minute. These temporary hit points do not stack with multiple coups de grace.)",
             },
             #endregion
@@ -7548,7 +7548,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SpeechoftheWilds),
                 ProperName = "Speech of the Wilds",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/speech-of-the-wilds-aasimar--idyllkin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/speech-of-the-wilds-aasimar--idyllkin"),
                 Description = "You can speak one extra language.)",
             },
             #endregion
@@ -7559,7 +7559,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Sphinxfriend),
                 ProperName = "Sphinxfriend",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/sphinxfriend-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/sphinxfriend-human"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks, Linguistics checks made to decipher writing, and to Sense Motive checks made to discern secret messages.)",
             },
             #endregion
@@ -7570,7 +7570,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SpiritsintheStone),
                 ProperName = "Spirits in the Stone",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/spirits-in-the-stone-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/spirits-in-the-stone-human"),
                 Description = "You gain a +2 trait bonus on Initiative checks and a +1 trait bonus on saving throws against traps and natural hazards.)",
             },
             #endregion
@@ -7581,7 +7581,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Stargazer),
                 ProperName = "Stargazer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/stargazer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/stargazer"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Survival checks.)",
             },
             #endregion
@@ -7592,7 +7592,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StatuesqueOread),
                 ProperName = "Statuesque (Oread)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/statuesque-oread"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/statuesque-oread"),
                 Description = "Disguise becomes a class skill for you, and you gain a +2 trait bonus on Disguise checks to disguise yourself as a statue made of a specific type of stone, such as marble, sandstone, or alabaster. Furthermore, you take none of the penalties normally associated with disguising yourself as a different type of creature. You must choose the type of stone you resemble when you take this trait; once chosen, it cannot be changed.)",
             },
             #endregion
@@ -7603,7 +7603,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StoicDignity),
                 ProperName = "Stoic Dignity",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/stoic-dignity-oread"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/stoic-dignity-oread"),
                 Description = "As long as you are conscious, you and all allies within 10 feet gain a +1 bonus on saving throws against mind-affecting effects you are not already suffering from. This is a trait bonus for you and a morale bonus for your allies.)",
             },
             #endregion
@@ -7614,7 +7614,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SuccessfulShirker),
                 ProperName = "Successful Shirker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/successful-shirker-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/successful-shirker-halfling"),
                 Description = "You gain a +1 trait bonus on Stealth checks and a +3 trait bonus on Bluff and Diplomacy checks to avoid punishment by lawful authority.)",
             },
             #endregion
@@ -7625,7 +7625,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Suicidal),
                 ProperName = "Suicidal",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/suicidal-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/suicidal-tiefling"),
                 Description = "Once per day, as an immediate action, you can make yourself the target of any attack originally directed against a creature occupying an adjacent square.)",
             },
             #endregion
@@ -7636,7 +7636,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SuperiorClutch),
                 ProperName = "Superior Clutch",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/superior-clutch-tiefling-hungerseed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/superior-clutch-tiefling-hungerseed"),
                 Description = "You gain a +1 trait bonus on damage rolls when using weapons intended for creatures of a larger size.)",
             },
             #endregion
@@ -7647,7 +7647,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Superstitious),
                 ProperName = "Superstitious",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/superstitious"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/superstitious"),
                 Description = "You gain a +1 trait bonus on saving throws against arcane spells.)",
             },
             #endregion
@@ -7668,7 +7668,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TattooedMystic),
                 ProperName = "Tattooed Mystic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/varisian-tattoo-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/varisian-tattoo-varisia"),
                 Description = "You gain a +1 trait bonus on saving throws against charm and compulsion effects. Additionally, you are proficient with bladed scarves and starknives.)",
             },
             #endregion
@@ -7679,7 +7679,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TemptersTongue),
                 ProperName = "Tempters Tongue",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/tempter-s-tongue-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/tempter-s-tongue-tiefling"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks and on opposed Charisma checks to influence creatures you have charmed (such as with charm person).)",
             },
             #endregion
@@ -7690,7 +7690,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Thoroughbred),
                 ProperName = "Thoroughbred",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/thoroughbred-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/thoroughbred-human"),
                 Description = "If you gain a horse as an animal companion or mount as one of your class abilities, its base speed increases by 5 feet and it gains a bonus trick that does not count against the normal limit of tricks known by the animal.)",
             },
             #endregion
@@ -7701,7 +7701,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ThrallSpotter),
                 ProperName = "Thrall Spotter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/thrall-spotter-dhampir---ancient-born"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/thrall-spotter-dhampir---ancient-born"),
                 Description = "You gain a +5 trait bonus on Sense Motive checks made to determine whether a creature is acting under the effects of a charm or compulsion.)",
             },
             #endregion
@@ -7712,7 +7712,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ThunderbornSylph),
                 ProperName = "Thunderborn (Sylph)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/thunderborn-sylph"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/thunderborn-sylph"),
                 Description = "Once per day when you cast a spell that deals electricity damage, you can choose to make half of the damage electricity damage and the other half sonic damage.)",
             },
             #endregion
@@ -7723,7 +7723,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TongueofManyTowns),
                 ProperName = "Tongue of Many Towns",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/tongue-of-many-towns"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/tongue-of-many-towns"),
                 Description = "You gain a +1 trait bonus on two of the following skills: Diplomacy, Knowledge (local), and Linguistics.)",
             },
             #endregion
@@ -7734,7 +7734,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ToughSkin),
                 ProperName = "Tough Skin",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/tough-skin-tiefling-beastbrood"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/tough-skin-tiefling-beastbrood"),
                 Description = "You gain a +1 trait bonus to AC when opponents attempt to confirm critical hits with either bludgeoning or slashing weapons.)",
             },
             #endregion
@@ -7745,7 +7745,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Toxophilite),
                 ProperName = "Toxophilite",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/toxophilite-aasimar--plumekith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/toxophilite-aasimar--plumekith"),
                 Description = "You gain a +2 trait bonus on attack rolls made to confirm critical hits with bows.)",
             },
             #endregion
@@ -7756,7 +7756,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TradeTalk),
                 ProperName = "Trade Talk",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/trade-talk-racial-trait-half-elf-raised-by-humans"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/trade-talk-racial-trait-half-elf-raised-by-humans"),
                 Description = "You gain a +1 trait bonus on checks with the chosen skill, and a +1 trait bonus on Bluff and Sense Motive checks when dealing with people in the context of that craft or profession.)",
             },
             #endregion
@@ -7767,7 +7767,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Trailblazer),
                 ProperName = "Trailblazer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/trailblazer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/trailblazer"),
                 Description = "While traversing any wilderness, you gain a +1 trait bonus on Survival checks, and gain a +1 trait bonus on Fortitude saving throws against diseases.)",
             },
             #endregion
@@ -7778,7 +7778,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Trifler),
                 ProperName = "Trifler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/trifler-varisian-wanderers-varisian-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/trifler-varisian-wanderers-varisian-human"),
                 Description = "You may cast prestidigitation three times per day as a spell-like ability. This spell-like ability is cast at your highest caster level; if you have no caster level, it functions at CL 1st.)",
             },
             #endregion
@@ -7789,7 +7789,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TropicalBotanist),
                 ProperName = "Tropical Botanist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/tropical-botanist-elf"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/tropical-botanist-elf"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) checks to locate or identify plants and on saving throws against the extraordinary abilities of plants.)",
             },
             #endregion
@@ -7800,7 +7800,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TunnelFighter),
                 ProperName = "Tunnel Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/tunnel-fighter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/tunnel-fighter"),
                 Description = "While underground, you receive a +2 trait bonus to initiative checks and a +1 trait bonus on weapon damage rolls for critical hits (this damage is multiplied on a critical hit).)",
             },
             #endregion
@@ -7811,7 +7811,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TwilightZeal),
                 ProperName = "Twilight Zeal",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/twilight-zeal-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/twilight-zeal-tiefling"),
                 Description = "You gain a +1 trait bonus on Will saving throws when in dim light or darkness.)",
             },
             #endregion
@@ -7822,7 +7822,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UglySwine),
                 ProperName = "Ugly Swine",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/ugly-swine"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/ugly-swine"),
                 Description = "You gain a +2 trait bonus on Disguise checks, and Disguise is always a class skill for you.)",
             },
             #endregion
@@ -7833,7 +7833,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UndeadSlayer),
                 ProperName = "Undead Slayer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/undead-slayer-dhampir"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/undead-slayer-dhampir"),
                 Description = "You gain a +1 trait bonus on attack and damage rolls against undead creatures.)",
             },
             #endregion
@@ -7844,7 +7844,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Underling),
                 ProperName = "Underling",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/underling-tiefling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/underling-tiefling"),
                 Description = "You gain a +2 trait bonus on Bluff and Diplomacy checks made to either join or imply that you already belong to an evil organization.)",
             },
             #endregion
@@ -7855,7 +7855,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UndineLoyalty),
                 ProperName = "Undine Loyalty",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/undine-loyalty-undine"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/undine-loyalty-undine"),
                 Description = "Choose one teamwork feat that requires an ally with the same feat to be adjacent to you. You may benefit from that teamwork feat as long as you have an ally within 10 feet of you (though your ally does not benefit from the teamwork feat unless it also has this trait or a similar ability).)",
             },
             #endregion
@@ -7866,7 +7866,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnearthSecrets),
                 ProperName = "Unearth Secrets",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/unearth-secrets-tiefling-hellspawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/unearth-secrets-tiefling-hellspawn"),
                 Description = "You gain a +2 trait bonus on Sense Motive checks when trying to get a hunch that might reveal a target’s hidden vice, dark impulse, or any other craving it would not want publicly revealed.)",
             },
             #endregion
@@ -7877,7 +7877,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnflappableArroganceIfrit),
                 ProperName = "Unflappable Arrogance (Ifrit)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/unflappable-arrogance-ifrit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/unflappable-arrogance-ifrit"),
                 Description = "The DC to demoralize you with the Intimidate skill increases by 5. If an opponent's Intimidate check would be high enough to cause you to become demoralized for more than 1 round, you are instead demoralized for only 1 round.)",
             },
             #endregion
@@ -7888,7 +7888,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnidentifiableAppeal),
                 ProperName = "Unidentifiable Appeal",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/unidentifiable-appeal-dhampir---ajibachana"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/unidentifiable-appeal-dhampir---ajibachana"),
                 Description = "You gain a +1 trait bonus on Disguise checks and a +1 trait bonus on Diplomacy checks made to influence those who would be attracted to you.)",
             },
             #endregion
@@ -7899,7 +7899,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VerminWrangler),
                 ProperName = "Vermin Wrangler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/vermin-wrangler-gnome"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/vermin-wrangler-gnome"),
                 Description = "You gain a +2 trait bonus on Knowledge (dungeoneering) checks to identify vermin and on saving throws against vermin's extraordinary abilities.)",
             },
             #endregion
@@ -7910,7 +7910,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VileKiss),
                 ProperName = "Vile Kiss",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/vile-kiss-tiefling-motherless"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/vile-kiss-tiefling-motherless"),
                 Description = "You gain a +2 trait bonus on combat maneuver checks to perform a dirty trick combat maneuver for the purpose of making your opponent sickened.)",
             },
             #endregion
@@ -7921,7 +7921,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VoiceofVelvet),
                 ProperName = "Voice of Velvet",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/voice-of-velvet"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/voice-of-velvet"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Perform (oratory) checks.)",
             },
             #endregion
@@ -7932,7 +7932,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WarriorofOld),
                 ProperName = "Warrior of Old",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/warrior-of-old"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/warrior-of-old"),
                 Description = "You gain a +2 trait bonus on Initiative checks.)",
             },
             #endregion
@@ -7943,7 +7943,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Warsmith),
                 ProperName = "Warsmith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/warsmith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/warsmith"),
                 Description = "You gain a +1 trait bonus to damage rolls against creatures and objects made primarily of clay, crystal, earth, metal, or stone. Knowledge (engineering) is always a class skill for you.)",
             },
             #endregion
@@ -7954,7 +7954,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Wary),
                 ProperName = "Wary",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/wary-aasimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/wary-aasimar"),
                 Description = "You gain a +1 trait bonus on Disguise and Sense Motive checks.)",
             },
             #endregion
@@ -7965,7 +7965,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WellInformed),
                 ProperName = "Well-Informed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/well-informed-halfling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/well-informed-halfling"),
                 Description = "You gain a +1 trait bonus to Diplomacy checks and Knowledge (local) checks (when attempting to gather Information). One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -7976,7 +7976,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WhiteoutUndine),
                 ProperName = "Whiteout (Undine)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/whiteout-undine"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/whiteout-undine"),
                 Description = "In areas of non-magical fog, rain, snow, or similar conditions (such as the spray of a waterfall), you gain the effects of concealment, but with a miss chance of 10%. If the precipitation would already grant you concealment, the miss chances stack.)",
             },
             #endregion
@@ -7987,7 +7987,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WindCarriedVoicesSylph),
                 ProperName = "Wind-Carried Voices (Sylph)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/wind-carried-voices-sylph"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/wind-carried-voices-sylph"),
                 Description = "You gain a +1 trait bonus on Sense Motive  checks to tell when someone is lying to you. Additionally, at will, as long as you are outdoors or in an area where there is noticeable air movement, you can whisper to any creature from up to 30 feet away. You can only designate one person in sight to hear your voice, and nearby creatures can hear these messages with a successful DC 20 Perception check. This is an extraordinary ability that otherwise functions as message.)",
             },
             #endregion
@@ -7998,7 +7998,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WorldTraveler),
                 ProperName = "World Traveler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/world-traveler-human"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/world-traveler-human"),
                 Description = "Select one of the following skills: Diplomacy, Knowledge (local), or Sense Motive. You gain a +1 trait bonus to that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -8009,7 +8009,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.YouthfulMischief),
                 ProperName = "Youthful Mischief",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/youthful-mischief"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/youthful-mischief"),
                 Description = "You gain a +1 trait bonus on Reflex saving throws.)",
             },
             #endregion
@@ -8020,7 +8020,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ZestforBattle),
                 ProperName = "Zest for Battle",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/race-traits/zest-for-battle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/race-traits/zest-for-battle"),
                 Description = "Whenever you have a morale bonus to weapon attack rolls, you also receive a +1 trait bonus on weapon damage rolls.)",
             },
             #endregion
@@ -8046,7 +8046,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AberrationHunter),
                 ProperName = "Aberration Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/aberration-hunter-shenmen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/aberration-hunter-shenmen"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity against aberrations.)",
             },
             #endregion
@@ -8057,7 +8057,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Acupuncturist),
                 ProperName = "Acupuncturist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/acupuncturist-chu-ye"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/acupuncturist-chu-ye"),
                 Description = "You gain a +2 trait bonus on all Fortitude saves made against poison effects.)",
             },
             #endregion
@@ -8068,7 +8068,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AdvocatefortheEmpire),
                 ProperName = "Advocate for the Empire",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/minkai-advocate-minkai"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/minkai-advocate-minkai"),
                 Description = "You gain a +1 trait bonus on Bluff checks, and Bluff becomes a class skill for you.)",
             },
             #endregion
@@ -8079,7 +8079,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AgentoftheSultanaPlaneofEarth),
                 ProperName = "Agent of the Sultana (Plane of Earth)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/agent-of-the-sultana-plane-of-earth"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/agent-of-the-sultana-plane-of-earth"),
                 Description = "You gain a +2 trait bonus on Disable Device checks to disarm any traps that you know deal f ire damage, and you gain a +2 trait bonus on attack rolls to confirm critical hits against creatures with the fire subtype.)",
             },
             #endregion
@@ -8090,7 +8090,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AirshipCaptainPlaneofAir),
                 ProperName = "Airship Captain (Plane of Air)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/airship-captain-plane-of-air"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/airship-captain-plane-of-air"),
                 Description = "You gain a +2 trait bonus on Wisdom checks to move in a plane with subjective directional gravity (see planar rules) and a +2 trait bonus on driving checks (see the vehicle rules).)",
             },
             #endregion
@@ -8111,7 +8111,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AlabasterOdalisque),
                 ProperName = "Alabaster Odalisque",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/alabaster-odalisque"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/alabaster-odalisque"),
                 Description = "You gain a +1 trait bonus on two Charisma-based skills of your choice. In addition, once per day as a swift action, you can brush your fingers against a closed door or stone wall up to 1 foot thick. Doing so allows you to ignore penalties on Perception checks to listen through the designated object for 1 minute.)",
             },
             #endregion
@@ -8144,7 +8144,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AlchemistsApprentice),
                 ProperName = "Alchemists Apprentice",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/alchemists-apprentice"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/alchemists-apprentice"),
                 Description = "Upon imbibing a potion containing a spell on your formula list of a spell level you are capable of casting, you can attempt a Spellcraft check (DC 15 + extract level). On a success, you can immediately add the spell to your formula book.)",
             },
             #endregion
@@ -8155,7 +8155,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AltruisticDiplomat),
                 ProperName = "Altruistic Diplomat",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/altruistic-diplomat-hwanggot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/altruistic-diplomat-hwanggot"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks. You must be Lawful Good, Neutral Good, or Chaotic Good to take this trait.)",
             },
             #endregion
@@ -8166,7 +8166,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AquaticSurvivalistPlaneofWater),
                 ProperName = "Aquatic Survivalist (Plane of Water)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/aquatic-survivalist-plane-of-water"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/aquatic-survivalist-plane-of-water"),
                 Description = "You gain a +2 trait bonus on Stealth checks while underwater. Once per day, you can attempt a Stealth check to hide in plain sight (as the ranger class feature of the same name) while underwater. This is only effective against creatures that rely on blindsense, blindsight, or tremorsense. Creatures with other senses perceive you normally.)",
             },
             #endregion
@@ -8177,7 +8177,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArcaneDabbler),
                 ProperName = "Arcane Dabbler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/wealthy-dabbler-regional-taldor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/wealthy-dabbler-regional-taldor"),
                 Description = "Select two non-harmful arcane cantrips. You can cast these two cantrips once per day each (caster level 1st). If you have levels in a class that can cast these cantrips, your caster level for these cantrips is equal to that class level.)",
             },
             #endregion
@@ -8188,7 +8188,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArcaneGraduate),
                 ProperName = "Arcane Graduate",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/quantium-university-graduate-regional-nex"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/quantium-university-graduate-regional-nex"),
                 Description = "You gain a +2 trait bonus on concentration checks when casting arcane spells.)",
             },
             #endregion
@@ -8200,7 +8200,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Archeologist",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/osirionologist-regional-osirion"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/osirionologist-regional-osirion"),
                 Description = "You gain a +1 trait bonus on Knowledge (engineering) and Knowledge (history) checks, and one of them is always a class skill for you. In addition, you may choose an ancient language as one of your bonus languages.)",
             },
             #endregion
@@ -8211,7 +8211,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArmorMaster),
                 ProperName = "Armor Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/sargavan-guard-regional-sargava"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/sargavan-guard-regional-sargava"),
                 Description = "When you wear armor of any sort, reduce the armor check penalty by 1, to a minimum penalty of 0.)",
             },
             #endregion
@@ -8223,7 +8223,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Artifact Hunter",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/artifact-hunter-regional-mwangi-expanse"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/artifact-hunter-regional-mwangi-expanse"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Knowledge (history) checks, and one of them is always a class skill for you.)",
             },
             #endregion
@@ -8234,7 +8234,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AspiringHellKnight),
                 ProperName = "Aspiring Hell Knight",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/aspiring-hellknight-regional-cheliax"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/aspiring-hellknight-regional-cheliax"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -8256,7 +8256,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Bandit",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.TheRiverLands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/bandit-regional-river-kingdoms"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/bandit-regional-river-kingdoms"),
                 Description = "Choose one of the following skills: Escape Artist, Intimidate, or Stealth. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -8267,7 +8267,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BetrayedExNobleCityofBrass),
                 ProperName = "Betrayed Ex-Noble (City of Brass)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/betrayed-ex-noble-city-of-brass"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/betrayed-ex-noble-city-of-brass"),
                 Description = "Whenever an enemy attempts to feint against you in combat, the DC to do so is equal to 10 + your base attack bonus + your Wisdom modifier, or 10 + your Intimidate bonus, whichever is higher.)",
             },
             #endregion
@@ -8278,7 +8278,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Blooded),
                 ProperName = "Blooded",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/blooded-dwarf-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/blooded-dwarf-regional-trait"),
                 Description = "You receive a +1 trait bonus on weapon damage rolls against giants, goblins, and orcs.)",
             },
             #endregion
@@ -8289,7 +8289,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BloodSteed),
                 ProperName = "Blood Steed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/shoanti-steed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/shoanti-steed"),
                 Description = "You begin play with a combat trained light horse. While riding this horse bareback, you are treated as though you were riding it with a riding saddle (placing any actual saddle upon the horse negates this benefit). The horse can fend for itself outside of settlements in all but the most hostile environments. If whistled for outside of a community, the horse typically arrives within 1d6 minutes. If your horse is slain, you may receive a new horse by returning to your clan and performing a vigil for its spirit (a rite that costs 100 gp in rare herbs and incense).)",
             },
             #endregion
@@ -8300,7 +8300,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BorderGuard),
                 ProperName = "Border Guard",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/border-guard-kwanlai"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/border-guard-kwanlai"),
                 Description = "You gain a +2 trait bonus on rolls to confirm critical hits against foes with the aquatic subtype.)",
             },
             #endregion
@@ -8311,7 +8311,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BornRider),
                 ProperName = "Born Rider",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/hongal-bloodrider-hongal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/hongal-bloodrider-hongal"),
                 Description = "You gain a +1 trait bonus on Handle Animal and Ride checks.)",
             },
             #endregion
@@ -8332,7 +8332,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BountyHunter),
                 ProperName = "Bounty Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/bounty-hunter-regional-isger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/bounty-hunter-regional-isger"),
                 Description = "You gain a +1 trait bonus on Survival checks to find or follow tracks, and a +1 trait bonus on Perception checks to avoid being surprised.)",
             },
             #endregion
@@ -8343,7 +8343,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Brave),
                 ProperName = "Brave",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/intrepid-delver-jinin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/intrepid-delver-jinin"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -8354,7 +8354,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BuildersApprentice),
                 ProperName = "Builders Apprentice",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/egorian-school-apprentice"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/egorian-school-apprentice"),
                 Description = "You gain a +3 trait bonus on Knowledge (engineering) checks and a +2 trait bonus on Perception checks to find secret doors or traps in buildings built in a specific style.)",
             },
             #endregion
@@ -8365,7 +8365,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CandidateforPerfection),
                 ProperName = "Candidate for Perfection",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/candidate-for-perfection-regional-jalmeray"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/candidate-for-perfection-regional-jalmeray"),
                 Description = "You gain a +1 trait bonus on attack of opportunity attack rolls made with unarmed strikes.)",
             },
             #endregion
@@ -8376,7 +8376,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CavalryRider),
                 ProperName = "Cavalry Rider",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/lastwall-cavalry-rider-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/lastwall-cavalry-rider-regional"),
                 Description = "You gain a +1 trait bonus on Ride checks, and Ride is always a class skill for you.)",
             },
             #endregion
@@ -8387,7 +8387,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChanneltheEarthPlaneofEarth),
                 ProperName = "Channel the Earth (Plane of Earth)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/channel-the-earth-plane-of-earth"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/channel-the-earth-plane-of-earth"),
                 Description = "Whenever you channel positive energy to heal living creatures, affected targets gain a +2 profane bonus to CMD to resist bull rush, reposition, and trip combat maneuvers. Alternately, if you channel negative energy to harm living creatures, affected targets take a –2 penalty to CMD against such combat maneuvers. This effect lasts 1 round.)",
             },
             #endregion
@@ -8398,7 +8398,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Charger),
                 ProperName = "Charger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/linebreaker-regional-belkzen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/linebreaker-regional-belkzen"),
                 Description = "When charging, add 10 feet to your base speed.)",
             },
             #endregion
@@ -8409,7 +8409,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CheaptoFeed),
                 ProperName = "Cheap to Feed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cheap-to-feed-osirion-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cheap-to-feed-osirion-varisia"),
                 Description = "You gain a +3 trait bonus on Bluff checks made in order to gain food, water, or shelter.)",
             },
             #endregion
@@ -8420,7 +8420,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChildoftheCrusades),
                 ProperName = "Child of the Crusades",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/child-of-the-crusades-regional-mendev"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/child-of-the-crusades-regional-mendev"),
                 Description = "You have inherited their indomitable spirit, and you gain a +2 trait bonus on all saving throws against fear.)",
             },
             #endregion
@@ -8431,7 +8431,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChildoftheNecropolis),
                 ProperName = "Child of the Necropolis",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/child-of-the-necropolis"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/child-of-the-necropolis"),
                 Description = "Your effective cleric level is 1 higher for the purposes of channeling positive energy to damage undead. Your effective cleric level cannot exceed your character level.)",
             },
             #endregion
@@ -8442,7 +8442,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Chivalrous),
                 ProperName = "Chivalrous",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/chivalrous-regional-taldor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/chivalrous-regional-taldor"),
                 Description = "You gain a +1 trait bonus to Diplomacy and Knowledge (history) checks.)",
             },
             #endregion
@@ -8453,7 +8453,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChosenChild),
                 ProperName = "Chosen Child",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/chosen-child-po-li"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/chosen-child-po-li"),
                 Description = "Your starting money increases by 900 gp.)",
             },
             #endregion
@@ -8464,7 +8464,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CityDefender),
                 ProperName = "City Defender",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/alkenstar-defender-regional-mana-wastes"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/alkenstar-defender-regional-mana-wastes"),
                 Description = "You gain a +1 trait bonus on all rolls to confirm critical hits with ranged weapons.)",
             },
             #endregion
@@ -8475,7 +8475,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ClanArtisan),
                 ProperName = "Clan Artisan",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/clan-artisan-xa-hoi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/clan-artisan-xa-hoi"),
                 Description = "Choose a Craft skill. You gain a +2 trait bonus on checks with the chosen skill, and it becomes a class skill for you.)",
             },
             #endregion
@@ -8486,7 +8486,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CliffJumper),
                 ProperName = "Cliff Jumper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cliff-jumper"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cliff-jumper"),
                 Description = "You gain a +1 trait bonus on Acrobatics and Climb checks, and on Reflex saving throws to avoid falling.)",
             },
             #endregion
@@ -8497,7 +8497,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CliffMaster),
                 ProperName = "Cliff-Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cliff-master-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cliff-master-varisia"),
                 Description = "You gain a +1 trait bonus on all Climb and Survival checks.)",
             },
             #endregion
@@ -8508,7 +8508,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ClumsySlave),
                 ProperName = "Clumsy Slave",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/clumsy-slave-cheliax-katapesh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/clumsy-slave-cheliax-katapesh"),
                 Description = "The first time you attack someone with an attack that deals nonlethal damage, your target must make a Sense Motive opposed by your Bluff check minus the damage dealt to realize you actually intended to harm him; failure means he believe the injury was an accident on your part instead (though he may still want to punish you for it).)",
             },
             #endregion
@@ -8519,7 +8519,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Coincunning),
                 ProperName = "Coincunning",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/coincunning-janderhoff"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/coincunning-janderhoff"),
                 Description = "You receive a +2 trait bonus on Perception checks to notice coins, gems, jewelry, and valuable trade goods. You gain a chance to notice such goods whenever you pass within 10 feet of them, whether or not you are actively looking.)",
             },
             #endregion
@@ -8530,7 +8530,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CoinHoarder),
                 ProperName = "Coin Hoarder",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/coin-hoarder-dwarf-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/coin-hoarder-dwarf-regional-trait"),
                 Description = "Your starting cash increases to 500 gp.)",
             },
             #endregion
@@ -8541,7 +8541,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ColdHeart),
                 ProperName = "Cold Heart",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cold-heart"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cold-heart"),
                 Description = "You gain a +2 trait bonus on saving throws against spells and effects with the emotion descriptor.)",
             },
             #endregion
@@ -8552,7 +8552,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CommercialSavvy),
                 ProperName = "Commercial Savvy",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/commercial-savvy-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/commercial-savvy-regional"),
                 Description = "Whenever you buy from or sell to a merchant, you treat a settlement's Base Value and Purchase Limit as 10% higher.)",
             },
             #endregion
@@ -8563,7 +8563,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CommunityMinded),
                 ProperName = "Community-Minded",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/community-minded"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/community-minded"),
                 Description = "Any morale bonuses you confer upon your allies through your own abilities or spells last 2 additional rounds.)",
             },
             #endregion
@@ -8574,7 +8574,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ConfidantetotheOppressed),
                 ProperName = "Confidante to the Oppressed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/confidante-to-the-oppressed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/confidante-to-the-oppressed"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks to improve the attitude of oppressed, enslaved, or imprisoned subjects, and unless they have reason to distrust you, their starting attitude toward you is at least indifferent, if not better.)",
             },
             #endregion
@@ -8585,7 +8585,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ConscientiousMiner),
                 ProperName = "Conscientious Miner",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/conscientious-miner-jinin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/conscientious-miner-jinin"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and a +1 trait bonus on Profession (miner) checks. In addition, Profession (miner) becomes a class skill for you.)",
             },
             #endregion
@@ -8596,7 +8596,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ConstructCrafter),
                 ProperName = "Construct Crafter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/oenopion-alchemist-regional-nex"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/oenopion-alchemist-regional-nex"),
                 Description = "You gain a +1 trait bonus on Craft (alchemy) checks.)",
             },
             #endregion
@@ -8607,7 +8607,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CorpseDodger),
                 ProperName = "Corpse Dodger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/corpse-dodger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/corpse-dodger"),
                 Description = "Once per day, you can cast hide from undead as a spell-like ability. The casting time is a swift action and the caster level for this effect is always 1st; this ability is otherwise identical to the spell.)",
             },
             #endregion
@@ -8618,7 +8618,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Cosmopolitan),
                 ProperName = "Cosmopolitan",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cosmopolitan-goka"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cosmopolitan-goka"),
                 Description = "You gain a +1 trait bonus on Linguistics checks, and Linguistics becomes a class skill for you.)",
             },
             #endregion
@@ -8629,7 +8629,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CrusaderTactician),
                 ProperName = "Crusader Tactician",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/crusader-tactician-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/crusader-tactician-regional"),
                 Description = "You gain a +1 trait bonus on Knowledge (engineering) and Knowledge (nobility) checks, and one of these skills is always a class skill for you.)",
             },
             #endregion
@@ -8640,7 +8640,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Cynic),
                 ProperName = "Cynic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cynic-regional-mendev"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cynic-regional-mendev"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive is always a class skill for you.)",
             },
             #endregion
@@ -8651,7 +8651,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CypherResistance),
                 ProperName = "Cypher Resistance",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/cypher-resistance-riddleport"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/cypher-resistance-riddleport"),
                 Description = "You gain a +2 trait bonus on saving throws against spells with the word “glyph” or “symbol” in their name.)",
             },
             #endregion
@@ -8662,7 +8662,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DarklandsDelver),
                 ProperName = "Darklands Delver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/darklands-delver-the-darklands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/darklands-delver-the-darklands"),
                 Description = "You gain a +1 trait bonus on Knowledge (dungeoneering) checks, and a +1 trait bonus on Survival checks made in the Darklands. One of these skills becomes class skill for you.)",
             },
             #endregion
@@ -8673,7 +8673,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Dealer1),
                 ProperName = "Dealer1",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/trait-regional-pesh-dealer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/trait-regional-pesh-dealer"),
                 Description = "You gain a +1 trait bonus on Sleight of Hand checks, and Sleight of Hand is always a class skill for you.)",
             },
             #endregion
@@ -8684,7 +8684,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Dealer2),
                 ProperName = "Dealer2",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/pesh-dealer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/pesh-dealer"),
                 Description = "You gain a +1 trait bonus on Sleight of Hand checks, and Sleight of Hand is always a class skill for you.)",
             },
             #endregion
@@ -8695,7 +8695,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DeepseaNative),
                 ProperName = "Deepsea Native",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/deepsea-native"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/deepsea-native"),
                 Description = "You gain a +2 trait bonus on Knowledge checks to identify aquatic monsters. Anytime you are looking through water and would take a penalty on vision-based Perception checks due to murkiness or other natural circumstances, reduce the penalty by 2.)",
             },
             #endregion
@@ -8706,7 +8706,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DemonEradicator),
                 ProperName = "Demon Eradicator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/demon-eradicator"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/demon-eradicator"),
                 Description = "Anytime an outsider with the demon subtype must make a Will save against one of your spells, increase the DC of that save by +1.)",
             },
             #endregion
@@ -8717,7 +8717,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DemonSlayer),
                 ProperName = "Demon Slayer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/demon-slayer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/demon-slayer"),
                 Description = "You gain a +2 trait bonus on weapon damage against demons, evil fey, and plants and animals corrupted by evil.)",
             },
             #endregion
@@ -8728,7 +8728,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DesertNomad),
                 ProperName = "Desert Nomad",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/desert-nomad-regional-thuvia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/desert-nomad-regional-thuvia"),
                 Description = "You gain a +4 trait bonus on any saving throws made to resist the effects of being in hot conditions, and a +1 trait bonus on all saving throws against fire effects.)",
             },
             #endregion
@@ -8740,7 +8740,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Destined For Greatness",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.LargeCity,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/destined-for-greatness-large-city"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/destined-for-greatness-large-city"),
                 Description = "You start with a kit worth no more than 300 gp, and the expendable contents of the kit are automatically restored to their original capacity at no cost to you whenever you enter a settlement with a population of at least 2,500.)",
             },
             #endregion
@@ -8751,7 +8751,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DevoteeoftheHolyProphecies),
                 ProperName = "Devotee of the Holy Prophecies",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/devotee-of-kalistrade-regional-druma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/devotee-of-kalistrade-regional-druma"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and a +1 trait bonus on Bluff checks when trying to make a deal with nonbelievers.)",
             },
             #endregion
@@ -8762,7 +8762,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DimSeer),
                 ProperName = "Dim Seer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/underbridge-dweller-magnimar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/underbridge-dweller-magnimar"),
                 Description = "You gain a +2 trait bonus on Perception checks in dim light, and Perception is always a class skill for you.)",
             },
             #endregion
@@ -8774,7 +8774,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Diplomat",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/jungle-diplomat-the-valashmai-jungle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/jungle-diplomat-the-valashmai-jungle"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Sense Motive checks.)",
             },
             #endregion
@@ -8785,7 +8785,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Disbeliever1),
                 ProperName = "Disbeliever1",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/passionate-believer-po-li"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/passionate-believer-po-li"),
                 Description = "You gain a +1 trait bonus on saving throws against divine spells.)",
             },
             #endregion
@@ -8796,7 +8796,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Disbeliever2),
                 ProperName = "Disbeliever2",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rahadoumi-disbeliever-regional-rahadoum"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rahadoumi-disbeliever-regional-rahadoum"),
                 Description = "You gain a +2 trait bonus on saving throws against divine spells, but you must make a saving throw even when that magic is beneficial to you.)",
             },
             #endregion
@@ -8807,7 +8807,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DiscerningBeliefs),
                 ProperName = "Discerning Beliefs",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/discerning-beliefs-zi-ha"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/discerning-beliefs-zi-ha"),
                 Description = "You gain a +2 trait bonus on saving throws to disbelieve illusions.)",
             },
             #endregion
@@ -8818,7 +8818,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DiseaseResistant),
                 ProperName = "Disease Resistant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/disease-resistant"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/disease-resistant"),
                 Description = "You gain a +1 trait bonus on saving throws against curses and diseases, including magical diseases.)",
             },
             #endregion
@@ -8829,7 +8829,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Diver),
                 ProperName = "Diver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/oagan-diver-regional-the-sodden-lands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/oagan-diver-regional-the-sodden-lands"),
                 Description = "You gain a +1 trait bonus on Swim checks, and Swim is always a class skill for you.)",
             },
             #endregion
@@ -8840,7 +8840,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DivineDeceiver),
                 ProperName = "Divine Deceiver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/divine-deceiver-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/divine-deceiver-regional"),
                 Description = "Once per day as a full-round action, you can sacrifice a prepared arcane spell or spell slot to manifest healing magic. This acts as cure light wounds, except you heal 1d6 points of damage per level of the spell or spell slot sacrificed (maximum 5d6) and the hit points healed are temporary (lasting 1 hour).)",
             },
             #endregion
@@ -8851,7 +8851,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Dominator),
                 ProperName = "Dominator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/dominator-regional-belkzen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/dominator-regional-belkzen"),
                 Description = "You receive a +2 trait bonus on all attempts to demoralize an opponent in combat using the Intimidate skill.)",
             },
             #endregion
@@ -8862,7 +8862,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DraconicVigil),
                 ProperName = "Draconic Vigil",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/draconic-vigil"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/draconic-vigil"),
                 Description = "You gain a +1 bonus on initiative rolls when entering combat against creatures of the dragon type or humanoids of the orc subtype.)",
             },
             #endregion
@@ -8873,7 +8873,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DumpSalvager),
                 ProperName = "Dump Salvager",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/dump-salvager"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/dump-salvager"),
                 Description = "You gain a +3 trait bonus on Perception checks to search for concealed items.)",
             },
             #endregion
@@ -8885,7 +8885,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Dungeon Dweller",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Dungeon,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/dungeon-dweller-any-subterranean-dungeon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/dungeon-dweller-any-subterranean-dungeon"),
                 Description = "You start with one additional language chosen from the following list: Aklo, Dark Folk, Draconic, Goblin, Necril, Orc, or Undercommon. In addition, whenever you must attempt a Survival check to avoid getting lost in a dungeon, you may roll the check twice and take the better result.)",
             },
             #endregion
@@ -8896,7 +8896,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DuskAgent),
                 ProperName = "Dusk Agent",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/agent-of-dusk"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/agent-of-dusk"),
                 Description = "You have quite a bit more spending cash than most others of your age as a result, and start with twice the normal amount of starting gold. In addition, your reputation remains strong and any transactions you make in your home city are always beneficial to you; items you sell net you an additional 10% profit, and items you purchase there are 10% cheaper than normal. This discount also applies to your starting gear.)",
             },
             #endregion
@@ -8907,7 +8907,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DuskAgent),
                 ProperName = "Dusk Agent",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/trait-regional-duskwalker-agent"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/trait-regional-duskwalker-agent"),
                 Description = "You start with twice the normal amount of starting gold. In addition, any transactions you make in a specific market are always beneficial to you; items you sell there net you an additional 10% profit, and items you purchase there are 10% cheaper than normal. This discount also applies to your starting gear.)",
             },
             #endregion
@@ -8918,7 +8918,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DuskDancer),
                 ProperName = "Dusk Dancer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/dusk-dancer-nidal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/dusk-dancer-nidal"),
                 Description = "You gain a +2 trait bonus on Reflex saving throws in dim light or darkness.)",
             },
             #endregion
@@ -8929,7 +8929,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ElementalPupil),
                 ProperName = "Elemental Pupil",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/elemental-pupil-regional-qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/elemental-pupil-regional-qadira"),
                 Description = "Choose one of the following energy types: acid, cold, electricity, or fire. When casting a spell of 1st level or higher that deals damage of your chosen energy type, the spell deals 1 extra point of damage of this type.)",
             },
             #endregion
@@ -8940,7 +8940,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Emissary),
                 ProperName = "Emissary",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/emissary-kaer-maga"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/emissary-kaer-maga"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks when dealing with aberrations, monstrous humanoids, undead, and creatures with the giant subtype.)",
             },
             #endregion
@@ -8951,7 +8951,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EnemyoftheDead),
                 ProperName = "Enemy of the Dead",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/enemy-of-the-undead-regional-geb"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/enemy-of-the-undead-regional-geb"),
                 Description = "You gain a +2 trait bonus on saving throws against any spells or spell-like abilities from an undead creature.)",
             },
             #endregion
@@ -8972,7 +8972,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EqualityforAll),
                 ProperName = "Equality for All",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/equality-for-all-andoran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/equality-for-all-andoran"),
                 Description = "You gain a +2 trait bonus to your CMB and your CMD when facing opponents who are at least two sizes larger than you.)",
             },
             #endregion
@@ -8983,7 +8983,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EvidentSupporter),
                 ProperName = "Evident Supporter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/evident-supporter-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/evident-supporter-regional"),
                 Description = "The Sense Motive DC needed for a city guard, a politician, or other governmental functionary in a large town or larger settlement to gain a hunch about your trustworthiness is 25 (instead of 20). On a failed check, you're seen as trustworthy regardless of the situation.)",
             },
             #endregion
@@ -8994,7 +8994,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ExiledScholar),
                 ProperName = "Exiled Scholar",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/exiled-scholar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/exiled-scholar"),
                 Description = "You gain a +1 trait bonus on Knowledge (arcana) and (religion) checks. In addition, choose one Knowledge skill; you can attempt untrained checks with this skill as long as the DC is lower than 15.)",
             },
             #endregion
@@ -9005,7 +9005,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ExpertSmuggler),
                 ProperName = "Expert Smuggler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/expert-smuggler-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/expert-smuggler-regional"),
                 Description = "Other creatures never gain the +4 bonus on their Perception checks (opposed by your Sleight of Hand check) while frisking you.)",
             },
             #endregion
@@ -9016,7 +9016,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EyeoftheFalcon),
                 ProperName = "Eye of the Falcon",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/eye-of-the-falcon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/eye-of-the-falcon"),
                 Description = "You gain a +1 trait bonus on saving throws against illusion (phantasm) spells and a +1 trait bonus on Sense Motive checks to know when you are being lied to, so long as you are face to face with the speaker in question.)",
             },
             #endregion
@@ -9027,7 +9027,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FamedPerformer),
                 ProperName = "Famed Performer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/famed-performer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/famed-performer"),
                 Description = "Once per day when you start a bardic performance, you can increase the DC of the saving throw to resist your performance's effects by 1. This effect lasts until you switch performances or end your performance.)",
             },
             #endregion
@@ -9038,7 +9038,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FieryDominancePlaneofFire),
                 ProperName = "Fiery Dominance (Plane of Fire)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/fiery-dominance-plane-of-fire"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/fiery-dominance-plane-of-fire"),
                 Description = "You gain a +1 trait bonus on Intimidate checks against humanoids of a subtype different from your own (or all non-human humanoids, if you are not a humanoid), and the DC for such creatures to demoralize you with Intimidate is 2 higher than usual.)",
             },
             #endregion
@@ -9049,7 +9049,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Fixer),
                 ProperName = "Fixer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/fixer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/fixer"),
                 Description = "Once per day, you can tinker with a broken object to allow anyone who uses it to ignore the penalties for its broken condition for 24 hours (this does not affect the object’s hit points). At the end of this time, it regains the broken condition (but you can use this trait on it over and over again).)",
             },
             #endregion
@@ -9061,7 +9061,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Flotsam",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Coastline,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/flotsam-coastline"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/flotsam-coastline"),
                 Description = "You gain a +2 bonus on Reflex saving throws against spells and effects with the fire descriptor.)",
             },
             #endregion
@@ -9072,7 +9072,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ForbiddenKnowledge),
                 ProperName = "Forbidden Knowledge",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/forbidden-knowledge"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/forbidden-knowledge"),
                 Description = "Anytime you would roll a Knowledge (planes) check, you may roll a Knowledge (history) or Knowledge (religion) check instead.)",
             },
             #endregion
@@ -9083,7 +9083,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedomFighter),
                 ProperName = "Freedom Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/andoren-freedom-fighter-regional-andoran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/andoren-freedom-fighter-regional-andoran"),
                 Description = "You gain a +1 trait bonus on attack and damage rolls against slavers or any creature holding someone against their will.)",
             },
             #endregion
@@ -9094,7 +9094,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedomFighter),
                 ProperName = "Freedom Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/andoren-freedom-fighter-regional-andoran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/andoren-freedom-fighter-regional-andoran"),
                 Description = "You gain a +1 trait bonus on attack and damage rolls against slavers or any creature holding someone against their will.)",
             },
             #endregion
@@ -9105,7 +9105,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedomFighter),
                 ProperName = "Freedom Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/freedom-fighter-shokuro"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/freedom-fighter-shokuro"),
                 Description = "You gain a +1 trait bonus on attacks made with improvised weapons. If you do not possess the Catch Off-Guard or Throw Anything feats, you still take penalties on these attack rolls as normal.)",
             },
             #endregion
@@ -9116,7 +9116,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedSlave1),
                 ProperName = "Freed Slave1",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/freed-slave-katapesh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/freed-slave-katapesh"),
                 Description = "You gain a +1 trait bonus on Will saving throws.)",
             },
             #endregion
@@ -9127,7 +9127,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FreedSlave2),
                 ProperName = "Freed Slave2",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/freed-slave-regional-andoran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/freed-slave-regional-andoran"),
                 Description = "You gain a +1 trait bonus on Will saves.)",
             },
             #endregion
@@ -9138,7 +9138,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FriendoftheDead),
                 ProperName = "Friend of the Dead",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/friend-of-the-dead-regional-geb"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/friend-of-the-dead-regional-geb"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks against sentient undead.)",
             },
             #endregion
@@ -9149,7 +9149,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FriendoftheFey),
                 ProperName = "Friend of the Fey",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/friend-of-the-fey-regional-lands-of-the-linnorm-kings"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/friend-of-the-fey-regional-lands-of-the-linnorm-kings"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks against fey creatures.)",
             },
             #endregion
@@ -9161,7 +9161,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Frontier-Forged",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Frontier,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/frontier-forged"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/frontier-forged"),
                 Description = "You receive a +1 trait bonus on Perception checks and a +1 bonus on Survival checks made to get along in the wild.)",
             },
             #endregion
@@ -9172,7 +9172,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Frostborn),
                 ProperName = "Frostborn",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/frostborn-dwarf-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/frostborn-dwarf-regional-trait"),
                 Description = "You gain a +4 trait bonus on any savings throws made to resist the effects of cold environments, as well as a +1 trait bonus on all saving throws against cold effects.)",
             },
             #endregion
@@ -9183,7 +9183,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GallantImposter),
                 ProperName = "Gallant Imposter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/gallant-imposter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/gallant-imposter"),
                 Description = "You gain a +1 trait bonus on Knowledge (nobility) and Knowledge (religion) checks. In addition, you gain a +2 trait bonus on both Disguise and Bluff checks while attempting to impersonate a knight.)",
             },
             #endregion
@@ -9194,7 +9194,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Gatekeeper),
                 ProperName = "Gatekeeper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/kyonin-gatekeeper-kyonin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/kyonin-gatekeeper-kyonin"),
                 Description = "You gain a +1 trait bonus on Spellcraft checks to identify teleportation magic and a +1 trait bonus to caster level checks when casting teleportation spells. You know the proper commands to operate a particular elf gate (most likely an often used elf gate, but at the GM’s discretion it may be a less popular or out-of-the-way elf gate).)",
             },
             #endregion
@@ -9205,7 +9205,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GenieCaller),
                 ProperName = "Genie-Caller",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/genie-caller-regional-qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/genie-caller-regional-qadira"),
                 Description = "Once per day, you may cast one conjuration (summoning) spell as if your caster level were 2 higher than normal.)",
             },
             #endregion
@@ -9216,7 +9216,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GhostSurvivor),
                 ProperName = "Ghost Survivor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/ghost-survivor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/ghost-survivor"),
                 Description = "You gain a +2 trait bonus on Knowledge (religion) checks to identify incorporeal undead and a +2 trait bonus on Fortitude saving throws against effects that inflict negative levels.)",
             },
             #endregion
@@ -9227,7 +9227,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GhoulishAffinity),
                 ProperName = "Ghoulish Affinity",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/ghoulish-affinity"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/ghoulish-affinity"),
                 Description = "You gain a +2 trait bonus on Perception checks to notice undead disguised as living creatures, and a +2 trait bonus on Fortitude saves against diseases and poisons inflicted by undead.)",
             },
             #endregion
@@ -9238,7 +9238,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GloryofOld),
                 ProperName = "Glory of Old",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/glory-of-old-dwarf-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/glory-of-old-dwarf-regional-trait"),
                 Description = "You receive a +1 trait bonus on saving throws against spells, spell-like abilities, and poison.)",
             },
             #endregion
@@ -9250,7 +9250,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Gravelwalker",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.WarmMountains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/gravelwalker-usually-under-warm-mountains"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/gravelwalker-usually-under-warm-mountains"),
                 Description = "You can move normally through such obstructed spaces, and can run or charge though them with a successful Acrobatics check.)",
             },
             #endregion
@@ -9261,7 +9261,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GreatMarketMerchant),
                 ProperName = "Great Market Merchant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/merchant-of-katheer-qadira-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/merchant-of-katheer-qadira-regional-trait"),
                 Description = "You gain a +1 trait bonus to Appraise checks, and Appraise is always a class skill for you.)",
             },
             #endregion
@@ -9273,7 +9273,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Grit Goggles",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Deserts,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/grit-goggles-usually-under-deserts"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/grit-goggles-usually-under-deserts"),
                 Description = "You gain a +2 trait bonus against being blinded by foreign objects (such as from a Dirty Trick combat maneuver) and you halve any reductions in visibility from the environment (such as from certain storms) and their corresponding penalties. For example, if you were in a sandstorm that normally reduces visibility to 25 feet and imparts a –4 penalty on Perception checks, you reduce visibility to 50 feet and take only a –2 penalty on Perception checks.)",
             },
             #endregion
@@ -9284,7 +9284,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GroupFighter),
                 ProperName = "Group Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/militia-amanandar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/militia-amanandar"),
                 Description = "You gain a +1 trait bonus on attacks made while flanking an opponent.)",
             },
             #endregion
@@ -9295,7 +9295,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Guerilla),
                 ProperName = "Guerilla",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/guerilla-dtang-ma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/guerilla-dtang-ma"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) checks as well as Survival checks made in the rainforest. One of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -9306,7 +9306,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GuideoftheStreets),
                 ProperName = "Guide of the Streets",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/absalom-hotspur-regional-absalom"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/absalom-hotspur-regional-absalom"),
                 Description = "You gain a +1 trait bonus on Initiative checks and Knowledge (local) checks.)",
             },
             #endregion
@@ -9317,7 +9317,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HeartofClay),
                 ProperName = "Heart of Clay",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/heart-of-clay-lingshen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/heart-of-clay-lingshen"),
                 Description = "You gain a +1 trait bonus on Fortitude saves.)",
             },
             #endregion
@@ -9328,7 +9328,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HeavenlyTouch),
                 ProperName = "Heavenly Touch",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/heavenly-touch-tianjing"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/heavenly-touch-tianjing"),
                 Description = "At will, you can touch a dying creature to stabilize it as a standard action.)",
             },
             #endregion
@@ -9339,7 +9339,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HeavyHitter),
                 ProperName = "Heavy Hitter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/quain-martial-artist-quain"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/quain-martial-artist-quain"),
                 Description = "You gain a +1 trait bonus on damage rolls made with unarmed attacks.)",
             },
             #endregion
@@ -9351,7 +9351,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Highlander",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.HillsorMountains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/highlander-hills-or-mountains"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/highlander-hills-or-mountains"),
                 Description = "You gain a +1 trait bonus on Stealth checks, and Stealth is always a class skill for you. This trait bonus increases to +2 in hilly or rocky areas.)",
             },
             #endregion
@@ -9362,7 +9362,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HobgoblinSlayer),
                 ProperName = "Hobgoblin Slayer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/hobgoblin-slayer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/hobgoblin-slayer"),
                 Description = "Whenever you’re within 60 feet of an enemy hobgoblin, you gain a +1 trait bonus on all weapon damage rolls.)",
             },
             #endregion
@@ -9373,7 +9373,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HolyTattoo),
                 ProperName = "Holy Tattoo",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/holy-tattoo"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/holy-tattoo"),
                 Description = "Your holy symbol tattoo functions in all ways as a holy symbol. When you use your holy symbol tattoo to keep a vampire at bay, the DC for the vampire to overcome its revulsion is 28 (rather than the normal 25).)",
             },
             #endregion
@@ -9384,7 +9384,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HoneyedTongue),
                 ProperName = "Honeyed Tongue",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/honeyed-tongue-amanandar"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/honeyed-tongue-amanandar"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks, and Diplomacy becomes a class skill for you.)",
             },
             #endregion
@@ -9395,7 +9395,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HumbleBeginnings),
                 ProperName = "Humble Beginnings",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/humble-beginnings-varisia-smaller-settlements"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/humble-beginnings-varisia-smaller-settlements"),
                 Description = "Choose one of the following: boot, bucket, frying pan, mug, rolling pin, spade, or stool. You are treated as having the Catch Off-Guard feat when wielding the chosen item. (These items should all be considered improvised melee weapons that deal 1d4 points of bludgeoning damage.))",
             },
             #endregion
@@ -9406,7 +9406,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HunterofOutsiders),
                 ProperName = "Hunter of Outsiders",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/whisper-woods-hunter"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/whisper-woods-hunter"),
                 Description = "You gain a +2 trait bonus on Survival checks to track evil outsiders and a +2 trait bonus on initiative checks when you know your opponent is an evil outsider.)",
             },
             #endregion
@@ -9417,7 +9417,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ImperialSoldier),
                 ProperName = "Imperial Soldier",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/imperial-soldier-regional-molthune"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/imperial-soldier-regional-molthune"),
                 Description = "Choose Heal, Intimidate, or Ride. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -9428,7 +9428,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.InspiringSpeaker),
                 ProperName = "Inspiring Speaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/inspiring-speaker-regional-galt"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/inspiring-speaker-regional-galt"),
                 Description = "You gain a +1 trait bonus on Bluff and Diplomacy checks when addressing crowds of 10 people or more.)",
             },
             #endregion
@@ -9439,7 +9439,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.InstigatorofRebellion),
                 ProperName = "Instigator of Rebellion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/instigator-of-rebellion-minkai"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/instigator-of-rebellion-minkai"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Intimidate checks.)",
             },
             #endregion
@@ -9451,7 +9451,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Iron Lungs",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Marshlands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/iron-lungs-usually-under-marshlands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/iron-lungs-usually-under-marshlands"),
                 Description = "You can hold your breath for twice as long and gain a +2 trait bonus on saving throws against the effects of inhaled poisons.)",
             },
             #endregion
@@ -9462,7 +9462,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IronMind),
                 ProperName = "Iron Mind",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/iron-mind"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/iron-mind"),
                 Description = "You gain a +2 trait bonus on saving throws against spells and effects that would reduce your Intelligence score or cause you to forget something.)",
             },
             #endregion
@@ -9473,7 +9473,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.JungleGuide),
                 ProperName = "Jungle Guide",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/jungle-guide-regional-sargava"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/jungle-guide-regional-sargava"),
                 Description = "You gain a +1 trait bonus on Handle Animal checks, and a +1 trait bonus on Survival checks in jungle terrain. One of these skills is always a class skill for you.)",
             },
             #endregion
@@ -9485,7 +9485,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Jungle Walker",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/jungle-walker-regional-mwangi-expanse"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/jungle-walker-regional-mwangi-expanse"),
                 Description = "You gain a +2 trait bonus on Survival checks in jungle terrain.)",
             },
             #endregion
@@ -9496,7 +9496,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Justiciar),
                 ProperName = "Justiciar",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/justiciar-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/justiciar-regional"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Knowledge (local) checks to settle disputes or arbitrate laws. Once per day if you succeed at an Intimidate check to demoralize a foe who has repudiated or ignored a pronounced judgment you've made, you may choose to cause the creature to be sickened instead of shaken. The duration of the effect remains the same.)",
             },
             #endregion
@@ -9507,7 +9507,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.KeeperoftheVeil),
                 ProperName = "Keeper of the Veil",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/keeper-of-the-veil-regional-qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/keeper-of-the-veil-regional-qadira"),
                 Description = "You gain a +1 competence bonus on Bluff and Disguise checks, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -9519,7 +9519,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Lair Snake",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.DragonsLair,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/lair-snake-dragon-s-lair"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/lair-snake-dragon-s-lair"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and your starting wealth increases by 200 gp.)",
             },
             #endregion
@@ -9530,7 +9530,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LeftBehind),
                 ProperName = "Left Behind",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/left-behind-mwangi-expanse-or-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/left-behind-mwangi-expanse-or-varisia"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Gather Information checks when interacting with forlorn elves and non-elf races.)",
             },
             #endregion
@@ -9541,7 +9541,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LesserNoble),
                 ProperName = "Lesser Noble",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/ustalavic-noble-regional-ustalav"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/ustalavic-noble-regional-ustalav"),
                 Description = "You gain a +1 trait bonus on Diplomacy and Knowledge (nobility) checks. In addition, your starting money is increased by 100 gp— your “birthright,” such as it is.)",
             },
             #endregion
@@ -9552,7 +9552,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LightningRider),
                 ProperName = "Lightning Rider",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rider-of-paresh-regional-qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rider-of-paresh-regional-qadira"),
                 Description = "When mounted and making a charge, your mount's speed is increased by 10 feet. You must have the Mounted Combat feat to take this trait.)",
             },
             #endregion
@@ -9563,7 +9563,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LightSleeper),
                 ProperName = "Light Sleeper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/light-sleeper"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/light-sleeper"),
                 Description = "You need to sleep only 4 hours to get a full night's rest (restoring 1 hit point per character level). You do not receive extra benefits for sleeping additional hours, and you must still rest for 24 hours to receive the benefits of complete bed rest.)",
             },
             #endregion
@@ -9574,7 +9574,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LocalKnowItAll),
                 ProperName = "Local Know-It-All",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/local-know-it-all-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/local-know-it-all-varisia"),
                 Description = "Choose a community that you've lived in for at least 5 years. You gain a +2 trait bonus on Knowledge (local) checks related to that community.)",
             },
             #endregion
@@ -9585,7 +9585,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LongJumper),
                 ProperName = "Long Jumper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/roof-racer-korvosa"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/roof-racer-korvosa"),
                 Description = "When using the Acrobatics skill to make a long jump, you treat the DC of the skill check as if the distance being jumped were 5 feet shorter than it actually is.)",
             },
             #endregion
@@ -9596,7 +9596,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LuckyTurnabout),
                 ProperName = "Lucky Turnabout",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/winner-s-luck-riddleport"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/winner-s-luck-riddleport"),
                 Description = "Whenever you succeed at a Reflex saving throw, you may draw a weapon as an immediate action, or a hidden weapon as a move action.)",
             },
             #endregion
@@ -9607,7 +9607,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MammothMaster),
                 ProperName = "Mammoth Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/mammoth-master-regional-realm-of-the-mammoth-lords"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/mammoth-master-regional-realm-of-the-mammoth-lords"),
                 Description = "You gain a +4 trait bonus on Handle Animal checks related to large creatures such as mammoths, mastodons, woolly rhinoceroses, and other megafauna.)",
             },
             #endregion
@@ -9618,7 +9618,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MasterIllusionist),
                 ProperName = "Master Illusionist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/iadaran-illusionist-regional-kyonin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/iadaran-illusionist-regional-kyonin"),
                 Description = "You gain a +1 trait bonus on caster level checks with illusion spells and a +1 trait bonus on Will saves to disbelieve illusions.)",
             },
             #endregion
@@ -9629,7 +9629,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MasterofPeaks),
                 ProperName = "Master of Peaks",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/master-of-peaks-the-wall-of-heaven"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/master-of-peaks-the-wall-of-heaven"),
                 Description = "You gain a +2 trait bonus on Fortitude saving throws made against the effects of cold dangers and altitude sickness.)",
             },
             #endregion
@@ -9640,7 +9640,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MerchantsChild),
                 ProperName = "Merchant’s Child",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/merchant-s-child-regional-katapesh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/merchant-s-child-regional-katapesh"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and Appraise is always a class skill for you.)",
             },
             #endregion
@@ -9652,7 +9652,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Militia Veteran",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.TownorVillage,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/militia-veteran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/militia-veteran"),
                 Description = "Select Profession (soldier), Ride, or Survival. You gain a +2 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -9663,7 +9663,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Miner),
                 ProperName = "Miner",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/szaezan-crags-miner-bachuan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/szaezan-crags-miner-bachuan"),
                 Description = "You gain a +1 trait bonus on Appraise checks, and Appraise becomes a class skill for you.)",
             },
             #endregion
@@ -9674,7 +9674,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MordantHeritage),
                 ProperName = "Mordant Heritage",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/mordant-heritage-regional-the-steaming-sea"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/mordant-heritage-regional-the-steaming-sea"),
                 Description = "You gain a +1 trait bonus on Swim checks and a +1 trait bonus on saving throws against enchantment effects.)",
             },
             #endregion
@@ -9686,7 +9686,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Mountain Guide",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Mountains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/mountain-guide-regional-five-kings-mountains"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/mountain-guide-regional-five-kings-mountains"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) and Survival checks when in mountainous areas, and Knowledge (geography) is always a class skill for you.)",
             },
             #endregion
@@ -9697,7 +9697,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.NaturalArtist),
                 ProperName = "Natural Artist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/hwan-artist-hwanggot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/hwan-artist-hwanggot"),
                 Description = "Choose a Perform skill. You gain a +1 trait bonus on checks with the chosen skill, and it becomes a class skill for you.)",
             },
             #endregion
@@ -9708,7 +9708,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.NaturalClimber),
                 ProperName = "Natural Climber",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/natural-climber"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/natural-climber"),
                 Description = "You gain a +2 trait bonus on Acrobatics and Climb checks while climbing trees.)",
             },
             #endregion
@@ -9719,7 +9719,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Navigator),
                 ProperName = "Navigator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/trench-navigator-xidao"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/trench-navigator-xidao"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) checks, and a +1 trait bonus on Profession (sailor) checks. One of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -9730,7 +9730,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Noble),
                 ProperName = "Noble",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/issian-noble-regional-brevoy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/issian-noble-regional-brevoy"),
                 Description = "You gain a +1 trait bonus on Knowledge (nobility) and Sense Motive checks.)",
             },
             #endregion
@@ -9741,7 +9741,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Numerologist),
                 ProperName = "Numerologist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/numerologist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/numerologist"),
                 Description = "Once per day, you can attempt a Perception check while studying a trap (a standard action). The DC of this check is equal to the Disable Device DC of the trap – 5. If you succeed, you identify the DC necessary to disable the trap, as well as the DC of the Reflex save (if any) to avoid its effects.)",
             },
             #endregion
@@ -9752,7 +9752,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ObsequiousMorsel),
                 ProperName = "Obsequious Morsel",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/obsequious-morsel-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/obsequious-morsel-regional"),
                 Description = "Once per day as a swift action, you can use sanctuary as a spell-like ability (caster level = your highest caster level, or 1st if you have no caster level), with a DC equal to 10 + 1/2 your caster level (minimum 0) + your Charisma modifier. Only undead must save to attack you (other creature types are not affected). The effect ends as soon as you attack a creature, as normal.)",
             },
             #endregion
@@ -9773,7 +9773,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OnGuard),
                 ProperName = "On Guard",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/watching-taldor-qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/watching-taldor-qadira"),
                 Description = "You gain a +1 trait bonus to Initiative checks, and if you are able to act during the surprise round of an encounter, you can draw a weapon (but not a potion or magic item) as a free action during that round.)",
             },
             #endregion
@@ -9784,7 +9784,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OpenMindedExplorer),
                 ProperName = "Open-Minded Explorer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/open-minded-explorer-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/open-minded-explorer-regional"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks. This bonus increases to +2 when you're speaking the racial or ethnic language of the target creature.)",
             },
             #endregion
@@ -9795,7 +9795,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OrcImpaler),
                 ProperName = "Orc Impaler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/orc-impaler"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/orc-impaler"),
                 Description = "You gain a +2 trait bonus on rolls to confirm critical hits made as part of a charge. This bonus increases to +3 if the critical hit is made against a creature with the orc subtype.)",
             },
             #endregion
@@ -9806,7 +9806,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Orphan),
                 ProperName = "Orphan",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/isgeri-orphan-regional-isger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/isgeri-orphan-regional-isger"),
                 Description = "You gain a +1 trait bonus on Fortitude saves.)",
             },
             #endregion
@@ -9817,7 +9817,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ParagonofSpeed),
                 ProperName = "Paragon of Speed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/hermean-paragon-regional-the-steaming-sea"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/hermean-paragon-regional-the-steaming-sea"),
                 Description = "You are quicker than normal members of your race, and gain a +2 trait bonus on Initiative checks.)",
             },
             #endregion
@@ -9828,7 +9828,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PearlDiver),
                 ProperName = "Pearl Diver",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/pearl-diver-xidao"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/pearl-diver-xidao"),
                 Description = "You gain a +1 trait bonus on Appraise and Swim checks.)",
             },
             #endregion
@@ -9840,7 +9840,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Perseverance",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Mountains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/perseverance-regional-five-kings-mountains"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/perseverance-regional-five-kings-mountains"),
                 Description = "When you have more than 1 Will saving throw to overcome an effect (such as greater command, hold person, or by using the good fortune ability of the Luck domain), you receive a +3 trait bonus on the extra Will saving throws against that effect.)",
             },
             #endregion
@@ -9851,7 +9851,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Pirate),
                 ProperName = "Pirate",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/belem-pirate-minata"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/belem-pirate-minata"),
                 Description = "You gain a +1 trait bonus on Profession (sailor) and Swim checks, and Swim is always a class skill for you. You might also have a peg leg or a hook for a hand, but that’s not so helpful.)",
             },
             #endregion
@@ -9862,7 +9862,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Pirate2),
                 ProperName = "Pirate2",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/goblin-pirate"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/goblin-pirate"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) checks and Profession (sailor) checks, and one of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -9873,7 +9873,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Plainsman),
                 ProperName = "Plainsman",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/plainsman"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/plainsman"),
                 Description = "You gain a +1 trait bonus on all Knowledge (geography) and Survival checks regarding the plains.)",
             },
             #endregion
@@ -9884,7 +9884,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PlanarHistorianPlaneofWater),
                 ProperName = "Planar Historian (Plane of Water)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/planar-historian-plane-of-water"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/planar-historian-plane-of-water"),
                 Description = "You gain a +2 trait bonus on Knowledge (planes) checks to identify outsiders with the water subtype. In addition, you treat your caster level as 1 higher when casting conjuration (summoning) spells to summon outsiders with the water subtype.)",
             },
             #endregion
@@ -9895,7 +9895,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PlanarScholarPlaneofAir),
                 ProperName = "Planar Scholar (Plane of Air)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/planar-scholar-plane-of-air"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/planar-scholar-plane-of-air"),
                 Description = "You gain a +1 trait bonus on Knowledge (planes) checks and checks made with one other Knowledge skill of your choice. This bonus increases to +3 when used to identify a creature with the air subtype. Knowledge (planes) becomes a class skill for you, and your bonus language options at 1st level include Auran. This choice is in addition to the bonus languages available to the character because of her race.)",
             },
             #endregion
@@ -9906,7 +9906,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PompandPageantry),
                 ProperName = "Pomp and Pageantry",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/pomp-and-pageantry"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/pomp-and-pageantry"),
                 Description = "You gain a +1 trait bonus on Acrobatics, Diplomacy, Handle Animal, Intimidate, Perform, and Ride checks with class skills if you spend twice as long as it normally takes to make that check.)",
             },
             #endregion
@@ -9917,7 +9917,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PowerfulBloodline),
                 ProperName = "Powerful Bloodline",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/dtang-ma-bloodline-dtang-ma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/dtang-ma-bloodline-dtang-ma"),
                 Description = "Choose one of the following sorcerer bloodlines: fey, maestro, starsoul, or stormborn. Once per day, you may use one of your bloodline powers as if your sorcerer level were 1 higher than normal. This trait does not give you access to bloodline powers whose level requirements you do not yet meet.)",
             },
             #endregion
@@ -9928,7 +9928,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PrecociousSpellcaster),
                 ProperName = "Precocious Spellcaster",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/precocious-spellcaster"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/precocious-spellcaster"),
                 Description = "Select one cantrip and one 1st-level spell; when you cast these spells, they function at one caster level higher than your actual caster level.)",
             },
             #endregion
@@ -9939,7 +9939,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PrivilegedSlave),
                 ProperName = "Privileged Slave",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/privileged-slave-kaoling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/privileged-slave-kaoling"),
                 Description = "You gain a +1 trait bonus on Bluff checks, and Bluff becomes a class skill for you.)",
             },
             #endregion
@@ -9950,7 +9950,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Prospector),
                 ProperName = "Prospector",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/shenmen-prospector-shenmen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/shenmen-prospector-shenmen"),
                 Description = "You gain a +1 trait bonus on Appraise and Knowledge (dungeoneering) checks.)",
             },
             #endregion
@@ -9961,7 +9961,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PurchasedLoyalty),
                 ProperName = "Purchased Loyalty",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/purchased-loyalty-regional-druma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/purchased-loyalty-regional-druma"),
                 Description = "Once per day, when protecting someone who has bought your services, you may roll twice when making a Will save against charm effects and take the better result.)",
             },
             #endregion
@@ -9972,7 +9972,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PureLegionRecruit),
                 ProperName = "Pure Legion Recruit",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/pure-legion-recruit"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/pure-legion-recruit"),
                 Description = "You gain a +2 trait bonus on Perception checks to see through disguises and mundane attempts to conceal religious iconography or dress. You also gain a +2 trait bonus on Sense Motive checks to see through lies about a target's religious beliefs and to understand secret messages relating to the gods.)",
             },
             #endregion
@@ -9983,7 +9983,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.QuickReactor),
                 ProperName = "Quick Reactor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/xa-hoi-soldier-xa-hoi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/xa-hoi-soldier-xa-hoi"),
                 Description = "You gain a +1 trait bonus on Reflex saving throws.)",
             },
             #endregion
@@ -9994,7 +9994,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RabbleRebel),
                 ProperName = "Rabble Rebel",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rabble-rebel-galt"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rabble-rebel-galt"),
                 Description = "If you have at least three allies threatening your opponent, you gain a +2 bonus on Bluff checks to feint him and a +2 bonus on Sleight of Hand checks against him.)",
             },
             #endregion
@@ -10005,7 +10005,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RebelLeader),
                 ProperName = "Rebel Leader",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rebel-leader-shokuro"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rebel-leader-shokuro"),
                 Description = "If you take the Leadership feat, you receive a +1 trait bonus to your Leadership score.)",
             },
             #endregion
@@ -10016,7 +10016,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ReformedAcolyte),
                 ProperName = "Reformed Acolyte",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/acolyte-of-razmir-regional-razmiran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/acolyte-of-razmir-regional-razmiran"),
                 Description = "You gain a +1 trait bonus on Knowledge (local) and Knowledge (religion) checks, and one of these skills is always a class skill for you. This bonus increases to +2 when dealing with specifics of a specific faith.)",
             },
             #endregion
@@ -10027,7 +10027,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RegionalInfluence),
                 ProperName = "Regional Influence",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/regional-influence-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/regional-influence-varisia"),
                 Description = "You gain a +1 trait bonus on checks with one Profession skill and one of the following benefits:  a) Gain Infernal as a bonus language. If you already have this language, gain a +1 trait bonus on Diplomacy checks. b) Gain a +1 trait bonus on Swim checks.)",
             },
             #endregion
@@ -10038,7 +10038,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RegionalRecluse),
                 ProperName = "Regional Recluse",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/regional-recluse-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/regional-recluse-varisia"),
                 Description = "You gain a +1 trait bonus on Survival checks and one of the following benefits.  a) Gain a +1 trait bonus on Perception checks made at night. b) Gain proficiency with light shields. c) Gain Gnome as a bonus language. If you already have this language, gain a +1 trait bonus on Stealth checks made in forested areas. d) Gain a +1 bonus to damage on all attacks against creatures of the giant type. e) Gain Orc as a bonus language. If you already know this language, gain a +1 trait bonus on Intimidate checks)",
             },
             #endregion
@@ -10049,7 +10049,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RegionsFinest),
                 ProperName = "Regions Finest",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/lingshen-s-finest-lingshen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/lingshen-s-finest-lingshen"),
                 Description = "You gain a +1 trait bonus on all rolls to confirm critical hits.)",
             },
             #endregion
@@ -10060,7 +10060,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Resilient),
                 ProperName = "Resilient",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/jungle-resilience-nagajor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/jungle-resilience-nagajor"),
                 Description = "You gain a +2 trait bonus on Fortitude saving throws against poison effects.)",
             },
             #endregion
@@ -10071,7 +10071,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Resolute),
                 ProperName = "Resolute",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/secret-revolutionary-regional-cheliax"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/secret-revolutionary-regional-cheliax"),
                 Description = "You gain a +1 trait bonus on Will saving throws against mind-affecting effects, and on Fortitude saving throws against drugs or poisons.)",
             },
             #endregion
@@ -10082,7 +10082,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RiceRunner),
                 ProperName = "Rice Runner",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rice-runner-wanshou"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rice-runner-wanshou"),
                 Description = "You gain a +1 trait bonus on Acrobatics checks, and Acrobatics becomes a class skill for you.)",
             },
             #endregion
@@ -10094,7 +10094,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Riverfolk",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.RiverLands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/riverfolk-regional-river-kingdoms"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/riverfolk-regional-river-kingdoms"),
                 Description = "You gain a +2 trait bonus on Profession (sailor) checks and any skill checks involving rope use.)",
             },
             #endregion
@@ -10106,7 +10106,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "River Rat",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.MarshorRiver,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/river-rat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/river-rat"),
                 Description = "You gain a +1 trait bonus to damage dealt with a dagger and a +1 trait bonus to Swim checks. Swim is always a class skill for you.)",
             },
             #endregion
@@ -10117,7 +10117,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SavageBreaker),
                 ProperName = "Savage Breaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/savage-breaker-korvosa"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/savage-breaker-korvosa"),
                 Description = "You gain a +2 trait bonus on combat maneuver checks made to sunder simple or primitive armor and weapons, or any other equipment the GM deems “barbarian-made.”)",
             },
             #endregion
@@ -10129,7 +10129,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Savannah Child",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Plains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/savannah-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/savannah-child"),
                 Description = "Pick one of the following skills: Handle Animal, Knowledge (nature), or Ride. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -10141,7 +10141,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Seafarer",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Islands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/shackles-seafarer-regional-the-shackles"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/shackles-seafarer-regional-the-shackles"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) and Knowledge (geography) checks while on the ocean. You also gain a +1 trait bonus on Swim checks, and Swim is always a class skill for you.)",
             },
             #endregion
@@ -10152,7 +10152,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SeasonedClimber),
                 ProperName = "Seasoned Climber",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/seasoned-climber-the-wall-of-heaven"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/seasoned-climber-the-wall-of-heaven"),
                 Description = "You gain a +1 trait bonus on Climb checks, and Climb becomes a class skill for you.)",
             },
             #endregion
@@ -10164,7 +10164,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sea-Souled",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.CoastlineorIsland,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/sea-souled"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/sea-souled"),
                 Description = "You receive a +1 trait bonus on Swim checks, and you can always take 10 while Swimming.)",
             },
             #endregion
@@ -10175,7 +10175,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SecretCultist),
                 ProperName = "Secret Cultist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/rahadoumi-cultist-regional-rahadoum"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/rahadoumi-cultist-regional-rahadoum"),
                 Description = "You gain a +5 trait bonus on Bluff checks to receive secret messages, and a +5 trait bonus on Sense Motive checks to intercept secret messages from others of your faith.)",
             },
             #endregion
@@ -10186,7 +10186,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Shadowcaster),
                 ProperName = "Shadowcaster",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/nidalese-shadowcaster-regional-nidal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/nidalese-shadowcaster-regional-nidal"),
                 Description = "Choose one spell with the shadow descriptor—from this point on, whenever you cast this spell, its effect manifest at +1 caster level.)",
             },
             #endregion
@@ -10197,7 +10197,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Shadowsight),
                 ProperName = "Shadowsight",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/shadowsight-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/shadowsight-regional"),
                 Description = "As a swift action once per day, your eyes can pierce the surrounding darkness—you gain the benefit of low-light vision for a number of rounds equal to your level.)",
             },
             #endregion
@@ -10208,7 +10208,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Signaler),
                 ProperName = "Signaler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/signaler-regional-molthune"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/signaler-regional-molthune"),
                 Description = "You gain a +5 trait bonus on Bluff checks to receive secret messages and a +5 trait bonus on Sense Motive checks to intercept messages.)",
             },
             #endregion
@@ -10219,7 +10219,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SignatureSpell),
                 ProperName = "Signature Spell",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/secret-of-the-impossible-kingdom-regional-jalmeray"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/secret-of-the-impossible-kingdom-regional-jalmeray"),
                 Description = "Pick one spell when you choose this trait—from this point on, whenever you cast that spell, you do so at +1 caster level.)",
             },
             #endregion
@@ -10230,7 +10230,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SilentHunter),
                 ProperName = "Silent Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/uskwood-hunter-regional-nidal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/uskwood-hunter-regional-nidal"),
                 Description = "You gain a +1 trait bonus on Stealth checks, and Stealth is always a class skill for you.)",
             },
             #endregion
@@ -10241,7 +10241,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SilentWatcher),
                 ProperName = "Silent Watcher",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/silent-watcher-regional-galt"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/silent-watcher-regional-galt"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks in crowds, and a +1 trait bonus on Stealth checks in city streets.)",
             },
             #endregion
@@ -10252,7 +10252,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Silvertongued),
                 ProperName = "Silvertongued",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/silvertongued-eunuch-quain"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/silvertongued-eunuch-quain"),
                 Description = "You gain a +1 trait bonus on Knowledge (nobility) and Diplomacy checks.)",
             },
             #endregion
@@ -10273,7 +10273,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SkySpiritWorshiper),
                 ProperName = "Sky Spirit Worshiper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/sky-spirit-worshiper-shaguang"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/sky-spirit-worshiper-shaguang"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -10284,7 +10284,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SlayeroftheDeep),
                 ProperName = "Slayer of the Deep",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/slayer-of-the-deep"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/slayer-of-the-deep"),
                 Description = "You gain a +1 trait bonus on damage rolls made against creatures of the aberration type.)",
             },
             #endregion
@@ -10295,7 +10295,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Smuggler),
                 ProperName = "Smuggler",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/undermarket-smuggler-goka"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/undermarket-smuggler-goka"),
                 Description = "You gain a +1 trait bonus on Bluff and Sleight of Hand checks.)",
             },
             #endregion
@@ -10306,7 +10306,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SnakeBleeder),
                 ProperName = "Snake Bleeder",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/snake-bleeder-nagajor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/snake-bleeder-nagajor"),
                 Description = "You gain a +2 trait bonus on Craft (alchemy) checks when brewing poisons, and Craft (alchemy) becomes a class skill for you.)",
             },
             #endregion
@@ -10318,7 +10318,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Snowstride",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.ColdMountains,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/snowstride-usually-under-cold-mountains"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/snowstride-usually-under-cold-mountains"),
                 Description = "You gain a +1 trait bonus on Acrobatics checks made on slippery surfaces and enables you to trip or bull rush opponents two size categories larger than you instead of just one.)",
             },
             #endregion
@@ -10329,7 +10329,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SoldieroftheFaith),
                 ProperName = "Soldier of the Faith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/soldier-of-the-faith-regional-razmiran"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/soldier-of-the-faith-regional-razmiran"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -10340,7 +10340,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SolidarityCityofBrass),
                 ProperName = "Solidarity (City of Brass)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/solidarity-city-of-brass"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/solidarity-city-of-brass"),
                 Description = "Any time you successfully use the aid another action to help an ally succeed at a Bluff or Escape Artist check, you add a +3 bonus to this check (rather than a +2 bonus).)",
             },
             #endregion
@@ -10373,7 +10373,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Spellpiercer),
                 ProperName = "Spellpiercer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/abendego-spellpiercer-regional-the-sodden-lands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/abendego-spellpiercer-regional-the-sodden-lands"),
                 Description = "You gain a +2 trait bonus on concentration checks when spellcasting.)",
             },
             #endregion
@@ -10385,7 +10385,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Spiritual Forester",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Forests,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/spiritual-forester-the-forest-of-spirits"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/spiritual-forester-the-forest-of-spirits"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) and Knowledge (planes) checks, and one of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -10396,7 +10396,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Stable),
                 ProperName = "Stable",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/log-roller-forest"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/log-roller-forest"),
                 Description = "You gain a +1 trait bonus on Acrobatics checks and a +1 trait bonus to your CMB when attempting to resist trip attacks.)",
             },
             #endregion
@@ -10407,7 +10407,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StormHunter),
                 ProperName = "Storm Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/storm-hunter-hongal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/storm-hunter-hongal"),
                 Description = "When fighting in windy weather, you treat the wind category as one level lower for the purposes of determining penalties on ranged attacks made with normal weapons.)",
             },
             #endregion
@@ -10418,7 +10418,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StormPilot),
                 ProperName = "Storm Pilot",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/storm-pilot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/storm-pilot"),
                 Description = "You gain a +2 trait bonus on Profession  (sailor) checks, and you treat the wind force of environmental wind effects (see Table: Wind Effects) as one step less powerful for the purposes of determining any penalties on ranged attacks and Fly checks as well as whether you would be checked or blown away.)",
             },
             #endregion
@@ -10430,7 +10430,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Stormrunner",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Islands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/stormrunner-regional-the-shackles"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/stormrunner-regional-the-shackles"),
                 Description = "You’re accustomed to the pitch and yaw of sailing vessels, even in a storm, and gain a +2 trait bonus on Acrobatics checks to keep your footing on uneven ground or unsteady surfaces.)",
             },
             #endregion
@@ -10442,7 +10442,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Stream Nomad",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Rivers,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/stream-nomad-usually-under-rivers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/stream-nomad-usually-under-rivers"),
                 Description = "You gain a +1 trait bonus on Swim checks, and Swim is always a class skill for you. You increase the speed of any raft, barge, keelboat, or rowboat you pilot by 4 miles per day (1/2 mile per hour).)",
             },
             #endregion
@@ -10453,7 +10453,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SuckInYourGut),
                 ProperName = "Suck In Your Gut",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/suck-in-your-gut-any"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/suck-in-your-gut-any"),
                 Description = "You're able to move normally when squeezing and take only a –2 penalty on attack rolls and to AC.)",
             },
             #endregion
@@ -10465,7 +10465,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Sun Orchid Harvester",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Grasslands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/sun-orchid-harvester-grasslands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/sun-orchid-harvester-grasslands"),
                 Description = "You gain a +1 bonus on Knowledge (nature) and Survival checks made in desert environments.)",
             },
             #endregion
@@ -10477,7 +10477,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Superstitious",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Northlands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/superstitious-regional-realm-of-the-mammoth-lords"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/superstitious-regional-realm-of-the-mammoth-lords"),
                 Description = "As long as you do not possess any levels in a class that grants arcane spellcasting power, you gain a +1 trait bonus on all saving throws against arcane spells.)",
             },
             #endregion
@@ -10488,7 +10488,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SuperstitiousWard),
                 ProperName = "Superstitious Ward",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/superstitious-ward-regional-ustalav"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/superstitious-ward-regional-ustalav"),
                 Description = "You may cast disrupt undead once per day as a spell-like ability. This is cast at your highest caster level gained; if you have no caster level, it functions at CL 1st.)",
             },
             #endregion
@@ -10500,7 +10500,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Surface Stranger",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Underground,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/surface-stranger"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/surface-stranger"),
                 Description = "Your miss chance for concealment or total concealment due to either mundane or magical darkness decreases by 10%. You are dazzled for 1 round when you are suddenly exposed to bright light.)",
             },
             #endregion
@@ -10511,7 +10511,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Survivalist),
                 ProperName = "Survivalist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/mana-wastes-survivalist-regional-mana-wastes"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/mana-wastes-survivalist-regional-mana-wastes"),
                 Description = "You gain a +1 trait bonus on Fortitude saves.)",
             },
             #endregion
@@ -10522,7 +10522,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Survivalist),
                 ProperName = "Survivalist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/bellflowertiller"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/bellflowertiller"),
                 Description = "You gain a +5 trait bonus on all Survival skill checks made to get along in the wild, travel in severe weather, keep from getting lost, or predict the weather.)",
             },
             #endregion
@@ -10533,7 +10533,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Survivor),
                 ProperName = "Survivor",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/survivor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/survivor"),
                 Description = "You gain a +1 trait bonus to initiative and Sense Motive checks. Sense Motive is always a class skill for you.)",
             },
             #endregion
@@ -10544,7 +10544,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SwampRebel),
                 ProperName = "Swamp Rebel",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/swamp-rebel-wanshou"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/swamp-rebel-wanshou"),
                 Description = "You gain a +2 trait bonus on Stealth checks in swampy terrain, and Stealth becomes a class skill for you.)",
             },
             #endregion
@@ -10556,7 +10556,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Swamp Survivor",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Marshlands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/swamp-survivor-marshlands"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/swamp-survivor-marshlands"),
                 Description = "You gain a +2 bonus on Survival checks to find fresh water, and magical liquids in your possession gain a +2 bonus on Will saves to avoid being corrupted or otherwise spoiled.)",
             },
             #endregion
@@ -10567,7 +10567,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SwordsmansPage),
                 ProperName = "Swordsmans Page",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/swordlord-s-page-regional-brevoy"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/swordlord-s-page-regional-brevoy"),
                 Description = "You gain a +1 attack bonus to confirm critical hits when using an edged weapon you are proficient with.)",
             },
             #endregion
@@ -10578,7 +10578,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TalentedBlacksmith),
                 ProperName = "Talented Blacksmith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/indentured-blacksmith-kaoling"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/indentured-blacksmith-kaoling"),
                 Description = "Choose Craft (armor) or Craft (weapons). You gain a +1 trait bonus on the chosen skill, and it becomes a class skill for you.)",
             },
             #endregion
@@ -10589,7 +10589,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TattooedWanderer),
                 ProperName = "Tattooed Wanderer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/varisian-wanderer-regional-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/varisian-wanderer-regional-varisia"),
                 Description = "Choose Perform (one type), Profession (fortuneteller), or Sleight of Hand. You gain a +1 trait bonus on this skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -10600,7 +10600,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TattooedWanderer),
                 ProperName = "Tattooed Wanderer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/varisian-wanderer-regional-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/varisian-wanderer-regional-varisia"),
                 Description = "You gain a +1 trait bonus on Stealth checks. This trait bonus increases to +2 in hilly or rocky areas.)",
             },
             #endregion
@@ -10611,7 +10611,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TechnicTinkerer),
                 ProperName = "Technic Tinkerer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/technic-tinkerer-regional-numeria"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/technic-tinkerer-regional-numeria"),
                 Description = "Choose a 0-level spell. You may cast that spell once per day as a spell-like ability. This is cast at your highest caster level gained; if you have no caster level, it functions at CL 1st.)",
             },
             #endregion
@@ -10622,7 +10622,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TempleGuard),
                 ProperName = "Temple Guard",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/tianjing-temple-guard-tianjing"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/tianjing-temple-guard-tianjing"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity made with polearm weapons.)",
             },
             #endregion
@@ -10633,7 +10633,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ThoughtfulWishMakerPlaneofFire),
                 ProperName = "Thoughtful Wish-Maker (Plane of Fire)",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/thoughtful-wish-maker-plane-of-fire"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/thoughtful-wish-maker-plane-of-fire"),
                 Description = "You gain a +2 trait bonus on Sense Motive checks. Furthermore, if you succeed at a DC 25 Sense Motive check prior to making any wish granted by an outsider, you become aware of your wish's potential pitfalls. If you succeed at this check by 5 or more, you figure out how to word your wish in such a way that your words are not twisted.)",
             },
             #endregion
@@ -10644,7 +10644,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TigerBrigadier),
                 ProperName = "Tiger Brigadier",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/tiger-brigadier-bachuan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/tiger-brigadier-bachuan"),
                 Description = "You gain a +2 trait bonus on Intimidate checks made against anyone whose age is one or more aging steps above yours, and Intimidate becomes a class skill for you.)",
             },
             #endregion
@@ -10655,7 +10655,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TouchedoftheGods),
                 ProperName = "Touched of the Gods",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/touched-by-the-sky-regional-numeria"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/touched-by-the-sky-regional-numeria"),
                 Description = "You have the ability to stabilize a dying creature with a touch as a standard action.)",
             },
             #endregion
@@ -10666,7 +10666,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TownGossip),
                 ProperName = "Town Gossip",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/town-gossip-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/town-gossip-varisia"),
                 Description = "Choose a community that you've lived in for at least 5 years. You gain a +2 trait bonus on Diplomacy checks while in that community.)",
             },
             #endregion
@@ -10677,7 +10677,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TrainedMedic),
                 ProperName = "Trained Medic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/venicaan-medic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/venicaan-medic"),
                 Description = "You gain a +2 trait bonus to Heal checks to treat diseases or poisons, and Heal is always a class skill for you.)",
             },
             #endregion
@@ -10688,7 +10688,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TrapSavvy),
                 ProperName = "Trap Savvy",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/trap-savvy-any"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/trap-savvy-any"),
                 Description = "You gain a +1 trait bonus on Craft (traps) checks, and gain a +1 bonus to AC against attacks by traps or on saving throws against effects created by traps.)",
             },
             #endregion
@@ -10699,7 +10699,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TravelingMerchant),
                 ProperName = "Traveling Merchant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/thuvian-merchant-regional-thuvia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/thuvian-merchant-regional-thuvia"),
                 Description = "You gain a +1 trait bonus on Appraise, Bluff, and Sense Motive checks made for business deals and transactions.)",
             },
             #endregion
@@ -10720,7 +10720,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Tribesman),
                 ProperName = "Tribesman",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/shoanti-tribesman-regional-varisia"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/shoanti-tribesman-regional-varisia"),
                 Description = "Choose Climb, Survival, or Swim. You gain a +1 trait bonus on this skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -10731,7 +10731,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TrueBeliever),
                 ProperName = "True Believer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/kwanlai-believer-kwanlai"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/kwanlai-believer-kwanlai"),
                 Description = "You gain a +2 trait bonus on concentration checks when casting divine spells.)",
             },
             #endregion
@@ -10743,7 +10743,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Tundra Child",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.TundraorColdRegions,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/tundra-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/tundra-child"),
                 Description = "You gain a +4 trait bonus on saving throws made to resist the effects of being in cold conditions and a +1 trait bonus on saving throws against cold effects.)",
             },
             #endregion
@@ -10754,7 +10754,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnderworldExplorer),
                 ProperName = "Underworld Explorer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/underworld-explorer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/underworld-explorer"),
                 Description = "You gain a +1 trait bonus on Knowledge (dungeoneering) checks, and a +1 trait bonus on Survival checks made in a specific area. One of these skills becomes class skill for you.)",
             },
             #endregion
@@ -10765,7 +10765,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnflinchingFaith),
                 ProperName = "Unflinching Faith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/unflinching-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/unflinching-faith"),
                 Description = "Once per day, you may reroll a Will saving throw made against an attack or effect that originates from an undead creature. You must decide to use this trait after the first saving throw is rolled, but before the results are revealed. You must take the result of the second roll, even if it is lower.)",
             },
             #endregion
@@ -10776,7 +10776,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Urchin),
                 ProperName = "Urchin",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/trait-regional-nightstall-urchin"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/trait-regional-nightstall-urchin"),
                 Description = "You gain a +2 trait bonus on saving throws against fear effects, and when you do make a successful save against a fear effect, the resulting rush of bravado grants you a +1 trait bonus on attack rolls and all skill checks for the next minute.)",
             },
             #endregion
@@ -10788,7 +10788,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Vagabond Child",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Urban,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/vagabond-child"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/vagabond-child"),
                 Description = "Select one of the following skills: Disable Device or Sleight of Hand. You gain a +1 trait bonus on that skill, and it is always a class skill for you.)",
             },
             #endregion
@@ -10800,7 +10800,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Veteran Jungle Guide",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Jungle,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/valashmai-veteran-the-valashmai-jungle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/valashmai-veteran-the-valashmai-jungle"),
                 Description = "You gain a +1 trait bonus on Perception checks, and a +1 trait bonus on Survival checks in jungle terrain. One of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -10812,7 +10812,7 @@ namespace GoDungeon.Background.Tables
                 ProperName = "Viking Blood",
                 TraitType = TraitTypeEnum.Basic,
                 Terrain = TerrainEnum.Northlands,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/viking-blood-regional-lands-of-the-linnorm-kings"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/viking-blood-regional-lands-of-the-linnorm-kings"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate is always a class skill for you.)",
             },
             #endregion
@@ -10833,7 +10833,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WalkingWard),
                 ProperName = "Walking Ward",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/walking-ward-Regional-Qadira"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/walking-ward-Regional-Qadira"),
                 Description = "Choose one of the following energy types: acid, cold, electricity, or fire; you gain a +1 bonus on saving throws against spells that deal damage of this type or have this subtype.)",
             },
             #endregion
@@ -10844,7 +10844,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Wardbreaker),
                 ProperName = "Wardbreaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/wardbreaker-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/wardbreaker-regional"),
                 Description = "Once per day, you can attempt a melee touch attack against an opponent that you believe has a deflection bonus to AC. If your attack is successful, your foe's deflection bonus to AC is halved (to a minimum of +0) for a number of rounds equal to your Charisma modifier. You can use this ability twice per day at 10th level and three times per day at 20th level.)",
             },
             #endregion
@@ -10855,7 +10855,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WarriorPoet),
                 ProperName = "Warrior Poet",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/warrior-poet-dwarf-regional-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/warrior-poet-dwarf-regional-trait"),
                 Description = "You gain a +1 trait bonus on Knowledge checks related to dwarves (dwarven history, dwarven construction, and so on) and a +1 trait bonus on Fortitude saves in any round in which you use a bardic performance ability.)",
             },
             #endregion
@@ -10866,7 +10866,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WastesExplorer),
                 ProperName = "Wastes Explorer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/mutabi-qi-explorer-shaguang"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/mutabi-qi-explorer-shaguang"),
                 Description = "You gain a +1 trait bonus on Knowledge (geography) checks and Survival checks made in the desert.)",
             },
             #endregion
@@ -10877,7 +10877,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WayangSpellhunter),
                 ProperName = "Wayang Spellhunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/wayang-spellhunter-minata"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/wayang-spellhunter-minata"),
                 Description = "Choose a spell of 3rd level or below. When you use the chosen spell with a metamagic feat, it uses up a spell slot one level lower than it normally would (does not reduce actual spell level.))",
             },
             #endregion
@@ -10888,7 +10888,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WellBred),
                 ProperName = "Well Bred",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/well-bred"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/well-bred"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) and Knowledge (religion) checks but take a –1 penalty on all Sense Motive checks.)",
             },
             #endregion
@@ -10899,7 +10899,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WharfRat),
                 ProperName = "Wharf Rat",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/wharf-rat"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/wharf-rat"),
                 Description = "You gain a +2 trait bonus on skill checks involving climbing and rope use, and a +4 trait bonus on Appraise checks to determine the value of large quantities of bulk goods without opening their containers.)",
             },
             #endregion
@@ -10910,7 +10910,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WholeHearted),
                 ProperName = "Whole-Hearted",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/whole-hearted-regional"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/whole-hearted-regional"),
                 Description = "You gain a +2 trait bonus on saving throws against charms and compulsions.)",
             },
             #endregion
@@ -10921,7 +10921,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WintersSoul),
                 ProperName = "Winter’s Soul",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/winter-s-soul-regional-irrisen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/winter-s-soul-regional-irrisen"),
                 Description = "You may cast ray of frost once per day as a spell-like ability. This is cast at your highest caster level gained; if you have no caster level, it functions at CL 1st.)",
             },
             #endregion
@@ -10932,7 +10932,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WinterWarrior),
                 ProperName = "Winter Warrior",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/winter-warrior-regional-irrisen"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/winter-warrior-regional-irrisen"),
                 Description = "You gain a +1 trait bonus on Stealth and Survival checks in ice- or snow-covered terrain.)",
             },
             #endregion
@@ -10943,7 +10943,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WoodlandDiplomat),
                 ProperName = "Woodland Diplomat",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/regional-traits/fangwood-diplomat-regional-nirmathas"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/regional-traits/fangwood-diplomat-regional-nirmathas"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -10969,7 +10969,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AgentofChance),
                 ProperName = "Agent of Chance",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/agent-of-chance-nivi-rhombodazzle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/agent-of-chance-nivi-rhombodazzle"),
                 Description = "Once a day, when an adjacent ally makes a skill check and doesn’t like the result, you can allow him a reroll as an immediate action. Your ally must take the result of the reroll, even if it is worse than the original roll.)",
             },
             #endregion
@@ -10980,7 +10980,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Alluring),
                 ProperName = "Alluring",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/alluring-bolka"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/alluring-bolka"),
                 Description = "You receive a +2 trait bonus on Diplomacy checks with those who find you attractive. You can use daze once per day as a spell-like ability, with a caster level equal to your character level.)",
             },
             #endregion
@@ -10991,7 +10991,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Ambassador),
                 ProperName = "Ambassador",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/ambassador-sun-goddess"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/ambassador-sun-goddess"),
                 Description = "You gain a +2 trait bonus to Diplomacy checks.)",
             },
             #endregion
@@ -11002,7 +11002,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ArcaneDepth),
                 ProperName = "Arcane Depth",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/arcane-depth-nethys"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/arcane-depth-nethys"),
                 Description = "You gain a bonus of either +1 on Spellcraft checks or +2 on Knowledge (arcana) checks. Which bonus you receive is chosen when you take the trait and may not be changed.)",
             },
             #endregion
@@ -11013,7 +11013,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.AShiningBeacon),
                 ProperName = "A Shining Beacon",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/a-shining-beacon-iomedae"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/a-shining-beacon-iomedae"),
                 Description = "You deal additional damage equal to your weapon’s critical hit modifier when you score a successful critical hit with a weapon on a demon. This damage is added only after the damage is totaled, and is not multiplied by the critical hit multiple.)",
             },
             #endregion
@@ -11024,7 +11024,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Backstabber),
                 ProperName = "Backstabber",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/backstabber"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/backstabber"),
                 Description = "When you hit a foe you are flanking, you deal an additional 1 point of damage (this damage is added to your base damage, and is multiplied on a critical hit). This additional damage is a trait bonus.)",
             },
             #endregion
@@ -11035,7 +11035,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BattlefieldCaster),
                 ProperName = "Battlefield Caster",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/battlefield-caster"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/battlefield-caster"),
                 Description = "You receive a +1 trait bonus on concentration checks to cast defensively and a +1 trait bonus to AC against attacks provoked by or readied against spellcasting.)",
             },
             #endregion
@@ -11046,7 +11046,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BattlefieldSurgeon),
                 ProperName = "Battlefield Surgeon",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/battlefield-surgeon-zon-kuthon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/battlefield-surgeon-zon-kuthon"),
                 Description = "Heal is always a class skill for you, and you can use the treat deadly wounds aspect of the skill 1 additional time per creature per day.)",
             },
             #endregion
@@ -11057,7 +11057,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BladeofMercy),
                 ProperName = "Blade of Mercy",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/blade-of-mercy-goddess-of-dawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/blade-of-mercy-goddess-of-dawn"),
                 Description = "When striking to inflict nonlethal damage with any slashing weapon, you do not take the normal -4 penalty on your attack roll, and gain a +1 trait bonus to any nonlethal damage you inflict with a slashing weapon.)",
             },
             #endregion
@@ -11068,7 +11068,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BlessingoftheFeast),
                 ProperName = "Blessing of the Feast",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/blessing-of-the-feast"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/blessing-of-the-feast"),
                 Description = "Whenever you eat the flesh or drink the blood of another creature of your own kind—a full-round action that provokes attacks of opportunity— you gain the favor of your god or goddess and receive a +1 natural armor bonus for 1 minute/level. You can only receive this benefit once per day.)",
             },
             #endregion
@@ -11079,7 +11079,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.BrokenMind),
                 ProperName = "Broken Mind",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/broken-mind-groetus"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/broken-mind-groetus"),
                 Description = "You gain a +2 trait bonus on saving throws against madness and confusion effects.)",
             },
             #endregion
@@ -11090,7 +11090,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CallforHelp),
                 ProperName = "Call for Help",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/call-for-help-chaldira-zuzaristan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/call-for-help-chaldira-zuzaristan"),
                 Description = "Your allies gain a +1 trait bonus on rolls made against a creature threatening you when you use the total defense action.)",
             },
             #endregion
@@ -11101,7 +11101,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Centered),
                 ProperName = "Centered",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/centered-irori"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/centered-irori"),
                 Description = "You gain a +1 trait bonus on saving throws against charms and compulsions, and the DC of any attempts to use the Intimidate skill on you increases by +1.)",
             },
             #endregion
@@ -11112,7 +11112,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ChildofNature),
                 ProperName = "Child of Nature",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/child-of-nature-gozreh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/child-of-nature-gozreh"),
                 Description = "You gain a +2 trait bonus on Survival checks to find food and water, and a +1 trait bonus on Knowledge (nature) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -11123,7 +11123,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CleansingLight),
                 ProperName = "Cleansing Light",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/cleansing-light-sarenrae"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/cleansing-light-sarenrae"),
                 Description = "When dealing damage to undead with your channel energy, you can reroll any damage die that shows a natural 1.)",
             },
             #endregion
@@ -11134,7 +11134,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CleansingtheTwisted),
                 ProperName = "Cleansing the Twisted",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/cleansing-the-twisted-goddess-of-dawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/cleansing-the-twisted-goddess-of-dawn"),
                 Description = "You gain a +1 trait bonus to slashing weapon damage against aberrations.)",
             },
             #endregion
@@ -11145,7 +11145,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ContractMaster),
                 ProperName = "Contract Master",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/contract-master"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/contract-master"),
                 Description = "You gain a +1 trait bonus on Linguistics checks, and it becomes a class skill for you.)",
             },
             #endregion
@@ -11156,7 +11156,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CorpseCannibal),
                 ProperName = "Corpse Cannibal",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/corpse-cannibal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/corpse-cannibal"),
                 Description = "You gain a +2 trait bonus on Fortitude saving throws against diseases and can gain sustenance from rotting flesh with no negative side effects.)",
             },
             #endregion
@@ -11167,7 +11167,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.CorpseHunter),
                 ProperName = "Corpse Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/corpse-hunter-pharasma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/corpse-hunter-pharasma"),
                 Description = "You receive a +1 trait bonus on all attacks made against undead.)",
             },
             #endregion
@@ -11178,7 +11178,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Courtesan),
                 ProperName = "Courtesan",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/courtesan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/courtesan"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks and Diplomacy checks to gather information, and one of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -11189,7 +11189,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DawnRenewal),
                 ProperName = "Dawn Renewal",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/dawn-renewal"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/dawn-renewal"),
                 Description = "When you use the Heal skill to provide long-term care, your patients heal an extra 2 hit points at sunrise.)",
             },
             #endregion
@@ -11200,7 +11200,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Deathspeaker),
                 ProperName = "Deathspeaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/deathspeaker-urgathoa"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/deathspeaker-urgathoa"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks when dealing with undead, as well as a +2 trait bonus on Charisma checks made to influence undead (such as via the command undead spell).)",
             },
             #endregion
@@ -11211,7 +11211,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DeckFighter),
                 ProperName = "Deck Fighter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/deck-fighter-besmara"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/deck-fighter-besmara"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity when fighting aboard a ship.)",
             },
             #endregion
@@ -11222,7 +11222,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DefensiveStrategist),
                 ProperName = "Defensive Strategist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/defensive-strategist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/defensive-strategist"),
                 Description = "You are not flat-footed when you are an unaware combatant. This includes a surprise round that you don’t get to act in, and before you get to act at the start of a battle.)",
             },
             #endregion
@@ -11233,7 +11233,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Deformed),
                 ProperName = "Deformed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/deformed-lamashtu"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/deformed-lamashtu"),
                 Description = "Your deformities grant you a +1 trait bonus on Intimidate checks, and Intimidate becomes a class skill for you.)",
             },
             #endregion
@@ -11244,7 +11244,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DemonHunter),
                 ProperName = "Demon Hunter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/asmodean-demon-hunter-ruler-of-hell"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/asmodean-demon-hunter-ruler-of-hell"),
                 Description = "You gain a +3 trait bonus on Knowledge (planes) checks about demons and a +2 trait bonus on Will saving throws against mind-affecting spells and effects from demons.)",
             },
             #endregion
@@ -11255,7 +11255,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DemonicPersuasion),
                 ProperName = "Demonic Persuasion",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/demonic-persuasion-demon-lords"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/demonic-persuasion-demon-lords"),
                 Description = "You gain a +2 trait bonus on Diplomacy and Intimidate checks when dealing with creatures of the demon subtype.)",
             },
             #endregion
@@ -11266,7 +11266,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DestructiveBlows),
                 ProperName = "Destructive Blows",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/destructive-blows-rovagug"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/destructive-blows-rovagug"),
                 Description = "You gain a +2 trait bonus on Strength checks made to break things, as well as on combat maneuver checks to sunder.)",
             },
             #endregion
@@ -11277,7 +11277,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DevoteeofaDeadGod),
                 ProperName = "Devotee of a Dead God",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/devotee-of-a-dead-god-a-fallen-god"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/devotee-of-a-dead-god-a-fallen-god"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks and Knowledge (religion) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -11288,7 +11288,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.DivineWarrior),
                 ProperName = "Divine Warrior",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/divine-warrior-goddess-of-valor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/divine-warrior-goddess-of-valor"),
                 Description = "Whenever you cast a divine spell that affects any melee weapons, choose one of those weapons; it gains a +1 trait bonus on damage rolls for the duration of the spell.)",
             },
             #endregion
@@ -11299,7 +11299,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EarforMusic),
                 ProperName = "Ear for Music",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/ear-for-music-shelyn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/ear-for-music-shelyn"),
                 Description = "You gain a +1 trait bonus on one category of Perform checks and a +2 trait bonus on Knowledge (local) checks that deal with the local art or music scene.)",
             },
             #endregion
@@ -11310,7 +11310,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ElvenPantheist),
                 ProperName = "Elven Pantheist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/elven-pantheist-any-elven-deity"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/elven-pantheist-any-elven-deity"),
                 Description = "You gain a +1 trait bonus on all Knowledge (religion) skill checks, and Knowledge (religion) is always a class skill for you.)",
             },
             #endregion
@@ -11321,7 +11321,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EmptyHeartFullHeart),
                 ProperName = "Empty Heart, Full Heart",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/empty-heart-full-heart-naderi"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/empty-heart-full-heart-naderi"),
                 Description = "You gain a +1 trait bonus on all saving throws against charm effects, and any targets of your own charm spells suffer a –1 on their saves.)",
             },
             #endregion
@@ -11332,7 +11332,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EmpyrealFocus),
                 ProperName = "Empyreal Focus",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/empyreal-focus-empyreal-lords"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/empyreal-focus-empyreal-lords"),
                 Description = "Once per day, you gain a +2 trait bonus to any one skill check.)",
             },
             #endregion
@@ -11343,7 +11343,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EyeoftheFather),
                 ProperName = "Eye of the Father",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/eye-of-the-father"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/eye-of-the-father"),
                 Description = "You gain +1 trait bonus to a Craft skill of your choice, and Perform is always a class skill for you.)",
             },
             #endregion
@@ -11354,7 +11354,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EyesandEarsoftheCity),
                 ProperName = "Eyes and Ears of the City",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/eyes-and-ears-of-the-city-god-of-commerce"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/eyes-and-ears-of-the-city-god-of-commerce"),
                 Description = "You gain a +1 trait bonus on Perception checks, and Perception is always a class skill for you.)",
             },
             #endregion
@@ -11365,7 +11365,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.EyesoftheWild),
                 ProperName = "Eyes of the Wild",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/eyes-of-the-wild-the-green-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/eyes-of-the-wild-the-green-faith"),
                 Description = "You gain a +2 trait bonus on Perception checks in natural settings.)",
             },
             #endregion
@@ -11376,7 +11376,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FaithfulArtist),
                 ProperName = "Faithful Artist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/faithful-artist"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/faithful-artist"),
                 Description = "You gain a +1 trait bonus to one Perform skill, and Perform is always a class skill for you.)",
             },
             #endregion
@@ -11387,7 +11387,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FaithfuloftheDeadGod),
                 ProperName = "Faithful of the Dead God",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/faithful-arodenite"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/faithful-arodenite"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks; this bonus increases to +3 if you are dealing with a follower of a dead god.)",
             },
             #endregion
@@ -11398,7 +11398,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FatalTrapper),
                 ProperName = "Fatal Trapper",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/fatal-trapper-zyphus"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/fatal-trapper-zyphus"),
                 Description = "You gain a +1 trait bonus on Craft (traps) checks and a +1 trait bonus on Disable Device checks made to disable traps.)",
             },
             #endregion
@@ -11409,7 +11409,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FiendishConfidence),
                 ProperName = "Fiendish Confidence",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/fiendish-confidence-asmodeus"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/fiendish-confidence-asmodeus"),
                 Description = "You gain a +1 trait bonus on Intimidate checks, and Intimidate becomes a class skill for you.)",
             },
             #endregion
@@ -11420,7 +11420,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FlameoftheDawn),
                 ProperName = "Flame of the Dawn",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/flame-of-the-dawnflower-sarenrae"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/flame-of-the-dawnflower-sarenrae"),
                 Description = "Whenever you score a critical hit with a scimitar, you deal an additional two points of fire damage to your target. If you ever abandon the worship of the associated deity, you immediately lose access to this trait’s benefits.)",
             },
             #endregion
@@ -11431,7 +11431,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Flounderer),
                 ProperName = "Flounderer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/flounderer-zogmugot"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/flounderer-zogmugot"),
                 Description = "You gain a +1 trait bonus on Swim checks, and can hold your breath for a number of rounds equal to three times your Constitution score before you risk drowning.)",
             },
             #endregion
@@ -11442,7 +11442,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.FortifiedDrinker),
                 ProperName = "Fortified Drinker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/fortified-drinker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/fortified-drinker"),
                 Description = "Whenever you imbibe any alcoholic beverage, you gain a +2 trait bonus on saving throws against mind-affecting effects for 1 hour.)",
             },
             #endregion
@@ -11453,7 +11453,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GoodDreams),
                 ProperName = "Good Dreams",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/good-dreams"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/good-dreams"),
                 Description = "Each time you sleep, the GM tells you of a dangerous dream you had. Once per day, if you have to make a saving throw against a threat related or similar to that dream, you can roll twice and take the more favorable result. If you do not encounter circumstances similar to the threat or situation you dreamed, this trait has no effect that day. If you have the Halfling Jinx racial feature, you cannot select this trait, and vice versa.)",
             },
             #endregion
@@ -11464,7 +11464,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GoodNatured),
                 ProperName = "Good Natured",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/good-natured"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/good-natured"),
                 Description = "You gain a +2 trait bonus on all saving throws against fear effects.)",
             },
             #endregion
@@ -11475,7 +11475,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.GuardianoftheForge),
                 ProperName = "Guardian of the Forge",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/guardian-of-the-forge"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/guardian-of-the-forge"),
                 Description = "You receive a +1 trait bonus on Knowledge (engineering) and Knowledge (history) checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -11486,7 +11486,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HatredoftheGods),
                 ProperName = "Hatred of the Gods",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/hatred-of-the-gods-rovagug"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/hatred-of-the-gods-rovagug"),
                 Description = "You gain a +1 trait bonus on all saving throws against divine spells.)",
             },
             #endregion
@@ -11497,7 +11497,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HolySchemer),
                 ProperName = "Holy Schemer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/holy-schemer"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/holy-schemer"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and it becomes a class skill for you.)",
             },
             #endregion
@@ -11508,7 +11508,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HoneyedWords),
                 ProperName = "Honeyed Words",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/honeyed-words"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/honeyed-words"),
                 Description = "You receive a +1 trait bonus on Diplomacy checks. In addition, you receive a +1 trait bonus to the DC of any charm or compulsion that does not provide ongoing control and results in peaceful acts, such as calm emotions, sleep, or a suggestion to lay down arms.)",
             },
             #endregion
@@ -11519,7 +11519,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.HoneyTongued),
                 ProperName = "Honey-Tongued",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/honey-tongued"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/honey-tongued"),
                 Description = "You gain a +1 trait bonus on Diplomacy or Bluff checks when dealing with agents of the law, whether judges, guards, or paladins.)",
             },
             #endregion
@@ -11530,7 +11530,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Illuminator),
                 ProperName = "Illuminator",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/illuminator-sarenrae"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/illuminator-sarenrae"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -11541,7 +11541,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.InnerBeauty),
                 ProperName = "Inner Beauty",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/inner-beauty-shelyn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/inner-beauty-shelyn"),
                 Description = "You gain a +4 trait bonus to a single Bluff, Craft, Diplomacy, or Perform skill check once per day. You can choose whether to use it after making the check.)",
             },
             #endregion
@@ -11552,7 +11552,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Inoculated),
                 ProperName = "Inoculated",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/inoculated-urgathoa"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/inoculated-urgathoa"),
                 Description = "You gain a +2 trait bonus on saving throws against disease effects.)",
             },
             #endregion
@@ -11563,7 +11563,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IntenseArtist),
                 ProperName = "Intense Artist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/intense-artist-shelyn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/intense-artist-shelyn"),
                 Description = "You gain a +1 trait bonus on two Perform skills of your choice, and Perform is always a class skill for you.)",
             },
             #endregion
@@ -11574,7 +11574,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.IronGrip),
                 ProperName = "Iron Grip",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/iron-grip-gorrum"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/iron-grip-gorrum"),
                 Description = "You gain a +2 trait bonus to your CMD vs. disarm maneuvers.)",
             },
             #endregion
@@ -11585,7 +11585,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.KnowtheLand),
                 ProperName = "Know the Land",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/know-the-land-the-green-faith"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/know-the-land-the-green-faith"),
                 Description = "You gain a +1 trait bonus on Knowledge (nature) and Survival checks, and one of these skills becomes a class skill for you.)",
             },
             #endregion
@@ -11596,7 +11596,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Loreseeker),
                 ProperName = "Loreseeker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/loreseeker-lissala"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/loreseeker-lissala"),
                 Description = "You gain a +2 trait bonus on Spellcraft checks made to identify magical items.)",
             },
             #endregion
@@ -11607,7 +11607,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.LoveroftheLaw),
                 ProperName = "Lover of the Law",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/lover-of-the-law"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/lover-of-the-law"),
                 Description = "You gain a +1 trait bonus on saves vs. charm and compulsion spells, and may make a new save with an additional +1 trait bonus (for a total of +2) if directed to act against the law.)",
             },
             #endregion
@@ -11618,7 +11618,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MagicisLife),
                 ProperName = "Magic is Life",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/magic-is-life-god-of-magic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/magic-is-life-god-of-magic"),
                 Description = "As long as you are under the effects of a spell, you gain a +2 trait bonus on saving throws against death effects. If you are reduced to negative hit points while you are under the effects of any spell, you automatically confirm stabilization checks to stop bleeding.)",
             },
             #endregion
@@ -11629,7 +11629,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MothersRage),
                 ProperName = "Mothers Rage",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/mother-s-rage"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/mother-s-rage"),
                 Description = "You receive a +1 trait bonus on Survival checks, and you treat your caster level as +1 higher when summoning creatures.)",
             },
             #endregion
@@ -11640,7 +11640,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.MothersTeeth),
                 ProperName = "Mother’s Teeth",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/mother-s-teeth"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/mother-s-teeth"),
                 Description = "You can make a bite attack for 1d2 points of damage as a secondary attack.)",
             },
             #endregion
@@ -11651,7 +11651,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.NimbleFingersKeenMind),
                 ProperName = "Nimble Fingers, Keen Mind",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/nimble-fingers-keen-mind-brigh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/nimble-fingers-keen-mind-brigh"),
                 Description = "You gain a +1 trait bonus on Disable Device checks, and Disable Device becomes a class skill for you.)",
             },
             #endregion
@@ -11662,7 +11662,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.OpenerofDoors),
                 ProperName = "Opener of Doors",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/opener-of-doors-alseta"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/opener-of-doors-alseta"),
                 Description = "You gain a +2 trait bonus on Perception checks made to find and open secret doors.)",
             },
             #endregion
@@ -11673,7 +11673,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Opportunistic),
                 ProperName = "Opportunistic",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/opportunistic"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/opportunistic"),
                 Description = "You gain a +1 trait bonus on attacks of opportunity when using a dagger, sword, or whip.)",
             },
             #endregion
@@ -11684,7 +11684,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PainIsPleasure),
                 ProperName = "Pain Is Pleasure",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/pain-is-pleasure"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/pain-is-pleasure"),
                 Description = "You gain a +1 trait bonus on Fortitude and Will saves whenever you have fewer than half your maximum number of hit points.)",
             },
             #endregion
@@ -11695,7 +11695,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Pantheist),
                 ProperName = "Pantheist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/sovyrian-pantheist-any-elven-deity"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/sovyrian-pantheist-any-elven-deity"),
                 Description = "You gain a +1 trait bonus on Knowledge (history) checks to recognize or evaluate art, Knowledge (architecture and engineering) checks, Survival checks to hunt game, Constitution checks to run, and Spellcraft checks involving crystals or gems.)",
             },
             #endregion
@@ -11706,7 +11706,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PatientOptimist),
                 ProperName = "Patient Optimist",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/patient-optimist-goddess-of-travel"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/patient-optimist-goddess-of-travel"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks to influence hostile or unfriendly creatures, and if you fail at such an attempt you may retry it once.)",
             },
             #endregion
@@ -11717,7 +11717,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Peacemaker),
                 ProperName = "Peacemaker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/erastil-s-speaker-erastil"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/erastil-s-speaker-erastil"),
                 Description = "You gain a +1 trait bonus on Diplomacy checks, and Diplomacy is always a class skill for you.)",
             },
             #endregion
@@ -11728,7 +11728,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PotentConcoctions),
                 ProperName = "Potent Concoctions",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/potent-concoctions-ghlaunder"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/potent-concoctions-ghlaunder"),
                 Description = "Choose any two poisons. When you attempt to inflict either of these poisons on an enemy, the DC to resist it is increased by +1.)",
             },
             #endregion
@@ -11739,7 +11739,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PracticedDeception),
                 ProperName = "Practiced Deception",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/practiced-deception-norgorbor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/practiced-deception-norgorbor"),
                 Description = "You gain a +1 trait bonus on Disguise checks, and you can apply and remove a disguise in half the normal time.)",
             },
             #endregion
@@ -11750,7 +11750,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Propitiation),
                 ProperName = "Propitiation",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/propitiation-any-dwarven-deity"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/propitiation-any-dwarven-deity"),
                 Description = "At the start of each day, pick one of the following skills: Appraise, Bluff, Craft (pick one craft skill), Diplomacy, Intimidate, or Knowledge (local). You gain a +2 trait bonus on that skill until the start of the next day.)",
             },
             #endregion
@@ -11761,8 +11761,8 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Provider),
                 ProperName = "Provider",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/provider"),
-                Description = "You gain a +1 trait bonus on any d20 roll to acquire food or water for others. Though this bonus most often applies to Survival checks, it could also apply to attacking monsters that are safe and nutritious to eat (mainly animals and plants). However, if you abuse this gift (for example, by using the bonus to defeat a bear, then only eating one bite of it), you suffer a –2 penalty on attacks, checks, and saves for 24 hours.)",
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/provider"),
+                Description = "You gain a +1 trait bonus on any GoDungeon roll to acquire food or water for others. Though this bonus most often applies to Survival checks, it could also apply to attacking monsters that are safe and nutritious to eat (mainly animals and plants). However, if you abuse this gift (for example, by using the bonus to defeat a bear, then only eating one bite of it), you suffer a –2 penalty on attacks, checks, and saves for 24 hours.)",
             },
             #endregion
 
@@ -11772,7 +11772,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.PurityofFaith),
                 ProperName = "Purity of Faith",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/purity-of-faith-iomedae"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/purity-of-faith-iomedae"),
                 Description = "You gain +1 trait bonus on Will saves and a +1 bonus on saving throws against spells and effects originating from outsiders with the evil subtype.)",
             },
             #endregion
@@ -11783,7 +11783,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Resigned),
                 ProperName = "Resigned",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/resigned"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/resigned"),
                 Description = "You gain a +1 trait bonus when retrying a previously failed skill check or ability check, as well as when taking 20 on skill checks and ability checks.)",
             },
             #endregion
@@ -11794,7 +11794,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RestlessHunger),
                 ProperName = "Restless Hunger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/restless-hunger-venkelvore"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/restless-hunger-venkelvore"),
                 Description = "If you have a piece of food (or something a goblin might consider food), you can quickly eat it as part of a charge attack once per day. Doing so increases your speed by 10 feet for 1 round.)",
             },
             #endregion
@@ -11805,7 +11805,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.RiverFreedom),
                 ProperName = "River Freedom",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/river-freedom-hanspur"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/river-freedom-hanspur"),
                 Description = "While touching flowing water, you gain a +1 trait bonus on all saving throws against effects that would hamper your movement.)",
             },
             #endregion
@@ -11816,7 +11816,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SacredAvenger),
                 ProperName = "Sacred Avenger",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/sacred-avenger-calistria"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/sacred-avenger-calistria"),
                 Description = "When a creature damages you with a weapon, on your next turn you gain a +1 trait bonus on weapon damage against that creature. If this creature is your nemesis, this bonus increases to +2.)",
             },
             #endregion
@@ -11827,7 +11827,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SacredSmasher),
                 ProperName = "Sacred Smasher",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/sacred-smasher"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/sacred-smasher"),
                 Description = "You gain a +2 trait bonus on Strength checks to break an object.)",
             },
             #endregion
@@ -11838,7 +11838,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ScalyAlly),
                 ProperName = "Scaly Ally",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/scaly-ally-apsu"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/scaly-ally-apsu"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks involving reptiles or those of draconic blood, whether they are good-aligned or not.)",
             },
             #endregion
@@ -11849,7 +11849,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SearingBeacon),
                 ProperName = "Searing Beacon",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/searing-beacon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/searing-beacon"),
                 Description = "You deal additional precision damage equal to your Wisdom modifier when you score a critical hit with a melee weapon against an undead opponent.)",
             },
             #endregion
@@ -11860,7 +11860,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SecondChance),
                 ProperName = "Second Chance",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/lessons-of-chaldira-chaldira-zuzaristan"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/lessons-of-chaldira-chaldira-zuzaristan"),
                 Description = "Once per day, when you fail a saving throw, you can reroll the saving throw. You must take the second result even if it is worse.)",
             },
             #endregion
@@ -11871,7 +11871,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SecretKnowledge),
                 ProperName = "Secret Knowledge",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/secret-knowledge-norgorbor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/secret-knowledge-norgorbor"),
                 Description = "When you initially take this trait, it has no effect. At any point thereafter, before making a check, you may choose one Knowledge skill. You gain a permanent +2 trait bonus on checks for that skill, and it becomes a class skill for you. Once this skill is chosen, it cannot be changed.)",
             },
             #endregion
@@ -11882,7 +11882,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SeerofReality),
                 ProperName = "Seer of Reality",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/seer-of-reality-irori"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/seer-of-reality-irori"),
                 Description = "You gain a +2 trait bonus on any saves involving illusion magic.)",
             },
             #endregion
@@ -11893,7 +11893,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SelfSacrifice),
                 ProperName = "Self-Sacrifice",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/self-sacrifice"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/self-sacrifice"),
                 Description = "As a move action, you can use your own body to grant soft cover to an adjacent ally regardless of the difference in your respective sizes.)",
             },
             #endregion
@@ -11904,7 +11904,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SenseofOrder),
                 ProperName = "Sense of Order",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/sense-of-order"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/sense-of-order"),
                 Description = "You gain a +3 trait bonus on any Perception check made to identify any changes to a location that have occurred since you last visited it.)",
             },
             #endregion
@@ -11915,7 +11915,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SensingImperfection),
                 ProperName = "Sensing Imperfection",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/sensing-imperfection"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/sensing-imperfection"),
                 Description = "Sense Motive is always a class skill for you, and you gain a +1 trait bonus on Sense Motive checks.)",
             },
             #endregion
@@ -11926,7 +11926,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SerpentineSqueeze),
                 ProperName = "Serpentine Squeeze",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/serpentine-squeeze-ydersius"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/serpentine-squeeze-ydersius"),
                 Description = "You gain a +1 trait bonus on combat maneuver checks to grapple a foe, as well as a +1 trait bonus to your CMD whenever an opponent tries to grapple you.)",
             },
             #endregion
@@ -11937,7 +11937,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ShadowCaster),
                 ProperName = "Shadow Caster",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/kuthite-caster-zon-kuthon"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/kuthite-caster-zon-kuthon"),
                 Description = "You gain a +4 trait bonus on concentration checks when casting spells with the darkness, pain, or shadow descriptors.)",
             },
             #endregion
@@ -11948,7 +11948,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.ShadowWhispers),
                 ProperName = "Shadow Whispers",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/shadow-whispers"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/shadow-whispers"),
                 Description = "You gain a +1 trait bonus on Knowledge (local) checks and a +2 trait bonus on Intimidate checks made to demoralize opponents.)",
             },
             #endregion
@@ -11959,7 +11959,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SpiritGuide),
                 ProperName = "Spirit Guide",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/spirit-guide-pharasma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/spirit-guide-pharasma"),
                 Description = "You gain a +2 trait bonus on Knowledge (religion) checks, and Knowledge (religion) becomes class skill for you.)",
             },
             #endregion
@@ -11970,7 +11970,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SpiritTalker),
                 ProperName = "Spirit Talker",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/spirit-talker"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/spirit-talker"),
                 Description = "You gain a +1 racial bonus on Will saving throws against divine spells and spell-like effects employed against you by clerics or paladins of organized religions—but you suffer a –1 penalty on Will saving throws against divine spells cast by devotees of shamanistic faiths.)",
             },
             #endregion
@@ -11981,7 +11981,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Starchild),
                 ProperName = "Starchild",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/starchild"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/starchild"),
                 Description = "You can automatically determine where true north is. You gain a +4 trait bonus on Survival checks to avoid becoming lost.)",
             },
             #endregion
@@ -11992,7 +11992,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StoicOptimism),
                 ProperName = "Stoic Optimism",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/stoic-optimism"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/stoic-optimism"),
                 Description = "You receive a +2 trait bonus on saving throws against fear effects.)",
             },
             #endregion
@@ -12003,7 +12003,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StrengthoftheBarghest),
                 ProperName = "Strength of the Barghest",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strength-of-the-barghest-hadregash"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strength-of-the-barghest-hadregash"),
                 Description = "Once per day as a free action, you can gain a +2 trait bonus on any Strength check or Strength-based skill check.)",
             },
             #endregion
@@ -12014,7 +12014,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StrengthoftheSun),
                 ProperName = "Strength of the Sun",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strength-of-the-sun-goddess-of-dawn"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strength-of-the-sun-goddess-of-dawn"),
                 Description = "During the day, you gain a +1 trait bonus on all Charisma-based checks.)",
             },
             #endregion
@@ -12025,7 +12025,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StriptheVeils),
                 ProperName = "Strip the Veils",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strip-the-veils-sivanah"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strip-the-veils-sivanah"),
                 Description = "You gain a +1 trait bonus on Sense Motive checks, and Sense Motive becomes a class skill for you.)",
             },
             #endregion
@@ -12036,7 +12036,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StrongHeart),
                 ProperName = "Strong Heart",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strong-heart-gorrum"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strong-heart-gorrum"),
                 Description = "You gain a +1 trait bonus on saving throws against fear effects, and the DC of Intimidate checks made against you increases by +2.)",
             },
             #endregion
@@ -12047,7 +12047,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StrongSwimmer),
                 ProperName = "Strong Swimmer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strong-swimmer-gozreh"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strong-swimmer-gozreh"),
                 Description = "You gain a +2 trait bonus on all Swim checks, and can hold your breath for an extra 2 rounds when underwater.)",
             },
             #endregion
@@ -12058,7 +12058,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.StrongWilled),
                 ProperName = "Strong Willed",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/strong-willed"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/strong-willed"),
                 Description = "You gain a +2 trait bonus on saving throws against charm and compulsion effects.)",
             },
             #endregion
@@ -12069,7 +12069,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TalentedOrganizer),
                 ProperName = "Talented Organizer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/talented-organizer-milani"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/talented-organizer-milani"),
                 Description = "You gain a +1 trait bonus on Sense Motive skill checks, and Sense Motive is always a class skill for you.)",
             },
             #endregion
@@ -12080,7 +12080,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TheCityProtects),
                 ProperName = "The City Protects",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/the-city-protects-god-of-commerce"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/the-city-protects-god-of-commerce"),
                 Description = "You gain a +2 trait bonus against fear effects. If you fail a save against a fear effect, you may make a new save each round you remain in the city to overcome the fear effect as long as the fear effect persists. If you are a paladin, this ability to make additional saves to overcome fear extends to all allies within your aura of courage.)",
             },
             #endregion
@@ -12091,7 +12091,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.TheFlexingArm),
                 ProperName = "The Flexing Arm",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/the-flexing-arm-kurgess"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/the-flexing-arm-kurgess"),
                 Description = "You can use Strength instead of Dexterity as your base ability for Escape Artist skill checks.)",
             },
             #endregion
@@ -12102,7 +12102,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Toilcrafter),
                 ProperName = "Toilcrafter",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/toilcrafter-dwarf-religion-trait"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/toilcrafter-dwarf-religion-trait"),
                 Description = "Choose one Craft or Profession skill in which you have at least 1 rank. Ranks in your chosen skill count as your caster level for the purpose of qualifying for the Craft Magic Arms and Armor feat. You may craft +1 armor, weapons, or shields (with no special qualities), substituting your rank in the chosen skill for your caster level. You must use the chosen skill for the check to create the item. Crafting in this fashion takes twice as long as normal. These items cannot be upgraded with new abilities.)",
             },
             #endregion
@@ -12113,7 +12113,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UndeadSlayer),
                 ProperName = "Undead Slayer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/undead-slayer-pharasma"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/undead-slayer-pharasma"),
                 Description = "You gain a +1 trait bonus on weapon damage rolls against undead.)",
             },
             #endregion
@@ -12124,7 +12124,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnderlyingPrincipals),
                 ProperName = "Underlying Principals",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/underlying-principals-nethys"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/underlying-principals-nethys"),
                 Description = "You gain a +1 trait bonus on Use Magic Device checks, and it becomes a class skill for you.)",
             },
             #endregion
@@ -12135,7 +12135,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnderSiege),
                 ProperName = "Under Siege",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/under-siege-sun-goddess"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/under-siege-sun-goddess"),
                 Description = "You gain a +1 trait bonus on Bluff and Sense Motive checks. One of these skills (your choice) is always a class skill for you.)",
             },
             #endregion
@@ -12146,7 +12146,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnhingedMentality),
                 ProperName = "Unhinged Mentality",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/unhinged-mentality-lamashtu"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/unhinged-mentality-lamashtu"),
                 Description = "You gain a +2 trait bonus on saving throws against confusion, insanity, and fear effects.)",
             },
             #endregion
@@ -12157,7 +12157,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.UnspeakableBond),
                 ProperName = "Unspeakable Bond",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/unspeakable-bond-great-old-ones-or-outer-gods"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/unspeakable-bond-great-old-ones-or-outer-gods"),
                 Description = "You gain a +2 trait bonus on Diplomacy checks when dealing with creatures of the aberration type.)",
             },
             #endregion
@@ -12168,7 +12168,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VenomDrenched),
                 ProperName = "Venom-Drenched",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/venom-drenched-norgorbor"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/venom-drenched-norgorbor"),
                 Description = "You are immune to one specific nonmagical poison. If you ingest a dose of that poison (even if it is a contact, inhaled, or injury poison), it remains in your system for 24 hours; any creature that bites you during that time is subject to the poison’s effects.)",
             },
             #endregion
@@ -12179,7 +12179,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VeteranofBattle),
                 ProperName = "Veteran of Battle",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/veteran-of-battle"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/veteran-of-battle"),
                 Description = "You gain a +1 trait bonus on initiative checks, and if you are able to act during a surprise round, you may draw a weapon (but not a potion or magic item) as a free action during that round.)",
             },
             #endregion
@@ -12190,7 +12190,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VindictiveStrike),
                 ProperName = "Vindictive Strike",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/vindictive-strike-gyronna"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/vindictive-strike-gyronna"),
                 Description = "Once per day during a combat encounter, you can choose to gain a +1 trait bonus on a single attack roll against the creature that last hit you.)",
             },
             #endregion
@@ -12201,7 +12201,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.VoiceofMonsters),
                 ProperName = "Voice of Monsters",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/voice-of-monsters"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/voice-of-monsters"),
                 Description = "Once per day, you can cast speak with animals. When you cast this spell, it can affect animals (as normal) as well as aberrations and magical beasts with an Intelligence of 2 or lower.)",
             },
             #endregion
@@ -12212,7 +12212,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WaspWhisperer),
                 ProperName = "Wasp Whisperer",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/wasp-whisperer-calistria"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/wasp-whisperer-calistria"),
                 Description = "You gain a +1 trait bonus on Fortitude saving throws against poison. You may make Diplomacy checks (or wild empathy checks if you are a druid or ranger) to improve a hostile or unfriendly insectile vermin’s attitude toward Indifferent.)",
             },
             #endregion
@@ -12223,7 +12223,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WisdomintheFlesh),
                 ProperName = "Wisdom in the Flesh",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/wisdom-in-the-flesh-god-of-perfection"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/wisdom-in-the-flesh-god-of-perfection"),
                 Description = "Select any Strength, Constitution, or Dexterity-based skill. You make checks with that skill using your Wisdom modifier instead of its normal ability score. That skill is always a class skill for you.)",
             },
             #endregion
@@ -12234,7 +12234,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WiseTeacher),
                 ProperName = "Wise Teacher",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/wise-teacher"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/wise-teacher"),
                 Description = "If you have 4 or more ranks in Survival or Knowledge (nature), when you aid another with these skills, you grant a +4 bonus on the check you are aiding instead of the normal +2.)",
             },
             #endregion
@@ -12245,7 +12245,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.WolfCub),
                 ProperName = "Wolf Cub",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("http://www.d20pfsrd.com/traits/religion-traits/wolf-cub-zarongel"),
+                Url = new Uri("http://www.GoDungeonpfsrd.com/traits/religion-traits/wolf-cub-zarongel"),
                 Description = "Once per day as a standard action, you can take a deep breath through your nose to gain the scent ability for 1 minute.)",
             },
             #endregion
@@ -12261,7 +12261,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.SelfReliant),
                 ProperName = "Self-Reliant",
                 TraitType = TraitTypeEnum.Basic,
-                Url = new Uri("https://www.d20pfsrd.com/traits/social-traits/self-reliant/"),
+                Url = new Uri("https://www.GoDungeonpfsrd.com/traits/social-traits/self-reliant/"),
                 Description = "When attempting Craft checks, you take no penalty when using improvised tools. At the GM's discretion, you can attempt certain Craft checks even when no tools are available, though you take a –2 penalty.)",
             },
             #endregion
@@ -12276,7 +12276,7 @@ namespace GoDungeon.Background.Tables
                 Name = nameof(TraitEnum.Lucky),
                 ProperName = "Lucky",
                 TraitType = TraitTypeEnum.CharacterRace,
-                Description = "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
+                Description = "When you roll a 1 on the GoDungeon for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
             },
             #endregion
             

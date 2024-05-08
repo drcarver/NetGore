@@ -1,7 +1,8 @@
 ﻿using GoDungeon.Core.Interfaces;
 
-namespace GoDungeon.Character.PC.Ranger;
-
-public interface IRangerBackgroundTable : IRandomTable
+namespace GoDungeon.Character.PC.Ranger
 {
+    public interface IRangerBackgroundTable : IRandomTable
+    {
+    }
 }

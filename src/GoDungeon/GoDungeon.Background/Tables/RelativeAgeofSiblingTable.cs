@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -75,6 +75,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(01,48),
                         Name = nameof(RelativeAgeofSiblingEnum.Older),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Older),
                         Description = "Your sibling is older than you.",
                     },
                     #endregion
@@ -85,6 +86,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(49,96),
                         Name = nameof(RelativeAgeofSiblingEnum.Younger),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Younger),
                         Description = "Your sibling is younger than you.",
                     },
                     #endregion
@@ -95,6 +97,7 @@ namespace GoDungeon.Background.Tables
                     {
                         Range = new Range(97,100),
                         Name = nameof(RelativeAgeofSiblingEnum.Twins),
+                        ProperName = nameof(RelativeAgeofSiblingEnum.Twins),
                         Description = "You and a sibling are twins " +
                             "(identical or fraternal, your " +
                             "choice). Roll on this table again. " +

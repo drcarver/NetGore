@@ -18,7 +18,7 @@ namespace GoDungeon.Equipment.ViewModels
         /// The equipment type
         /// </summary>
         [ObservableProperty]
-        private EquipmentEnum equipment;
+        private int equipment;
 
         /// <summary>
         /// The cost of the good

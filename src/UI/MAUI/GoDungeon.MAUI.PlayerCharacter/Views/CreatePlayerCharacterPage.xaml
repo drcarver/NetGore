@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoDungeon.MAUI.PlayerCharacter.Views.CreatePlayerCharacterPage"
+             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.PlayerCharacter.ViewModels;assembly=GoDungeon.MAUI.PlayerCharacter"
+             xmlns:ability="clr-namespace:GoDungeon.Core.Abilities;assembly=GoDungeon.Core"
+             xmlns:tables="clr-namespace:GoDungeon.Core.Tables;assembly=GoDungeon.Core"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="viewmodel:PlayerCharacterViewModel"
+             Title="Dungeons &amp; Dragons">
+    
+    <Grid BackgroundColor="PapayaWhip" RowDefinitions="Auto,Auto,Auto" >
+        <!--The header block (Player Name, Character Name, Level, Race, Class and Background)-->
+        <HorizontalStackLayout>
+            <Grid RowDefinitions="Auto,Auto" x:Name="LeftHeaderGrid"
+                  Margin="10,10,10,10">
+                <Label Text="Johnny" FontSize="Title" Grid.Row="0" 
+                       BackgroundColor="LightGray"
+                       Margin="10,10,10,10"/>
+                <Label Text="Character Name" FontFamily="monospace"
+                       Margin="10,10,10,10" Grid.Row="1" />
+            </Grid>
+            <Border StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="5">
+                <Grid x:Name="RightHeaderGrid" Margin="10,10,10,10"
+                  RowDefinitions="Auto,20,Auto,20" RowSpacing="5" 
+                  ColumnDefinitions="200,200,200" ColumnSpacing="10">
+                    <Picker ItemsSource="{Binding ValidClasses}"
+                       Grid.Row="0" Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Class and Level"
+                       Grid.Row="1" Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                    <Label Text="{Binding Race}"
+                       Grid.Row="2" Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Race"  
+                       Grid.Row="3" Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                    <Label Text="Acolyte"
+                       Grid.Row="0" Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Background"
+                       Grid.Row="1" Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                    <Label Text="Lawful Good (LG)"
+                       Grid.Row="2" Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Alignment"  
+                       Grid.Row="3" Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                    <Label Text="Darrel"
+                       Grid.Row="0" Grid.Column="2"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Player Name"
+                       Grid.Row="1" Grid.Column="2"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                    <Label Text="5358"  
+                       Grid.Row="2" Grid.Column="2"
+                       HorizontalTextAlignment="Start"
+                       BackgroundColor="LightGray"
+                       FontSize="Body" FontAttributes="Italic"/>
+                    <Label Text="Experience Points"  
+                       Grid.Row="3" Grid.Column="2"
+                       HorizontalTextAlignment="Start"
+                       TextColor="Crimson" FontSize="Body"
+                       FontFamily="monospace"/>
+                </Grid>
+            </Border>
+        </HorizontalStackLayout>
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,Auto,Auto">
+                    <Grid Grid.Column="0" ColumnDefinitions="100,Auto"
+                          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                          Margin="10,10,10,10">
+                    <Border StrokeShape="RoundRectangle 20,20,20,20"
+                        StrokeThickness="2" Grid.Column="0" BackgroundColor="LightGray">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="0" Margin="2,2,2,2">
+                                <Grid RowDefinitions="Auto,Auto" 
+                                            BackgroundColor="AntiqueWhite">
+                                    <Label Text="Strength" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding StrengthScore}" FontSize="Large" 
+                                                HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="1">
+                                    <Grid RowDefinitions="Auto,Auto" 
+                                                BackgroundColor="AntiqueWhite">
+                                        <Label Text="Intelligence" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding IntelligenceScore}" FontSize="Large" 
+                                                    HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="2">
+                                    <Grid RowDefinitions="Auto,Auto" 
+                                                    BackgroundColor="AntiqueWhite">
+                                        <Label Text="Wisdom" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding WisdomScore}" 
+                                               FontSize="Large" HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="3">
+                                    <Grid RowDefinitions="Auto,Auto" 
+                                                        BackgroundColor="AntiqueWhite">
+                                        <Label Text="Dexterity" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding DexterityScore}" FontSize="Large" 
+                                                            HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="4">
+                                    <Grid RowDefinitions="Auto,Auto" 
+                                                        BackgroundColor="AntiqueWhite">
+                                        <Label Text="Constitution" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding ConstitutionScore}" FontSize="Large" 
+                                                            HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="5">
+                                    <Grid RowDefinitions="Auto,Auto" 
+                                                        BackgroundColor="AntiqueWhite">
+                                        <Label Text="Charisma" HorizontalTextAlignment="Center" />
+                                        <Label Grid.Row="2" Text="{Binding CharismaScore}" FontSize="Large" 
+                                                            HorizontalTextAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollView>
+        <Button Grid.Row="2" Text="Roll Again" Command="{Binding RerollCommand}" />
+    </Grid>
+</ContentPage>

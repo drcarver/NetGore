@@ -1,4 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 using GoDungeon.Core.Enum;
 
@@ -20,6 +25,18 @@ namespace GoDungeon.Core.Interfaces
         /// The table itself
         /// </summary>
         ObservableCollection<IGameTableEntry>? Table { get; set; }
+
+        /// <summary>
+        /// The selected table entry
+        /// </summary>
+        public IGameTableEntry? SelectedItem { get; set; }
+
+        /// <summary>
+        /// The selection changed command
+        /// </summary>
+        /// <param name="execute">The method to execute</param>
+        /// <param name="canExecute">Can the command execute</param>
+        public AsyncRelayCommand SelectionChangedCommand { get; set; }
 
         /// <summary>
         /// Initialize the game table.  This is a separate method so 

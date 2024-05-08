@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core.Enum;
+﻿using System;
+
+using GoDungeon.Core.Enum;
 
 namespace GoDungeon.Core.Interfaces
 {
@@ -13,5 +15,10 @@ namespace GoDungeon.Core.Interfaces
         /// Route for the entry
         /// </summary>
         string? Route { get; set; }
+
+        /// <summary>
+        /// The page detail type
+        /// </summary>
+        Type? PageDetailType { get; set; }
     }
 }

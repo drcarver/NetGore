@@ -1,0 +1,60 @@
+﻿using System.Reflection;
+
+using CommunityToolkit.Maui;
+
+using GoDungeon.Background.Interfaces;
+using GoDungeon.Core.Tables;
+using GoDungeon.MAUI.Core.Interfaces;
+using GoDungeon.MAUI.Core.Tables;
+using GoDungeon.MAUI.Core.Views;
+
+namespace GoDungeon.MAUI.Core
+{
+    public static class DataServices
+    {
+        /// <summary>
+        /// Get all the IGameable entries
+        /// </summary>
+        /// <returns></returns>
+        public static List<Type> MAUICoreTables => Assembly
+            .GetExecutingAssembly()
+            .GetExportedTypes()
+            .Where(t => 
+                    t.IsSubclassOf(typeof(GameTable)) 
+                &&  t.Name != nameof(RandomTable)
+                &&  t.Name != nameof(NamedTable))
+            .ToList();
+
+        /// <summary>
+        /// The GoDungeon Core tables and services
+        /// </summary>
+        /// <param name="collection">The DI service collection</param>
+        /// <returns>The services collection</returns>
+        public static IServiceCollection UseGoDungeonMAUICore(this IServiceCollection collection)
+        {
+            //collection
+            // Add all the game table types as transient
+            collection.AddTransient<ICoreMenuTable, CoreMenuTable>();
+
+            // The tables
+            collection.AddTransientWithShellRoute<CoreMenuTablePage, CoreMenuTable>(nameof(CoreMenuTablePage));
+            collection.AddTransientWithShellRoute<AcrobaticsModifierTablePage, AcrobaticsModifierTable>(nameof(AcrobaticsModifierTablePage));
+            collection.AddTransientWithShellRoute<AlignmentTablePage, AlignmentTable>(nameof(AlignmentTablePage));
+            collection.AddTransientWithShellRoute<GenderTablePage, GenderTable>(nameof(GenderTablePage));
+            collection.AddTransientWithShellRoute<LanguageTablePage, LanguageTable>(nameof(LanguageTablePage));
+            collection.AddTransientWithShellRoute<SkillsTablePage, SkillTable>(nameof(SkillsTablePage));
+            collection.AddTransientWithShellRoute<SpellAbilityModifierTablePage, SpellAbilityModifierTable>(nameof(SpellAbilityModifierTablePage));
+
+            // Add the menu tables
+            collection.AddTransient<IBackgroundMenuTable, BackgroundMenuTable>();
+            collection.AddTransient<IRacialBackgroundMenuTable, RacialBackgroundMenuTable>();
+
+            // Register additional detail routes
+            Routing.RegisterRoute(nameof(BackgroundTablePage), typeof(BackgroundTablePage));
+            Routing.RegisterRoute(nameof(ConflictTablePage), typeof(ConflictTablePage));
+            Routing.RegisterRoute(nameof(MenuTablePage), typeof(MenuTablePage));
+
+            return collection;
+        }
+    }
+}

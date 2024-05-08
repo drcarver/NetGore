@@ -1,15 +1,16 @@
-﻿namespace GoDungeon.Character.PC.Druid;
-
-public enum DruidBackgroundEnum
+﻿namespace GoDungeon.Character.PC.Druid
 {
-    LostintheWild,
-    FeyMeeting,
-    SpiritofNature,
-    TreeTender,
-    DruidCircle,
-    CivilizedOutcast,
-    Savage,
-    RaisedbyBeasts,
-    Avatar,
-    Beastlord
+    public enum DruidBackgroundEnum
+    {
+        LostintheWild,
+        FeyMeeting,
+        SpiritofNature,
+        TreeTender,
+        DruidCircle,
+        CivilizedOutcast,
+        Savage,
+        RaisedbyBeasts,
+        Avatar,
+        Beastlord
+    }
 }

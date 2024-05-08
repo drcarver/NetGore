@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -27,7 +27,7 @@ using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Background.ViewModels
 {
-    public partial class ConflictTableEntryViewModel : StandardTableEntryViewModel, IConflictTableEntryViewModel
+    public partial class ConflictTableEntryViewModel : RandomTableEntryViewModel, IConflictTableEntryViewModel
     {
         /// <summary>
         /// Conflict points

@@ -59,10 +59,12 @@ namespace GoDungeon.Core.ViewModels
         /// <returns>The current ability score with all modifiers</returns>
         public int Score()
         {
-            AbilityBonusEntryViewModel? modifier = GetModifier();
+            AbilityBonusSpellEntryViewModel? modifier = GetModifier();
             if (modifier?.Modifier == null)
             {
-                return 0;
+                return BaseAbility
+                    + RacialModifier
+                    + TemporaryModifier;
             }
             return BaseAbility
                 + RacialModifier
@@ -75,13 +77,13 @@ namespace GoDungeon.Core.ViewModels
         /// the ability modifier table
         /// </summary>
         /// <returns>The modifier for this score</returns>
-        public AbilityBonusEntryViewModel? GetModifier()
+        public AbilityBonusSpellEntryViewModel? GetModifier()
         {
-            var modifierTable = new AbilityModifierTable();
+            var modifierTable = new SpellAbilityModifierTable();
             modifierTable.InitializeTable();
             return modifierTable.Table
-                .Cast<AbilityBonusEntryViewModel>()
-                .First(t => t.Score.Start.Value >= BaseAbility + RacialModifier
+                .Cast<AbilityBonusSpellEntryViewModel>()
+                .FirstOrDefault(t => t.Score.Start.Value >= BaseAbility + RacialModifier
                         &&  t.Score.End.Value   <= BaseAbility + RacialModifier);
         }
 

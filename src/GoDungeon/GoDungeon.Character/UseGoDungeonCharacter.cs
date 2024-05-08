@@ -9,6 +9,8 @@ using GoDungeon.Character.PC.Bard;
 using GoDungeon.Character.PC.Cleric;
 using GoDungeon.Character.PC.Druid;
 using GoDungeon.Character.Tables;
+using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -30,7 +32,7 @@ namespace GoDungeon.Character
             .ToList();
 
         /// <summary>
-        /// The D20 Character tables and services
+        /// The GoDungeon Character tables and services
         /// </summary>
         /// <param name="collection">The DI service collection</param>
         /// <returns>The services collection</returns>
@@ -41,6 +43,7 @@ namespace GoDungeon.Character
             collection.AddTransient<ICelticDeitiesTable, CelticDeitiesTable>();
             collection.AddTransient<ICharacterAdvancementTable, CharacterAdvancementTable>();
             collection.AddTransient<IClassFeatureTable, ClassFeatureTable>();
+            collection.AddTransient<ICharacter, CharacterViewModel>();
 
             // Now add the Barbarian Class
             collection.AddTransient<IBarbarian, BarbarianViewModel>();
@@ -48,12 +51,12 @@ namespace GoDungeon.Character
             collection.AddTransient<IBarbarianLevelTable, BarbarianLevelTable>();
 
             // Now add the Bard Class
-            collection.AddTransient<IBard, Bard>();
+            collection.AddTransient<IBard, BardViewModel>();
             collection.AddTransient<IBardBackgroundTable, BardBackgroundTable>();
             collection.AddTransient<IBardLevelTable, BardLevelTable>();
 
             // Now add the Cleric Class
-            collection.AddTransient<ICleric, Cleric>();
+            collection.AddTransient<ICleric, ClericViewModel>();
             collection.AddTransient<IClericBackgroundTable, ClericBackgroundTable>();
             collection.AddTransient<IClericLevelTable, ClericLevelTable>();
 

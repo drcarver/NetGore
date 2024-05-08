@@ -19,7 +19,7 @@ namespace GoDungeon.Equipment.Tables
         {
             Name = nameof(EquipmentTable);
             ProperName = "Equipment Table";
-            TableType = TableTypeEnum.GoodsTable;
+            TableType = TableTypeEnum.EquipmentTable;
             Description = "Equipment including armor and weapons";
         }
 
@@ -51,12 +51,12 @@ namespace GoDungeon.Equipment.Tables
                     //Padded 5	gp 11+Dex modifier — Disadvantage 8	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Padded),
+                        Name = nameof(ArmorAndShieldEnum.Padded),
                         ProperName = "Padded",
                         Description = "Padded armor consists of quilted " +
                             "layers  of cloth and batting.",
                         EquipmentCategory = EquipmentCategoryEnum.LightArmor,
-                        Equipment = EquipmentEnum.Padded,
+                        Equipment = (int) ArmorAndShieldEnum.Padded,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         AC = 11,
                         MaxDexterity = int.MaxValue,
@@ -70,7 +70,7 @@ namespace GoDungeon.Equipment.Tables
                     //Leather 10 gp 11+Dex modifier — — 10	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Leather),
+                        Name = nameof(ArmorAndShieldEnum.Leather),
                         Description = "The breastplate and " +
                             "shoulder protectors  of this " +
                             "armor are made of leather that " +
@@ -79,7 +79,7 @@ namespace GoDungeon.Equipment.Tables
                             "armor is made of softer and more " +
                             "flexible materials.",
                         EquipmentCategory = EquipmentCategoryEnum.LightArmor,
-                        Equipment = EquipmentEnum.Leather,
+                        Equipment = (int) ArmorAndShieldEnum.Leather,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         AC = 11,
                         MaxDexterity = int.MaxValue,
@@ -93,14 +93,14 @@ namespace GoDungeon.Equipment.Tables
                     // Studded leather 45 gp 12+Dex modifier — — 13	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.StuddedLeather),
+                        Name = nameof(ArmorAndShieldEnum.StuddedLeather),
                         ProperName = "Studded leather",
                         Description = "Made from tough but " +
                             "flexible leather, studded " +
                             "leather is reinforced with " +
                             "close-set rivets or spikes.",
                         EquipmentCategory = EquipmentCategoryEnum.LightArmor,
-                        Equipment = EquipmentEnum.StuddedLeather,
+                        Equipment = (int) ArmorAndShieldEnum.StuddedLeather,
                         Cost = new EquipmentCostViewModel(45, new GoldPieceViewModel()),
                         AC = 12,
                         MaxDexterity = int.MaxValue,
@@ -114,7 +114,7 @@ namespace GoDungeon.Equipment.Tables
                     //Hide 10gp 12+Dex modifier(max 2) — — 12	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Hide),
+                        Name = nameof(ArmorAndShieldEnum.Hide),
                         Description = "This crude armor " +
                             "consists of thick furs and pelts. " +
                             "It is commonly worn by barbarian " +
@@ -123,7 +123,7 @@ namespace GoDungeon.Equipment.Tables
                             "and materials needed to create " +
                             "better armor",
                         EquipmentCategory = EquipmentCategoryEnum.MediumArmor,
-                        Equipment = EquipmentEnum.Hide,
+                        Equipment = (int) ArmorAndShieldEnum.Hide,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         AC = 12,
                         MaxDexterity = 2,
@@ -137,7 +137,7 @@ namespace GoDungeon.Equipment.Tables
                     //Chain shirt 50gp 13+Dex modifier(max 2) — — 20lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.ChainShirt),
+                        Name = nameof(ArmorAndShieldEnum.ChainShirt),
                         Description = "Made of interlocking " +
                             "metal rings, a chain shirt is " +
                             "worn between layers of clothing " +
@@ -148,7 +148,7 @@ namespace GoDungeon.Equipment.Tables
                             "another to be muffled by outer " +
                             "layers.",
                         EquipmentCategory = EquipmentCategoryEnum.MediumArmor,
-                        Equipment = EquipmentEnum.ChainShirt,
+                        Equipment = (int) ArmorAndShieldEnum.ChainShirt,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         AC = 13,
                         MaxDexterity = 2,
@@ -162,7 +162,7 @@ namespace GoDungeon.Equipment.Tables
                     //Scale mail 50	gp 14+Dex modifier(max 2) — Disadvantage 45	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.ScaleMail),
+                        Name = nameof(ArmorAndShieldEnum.ScaleMail),
                         ProperName = "Scale mail",
                         Description = "This armor consists of " +
                             "a coat and leggings (and perhaps " +
@@ -172,7 +172,7 @@ namespace GoDungeon.Equipment.Tables
                             "of a fish. The suit includes " +
                             "gauntlets.",
                         EquipmentCategory = EquipmentCategoryEnum.MediumArmor,
-                        Equipment = EquipmentEnum.ScaleMail,
+                        Equipment = (int) ArmorAndShieldEnum.ScaleMail,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         AC = 14,
                         MaxDexterity = 2,
@@ -186,7 +186,7 @@ namespace GoDungeon.Equipment.Tables
                     //Breastplate 400gp 14+Dex modifier(max 2) — — 20	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Breastplate),
+                        Name = nameof(ArmorAndShieldEnum.Breastplate),
                         Description = "This armor consists of " +
                             "a fitted metal chest piece worn " +
                             "with supple leather. Although it " +
@@ -196,7 +196,7 @@ namespace GoDungeon.Equipment.Tables
                             "vital organs while leaving the " +
                             "wearer relatively unencumbered.",
                         EquipmentCategory = EquipmentCategoryEnum.MediumArmor,
-                        Equipment = EquipmentEnum.Breastplate,
+                        Equipment = (int) ArmorAndShieldEnum.Breastplate,
                         Cost = new EquipmentCostViewModel(400, new GoldPieceViewModel()),
                         AC = 14,
                         MaxDexterity = 2,
@@ -210,7 +210,7 @@ namespace GoDungeon.Equipment.Tables
                     //Half plate 750gp 15+Dex modifier(max 2) — Disadvantage 40	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Halfplate),
+                        Name = nameof(ArmorAndShieldEnum.Halfplate),
                         ProperName = "Half plate",
                         Description = "Half plate consists of " +
                             "shaped metal plates that cover " +
@@ -219,7 +219,7 @@ namespace GoDungeon.Equipment.Tables
                             "beyond simple greaves that are " +
                             "attached with leather straps.",
                         EquipmentCategory = EquipmentCategoryEnum.MediumArmor,
-                        Equipment = EquipmentEnum.Halfplate,
+                        Equipment = (int) ArmorAndShieldEnum.Halfplate,
                         Cost = new EquipmentCostViewModel(750, new GoldPieceViewModel()),
                         AC = 15,
                         MaxDexterity = 2,
@@ -233,7 +233,7 @@ namespace GoDungeon.Equipment.Tables
                     //Ring mail 30gp 14 — Disadvantage 40	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Ringmail),
+                        Name = nameof(ArmorAndShieldEnum.Ringmail),
                         ProperName = "Ring mail",
                         Description = "This armor is leather " +
                             "armor with heavy rings sewn into " +
@@ -244,7 +244,7 @@ namespace GoDungeon.Equipment.Tables
                             "worn only by those who can’t " +
                             "afford better armor.",
                         EquipmentCategory = EquipmentCategoryEnum.HeavyArmor,
-                        Equipment = EquipmentEnum.Ringmail,
+                        Equipment = (int) ArmorAndShieldEnum.Ringmail,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
                         AC = 14,
                         MaxDexterity = null,
@@ -258,7 +258,7 @@ namespace GoDungeon.Equipment.Tables
                     //Chain mail 75gp 16 Str 13 Disadvantage 55lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Chainmail),
+                        Name = nameof(ArmorAndShieldEnum.Chainmail),
                         ProperName = "Chain mail",
                         Description = "Made of interlocking " +
                             "metal rings, chain mail includes " +
@@ -268,7 +268,7 @@ namespace GoDungeon.Equipment.Tables
                             "impact of blows. The suit includes " +
                             "gauntlets.",
                         EquipmentCategory = EquipmentCategoryEnum.HeavyArmor,
-                        Equipment = EquipmentEnum.Chainmail,
+                        Equipment = (int) ArmorAndShieldEnum.Chainmail,
                         Cost = new EquipmentCostViewModel(75, new GoldPieceViewModel()),
                         AC = 16,
                         MaxDexterity = null,
@@ -282,7 +282,7 @@ namespace GoDungeon.Equipment.Tables
                     //Splint 200gp 17 Str 15 Disadvantage 60lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Splint),
+                        Name = nameof(ArmorAndShieldEnum.Splint),
                         Description = "This armor is made of " +
                             "narrow vertical strips of metal " +
                             "riveted to a backing of leather " +
@@ -290,7 +290,7 @@ namespace GoDungeon.Equipment.Tables
                             "Flexible chain mail protects the " +
                             "joints.",
                         EquipmentCategory = EquipmentCategoryEnum.HeavyArmor,
-                        Equipment = EquipmentEnum.Splint,
+                        Equipment = (int) ArmorAndShieldEnum.Splint,
                         Cost = new EquipmentCostViewModel(200, new GoldPieceViewModel()),
                         AC = 17,
                         MaxDexterity = null,
@@ -304,7 +304,7 @@ namespace GoDungeon.Equipment.Tables
                     //Plate 1,500gp 18 Str 15 Disadvantage 65lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Plate),
+                        Name = nameof(ArmorAndShieldEnum.Plate),
                         Description = "Plate consists of " +
                             "shaped, interlocking metal plates " +
                             "to cover the entire body. A suit " +
@@ -315,7 +315,7 @@ namespace GoDungeon.Equipment.Tables
                             "straps distribute the weight over " +
                             "the body.",
                         EquipmentCategory = EquipmentCategoryEnum.HeavyArmor,
-                        Equipment = EquipmentEnum.Plate,
+                        Equipment = (int) ArmorAndShieldEnum.Plate,
                         Cost = new EquipmentCostViewModel(1500, new GoldPieceViewModel()),
                         AC = 18,
                         MaxDexterity = null,
@@ -329,9 +329,9 @@ namespace GoDungeon.Equipment.Tables
                     //Shield 10	gp +2 — — 6	lb.
                     new ArmorEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Shield),
+                        Name = nameof(ArmorAndShieldEnum.Shield),
                         EquipmentCategory = EquipmentCategoryEnum.Shields,
-                        Equipment = EquipmentEnum.Shield,
+                        Equipment = (int) ArmorAndShieldEnum.Shield,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         AC = 2,
                         MaxDexterity = null,
@@ -355,8 +355,8 @@ namespace GoDungeon.Equipment.Tables
                     //Club 1  sp 1d4  bludgeoning 2   lb.Light
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Club),
-                        Equipment = EquipmentEnum.Club,
+                        Name = nameof(WeaponEnum.Club),
+                        Equipment = (int) WeaponEnum.Club,
                         ProperName = "Club",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(1, new SilverPieceViewModel()),
@@ -371,8 +371,8 @@ namespace GoDungeon.Equipment.Tables
                     //Dagger 2	gp 1d4	piercing 1	lb. ,	light,	thrown(range  20/60)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Dagger),
-                        Equipment = EquipmentEnum.Dagger,
+                        Name = nameof(WeaponEnum.Dagger),
+                        Equipment = (int) WeaponEnum.Dagger,
                         ProperName = "Dagger",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
@@ -389,8 +389,8 @@ namespace GoDungeon.Equipment.Tables
                     //Greatclub 2	sp 1d8	bludgeoning 10	lb.Two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Greatclub),
-                        Equipment = EquipmentEnum.Greatclub,
+                        Name = nameof(WeaponEnum.Greatclub),
+                        Equipment = (int) WeaponEnum.Greatclub,
                         ProperName = "Greatclub",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(2, new SilverPieceViewModel()),
@@ -405,8 +405,8 @@ namespace GoDungeon.Equipment.Tables
                     //Handaxe 5	gp 1d6	slashing 2	lb.Light,	thrown(range  20/60)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Handaxe),
-                        Equipment = EquipmentEnum.Handaxe,
+                        Name = nameof(WeaponEnum.Handaxe),
+                        Equipment = (int) WeaponEnum.Handaxe,
                         ProperName = "Handaxe",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
@@ -423,8 +423,8 @@ namespace GoDungeon.Equipment.Tables
                     //Javelin 5	sp 1d6	piercing 2	lb.Thrown(range  30/120)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Javelin),
-                        Equipment = EquipmentEnum.Javelin,
+                        Name = nameof(WeaponEnum.Javelin),
+                        Equipment = (int) WeaponEnum.Javelin,
                         ProperName = "Javelin",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(5, new SilverPieceViewModel()),
@@ -440,8 +440,8 @@ namespace GoDungeon.Equipment.Tables
                     //Light hammer 2 gp 1d4	bludgeoning 2 lb.Light,	thrown(range  20/60)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Lighthammer),
-                        Equipment = EquipmentEnum.Lighthammer,
+                        Name = nameof(WeaponEnum.Lighthammer),
+                        Equipment = (int) WeaponEnum.Lighthammer,
                         ProperName = "Light hammer",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
@@ -458,8 +458,8 @@ namespace GoDungeon.Equipment.Tables
                     //Mace 5	gp 1d6	bludgeoning 4	lb. —
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Mace),
-                        Equipment = EquipmentEnum.Mace,
+                        Name = nameof(WeaponEnum.Mace),
+                        Equipment = (int) WeaponEnum.Mace,
                         ProperName = "Mace",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
@@ -473,8 +473,8 @@ namespace GoDungeon.Equipment.Tables
                     //Quarterstaff 2 sp 1d6	bludgeoning 4 lb.Versatile(1d8)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Quarterstaff),
-                        Equipment = EquipmentEnum.Quarterstaff,
+                        Name = nameof(WeaponEnum.Quarterstaff),
+                        Equipment = (int) WeaponEnum.Quarterstaff,
                         ProperName = "Quarterstaff",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(2, new SilverPieceViewModel()),
@@ -489,8 +489,8 @@ namespace GoDungeon.Equipment.Tables
                     //Sickle 1 gp 1d4 slashing 2 lb. Light
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Sickle),
-                        Equipment = EquipmentEnum.Sickle,
+                        Name = nameof(WeaponEnum.Sickle),
+                        Equipment = (int) WeaponEnum.Sickle,
                         ProperName = "Sickle",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
@@ -505,8 +505,8 @@ namespace GoDungeon.Equipment.Tables
                     //Spear 1 gp 1d6 piercing 3	lb.Thrown(range 20/60), versatile(1d8)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Spear),
-                        Equipment = EquipmentEnum.Spear,
+                        Name = nameof(WeaponEnum.Spear),
+                        Equipment = (int) WeaponEnum.Spear,
                         ProperName = "Spear",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
@@ -523,8 +523,8 @@ namespace GoDungeon.Equipment.Tables
                     //Crossbow, light 25 gp 1d8	piercing 5lb.Ammunition(range  80/320),	loading, two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.LightCrossbow),
-                        Equipment = EquipmentEnum.LightCrossbow,
+                        Name = nameof(WeaponEnum.LightCrossbow),
+                        Equipment = (int) WeaponEnum.LightCrossbow,
                         ProperName = "Light Crossbow",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
@@ -542,8 +542,8 @@ namespace GoDungeon.Equipment.Tables
                     //Dart 5cp 1d4	piercing 1/4lb. Finesse, thrown(range  20/60)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Dart),
-                        Equipment = EquipmentEnum.Dart,
+                        Name = nameof(WeaponEnum.Dart),
+                        Equipment = (int) WeaponEnum.Dart,
                         ProperName = "Dart",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(5, new CopperPieceViewModel()),
@@ -560,8 +560,8 @@ namespace GoDungeon.Equipment.Tables
                     //Shortbow 25gp 1d6	piercing 2lb.Ammunition (range  80/320),	two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Shortbow),
-                        Equipment = EquipmentEnum.Shortbow,
+                        Name = nameof(WeaponEnum.Shortbow),
+                        Equipment = (int) WeaponEnum.Shortbow,
                         ProperName = "Shortbow",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(25, new CopperPieceViewModel()),
@@ -578,8 +578,8 @@ namespace GoDungeon.Equipment.Tables
                     //Sling 1sp 1d4	bludgeoning — Ammunition(range  30/120)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Sling),
-                        Equipment = EquipmentEnum.Sling,
+                        Name = nameof(WeaponEnum.Sling),
+                        Equipment = (int) WeaponEnum.Sling,
                         ProperName = "Sling",
                         EquipmentCategory = EquipmentCategoryEnum.SimpleWeapon,
                         Cost = new EquipmentCostViewModel(1, new SilverPieceViewModel()),
@@ -596,8 +596,8 @@ namespace GoDungeon.Equipment.Tables
                     //Battleaxe 10gp 1d8 slashing 4lb.Versatile(1d10)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Battleaxe),
-                        Equipment = EquipmentEnum.Battleaxe,
+                        Name = nameof(WeaponEnum.Battleaxe),
+                        Equipment = (int) WeaponEnum.Battleaxe,
                         ProperName = "Battleaxe",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -612,8 +612,8 @@ namespace GoDungeon.Equipment.Tables
                     //Flail 10gp 1d8 bludgeoning 2lb. —
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Flail),
-                        Equipment = EquipmentEnum.Flail,
+                        Name = nameof(WeaponEnum.Flail),
+                        Equipment = (int) WeaponEnum.Flail,
                         ProperName = "Flail",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -627,8 +627,8 @@ namespace GoDungeon.Equipment.Tables
                     //Glaive 20gp 1d10 slashing 6lb. Heavy,	reach, two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Glaive),
-                        Equipment = EquipmentEnum.Glaive,
+                        Name = nameof(WeaponEnum.Glaive),
+                        Equipment = (int) WeaponEnum.Glaive,
                         ProperName = "Glaive",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(20, new GoldPieceViewModel()),
@@ -645,8 +645,8 @@ namespace GoDungeon.Equipment.Tables
                     //Greataxe 30gp 1d12 slashing 7lb. Heavy, two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Greataxe),
-                        Equipment = EquipmentEnum.Greataxe,
+                        Name = nameof(WeaponEnum.Greataxe),
+                        Equipment = (int) WeaponEnum.Greataxe,
                         ProperName = "Greataxe",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
@@ -662,8 +662,8 @@ namespace GoDungeon.Equipment.Tables
                     //Greatsword 50gp 2d6 slashing 6lb.Heavy, two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Greatsword),
-                        Equipment = EquipmentEnum.Greatsword,
+                        Name = nameof(WeaponEnum.Greatsword),
+                        Equipment = (int) WeaponEnum.Greatsword,
                         ProperName = "Greatsword",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
@@ -679,8 +679,8 @@ namespace GoDungeon.Equipment.Tables
                     //Halberd 20gp 1d10	slashing 6lb. Heavy, reach, two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Halberd),
-                        Equipment = EquipmentEnum.Halberd,
+                        Name = nameof(WeaponEnum.Halberd),
+                        Equipment = (int) WeaponEnum.Halberd,
                         ProperName = "Halberd",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(20, new GoldPieceViewModel()),
@@ -697,8 +697,8 @@ namespace GoDungeon.Equipment.Tables
                     //Lance 10gp 1d12 piercing 6lb.Reach, special
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Lance),
-                        Equipment = EquipmentEnum.Lance,
+                        Name = nameof(WeaponEnum.Lance),
+                        Equipment = (int) WeaponEnum.Lance,
                         ProperName = "Lance",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -719,8 +719,8 @@ namespace GoDungeon.Equipment.Tables
                     //Longsword 15gp 1d8 slashing 3lb.Versatile(1d10)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Longsword),
-                        Equipment = EquipmentEnum.Longsword,
+                        Name = nameof(WeaponEnum.Longsword),
+                        Equipment = (int) WeaponEnum.Longsword,
                         ProperName = "Longsword",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
@@ -735,8 +735,8 @@ namespace GoDungeon.Equipment.Tables
                     //Maul 10gp 2d6	bludgeoning 10lb.Heavy,	two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Maul),
-                        Equipment = EquipmentEnum.Maul,
+                        Name = nameof(WeaponEnum.Maul),
+                        Equipment = (int) WeaponEnum.Maul,
                         ProperName = "Maul",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -752,8 +752,8 @@ namespace GoDungeon.Equipment.Tables
                     //Morningstar 15gp 1d8	piercing 4lb. —
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Morningstar),
-                        Equipment = EquipmentEnum.Morningstar,
+                        Name = nameof(WeaponEnum.Morningstar),
+                        Equipment = (int) WeaponEnum.Morningstar,
                         ProperName = "Morningstar",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
@@ -767,8 +767,8 @@ namespace GoDungeon.Equipment.Tables
                     //Pike 5gp 1d10	piercing 18lb.Heavy, reach,	two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Pike),
-                        Equipment = EquipmentEnum.Pike,
+                        Name = nameof(WeaponEnum.Pike),
+                        Equipment = (int) WeaponEnum.Pike,
                         ProperName = "Pike",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
@@ -785,8 +785,8 @@ namespace GoDungeon.Equipment.Tables
                     //Rapier 25gp 1d8 piercing 2lb.Finesse
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Rapier),
-                        Equipment = EquipmentEnum.Rapier,
+                        Name = nameof(WeaponEnum.Rapier),
+                        Equipment = (int) WeaponEnum.Rapier,
                         ProperName = "Rapier",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
@@ -801,8 +801,8 @@ namespace GoDungeon.Equipment.Tables
                     //Scimitar 25gp 1d6	slashing 3lb.Finesse,light
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Scimitar),
-                        Equipment = EquipmentEnum.Scimitar,
+                        Name = nameof(WeaponEnum.Scimitar),
+                        Equipment = (int) WeaponEnum.Scimitar,
                         ProperName = "Scimitar",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
@@ -818,8 +818,8 @@ namespace GoDungeon.Equipment.Tables
                     //Shortsword 10gp 1d6 piercing 2lb.Finesse,	light
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Shortsword),
-                        Equipment = EquipmentEnum.Shortsword,
+                        Name = nameof(WeaponEnum.Shortsword),
+                        Equipment = (int) WeaponEnum.Shortsword,
                         ProperName = "Shortsword",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -835,8 +835,8 @@ namespace GoDungeon.Equipment.Tables
                     //Trident 5gp 1d6 piercing 4lb.Thrown(range  20/60), versatile(1d8)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Trident),
-                        Equipment = EquipmentEnum.Trident,
+                        Name = nameof(WeaponEnum.Trident),
+                        Equipment = (int) WeaponEnum.Trident,
                         ProperName = "Trident",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
@@ -853,8 +853,8 @@ namespace GoDungeon.Equipment.Tables
                     //War pick 5gp 1d8 piercing 2lb. —
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Warpick),
-                        Equipment = EquipmentEnum.Warpick,
+                        Name = nameof(WeaponEnum.Warpick),
+                        Equipment = (int) WeaponEnum.Warpick,
                         ProperName = "War pick",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
@@ -868,8 +868,8 @@ namespace GoDungeon.Equipment.Tables
                     //Warhammer 15gp 1d8 bludgeoning 2lb. Versatile(1d10)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Warhammer),
-                        Equipment = EquipmentEnum.Warhammer,
+                        Name = nameof(WeaponEnum.Warhammer),
+                        Equipment = (int) WeaponEnum.Warhammer,
                         ProperName = "Warhammer",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
@@ -884,8 +884,8 @@ namespace GoDungeon.Equipment.Tables
                     //Whip 2gp 1d4 slashing 3lb. Finesse, reach
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Whip),
-                        Equipment = EquipmentEnum.Whip,
+                        Name = nameof(WeaponEnum.Whip),
+                        Equipment = (int) WeaponEnum.Whip,
                         ProperName = "Whip",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
@@ -901,8 +901,8 @@ namespace GoDungeon.Equipment.Tables
                     //Blowgun 10gp 1 piercing 1lb. Ammunition(range 25/100), loading
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Blowgun),
-                        Equipment = EquipmentEnum.Blowgun,
+                        Name = nameof(WeaponEnum.Blowgun),
+                        Equipment = (int) WeaponEnum.Blowgun,
                         ProperName = "Blowgun",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
@@ -919,8 +919,8 @@ namespace GoDungeon.Equipment.Tables
                     //Crossbow, hand 75gp 1d6 piercing 3lb .Ammunition(range  30/120),	light,	loading
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.HandCrossbow),
-                        Equipment = EquipmentEnum.HandCrossbow,
+                        Name = nameof(WeaponEnum.HandCrossbow),
+                        Equipment = (int) WeaponEnum.HandCrossbow,
                         ProperName = "Hand Crossbow",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(75, new GoldPieceViewModel()),
@@ -938,8 +938,8 @@ namespace GoDungeon.Equipment.Tables
                     //Crossbow, heavy 50gp 1d10	piercing 18lb. Ammunition(range  100/400),heavy,loading,two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.HeavyCrossbow),
-                        Equipment = EquipmentEnum.HeavyCrossbow,
+                        Name = nameof(WeaponEnum.HeavyCrossbow),
+                        Equipment = (int) WeaponEnum.HeavyCrossbow,
                         ProperName = "Heavy Crossbow",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
@@ -958,8 +958,8 @@ namespace GoDungeon.Equipment.Tables
                     //Longbow 50gp 1d8 piercing 2lb.Ammunition(range  150/600),	heavy,	two-handed
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Longbow),
-                        Equipment = EquipmentEnum.Longbow,
+                        Name = nameof(WeaponEnum.Longbow),
+                        Equipment = (int) WeaponEnum.Longbow,
                         ProperName = "Longbow",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
@@ -977,8 +977,8 @@ namespace GoDungeon.Equipment.Tables
                     //Net 1gp — 3lb. Special,thrown(range  5/15)
                     new WeaponEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Net),
-                        Equipment = EquipmentEnum.Net,
+                        Name = nameof(WeaponEnum.Net),
+                        Equipment = (int) WeaponEnum.Net,
                         ProperName = "Net",
                         EquipmentCategory = EquipmentCategoryEnum.MartialWeapon,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
@@ -1015,7 +1015,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Abacus),
                         ProperName = nameof(EquipmentEnum.Abacus),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Abacus,
+                        Equipment = (int) EquipmentEnum.Abacus,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -1027,7 +1027,7 @@ namespace GoDungeon.Equipment.Tables
                     {
                         Name = nameof(EquipmentEnum.Acid),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Acid,
+                        Equipment = (int) EquipmentEnum.Acid,
                         ProperName = nameof(EquipmentEnum.Acid),
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 1,
@@ -1049,7 +1049,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Alchemistsfire),
                         ProperName = "Alchemist’s fire",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Alchemistsfire,
+                        Equipment = (int) EquipmentEnum.Alchemistsfire,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         Weight = 1,
                         Container = EquipmentEnum.Flask,
@@ -1073,7 +1073,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Arrows),
                         ProperName = nameof(EquipmentEnum.Arrows),
                         EquipmentCategory = EquipmentCategoryEnum.Ammunition,
-                        Equipment = EquipmentEnum.Arrows,
+                        Equipment = (int) EquipmentEnum.Arrows,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 1,
                         Quantity = 20
@@ -1087,7 +1087,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.BlowgunNeedles),
                         ProperName = "Blowgun needles",
                         EquipmentCategory = EquipmentCategoryEnum.Ammunition,
-                        Equipment = EquipmentEnum.BlowgunNeedles,
+                        Equipment = (int) EquipmentEnum.BlowgunNeedles,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 1,
                         Quantity = 50
@@ -1102,7 +1102,7 @@ namespace GoDungeon.Equipment.Tables
                         ProperName = "Crossbow bolts",
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         EquipmentCategory = EquipmentCategoryEnum.Ammunition,
-                        Equipment = EquipmentEnum.Crossbowbolts,
+                        Equipment = (int) EquipmentEnum.Crossbowbolts,
                         Weight = Convert.ToDecimal("1.5"),
                         Quantity = 20
                     },
@@ -1115,7 +1115,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Slingbullets),
                         ProperName = "Sling bullets",
                         EquipmentCategory = EquipmentCategoryEnum.Ammunition,
-                        Equipment = EquipmentEnum.Slingbullets,
+                        Equipment = (int) EquipmentEnum.Slingbullets,
                         Cost = new EquipmentCostViewModel(4, new CopperPieceViewModel()),
                         Weight = Convert.ToDecimal("1.5"),
                         Quantity = 20
@@ -1129,7 +1129,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Antitoxin),
                         ProperName = "Antitoxin",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Antitoxin,
+                        Equipment = (int) EquipmentEnum.Antitoxin,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         Weight = 0,
                         Container = EquipmentEnum.Vial,
@@ -1147,7 +1147,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Crystal),
                         ProperName = nameof(EquipmentEnum.Crystal),
                         EquipmentCategory = EquipmentCategoryEnum.ArcaneFocus,
-                        Equipment = EquipmentEnum.Crystal,
+                        Equipment = (int) EquipmentEnum.Crystal,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 1,
                         Description =
@@ -1167,7 +1167,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Orb),
                         ProperName = "Orb",
                         EquipmentCategory = EquipmentCategoryEnum.ArcaneFocus,
-                        Equipment = EquipmentEnum.Orb,
+                        Equipment = (int) EquipmentEnum.Orb,
                         Cost = new EquipmentCostViewModel(20, new GoldPieceViewModel()),
                         Weight = 2,
                         Description =
@@ -1187,7 +1187,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Rod),
                         ProperName = nameof(EquipmentEnum.Rod),
                         EquipmentCategory = EquipmentCategoryEnum.ArcaneFocus,
-                        Equipment = EquipmentEnum.Rod,
+                        Equipment = (int) EquipmentEnum.Rod,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 2,
                         Description =
@@ -1207,7 +1207,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Staff),
                         ProperName = nameof(EquipmentEnum.Staff),
                         EquipmentCategory = EquipmentCategoryEnum.ArcaneFocus,
-                        Equipment = EquipmentEnum.Staff,
+                        Equipment = (int) EquipmentEnum.Staff,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 4,
                         Description =
@@ -1227,7 +1227,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Wand),
                         ProperName = nameof(EquipmentEnum.Wand),
                         EquipmentCategory = EquipmentCategoryEnum.ArcaneFocus,
-                        Equipment = EquipmentEnum.Wand,
+                        Equipment = (int) EquipmentEnum.Wand,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 4,
                         Description =
@@ -1247,7 +1247,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Backpack),
                         ProperName = nameof(EquipmentEnum.Backpack),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Backpack,
+                        Equipment = (int) EquipmentEnum.Backpack,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -1260,7 +1260,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Ballbearings),
                         ProperName = "Ball bearings",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Ballbearings,
+                        Equipment = (int) EquipmentEnum.Ballbearings,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 21,
                         Quantity = 1000,
@@ -1282,7 +1282,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Barrel),
                         ProperName = nameof(EquipmentEnum.Barrel),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Barrel,
+                        Equipment = (int) EquipmentEnum.Barrel,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 70,
                     },
@@ -1295,7 +1295,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Basket),
                         ProperName = nameof(EquipmentEnum.Basket),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Basket,
+                        Equipment = (int) EquipmentEnum.Basket,
                         Cost = new EquipmentCostViewModel(2, new SilverPieceViewModel()),
                         Weight = 2,
                     },
@@ -1308,7 +1308,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Bedroll),
                         ProperName = nameof(EquipmentEnum.Bedroll),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Bedroll,
+                        Equipment = (int) EquipmentEnum.Bedroll,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 7,
                     },
@@ -1321,7 +1321,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Bell),
                         ProperName = nameof(EquipmentEnum.Bell),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Bell,
+                        Equipment = (int) EquipmentEnum.Bell,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 0,
                     },
@@ -1334,7 +1334,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Blanket),
                         ProperName = nameof(EquipmentEnum.Blanket),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Blanket,
+                        Equipment = (int) EquipmentEnum.Blanket,
                         Cost = new EquipmentCostViewModel(5, new SilverPieceViewModel()),
                         Weight = 3,
                     },
@@ -1347,7 +1347,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Blockandtackle),
                         ProperName = "Block and tackle",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Blockandtackle,
+                        Equipment = (int) EquipmentEnum.Blockandtackle,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 5,
                         Description =
@@ -1365,7 +1365,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Book),
                         ProperName = nameof(EquipmentEnum.Book),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Book,
+                        Equipment = (int) EquipmentEnum.Book,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 5,
                         Description =
@@ -1384,7 +1384,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.GlassBottle),
                         ProperName = "Glass Bottle",
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.GlassBottle,
+                        Equipment = (int) EquipmentEnum.GlassBottle,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -1397,7 +1397,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Bucket),
                         ProperName = nameof(EquipmentEnum.Bucket),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Bucket,
+                        Equipment = (int) EquipmentEnum.Bucket,
                         Cost = new EquipmentCostViewModel(5, new CopperPieceViewModel()),
                         Weight = 2,
                     },
@@ -1410,7 +1410,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Caltrops),
                         ProperName = nameof(EquipmentEnum.Caltrops),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Caltrops,
+                        Equipment = (int) EquipmentEnum.Caltrops,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 2,
                         Quantity = 20,
@@ -1434,7 +1434,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Candle),
                         ProperName = nameof(EquipmentEnum.Candle),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Candle,
+                        Equipment = (int) EquipmentEnum.Candle,
                         Cost = new EquipmentCostViewModel(1, new CopperPieceViewModel()),
                         Weight = 0,
                         Description =
@@ -1450,7 +1450,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.CrossbowboltCase),
                         ProperName = "Crossbow bolt Case",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.CrossbowboltCase,
+                        Equipment = (int) EquipmentEnum.CrossbowboltCase,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 1,
                         Description = "This wooden case can hold up to twenty crossbow bolts.",
@@ -1464,7 +1464,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.MapOrScroll),
                         ProperName = "Map or scroll Case",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.MapOrScroll,
+                        Equipment = (int) EquipmentEnum.MapOrScroll,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 1,
                         Description =
@@ -1481,7 +1481,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Chain),
                         ProperName = nameof(EquipmentEnum.Chain),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Chain,
+                        Equipment = (int) EquipmentEnum.Chain,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 10,
                         Length = new HeightViewModel(10, 0),
@@ -1498,7 +1498,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Chalk),
                         ProperName = nameof(EquipmentEnum.Chalk),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Chalk,
+                        Equipment = (int) EquipmentEnum.Chalk,
                         Cost = new EquipmentCostViewModel(1, new CopperPieceViewModel()),
                         Weight = 0,
                         Quantity = 1,
@@ -1513,7 +1513,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Chest),
                         ProperName = nameof(EquipmentEnum.Chest),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Chest,
+                        Equipment = (int) EquipmentEnum.Chest,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 25,
                     },
@@ -1526,7 +1526,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Climberskit),
                         ProperName = "Climber’s kit",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Climberskit,
+                        Equipment = (int) EquipmentEnum.Climberskit,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 12,
                         Description =
@@ -1547,7 +1547,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.CommonClothes),
                         ProperName = "Common Clothes",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.CommonClothes,
+                        Equipment = (int) EquipmentEnum.CommonClothes,
                         Cost = new EquipmentCostViewModel(5, new SilverPieceViewModel()),
                         Weight = 3,
                     },
@@ -1560,7 +1560,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.CostumeClothes),
                         ProperName = "Costume Clothes",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.CostumeClothes,
+                        Equipment = (int) EquipmentEnum.CostumeClothes,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 4,
                     },
@@ -1573,7 +1573,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.FineClothes),
                         ProperName = "Fine Clothes",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.FineClothes,
+                        Equipment = (int) EquipmentEnum.FineClothes,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
                         Weight = 6,
                     },
@@ -1586,7 +1586,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.TravelersClothes),
                         ProperName = "Traveler’s Clothes",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.TravelersClothes,
+                        Equipment = (int) EquipmentEnum.TravelersClothes,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 4,
                     },
@@ -1599,7 +1599,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.ComponentPouch),
                         ProperName = "Component Pouch",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.ComponentPouch,
+                        Equipment = (int) EquipmentEnum.ComponentPouch,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 2,
                         Description =
@@ -1619,7 +1619,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Crowbar),
                         ProperName = nameof(EquipmentEnum.Crowbar),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Crowbar,
+                        Equipment = (int) EquipmentEnum.Crowbar,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 5,
                         Description =
@@ -1636,7 +1636,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.SprigOfMistletoe),
                         ProperName = "Sprig of mistletoe",
                         EquipmentCategory = EquipmentCategoryEnum.DruidicFocus,
-                        Equipment = EquipmentEnum.SprigOfMistletoe,
+                        Equipment = (int) EquipmentEnum.SprigOfMistletoe,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 0,
                         Description =
@@ -1656,7 +1656,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Totem),
                         ProperName = nameof(EquipmentEnum.Totem),
                         EquipmentCategory = EquipmentCategoryEnum.DruidicFocus,
-                        Equipment = EquipmentEnum.Totem,
+                        Equipment = (int) EquipmentEnum.Totem,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 0,
                         Description =
@@ -1676,7 +1676,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Woodenstaff),
                         ProperName = "Wooden staff",
                         EquipmentCategory = EquipmentCategoryEnum.DruidicFocus,
-                        Equipment = EquipmentEnum.Woodenstaff,
+                        Equipment = (int) EquipmentEnum.Woodenstaff,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 4,
                         Description =
@@ -1696,7 +1696,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Yewwand),
                         ProperName = "Yew wand",
                         EquipmentCategory = EquipmentCategoryEnum.DruidicFocus,
-                        Equipment = EquipmentEnum.Yewwand,
+                        Equipment = (int) EquipmentEnum.Yewwand,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 1,
                         Description =
@@ -1716,7 +1716,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Fishingtackle),
                         ProperName = "Fishing tackle",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Fishingtackle,
+                        Equipment = (int) EquipmentEnum.Fishingtackle,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 4,
                         Description =
@@ -1734,7 +1734,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Flask),
                         ProperName = nameof(EquipmentEnum.Flask),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Flask,
+                        Equipment = (int) EquipmentEnum.Flask,
                         Cost = new EquipmentCostViewModel(2, new CopperPieceViewModel()),
                         Weight = 1,
                     },
@@ -1747,7 +1747,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Tankard),
                         ProperName = nameof(EquipmentEnum.Tankard),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Tankard,
+                        Equipment = (int) EquipmentEnum.Tankard,
                         Cost = new EquipmentCostViewModel(2, new CopperPieceViewModel()),
                         Weight = 1,
                     },
@@ -1760,7 +1760,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Grapplinghook),
                         ProperName = "Grappling hook",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Grapplinghook,
+                        Equipment = (int) EquipmentEnum.Grapplinghook,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 4,
                     },
@@ -1773,7 +1773,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Hammer),
                         ProperName = nameof(EquipmentEnum.Hammer),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Hammer,
+                        Equipment = (int) EquipmentEnum.Hammer,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 3,
                     },
@@ -1786,7 +1786,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.SledgeHammer),
                         ProperName = "Sledge Hammer",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.SledgeHammer,
+                        Equipment = (int) EquipmentEnum.SledgeHammer,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 10,
                     },
@@ -1799,7 +1799,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.HealersKit),
                         ProperName = "Healer’s kit",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.HealersKit,
+                        Equipment = (int) EquipmentEnum.HealersKit,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 3,
                         Description =
@@ -1818,7 +1818,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Amulet),
                         ProperName = nameof(EquipmentEnum.Amulet),
                         EquipmentCategory = EquipmentCategoryEnum.HolySymbol,
-                        Equipment = EquipmentEnum.Amulet,
+                        Equipment = (int) EquipmentEnum.Amulet,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 1,
                         Description =
@@ -1841,7 +1841,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Emblem),
                         ProperName = nameof(EquipmentEnum.Emblem),
                         EquipmentCategory = EquipmentCategoryEnum.HolySymbol,
-                        Equipment = EquipmentEnum.Emblem,
+                        Equipment = (int) EquipmentEnum.Emblem,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 0,
                         Description =
@@ -1864,7 +1864,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Reliquary),
                         ProperName = nameof(EquipmentEnum.Reliquary),
                         EquipmentCategory = EquipmentCategoryEnum.HolySymbol,
-                        Equipment = EquipmentEnum.Reliquary,
+                        Equipment = (int) EquipmentEnum.Reliquary,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 2,
                         Description =
@@ -1887,7 +1887,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Holywater),
                         ProperName = "Holy water",
                         EquipmentCategory = EquipmentCategoryEnum.HolySymbol,
-                        Equipment = EquipmentEnum.Holywater,
+                        Equipment = (int) EquipmentEnum.Holywater,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 1,
                         Container = EquipmentEnum.Flask,
@@ -1913,7 +1913,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Hourglass),
                         ProperName = nameof(EquipmentEnum.Hourglass),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Hourglass,
+                        Equipment = (int) EquipmentEnum.Hourglass,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 1,
                     },
@@ -1926,7 +1926,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Huntingtrap),
                         ProperName = "Hunting trap",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Huntingtrap,
+                        Equipment = (int) EquipmentEnum.Huntingtrap,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 25,
                         Description =
@@ -1955,7 +1955,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Ink),
                         ProperName = nameof(EquipmentEnum.Ink),
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Ink,
+                        Equipment = (int) EquipmentEnum.Ink,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 0,
                         Container = EquipmentEnum.Bottle1Ounce
@@ -1969,7 +1969,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Inkpen),
                         ProperName = "Ink pen",
                         EquipmentCategory = EquipmentCategoryEnum.Gear,
-                        Equipment = EquipmentEnum.Inkpen,
+                        Equipment = (int) EquipmentEnum.Inkpen,
                         Cost = new EquipmentCostViewModel(2, new CopperPieceViewModel()),
                         Weight = 0,
                     },
@@ -1982,7 +1982,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Jug),
                         ProperName = nameof(EquipmentEnum.Jug),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Jug,
+                        Equipment = (int) EquipmentEnum.Jug,
                         Cost = new EquipmentCostViewModel(2, new CopperPieceViewModel()),
                         Weight = 4,
                     },
@@ -1995,7 +1995,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Pitcher),
                         ProperName = nameof(EquipmentEnum.Pitcher),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Pitcher,
+                        Equipment = (int) EquipmentEnum.Pitcher,
                         Cost = new EquipmentCostViewModel(2, new CopperPieceViewModel()),
                         Weight = 4,
                     },
@@ -2009,10 +2009,10 @@ namespace GoDungeon.Equipment.Tables
                     //Alchemist’s supplies 50	gp 8	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.AlchemistsSupplies),
+                        Name = nameof(ToolsEnum.AlchemistsSupplies),
                         ProperName = "Alchemist’s supplies",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.AlchemistsSupplies,
+                        Equipment = (int) ToolsEnum.AlchemistsSupplies,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         Weight = 8,
                     },
@@ -2022,10 +2022,10 @@ namespace GoDungeon.Equipment.Tables
                     //Brewer’s supplies 20	gp 9	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.BrewersSupplies),
+                        Name = nameof(ToolsEnum.BrewersSupplies),
                         ProperName = "Brewer’s supplies",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.BrewersSupplies,
+                        Equipment = (int) ToolsEnum.BrewersSupplies,
                         Cost = new EquipmentCostViewModel(20, new GoldPieceViewModel()),
                         Weight = 9,
                     },
@@ -2035,10 +2035,10 @@ namespace GoDungeon.Equipment.Tables
                     //Calligrapher's supplies 10	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.CalligraphersSupplies),
+                        Name = nameof(ToolsEnum.CalligraphersSupplies),
                         ProperName = "Calligrapher's supplies",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.CalligraphersSupplies,
+                        Equipment = (int) ToolsEnum.CalligraphersSupplies,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2048,10 +2048,10 @@ namespace GoDungeon.Equipment.Tables
                     //Carpenter’s tools 8	gp 6	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.CarpentersTools),
+                        Name = nameof(ToolsEnum.CarpentersTools),
                         ProperName = "Carpenter’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.CarpentersTools,
+                        Equipment = (int) (int) ToolsEnum.CarpentersTools,
                         Cost = new EquipmentCostViewModel(8, new GoldPieceViewModel()),
                         Weight = 6,
                     },
@@ -2061,10 +2061,10 @@ namespace GoDungeon.Equipment.Tables
                     //Cartographer’s tools 15	gp 6	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.CartographersTools),
+                        Name = nameof(ToolsEnum.CartographersTools),
                         ProperName = "Cartographer’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.CartographersTools,
+                        Equipment = (int) ToolsEnum.CartographersTools,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
                         Weight = 6,
                     },
@@ -2074,10 +2074,10 @@ namespace GoDungeon.Equipment.Tables
                     //Cobbler’s tools 5	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.CobblersTools),
+                        Name = nameof(ToolsEnum.CobblersTools),
                         ProperName = "Cobbler’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.CobblersTools,
+                        Equipment = (int) ToolsEnum.CobblersTools,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2087,10 +2087,10 @@ namespace GoDungeon.Equipment.Tables
                     //Cook’s utensils 1	gp 8	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.CooksUtensils),
+                        Name = nameof(ToolsEnum.CooksUtensils),
                         ProperName = "Cook’s utensils",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.CooksUtensils,
+                        Equipment = (int) ToolsEnum.CooksUtensils,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 8,
                     },
@@ -2100,10 +2100,10 @@ namespace GoDungeon.Equipment.Tables
                     //Glassblower’s tools 30	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.GlassblowersTools),
+                        Name = nameof(ToolsEnum.GlassblowersTools),
                         ProperName = "Glassblower’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.GlassblowersTools,
+                        Equipment = (int) ToolsEnum.GlassblowersTools,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2113,10 +2113,10 @@ namespace GoDungeon.Equipment.Tables
                     //Jeweler’s tools 25	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.JewelersTools),
+                        Name = nameof(ToolsEnum.JewelersTools),
                         ProperName = "Jeweler’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.JewelersTools,
+                        Equipment = (int) ToolsEnum.JewelersTools,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2126,10 +2126,10 @@ namespace GoDungeon.Equipment.Tables
                     //Leather worker's tools 5	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.LeatherworkersTools),
+                        Name = nameof(ToolsEnum.LeatherworkersTools),
                         ProperName = "Leatherworker’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.LeatherworkersTools,
+                        Equipment = (int) ToolsEnum.LeatherworkersTools,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2139,10 +2139,10 @@ namespace GoDungeon.Equipment.Tables
                     //Mason’s tools 10	gp 8	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.MasonsTools),
+                        Name = nameof(ToolsEnum.MasonsTools),
                         ProperName = "Mason’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.MasonsTools,
+                        Equipment = (int) ToolsEnum.MasonsTools,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 8,
                     },
@@ -2152,10 +2152,10 @@ namespace GoDungeon.Equipment.Tables
                     //Painter’s supplies 10	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.PaintersSupplies),
+                        Name = nameof(ToolsEnum.PaintersSupplies),
                         ProperName = "Painter’s supplies",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.PaintersSupplies,
+                        Equipment = (int) ToolsEnum.PaintersSupplies,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2165,10 +2165,10 @@ namespace GoDungeon.Equipment.Tables
                     //Potter’s tools 10	gp 3	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.PottersTools),
+                        Name = nameof(ToolsEnum.PottersTools),
                         ProperName = "Potter’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.PottersTools,
+                        Equipment = (int) ToolsEnum.PottersTools,
                         Cost = new EquipmentCostViewModel(10, new GoldPieceViewModel()),
                         Weight = 3,
                     },
@@ -2178,10 +2178,10 @@ namespace GoDungeon.Equipment.Tables
                     //Smith’s tools 20	gp 8	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.SmithsTools),
+                        Name = nameof(ToolsEnum.SmithsTools),
                         ProperName = "Smith’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.SmithsTools,
+                        Equipment = (int) ToolsEnum.SmithsTools,
                         Cost = new EquipmentCostViewModel(20, new GoldPieceViewModel()),
                         Weight = 8,
                     },
@@ -2191,10 +2191,10 @@ namespace GoDungeon.Equipment.Tables
                     //Tinker’s tools 50	gp 10	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.TinkersTools),
+                        Name = nameof(ToolsEnum.TinkersTools),
                         ProperName = "Tinker’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.TinkersTools,
+                        Equipment = (int) ToolsEnum.TinkersTools,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         Weight = 10,
                     },
@@ -2204,10 +2204,10 @@ namespace GoDungeon.Equipment.Tables
                     //Weaver’s tools 1	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.WeaversTools),
+                        Name = nameof(ToolsEnum.WeaversTools),
                         ProperName = "Weaver’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.WeaversTools,
+                        Equipment = (int) ToolsEnum.WeaversTools,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2217,10 +2217,10 @@ namespace GoDungeon.Equipment.Tables
                     //Woodcarver’s tools 1	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.WoodcarversTools),
+                        Name = nameof(ToolsEnum.WoodcarversTools),
                         ProperName = "Woodcarver’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.WoodcarversTools,
+                        Equipment = (int) ToolsEnum.WoodcarversTools,
                         Cost = new EquipmentCostViewModel(1, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2230,10 +2230,10 @@ namespace GoDungeon.Equipment.Tables
                     //Disguise kit 25	gp 3	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.DisguiseKit),
+                        Name = nameof(ToolsEnum.DisguiseKit),
                         ProperName = "Disguise kit",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.DisguiseKit,
+                        Equipment = (int) ToolsEnum.DisguiseKit,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 3,
                     },
@@ -2243,10 +2243,10 @@ namespace GoDungeon.Equipment.Tables
                     //Forgery kit 15	gp 5	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.ForgeryKit),
+                        Name = nameof(ToolsEnum.ForgeryKit),
                         ProperName = "Forgery kit",
                         EquipmentCategory = EquipmentCategoryEnum.Artisanstools,
-                        Equipment = EquipmentEnum.ForgeryKit,
+                        Equipment = (int) ToolsEnum.ForgeryKit,
                         Cost = new EquipmentCostViewModel(15, new GoldPieceViewModel()),
                         Weight = 5,
                     },
@@ -2256,10 +2256,10 @@ namespace GoDungeon.Equipment.Tables
                     //Dice set 1	sp —
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.DiceSet),
+                        Name = nameof(ToolsEnum.DiceSet),
                         ProperName = "Dice set",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.DiceSet,
+                        Equipment = (int) ToolsEnum.DiceSet,
                         Cost = new EquipmentCostViewModel(1, new SilverPieceViewModel()),
                         Weight = 0,
                     },
@@ -2269,10 +2269,10 @@ namespace GoDungeon.Equipment.Tables
                     //Playing card set 5	sp —
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.PlayingCardSet),
+                        Name = nameof(ToolsEnum.PlayingCardSet),
                         ProperName = "Playing card set",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.PlayingCardSet,
+                        Equipment = (int) ToolsEnum.PlayingCardSet,
                         Cost = new EquipmentCostViewModel(5, new SilverPieceViewModel()),
                         Weight = 0,
                     },
@@ -2282,10 +2282,10 @@ namespace GoDungeon.Equipment.Tables
                     //Herbalism kit 5	gp 3	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.HerbalismKit),
+                        Name = nameof(ToolsEnum.HerbalismKit),
                         ProperName = "Herbalism kit",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.HerbalismKit,
+                        Equipment = (int) ToolsEnum.HerbalismKit,
                         Cost = new EquipmentCostViewModel(5, new GoldPieceViewModel()),
                         Weight = 3,
                     },
@@ -2295,10 +2295,10 @@ namespace GoDungeon.Equipment.Tables
                     //Bagpipes 30	gp 6	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Bagpipes),
-                        ProperName = nameof(EquipmentEnum.Bagpipes),
+                        Name = nameof(ToolsEnum.Bagpipes),
+                        ProperName = nameof(ToolsEnum.Bagpipes),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Bagpipes,
+                        Equipment = (int) ToolsEnum.Bagpipes,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
                         Weight = 6,
                     },
@@ -2308,10 +2308,10 @@ namespace GoDungeon.Equipment.Tables
                     //Drum 6	gp 3	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Drum),
-                        ProperName = nameof(EquipmentEnum.Drum),
+                        Name = nameof(ToolsEnum.Drum),
+                        ProperName = nameof(ToolsEnum.Drum),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Drum,
+                        Equipment = (int) ToolsEnum.Drum,
                         Cost = new EquipmentCostViewModel(6, new GoldPieceViewModel()),
                         Weight = 3,
                     },
@@ -2321,10 +2321,10 @@ namespace GoDungeon.Equipment.Tables
                     //Dulcimer 25	gp 10	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Dulcimer),
-                        ProperName = nameof(EquipmentEnum.Dulcimer),
+                        Name = nameof(ToolsEnum.Dulcimer),
+                        ProperName = nameof(ToolsEnum.Dulcimer),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Dulcimer,
+                        Equipment = (int) ToolsEnum.Dulcimer,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 10,
                     },
@@ -2334,10 +2334,10 @@ namespace GoDungeon.Equipment.Tables
                     //Flute 2	gp 1	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Flute),
-                        ProperName = nameof(EquipmentEnum.Flute),
+                        Name = nameof(ToolsEnum.Flute),
+                        ProperName = nameof(ToolsEnum.Flute),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Flute,
+                        Equipment = (int) ToolsEnum.Flute,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 1,
                     },
@@ -2347,10 +2347,10 @@ namespace GoDungeon.Equipment.Tables
                     //Lute 35	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Lute),
-                        ProperName = nameof(EquipmentEnum.Lute),
+                        Name = nameof(ToolsEnum.Lute),
+                        ProperName = nameof(ToolsEnum.Lute),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Lute,
+                        Equipment = (int) ToolsEnum.Lute,
                         Cost = new EquipmentCostViewModel(35, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2360,10 +2360,10 @@ namespace GoDungeon.Equipment.Tables
                     //Lyre 30	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Lyre),
-                        ProperName = nameof(EquipmentEnum.Lyre),
+                        Name = nameof(ToolsEnum.Lyre),
+                        ProperName = nameof(ToolsEnum.Lyre),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Lyre,
+                        Equipment = (int) ToolsEnum.Lyre,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2373,10 +2373,10 @@ namespace GoDungeon.Equipment.Tables
                     //Horn 3	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Horn),
-                        ProperName = nameof(EquipmentEnum.Horn),
+                        Name = nameof(ToolsEnum.Horn),
+                        ProperName = nameof(ToolsEnum.Horn),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Horn,
+                        Equipment = (int) ToolsEnum.Horn,
                         Cost = new EquipmentCostViewModel(3, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2386,10 +2386,10 @@ namespace GoDungeon.Equipment.Tables
                     //Pan flute 12	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.PanFlute),
+                        Name = nameof(ToolsEnum.PanFlute),
                         ProperName = "Pan flute",
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.PanFlute,
+                        Equipment = (int) ToolsEnum.PanFlute,
                         Cost = new EquipmentCostViewModel(12, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2399,10 +2399,10 @@ namespace GoDungeon.Equipment.Tables
                     //Shawm 2	gp 1	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Shawm),
-                        ProperName = nameof(EquipmentEnum.Shawm),
+                        Name = nameof(ToolsEnum.Shawm),
+                        ProperName = nameof(ToolsEnum.Shawm),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Shawm,
+                        Equipment = (int) ToolsEnum.Shawm,
                         Cost = new EquipmentCostViewModel(2, new GoldPieceViewModel()),
                         Weight = 1,
                     },
@@ -2412,10 +2412,10 @@ namespace GoDungeon.Equipment.Tables
                     //Viol 30	gp 1	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.Viol),
-                        ProperName = nameof(EquipmentEnum.Viol),
+                        Name = nameof(ToolsEnum.Viol),
+                        ProperName = nameof(ToolsEnum.Viol),
                         EquipmentCategory = EquipmentCategoryEnum.MusicalInstrument,
-                        Equipment = EquipmentEnum.Viol,
+                        Equipment = (int) ToolsEnum.Viol,
                         Cost = new EquipmentCostViewModel(30, new GoldPieceViewModel()),
                         Weight = 1,
                     },
@@ -2425,10 +2425,10 @@ namespace GoDungeon.Equipment.Tables
                     //Navigator’s tools 25	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.NavigatorsTools),
+                        Name = nameof(ToolsEnum.NavigatorsTools),
                         ProperName = "Navigator’s tools",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.NavigatorsTools,
+                        Equipment = (int) ToolsEnum.NavigatorsTools,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2438,10 +2438,10 @@ namespace GoDungeon.Equipment.Tables
                     //Poisoner’s kit 50	gp 2	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.PoisonersKit),
+                        Name = nameof(ToolsEnum.PoisonersKit),
                         ProperName = "Poisoner’s kit",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.PoisonersKit,
+                        Equipment = (int) ToolsEnum.PoisonersKit,
                         Cost = new EquipmentCostViewModel(50, new GoldPieceViewModel()),
                         Weight = 2,
                     },
@@ -2451,10 +2451,10 @@ namespace GoDungeon.Equipment.Tables
                     //Thieves’	tools 25	gp 1	lb.
                     new EquipmentTableEntryViewModel
                     {
-                        Name = nameof(EquipmentEnum.ThievesTools),
+                        Name = nameof(ToolsEnum.ThievesTools),
                         ProperName = "Thieves' Tools",
                         EquipmentCategory = EquipmentCategoryEnum.Tools,
-                        Equipment = EquipmentEnum.ThievesTools,
+                        Equipment = (int) ToolsEnum.ThievesTools,
                         Cost = new EquipmentCostViewModel(25, new GoldPieceViewModel()),
                         Weight = 1,
                     },

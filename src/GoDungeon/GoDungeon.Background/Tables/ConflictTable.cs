@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -19,11 +19,13 @@
 //
 #endregion
 
+using System;
 using System.Collections.ObjectModel;
 
 using GoDungeon.Background.Enum;
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.ViewModels;
+using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
@@ -37,14 +39,14 @@ namespace GoDungeon.Background.Tables
     /// the campaign as well as your character’s 
     /// starting class. First, consult with your GM; 
     /// If you can play any alignment in the campaign, 
-    /// roll a d20. If your campaign allows only nonevil 
+    /// roll a GoDungeon. If your campaign allows only nonevil 
     /// characters, roll a d12. If you are playing a 
     /// paladin or some other character who must be good, 
     /// roll a d6. Once you are done, proceed to 
     /// Table: Conflict Subject and to the tables and 
     /// sections subsequent to it.
     /// </summary>
-    public class ConflictTable : NamedTable, IConflictTable
+    public class ConflictTable : RandomTable, IConflictTable
     {
         /// <summary>
         /// Conflicts Table
@@ -53,12 +55,13 @@ namespace GoDungeon.Background.Tables
         {
             Name = nameof(ConflictTable);
             ProperName = "Conflicts Table";
+            DiceSides = 20;
             TableType = TableTypeEnum.ConflictTable;
-            Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a d20. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
+            Description = "Begin by rolling on Table: Conflicts. This table lists 20 conflicts, ranging from minor indiscretions to grievous sins. The type of die you roll on this table is based on the needs of the campaign as well as your character’s starting class. First, consult with your GM; If you can play any alignment in the campaign, roll a GoDungeon. If your campaign allows only nonevil characters, roll a d12. If you are playing a paladin or some other character who must be good, roll a d6";
         }
 
         //Table: Conflicts
-        //d20 Result CP
+        //GoDungeon Result CP
         //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.  1
         //2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
         //3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1
@@ -95,6 +98,7 @@ namespace GoDungeon.Background.Tables
                     //1	Minor Failure   You failed a friend, family member, or loved one who depended on you to fulfill an important task.
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(1,1),
                         Name = nameof(ConflictEnum.MinorFailure),
                         ProperName = "Minor Failure",
                         Description =
@@ -110,6 +114,7 @@ namespace GoDungeon.Background.Tables
                     // 2	Petty Crime You committed a minor crime, like vandalism, trespassing, or mischief.	1
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(2,2),
                         Name = nameof(ConflictEnum.PettyCrime),
                         ProperName = "Petty Crime",
                         Description =
@@ -124,6 +129,7 @@ namespace GoDungeon.Background.Tables
                     // 3	Told a Lie You deliberately made someone believe something that was not true to further your own goals.    1
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(3,3),
                         Name = nameof(ConflictEnum.ToldaLie),
                         ProperName = "Told a Lie",
                         Description =
@@ -138,6 +144,7 @@ namespace GoDungeon.Background.Tables
                     // 4	Broke a Promise You swore an oath or vow that was important to someone else, but you did not keep your promise. 1
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(4,4),
                         Name = nameof(ConflictEnum.BrokeaPromise),
                         ProperName = "Broke a Promise",
                         Description =
@@ -152,7 +159,9 @@ namespace GoDungeon.Background.Tables
                     // 5	Humiliation You publicly humiliated or scandalized someone with either true or slanderous information.  2
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(5,5),
                         Name = nameof(ConflictEnum.Humiliation),
+                        ProperName = nameof(ConflictEnum.Humiliation),
                         Description =
                             "You publicly humiliated or " +
                             "scandalized someone with either " +
@@ -165,7 +174,9 @@ namespace GoDungeon.Background.Tables
                     // 6	Negligence You caused someone else to suffer by your own inaction, disregard, or excessive recklessness.   2
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(6,6),
                         Name = nameof(ConflictEnum.Negligence),
+                        ProperName = nameof(ConflictEnum.Negligence),
                         Description =
                             "You caused someone else to suffer " +
                             "by your own inaction, disregard, " +
@@ -178,6 +189,7 @@ namespace GoDungeon.Background.Tables
                     // 7	Minor Theft You stole several small or inexpensive items that belonged to someone else.	2
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(7,7),
                         Name = nameof(ConflictEnum.MinorTheft),
                         ProperName = "Minor Theft",
                         Description =
@@ -192,7 +204,9 @@ namespace GoDungeon.Background.Tables
                     // 8	Seducer 
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(8,8),
                         Name = nameof(ConflictEnum.Seducer),
+                        ProperName = nameof(ConflictEnum.Seducer),
                         Description =
                             "You tempted or manipulated someone " +
                             "to act in accordance with your whim, " +
@@ -206,7 +220,9 @@ namespace GoDungeon.Background.Tables
                     // 9	Cheater You broke a rule, law, contract, or agreement for your own gain.    3
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(9,9),
                         Name = nameof(ConflictEnum.Cheater),
+                        ProperName = nameof(ConflictEnum.Cheater),
                         Description =
                             "You broke a rule, law, contract, " +
                             "or agreement for your own gain.",
@@ -218,7 +234,9 @@ namespace GoDungeon.Background.Tables
                     // 10	Betrayal 
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(10,10),
                         Name = nameof(ConflictEnum.Betrayal),
+                        ProperName = nameof(ConflictEnum.Betrayal),
                         Description = "You betrayed someone who trusted you.",
                         ConflictPoints = 4
                     },
@@ -228,6 +246,7 @@ namespace GoDungeon.Background.Tables
                     // 11	Malign Associates   
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(11,11),
                         Name = nameof(ConflictEnum.MalignAssociates),
                         ProperName = "Malign Associates",
                         Description =
@@ -242,6 +261,7 @@ namespace GoDungeon.Background.Tables
                     //  12	Destroyed a Reputation 
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(12,12),
                         Name = nameof(ConflictEnum.DestroyedaReputation),
                         ProperName = "Destroyed a Reputation",
                         Description =
@@ -256,6 +276,7 @@ namespace GoDungeon.Background.Tables
                     // 13	Major Theft 
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(13,13),
                         Name = nameof(ConflictEnum.MajorTheft),
                         ProperName = "Major Theft",
                         Description = "You stole expensive items.",
@@ -267,6 +288,7 @@ namespace GoDungeon.Background.Tables
                     // 14	Corrupted an Innocent 
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(14,14),
                         Name = nameof(ConflictEnum.CorruptedanInnocent),
                         ProperName = "Corrupted an Innocent",
                         Description =
@@ -281,6 +303,7 @@ namespace GoDungeon.Background.Tables
                     // 15	Blackmailed You used sensitive knowledge or threats to force someone’s cooperation.	6
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(15,15),
                         Name = nameof(ConflictEnum.Blackmailed),
                         ProperName = "Blackmailed",
                         Description =
@@ -295,6 +318,7 @@ namespace GoDungeon.Background.Tables
                     //16	Destruction You destroyed someone else’s property.	6
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(16,16),
                         Name = nameof(ConflictEnum.Destruction),
                         ProperName = "Destruction",
                         Description =
@@ -307,6 +331,7 @@ namespace GoDungeon.Background.Tables
                     // 17	Armed Robbery
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(17,17),
                         Name = nameof(ConflictEnum.ArmedRobbery),
                         ProperName = "Armed Robbery",
                         Description =
@@ -320,6 +345,7 @@ namespace GoDungeon.Background.Tables
                     //18	Violent Crime   
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(18,18),
                         Name = nameof(ConflictEnum.ViolentCrime),
                         ProperName = "Violent Crime",
                         Description =
@@ -332,9 +358,10 @@ namespace GoDungeon.Background.Tables
                     // 19	Murder
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(19,19),
                         Name = nameof(ConflictEnum.Murder),
                         ProperName = "Murder",
-                        Description = "Murder You killed someone.",
+                        Description = "You killed someone.",
                         ConflictPoints = 8
                     },
                     #endregion
@@ -343,6 +370,7 @@ namespace GoDungeon.Background.Tables
                     //20	Mass Murder
                     new ConflictTableEntryViewModel
                     {
+                        Range = new Range(20,20),
                         Name = nameof(ConflictEnum.MassMurder),
                         ProperName = "Mass Murder",
                         Description = "You killed several sentient beings.",

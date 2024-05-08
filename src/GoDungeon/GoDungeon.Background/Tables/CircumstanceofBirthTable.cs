@@ -6,7 +6,7 @@
 // values have the following copyright notice.
 //
 // The content is from the url:
-// https://www.d20pfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
+// https://www.GoDungeonpfsrd.com/basics-ability-scores/more-character-options/character-backgrounds/background-generator
 //
 // Pathfinder Roleplaying Game: Ultimate Campaign.
 // ©2013, Paizo Publishing, LLC;
@@ -50,7 +50,7 @@ namespace GoDungeon.Background.Tables
 
         //Table: Circumstance of Birth
         //d%	Result
-        //01–40	Lower-Class Birth   You were born among peasants or slum denizens.You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement. You gain access to the Poverty-Stricken social trait.Roll 2d20 on Table: Parents’ Profession to determine your parents’ occupation, instead of rolling d%.
+        //01–40	Lower-Class Birth   You were born among peasants or slum denizens.You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement. You gain access to the Poverty-Stricken social trait.Roll 2GoDungeon on Table: Parents’ Profession to determine your parents’ occupation, instead of rolling d%.
         //41–65	Middle-Class Birth  You were born to the middle class, which includes merchants, artisans, and tradespeople.You likely grew up in a good-sized settlement, and one of your parents is likely associated with a guild or other trade organization.As a free person, you don’t experience the bondage of serfdom or peasantry, but you also lack the privilege of the nobility.You gain access to the Artisan social trait and the Merchant social trait.
         //66–70	Noble Birth You were born to privilege among the nobility. Unless one of your parents is the regent, your family serves a higher-ranked noble but lesser nobles serve your family in turn.You gain access to the Influence social trait and the Rich Parents social trait. Roll on Table: Nobility to determine your family’s noble rank.
         //71–72	Adopted Outside Your Race   You were not raised by your birth family and grew up in a family of a different race than your own.Roll on Table: Adopted Outside Your Race.
@@ -83,7 +83,7 @@ namespace GoDungeon.Background.Tables
                 Table = new ObservableCollection<IGameTableEntry>
                 {
                     #region Lower-Class Birth
-                    //01–40	Lower-Class Birth   You were born among peasants or slum denizens.You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement. You gain access to the Poverty-Stricken social trait.Roll 2d20 on Table: Parents’ Profession to determine your parents’ occupation, instead of rolling d%.
+                    //01–40	Lower-Class Birth   You were born among peasants or slum denizens.You grew up working the land around a village or manor, practicing a rudimentary trade, or begging in a settlement. You gain access to the Poverty-Stricken social trait.Roll 2GoDungeon on Table: Parents’ Profession to determine your parents’ occupation, instead of rolling d%.
                     new BackgroundTableEntryViewModel
                     {
                         Range = new Range(01, 40),
@@ -96,7 +96,7 @@ namespace GoDungeon.Background.Tables
                             "practicing a rudimentary trade, " +
                             "or begging in a settlement. You " +
                             "gain access to the Poverty-Stricken " +
-                            "social trait. Roll 2d20 on Table: " +
+                            "social trait. Roll 2GoDungeon on Table: " +
                             "Parents’ Profession to determine " +
                             "your parents’ occupation, instead " +
                             "of rolling d%.",
