@@ -7,6 +7,7 @@ using GoDungeon.Equipment;
 using GoDungeon.Gaming;
 using GoDungeon.MagicItems;
 using GoDungeon.MAUI.Core;
+using GoDungeon.MAUI.PlayerCharacter;
 using GoDungeon.MAUI.Interfaces;
 using GoDungeon.MAUI.Tables;
 using GoDungeon.MAUI.Views;
@@ -53,7 +54,7 @@ public static class MauiProgram
 
             // Now the MAUI files
             .UseGoDungeonMAUICore()
-
+            .UseGoDungeonMAUIPlayerCharacter()
             .BuildServiceProvider();
 
         return builder.Build();

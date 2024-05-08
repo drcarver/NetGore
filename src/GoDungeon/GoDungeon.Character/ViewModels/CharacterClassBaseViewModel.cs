@@ -15,7 +15,7 @@ namespace GoDungeon.Character.ViewModels
         /// The ability score prerequisite's for the class.   
         /// </summary>
         [ObservableProperty]
-        public ObservableCollection<IClassPrerequisite> classPrerequisites = new ObservableCollection<IClassPrerequisite>();
+        private ObservableCollection<IClassPrerequisite> classPrerequisites = new ObservableCollection<IClassPrerequisite>();
 
         /// <summary>
         /// The class level
@@ -33,25 +33,25 @@ namespace GoDungeon.Character.ViewModels
         /// Armor Proficiency
         /// </summary>
         [ObservableProperty]
-        private Dictionary<EquipmentEnum, IArmorEntry> armorProficiency = new Dictionary<EquipmentEnum, IArmorEntry>();
+        private ObservableCollection<int> armorProficiency = new ObservableCollection<int>();
 
         /// <summary>
         /// Weapon Proficiency
         /// </summary>
         [ObservableProperty]
-        private Dictionary<EquipmentEnum, IWeaponEntry> weaponProficiency = new Dictionary<EquipmentEnum, IWeaponEntry>();
+        private ObservableCollection<int> weaponProficiency = new ObservableCollection<int>();
 
         /// <summary>
         /// Tools
         /// </summary>
         [ObservableProperty]
-        private Dictionary<EquipmentEnum, IEquipmentTableEntry> toolProficiency = new Dictionary<EquipmentEnum, IEquipmentTableEntry>();
+        private ObservableCollection<int> toolProficiency = new ObservableCollection<int>();
 
         /// <summary>
         /// Saving Throws
         /// </summary>
         [ObservableProperty]
-        private Dictionary<AbilityEnum, IAbilityBase> savingThrows = new Dictionary<AbilityEnum, IAbilityBase>();
+        private ObservableCollection<AbilityEnum> savingThrows = new ObservableCollection<AbilityEnum>();
 
         /// <summary>
         /// Skills
@@ -76,7 +76,7 @@ namespace GoDungeon.Character.ViewModels
         /// Level up the character with this class
         /// </summary>
         /// <param name="character">The character we are leveling</param>
-        public virtual void LevelUp(ICharacter character)
+        public virtual void LevelUp(ICharacterClass character)
         {
             if (character.Level == 0)
             {
@@ -87,7 +87,7 @@ namespace GoDungeon.Character.ViewModels
         /// <summary>
         /// Initialize the character
         /// </summary>
-        protected virtual void Initialize(ICharacter character)
+        protected virtual void Initialize(ICharacterClass character)
         {
         }
     }

@@ -105,6 +105,7 @@
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Spells\GoDungeon.Spells.csproj" />
 	  <ProjectReference Include="..\GoDungeon.MAUI.Core\GoDungeon.MAUI.Core.csproj" />
+	  <ProjectReference Include="..\GoDungeon.MAUI.PlayerCharacter\GoDungeon.MAUI.PlayerCharacter.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

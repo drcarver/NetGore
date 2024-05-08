@@ -24,7 +24,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
     /// realms below the earth, constantly at war with 
     /// giants, goblins, and other such horrors.
     /// </summary>
-    public class DwarfViewModel : CharacterRaceViewModel, IDwarf
+    public partial class DwarfViewModel : CharacterRaceViewModel, IDwarf
     {
         private ILogger? _logger;
         private readonly ILoggerFactory loggerFactory;

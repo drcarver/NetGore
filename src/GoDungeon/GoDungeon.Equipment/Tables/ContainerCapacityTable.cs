@@ -42,7 +42,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Backpack),
                         ProperName = nameof(EquipmentEnum.Backpack),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Backpack,
+                        Equipment = (int)EquipmentEnum.Backpack,
                         Description =
                             "You can also strap items, such as a bedroll " +
                             "or a coil of rope, to the outside of a " +
@@ -72,7 +72,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Barrel),
                         ProperName = nameof(EquipmentEnum.Barrel),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Barrel,
+                        Equipment = (int)EquipmentEnum.Barrel,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -98,7 +98,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Basket),
                         ProperName = nameof(EquipmentEnum.Basket),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Basket,
+                        Equipment = (int)EquipmentEnum.Basket,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -123,7 +123,7 @@ namespace GoDungeon.Equipment.Tables
                     {
                         Name = nameof(EquipmentEnum.Bottle1Ounce),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Bottle1Ounce,
+                        Equipment = (int)EquipmentEnum.Bottle1Ounce,
                         ProperName = "Bottle 1 Ounce",
                         Capacity = new ObservableCollection<ICapacity>
                         {
@@ -144,7 +144,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Bottle),
                         ProperName = nameof(EquipmentEnum.Bottle),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Bottle,
+                        Equipment = (int)EquipmentEnum.Bottle,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -164,7 +164,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Bucket),
                         ProperName = nameof(EquipmentEnum.Bucket),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Bucket,
+                        Equipment = (int)EquipmentEnum.Bucket,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -190,7 +190,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Chest),
                         ProperName = nameof(EquipmentEnum.Chest),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Chest,
+                        Equipment = (int)EquipmentEnum.Chest,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -216,7 +216,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Flask),
                         ProperName = nameof(EquipmentEnum.Flask),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Flask,
+                        Equipment = (int)EquipmentEnum.Flask,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -236,7 +236,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Tankard),
                         ProperName = nameof(EquipmentEnum.Tankard),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Tankard,
+                        Equipment = (int)EquipmentEnum.Tankard,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -256,7 +256,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Jug),
                         ProperName = nameof(EquipmentEnum.Jug),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Jug,
+                        Equipment = (int)EquipmentEnum.Jug,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -276,7 +276,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Pitcher),
                         ProperName = nameof(EquipmentEnum.Pitcher),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Pitcher,
+                        Equipment = (int)EquipmentEnum.Pitcher,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -296,7 +296,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.IronPot),
                         ProperName = "Iron Pot",
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.IronPot,
+                        Equipment = (int)EquipmentEnum.IronPot,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -316,7 +316,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Pouch),
                         ProperName = nameof(EquipmentEnum.Pouch),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Pouch,
+                        Equipment = (int)EquipmentEnum.Pouch,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -342,7 +342,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Sack),
                         ProperName = nameof(EquipmentEnum.Sack),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Sack,
+                        Equipment = (int)EquipmentEnum.Sack,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -368,7 +368,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Vial),
                         ProperName = nameof(EquipmentEnum.Vial),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Vial,
+                        Equipment = (int)EquipmentEnum.Vial,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel
@@ -388,7 +388,7 @@ namespace GoDungeon.Equipment.Tables
                         Name = nameof(EquipmentEnum.Waterskin),
                         ProperName = nameof(EquipmentEnum.Waterskin),
                         EquipmentCategory = EquipmentCategoryEnum.Container,
-                        Equipment = EquipmentEnum.Waterskin,
+                        Equipment = (int)EquipmentEnum.Waterskin,
                         Capacity = new ObservableCollection<ICapacity>
                         {
                             new CapacityViewModel

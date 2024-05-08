@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 using GoDungeon.Character.ViewModels;
@@ -17,7 +18,7 @@ namespace GoDungeon.Character.PC.Cleric
     /// their faith can mean the difference between a demon-worshiping 
     /// cultist and a lawful harbinger of her deity’s blessed faith.
     /// </summary>
-    public class Cleric : CharacterClassBaseViewModel, ICleric
+    public class ClericViewModel : CharacterClassBaseViewModel, ICleric
     {
         /// <summary>
         /// Cleric background table
@@ -33,7 +34,7 @@ namespace GoDungeon.Character.PC.Cleric
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacter character)
+        public override void LevelUp(ICharacterClass character)
         {
         }
 
@@ -55,7 +56,7 @@ namespace GoDungeon.Character.PC.Cleric
         /// <summary>
         /// Initialize the class
         /// </summary>
-        protected override void Initialize(ICharacter character)
+        protected override void Initialize(ICharacterClass character)
         {
             base.Initialize(character);
 
@@ -67,10 +68,10 @@ namespace GoDungeon.Character.PC.Cleric
             character.HitPoints = new HitPointsViewModel("1d8", character);
 
             //Saving  Throws:	Wisdom,	Charisma
-            SavingThrows = new Dictionary<AbilityEnum, IAbilityBase>
+            SavingThrows = new ObservableCollection<AbilityEnum>
             {
-                { AbilityEnum.Wisdom, character.Wisdom },
-                { AbilityEnum.Charisma, character.Charisma }
+                { AbilityEnum.Wisdom },
+                { AbilityEnum.Charisma }
             };
 
             //Armor: Light armor, medium  armor, shields
@@ -136,7 +137,7 @@ namespace GoDungeon.Character.PC.Cleric
         /// <summary>
         /// Constructor
         /// </summary>
-        public Cleric(
+        public ClericViewModel(
             ILoggerFactory loggerFactory,
             IClericBackgroundTable clericBackgroundTable,
             IClericLevelTable clericLevelTable)
@@ -149,7 +150,7 @@ namespace GoDungeon.Character.PC.Cleric
             ClericLevelTable.InitializeTable();
             ClericBackgroundTable.InitializeTable();
 
-            Name = nameof(Cleric);
+            Name = nameof(ClericViewModel);
             Description =
                 "Clerics are not merely people of religious " +
                 "faith—they are devoted servants who wield true " +

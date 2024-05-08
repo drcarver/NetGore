@@ -62,7 +62,9 @@ namespace GoDungeon.Core.ViewModels
             AbilityBonusSpellEntryViewModel? modifier = GetModifier();
             if (modifier?.Modifier == null)
             {
-                return 0;
+                return BaseAbility
+                    + RacialModifier
+                    + TemporaryModifier;
             }
             return BaseAbility
                 + RacialModifier
@@ -81,7 +83,7 @@ namespace GoDungeon.Core.ViewModels
             modifierTable.InitializeTable();
             return modifierTable.Table
                 .Cast<AbilityBonusSpellEntryViewModel>()
-                .First(t => t.Score.Start.Value >= BaseAbility + RacialModifier
+                .FirstOrDefault(t => t.Score.Start.Value >= BaseAbility + RacialModifier
                         &&  t.Score.End.Value   <= BaseAbility + RacialModifier);
         }
 

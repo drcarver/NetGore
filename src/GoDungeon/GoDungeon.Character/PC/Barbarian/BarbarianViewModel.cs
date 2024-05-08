@@ -7,12 +7,14 @@ namespace GoDungeon.Character.PC.Barbarian
 {
     public class BarbarianViewModel : CharacterClassBaseViewModel, IBarbarian
     {
+
         /// <summary>
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacter character)
+        public override void LevelUp(ICharacterClass character)
         {
+            
         }
 
         /// <summary>
@@ -32,5 +34,7 @@ namespace GoDungeon.Character.PC.Barbarian
                 "battle and ruin all who would " +
                 "stand in their way.";
         }
+
+        
     }
 }

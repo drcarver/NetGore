@@ -5,6 +5,7 @@ using GoDungeon.MAUI.Core.Interfaces;
 using GoDungeon.MAUI.Core.ViewModels;
 using GoDungeon.MAUI.Core.Views;
 using GoDungeon.MAUI.Interfaces;
+using GoDungeon.MAUI.PlayerCharacter.Views;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.Tables;
 
@@ -43,6 +44,17 @@ public partial class MainMenuTable : MenuTable, IMainMenuTable
         {
             Table =
             [
+                #region Create a Character
+                new GameNavigationEntryViewModel
+                {
+                    Name = "Create a Player Character",
+                    ProperName = "Create a Player Character",
+                    Description = "Create a Player Character for your account.",
+                    TableType = TableTypeEnum.CharacterTable,
+                    Route = nameof(CreatePlayerCharacterPage),
+                },
+                #endregion
+
                 #region Background Tables
                 new GameNavigationEntryViewModel
                 {

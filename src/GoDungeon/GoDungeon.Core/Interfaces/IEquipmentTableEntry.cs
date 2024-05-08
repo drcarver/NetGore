@@ -17,7 +17,7 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// The equipment type
         /// </summary>
-        EquipmentEnum Equipment { get; set; }
+        int Equipment { get; set; }
 
         /// <summary>
         /// The goods cost
