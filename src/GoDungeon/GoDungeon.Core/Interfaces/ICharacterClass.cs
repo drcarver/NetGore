@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+using CommunityToolkit.Mvvm.ComponentModel;
+
 using GoDungeon.Core.Enum;
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface ICharacterClass : ICharacterRace
+    public interface ICharacterClass : IBaseObject
     {
         /// <summary>
-        /// The ability score prerequisite's for the class.   
+        /// The class enum for the class
         /// </summary>
-        public ObservableCollection<IClassPrerequisite> ClassPrerequisites { get; set; }
+        public ClassEnum ClassEnum { get; set; }
 
         /// <summary>
         /// The class level
@@ -57,6 +59,13 @@ namespace GoDungeon.Core.Interfaces
         /// Level up the character with this class
         /// </summary>
         /// <param name="character">The character we are leveling</param>
+        /// <returns>True if the character can be leveled up</returns>
         public void LevelUp(ICharacterClass character);
+
+        /// <summary>
+        /// The character has the prerequisites for the class
+        /// </summary>
+        /// <returns></returns>
+        public bool HasPrerequisites(ICreature creature);
     }
 }

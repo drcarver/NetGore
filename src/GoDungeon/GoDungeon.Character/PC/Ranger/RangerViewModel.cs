@@ -26,7 +26,8 @@ namespace GoDungeon.Character.PC.Ranger
         public RangerViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(RangerViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Ranger;
+            Name = nameof(Core.Enum.ClassEnum.Ranger);
             Description =
                 "Rangers have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +

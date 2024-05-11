@@ -1,4 +1,6 @@
-﻿using GoDungeon.Character.ViewModels;
+﻿using GoDungeon.Character.Models;
+using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -26,12 +28,20 @@ namespace GoDungeon.Character.PC.Druid
         public DruidViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(DruidViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Druid;
+            Name = nameof(Core.Enum.ClassEnum.Druid);
             Description =
                 "Druids come by their primal power in various " +
                 "ways. One druid might receive her power from " +
                 "an elemental creature, and another might learn " +
                 "it from a beast or the fey.";
+
+            classPrerequisites.Add(
+                new ClassPrerequisiteModel
+                {
+                    Ability = AbilityEnum.Wisdom,
+                    Score = 13,
+                });
         }
     }
 }

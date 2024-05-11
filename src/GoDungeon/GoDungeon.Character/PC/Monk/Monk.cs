@@ -1,4 +1,6 @@
-﻿using GoDungeon.Character.ViewModels;
+﻿using GoDungeon.Character.Models;
+using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -44,7 +46,8 @@ namespace GoDungeon.Character.PC.Monk
         public Monk(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(Monk);
+            ClassEnum = Core.Enum.ClassEnum.Monk;
+            Name = nameof(Core.Enum.ClassEnum.Monk);
             Description =
                 "Monks excel at overcoming even the most daunting " +
                 "perils, striking where it’s least expected, and " +
@@ -52,6 +55,18 @@ namespace GoDungeon.Character.PC.Monk
                 "of foot and skilled in combat, monks can navigate " +
                 "any battlefield with ease, aiding allies wherever " +
                 "they are needed most.";
+            classPrerequisites.Add(
+                new ClassPrerequisiteModel
+                {
+                    Ability = AbilityEnum.Wisdom,
+                    Score = 13,
+                });
+            classPrerequisites.Add(
+                new ClassPrerequisiteModel
+                {
+                    Ability = AbilityEnum.Dexterity,
+                    Score = 13,
+                });
         }
     }
 

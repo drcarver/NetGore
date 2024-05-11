@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GoDungeon", "GoDungeon", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B8EBC409-9654-4EB6-B6D4-F3DFA423B49E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAUI", "MAUI", "{83C57C6B-DEAA-4CC4-B41F-437AECFC0CF0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Background", "GoDungeon\GoDungeon.Background\GoDungeon.Background.csproj", "{73D7B137-5E94-45BC-B22D-620995AF16E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Core", "GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj", "{577C0545-2235-41CA-A069-56256C0F401E}"
@@ -34,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI", "UI\MAUI\G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI.Core", "UI\MAUI\GoDungeon.MAUI.Core\GoDungeon.MAUI.Core.csproj", "{E5444ABE-DCA5-4AD9-97E6-0615FCFFBEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.MAUI.PlayerCharacter", "UI\MAUI\GoDungeon.MAUI.PlayerCharacter\GoDungeon.MAUI.PlayerCharacter.csproj", "{A19C0356-2F25-4CC3-BEA6-2FC467F1A5B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI.PlayerCharacter", "UI\MAUI\GoDungeon.MAUI.PlayerCharacter\GoDungeon.MAUI.PlayerCharacter.csproj", "{A19C0356-2F25-4CC3-BEA6-2FC467F1A5B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

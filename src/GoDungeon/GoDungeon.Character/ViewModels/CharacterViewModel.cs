@@ -20,25 +20,25 @@ namespace GoDungeon.Character.ViewModels
         /// Armor Proficiency
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<EquipmentEnum> armorProficiency= new ObservableCollection<EquipmentEnum>();
+        private ObservableCollection<int> armorProficiency= new ObservableCollection<int>();
 
         /// <summary>
         /// The weapon Proficiency for this class
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<EquipmentEnum> weaponProficiency = new ObservableCollection<EquipmentEnum>();
+        private ObservableCollection<int> weaponProficiency = new ObservableCollection<int>();
 
         /// <summary>
         /// Tools for the creation of the character
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<EquipmentEnum> toolProficiency = new ObservableCollection<EquipmentEnum>();
+        private ObservableCollection<int> toolProficiency = new ObservableCollection<int>();
 
         /// <summary>
         /// The inventory for the creature
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<EquipmentEnum> equipment = new ObservableCollection<EquipmentEnum>();
+        private ObservableCollection<int> equipment = new ObservableCollection<int>();
 
         /// <summary>
         /// Saving Throws

@@ -58,7 +58,7 @@ namespace GoDungeon.Core.ViewModels
                 + proficiencyModifier
                 + ClassModifier
                 + OtherModifiers
-                + Ability.Score() >= dc;
+                + Ability.Score >= dc;
         }
 
         /// <summary>

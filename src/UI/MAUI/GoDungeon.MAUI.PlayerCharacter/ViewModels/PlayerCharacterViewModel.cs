@@ -12,82 +12,72 @@ using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
+using GoDungeon.Monsters.ViewModels;
 
 using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.MAUI.PlayerCharacter.ViewModels;
 
-public partial class PlayerCharacterViewModel : BaseObjectViewModel, ICharacterRace
+public partial class PlayerCharacterViewModel : ObservableObject
 {
-
     private ILogger<PlayerCharacterViewModel> logger;
+
+    public bool Initializing { get; private set; }
 
     private IServiceProvider Services { get; }
 
+    [ObservableProperty]
+    private CharacterRaceViewModel race;
+
+    #region Alignment Table
+    [ObservableProperty]
+    private ObservableCollection<string> alignmentList = [];
+    [ObservableProperty]
+    private string selectedAlignment;
+    private IAlignmentTable AlignmentTable { get; }
+
+    /// <summary>
+    /// The race selection has changed
+    /// </summary>
+    [RelayCommand]
+    private void AlignmentSelectionChanged()
+    {
+        if (Race != null)
+        {
+            Race.Alignment = ((AlignmentTableEntryViewModel)AlignmentTable.GetEntryByName(selectedAlignment)).Alignment;
+        }
+    }
+    #endregion
+
+    #region Race List
+    [ObservableProperty]
+    private ObservableCollection<RaceEnum> validRaceList = [];
+    [ObservableProperty]
+    private RaceEnum selectedRace;
+
+    /// <summary>
+    /// The race selection has changed
+    /// </summary>
+    [RelayCommand]
+    private void RaceSelectionChanged()
+    {
+        if (!Initializing) 
+        {
+            Initialize(SelectedRace);
+        }
+    }
+    #endregion
+
+    [ObservableProperty]
+    private ClassEnum selectedClass;
+
     private ObservableCollection<ICharacterClass> fullClassList;
 
+    /// <summary>
+    /// The valid classes for the character to select
+    /// </summary>
     [ObservableProperty]
-    private int strengthScore;
-    [ObservableProperty]
-    private int intelligenceScore;
-    [ObservableProperty]
-    private int wisdomScore;
-    [ObservableProperty]
-    private int dexterityScore;
-    [ObservableProperty]
-    private int constitutionScore;
-    [ObservableProperty]
-    private int charismaScore;
-    [ObservableProperty]
-    private RaceEnum race;
-    [ObservableProperty]
-    private ObservableCollection<ClassEnum> validClasses;
-    [ObservableProperty]
-    private GenderEnum gender;
-    [ObservableProperty]
-    private RaceType raceType;
-    [ObservableProperty]
-    private ObservableCollection<RaceSubTypeEnum> raceSubType;
-    [ObservableProperty]
-    private ObservableCollection<LanguageEnum> languages;
-    [ObservableProperty]
-    private SizeEnum size;
-    [ObservableProperty]
-    private IHeight height;
-    [ObservableProperty]
-    private int weight;
-    [ObservableProperty]
-    private int age;
-    [ObservableProperty]
-    private int speed;
-    [ObservableProperty]
-    private int wealth;
-    [ObservableProperty]
-    private AlignmentEnum alignment;
-    [ObservableProperty]
-    private IArmorClass armorClass;
-    [ObservableProperty]
-    private IHitPoints hitPoints;
-    [ObservableProperty]
-    private ISavingThrow willSave;
-    [ObservableProperty]
-    private ISavingThrow fortitudeSave;
-    [ObservableProperty]
-    private ISavingThrow reflexSave;
-    [ObservableProperty]
-    private ObservableCollection<SkillEnum> skills;
-    [ObservableProperty]
-    private decimal challengeRating;
-    [ObservableProperty]
-    private int experiencePoints;
-
-    public IAbilityBase Strength { get; set; }
-    public IAbilityBase Intelligence { get; set; }
-    public IAbilityBase Wisdom { get; set; }
-    public IAbilityBase Dexterity { get; set; }
-    public IAbilityBase Constitution { get; set; }
-    public IAbilityBase Charisma { get; set; }
-
+    public ObservableCollection<ClassEnum> validClassList = [];
 
     [RelayCommand]
     private void Reroll()
@@ -95,9 +85,9 @@ public partial class PlayerCharacterViewModel : BaseObjectViewModel, ICharacterR
         Initialize();
     }
 
-    private void Initialize()
+    private void Initialize(RaceEnum raceEnum = RaceEnum.Any)
     {
-        IHumanoidRaceTable? raceTable = Services.GetService<IHumanoidRaceTable>();
+        Initializing = true;
         var dice = new Dice("1D10").Total;
         if (dice == 10)
         {
@@ -105,36 +95,26 @@ public partial class PlayerCharacterViewModel : BaseObjectViewModel, ICharacterR
         }
 
         IHumanoidRaceFactory raceFactory = Services.GetService<IHumanoidRaceFactory>();
-        var character = raceFactory.Create((RaceEnum)dice);
-
-        // Copy over the character values
-        Strength = character.Strength;
-        StrengthScore = character.Strength.Score();
-        Intelligence = character.Intelligence;
-        IntelligenceScore = character.Intelligence.Score();
-        Wisdom = character.Wisdom;
-        WisdomScore = character.Wisdom.Score();
-        Dexterity = character.Dexterity;
-        DexterityScore = character.Dexterity.Score();
-        Constitution = character.Constitution;
-        ConstitutionScore = character.Constitution.Score();
-        Charisma = character.Charisma;
-        CharismaScore = character.Charisma.Score();
-        Race = character.Race;
-
-        foreach (var pcclass in fullClassList)
+        if (raceEnum != RaceEnum.Any)
         {
-            bool classValid = false;
-            foreach (var ability in pcclass.ClassPrerequisites)
-            {
-                if (ability.AbilityAcceptable(this))
-                {
-
-                }
-            }
+            Race = (CharacterRaceViewModel)raceFactory.Create(raceEnum);
+        }
+        else
+        {
+            Race = (CharacterRaceViewModel)raceFactory.Create((RaceEnum)dice);
+            SelectedRace = (RaceEnum)dice;
         }
 
-        ValidClasses = new ObservableCollection<ClassEnum>();
+        ValidClassList.Clear();
+        foreach (var characterClass in fullClassList)
+        {
+            if (characterClass.HasPrerequisites(Race))
+            {
+                ValidClassList.Add(characterClass.ClassEnum);
+            }
+        }
+        SelectedClass = ValidClassList[new Dice($"1d{ValidClassList.Count}").Total-1];
+        Initializing = false;
     }
 
     /// <summary>
@@ -142,10 +122,24 @@ public partial class PlayerCharacterViewModel : BaseObjectViewModel, ICharacterR
     /// </summary>
     public PlayerCharacterViewModel(
         IServiceProvider services,
-        ILoggerFactory loggerFactory)
+        ILoggerFactory loggerFactory,
+        IAlignmentTable alignmentTable)
     {
         logger = loggerFactory.CreateLogger<PlayerCharacterViewModel>();
         Services = services;
+        AlignmentTable = alignmentTable;
+        alignmentTable?.InitializeTable();
+        foreach (var alignment in alignmentTable.Table.Cast<AlignmentTableEntryViewModel>())
+        {
+            AlignmentList.Add(alignment.ProperName);
+        }
+        SelectedAlignment = ((AlignmentTableEntryViewModel) alignmentTable?.GetRandomEntry()).ProperName;
+
+        // The list of races
+        for (int i = 1; i < 10; i++)
+        {
+            ValidRaceList.Add((RaceEnum)i);
+        }
 
         // The full class list
         fullClassList = new ObservableCollection<ICharacterClass>();

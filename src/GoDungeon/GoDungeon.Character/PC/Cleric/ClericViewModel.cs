@@ -2,10 +2,12 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 
+using GoDungeon.Character.Models;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
+using GoDungeon.Monsters.ViewModels;
 
 using Microsoft.Extensions.Logging;
 
@@ -56,16 +58,14 @@ namespace GoDungeon.Character.PC.Cleric
         /// <summary>
         /// Initialize the class
         /// </summary>
-        protected override void Initialize(ICharacterClass character)
+        protected void Initialize(ICharacter creature)
         {
-            base.Initialize(character);
-
             //Hit Points
             //Hit Dice:	1d8	per cleric  level
             //Hit Points at  1st Level: 8 +	your Constitution modifier
             //Hit Points at  Higher Levels: 1d8	(or 5) + your Constitution
             //  modifier per cleric level   after	1st
-            character.HitPoints = new HitPointsViewModel("1d8", character);
+            creature.HitPoints = new HitPointsViewModel("1d8", creature);
 
             //Saving  Throws:	Wisdom,	Charisma
             SavingThrows = new ObservableCollection<AbilityEnum>
@@ -85,9 +85,9 @@ namespace GoDungeon.Character.PC.Cleric
             {
                 foreach (var item in armorList)
                 {
-                    if (!character.ArmorProficiency.Contains(item.Equipment))
+                    if (!creature.ArmorProficiency.Contains((int) item.Equipment))
                     {
-                        character.ArmorProficiency.Add(item.Equipment);
+                        creature.ArmorProficiency.Add(item.Equipment);
                     }
                 }
             }
@@ -150,7 +150,8 @@ namespace GoDungeon.Character.PC.Cleric
             ClericLevelTable.InitializeTable();
             ClericBackgroundTable.InitializeTable();
 
-            Name = nameof(ClericViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Cleric;
+            Name = nameof(Core.Enum.ClassEnum.Cleric);
             Description =
                 "Clerics are not merely people of religious " +
                 "faith—they are devoted servants who wield true " +
@@ -159,6 +160,13 @@ namespace GoDungeon.Character.PC.Cleric
                 "mean the difference between a demon-worshiping " +
                 "cultist and a lawful harbinger of her deity’s " +
                 "blessed faith.";
+
+            classPrerequisites.Add(
+                new ClassPrerequisiteModel
+                {
+                    Ability = AbilityEnum.Wisdom,
+                    Score = 13,
+                });
         }
     }
 

@@ -26,7 +26,8 @@ namespace GoDungeon.Character.PC.Wizard
         public WizardViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(WizardViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Wizard;
+            Name = nameof(Core.Enum.ClassEnum.Wizard);
             Description =
                 "Wizards have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +
