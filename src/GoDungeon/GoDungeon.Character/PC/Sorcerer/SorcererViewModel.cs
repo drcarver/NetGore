@@ -26,7 +26,8 @@ namespace GoDungeon.Character.PC.Sorcerer
         public SorcererViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(Sorcerer);
+            ClassEnum = Core.Enum.ClassEnum.Sorcerer;
+            Name = nameof(Core.Enum.ClassEnum.Sorcerer);
             Description =
                 "Sorcerers have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +

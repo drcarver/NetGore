@@ -9,7 +9,7 @@ namespace GoDungeon.Core.Tables
     /// <summary>
     /// Determine your character's alignment
     /// </summary>
-    public class AlignmentTable : NamedTable, IAlignmentTable
+    public class AlignmentTable : RandomTable, IAlignmentTable
     {
         /// <summary>
         /// Alignment Table
@@ -18,6 +18,7 @@ namespace GoDungeon.Core.Tables
         {
             Name = nameof(AlignmentTable);
             ProperName = "Alignment Table";
+            DiceSides = 10;
             Description = "A typical creature in the game world has an alignment, which broadly describes its moral and personal attitudes. Alignment is a combination of two factors: one identifies morality (good, evil, or neutral), and the other describes attitudes toward society and order (lawful, chaotic, or neutral). Thus, nine distinct alignments define the possible combinations.";
             TableType = TableTypeEnum.CoreTable;
         }
@@ -38,6 +39,7 @@ namespace GoDungeon.Core.Tables
                     // LG(Lawful Good)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(1, 2),
                         Name = nameof(AlignmentEnum.LawfulGood),
                         ProperName = "Lawful good (LG)",
                         Alignment = AlignmentEnum.LawfulGood,
@@ -50,6 +52,7 @@ namespace GoDungeon.Core.Tables
                     // NG(Neutral Good)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(3, 3),
                         Name = nameof(AlignmentEnum.NeutralGood),
                         ProperName = "Neutral good (NG) ",
                         Alignment = AlignmentEnum.NeutralGood,
@@ -62,6 +65,7 @@ namespace GoDungeon.Core.Tables
                     // CG(Chaotic Good)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(4, 4),
                         Name = nameof(AlignmentEnum.ChaoticGood),
                         ProperName = "Chaotic good (CG)",
                         Alignment = AlignmentEnum.ChaoticGood,
@@ -74,6 +78,7 @@ namespace GoDungeon.Core.Tables
                     // LN(Lawful Neutral)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(5, 5),
                         Name = nameof(AlignmentEnum.LawfulNeutral),
                         ProperName = "Lawful neutral (LN)",
                         Alignment = AlignmentEnum.LawfulNeutral,
@@ -86,6 +91,7 @@ namespace GoDungeon.Core.Tables
                     // N(Neutral)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(6, 6),
                         Name = nameof(AlignmentEnum.Neutral),
                         ProperName = "Neutral (N)",
                         Alignment = AlignmentEnum.Neutral,
@@ -98,6 +104,7 @@ namespace GoDungeon.Core.Tables
                     // CN(Chaotic Neutral)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(7, 7),
                         Name = nameof(AlignmentEnum.ChaoticNeutral),
                         ProperName = "Chaotic neutral (CN)",
                         Alignment = AlignmentEnum.ChaoticNeutral,
@@ -110,6 +117,7 @@ namespace GoDungeon.Core.Tables
                     // LE(Lawful Evil)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(8, 8),
                         Name = nameof(AlignmentEnum.LawfulEvil),
                         ProperName = "Lawful evil (LE)",
                         Alignment = AlignmentEnum.LawfulEvil,
@@ -122,6 +130,7 @@ namespace GoDungeon.Core.Tables
                     // NE(Neutral Evil)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(9, 9),
                         Name = nameof(AlignmentEnum.NeutralEvil),
                         ProperName = "Neutral evil (NE)",
                         Alignment = AlignmentEnum.NeutralEvil,
@@ -134,6 +143,7 @@ namespace GoDungeon.Core.Tables
                     // CE(Chaotic Evil)
                     new AlignmentTableEntryViewModel
                     {
+                        Range = new System.Range(10, 10),
                         Name = nameof(AlignmentEnum.ChaoticEvil),
                         ProperName = "Chaotic evil (CE)",
                         Alignment = AlignmentEnum.ChaoticEvil,

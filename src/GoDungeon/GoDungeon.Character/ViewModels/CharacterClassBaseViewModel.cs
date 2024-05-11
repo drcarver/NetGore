@@ -5,18 +5,24 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.Character.ViewModels
 {
-    public partial class CharacterClassBaseViewModel : CharacterRaceViewModel, ICharacterClass
+    public partial class CharacterClassBaseViewModel : BaseObjectViewModel, ICharacterClass
     {
         /// <summary>
         /// The ability score prerequisite's for the class.   
         /// </summary>
-        [ObservableProperty]
-        private ObservableCollection<IClassPrerequisite> classPrerequisites = new ObservableCollection<IClassPrerequisite>();
+        protected List<IClassPrerequisite> classPrerequisites = new List<IClassPrerequisite>();
 
+        /// <summary>
+        /// The class enum for the class
+        /// </summary>
+        [ObservableProperty]
+        private ClassEnum classEnum;
+        
         /// <summary>
         /// The class level
         /// </summary>
@@ -78,7 +84,7 @@ namespace GoDungeon.Character.ViewModels
         /// <param name="character">The character we are leveling</param>
         public virtual void LevelUp(ICharacterClass character)
         {
-            if (character.Level == 0)
+             if (character.Level == 0)
             {
                 Initialize(character);
             }
@@ -89,6 +95,22 @@ namespace GoDungeon.Character.ViewModels
         /// </summary>
         protected virtual void Initialize(ICharacterClass character)
         {
+        }
+
+        /// <summary>
+        /// Returns true if the character has the prerequisites for the class
+        /// </summary>
+        /// <returns></returns>
+        public bool HasPrerequisites(ICreature character)
+        {
+            foreach (var prerequisite in classPrerequisites)
+            {
+                if (!prerequisite.AbilityAcceptable(character))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

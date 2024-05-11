@@ -20,6 +20,7 @@ namespace GoDungeon.Core.ViewModels
         /// The base ability from the total of dice roll
         /// </summary>
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(Score))]
         private int baseAbility;
 
         /// <summary>
@@ -48,49 +49,27 @@ namespace GoDungeon.Core.ViewModels
         private int temporaryModifier = 0;
 
         /// <summary>
-        /// The reason for the modifier
-        /// </summary>
-        [ObservableProperty]
-        private string modifierDescription = string.Empty;
-
-        /// <summary>
-        /// The ability scores with all modifiers
+        /// The computed ability score
         /// </summary>
         /// <returns>The current ability score with all modifiers</returns>
-        public int Score()
+        public int Score
         {
-            AbilityBonusSpellEntryViewModel? modifier = GetModifier();
-            if (modifier?.Modifier == null)
-            {
+            get { 
                 return BaseAbility
                     + RacialModifier
                     + TemporaryModifier;
-            }
-            return BaseAbility
-                + RacialModifier
-                + modifier.Modifier
-                + TemporaryModifier;
+            } 
         }
 
         /// <summary>
-        /// Get the modifier for this ability score from
-        /// the ability modifier table
+        /// The modifier table
         /// </summary>
-        /// <returns>The modifier for this score</returns>
-        public AbilityBonusSpellEntryViewModel? GetModifier()
-        {
-            var modifierTable = new SpellAbilityModifierTable();
-            modifierTable.InitializeTable();
-            return modifierTable.Table
-                .Cast<AbilityBonusSpellEntryViewModel>()
-                .FirstOrDefault(t => t.Score.Start.Value >= BaseAbility + RacialModifier
-                        &&  t.Score.End.Value   <= BaseAbility + RacialModifier);
-        }
+        private SpellAbilityModifierTable ModifierTable { get; }
 
         /// <summary>
         /// Return the Ability as a string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The ability as a string</returns>
         public override string ToString()
         {
             var retval = Abbreviation + " ";
@@ -102,8 +81,7 @@ namespace GoDungeon.Core.ViewModels
             retval += $"BaseAbility({BaseAbility}) + ";
             retval += $"RacialModifier({RacialModifier}) + ";
             retval += $"TemporaryModifier({TemporaryModifier}) = ";
-            retval += $"AbilityModifier({GetModifier()?.Modifier}) = ";
-            retval += $" Total({Score()})";
+            retval += $" Total({Score})";
             return retval;
         }
 
@@ -115,12 +93,18 @@ namespace GoDungeon.Core.ViewModels
         {
             Creature = creature;
             var dice = new Dice("4d6");
-            Rolls = new int[3];
-            for (int i = 0; i <= 2; i++)
+            do
             {
-                Rolls[i] = dice.Rolls[i];
-            }
-            BaseAbility = Rolls.Sum();
+                dice.RollDice("4d6");
+                Rolls = new int[3];
+                for (int i = 0; i < Rolls.Length; i++)
+                {
+                    Rolls[i] = dice.Rolls[i];
+                }
+                BaseAbility = Rolls.Sum();
+            } while (BaseAbility <= 6);
+            ModifierTable = new SpellAbilityModifierTable();
+            ModifierTable.InitializeTable();
         }
 
         /// <summary>

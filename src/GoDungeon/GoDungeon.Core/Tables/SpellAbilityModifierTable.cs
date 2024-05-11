@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -21,6 +22,42 @@ namespace GoDungeon.Core.Tables
             ProperName = "Ability Modifiers and Bonus Spells Table";
             Description = "Ability Modifiers and Bonus Spells shows the modifier for each score. The modifier is the number you apply to the die roll when your character tries to do something related to that ability. You also use the modifier with some numbers that aren’t die rolls. A positive modifier is called a bonus, and a negative modifier is called a penalty. The table also shows bonus spells, which you’ll need to know about if your character is a spellcaster.";
             TableType = TableTypeEnum.CharacterTable;
+        }
+
+        /// <summary>
+        /// Get the modifier for the given ability score
+        /// </summary>
+        /// <param name="number">The ability score</param>
+        /// <returns>The modifier for the ability score</returns>
+        public int GetModifierByScore(int number)
+        {
+            var te = Table.Cast<AbilityBonusSpellEntryViewModel>()
+                .First(t =>
+                    t.Score.Start.Value <= number
+                        && t.Score.End.Value >= number);
+            return te.Modifier;
+        }
+
+        /// <summary>
+        /// Get the bonus spells for the given ability score
+        /// </summary>
+        /// <param name="number">The ability score</param>
+        /// <returns>The bonus spells for the ability score</returns>
+        public int[]? GetSpellBonusByScore(int number)
+        {
+            if (number <= 0 || number > 31)
+            {
+                return null;
+            }
+            if (Table != null && Table.Any())
+            {
+                var te = Table.Cast<AbilityBonusSpellEntryViewModel>()
+                .First(t =>
+                    t.Score.Start.Value <= number
+                        && t.Score.End.Value >= number);
+                return te.BonusSpells;
+            }
+            return null;
         }
 
         //Table: Ability Modifiers and Bonus Spells
@@ -59,36 +96,35 @@ namespace GoDungeon.Core.Tables
                     {
                         Score = new Range(1, 1),
                         Modifier = -5,
-                        BonusSpells = null,
-
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //2–3	-4	Can’t cast spells tied to this ability
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(2, 3),
                         Modifier = -4,
-                        BonusSpells = null,
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //4–5	-3	Can’t cast spells tied to this ability
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(4, 5),
                         Modifier = -3,
-                        BonusSpells = null,
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //6–7	-2	Can’t cast spells tied to this ability
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(6, 7),
                         Modifier = -2,
-                        BonusSpells = null,
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //8–9	-1	Can’t cast spells tied to this ability
                     new AbilityBonusSpellEntryViewModel
                     {
                         Score = new Range(8, 9),
                         Modifier = -1,
-                        BonusSpells = null,
+                        BonusSpells = new int[] { 0,0,0,0,0,0,0,0,0,0 },
                     },
                     //10–11	+0	—	—	—	—	—	—	—	—	—	—
                     new AbilityBonusSpellEntryViewModel

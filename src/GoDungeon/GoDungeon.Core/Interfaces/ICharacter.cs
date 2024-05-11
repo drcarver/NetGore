@@ -15,17 +15,17 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// Armor Proficiency
         /// </summary>
-        ObservableCollection<EquipmentEnum> ArmorProficiency { get; }
+        ObservableCollection<int> ArmorProficiency { get; }
 
         /// <summary>
         /// The weapon Proficiency for this class
         /// </summary>
-        ObservableCollection<EquipmentEnum> WeaponProficiency { get; }
+        ObservableCollection<int> WeaponProficiency { get; }
 
         /// <summary>
         /// Tools for the creation of the character
         /// </summary>
-        ObservableCollection<EquipmentEnum> ToolProficiency { get; }
+        ObservableCollection<int> ToolProficiency { get; }
 
         /// <summary>
         /// The inventory for the creature

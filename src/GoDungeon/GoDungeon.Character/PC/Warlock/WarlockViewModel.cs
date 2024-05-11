@@ -26,7 +26,8 @@ namespace GoDungeon.Character.PC.Warlock
         public WarlockViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(WarlockViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Warlock;
+            Name = nameof(Core.Enum.ClassEnum.Warlock);
             Description =
                 "Warlocks have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +

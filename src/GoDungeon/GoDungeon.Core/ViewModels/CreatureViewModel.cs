@@ -240,25 +240,25 @@ namespace GoDungeon.Core.ViewModels
             switch (Size)
             {
                 case SizeEnum.Gargantuan:
-                    return Strength.Score() * (multiplier * 16);
+                    return Strength.Score * (multiplier * 16);
                 case SizeEnum.Colossal:
-                    return Strength.Score() * (multiplier * 8);
+                    return Strength.Score * (multiplier * 8);
                 case SizeEnum.Huge:
-                    return Strength.Score() * (multiplier * 4);
+                    return Strength.Score * (multiplier * 4);
                 case SizeEnum.Large:
-                    return Strength.Score() * (multiplier * 2);
+                    return Strength.Score * (multiplier * 2);
                 case SizeEnum.Medium:
-                    return Strength.Score() * multiplier;
+                    return Strength.Score * multiplier;
                 case SizeEnum.Small:
-                    return Strength.Score() * (multiplier / 2);
+                    return Strength.Score * (multiplier / 2);
                 case SizeEnum.Tiny:
-                    return Strength.Score() * (multiplier / 4);
+                    return Strength.Score * (multiplier / 4);
                 case SizeEnum.Diminutive:
-                    return Strength.Score() * (multiplier / 8);
+                    return Strength.Score * (multiplier / 8);
                 case SizeEnum.Fine:
-                    return Strength.Score() * (multiplier / 16);
+                    return Strength.Score * (multiplier / 16);
             }
-            return Strength.Score() * multiplier;
+            return Strength.Score * multiplier;
         }
         #endregion
 

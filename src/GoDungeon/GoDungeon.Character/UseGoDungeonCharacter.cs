@@ -8,6 +8,7 @@ using GoDungeon.Character.PC.Barbarian;
 using GoDungeon.Character.PC.Bard;
 using GoDungeon.Character.PC.Cleric;
 using GoDungeon.Character.PC.Druid;
+using GoDungeon.Character.PC.Fighter;
 using GoDungeon.Character.Tables;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Interfaces;
@@ -64,6 +65,11 @@ namespace GoDungeon.Character
             collection.AddTransient<IDruid, DruidViewModel>();
             collection.AddTransient<IDruidBackgroundTable, DruidBackgroundTable>();
             collection.AddTransient<IDruidLevelTable, DruidLevelTable>();
+
+            // Now add the Fighter Class
+            collection.AddTransient<IFighter, FighterViewModel>();
+            collection.AddTransient<IFighterBackgroundTable, FighterBackgroundTable>();
+            collection.AddTransient<IFighterLevelTable, FighterLevelTable>();
 
             return collection;
         }

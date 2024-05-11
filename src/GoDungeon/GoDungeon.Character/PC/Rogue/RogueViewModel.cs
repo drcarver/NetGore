@@ -21,7 +21,8 @@ namespace GoDungeon.Character.PC.Rogue
         public RogueViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(RogueViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Rogue;
+            Name = nameof(Core.Enum.ClassEnum.Rogue);
             Description =
                 "Life is an endless adventure for those who live by " +
                 "their wits.Ever just one step ahead of danger, rogues " +

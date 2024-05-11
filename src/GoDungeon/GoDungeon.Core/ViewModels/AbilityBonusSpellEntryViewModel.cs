@@ -16,6 +16,6 @@ namespace GoDungeon.Core.ViewModels
         private int modifier;
 
         [ObservableProperty]
-        int[]? bonusSpells;
+        int[] bonusSpells;
     }
 }

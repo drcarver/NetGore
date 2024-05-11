@@ -1,6 +1,6 @@
 ﻿namespace GoDungeon.Core.Interfaces
 {
-    public interface IAbilityBase
+    public interface IAbilityBase : IBaseObject
     {
         /// <summary>
         /// The base ability from the total of dice roll
@@ -28,14 +28,9 @@
         int TemporaryModifier { get; set; }
 
         /// <summary>
-        /// The reason for the modifier
-        /// </summary>
-        public string ModifierDescription { get; }
-
-        /// <summary>
         /// The ability scores with all modifiers
         /// </summary>
         /// <returns>The current ability score with all modifiers</returns>
-        int Score();
+        int Score { get; }
     }
 }

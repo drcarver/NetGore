@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using GoDungeon.Character.Models;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -15,9 +16,9 @@ namespace GoDungeon.Character.PC.Bard
     /// </summary>
     public class BardViewModel : CharacterClassBaseViewModel, IBard
     {
-        private List<ClassPrerequisiteViewModel> classPrerequisites = new List<ClassPrerequisiteViewModel>
+        private List<ClassPrerequisiteModel> classPrerequisites = new List<ClassPrerequisiteModel>
         {
-            new ClassPrerequisiteViewModel { Ability = AbilityEnum.Charisma, Score = 13}
+            new ClassPrerequisiteModel { Ability = AbilityEnum.Charisma, Score = 13}
         };
 
         /// <summary>
@@ -26,14 +27,6 @@ namespace GoDungeon.Character.PC.Bard
         /// <param name="character"></param>
         public override void LevelUp(ICharacterClass character)
         {
-            foreach (var classPrerequisite in classPrerequisites)
-            {
-                if (!classPrerequisite.AbilityAcceptable(character))
-                {
-                    return;
-                }
-            }
-
             base.LevelUp(character);
         }
 
@@ -43,11 +36,18 @@ namespace GoDungeon.Character.PC.Bard
         public BardViewModel(
             ILoggerFactory loggerFactory)
         {
-            Name = nameof(BardViewModel);
+            ClassEnum = Core.Enum.ClassEnum.Bard;
+            Name = nameof(Core.Enum.ClassEnum.Bard);
             Description =
                 "Bards have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +
                 "on a smattering of other skills.";
+            classPrerequisites.Add(
+                new ClassPrerequisiteModel
+                {
+                    Ability = AbilityEnum.Charisma,
+                    Score = 13,
+                });
             LevelUp(this);
         }
     }

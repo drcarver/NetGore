@@ -8,7 +8,7 @@ using GoDungeon.Monsters.ViewModels.Humanoid;
 
 namespace GoDungeon.Monsters.ViewModels
 {
-    public class CharacterRaceViewModel : HumanoidRaceViewModel, ICharacterRace
+    public partial class CharacterRaceViewModel : HumanoidRaceViewModel, ICharacterRace
     {
         /// <summary>
         /// The creatures homeland

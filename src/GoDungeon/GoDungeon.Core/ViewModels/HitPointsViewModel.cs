@@ -78,7 +78,7 @@ namespace GoDungeon.Core.ViewModels
                 {
                     hitPoints += hitPoint;
                 }
-                hitPoints += LevelDice.Count() * Constitution.Score();
+                hitPoints += LevelDice.Count() * Constitution.Score;
             }
             else
             {
