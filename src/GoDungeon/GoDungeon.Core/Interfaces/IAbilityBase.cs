@@ -1,4 +1,6 @@
-﻿namespace GoDungeon.Core.Interfaces
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace GoDungeon.Core.Interfaces
 {
     public interface IAbilityBase : IBaseObject
     {
@@ -26,6 +28,11 @@
         /// Temporary modifiers
         /// </summary>
         int TemporaryModifier { get; set; }
+
+        /// <summary>
+        /// The bonus for the Ability
+        /// </summary>
+        int AbilityBonus {  get; set; }
 
         /// <summary>
         /// The ability scores with all modifiers

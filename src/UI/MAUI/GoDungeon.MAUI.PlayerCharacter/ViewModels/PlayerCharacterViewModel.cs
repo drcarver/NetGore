@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -10,6 +13,7 @@ using GoDungeon.Character.PC.Druid;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.ViewModels;
@@ -22,7 +26,9 @@ public partial class PlayerCharacterViewModel : ObservableObject
 {
     private ILogger<PlayerCharacterViewModel> logger;
 
-    public bool Initializing { get; private set; }
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(SelectedClass))]
+    public bool initializing;
 
     private IServiceProvider Services { get; }
 
@@ -68,6 +74,12 @@ public partial class PlayerCharacterViewModel : ObservableObject
     }
     #endregion
 
+    [RelayCommand]
+    private async Task DisplayWebPage(string uri)
+    {
+        await Launcher.OpenAsync(uri);    
+    }
+
     [ObservableProperty]
     private ClassEnum selectedClass;
 
@@ -79,19 +91,26 @@ public partial class PlayerCharacterViewModel : ObservableObject
     [ObservableProperty]
     public ObservableCollection<ClassEnum> validClassList = [];
 
+    /// <summary>
+    /// Re-roll the character
+    /// </summary>
     [RelayCommand]
-    private void Reroll()
+    private void ReRoll()
     {
         Initialize();
     }
 
+    /// <summary>
+    /// Initialize a new character race and class
+    /// </summary>
+    /// <param name="raceEnum"></param>
     private void Initialize(RaceEnum raceEnum = RaceEnum.Any)
     {
         Initializing = true;
         var dice = new Dice("1D10").Total;
         if (dice == 10)
         {
-            dice = (int) RaceEnum.Human;
+            dice = (int)RaceEnum.Human;
         }
 
         IHumanoidRaceFactory raceFactory = Services.GetService<IHumanoidRaceFactory>();
@@ -105,6 +124,8 @@ public partial class PlayerCharacterViewModel : ObservableObject
             SelectedRace = (RaceEnum)dice;
         }
 
+        SelectedAlignment = ((AlignmentTableEntryViewModel)AlignmentTable?.GetRandomEntry()).ProperName;
+
         ValidClassList.Clear();
         foreach (var characterClass in fullClassList)
         {
@@ -113,8 +134,17 @@ public partial class PlayerCharacterViewModel : ObservableObject
                 ValidClassList.Add(characterClass.ClassEnum);
             }
         }
-        SelectedClass = ValidClassList[new Dice($"1d{ValidClassList.Count}").Total-1];
-        Initializing = false;
+        var classIndex = new Dice($"1d{ValidClassList.Count}").Total - 1;
+        if (classIndex < 0 || classIndex > ValidClassList.Count - 1)
+        {
+            classIndex = 0;
+        }
+        SelectedClass = ValidClassList[classIndex];
+        if (!ValidClassList.Any())
+        {
+            Initializing = false;
+            Initialize();
+        }
     }
 
     /// <summary>
@@ -128,12 +158,11 @@ public partial class PlayerCharacterViewModel : ObservableObject
         logger = loggerFactory.CreateLogger<PlayerCharacterViewModel>();
         Services = services;
         AlignmentTable = alignmentTable;
-        alignmentTable?.InitializeTable();
+        AlignmentTable?.InitializeTable();
         foreach (var alignment in alignmentTable.Table.Cast<AlignmentTableEntryViewModel>())
         {
             AlignmentList.Add(alignment.ProperName);
         }
-        SelectedAlignment = ((AlignmentTableEntryViewModel) alignmentTable?.GetRandomEntry()).ProperName;
 
         // The list of races
         for (int i = 1; i < 10; i++)

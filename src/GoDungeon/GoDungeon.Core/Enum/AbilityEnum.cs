@@ -1,6 +1,6 @@
 ﻿namespace GoDungeon.Core.Enum
 {
-    public enum AbilityEnum
+    public enum AbilityEnum : int
     {
         Strength,
         Constitution,

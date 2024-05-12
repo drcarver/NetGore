@@ -20,10 +20,10 @@ namespace GoDungeon.Core.ViewModels
         private IAbilityBase ability;
 
         /// <summary>
-        /// Any class modifiers
+        /// True if specific to the class
         /// </summary>
         [ObservableProperty]
-        private int classModifier = 0;
+        private bool isClassSavingThrow;
 
         /// <summary>
         /// Any Other modifiers
@@ -56,7 +56,6 @@ namespace GoDungeon.Core.ViewModels
             return roll
                 + RacialModifier
                 + proficiencyModifier
-                + ClassModifier
                 + OtherModifiers
                 + Ability.Score >= dc;
         }

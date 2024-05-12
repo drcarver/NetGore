@@ -5,9 +5,9 @@ namespace GoDungeon.Core.Interfaces
     public interface ISavingThrow : IBaseObject
     {
         /// <summary>
-        /// Any class modifiers
+        /// True if specific to the class
         /// </summary>
-        int ClassModifier { get; set; }
+        bool IsClassSavingThrow { get; set; }
 
         /// <summary>
         /// Any Other modifiers

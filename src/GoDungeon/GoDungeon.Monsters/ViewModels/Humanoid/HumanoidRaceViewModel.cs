@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core.Interfaces;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Monsters.ViewModels.Humanoid

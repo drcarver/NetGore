@@ -49,6 +49,12 @@ namespace GoDungeon.Core.ViewModels
         private int temporaryModifier = 0;
 
         /// <summary>
+        /// The bonus for the Ability
+        /// </summary>
+        [ObservableProperty]
+        private int abilityBonus;
+
+        /// <summary>
         /// The computed ability score
         /// </summary>
         /// <returns>The current ability score with all modifiers</returns>
@@ -105,6 +111,7 @@ namespace GoDungeon.Core.ViewModels
             } while (BaseAbility <= 6);
             ModifierTable = new SpellAbilityModifierTable();
             ModifierTable.InitializeTable();
+            AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
         }
 
         /// <summary>

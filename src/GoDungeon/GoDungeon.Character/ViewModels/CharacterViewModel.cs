@@ -5,10 +5,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
+using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.Character.ViewModels
 {
-    public partial class CharacterViewModel : CreatureViewModel, ICharacter
+    public partial class CharacterViewModel : CharacterRaceViewModel, ICharacter
     {
         /// <summary>
         /// The character class
@@ -51,11 +52,5 @@ namespace GoDungeon.Character.ViewModels
         /// </summary>
         [ObservableProperty]
         private ObservableCollection<IInventoryEntry> inventory = new ObservableCollection<IInventoryEntry>();
-
-        /// <summary>
-        /// The character level
-        /// </summary>
-        [ObservableProperty]
-        private int level;
     }
 }

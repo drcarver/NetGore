@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
+using CommunityToolkit.Mvvm.ComponentModel;
+
 using GoDungeon.Background.Enum;
 using GoDungeon.Background.Interfaces;
 using GoDungeon.Core.Enum;
@@ -11,34 +13,46 @@ namespace GoDungeon.Monsters.ViewModels
     public partial class CharacterRaceViewModel : HumanoidRaceViewModel, ICharacterRace
     {
         /// <summary>
+        /// The level of the character
+        /// </summary>
+        [ObservableProperty]
+        private int level;
+
+        /// <summary>
         /// The creatures homeland
         /// </summary>
-        public IBackgroundTableEntry? Homeland { get; private set; }
+        [ObservableProperty]
+        private IBackgroundTableEntry? homeland;
 
         /// <summary>
         /// The traits for this creature
         /// </summary>
-        public ObservableCollection<TraitEnum> Traits { get; private set; } = new ObservableCollection<TraitEnum>();
+        [ObservableProperty]
+        private ObservableCollection<TraitEnum> traits = new ObservableCollection<TraitEnum>();
 
         /// <summary>
         /// The creature's parents
         /// </summary>
-        public IBackgroundTableEntry? Parents { get; private set; }
+        [ObservableProperty]
+        private IBackgroundTableEntry? parents;
 
         /// <summary>
         /// The creature's circumstance of birth
         /// </summary>
-        public IBackgroundTableEntry? CircumstanceOfBirth { get; private set; }
+        [ObservableProperty]
+        private IBackgroundTableEntry? circumstanceOfBirth;
 
         /// <summary>
         /// THe creature's parents profession
         /// </summary>
-        public IBackgroundTableEntry? ParentProfession { get; private set; }
+        [ObservableProperty]
+        private IBackgroundTableEntry? parentProfession;
 
         /// <summary>
         /// Adopted parents if needed
         /// </summary>
-        public IBackgroundTableEntry? AdoptedParents { get; private set; }
+        [ObservableProperty]
+        private IBackgroundTableEntry? adoptedParents;
 
         /// <summary>
         /// Set the character background
