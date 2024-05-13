@@ -23,7 +23,7 @@ namespace GoDungeon.Core.Interfaces
         /// Roll the saving throw against the give dc
         /// </summary>
         /// <param name="dc">The difficulty check for this roll</param>
-        /// <returns>True if the saving throw succeeds</returns>
-        bool Roll(int dc, int proficiencyModifier = 0);
+        /// <param name="proficiency">The creatures proficiency</param>
+        bool Roll(int dc, int proficiency = 0);
     }
 }

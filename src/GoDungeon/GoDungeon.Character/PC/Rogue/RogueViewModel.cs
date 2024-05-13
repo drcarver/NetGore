@@ -11,7 +11,7 @@ namespace GoDungeon.Character.PC.Rogue
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacterClass character)
+        public override void LevelUp(ICharacterRace character)
         {
         }
 

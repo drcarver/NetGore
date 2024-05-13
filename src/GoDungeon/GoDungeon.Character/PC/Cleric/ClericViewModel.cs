@@ -28,16 +28,16 @@ namespace GoDungeon.Character.PC.Cleric
         public IClericBackgroundTable ClericBackgroundTable { get; }
 
         /// <summary>
-        /// Cleric level table
-        /// </summary>
-        public IClericLevelTable ClericLevelTable { get; }
-
-        /// <summary>
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacterClass character)
+        public override void LevelUp(ICharacterRace character)
         {
+            base.LevelUp(character);
+            if (Level == 0)
+            {
+                Initialize(character);
+            }
         }
 
         //Weapons: Simple weapons
@@ -58,21 +58,24 @@ namespace GoDungeon.Character.PC.Cleric
         /// <summary>
         /// Initialize the class
         /// </summary>
-        protected void Initialize(ICharacter creature)
+        protected void Initialize(ICharacter character)
         {
+            base.Initialize(character);
+
             //Hit Points
             //Hit Dice:	1d8	per cleric  level
             //Hit Points at  1st Level: 8 +	your Constitution modifier
             //Hit Points at  Higher Levels: 1d8	(or 5) + your Constitution
             //  modifier per cleric level   after	1st
-            creature.HitPoints = new HitPointsViewModel("1d8", creature);
+            character.HitPoints = new HitPointsViewModel("1d8", character);
 
             //Saving  Throws:	Wisdom,	Charisma
-            SavingThrows = new ObservableCollection<AbilityEnum>
-            {
-                { AbilityEnum.Wisdom },
-                { AbilityEnum.Charisma }
-            };
+            SavingThrows.Add(new SavingThrowViewModel(character.Strength));
+            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity));
+            SavingThrows.Add(new SavingThrowViewModel(character.Constitution));
+            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
+            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom, true));
+            SavingThrows.Add(new SavingThrowViewModel(character.Charisma, true));
 
             //Armor: Light armor, medium  armor, shields
             var armorList = ClericBackgroundTable?.Table?.Cast<IEquipmentTableEntry>()
@@ -85,9 +88,9 @@ namespace GoDungeon.Character.PC.Cleric
             {
                 foreach (var item in armorList)
                 {
-                    if (!creature.ArmorProficiency.Contains((int) item.Equipment))
+                    if (!character.ArmorProficiency.Contains((int) item.Equipment))
                     {
-                        creature.ArmorProficiency.Add(item.Equipment);
+                        character.ArmorProficiency.Add(item.Equipment);
                     }
                 }
             }
@@ -144,10 +147,10 @@ namespace GoDungeon.Character.PC.Cleric
         {
             // Cleric back table and Cleric Level table
             ClericBackgroundTable = clericBackgroundTable;
-            ClericLevelTable = clericLevelTable;
+            ClassLevelTable = clericLevelTable;
 
             // Cleric back table and Cleric Level table
-            ClericLevelTable.InitializeTable();
+            ClassLevelTable.InitializeTable();
             ClericBackgroundTable.InitializeTable();
 
             ClassEnum = Core.Enum.ClassEnum.Cleric;
@@ -160,13 +163,6 @@ namespace GoDungeon.Character.PC.Cleric
                 "mean the difference between a demon-worshiping " +
                 "cultist and a lawful harbinger of her deity’s " +
                 "blessed faith.";
-
-            classPrerequisites.Add(
-                new ClassPrerequisiteModel
-                {
-                    Ability = AbilityEnum.Wisdom,
-                    Score = 13,
-                });
         }
     }
 

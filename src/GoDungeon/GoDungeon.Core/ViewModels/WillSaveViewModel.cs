@@ -10,7 +10,7 @@ namespace GoDungeon.Core.ViewModels
         /// <param name="logger">The logger</param>
         /// <param name="creature">The creature the save is for</param>
         public WillSaveViewModel(ICreature creature)
-            : base(creature, creature.Wisdom)
+            : base(creature.Dexterity)
         {
             Name = "Will Save";
             Description = "These saves reflect your " +

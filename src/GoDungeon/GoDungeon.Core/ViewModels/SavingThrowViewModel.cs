@@ -8,12 +8,6 @@ namespace GoDungeon.Core.ViewModels
     public partial class SavingThrowViewModel : BaseObjectViewModel, ISavingThrow
     {
         /// <summary>
-        /// The creature for this saving throw
-        /// </summary>
-        [ObservableProperty]
-        private ICreature creature;
-
-        /// <summary>
         /// The ability this saving throw is based on
         /// </summary>
         [ObservableProperty]
@@ -23,7 +17,7 @@ namespace GoDungeon.Core.ViewModels
         /// True if specific to the class
         /// </summary>
         [ObservableProperty]
-        private bool isClassSavingThrow;
+        private bool isClassSavingThrow = false;
 
         /// <summary>
         /// Any Other modifiers
@@ -41,10 +35,10 @@ namespace GoDungeon.Core.ViewModels
         /// Roll the saving throw against the give dc
         /// </summary>
         /// <param name="dc">The difficulty check for this roll</param>
-        /// <returns>True if the saving throw succeeds</returns>
-        public bool Roll(int dc, int proficiencyModifier = 0)
+        /// <param name="proficiency">The proficiency for this saving throw</param>
+        public bool Roll(int dc, int proficiency = 0)
         {
-            var roll = new Dice("1GoDungeon").Total;
+            var roll = new Dice("1d20").Total;
             if (roll == 1)
             {
                 return false;
@@ -55,7 +49,8 @@ namespace GoDungeon.Core.ViewModels
             }
             return roll
                 + RacialModifier
-                + proficiencyModifier
+                + proficiency
+                + Ability.AbilityBonus
                 + OtherModifiers
                 + Ability.Score >= dc;
         }
@@ -63,14 +58,14 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="creature">The creature with the saving throw</param>
         /// <param name="ability">The ability for the saving throw</param>
+        /// <param name="isClassSavingThrow">Is this a class saving throw</param>
         public SavingThrowViewModel(
-            ICreature creature, 
-            IAbilityBase ability)
+            IAbilityBase ability,
+            bool isClassSavingThrow = false)
         {
             Ability = ability;
-            Creature = creature;
+            IsClassSavingThrow = isClassSavingThrow;
         }
     }
 }

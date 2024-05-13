@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Character.PC.Bard
 {
-    public interface IBardLevelTable : IGameTable
+    public interface IBardLevelTable : IGameTable, IClassLevelTable
     {
     }
 }
