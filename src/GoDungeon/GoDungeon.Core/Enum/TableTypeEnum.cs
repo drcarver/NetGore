@@ -13,5 +13,6 @@
         RaceTable,
         SpellTable,
         GamingTable,
+        RandomDungeonTable,
     }
 }
