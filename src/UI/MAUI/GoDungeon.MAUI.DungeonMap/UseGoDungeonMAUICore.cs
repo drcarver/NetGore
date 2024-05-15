@@ -1,9 +1,12 @@
 ﻿using System.Reflection;
 
+using CommunityToolkit.Maui;
+
 using GoDungeon.Core.Tables;
 using GoDungeon.MAUI.DungeonMap.Interfaces;
 using GoDungeon.MAUI.DungeonMap.Tables;
 using GoDungeon.MAUI.DungeonMap.ViewModels;
+using GoDungeon.MAUI.DungeonMap.Views;
 using GoDungeon.RandomDungeon.Tables;
 
 namespace GoDungeon.MAUI.DungeonMap;
@@ -32,21 +35,30 @@ public static class DataServices
     {
         //collection
         // Add all the game table types as transient
-        collection.AddTransient<IDungeonMapViewModel, DungeonMapViewModel>();
+        collection
+            .AddTransient<IDungeonMapViewModel, DungeonMapViewModel>()
 
         // The tables
-        collection.AddTransient<IBeyondADoorTable, BeyondADoorTable>();
-        collection.AddTransient<IDoorTypeTable, DoorTypeTable>();
-        collection.AddTransient<IDungeonPurposeTable, DungeonPurposeTable>();
-        collection.AddTransient<IDungeonHistoryTable, DungeonHistoryTable>();
-        collection.AddTransient<IFormOfGovernmentTable, FormOfGovernmentTable>();
-        collection.AddTransient<IMonumentsTable, MonumentsTable>();
-        collection.AddTransient<IPassageTable, PassageTable>();
-        collection.AddTransient<IPassageTable, PassageTable>();
-        collection.AddTransient<IPassageWidthTable, PassageWidthTable>();
-        collection.AddTransient<IStartingAreaTable, StartingAreaTable>();
-        collection.AddTransient<IWeirdLocalesTable, WeirdLocalesTable>();
-        collection.AddTransient<IWorldShakingEventsTable, WorldShakingEventsTable>();
+            .AddTransient<IBeyondADoorTable, BeyondADoorTable>()
+            .AddTransient<IDoorTypeTable, DoorTypeTable>()
+            .AddTransient<IDungeonHistoryTable, DungeonHistoryTable>()
+            .AddTransient<IDungeonPurposeTable, DungeonPurposeTable>()
+            .AddTransient<IFormOfGovernmentTable, FormOfGovernmentTable>()
+            .AddTransient<IMonumentsTable, MonumentsTable>()
+            .AddTransient<IPassageTable, PassageTable>()
+            .AddTransient<IPassageTable, PassageTable>()
+            .AddTransient<IPassageWidthTable, PassageWidthTable>()
+            .AddTransient<IPrecipitationTable, PrecipitationTable>()
+            .AddTransient<IStartingAreaTable, StartingAreaTable>()
+            .AddTransient<ITemperatureTable, TemperatureTable>()
+            .AddTransient<IWeirdLocalesTable, WeirdLocalesTable>()
+            .AddTransient<IWindTable, WindTable>()
+            .AddTransient<IWorldShakingEventsTable, WorldShakingEventsTable>()
+
+            // Add the views
+            .AddTransientWithShellRoute<DungeonMapView, DungeonMapViewModel>(nameof(DungeonMap))
+            
+            ;
 
         return collection;
     }

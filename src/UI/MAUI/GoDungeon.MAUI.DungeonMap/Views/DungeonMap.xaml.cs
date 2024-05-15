@@ -2,9 +2,9 @@ using GoDungeon.MAUI.DungeonMap.Interfaces;
 
 namespace GoDungeon.MAUI.DungeonMap.Views;
 
-public partial class DungeonMap : ContentPage
+public partial class DungeonMapView : ContentPage
 {
-	public DungeonMap(IDungeonMapViewModel vm)
+	public DungeonMapView(IDungeonMapViewModel vm)
 	{
 		InitializeComponent();
 
