@@ -66,12 +66,124 @@ public class PassageTable : RandomTable, IPassageTable
         {
             Table = new ObservableCollection<IGameTableEntry>
             {
-                #region Square, 20 x 20 ft.; passage on each wall
-                //1   Square, 20 x 20 ft.; passage on each wall
+                #region 1-2  Continue straight 30 ft., no doors or side passages
+                //1-2  Continue straight 30 ft., no doors or side passages
                 new RandomTableEntryViewModel
                 {
-                    Range = new Range(01, 01),
-                    Name = nameof(StartingAreaEnum.Square20ft),
+                    Range = new Range(01, 02),
+                    Name = nameof(PassageEnum.Straight30),
+                    ProperName = "Continue straight 30 ft.",
+                    Description = "Continue straight 30 ft., no doors or side passages",
+                },
+                #endregion
+
+                #region 3 Continue straight 20 ft., door to the right, then an additional 10 ft.ahead
+                //3 Continue straight 20 ft., door to the right, then an additional 10 ft.ahead
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(03, 03),
+                    Name = nameof(PassageEnum.Straight20DoorToRight),
+                    ProperName = "Continue straight 20 ft., door to the right",
+                    Description = "Continue straight 20 ft., door to the right, then an additional 10 ft.ahead",
+                },
+                #endregion
+
+                #region 4 Continue straight 20 ft., door to the left, then an additional 10 ft.ahead
+                //4 Continue straight 20 ft., door to the left, then an additional 10 ft.ahead
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(04, 04),
+                    Name = nameof(PassageEnum.Straight20DoorToLeft),
+                    ProperName = "Continue straight 20 ft., door to the left",
+                    Description = "Continue straight 20 ft., door to the left, then an additional 10 ft.ahead",
+                },
+                #endregion
+
+                #region 5   Continue straight 20 ft.; passage ends in a door
+                //5   Continue straight 20 ft.; passage ends in a door
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(05, 05),
+                    Name = nameof(PassageEnum.Straight20ToDoor),
+                    ProperName = "Continue straight 20 ft.; passage ends in a door",
+                    Description = "Continue straight 20 ft.; passage ends in a door",
+                },
+                #endregion
+
+                #region 6-7 Continue straight 20 ft., side passage to the right then an additional 10 ft.ahead
+                //6-7 Continue straight 20 ft., side passage to the right then an additional 10 ft.ahead
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(06, 07),
+                    Name = nameof(PassageEnum.Straight20PassageToTheRight),
+                    ProperName = "Continue straight 20 ft., side passage to the right",
+                    Description = "Continue straight 20 ft., side passage to the right then an additional 10 ft.ahead",
+                },
+                #endregion
+
+                #region 8-9 Continue straight 20 ft., side passage to the left, then an additional 10 ft.ahead
+                //8-9 Continue straight 20 ft., side passage to the left, then an additional 10 ft.ahead
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(08, 09),
+                    Name = nameof(PassageEnum.Straight20PassageToTheLeft),
+                    ProperName = "Continue straight 20 ft., side passage to the left",
+                    Description = "Continue straight 20 ft., side passage to the left, then an additional 10 ft.ahead",
+                },
+                #endregion
+
+                #region 10  Continue straight 20 ft.,comes to a dead end; 10 percent chance of a secret door
+                //10  Continue straight 20 ft.,comes to a dead end; 10 percent chance of a secret door
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(10, 10),
+                    Name = nameof(PassageEnum.Straight20DeadEnd),
+                    ProperName = "Continue straight 20 ft.,comes to a dead end",
+                    Description = "Continue straight 20 ft.,comes to a dead end; 10 percent chance of a secret door",
+                },
+                #endregion
+
+                #region 11-12  Continue straight 20 ft., then the passage turns left and continues 10 ft.
+                //11-12  Continue straight 20 ft., then the passage turns left and continues 10 ft.
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(11, 12),
+                    Name = nameof(PassageEnum.Straight20LeftTurn),
+                    ProperName = "Continue straight 20 ft., then turn left",
+                    Description = "Continue straight 20 ft., then the passage turns left and continues 10 ft.",
+                },
+                #endregion
+
+                #region 13-14  Continue straight 20 ft., then the passage turns right and continues 10 ft.
+                //13-14  Continue straight 20 ft., then the passage turns right and continues 10 ft.
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(13, 14),
+                    Name = nameof(PassageEnum.Straight20RightTurn),
+                    ProperName = "Continue straight 20 ft., then turn right",
+                    Description = "Continue straight 20 ft., then the passage turns right and continues 10 ft.",
+                },
+                #endregion
+
+                #region 15-19  Chamber (roll on the Chamber table)
+                //15-19  Chamber (roll on the Chamber table)
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(15, 19),
+                    Name = nameof(PassageEnum.Chamber),
+                    ProperName = "Chamber",
+                    Description = "Chamber",
+                },
+                #endregion
+
+                #region 20 Stairs
+                //20 Stairs
+                new RandomTableEntryViewModel
+                {
+                    Range = new Range(20, 20),
+                    Name = nameof(PassageEnum.Stairs),
+                    ProperName = "Stairs",
+                    Description = "Stairs",
                 },
                 #endregion
             };
