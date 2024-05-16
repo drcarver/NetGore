@@ -2,6 +2,6 @@
 
 namespace GoDungeon.MAUI.DungeonMap.Interfaces;
 
-public interface IStartingAreaTable : IRandomTable
+public interface ILeaderTypeTable : IRandomTable
 {
 }

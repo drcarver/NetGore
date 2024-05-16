@@ -1,27 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using GoDungeon.Character.Interfaces;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Tables;
 
 namespace GoDungeon.Character.Tables
 {
-    public class DeitiesTable : NamedTable, ICelticDeitiesTable
+    public class DeitiesTable : NamedTable, IDeitiesTable
     {
-        /// <summary>
-        /// The deities for a particular pantheon
-        /// </summary>
-        public DeitiesTable()
-        {
-        }
-
         /// <summary>
         /// Get deities by suggested class and alignment
         /// </summary>
-        /// <param name="characterclass">The suggested class</param>
+        /// <param name="characterClass">The suggested class</param>
         /// <param name="alignment">The alignment filter</param>
         /// <returns></returns>
-        public List<IDeityTableEntry> GetDeitiesByClass(ClassEnum characterlessByClass, AlignmentFilterEnum alignment)
+        public List<IDeityTableEntry> GetDeitiesByClass(ClassEnum characterClass, AlignmentFilterEnum alignment)
         {
             var evilOnlyList = new List<AlignmentEnum>()
             {
@@ -40,7 +34,7 @@ namespace GoDungeon.Character.Tables
             };
 
             var deityList = Table.Cast<IDeityTableEntry>()
-                .Where(te => te.SuggestedClasses.Contains(characterlessByClass))
+                .Where(te => te.SuggestedClasses.Contains(characterClass))
                 .ToList();
 
             switch (alignment)

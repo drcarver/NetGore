@@ -8,5 +8,6 @@ public enum PassageWidthEnum : byte
     ft40Pillars,
     ft40DoublePillars,
     ft40Wide20ftHigh,
-    ft40WideGallery
+    ft40WideGallery,
+    ft20
 }

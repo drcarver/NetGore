@@ -7,7 +7,6 @@ using GoDungeon.MAUI.DungeonMap.Interfaces;
 using GoDungeon.MAUI.DungeonMap.Tables;
 using GoDungeon.MAUI.DungeonMap.ViewModels;
 using GoDungeon.MAUI.DungeonMap.Views;
-using GoDungeon.RandomDungeon.Tables;
 
 namespace GoDungeon.MAUI.DungeonMap;
 
@@ -44,11 +43,13 @@ public static class DataServices
             .AddTransient<IDungeonHistoryTable, DungeonHistoryTable>()
             .AddTransient<IDungeonPurposeTable, DungeonPurposeTable>()
             .AddTransient<IFormOfGovernmentTable, FormOfGovernmentTable>()
+            .AddTransient<ILeaderTypeTable, LeaderTypeTable>()
             .AddTransient<IMonumentsTable, MonumentsTable>()
-            .AddTransient<IPassageTable, PassageTable>()
             .AddTransient<IPassageTable, PassageTable>()
             .AddTransient<IPassageWidthTable, PassageWidthTable>()
             .AddTransient<IPrecipitationTable, PrecipitationTable>()
+            .AddTransient<IRaceRelationsTable, RaceRelationsTable>()
+            .AddTransient<ISettlementsTable, SettlementTable>()
             .AddTransient<IStartingAreaTable, StartingAreaTable>()
             .AddTransient<ITemperatureTable, TemperatureTable>()
             .AddTransient<IWeirdLocalesTable, WeirdLocalesTable>()

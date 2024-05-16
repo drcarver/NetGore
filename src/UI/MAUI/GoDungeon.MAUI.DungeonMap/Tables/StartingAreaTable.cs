@@ -5,7 +5,7 @@ using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.MAUI.DungeonMap.Enum;
-using GoDungeon.RandomDungeon.Tables;
+using GoDungeon.MAUI.DungeonMap.Interfaces;
 
 namespace GoDungeon.MAUI.DungeonMap.Tables;
 
