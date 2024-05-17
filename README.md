@@ -1,4 +1,4 @@
 NetGore
 =======
-A Dungeon & Dragons Virtual Table TOp based on the 5e Srd and the NetGore game engine.  The projects is evolving to use .net MAUI and away from the 
+A Dungeon & Dragons Virtual Table Top based on the 5e Srd and the NetGore game engine.  The projects is evolving to use .net MAUI and away from the 
 Monogames engine.
