@@ -9,6 +9,8 @@ public partial class DungeonMapPage : ContentPage
 	{
 		InitializeComponent();
 
-		BindingContext = vm;
+		vm.GridLinesViewModel = GridLines;
+		vm.DungeonRoomsViewModel = Map;
+        BindingContext = vm;
 	}
 }

@@ -7,12 +7,24 @@
              Title="{Binding Title}">
 
     <ContentPage.Resources>
-        <viewmodel:DungeonMapViewModel x:Key="drawable" />
+        <viewmodel:GridLinesViewModel x:Key="drawableGrid" x:Name="GridLines"/>
+        <viewmodel:DungeonRoomsViewModel x:Key="drawableMap" x:Name="Map" />
     </ContentPage.Resources>
-    <VerticalStackLayout>
-        <GraphicsView x:Name="GraphicsView"
-                      Drawable="{StaticResource drawable}"
+    <Grid ColumnDefinitions="{Binding ColumnDefinitions}" RowDefinitions="{Binding RowDefinition}">
+        <GraphicsView x:Name="GridLineGraphicsView"
+                      Drawable="{StaticResource drawableGrid}"
                       HeightRequest="{Binding Height}"
-                      WidthRequest="{Binding Width}"  />
-    </VerticalStackLayout>
+                      WidthRequest="{Binding Width}"
+                      Grid.ColumnSpan="2"
+                      ZIndex="{Binding ZIndex}"/>
+        <GraphicsView x:Name="GridLineMapsView"
+                      Drawable="{StaticResource drawableMap}"
+                      HeightRequest="{Binding Height}"
+                      WidthRequest="{Binding Width}"
+                      Grid.ColumnSpan="2"
+                      ZIndex="{Binding ZIndex}"/>
+        <Button Text="Roll Again" Grid.Row="1" />
+        <Label Text="{Binding DungeonPurpose}" Grid.Row="2" />
+        <Label Text="{Binding DungeonHistory}" Grid.Row="3" />
+    </Grid>
 </ContentPage>

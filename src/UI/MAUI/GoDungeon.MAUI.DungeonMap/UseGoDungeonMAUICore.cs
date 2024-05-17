@@ -4,7 +4,6 @@ using CommunityToolkit.Maui;
 
 using GoDungeon.Core.Tables;
 using GoDungeon.MAUI.DungeonMap.Interfaces;
-using GoDungeon.MAUI.DungeonMap.Tables;
 using GoDungeon.MAUI.DungeonMap.ViewModels;
 using GoDungeon.MAUI.DungeonMap.Views;
 
@@ -35,31 +34,7 @@ public static class DataServices
         //collection
         // Add all the game table types as transient
         collection
-            .AddTransient<IDungeonMapViewModel, DungeonMapViewModel>()
-
-             // The tables
-            .AddSingleton<IBeyondADoorTable, BeyondADoorTable>()
-            .AddSingleton<IChamberExitTable, ChamberExitTable>()
-            .AddSingleton<IChamberTable, ChamberTable>()
-            .AddSingleton<IDoorTypeTable, DoorTypeTable>()
-            .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
-            .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
-            .AddSingleton<IExitLocationTable, ExitLocationTable>()
-            .AddSingleton<IExitTypeTable, ExitTypeTable>()
-            .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
-            .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()
-            .AddSingleton<IMonumentsTable, MonumentsTable>()
-            .AddSingleton<IPassageTable, PassageTable>()
-            .AddSingleton<IPassageWidthTable, PassageWidthTable>()
-            .AddSingleton<IPrecipitationTable, PrecipitationTable>()
-            .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
-            .AddSingleton<ISettlementsTable, SettlementTable>()
-            .AddSingleton<IStairsTable, StairsTable>()
-            .AddSingleton<IStartingAreaTable, StartingAreaTable>()
-            .AddSingleton<ITemperatureTable, TemperatureTable>()
-            .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
-            .AddSingleton<IWindTable, WindTable>()
-            .AddSingleton<IWorldShakingEventsTable, WorldShakingEventsTable>()
+            .AddTransient<IGridLines, GridLinesViewModel>()
 
             // Add the views
             .AddTransientWithShellRoute<DungeonMapPage, DungeonMapViewModel>(nameof(DungeonMapPage))

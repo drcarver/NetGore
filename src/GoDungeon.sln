@@ -34,7 +34,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI.Core", "UI\M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI.PlayerCharacter", "UI\MAUI\GoDungeon.MAUI.PlayerCharacter\GoDungeon.MAUI.PlayerCharacter.csproj", "{A19C0356-2F25-4CC3-BEA6-2FC467F1A5B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.MAUI.DungeonMap", "UI\MAUI\GoDungeon.MAUI.DungeonMap\GoDungeon.MAUI.DungeonMap.csproj", "{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.MAUI.DungeonMap", "UI\MAUI\GoDungeon.MAUI.DungeonMap\GoDungeon.MAUI.DungeonMap.csproj", "{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.RandomDungeon", "GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj", "{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{E5444ABE-DCA5-4AD9-97E6-0615FCFFBEAA} = {2A7B5D2C-68B2-49CD-B23E-1311DE5FD0BF}
 		{A19C0356-2F25-4CC3-BEA6-2FC467F1A5B6} = {2A7B5D2C-68B2-49CD-B23E-1311DE5FD0BF}
 		{70E9BB24-78C9-46F2-8CB0-E920CB9C0BC9} = {2A7B5D2C-68B2-49CD-B23E-1311DE5FD0BF}
+		{DFC5D668-61DC-43EC-AC86-09CB0F3F3D25} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {327517B2-8B9C-4CA3-AC89-441B0FCE5B94}

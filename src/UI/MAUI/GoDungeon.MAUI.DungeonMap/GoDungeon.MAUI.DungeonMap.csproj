@@ -26,6 +26,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
+	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
