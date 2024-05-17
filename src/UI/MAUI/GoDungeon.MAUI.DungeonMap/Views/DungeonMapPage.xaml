@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.DungeonMap.ViewModels;assembly=GoDungeon.MAUI.DungeonMap"
+             x:Class="GoDungeon.MAUI.DungeonMap.Views.DungeonMapPage"
+             x:DataType="viewmodel:DungeonMapViewModel"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <viewmodel:DungeonMapViewModel x:Key="drawable" />
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <GraphicsView x:Name="GraphicsView"
+                      Drawable="{StaticResource drawable}"
+                      HeightRequest="{Binding Height}"
+                      WidthRequest="{Binding Width}"  />
+    </VerticalStackLayout>
+</ContentPage>

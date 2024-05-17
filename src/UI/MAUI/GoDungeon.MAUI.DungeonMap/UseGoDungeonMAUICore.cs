@@ -37,28 +37,31 @@ public static class DataServices
         collection
             .AddTransient<IDungeonMapViewModel, DungeonMapViewModel>()
 
-        // The tables
-            .AddTransient<IBeyondADoorTable, BeyondADoorTable>()
-            .AddTransient<IDoorTypeTable, DoorTypeTable>()
-            .AddTransient<IDungeonHistoryTable, DungeonHistoryTable>()
-            .AddTransient<IDungeonPurposeTable, DungeonPurposeTable>()
-            .AddTransient<IFormOfGovernmentTable, FormOfGovernmentTable>()
-            .AddTransient<ILeaderTypeTable, LeaderTypeTable>()
-            .AddTransient<IMonumentsTable, MonumentsTable>()
-            .AddTransient<IPassageTable, PassageTable>()
-            .AddTransient<IPassageWidthTable, PassageWidthTable>()
-            .AddTransient<IPrecipitationTable, PrecipitationTable>()
-            .AddTransient<IRaceRelationsTable, RaceRelationsTable>()
-            .AddTransient<ISettlementsTable, SettlementTable>()
-            .AddTransient<IStartingAreaTable, StartingAreaTable>()
-            .AddTransient<ITemperatureTable, TemperatureTable>()
-            .AddTransient<IWeirdLocalesTable, WeirdLocalesTable>()
-            .AddTransient<IWindTable, WindTable>()
-            .AddTransient<IWorldShakingEventsTable, WorldShakingEventsTable>()
+             // The tables
+            .AddSingleton<IBeyondADoorTable, BeyondADoorTable>()
+            .AddSingleton<IChamberExitTable, ChamberExitTable>()
+            .AddSingleton<IChamberTable, ChamberTable>()
+            .AddSingleton<IDoorTypeTable, DoorTypeTable>()
+            .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
+            .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
+            .AddSingleton<IExitLocationTable, ExitLocationTable>()
+            .AddSingleton<IExitTypeTable, ExitTypeTable>()
+            .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
+            .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()
+            .AddSingleton<IMonumentsTable, MonumentsTable>()
+            .AddSingleton<IPassageTable, PassageTable>()
+            .AddSingleton<IPassageWidthTable, PassageWidthTable>()
+            .AddSingleton<IPrecipitationTable, PrecipitationTable>()
+            .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
+            .AddSingleton<ISettlementsTable, SettlementTable>()
+            .AddSingleton<IStartingAreaTable, StartingAreaTable>()
+            .AddSingleton<ITemperatureTable, TemperatureTable>()
+            .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
+            .AddSingleton<IWindTable, WindTable>()
+            .AddSingleton<IWorldShakingEventsTable, WorldShakingEventsTable>()
 
             // Add the views
-            .AddTransientWithShellRoute<DungeonMapView, DungeonMapViewModel>(nameof(DungeonMap))
-            
+            .AddTransientWithShellRoute<DungeonMapPage, DungeonMapViewModel>(nameof(DungeonMapPage))
             ;
 
         return collection;

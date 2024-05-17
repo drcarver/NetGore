@@ -7,9 +7,6 @@ using GoDungeon.Core.ViewModels;
 using GoDungeon.MAUI.DungeonMap.Enum;
 using GoDungeon.MAUI.DungeonMap.Interfaces;
 
-using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Platform;
-
 namespace GoDungeon.MAUI.DungeonMap.Tables;
 
 public class LeaderTypeTable : RandomTable, ILeaderTypeTable

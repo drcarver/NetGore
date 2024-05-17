@@ -15,6 +15,7 @@ using GoDungeon.Monsters;
 using GoDungeon.Spells;
 
 using Microsoft.Extensions.Logging;
+using GoDungeon.MAUI.DungeonMap;
 
 namespace GoDungeon.MAUI;
 
@@ -55,6 +56,7 @@ public static class MauiProgram
             // Now the MAUI files
             .UseGoDungeonMAUICore()
             .UseGoDungeonMAUIPlayerCharacter()
+            .UseGoDungeonMAUIDungeonMap()
             .BuildServiceProvider();
 
         return builder.Build();
