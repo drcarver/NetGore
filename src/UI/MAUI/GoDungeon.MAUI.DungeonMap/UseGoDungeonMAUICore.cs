@@ -54,6 +54,7 @@ public static class DataServices
             .AddSingleton<IPrecipitationTable, PrecipitationTable>()
             .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
             .AddSingleton<ISettlementsTable, SettlementTable>()
+            .AddSingleton<IStairsTable, StairsTable>()
             .AddSingleton<IStartingAreaTable, StartingAreaTable>()
             .AddSingleton<ITemperatureTable, TemperatureTable>()
             .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
