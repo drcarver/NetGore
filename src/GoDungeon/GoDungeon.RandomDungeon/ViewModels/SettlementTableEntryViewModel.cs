@@ -8,7 +8,7 @@ namespace GoDungeon.RandomDungeon.ViewModels
     public partial class SettlementTableEntryViewModel :  RandomTableEntryViewModel, ISettlement
     {
         /// <summary>
-        /// THe population of the city
+        /// The population of the city
         /// </summary>
         [ObservableProperty]
         private string? population;

@@ -12,6 +12,7 @@ using GoDungeon.MAUI.Interfaces;
 using GoDungeon.MAUI.Tables;
 using GoDungeon.MAUI.Views;
 using GoDungeon.Monsters;
+using GoDungeon.RandomDungeon;
 using GoDungeon.Spells;
 
 using Microsoft.Extensions.Logging;
@@ -51,6 +52,7 @@ public static class MauiProgram
             .UseGoDungeonGaming()
             .UseGoDungeonMagicItems()
             .UseGoDungeonMonsters()
+            .UseGoDungeonRandomDungeon()
             .UseGoDungeonSpells()
 
             // Now the MAUI files

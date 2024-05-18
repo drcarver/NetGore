@@ -5,26 +5,26 @@
         /// <summary>
         /// THe population of the city
         /// </summary>
-        string? Population { get; internal set; }
+        string? Population { get; set; }
 
         /// <summary>
         /// The type of government
         /// </summary>
-        string? Government { get; internal set; }
+        string? Government { get; set; }
 
         /// <summary>
         /// The type of defense the settlement has
         /// </summary>
-        string? Defense { get; internal set; }
+        string? Defense { get; set; }
 
         /// <summary>
         /// The types of commerce of for the settlement
         /// </summary>
-        string? Commerce { get; internal set; }
+        string? Commerce { get; set; }
 
         /// <summary>
         /// The organizations in the city
         /// </summary>
-        string? Organizations { get; internal set; }
+        string? Organizations { get; set; }
     }
 }

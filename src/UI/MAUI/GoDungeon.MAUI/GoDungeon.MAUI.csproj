@@ -104,6 +104,7 @@
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Gaming\GoDungeon.Gaming.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.MagicItems\GoDungeon.MagicItems.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
+	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Spells\GoDungeon.Spells.csproj" />
 	  <ProjectReference Include="..\GoDungeon.MAUI.Core\GoDungeon.MAUI.Core.csproj" />
 	  <ProjectReference Include="..\GoDungeon.MAUI.DungeonMap\GoDungeon.MAUI.DungeonMap.csproj" />

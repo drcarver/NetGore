@@ -10,21 +10,27 @@
         <viewmodel:GridLinesViewModel x:Key="drawableGrid" x:Name="GridLines"/>
         <viewmodel:DungeonRoomsViewModel x:Key="drawableMap" x:Name="Map" />
     </ContentPage.Resources>
-    <Grid ColumnDefinitions="{Binding ColumnDefinitions}" RowDefinitions="{Binding RowDefinition}">
+    <Grid ColumnDefinitions="700,100" 
+          RowDefinitions="600,Auto,Auto,Auto">
+        <Button Text="Export as PDF" Grid.Row="0" Grid.Column="1"
+                Command="{Binding ExportToPDfCommand}"/>
         <GraphicsView x:Name="GridLineGraphicsView"
                       Drawable="{StaticResource drawableGrid}"
                       HeightRequest="{Binding Height}"
                       WidthRequest="{Binding Width}"
                       Grid.ColumnSpan="2"
-                      ZIndex="{Binding ZIndex}"/>
-        <GraphicsView x:Name="GridLineMapsView"
+                      Grid.Row="1"
+                      ZIndex="{Binding GridLinesViewModel.ZIndex}"/>
+        <GraphicsView x:Name="DungeonMapView"
                       Drawable="{StaticResource drawableMap}"
                       HeightRequest="{Binding Height}"
                       WidthRequest="{Binding Width}"
                       Grid.ColumnSpan="2"
-                      ZIndex="{Binding ZIndex}"/>
-        <Button Text="Roll Again" Grid.Row="1" />
-        <Label Text="{Binding DungeonPurpose}" Grid.Row="2" />
-        <Label Text="{Binding DungeonHistory}" Grid.Row="3" />
+                      Grid.Row="1"
+                      ZIndex="{Binding DungeonRoomsViewModel.ZIndex}"/>
+        <Button Text="Export as PDF" Grid.Row="1" Grid.Column="1"
+                Command="{Binding ExportToPDfCommand}"/>
+        <Label Text="{Binding DungeonPurpose}" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Label Text="{Binding DungeonHistory}" Grid.Row="3" Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>

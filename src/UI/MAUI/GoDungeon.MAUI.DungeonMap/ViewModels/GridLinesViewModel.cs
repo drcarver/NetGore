@@ -34,6 +34,7 @@ public partial class GridLinesViewModel : DungeonBaseViewModel, IGridLines
         }
     }
 
+
     public override void Draw(ICanvas canvas, RectF dirtyRect)
     {
         ZIndex = (int) DungeonZIndexEnum.GridLines;

@@ -6,6 +6,7 @@ using System.Reflection;
 using GoDungeon.Core.Tables;
 using GoDungeon.RandomDungeon.Interfaces;
 using GoDungeon.RandomDungeon.Tables;
+using GoDungeon.RandomDungeon.ViewModels;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,11 +32,14 @@ namespace GoDungeon.RandomDungeon
         /// </summary>
         /// <param name="collection">The DI service collection</param>
         /// <returns>The services collection</returns>
-        public static IServiceCollection UseGoDungeonMAUIDungeonMap(this IServiceCollection collection)
+        public static IServiceCollection UseGoDungeonRandomDungeon(this IServiceCollection collection)
         {
             //collection
             // Add all the game table types as transient
             collection
+                // View Models
+                .AddTransient<IRandomDungeon, RandomDungeonViewModel>()
+                .AddTransient<IRandomDungeonModel, RandomDungeonModel>()
 
                 // The tables
                 .AddSingleton<IBeyondADoorTable, BeyondADoorTable>()

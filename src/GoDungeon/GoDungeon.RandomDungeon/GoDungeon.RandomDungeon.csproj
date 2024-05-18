@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="Syncfusion.DocIO.NET" Version="25.2.4" />
+    <PackageReference Include="Syncfusion.Pdf.NET" Version="25.2.4" />
   </ItemGroup>
 
   <ItemGroup>
