@@ -2,7 +2,7 @@
 
 namespace GoDungeon.RandomDungeon.Interfaces
 {
-    public interface IChamberExitTable : IRandomTable
+    public interface IExoticLocationTable : IRandomTable
     {
     }
 }

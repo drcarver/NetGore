@@ -25,7 +25,7 @@ namespace GoDungeon.RandomDungeon.Tables
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
             Description =
-                "The stairs table";
+                "Stairs can include any means of going up and down, including ramps, chimneys, open shafts, elevators, and ladders. If your dungeon has more than one level, the amount of space between levels is up to you. A distance of 30 feet works fine for most dungeons.";
         }
 
         //STAIRS

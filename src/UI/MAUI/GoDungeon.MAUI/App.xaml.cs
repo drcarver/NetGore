@@ -11,7 +11,7 @@ public partial class App : Application
         var principal = ClaimsPrincipal.Current?.Identity?.Name;
 
         // Syncfusion License
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cWWdCeEx3Q3xbf1x0ZFFMZVRbRHVPIiBoS35RckVmWHdecnBQRWNbVEB/");
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF1cXmhMYVFyWmFZfVpgcF9DYFZTRWY/P1ZhSXxXdkBiXn5YdXRXR2dUVEY=");
 
         MainPage = new AppShell();
     }

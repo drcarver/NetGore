@@ -11,6 +11,7 @@ using GoDungeon.RandomDungeon.Interfaces;
 namespace GoDungeon.RandomDungeon.Tables
 {
     /// <summary>
+    /// Roll on the Beyond a Door table to see what lies on the other side of it.
     /// </summary>
     public class BeyondADoorTable : RandomTable, IBeyondADoorTable
     {
@@ -22,7 +23,7 @@ namespace GoDungeon.RandomDungeon.Tables
             ProperName = "Beyond A Door Table";
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
-            Description = "What is on the other side of a door";
+            Description = "Roll on the Beyond a Door table to see what lies on the other side of it.";
         }
 
         //BEYOND A DOOR

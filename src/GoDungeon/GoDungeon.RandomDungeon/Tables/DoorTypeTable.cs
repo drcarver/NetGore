@@ -14,7 +14,7 @@ namespace GoDungeon.RandomDungeon.Tables
     {
         /// <summary>
         /// Whenever a table roll indicates a door roll on the Door Type table to 
-        /// determine its nature... then roll on the Beyond a Door table to see 
+        /// determine its nature... Then roll on the Beyond a Door table to see 
         /// what lies on the other side of it. If a door is barred you decide
         /// which side of the door the bar is on. Unlocked doors can also be stuck,
         /// at your discretion.
@@ -25,7 +25,7 @@ namespace GoDungeon.RandomDungeon.Tables
             ProperName = "Door Type Table";
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
-            Description = "Determine the type of door";
+            Description = "Whenever a table roll indicates a door roll on the Door Type table to determine its nature. If a door is barred you decide which side of the door the bar is on. Unlocked doors can also be stuck, at your discretion. Roll on the Beyond a Door table to see what lies on the other side of it.";
         }
 
         //DOOR TYPE

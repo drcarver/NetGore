@@ -8,10 +8,11 @@ using CommunityToolkit.Mvvm.Input;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.MAUI.DungeonMap.Interfaces;
-using GoDungeon.RandomDungeon;
 using GoDungeon.RandomDungeon.Interfaces;
 using System.IO;
 using System.Threading;
+using Microsoft.Maui.Controls;
+using GoDungeon.MAUI.DungeonMap.Views;
 
 namespace GoDungeon.MAUI.DungeonMap.ViewModels;
 
@@ -57,19 +58,11 @@ public partial class DungeonMapViewModel : BaseObjectViewModel, IDungeonMap
     [RelayCommand]
     private async Task ExportToPDf()
     {
-        using (var ms = new MemoryStream())
-        {
-            Model.ExportToPDF(ms);
-            var fileSaverResult = await FileSaver.Default.SaveAsync("RandomDungeon.pdf", ms);
-            if (fileSaverResult.IsSuccessful)
-            {
-                await Toast.Make($"The file was saved successfully to location: {fileSaverResult.FilePath}").Show();
-            }
-            else
-            {
-                await Toast.Make($"The file was not saved successfully with error: {fileSaverResult.Exception.Message}").Show();
-            }
-        }
+        IDictionary<string, object> query = new Dictionary<string, object>();
+        var ms = new MemoryStream();
+        Model.ExportToPDF(ms);
+        query.Add("pdfDocument", ms);
+        await Shell.Current.GoToAsync(nameof(PdfViewer), query);
     }
 
     /// <summary>

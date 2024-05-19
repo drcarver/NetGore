@@ -19,7 +19,7 @@ namespace GoDungeon.RandomDungeon.Tables
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
             Description =
-                "The chamber exit type table";
+                " For each exit, roll on the Exit Location and Exit Type tables to determine the nature and placement of the exit.";
         }
 
         //EXIT TYPE

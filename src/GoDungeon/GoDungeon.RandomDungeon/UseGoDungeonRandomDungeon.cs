@@ -5,6 +5,7 @@ using System.Reflection;
 
 using GoDungeon.Core.Tables;
 using GoDungeon.RandomDungeon.Interfaces;
+using GoDungeon.RandomDungeon.Models;
 using GoDungeon.RandomDungeon.Tables;
 using GoDungeon.RandomDungeon.ViewModels;
 
@@ -47,9 +48,11 @@ namespace GoDungeon.RandomDungeon
                 .AddSingleton<IChamberTable, ChamberTable>()
                 .AddSingleton<IDoorTypeTable, DoorTypeTable>()
                 .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
+                .AddSingleton<IDungeonLocationTable, DungeonLocationTable>()
                 .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
                 .AddSingleton<IExitLocationTable, ExitLocationTable>()
                 .AddSingleton<IExitTypeTable, ExitTypeTable>()
+                .AddSingleton<IExoticLocationTable, ExoticLocationTable>()
                 .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
                 .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()
                 .AddSingleton<IMonumentsTable, MonumentsTable>()

@@ -17,6 +17,7 @@ using GoDungeon.Spells;
 
 using Microsoft.Extensions.Logging;
 using GoDungeon.MAUI.DungeonMap;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace GoDungeon.MAUI;
 
@@ -35,10 +36,13 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            });
+            })
+
+            // Configure syncfusion
+            .ConfigureSyncfusionCore();
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
         // Services

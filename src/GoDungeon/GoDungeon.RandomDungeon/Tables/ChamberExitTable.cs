@@ -26,7 +26,7 @@ namespace GoDungeon.RandomDungeon.Tables
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
             Description =
-                "The dungeon chambers exits";
+                "Roll on the Chamber Exits table to determine the number of exits.";
         }
 
         //CHAMBER EXITS

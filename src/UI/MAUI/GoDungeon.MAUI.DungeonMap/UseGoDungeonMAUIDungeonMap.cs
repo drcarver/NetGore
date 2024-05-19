@@ -35,9 +35,11 @@ public static class DataServices
         // Add all the game table types as transient
         collection
             .AddTransient<IGridLines, GridLinesViewModel>()
+            .AddTransient<IPdfViewer, PdfViewerViewModel>()
 
             // Add the views
             .AddTransientWithShellRoute<DungeonMapPage, DungeonMapViewModel>(nameof(DungeonMapPage))
+            .AddTransientWithShellRoute<PdfViewer, PdfViewerViewModel>(nameof(PdfViewer))
             ;
 
         return collection;

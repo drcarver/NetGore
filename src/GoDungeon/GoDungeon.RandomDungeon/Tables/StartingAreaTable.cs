@@ -153,7 +153,7 @@ namespace GoDungeon.RandomDungeon.Tables
                     //10  Passage, 10 ft.wide; four-way intersection
                     new RandomTableEntryViewModel
                     {
-                        Range = new Range(09, 09),
+                        Range = new Range(10,10),
                         Name = nameof(StartingAreaEnum.Passage104WayIntersection),
                     },
                     #endregion

@@ -14,8 +14,8 @@ namespace GoDungeon.RandomDungeon.Tables
     {
         /// <summary>
         /// Whenever a roll on a table indicates a chamber, use the Chamber 
-        /// table to define its dimensions.Then roll on the Chamber Exits 
-        /// table to determine the number of exits.For each exit, roll on 
+        /// table to define its dimensions. Then roll on the Chamber Exits 
+        /// table to determine the number of exits. For each exit, roll on 
         /// the Exit Location and Exit Type tables to determine the
         /// nature and placement of the exit.
         /// </summary>
@@ -26,7 +26,7 @@ namespace GoDungeon.RandomDungeon.Tables
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
             Description =
-                "The dungeon chambers";
+                "Whenever a roll on a table indicates a chamber, use the Chamber table to define its dimensions. ";
         }
 
         //CHAMBER
