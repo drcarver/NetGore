@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -42,34 +43,59 @@ namespace GoDungeon.RandomDungeon
                 .AddTransient<IRandomDungeon, RandomDungeonViewModel>()
                 .AddTransient<IRandomDungeonModel, RandomDungeonModel>()
 
-                // The tables
-                .AddSingleton<IBeyondADoorTable, BeyondADoorTable>()
-                .AddSingleton<IChamberExitTable, ChamberExitTable>()
-                .AddSingleton<IChamberTable, ChamberTable>()
+                //LOCATION - BASED ADVENTURES
+                //Adventures set in crumbling dungeons and remote
+                //wilderness locations are the cornerstone of countless
+                //campaigns. Many of the greatest D&D adventures of all
+                //time are location-based.
+                //Creating a location-based adventure can be broken
+                //down into a number of steps. Each step provides tables
+                //from which you can select the basic elements of your
+                //adventure. Alternatively, roll on the tables and see how
+                //the random results inspire you. You can mix up the
+                //order of the steps. 
+                .AddSingleton<IDungeonGoalsTable, DungeonGoalsTable>()
+
+                // Dungeon Map
+                .AddSingleton<IStartingAreaTable, StartingAreaTable>()
                 .AddSingleton<IDoorTypeTable, DoorTypeTable>()
+                .AddSingleton<IBeyondADoorTable, BeyondADoorTable>()
+                .AddSingleton<IChamberTable, ChamberTable>()
+                .AddSingleton<IChamberExitTable, ChamberExitTable>()
+                .AddSingleton<IExitLocationTable, ExitLocationTable>()
+                .AddSingleton<IExitTypeTable, ExitTypeTable>()
+                .AddSingleton<IPassageTable, PassageTable>()
+                .AddSingleton<IPassageWidthTable, PassageWidthTable>()
+                .AddSingleton<IStairsTable, StairsTable>()
+
+                // Misc Table
+                .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
+                .AddSingleton<IMonumentsTable, MonumentsTable>()
+                .AddSingleton<IPrecipitationTable, PrecipitationTable>()
+                .AddSingleton<ITemperatureTable, TemperatureTable>()
+                .AddSingleton<IWindTable, WindTable>()
+                .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
+                .AddSingleton<IWorldShakingEventsTable, WorldShakingEventsTable>()
+                .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()
+
+                // Settlement tables
+                .AddSingleton<ISettlementsTable, SettlementTable>()
+                .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
+                .AddSingleton<IRulerStatusTable, RulerStatusTable>()
+
+                // Dungeon Creator's Table
+                .AddSingleton<IDungeonCreatorTable, DungeonCreatorTable>()
                 .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
                 .AddSingleton<IDungeonLocationTable, DungeonLocationTable>()
                 .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
-                .AddSingleton<IExitLocationTable, ExitLocationTable>()
-                .AddSingleton<IExitTypeTable, ExitTypeTable>()
+                .AddSingleton<ICultsTable, CultsTable>()
+                .AddSingleton<INPCAlignmentTable, NPCAlignmentTable>()
+                .AddSingleton<INPCClassTable, NPCClassTable>()
                 .AddSingleton<IExoticLocationTable, ExoticLocationTable>()
-                .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
-                .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()
-                .AddSingleton<IMonumentsTable, MonumentsTable>()
-                .AddSingleton<IPassageTable, PassageTable>()
-                .AddSingleton<IPassageWidthTable, PassageWidthTable>()
-                .AddSingleton<IPrecipitationTable, PrecipitationTable>()
-                .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
-                .AddSingleton<ISettlementsTable, SettlementTable>()
-                .AddSingleton<IStairsTable, StairsTable>()
-                .AddSingleton<IStartingAreaTable, StartingAreaTable>()
-                .AddSingleton<ITemperatureTable, TemperatureTable>()
-                .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
-                .AddSingleton<IWindTable, WindTable>()
-                .AddSingleton<IWorldShakingEventsTable, WorldShakingEventsTable>()
                 ;
 
             return collection;
         }
     }
 }
+

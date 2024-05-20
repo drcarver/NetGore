@@ -29,7 +29,11 @@ namespace GoDungeon.RandomDungeon.Models
             IExitTypeTable exitTypeTable,
             IStairsTable stairsTable,
             IDungeonLocationTable dungeonLocationTable,
-            IExoticLocationTable exoticLocationTable
+            IExoticLocationTable exoticLocationTable,
+            IDungeonCreatorTable dungeonCreatorTable,
+            ICultsTable cultsTable,
+            INPCAlignmentTable npcAlignmentTable,
+            INPCClassTable npcClassTable
             )
         {
             // Initialize the tables
@@ -47,6 +51,10 @@ namespace GoDungeon.RandomDungeon.Models
             stairsTable.InitializeTable();
             dungeonLocationTable.InitializeTable();
             exoticLocationTable.InitializeTable();
+            dungeonCreatorTable.InitializeTable();
+            cultsTable.InitializeTable();
+            npcAlignmentTable.InitializeTable();
+            npcClassTable.InitializeTable();
 
             // Set the properties
             Purpose = purpose;
@@ -63,6 +71,10 @@ namespace GoDungeon.RandomDungeon.Models
             StairsTable = stairsTable;
             DungeonLocationTable = dungeonLocationTable;
             ExoticLocationTable = exoticLocationTable;
+            DungeonCreatorTable = dungeonCreatorTable;
+            CultsTable = cultsTable;
+            NPCAlignmentTable = npcAlignmentTable;
+            NPCClassTable = npcClassTable;
         }
 
         /// <summary>
@@ -82,6 +94,10 @@ namespace GoDungeon.RandomDungeon.Models
         private IStairsTable StairsTable { get; }
         private IDungeonLocationTable DungeonLocationTable { get; }
         private IExoticLocationTable ExoticLocationTable { get; }
+        private IDungeonCreatorTable DungeonCreatorTable { get; }
+        private ICultsTable CultsTable { get; }
+        private INPCAlignmentTable NPCAlignmentTable { get; }
+        private INPCClassTable NPCClassTable { get; }
 
         /// <summary>
         /// Create a word document from a table
@@ -172,6 +188,10 @@ namespace GoDungeon.RandomDungeon.Models
             AddTableToWord(tableSection, History);
             AddTableToWord(tableSection, DungeonLocationTable);
             AddTableToWord(tableSection, ExoticLocationTable);
+            AddTableToWord(tableSection, DungeonCreatorTable);
+            AddTableToWord(tableSection, CultsTable);
+            AddTableToWord(tableSection, NPCAlignmentTable);
+            AddTableToWord(tableSection, NPCClassTable);
             AddTableToWord(tableSection, StartingAreaTable);
             AddTableToWord(tableSection, PassageTable);
             AddTableToWord(tableSection, PassageWidthTable);
