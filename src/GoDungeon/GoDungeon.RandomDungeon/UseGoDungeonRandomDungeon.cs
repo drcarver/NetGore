@@ -55,6 +55,7 @@ namespace GoDungeon.RandomDungeon
                 //the random results inspire you. You can mix up the
                 //order of the steps. 
                 .AddSingleton<IDungeonGoalsTable, DungeonGoalsTable>()
+                .AddSingleton<IAdventureVillainsTable, AdventureVillainsTable>()
                 .AddSingleton<IWildernessGoalsTable, WildernessGoalsTable>()
                 .AddSingleton<IMonumentsTable, MonumentsTable>()
                 .AddSingleton<IPrecipitationTable, PrecipitationTable>()

@@ -16,6 +16,7 @@ namespace GoDungeon.RandomDungeon.Models
     {
         public RandomDungeonModel(
             IServiceProvider services,
+            IAdventureVillainsTable adventureVillainsTable,
             IBeyondADoorTable beyondADoorTable,
             IChamberExitTable chamberExitTable,
             IChamberTable chamberTable,
@@ -51,6 +52,7 @@ namespace GoDungeon.RandomDungeon.Models
             )
         {
             // Initialize the tables
+            adventureVillainsTable.InitializeTable();
             beyondADoorTable.InitializeTable();
             chamberExitTable.InitializeTable();
             chamberTable.InitializeTable();
@@ -85,6 +87,7 @@ namespace GoDungeon.RandomDungeon.Models
             worldShakingEventsTable.InitializeTable();
 
             // Set the properties
+            AdventureVillainsTable = adventureVillainsTable;
             BeyondADoorTable = beyondADoorTable;
             ChamberExitTable = chamberExitTable;
             ChamberTable = chamberTable;
@@ -122,6 +125,7 @@ namespace GoDungeon.RandomDungeon.Models
         /// <summary>
         /// Properties for injected tables
         /// </summary>
+        private IAdventureVillainsTable AdventureVillainsTable { get; }
         private IBeyondADoorTable BeyondADoorTable { get; }
         private IChamberExitTable ChamberExitTable { get; }
         private IChamberTable ChamberTable { get; }
@@ -240,6 +244,7 @@ namespace GoDungeon.RandomDungeon.Models
             tableSection.PageSetup.PageNumberStyle = PageNumberStyle.Arabic;
 
             //Add a page for the purpose table
+            AddTableToWord(tableSection, AdventureVillainsTable);
             AddTableToWord(tableSection, BeyondADoorTable);
             AddTableToWord(tableSection, ChamberTable);
             AddTableToWord(tableSection, ChamberExitTable);
