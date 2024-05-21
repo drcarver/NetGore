@@ -55,6 +55,12 @@ namespace GoDungeon.RandomDungeon
                 //the random results inspire you. You can mix up the
                 //order of the steps. 
                 .AddSingleton<IDungeonGoalsTable, DungeonGoalsTable>()
+                .AddSingleton<IWildernessGoalsTable, WildernessGoalsTable>()
+                .AddSingleton<IMonumentsTable, MonumentsTable>()
+                .AddSingleton<IPrecipitationTable, PrecipitationTable>()
+                .AddSingleton<ITemperatureTable, TemperatureTable>()
+                .AddSingleton<IWindTable, WindTable>()
+                .AddSingleton<IOtherGoalsTable, OtherGoalsTable>()
 
                 // Dungeon Map
                 .AddSingleton<IStartingAreaTable, StartingAreaTable>()
@@ -70,10 +76,6 @@ namespace GoDungeon.RandomDungeon
 
                 // Misc Table
                 .AddSingleton<IFormOfGovernmentTable, FormOfGovernmentTable>()
-                .AddSingleton<IMonumentsTable, MonumentsTable>()
-                .AddSingleton<IPrecipitationTable, PrecipitationTable>()
-                .AddSingleton<ITemperatureTable, TemperatureTable>()
-                .AddSingleton<IWindTable, WindTable>()
                 .AddSingleton<IWeirdLocalesTable, WeirdLocalesTable>()
                 .AddSingleton<IWorldShakingEventsTable, WorldShakingEventsTable>()
                 .AddSingleton<ILeaderTypeTable, LeaderTypeTable>()

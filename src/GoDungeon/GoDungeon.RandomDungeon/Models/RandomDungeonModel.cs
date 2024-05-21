@@ -16,88 +16,144 @@ namespace GoDungeon.RandomDungeon.Models
     {
         public RandomDungeonModel(
             IServiceProvider services,
-            IDungeonPurposeTable purpose,
-            IDungeonHistoryTable history,
-            IStartingAreaTable startingAreaTable,
-            IPassageTable passageTable,
-            IPassageWidthTable passageWidthTable,
-            IChamberTable chamberTable,
-            IChamberExitTable chamberExitTable,
             IBeyondADoorTable beyondADoorTable,
+            IChamberExitTable chamberExitTable,
+            IChamberTable chamberTable,
+            ICultsTable cultsTable,
             IDoorTypeTable doorTypeTable,
+            IDungeonCreatorTable dungeonCreatorTable,
+            IDungeonGoalsTable dungeonGoalsTable,
+            IDungeonHistoryTable history,
+            IDungeonLocationTable dungeonLocationTable,
+            IDungeonPurposeTable purpose,
             IExitLocationTable exitLocationTable,
             IExitTypeTable exitTypeTable,
-            IStairsTable stairsTable,
-            IDungeonLocationTable dungeonLocationTable,
             IExoticLocationTable exoticLocationTable,
-            IDungeonCreatorTable dungeonCreatorTable,
-            ICultsTable cultsTable,
+            IFormOfGovernmentTable formOfGovernmentTable,
+            ILeaderTypeTable leaderTypeTable,
+            IMonumentsTable monumentsTable,
             INPCAlignmentTable npcAlignmentTable,
-            INPCClassTable npcClassTable
+            INPCClassTable npcClassTable,
+            IOtherGoalsTable otherGoalsTable,
+            IPassageTable passageTable,
+            IPassageWidthTable passageWidthTable,
+            IPrecipitationTable precipitationTable,
+            IRaceRelationsTable raceRelationsTable,
+            IRulerStatusTable rulerStatusTable,
+            ISettlementsTable settlementsTable,
+            IStairsTable stairsTable,
+            IStartingAreaTable startingAreaTable,
+            ITemperatureTable temperatureTable,
+            IWeirdLocalesTable weirdLocalesTable,
+            IWildernessGoalsTable wildernessGoalsTable,
+            IWindTable windTable,
+            IWorldShakingEventsTable worldShakingEventsTable
             )
         {
             // Initialize the tables
-            purpose.InitializeTable();
-            history.InitializeTable();
-            startingAreaTable.InitializeTable();
-            passageTable.InitializeTable();
-            passageWidthTable.InitializeTable();
-            chamberTable.InitializeTable();
-            chamberExitTable.InitializeTable();
             beyondADoorTable.InitializeTable();
+            chamberExitTable.InitializeTable();
+            chamberTable.InitializeTable();
+            cultsTable.InitializeTable();
+            doorTypeTable.InitializeTable();
+            dungeonCreatorTable.InitializeTable();
+            dungeonGoalsTable.InitializeTable();
+            history.InitializeTable();
+            dungeonLocationTable.InitializeTable();
+            purpose.InitializeTable();
             exitLocationTable.InitializeTable();
             exitTypeTable.InitializeTable();
-            doorTypeTable.InitializeTable();
-            stairsTable.InitializeTable();
-            dungeonLocationTable.InitializeTable();
             exoticLocationTable.InitializeTable();
-            dungeonCreatorTable.InitializeTable();
-            cultsTable.InitializeTable();
+            formOfGovernmentTable.InitializeTable();
+            leaderTypeTable.InitializeTable();
+            monumentsTable.InitializeTable();
             npcAlignmentTable.InitializeTable();
             npcClassTable.InitializeTable();
+            otherGoalsTable.InitializeTable();
+            passageTable.InitializeTable();
+            passageWidthTable.InitializeTable();
+            precipitationTable.InitializeTable();
+            raceRelationsTable.InitializeTable();
+            rulerStatusTable.InitializeTable();
+            settlementsTable.InitializeTable();
+            stairsTable.InitializeTable();
+            startingAreaTable.InitializeTable();
+            temperatureTable.InitializeTable();
+            weirdLocalesTable.InitializeTable();
+            wildernessGoalsTable.InitializeTable();
+            windTable.InitializeTable();
+            worldShakingEventsTable.InitializeTable();
 
             // Set the properties
-            Purpose = purpose;
-            History = history;
-            StartingAreaTable = startingAreaTable;
-            PassageTable = passageTable;
-            PassageWidthTable = passageWidthTable;
-            ChamberTable = chamberTable;
-            ChamberExitTable = chamberExitTable;
             BeyondADoorTable = beyondADoorTable;
+            ChamberExitTable = chamberExitTable;
+            ChamberTable = chamberTable;
+            CultsTable = cultsTable;
             DoorTypeTable = doorTypeTable;
+            DungeonCreatorTable = dungeonCreatorTable;
+            DungeonGoalsTable = dungeonGoalsTable;
+            History = history;
+            DungeonLocationTable = dungeonLocationTable;
+            Purpose = purpose;
             ExitLocationTable = exitLocationTable;
             ExitTypeTable = exitTypeTable;
-            StairsTable = stairsTable;
-            DungeonLocationTable = dungeonLocationTable;
             ExoticLocationTable = exoticLocationTable;
-            DungeonCreatorTable = dungeonCreatorTable;
-            CultsTable = cultsTable;
+            FormOfGovernmentTable = formOfGovernmentTable;
+            LeaderTypeTable = leaderTypeTable;
+            MonumentsTable = monumentsTable;
             NPCAlignmentTable = npcAlignmentTable;
             NPCClassTable = npcClassTable;
+            OtherGoalsTable = otherGoalsTable;
+            PassageTable = passageTable;
+            PassageWidthTable = passageWidthTable;
+            PrecipitationTable = precipitationTable;
+            RaceRelationsTable = raceRelationsTable;
+            RulerStatusTable = rulerStatusTable;
+            SettlementsTable = settlementsTable;
+            StairsTable = stairsTable;
+            StartingAreaTable = startingAreaTable;
+            TemperatureTable = temperatureTable;
+            WeirdLocalesTable = weirdLocalesTable;
+            WildernessGoalsTable = wildernessGoalsTable;
+            WindTable = windTable;
+            WorldShakingEventsTable = worldShakingEventsTable;
         }
 
         /// <summary>
         /// Properties for injected tables
         /// </summary>
-        private IRandomTable Purpose { get; }
-        private IRandomTable History { get; }
-        private IStartingAreaTable StartingAreaTable { get; }
-        private IPassageTable PassageTable { get; }
-        private IPassageWidthTable PassageWidthTable { get; }
-        private IChamberTable ChamberTable { get; }
-        private IChamberExitTable ChamberExitTable { get; }
         private IBeyondADoorTable BeyondADoorTable { get; }
+        private IChamberExitTable ChamberExitTable { get; }
+        private IChamberTable ChamberTable { get; }
+        private ICultsTable CultsTable { get; }
         private IDoorTypeTable DoorTypeTable { get; }
+        private IDungeonCreatorTable DungeonCreatorTable { get; }
+        private IDungeonGoalsTable DungeonGoalsTable { get; }
+        private IDungeonHistoryTable History { get; }
+        private IDungeonLocationTable DungeonLocationTable { get; }
+        private IDungeonPurposeTable Purpose { get; }
         private IExitLocationTable ExitLocationTable { get; }
         private IExitTypeTable ExitTypeTable { get; }
-        private IStairsTable StairsTable { get; }
-        private IDungeonLocationTable DungeonLocationTable { get; }
         private IExoticLocationTable ExoticLocationTable { get; }
-        private IDungeonCreatorTable DungeonCreatorTable { get; }
-        private ICultsTable CultsTable { get; }
+        private IFormOfGovernmentTable FormOfGovernmentTable { get; }
+        private ILeaderTypeTable LeaderTypeTable { get; }
+        private IMonumentsTable MonumentsTable { get; }
         private INPCAlignmentTable NPCAlignmentTable { get; }
         private INPCClassTable NPCClassTable { get; }
+        private IOtherGoalsTable OtherGoalsTable { get; }
+        private IPassageTable PassageTable { get; }
+        private IPassageWidthTable PassageWidthTable { get; }
+        private IPrecipitationTable PrecipitationTable { get; }
+        private IRaceRelationsTable RaceRelationsTable { get; }
+        private IRulerStatusTable RulerStatusTable { get; }
+        private ISettlementsTable SettlementsTable { get; }
+        private IStairsTable StairsTable { get; }
+        private IStartingAreaTable StartingAreaTable { get; }
+        private ITemperatureTable TemperatureTable { get; }
+        private IWeirdLocalesTable WeirdLocalesTable { get; }
+        private IWildernessGoalsTable WildernessGoalsTable { get; }
+        private IWindTable WindTable { get; }
+        private IWorldShakingEventsTable WorldShakingEventsTable { get; }
 
         /// <summary>
         /// Create a word document from a table
@@ -184,24 +240,38 @@ namespace GoDungeon.RandomDungeon.Models
             tableSection.PageSetup.PageNumberStyle = PageNumberStyle.Arabic;
 
             //Add a page for the purpose table
-            AddTableToWord(tableSection, Purpose);
+            AddTableToWord(tableSection, BeyondADoorTable);
+            AddTableToWord(tableSection, ChamberTable);
+            AddTableToWord(tableSection, ChamberExitTable);
+            AddTableToWord(tableSection, CultsTable);
+            AddTableToWord(tableSection, DoorTypeTable);
+            AddTableToWord(tableSection, DungeonCreatorTable);
+            AddTableToWord(tableSection, DungeonGoalsTable);
             AddTableToWord(tableSection, History);
             AddTableToWord(tableSection, DungeonLocationTable);
+            AddTableToWord(tableSection, Purpose);
+            AddTableToWord(tableSection, ExitLocationTable);
+            AddTableToWord(tableSection, ExitTypeTable);
             AddTableToWord(tableSection, ExoticLocationTable);
-            AddTableToWord(tableSection, DungeonCreatorTable);
-            AddTableToWord(tableSection, CultsTable);
+            AddTableToWord(tableSection, FormOfGovernmentTable);
+            AddTableToWord(tableSection, LeaderTypeTable);
+            AddTableToWord(tableSection, MonumentsTable);
             AddTableToWord(tableSection, NPCAlignmentTable);
             AddTableToWord(tableSection, NPCClassTable);
-            AddTableToWord(tableSection, StartingAreaTable);
+            AddTableToWord(tableSection, OtherGoalsTable);
             AddTableToWord(tableSection, PassageTable);
             AddTableToWord(tableSection, PassageWidthTable);
-            AddTableToWord(tableSection, ChamberTable);
-            //AddTableToWord(tableSection, ChamberExitTable);
-            AddTableToWord(tableSection, BeyondADoorTable);
-            AddTableToWord(tableSection, DoorTypeTable);
-            AddTableToWord(tableSection, ExitTypeTable);
-            AddTableToWord(tableSection, ExitLocationTable);
+            AddTableToWord(tableSection, PrecipitationTable);
+            AddTableToWord(tableSection, RaceRelationsTable);
+            AddTableToWord(tableSection, RulerStatusTable);
+            AddTableToWord(tableSection, SettlementsTable);
             AddTableToWord(tableSection, StairsTable);
+            AddTableToWord(tableSection, StartingAreaTable);
+            AddTableToWord(tableSection, TemperatureTable);
+            AddTableToWord(tableSection, WeirdLocalesTable);
+            AddTableToWord(tableSection, WildernessGoalsTable);
+            AddTableToWord(tableSection, WindTable);
+            AddTableToWord(tableSection, WorldShakingEventsTable);
 
             //Instantiation of DocIORenderer for Word to PDF conversion.
             var render = new DocIORenderer();

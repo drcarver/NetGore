@@ -2,7 +2,7 @@
 
 namespace GoDungeon.RandomDungeon.Interfaces
 {
-    public interface ITemperatureTable : IRandomTable
+    public interface IWildernessGoalsTable : IRandomTable
     {
     }
 }
