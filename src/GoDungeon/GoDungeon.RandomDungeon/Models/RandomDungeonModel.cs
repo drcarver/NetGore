@@ -34,6 +34,7 @@ namespace GoDungeon.RandomDungeon.Models
             ILeaderTypeTable leaderTypeTable,
             IMonumentsTable monumentsTable,
             INPCAlignmentTable npcAlignmentTable,
+            INPCAppearanceTable npcAppearanceTable,
             INPCClassTable npcClassTable,
             IOtherGoalsTable otherGoalsTable,
             IPassageTable passageTable,
@@ -69,6 +70,7 @@ namespace GoDungeon.RandomDungeon.Models
             formOfGovernmentTable.InitializeTable();
             leaderTypeTable.InitializeTable();
             monumentsTable.InitializeTable();
+            npcAppearanceTable.InitializeTable();
             npcAlignmentTable.InitializeTable();
             npcClassTable.InitializeTable();
             otherGoalsTable.InitializeTable();
@@ -105,6 +107,7 @@ namespace GoDungeon.RandomDungeon.Models
             LeaderTypeTable = leaderTypeTable;
             MonumentsTable = monumentsTable;
             NPCAlignmentTable = npcAlignmentTable;
+            NPCAppearanceTable = npcAppearanceTable;
             NPCClassTable = npcClassTable;
             OtherGoalsTable = otherGoalsTable;
             PassageTable = passageTable;
@@ -143,6 +146,7 @@ namespace GoDungeon.RandomDungeon.Models
         private ILeaderTypeTable LeaderTypeTable { get; }
         private IMonumentsTable MonumentsTable { get; }
         private INPCAlignmentTable NPCAlignmentTable { get; }
+        private INPCAppearanceTable NPCAppearanceTable { get; }
         private INPCClassTable NPCClassTable { get; }
         private IOtherGoalsTable OtherGoalsTable { get; }
         private IPassageTable PassageTable { get; }
@@ -261,6 +265,7 @@ namespace GoDungeon.RandomDungeon.Models
             AddTableToWord(tableSection, FormOfGovernmentTable);
             AddTableToWord(tableSection, LeaderTypeTable);
             AddTableToWord(tableSection, MonumentsTable);
+            AddTableToWord(tableSection, NPCAppearanceTable);
             AddTableToWord(tableSection, NPCAlignmentTable);
             AddTableToWord(tableSection, NPCClassTable);
             AddTableToWord(tableSection, OtherGoalsTable);

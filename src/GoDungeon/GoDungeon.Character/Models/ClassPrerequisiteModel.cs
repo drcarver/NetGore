@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
+using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Models;
@@ -44,7 +45,7 @@ namespace GoDungeon.Character.Models
                 case AbilityEnum.Dexterity:
                     return creature.Dexterity.BaseAbility +
                         creature.Dexterity.RacialModifier >= Score ||
-                    -1 * (creature.Dexterity.BaseAbility +
+                            -1 * (creature.Dexterity.BaseAbility +
                         creature.Dexterity.RacialModifier) <= Score;
                 case AbilityEnum.Constitution:
                     return creature.Constitution.BaseAbility +
