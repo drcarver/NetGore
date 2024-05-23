@@ -35,6 +35,7 @@
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Character\GoDungeon.Character.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
+	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
 	  <ProjectReference Include="..\GoDungeon.MAUI.Core\GoDungeon.MAUI.Core.csproj" />
 	</ItemGroup>
 

@@ -14,6 +14,8 @@ namespace GoDungeon.RandomDungeon.Models
 {
     public class RandomDungeonModel : BaseObjectModel, IRandomDungeonModel
     {
+        private readonly INPCLowAbilitiesTable nPCLowAbilitiesTable;
+
         public RandomDungeonModel(
             IServiceProvider services,
             IAdventureVillainsTable adventureVillainsTable,
@@ -36,6 +38,8 @@ namespace GoDungeon.RandomDungeon.Models
             INPCAlignmentTable npcAlignmentTable,
             INPCAppearanceTable npcAppearanceTable,
             INPCClassTable npcClassTable,
+            INPCHighAbilitiesTable npcHighAbilitiesTable,
+            INPCLowAbilitiesTable npcLowAbilitiesTable,
             IOtherGoalsTable otherGoalsTable,
             IPassageTable passageTable,
             IPassageWidthTable passageWidthTable,
@@ -73,6 +77,8 @@ namespace GoDungeon.RandomDungeon.Models
             npcAppearanceTable.InitializeTable();
             npcAlignmentTable.InitializeTable();
             npcClassTable.InitializeTable();
+            npcHighAbilitiesTable.InitializeTable();
+            npcLowAbilitiesTable.InitializeTable();
             otherGoalsTable.InitializeTable();
             passageTable.InitializeTable();
             passageWidthTable.InitializeTable();
@@ -109,6 +115,8 @@ namespace GoDungeon.RandomDungeon.Models
             NPCAlignmentTable = npcAlignmentTable;
             NPCAppearanceTable = npcAppearanceTable;
             NPCClassTable = npcClassTable;
+            NPCHighAbilitiesTable = npcHighAbilitiesTable;
+            NPCLowAbilitiesTable = npcLowAbilitiesTable;
             OtherGoalsTable = otherGoalsTable;
             PassageTable = passageTable;
             PassageWidthTable = passageWidthTable;
@@ -148,6 +156,8 @@ namespace GoDungeon.RandomDungeon.Models
         private INPCAlignmentTable NPCAlignmentTable { get; }
         private INPCAppearanceTable NPCAppearanceTable { get; }
         private INPCClassTable NPCClassTable { get; }
+        private INPCHighAbilitiesTable NPCHighAbilitiesTable { get; }
+        private INPCLowAbilitiesTable NPCLowAbilitiesTable { get; }
         private IOtherGoalsTable OtherGoalsTable { get; }
         private IPassageTable PassageTable { get; }
         private IPassageWidthTable PassageWidthTable { get; }
@@ -268,6 +278,8 @@ namespace GoDungeon.RandomDungeon.Models
             AddTableToWord(tableSection, NPCAppearanceTable);
             AddTableToWord(tableSection, NPCAlignmentTable);
             AddTableToWord(tableSection, NPCClassTable);
+            AddTableToWord(tableSection, NPCHighAbilitiesTable);
+            AddTableToWord(tableSection, NPCLowAbilitiesTable);
             AddTableToWord(tableSection, OtherGoalsTable);
             AddTableToWord(tableSection, PassageTable);
             AddTableToWord(tableSection, PassageWidthTable);

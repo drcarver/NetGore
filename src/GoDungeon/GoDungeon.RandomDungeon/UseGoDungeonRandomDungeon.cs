@@ -95,6 +95,8 @@ namespace GoDungeon.RandomDungeon
                 .AddSingleton<INPCAlignmentTable, NPCAlignmentTable>()
                 .AddSingleton<INPCAppearanceTable, NPCAppearanceTable>()
                 .AddSingleton<INPCClassTable, NPCClassTable>()
+                .AddSingleton<INPCHighAbilitiesTable, NPCHighAbilitiesTable>()
+                .AddSingleton<INPCLowAbilitiesTable, NPCLowAbilitiesTable>()
                 .AddSingleton<IExoticLocationTable, ExoticLocationTable>()
                 ;
 

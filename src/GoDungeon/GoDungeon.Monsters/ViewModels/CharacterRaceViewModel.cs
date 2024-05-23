@@ -54,6 +54,9 @@ namespace GoDungeon.Monsters.ViewModels
         [ObservableProperty]
         private IBackgroundTableEntry? adoptedParents;
 
+        [ObservableProperty]
+        private string? shortDescription;
+
         /// <summary>
         /// Set the character background
         /// </summary>
