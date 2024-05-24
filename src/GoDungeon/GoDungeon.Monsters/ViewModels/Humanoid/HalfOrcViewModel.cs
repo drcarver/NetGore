@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 
-using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -23,9 +19,12 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
     public class HalfOrcViewModel : CharacterRaceViewModel, IHalfOrc
     {
         /// <summary>
-        /// Set the race traits for the 
+        /// Set the race traits for the half-orc
         /// </summary>
-        public HalfOrcViewModel(ILoggerFactory logger)
+        public HalfOrcViewModel(
+            IServiceProvider services, 
+            ILoggerFactory logger)
+            : base(logger, services)
         {
             Initialize();
         }

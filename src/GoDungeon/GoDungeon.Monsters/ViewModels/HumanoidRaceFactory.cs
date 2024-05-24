@@ -3,7 +3,6 @@
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.Interfaces;
-using GoDungeon.Monsters.ViewModels.Humanoid;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -82,7 +81,11 @@ namespace GoDungeon.Monsters.ViewModels
                 case RaceEnum.Tiefling:
                     return Services?.GetService<ITiefling>();
                 default:
-                    return new HumanoidRaceViewModel() { Race = race };
+                    return Services?.GetService<IHuman>();
+                    //var def = Services?.GetService<IHumanoidRace>();
+                    //def.Race = race;
+                    //return def;
+
             }
         }
     }

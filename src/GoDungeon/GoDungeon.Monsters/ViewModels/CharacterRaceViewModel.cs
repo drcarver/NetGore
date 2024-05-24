@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -7,6 +8,9 @@ using GoDungeon.Background.Interfaces;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.ViewModels.Humanoid;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Monsters.ViewModels
 {
@@ -57,6 +61,128 @@ namespace GoDungeon.Monsters.ViewModels
         [ObservableProperty]
         private string? shortDescription;
 
+        public IServiceProvider Services { get; }
+
+        /// <summary>
+        /// Set the short description
+        /// </summary>
+        public void SetShortDescription()
+        {
+            // NPC High Abilities Table
+            INPCHighAbilitiesTable NPCHighAbilitiesTable =
+                Services.GetRequiredService<INPCHighAbilitiesTable>();
+            NPCHighAbilitiesTable.InitializeTable();
+
+            // NPC Low Abilities Table
+            INPCLowAbilitiesTable NPCLowAbilitiesTable =
+                Services.GetRequiredService<INPCLowAbilitiesTable>();
+            NPCLowAbilitiesTable.InitializeTable();
+
+            ShortDescription = string.Empty;
+            string highAbilities = string.Empty;
+            string lowAbilities = string.Empty;
+            foreach (var enumMember in Enum.GetValues(typeof(AbilityEnum)))
+            {
+                // Ability
+                var highEntry = (IRandomTableEntry)NPCHighAbilitiesTable.GetEntryByName(enumMember.ToString());
+                var lowEntry = (IRandomTableEntry)NPCLowAbilitiesTable.GetEntryByName(enumMember.ToString());
+                int score = 0;
+                switch (enumMember)
+                {
+                    case AbilityEnum.Strength:
+                        score = Strength.Score;
+                        break;
+                    case AbilityEnum.Intelligence:
+                        score = Intelligence.Score;
+                        break;
+                    case AbilityEnum.Dexterity:
+                        score = Dexterity.Score;
+                        break;
+                    case AbilityEnum.Constitution:
+                        score = Constitution.Score;
+                        break;
+                    case AbilityEnum.Wisdom:
+                        score = Wisdom.Score;
+                        break;
+                    case AbilityEnum.Charisma:
+                        score = Charisma.Score;
+                        break;
+
+                }
+                if (score >= 14)
+                {
+                    if (highAbilities.Length > 0)
+                    {
+                        highAbilities += "," + highEntry.ProperName;
+                    }
+                    else
+                    {
+                        highAbilities += highEntry.ProperName;
+                    }
+                }
+                else if (score <= 8)
+                {
+                    if (lowAbilities.Length > 0)
+                    {
+                        lowAbilities += "," + lowEntry.ProperName;
+                    }
+                    else
+                    {
+                        lowAbilities += lowEntry.ProperName;
+                    }
+                }
+            }
+            if (lowAbilities.Length >= 0 || highAbilities.Length >= 0)
+            {
+                ShortDescription = string.Empty;
+                if (lowAbilities.Length > 0)
+                {
+                    if (lowAbilities.IndexOf(",") > -1)
+                    {
+                        var lowAbilitiesList = lowAbilities.Split(',');
+                        lowAbilities = string.Empty;
+                        for (int i = 0; i < lowAbilitiesList.Length - 1; i++)
+                        {
+                            lowAbilities += lowAbilitiesList[i] + ", ";
+                        }
+                        lowAbilities += " and " + lowAbilitiesList[lowAbilitiesList.Length - 1];
+                        lowAbilities = lowAbilities.Replace(",  and ", " and ");
+                    }
+                    ShortDescription = lowAbilities;
+                }
+                if (highAbilities.Length > 0)
+                {
+                    if (highAbilities.IndexOf(",") > -1)
+                    {
+                        var highAbilitiesList = highAbilities.Split(',');
+                        highAbilities = string.Empty;
+                        for (int i = 0; i < highAbilitiesList.Length - 1; i++)
+                        {
+                            highAbilities += highAbilitiesList[i] + ", ";
+                        }
+                        highAbilities += " and " + highAbilitiesList[highAbilitiesList.Length - 1];
+                        highAbilities = highAbilities.Replace(",  and ", " and ");
+                    }
+                    if (ShortDescription.Length > 0)
+                    {
+                        ShortDescription += " while also being " + highAbilities;
+                    }
+                    else
+                    {
+                        ShortDescription = highAbilities;
+                    }
+                }
+                if (ShortDescription.Length >= 0)
+                {
+                    ShortDescription = ShortDescription + ".";
+                }
+                else
+                {
+                    ShortDescription = "completely average looking.";
+                }
+            }
+        }
+
         /// <summary>
         /// Set the character background
         /// </summary>
@@ -64,7 +190,7 @@ namespace GoDungeon.Monsters.ViewModels
         /// <param name="unusualHomelandTable"></param>
         protected virtual void GetHomeland(
             IRandomTable homelandTable,
-            IRandomTable unusualHomelandTable)
+            IUnusualHomelandTable unusualHomelandTable)
         {
             homelandTable?.InitializeTable();
             Homeland = (IBackgroundTableEntry?)homelandTable?.GetRandomRangeEntry();
@@ -109,15 +235,29 @@ namespace GoDungeon.Monsters.ViewModels
         /// Get circumstances of birth.  This will populate a
         /// number of properties based on the results.
         /// </summary>
-        /// <param name="circumstanceofBirthTable"></param>
-        protected virtual void GetCircumstanceofBirth(
-            IRandomTable circumstanceofBirthTable,
-            IProfessionTable professionTable,
-            INobilityTable nobilityTable,
-            IAdoptedOutsideYourRaceTable adoptedOutsideYourRaceTable)
+        protected virtual void GetCircumstanceOfBirth()
         {
+            // Circumstance of Birth Table
+            ICircumstanceofBirthTable circumstanceofBirthTable =
+                Services.GetRequiredService<ICircumstanceofBirthTable>();
             circumstanceofBirthTable.InitializeTable();
+
+            // ProfessionTable
+            IProfessionTable professionTable =
+                Services.GetRequiredService<IProfessionTable>();
             professionTable.InitializeTable();
+
+            // NobilityTable
+            INobilityTable nobilityTable =
+                Services.GetRequiredService<INobilityTable>();
+            nobilityTable.InitializeTable();
+
+            // NobilityTable
+            IAdoptedOutsideYourRaceTable adoptedOutsideYourRaceTable =
+                Services.GetRequiredService<IAdoptedOutsideYourRaceTable>();
+            adoptedOutsideYourRaceTable.InitializeTable();
+
+            // Get circumstance of birth
             CircumstanceOfBirth = (IBackgroundTableEntry?)circumstanceofBirthTable?.GetRandomRangeEntry();
             switch (CircumstanceOfBirth?.Name)
             {
@@ -158,6 +298,20 @@ namespace GoDungeon.Monsters.ViewModels
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="services"></param>
+        protected CharacterRaceViewModel
+        (
+            ILoggerFactory logger,
+            IServiceProvider services
+        ) : base(services, logger)
+        {
+            Services = services;
         }
     }
 }

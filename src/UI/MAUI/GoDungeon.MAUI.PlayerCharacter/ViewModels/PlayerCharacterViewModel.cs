@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 
-using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -9,13 +8,11 @@ using GoDungeon.Character.PC.Bard;
 using GoDungeon.Character.PC.Cleric;
 using GoDungeon.Character.PC.Druid;
 using GoDungeon.Core;
-using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.ViewModels;
-using GoDungeon.RandomDungeon.Interfaces;
 
 using Microsoft.Extensions.Logging;
 
@@ -148,13 +145,8 @@ public partial class PlayerCharacterViewModel : ObservableObject
         }
         #endregion
 
-        #region Now the character alignment
-        AlignmentTableEntryViewModel alignEntry = (AlignmentTableEntryViewModel)AlignmentTable?.GetRandomEntry();
-        Race.Alignment = alignEntry.Alignment;
-        SelectedAlignment = alignEntry;
-        #endregion
-
-        SetShortDescription();
+        Race.SetAlignment(AlignmentFilterEnum.NonEvil);
+        Race.SetShortDescription();
 
         // Get the classes that prerequisites are equal or better to
         // the character abilities.
@@ -191,127 +183,16 @@ public partial class PlayerCharacterViewModel : ObservableObject
         Initializing = false;
     }
 
-    private void SetShortDescription()
-    {
-        Race.ShortDescription = string.Empty;
-        string highAbilities = string.Empty;
-        string lowAbilities = string.Empty;
-        foreach (var enumMember in Enum.GetValues(typeof(AbilityEnum)))
-        {
-            // Ability
-            var highEntry = (IRandomTableEntry)NPCHighAbilitiesTable.GetEntryByName(enumMember.ToString());
-            var lowEntry = (IRandomTableEntry)NPCLowAbilitiesTable.GetEntryByName(enumMember.ToString());
-            int score = 0;
-            switch (enumMember)
-            {
-                case AbilityEnum.Strength:
-                    score = Race.Strength.Score;
-                    break;
-                case AbilityEnum.Intelligence:
-                    score = Race.Intelligence.Score;
-                    break;
-                case AbilityEnum.Dexterity:
-                    score = Race.Dexterity.Score;
-                    break;
-                case AbilityEnum.Constitution:
-                    score = Race.Constitution.Score;
-                    break;
-                case AbilityEnum.Wisdom:
-                    score = Race.Wisdom.Score;
-                    break;
-                case AbilityEnum.Charisma:
-                    score = Race.Charisma.Score;
-                    break;
-
-            }
-            if (score >= 14)
-            {
-                if (highAbilities.Length > 0)
-                {
-                    highAbilities += "," + highEntry.ProperName;
-                }
-                else
-                {
-                    highAbilities += highEntry.ProperName;
-                }
-            }
-            else if (score <= 8)
-            {
-                if (lowAbilities.Length > 0)
-                {
-                    lowAbilities += "," + lowEntry.ProperName;
-                }
-                else
-                {
-                    lowAbilities += lowEntry.ProperName;
-                }
-            }
-        }
-        if (lowAbilities.Length >= 0 || highAbilities.Length >= 0)
-        {
-            Race.ShortDescription = string.Empty;
-            if (lowAbilities.Length > 0)
-            {
-                if (lowAbilities.IndexOf(",") > -1)
-                {
-                    var lowAbilitiesList = lowAbilities.Split(',');
-                    lowAbilities = string.Empty;
-                    for (int i = 0; i < lowAbilitiesList.Length - 1; i++)
-                    {
-                        lowAbilities += lowAbilitiesList[i] + ", ";
-                    }
-                    lowAbilities += " and " + lowAbilitiesList[lowAbilitiesList.Length - 1];
-                    lowAbilities = lowAbilities.Replace(",  and ", " and ");
-                }
-                Race.ShortDescription = lowAbilities;
-            }
-            if (highAbilities.Length > 0)
-            {
-                if (highAbilities.IndexOf(",") > -1)
-                {
-                    var highAbilitiesList = highAbilities.Split(',');
-                    highAbilities = string.Empty;
-                    for (int i = 0; i < highAbilitiesList.Length - 1; i++)
-                    {
-                        highAbilities += highAbilitiesList[i] + ", ";
-                    }
-                    highAbilities += " and " + highAbilitiesList[highAbilitiesList.Length - 1];
-                    highAbilities = highAbilities.Replace(",  and ", " and ");
-                }
-                if (Race.ShortDescription.Length > 0)
-                {
-                    Race.ShortDescription += " while also being " + highAbilities;
-                }
-                else
-                {
-                    Race.ShortDescription = highAbilities;
-                }
-            }
-            if (Race.ShortDescription.Length >= 0)
-            {
-                Race.ShortDescription = Race.ShortDescription + ".";
-            }
-            else
-            {
-                Race.ShortDescription = "completely average looking.";
-            }
-        }
-    }
-
     /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="services"></param>
     /// <param name="loggerFactory"></param>
     /// <param name="alignmentTable"></param>
-    /// <param name="npcHighAbilitiesTable"></param>
-    /// <param name="npcLowAbilitiesTable"></param>
     public PlayerCharacterViewModel(
             IServiceProvider services,
             ILoggerFactory loggerFactory,
-            IAlignmentTable alignmentTable,
-            INPCHighAbilitiesTable npcHighAbilitiesTable,
-            INPCLowAbilitiesTable npcLowAbilitiesTable
+            IAlignmentTable alignmentTable
             )
     {
         logger = loggerFactory.CreateLogger<PlayerCharacterViewModel>();
@@ -320,12 +201,6 @@ public partial class PlayerCharacterViewModel : ObservableObject
         // Initialize the alignment table
         AlignmentTable = alignmentTable;
         AlignmentTable.InitializeTable();
-
-       NPCHighAbilitiesTable = npcHighAbilitiesTable;
-       NPCHighAbilitiesTable.InitializeTable();
-
-       NPCLowAbilitiesTable = npcLowAbilitiesTable;
-       NPCLowAbilitiesTable.InitializeTable();
 
         // The list of races
         for (int i = 1; i < 10; i++)

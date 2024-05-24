@@ -1,13 +1,13 @@
 ﻿using System;
 
 using GoDungeon.Background.Interfaces;
-using GoDungeon.Background.Tables.Halfling;
+using GoDungeon.Background.Tables.Dragonborn;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Monsters.ViewModels.Humanoid
@@ -24,39 +24,44 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="loggerFactory"></param>
+        /// <param name="serviceProvider">The service provider</param>
+        /// <param name="loggerFactory">The logger factory</param>
+        /// <param name="lightFoot">The light foot sub-race</param>
         public HalflingViewModel(
+            IServiceProvider serviceProvider,
             ILoggerFactory loggerFactory,
-            IRandomAlignmentTable alignmentTable,
-            IHalflingHomelandTable homelandTable,
-            IUnusualHomelandTable unusualHomelandTable,
-            IHalflingParentsTable parentsTable,
-            ICircumstanceofBirthTable circumstanceofBirthTable,
-            IProfessionTable professionTable,
-            INobilityTable nobilityTable,
-            IAdoptedOutsideYourRaceTable adoptedOutsideYourRaceTable,
-            bool lightFoot = false
-            )
+            bool lightFoot = false)
+            : base(loggerFactory, serviceProvider)
         {
             // Initialize  the character from the race features
             Initialize();
 
+            // Now generate the characters background
+            // First the homeland
+            var homelandTable = serviceProvider.GetRequiredService<IDragonbornHomelandTable>();
+            homelandTable.InitializeTable();
+            IUnusualHomelandTable unusualHomelandTable = serviceProvider.GetRequiredService<IUnusualHomelandTable>();
+            unusualHomelandTable.InitializeTable();
+            GetHomeland(homelandTable, unusualHomelandTable);
+
+            // Net the parents
+            var parentsTable = serviceProvider.GetRequiredService<IDragonbornParentsTable>();
+            parentsTable.InitializeTable();
+            GetParents(parentsTable);
+
+            // Next the Circumstance of birth
+            GetCircumstanceOfBirth();
+
             // Set the alignment
-            SetAlignment(alignmentTable);
+            SetAlignment(AlignmentFilterEnum.GoodOnly);
+
+            // Next set the short description
+            SetShortDescription();
 
             if (lightFoot)
             {
                 SetLightFoot();
             }
-
-            // Now generate the characters background
-            GetHomeland(homelandTable, unusualHomelandTable);
-            GetParents(parentsTable);
-            GetCircumstanceofBirth(
-                circumstanceofBirthTable,
-                professionTable,
-                nobilityTable,
-                adoptedOutsideYourRaceTable);
         }
 
         /// <summary>
@@ -79,25 +84,6 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             // when you are obscured only by a creature that is at 
             // least one size larger than you
             Traits.Add(TraitEnum.NaturallyStealthy);
-        }
-
-        /// <summary>
-        /// Alignment. Most halflings are lawful good. As a 
-        /// rule, they are good-hearted and kind, hate to see 
-        /// others in pain, and have no tolerance for oppression.
-        /// <para>
-        /// They are also very orderly and traditional, leaning 
-        /// heavily on the support of their community and the 
-        /// comfort of their old ways.
-        /// </para>
-        /// </summary>
-        /// <param name="alignmentTable">The random alignment table</param>
-        private void SetAlignment(IRandomAlignmentTable alignmentTable)
-        {
-            alignmentTable.InitializeTable();
-            alignmentTable.AlignmentFilter = AlignmentFilterEnum.GoodOnly;
-            var alignmentVM = (AlignmentTableEntryViewModel)alignmentTable.GetRandomRangeEntry();
-            Alignment = alignmentVM.Alignment;
         }
 
         /// <summary>

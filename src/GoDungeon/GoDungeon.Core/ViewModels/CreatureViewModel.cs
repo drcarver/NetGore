@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -7,6 +8,9 @@ using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Models;
 using GoDungeon.Core.Tables;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Core.ViewModels
 {
@@ -230,6 +234,8 @@ namespace GoDungeon.Core.ViewModels
         /// </summary>
         public float CarryingCapacity => Capacity(15);
 
+        public IServiceProvider Services { get; }
+
         /// <summary>
         /// Compute capacity based on size
         /// </summary>
@@ -271,10 +277,37 @@ namespace GoDungeon.Core.ViewModels
         }
 
         /// <summary>
+        /// Alignment. Most halflings are lawful good. As a 
+        /// rule, they are good-hearted and kind, hate to see 
+        /// others in pain, and have no tolerance for oppression.
+        /// <para>
+        /// They are also very orderly and traditional, leaning 
+        /// heavily on the support of their community and the 
+        /// comfort of their old ways.
+        /// </para>
+        /// </summary>
+        /// <param name="service">The service provider</param>
+        /// <param name="filter">The alignment filter</param>
+        public void SetAlignment(AlignmentFilterEnum filter)
+        {
+            IRandomAlignmentTable alignmentTable = Services.GetRequiredService<IRandomAlignmentTable>();
+            alignmentTable.InitializeTable();
+            alignmentTable.AlignmentFilter = AlignmentFilterEnum.GoodOnly;
+            var alignmentVM = (AlignmentTableEntryViewModel)alignmentTable.GetRandomRangeEntry();
+            Alignment = alignmentVM.Alignment;
+        }
+
+        /// <summary>
         /// Constructor
         /// </summary>
-        public CreatureViewModel()
+        /// <param name="services"></param>
+        /// <param name="logger"></param>
+        public CreatureViewModel(
+            IServiceProvider services,
+            ILoggerFactory logger)
         {
+            Services = services;
+
             // Setup some required values
             HitPoints = new HitPointsViewModel(this);
        
@@ -295,9 +328,8 @@ namespace GoDungeon.Core.ViewModels
             FortitudeSave = new FortitudeSaveViewModel(this);
             ReflexSave = new ReflexSaveViewModel(this);
 
-            var alignmenttable = new RandomAlignmentTable();
-            alignmenttable.InitializeTable();
-            Alignment = ((AlignmentTableEntryViewModel)alignmenttable.GetRandomRangeEntry()).Alignment;
+            // Alignment
+            SetAlignment(AlignmentFilterEnum.NonEvil);
         }
     }
 }

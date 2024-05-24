@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core;
+﻿using System;
+
+using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
@@ -35,7 +37,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the 
         /// </summary>
-        public TieflingViewModel(ILoggerFactory loggerFactory)
+        public TieflingViewModel(
+            IServiceProvider services, 
+            ILoggerFactory loggerFactory)
+            : base(loggerFactory, services)
         {
             Initialize();
         }

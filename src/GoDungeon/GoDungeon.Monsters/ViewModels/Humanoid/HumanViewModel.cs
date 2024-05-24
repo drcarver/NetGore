@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 
-using GoDungeon.Background.Tables.Human;
-using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
@@ -23,10 +18,9 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// Set the race traits for the 
         /// </summary>
         public HumanViewModel(
-            ILoggerFactory loggerFactory,
-            IHumanHomelandTable humanHomeLandTable,
-            IHumanParentsTable humanParentsTable,
-            IHumanSiblingsTable humanSiblingsTable)
+            IServiceProvider services, 
+            ILoggerFactory loggerFactory) 
+            : base(loggerFactory, services)
         {
             Initialize();
         }

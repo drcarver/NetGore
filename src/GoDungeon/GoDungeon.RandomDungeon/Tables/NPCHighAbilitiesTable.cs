@@ -5,7 +5,6 @@ using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 using GoDungeon.Core.ViewModels;
-using GoDungeon.RandomDungeon.Interfaces;
 
 namespace GoDungeon.RandomDungeon.Tables
 {

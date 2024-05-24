@@ -170,7 +170,7 @@
             </Border>
         </HorizontalStackLayout>
         <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
-                ColumnDefinitions="Auto,250,Auto,Auto" ColumnSpacing="10">
+                ColumnDefinitions="Auto,400,Auto,Auto" ColumnSpacing="10">
             <!--The Abilities Block -->
             <Grid Grid.Column="0" Grid.Row="0" ColumnDefinitions="100,Auto"
                         RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
@@ -272,38 +272,40 @@
                     </Grid>
                 </Border>
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="0" RowDefinitions="40,40,Auto,Auto"
+            <Grid Grid.Column="1" Grid.Row="0" RowDefinitions="40,40,300,Auto"
                   Margin="5,5,5,5">
                 <!--Inspiration Box-->
-                <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="Auto,200">
-                    <Border StrokeShape="RoundRectangle 10,10,10,10" 
+                <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="50,200"
+                      ColumnSpacing="10">
+                    <Border StrokeShape="RoundRectangle 10,10,10,10"
                             StrokeThickness="3" Grid.Column="0">
-                        <Entry Text="0" FontSize="Small"
-                               TextColor="Black" 
+                        <Entry Text="0" FontSize="Small" 
+                               TextColor="Black" WidthRequest="50"
                                VerticalTextAlignment="Center"
                                HorizontalTextAlignment="Center" />
                     </Border>
                     <Border StrokeShape="RoundRectangle 10,10,10,10" 
                             StrokeThickness="3" Grid.Column="1">
-                        <Label  WidthRequest="170" FontSize="Small"
-                                Text="Inspiration" 
+                        <Label  WidthRequest="200" FontSize="Small"
+                                Text="Inspiration" Margin="5"
                                 HorizontalTextAlignment="Start"
                                 VerticalTextAlignment="Center"
                                 TextColor="Black"/>
                     </Border>
                 </Grid>
                 <!--Proficiency Box-->
-                <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="Auto,200">
-                    <Border StrokeShape="RoundRectangle 10,10,10,10" 
+                <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="50,200"
+                      ColumnSpacing="10">
+                    <Border StrokeShape="RoundRectangle 10,10,10,10"
                             StrokeThickness="3" Grid.Row="1" Grid.Column="0">
-                        <Entry Text="0" FontSize="Small"
+                        <Entry Text="0" FontSize="Small"  WidthRequest="50"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
-                               TextColor="Black"/>
+                               TextColor="Black" />
                     </Border>
                     <Border StrokeShape="RoundRectangle 10,10,10,10" 
                             StrokeThickness="3" Grid.Row="1" Grid.Column="1">
-                        <Label  WidthRequest="150"
+                        <Label  WidthRequest="200" Margin="5"
                                 HorizontalTextAlignment="Start"
                                 VerticalTextAlignment="Center"
                                 Text="Proficiency Bonus" FontSize="Small" 
@@ -315,7 +317,7 @@
                         StrokeShape="RoundRectangle 10,10,10,10" StrokeThickness="2"
                         BackgroundColor="PapayaWhip">
                     <Grid RowDefinitions="30,30,30,30,30,30,30"
-                            RowSpacing="10">
+                          RowSpacing="10">
                         <HorizontalStackLayout Grid.Row="0">
                             <RadioButton />
                             <Entry HorizontalTextAlignment="Center"
