@@ -27,8 +27,6 @@ public partial class PlayerCharacterViewModel : ObservableObject
     public bool initializing;
 
     private IServiceProvider Services { get; }
-    private INPCHighAbilitiesTable NPCHighAbilitiesTable { get; }
-    private INPCLowAbilitiesTable NPCLowAbilitiesTable { get; }
 
     #region Alignment Table
     [ObservableProperty]

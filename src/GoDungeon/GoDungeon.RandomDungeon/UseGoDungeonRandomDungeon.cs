@@ -55,8 +55,23 @@ namespace GoDungeon.RandomDungeon
                 //adventure. Alternatively, roll on the tables and see how
                 //the random results inspire you. You can mix up the
                 //order of the steps. 
-                .AddSingleton<IDungeonGoalsTable, DungeonGoalsTable>()
+                .AddSingleton<IAdventureAlliesTable, AdventureAlliesTable>()
+                .AddSingleton<IAdventureIntroductionTable, AdventureIntroductionTable>()
                 .AddSingleton<IAdventureVillainsTable, AdventureVillainsTable>()
+                .AddSingleton<IAdventurePatronsTable, AdventurePatronsTable>()
+                .AddSingleton<IDungeonCreatorTable, DungeonCreatorTable>()
+                .AddSingleton<IDungeonGoalsTable, DungeonGoalsTable>()
+                .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
+                .AddSingleton<IDungeonLocationTable, DungeonLocationTable>()
+                .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
+                .AddSingleton<ICultsTable, CultsTable>()
+                .AddSingleton<INPCAlignmentTable, NPCAlignmentTable>()
+                .AddSingleton<INPCAppearanceTable, NPCAppearanceTable>()
+                .AddSingleton<INPCClassTable, NPCClassTable>()
+                .AddSingleton<INPCHighAbilitiesTable, NPCHighAbilitiesTable>()
+                .AddSingleton<INPCLowAbilitiesTable, NPCLowAbilitiesTable>()
+                .AddSingleton<INPCTalentsTable, NPCTalentsTable>()
+                .AddSingleton<IExoticLocationTable, ExoticLocationTable>()
                 .AddSingleton<IWildernessGoalsTable, WildernessGoalsTable>()
                 .AddSingleton<IMonumentsTable, MonumentsTable>()
                 .AddSingleton<IPrecipitationTable, PrecipitationTable>()
@@ -86,19 +101,6 @@ namespace GoDungeon.RandomDungeon
                 .AddSingleton<ISettlementsTable, SettlementTable>()
                 .AddSingleton<IRaceRelationsTable, RaceRelationsTable>()
                 .AddSingleton<IRulerStatusTable, RulerStatusTable>()
-
-                // Dungeon Creator's Table
-                .AddSingleton<IDungeonCreatorTable, DungeonCreatorTable>()
-                .AddSingleton<IDungeonHistoryTable, DungeonHistoryTable>()
-                .AddSingleton<IDungeonLocationTable, DungeonLocationTable>()
-                .AddSingleton<IDungeonPurposeTable, DungeonPurposeTable>()
-                .AddSingleton<ICultsTable, CultsTable>()
-                .AddSingleton<INPCAlignmentTable, NPCAlignmentTable>()
-                .AddSingleton<INPCAppearanceTable, NPCAppearanceTable>()
-                .AddSingleton<INPCClassTable, NPCClassTable>()
-                .AddSingleton<INPCHighAbilitiesTable, NPCHighAbilitiesTable>()
-                .AddSingleton<INPCLowAbilitiesTable, NPCLowAbilitiesTable>()
-                .AddSingleton<IExoticLocationTable, ExoticLocationTable>()
                 ;
 
             return collection;

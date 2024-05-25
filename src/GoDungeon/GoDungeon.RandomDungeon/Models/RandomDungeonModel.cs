@@ -14,10 +14,51 @@ namespace GoDungeon.RandomDungeon.Models
 {
     public class RandomDungeonModel : BaseObjectModel, IRandomDungeonModel
     {
-        private readonly INPCLowAbilitiesTable nPCLowAbilitiesTable;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="adventureVillainsTable"></param>
+        /// <param name="beyondADoorTable"></param>
+        /// <param name="chamberExitTable"></param>
+        /// <param name="chamberTable"></param>
+        /// <param name="cultsTable"></param>
+        /// <param name="doorTypeTable"></param>
+        /// <param name="dungeonCreatorTable"></param>
+        /// <param name="dungeonGoalsTable"></param>
+        /// <param name="history"></param>
+        /// <param name="dungeonLocationTable"></param>
+        /// <param name="purpose"></param>
+        /// <param name="exitLocationTable"></param>
+        /// <param name="exitTypeTable"></param>
+        /// <param name="exoticLocationTable"></param>
+        /// <param name="formOfGovernmentTable"></param>
+        /// <param name="leaderTypeTable"></param>
+        /// <param name="monumentsTable"></param>
+        /// <param name="npcAlignmentTable"></param>
+        /// <param name="npcAppearanceTable"></param>
+        /// <param name="npcClassTable"></param>
+        /// <param name="npcHighAbilitiesTable"></param>
+        /// <param name="npcLowAbilitiesTable"></param>
+        /// <param name="otherGoalsTable"></param>
+        /// <param name="passageTable"></param>
+        /// <param name="passageWidthTable"></param>
+        /// <param name="precipitationTable"></param>
+        /// <param name="raceRelationsTable"></param>
+        /// <param name="rulerStatusTable"></param>
+        /// <param name="settlementsTable"></param>
+        /// <param name="stairsTable"></param>
+        /// <param name="startingAreaTable"></param>
+        /// <param name="temperatureTable"></param>
+        /// <param name="weirdLocalesTable"></param>
+        /// <param name="wildernessGoalsTable"></param>
+        /// <param name="windTable"></param>
+        /// <param name="worldShakingEventsTable"></param>
         public RandomDungeonModel(
             IServiceProvider services,
+            IAdventureAlliesTable adventureAlliesTable,
+            IAdventureIntroductionTable adventureIntroductionTable,
+            IAdventurePatronsTable adventurePatronsTable,
             IAdventureVillainsTable adventureVillainsTable,
             IBeyondADoorTable beyondADoorTable,
             IChamberExitTable chamberExitTable,
@@ -40,6 +81,7 @@ namespace GoDungeon.RandomDungeon.Models
             INPCClassTable npcClassTable,
             INPCHighAbilitiesTable npcHighAbilitiesTable,
             INPCLowAbilitiesTable npcLowAbilitiesTable,
+            INPCTalentsTable npcTalentsTable,
             IOtherGoalsTable otherGoalsTable,
             IPassageTable passageTable,
             IPassageWidthTable passageWidthTable,
@@ -57,6 +99,9 @@ namespace GoDungeon.RandomDungeon.Models
             )
         {
             // Initialize the tables
+            adventureAlliesTable.InitializeTable();
+            adventureIntroductionTable.InitializeTable();
+            adventurePatronsTable.InitializeTable();
             adventureVillainsTable.InitializeTable();
             beyondADoorTable.InitializeTable();
             chamberExitTable.InitializeTable();
@@ -79,6 +124,7 @@ namespace GoDungeon.RandomDungeon.Models
             npcClassTable.InitializeTable();
             npcHighAbilitiesTable.InitializeTable();
             npcLowAbilitiesTable.InitializeTable();
+            npcTalentsTable.InitializeTable();
             otherGoalsTable.InitializeTable();
             passageTable.InitializeTable();
             passageWidthTable.InitializeTable();
@@ -95,6 +141,9 @@ namespace GoDungeon.RandomDungeon.Models
             worldShakingEventsTable.InitializeTable();
 
             // Set the properties
+            AdventureAlliesTable = adventureAlliesTable;
+            AdventureIntroductionTable = adventureIntroductionTable;
+            AdventurePatronsTable = adventurePatronsTable;
             AdventureVillainsTable = adventureVillainsTable;
             BeyondADoorTable = beyondADoorTable;
             ChamberExitTable = chamberExitTable;
@@ -117,6 +166,7 @@ namespace GoDungeon.RandomDungeon.Models
             NPCClassTable = npcClassTable;
             NPCHighAbilitiesTable = npcHighAbilitiesTable;
             NPCLowAbilitiesTable = npcLowAbilitiesTable;
+            NPCTalentsTable = npcTalentsTable;
             OtherGoalsTable = otherGoalsTable;
             PassageTable = passageTable;
             PassageWidthTable = passageWidthTable;
@@ -136,6 +186,9 @@ namespace GoDungeon.RandomDungeon.Models
         /// <summary>
         /// Properties for injected tables
         /// </summary>
+        private IAdventureAlliesTable AdventureAlliesTable { get; }
+        private IAdventureIntroductionTable AdventureIntroductionTable { get; }
+        private IAdventurePatronsTable AdventurePatronsTable { get; }
         private IAdventureVillainsTable AdventureVillainsTable { get; }
         private IBeyondADoorTable BeyondADoorTable { get; }
         private IChamberExitTable ChamberExitTable { get; }
@@ -158,6 +211,7 @@ namespace GoDungeon.RandomDungeon.Models
         private INPCClassTable NPCClassTable { get; }
         private INPCHighAbilitiesTable NPCHighAbilitiesTable { get; }
         private INPCLowAbilitiesTable NPCLowAbilitiesTable { get; }
+        private INPCTalentsTable NPCTalentsTable { get; }
         private IOtherGoalsTable OtherGoalsTable { get; }
         private IPassageTable PassageTable { get; }
         private IPassageWidthTable PassageWidthTable { get; }
@@ -258,6 +312,9 @@ namespace GoDungeon.RandomDungeon.Models
             tableSection.PageSetup.PageNumberStyle = PageNumberStyle.Arabic;
 
             //Add a page for the purpose table
+            AddTableToWord(tableSection, AdventureAlliesTable);
+            AddTableToWord(tableSection, AdventureIntroductionTable);
+            AddTableToWord(tableSection, AdventurePatronsTable);
             AddTableToWord(tableSection, AdventureVillainsTable);
             AddTableToWord(tableSection, BeyondADoorTable);
             AddTableToWord(tableSection, ChamberTable);
@@ -280,6 +337,7 @@ namespace GoDungeon.RandomDungeon.Models
             AddTableToWord(tableSection, NPCClassTable);
             AddTableToWord(tableSection, NPCHighAbilitiesTable);
             AddTableToWord(tableSection, NPCLowAbilitiesTable);
+            AddTableToWord(tableSection, NPCTalentsTable);
             AddTableToWord(tableSection, OtherGoalsTable);
             AddTableToWord(tableSection, PassageTable);
             AddTableToWord(tableSection, PassageWidthTable);

@@ -11,7 +11,7 @@ using GoDungeon.RandomDungeon.Interfaces;
 namespace GoDungeon.RandomDungeon.Tables
 {
     /// <summary>
-    /// Roll on the Beyond a Door table to see what lies on the other side of it.
+    /// Use the Adventure Villains, Adventure Allies, and Adventure Patrons tables to help you identify these NPCs
     /// </summary>
     public class AdventureVillainsTable : RandomTable, IAdventureVillainsTable
     {
@@ -19,7 +19,7 @@ namespace GoDungeon.RandomDungeon.Tables
         /// </summary>
         public AdventureVillainsTable()
         {
-            Name = nameof(BeyondADoorTable);
+            Name = nameof(AdventureVillainsTable);
             ProperName = "Adventure Villains";
             TableType = TableTypeEnum.RandomDungeonTable;
             DiceSides = 20;
