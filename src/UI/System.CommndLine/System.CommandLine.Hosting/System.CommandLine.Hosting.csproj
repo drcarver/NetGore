@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+<PropertyGroup>
     <IsPackable>true</IsPackable>
     <TargetFrameworks>netstandard2.0;$(TargetFrameworkForNETSDK)</TargetFrameworks>
     <Description>This package provides support for using System.CommandLine with Microsoft.Extensions.Hosting.</Description>
-  </PropertyGroup>
+    <LangVersion>preview</LangVersion>
+</PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugType>portable</DebugType>

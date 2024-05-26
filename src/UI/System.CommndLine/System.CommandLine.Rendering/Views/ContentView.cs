@@ -69,11 +69,11 @@ namespace System.CommandLine.Rendering.Views
             return rv;
         }
 
-        internal static ContentView Create(object content, TextSpanFormatter formatter)
-        {
-            if (content == null) return new ContentView(TextSpan.Empty());
-            return CreateView((dynamic)content, formatter);
-        }
+        //internal static ContentView Create(object content, TextSpanFormatter formatter)
+        //{
+        //    if (content == null) return new ContentView(TextSpan.Empty());
+        //    return CreateView((dynamic)content);
+        //}
 
         private static ContentView CreateView(string stringContent, TextSpanFormatter _)
             => new ContentView(stringContent);
