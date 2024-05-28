@@ -62,7 +62,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Type: Tieflings are outsiders with the
             //native subtype.
-            RaceType = RaceType.Outsiders;
+            RaceType = RaceTypeEnum.Outsiders;
             RaceSubType.Add(RaceSubTypeEnum.Native);
 
             //Size: Tieflings are Medium creatures and

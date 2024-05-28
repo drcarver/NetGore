@@ -26,7 +26,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Medium  humanoid(dwarf),	lawful evil
             Size = SizeEnum.Medium;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Dwarf);
             Alignment = AlignmentEnum.LawfulEvil;
 

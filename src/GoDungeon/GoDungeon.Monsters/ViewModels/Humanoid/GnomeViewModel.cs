@@ -36,7 +36,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Gnomes are Humanoid creatures with the gnome subtype.
             Race = RaceEnum.Gnome;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Gnome);
 
             //Ability Score Increase.Your Intelligence

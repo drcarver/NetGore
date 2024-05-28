@@ -35,7 +35,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: HalfElf are Humanoid creatures with the HalfElf subtype.
             Race = RaceEnum.HalfElf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.HalfElf);
 
             //Ability Score Increase. Your Charisma

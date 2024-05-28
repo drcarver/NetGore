@@ -94,7 +94,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Halflings are humanoids with the halfling subtype.
             Race = RaceEnum.Halfling;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Halfling);
 
             //Ability Score Increase. Your Dexterity score increases by 2.

@@ -32,7 +32,7 @@ namespace GoDungeon.Core.ViewModels
         /// Race Type
         /// </summary>
         [ObservableProperty]
-        private RaceType raceType;
+        private RaceTypeEnum raceType;
 
         /// <summary>
         /// Race Sub Type

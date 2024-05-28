@@ -19,7 +19,7 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// Race Type
         /// </summary>
-        RaceType RaceType { get; set; }
+        RaceTypeEnum RaceType { get; set; }
 
         /// <summary>
         /// Race Sub Type

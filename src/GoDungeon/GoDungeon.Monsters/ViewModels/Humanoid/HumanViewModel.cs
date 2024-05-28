@@ -56,7 +56,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Type: Humans are humanoids with the
             //human subtype.
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Human);
 
             //Languages: Humans begin play speaking

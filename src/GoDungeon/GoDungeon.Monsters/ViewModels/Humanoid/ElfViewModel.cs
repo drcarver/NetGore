@@ -35,7 +35,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Elves are Humanoids with the elf subtype.
             Race = RaceEnum.Elf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Elf);
 
             //Ability Score Increase.Your Dexterity

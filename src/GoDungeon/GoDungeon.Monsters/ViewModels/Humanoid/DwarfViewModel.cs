@@ -47,7 +47,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Dwarves are humanoids with the dwarf subtype.
             Race = RaceEnum.Dwarf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
             //Ability Score Increase. Your Constitution score

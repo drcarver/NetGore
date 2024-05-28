@@ -38,7 +38,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //Type: Half - orcs are Humanoid creatures
             //with both the human and orc subtypes.
             Race = RaceEnum.HalfOrc;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Human);
             RaceSubType.Add(RaceSubTypeEnum.Orc);
 
