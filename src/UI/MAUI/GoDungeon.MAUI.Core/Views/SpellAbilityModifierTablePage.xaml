@@ -8,8 +8,7 @@
              x:DataType="tables:AlignmentTable"
              Title="{Binding ProperName}">
 
-    <CollectionView ItemsSource="{Binding Table}"
-                    SelectionMode="None">
+    <CollectionView ItemsSource="{Binding Table}" SelectionMode="None">
         <CollectionView.Header>
             <Grid Grid.RowDefinitions="Auto,Auto,Auto,Auto"  ColumnSpacing="2">
                 <Grid.ColumnDefinitions>

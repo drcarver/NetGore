@@ -4,6 +4,7 @@ using GoDungeon.Core.ViewModels;
 using GoDungeon.MAUI.Core.Interfaces;
 using GoDungeon.MAUI.Core.ViewModels;
 using GoDungeon.MAUI.Core.Views;
+using GoDungeon.MAUI.DungeonMap.Views;
 using GoDungeon.MAUI.Interfaces;
 using GoDungeon.MAUI.PlayerCharacter.Views;
 using GoDungeon.Monsters.Interfaces;
@@ -44,6 +45,17 @@ public partial class MainMenuTable : MenuTable, IMainMenuTable
         {
             Table =
             [
+                #region Generate a Random Dungeon
+                new GameNavigationEntryViewModel
+                {
+                    Name = "Generate a Random Dungeon",
+                    ProperName = "Generate a Random Dungeon",
+                    Description = "Generate a Random Dungeon.",
+                    TableType = TableTypeEnum.RandomDungeonTable,
+                    Route = nameof(DungeonMapPage),
+                },
+                #endregion
+
                 #region Create a Character
                 new GameNavigationEntryViewModel
                 {

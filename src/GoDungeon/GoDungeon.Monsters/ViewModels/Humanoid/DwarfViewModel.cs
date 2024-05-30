@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 
-using GoDungeon.Background.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -33,7 +30,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// Constructor
         /// </summary>
         /// <param name="logger">The logging service</param>
-        public DwarfViewModel(ILoggerFactory logger)
+        public DwarfViewModel(
+            ILoggerFactory logger,
+            IServiceProvider services)
+            : base(logger, services)
         {
             _logger = logger.CreateLogger<IDwarf>();
             loggerFactory = logger;
@@ -47,7 +47,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Dwarves are humanoids with the dwarf subtype.
             Race = RaceEnum.Dwarf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Dwarf);
 
             //Ability Score Increase. Your Constitution score

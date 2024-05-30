@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 
-using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -24,7 +20,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the 
         /// </summary>
-        public ElfViewModel(ILoggerFactory loggerFactory)
+        public ElfViewModel(
+            IServiceProvider services,
+            ILoggerFactory loggerFactory)
+            : base(loggerFactory, services)
         {
             Initialize();
         }
@@ -36,7 +35,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Elves are Humanoids with the elf subtype.
             Race = RaceEnum.Elf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Elf);
 
             //Ability Score Increase.Your Dexterity

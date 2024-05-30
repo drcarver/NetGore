@@ -1,10 +1,13 @@
-﻿using GoDungeon.Background.Interfaces;
+﻿using System;
+
+using GoDungeon.Background.Interfaces;
 using GoDungeon.Background.Tables.Dragonborn;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Monsters.ViewModels.Humanoid
@@ -18,33 +21,45 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
     /// </summary>
     public class DragonbornViewModel : CharacterRaceViewModel, IDragonborn
     {
+        public IServiceProvider ServiceProvider { get; }
+
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="loggerFactory"></param>
-        /// <param name="services"></param>
+        /// <param name="loggerFactory">The logger factory</param>
+        /// <param name="services">The service provider</param>
         public DragonbornViewModel(
-            ILoggerFactory loggerFactory,
-            IDragonbornHomelandTable homelandTable,
-            IUnusualHomelandTable unusualHomelandTable,
-            IDragonbornParentsTable parentsTable,
-            ICircumstanceofBirthTable circumstanceofBirthTable,
-            IProfessionTable professionTable,
-            INobilityTable nobilityTable,
-            IAdoptedOutsideYourRaceTable adoptedOutsideYourRaceTable
-            )
+            IServiceProvider serviceProvider,
+            ILoggerFactory loggerFactory)
+            : base(loggerFactory, serviceProvider)
         {
+            // Setup the service provider
+            ServiceProvider = serviceProvider;
+
             // Initialize  the character from the race features
             Initialize();
 
             // Now generate the characters background
+            // First the homeland
+            var homelandTable = ServiceProvider.GetRequiredService<IDragonbornHomelandTable>();
+            homelandTable.InitializeTable();
+            IUnusualHomelandTable unusualHomelandTable = ServiceProvider.GetRequiredService<IUnusualHomelandTable>();
+            unusualHomelandTable.InitializeTable();
             GetHomeland(homelandTable, unusualHomelandTable);
+
+            // Net the parents
+            var parentsTable = ServiceProvider.GetRequiredService<IDragonbornParentsTable>();
+            parentsTable.InitializeTable();
             GetParents(parentsTable);
-            GetCircumstanceofBirth(
-                circumstanceofBirthTable,
-                professionTable,
-                nobilityTable,
-                adoptedOutsideYourRaceTable);
+
+            // Next the Circumstance of birth
+            GetCircumstanceOfBirth();
+
+            // Set the alignment
+            SetAlignment(AlignmentFilterEnum.GoodOnly);
+
+            // Next set the short description
+            SetShortDescription();
         }
 
         /// <summary>
@@ -52,7 +67,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// </summary>
         private void Initialize()
         {
-            Race = RaceEnum.Halfling;
+            Race = RaceEnum.Dragonborn;
 
             //Ability Score Increase.Your Dexterity
             //score increases by 2.

@@ -2,7 +2,7 @@
 
 namespace GoDungeon.Character.PC.Cleric
 {
-    public interface IClericLevelTable : IGameTable
+    public interface IClericLevelTable : IGameTable, IClassLevelTable
     {
     }
 }

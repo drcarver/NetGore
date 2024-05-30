@@ -1,4 +1,6 @@
-﻿using GoDungeon.Character.Interfaces;
+﻿using System;
+
+using GoDungeon.Character.Interfaces;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
@@ -20,8 +22,11 @@ namespace GoDungeon.Character.NPC
         /// The constructor
         /// </summary>
         /// <param name="loggerFactory"></param>
-        public Commoner(ILoggerFactory loggerFactory,
+        public Commoner(
+            ILoggerFactory loggerFactory,
+            IServiceProvider services,
             IClassService classService)
+            : base(services, loggerFactory)
         {
             Initialize();
         }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.DungeonMap.ViewModels;assembly=GoDungeon.MAUI.DungeonMap"
+             x:Class="GoDungeon.MAUI.DungeonMap.Views.DungeonMapPage"
+             x:DataType="viewmodel:DungeonMapViewModel"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <viewmodel:GridLinesViewModel x:Key="drawableGrid" x:Name="GridLines"/>
+        <viewmodel:DungeonRoomsViewModel x:Key="drawableMap" x:Name="Map" />
+    </ContentPage.Resources>
+    <Grid ColumnDefinitions="700,100" 
+          RowDefinitions="600,Auto,Auto,Auto">
+        <Button Text="Export as PDF" Grid.Row="0" Grid.Column="1"
+                Command="{Binding ExportToPDfCommand}"/>
+        <GraphicsView x:Name="GridLineGraphicsView"
+                      Drawable="{StaticResource drawableGrid}"
+                      HeightRequest="{Binding Height}"
+                      WidthRequest="{Binding Width}"
+                      Grid.ColumnSpan="2"
+                      Grid.Row="1"
+                      ZIndex="{Binding GridLinesViewModel.ZIndex}"/>
+        <GraphicsView x:Name="DungeonMapView"
+                      Drawable="{StaticResource drawableMap}"
+                      HeightRequest="{Binding Height}"
+                      WidthRequest="{Binding Width}"
+                      Grid.ColumnSpan="2"
+                      Grid.Row="1"
+                      ZIndex="{Binding DungeonRoomsViewModel.ZIndex}"/>
+        <Button Text="Export as PDF" Grid.Row="1" Grid.Column="1"
+                Command="{Binding ExportToPDfCommand}"/>
+        <Label Text="{Binding DungeonPurpose}" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Label Text="{Binding DungeonHistory}" Grid.Row="3" Grid.ColumnSpan="2" />
+    </Grid>
+</ContentPage>

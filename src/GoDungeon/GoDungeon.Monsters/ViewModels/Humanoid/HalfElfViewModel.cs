@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 
-using GoDungeon.Background.ViewModels;
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -23,7 +20,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the creature.
         /// </summary>
-        public HalfElfViewModel(ILoggerFactory loggerFactory)
+        public HalfElfViewModel(
+            IServiceProvider services, 
+            ILoggerFactory loggerFactory) 
+            : base(loggerFactory, services)
         {
             Initialize();
         }
@@ -35,7 +35,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: HalfElf are Humanoid creatures with the HalfElf subtype.
             Race = RaceEnum.HalfElf;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.HalfElf);
 
             //Ability Score Increase. Your Charisma

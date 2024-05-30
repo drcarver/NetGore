@@ -12,7 +12,7 @@ namespace GoDungeon.Core.ViewModels
         /// <param name="logger">The logger</param>
         /// <param name="creature">The creature the save is for</param>
         public FortitudeSaveViewModel(ICreature creature)
-            : base(creature, creature.Constitution)
+            : base(creature.Constitution)
         {
             Name = "Fortitude Save";
             Description = "These saves measure your ability " +

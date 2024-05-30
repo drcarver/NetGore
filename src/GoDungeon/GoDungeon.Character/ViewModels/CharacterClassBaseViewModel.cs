@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
+using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
@@ -57,7 +58,7 @@ namespace GoDungeon.Character.ViewModels
         /// Saving Throws
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<AbilityEnum> savingThrows = new ObservableCollection<AbilityEnum>();
+        private ObservableCollection<ISavingThrow> savingThrows = new ObservableCollection<ISavingThrow>();
 
         /// <summary>
         /// Skills
@@ -70,7 +71,7 @@ namespace GoDungeon.Character.ViewModels
         /// a background for the character selecting this class
         /// </summary>
         [ObservableProperty]
-        private IBackgroundTableEntry? background;
+        private IRandomTable? backgroundTable;
 
         /// <summary>
         /// The level table for the class
@@ -79,12 +80,18 @@ namespace GoDungeon.Character.ViewModels
         private IClassLevelTable? classLevelTable;
 
         /// <summary>
+        /// The proficiency bonus for this class level 
+        /// </summary>
+        [ObservableProperty]
+        private int proficiencyBonus;
+
+        /// <summary>
         /// Level up the character with this class
         /// </summary>
         /// <param name="character">The character we are leveling</param>
-        public virtual void LevelUp(ICharacterClass character)
+        public virtual void LevelUp(ICharacterRace character)
         {
-             if (character.Level == 0)
+            if (character.Level == 0)
             {
                 Initialize(character);
             }
@@ -93,7 +100,7 @@ namespace GoDungeon.Character.ViewModels
         /// <summary>
         /// Initialize the character
         /// </summary>
-        protected virtual void Initialize(ICharacterClass character)
+        protected virtual void Initialize(ICharacterRace character)
         {
         }
 
@@ -101,7 +108,7 @@ namespace GoDungeon.Character.ViewModels
         /// Returns true if the character has the prerequisites for the class
         /// </summary>
         /// <returns></returns>
-        public bool HasPrerequisites(ICreature character)
+        public bool HasPrerequisites(ICharacterRace character)
         {
             foreach (var prerequisite in classPrerequisites)
             {

@@ -42,30 +42,35 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// Saving Throws
         /// </summary>
-        public ObservableCollection<AbilityEnum> SavingThrows { get; set; }
+        public ObservableCollection<ISavingThrow> SavingThrows { get; set; }
 
         /// <summary>
         /// The description of the class background.  Used to provide
         /// a background for the character selecting this class
         /// </summary>
-        public IBackgroundTableEntry? Background { get; set; }
+        public IRandomTable? BackgroundTable { get; set; }
 
         /// <summary>
         /// The level table for the class
         /// </summary>
-        public IClassLevelTable? ClassLevelTable { get; set; }
+        public IClassLevelTable? ClassLevelTable { get; }
+
+        /// <summary>
+        /// The proficiency bonus for this class level 
+        /// </summary>
+        public int ProficiencyBonus { get; }
 
         /// <summary>
         /// Level up the character with this class
         /// </summary>
         /// <param name="character">The character we are leveling</param>
         /// <returns>True if the character can be leveled up</returns>
-        public void LevelUp(ICharacterClass character);
+        public void LevelUp(ICharacterRace creature);
 
         /// <summary>
         /// The character has the prerequisites for the class
         /// </summary>
         /// <returns></returns>
-        public bool HasPrerequisites(ICreature creature);
+        public bool HasPrerequisites(ICharacterRace creature);
     }
 }

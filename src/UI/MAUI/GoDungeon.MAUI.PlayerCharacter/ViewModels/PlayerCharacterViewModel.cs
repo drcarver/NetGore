@@ -22,19 +22,18 @@ public partial class PlayerCharacterViewModel : ObservableObject
 {
     private ILogger<PlayerCharacterViewModel> logger;
 
-    public bool Initializing { get; private set; }
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(SelectedClass))]
+    public bool initializing;
 
     private IServiceProvider Services { get; }
 
-    [ObservableProperty]
-    private CharacterRaceViewModel race;
-
     #region Alignment Table
     [ObservableProperty]
-    private ObservableCollection<string> alignmentList = [];
+    private AlignmentTableEntryViewModel selectedAlignment;
+
     [ObservableProperty]
-    private string selectedAlignment;
-    private IAlignmentTable AlignmentTable { get; }
+    private IAlignmentTable alignmentTable;
 
     /// <summary>
     /// The race selection has changed
@@ -44,7 +43,7 @@ public partial class PlayerCharacterViewModel : ObservableObject
     {
         if (Race != null)
         {
-            Race.Alignment = ((AlignmentTableEntryViewModel)AlignmentTable.GetEntryByName(selectedAlignment)).Alignment;
+            Race.Alignment = SelectedAlignment.Alignment;
         }
     }
     #endregion
@@ -54,6 +53,9 @@ public partial class PlayerCharacterViewModel : ObservableObject
     private ObservableCollection<RaceEnum> validRaceList = [];
     [ObservableProperty]
     private RaceEnum selectedRace;
+
+    [ObservableProperty]
+    private CharacterRaceViewModel race;
 
     /// <summary>
     /// The race selection has changed
@@ -68,30 +70,65 @@ public partial class PlayerCharacterViewModel : ObservableObject
     }
     #endregion
 
+    #region Character Class
     [ObservableProperty]
     private ClassEnum selectedClass;
 
     private ObservableCollection<ICharacterClass> fullClassList;
 
     /// <summary>
+    /// The race selection has changed
+    /// </summary>
+    [RelayCommand]
+    private void ClassSelectionChanged()
+    {
+        var fc = fullClassList.First(cl => cl.ClassEnum == SelectedClass);
+        if (fc.Level == 0)
+        {
+            fc?.LevelUp(Race);
+        }
+    }
+
+    /// <summary>
     /// The valid classes for the character to select
     /// </summary>
     [ObservableProperty]
     public ObservableCollection<ClassEnum> validClassList = [];
+    #endregion
 
+    /// <summary>
+    /// Navigate to the selected url
+    /// </summary>
+    /// <param name="uri">THe requested url</param>
+    /// <returns>The Task from the await</returns>
     [RelayCommand]
-    private void Reroll()
+    private async Task DisplayWebPage(string url)
+    {
+        await Launcher.OpenAsync(url);
+    }
+
+    /// <summary>
+    /// Re-roll the character
+    /// </summary>
+    [RelayCommand]
+    private void ReRoll()
     {
         Initialize();
     }
 
+    /// <summary>
+    /// Initialize a new character race and class
+    /// </summary>
+    /// <param name="raceEnum"></param>
     private void Initialize(RaceEnum raceEnum = RaceEnum.Any)
     {
         Initializing = true;
+
+        #region First get a random character race from the humanoid race factory 
         var dice = new Dice("1D10").Total;
         if (dice == 10)
         {
-            dice = (int) RaceEnum.Human;
+            dice = (int)RaceEnum.Human;
         }
 
         IHumanoidRaceFactory raceFactory = Services.GetService<IHumanoidRaceFactory>();
@@ -104,7 +141,13 @@ public partial class PlayerCharacterViewModel : ObservableObject
             Race = (CharacterRaceViewModel)raceFactory.Create((RaceEnum)dice);
             SelectedRace = (RaceEnum)dice;
         }
+        #endregion
 
+        Race.SetAlignment(AlignmentFilterEnum.NonEvil);
+        Race.SetShortDescription();
+
+        // Get the classes that prerequisites are equal or better to
+        // the character abilities.
         ValidClassList.Clear();
         foreach (var characterClass in fullClassList)
         {
@@ -113,27 +156,49 @@ public partial class PlayerCharacterViewModel : ObservableObject
                 ValidClassList.Add(characterClass.ClassEnum);
             }
         }
-        SelectedClass = ValidClassList[new Dice($"1d{ValidClassList.Count}").Total-1];
+
+        // Set the class selected to a random value
+        var classIndex = new Dice($"1d{ValidClassList.Count}").Total - 1;
+        if (classIndex < 0 || classIndex > ValidClassList.Count - 1)
+        {
+            classIndex = 0;
+        }
+        // If no valid classes try a new roll
+        if (!ValidClassList.Any())
+        {
+            Initializing = false;
+            Initialize();
+        }
+        SelectedClass = ValidClassList[classIndex];
+
+        // if required, LevelUp the class for the first time
+        var fc = fullClassList.First(cl => cl.ClassEnum == SelectedClass);
+        if (fc.Level == 0)
+        {
+            fc?.LevelUp(Race);
+        }
+
         Initializing = false;
     }
 
     /// <summary>
     /// Constructor
     /// </summary>
+    /// <param name="services"></param>
+    /// <param name="loggerFactory"></param>
+    /// <param name="alignmentTable"></param>
     public PlayerCharacterViewModel(
-        IServiceProvider services,
-        ILoggerFactory loggerFactory,
-        IAlignmentTable alignmentTable)
+            IServiceProvider services,
+            ILoggerFactory loggerFactory,
+            IAlignmentTable alignmentTable
+            )
     {
         logger = loggerFactory.CreateLogger<PlayerCharacterViewModel>();
         Services = services;
+
+        // Initialize the alignment table
         AlignmentTable = alignmentTable;
-        alignmentTable?.InitializeTable();
-        foreach (var alignment in alignmentTable.Table.Cast<AlignmentTableEntryViewModel>())
-        {
-            AlignmentList.Add(alignment.ProperName);
-        }
-        SelectedAlignment = ((AlignmentTableEntryViewModel) alignmentTable?.GetRandomEntry()).ProperName;
+        AlignmentTable.InitializeTable();
 
         // The list of races
         for (int i = 1; i < 10; i++)

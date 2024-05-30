@@ -1,6 +1,6 @@
 ﻿namespace GoDungeon.Core.Enum
 {
-    public enum ClassEnum
+    public enum ClassEnum : int
     {
         Barbarian,
         Bard,

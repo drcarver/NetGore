@@ -1,0 +1,30 @@
+﻿namespace GoDungeon.RandomDungeon.Enum
+{
+    public enum DungeonLocationEnum : byte
+    {
+        CityBuilding,
+        CityCatacombs,
+        BeneathAFarmhouse,
+        BeneathAGraveyard,
+        BeneathARuinedCastle,
+        BeneathARuinedCity,
+        BeneathATemple,
+        InAChasm,
+        InACliffFace,
+        InADesert,
+        InAForest,
+        InAGlacier,
+        InAGorge,
+        InAJungle,
+        InAMountainPass,
+        InASwamp,
+        BeneathAMesa,
+        InSeaCaves,
+        InConnectedMesas,
+        OnAMountainPeak,
+        OnAPromontory,
+        OnAnIsland,
+        Underwater,
+        ExoticLocationTable
+    }
+}

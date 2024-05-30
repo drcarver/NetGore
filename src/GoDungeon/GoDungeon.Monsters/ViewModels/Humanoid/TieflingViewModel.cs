@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core;
+﻿using System;
+
+using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
@@ -35,7 +37,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the 
         /// </summary>
-        public TieflingViewModel(ILoggerFactory loggerFactory)
+        public TieflingViewModel(
+            IServiceProvider services, 
+            ILoggerFactory loggerFactory)
+            : base(loggerFactory, services)
         {
             Initialize();
         }
@@ -57,7 +62,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Type: Tieflings are outsiders with the
             //native subtype.
-            RaceType = RaceType.Outsiders;
+            RaceType = RaceTypeEnum.Outsiders;
             RaceSubType.Add(RaceSubTypeEnum.Native);
 
             //Size: Tieflings are Medium creatures and

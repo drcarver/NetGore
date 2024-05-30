@@ -1,7 +1,11 @@
-﻿using GoDungeon.Character.Models;
+﻿using System.ComponentModel.Design;
+
+using GoDungeon.Character.Models;
 using GoDungeon.Character.ViewModels;
+using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 
 using Microsoft.Extensions.Logging;
 
@@ -13,15 +17,36 @@ namespace GoDungeon.Character.PC.Barbarian
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacterClass character)
+        public override void LevelUp(ICharacterRace character)
         {
+            base.LevelUp(character);
+            if (Level == 0)
+            {
+                Initialize(character);
+            }
+        }
 
+        /// <summary>
+        /// Initialize the class
+        /// </summary>
+        /// <param name="character"></param>
+        protected override void Initialize(ICharacterRace character)
+        {
+            base.Initialize(character);
+
+            SavingThrows.Add(new SavingThrowViewModel(character.Strength, true));
+            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity));
+            SavingThrows.Add(new SavingThrowViewModel(character.Constitution, true));
+            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
+            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom));
+            SavingThrows.Add(new SavingThrowViewModel(character.Charisma));
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public BarbarianViewModel(ILoggerFactory loggerFactory)
+        public BarbarianViewModel(ILoggerFactory loggerFactory,
+            IBarbarianLevelTable barbarianLevelTable)
         {
             ClassEnum = Core.Enum.ClassEnum.Barbarian;
             Name = nameof(Core.Enum.ClassEnum.Barbarian);
@@ -35,12 +60,9 @@ namespace GoDungeon.Character.PC.Barbarian
                 "barbarians charge furiously into " +
                 "battle and ruin all who would " +
                 "stand in their way.";
-            classPrerequisites.Add(
-                new ClassPrerequisiteModel
-                {
-                    Ability = AbilityEnum.Strength,
-                    Score = 13,
-                });
+
+            // The class level table for this class
+            ClassLevelTable = barbarianLevelTable; 
         }
     }
 }

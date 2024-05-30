@@ -1,4 +1,6 @@
-﻿using GoDungeon.Core;
+﻿using System;
+
+using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.Interfaces;
@@ -19,7 +21,10 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// <summary>
         /// Set the race traits for the creature.
         /// </summary>
-        public GnomeViewModel(ILoggerFactory loggerFactory)
+        public GnomeViewModel(
+            IServiceProvider services,
+            ILoggerFactory loggerFactory)
+            : base(loggerFactory, services)
         {
             Initialize();
         }
@@ -31,7 +36,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         {
             //Type: Gnomes are Humanoid creatures with the gnome subtype.
             Race = RaceEnum.Gnome;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Gnome);
 
             //Ability Score Increase.Your Intelligence

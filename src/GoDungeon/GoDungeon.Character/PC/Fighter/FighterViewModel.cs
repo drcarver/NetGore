@@ -18,7 +18,7 @@ namespace GoDungeon.Character.PC.Fighter
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacterClass character)
+        public override void LevelUp(ICharacterRace character)
         {
         }
 
@@ -39,7 +39,7 @@ namespace GoDungeon.Character.PC.Fighter
 
             // The fighter background
             fighterBackgroundTable.InitializeTable();
-            Background = (IBackgroundTableEntry?)fighterBackgroundTable.GetRandomRangeEntry();
+            BackgroundTable = fighterBackgroundTable;
 
             // Name and description
             ClassEnum = Core.Enum.ClassEnum.Fighter;

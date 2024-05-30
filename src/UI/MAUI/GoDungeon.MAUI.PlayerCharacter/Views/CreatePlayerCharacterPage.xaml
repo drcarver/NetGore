@@ -12,32 +12,74 @@
     
     <Grid BackgroundColor="PapayaWhip" RowDefinitions="Auto,Auto,Auto" >
         <!--The header block (Player Name, Character Name, Level, Race, Class and Background)-->
-        <HorizontalStackLayout>
-            <Grid RowDefinitions="Auto,Auto" x:Name="LeftHeaderGrid"
-                  Margin="10,10,10,10">
-                <Label Text="Johnny" FontSize="Title" Grid.Row="0" 
-                       BackgroundColor="LightGray"
-                       Margin="10,10,10,10"/>
-                <Label Text="Character Name" FontFamily="monospace"
-                       Margin="10,10,10,10" Grid.Row="1" />
-            </Grid>
+        <HorizontalStackLayout Grid.Row="0">
             <Border StrokeShape="RoundRectangle 20,20,20,20"
-                    StrokeThickness="5">
+                    StrokeThickness="5" Grid.Column="1">
+                <Grid RowDefinitions="Auto,Auto" x:Name="LeftHeaderGrid"
+                        Margin="10,10,10,10">
+                        <Label Text="Johnny" FontSize="Title" Grid.Row="0" 
+                            BackgroundColor="LightGray"
+                            Margin="10,10,10,10"/>
+                        <Label Text="Character Name" FontFamily="monospace"
+                            Margin="10,10,10,10" Grid.Row="1" />
+                </Grid>
+            </Border>
+            <Border StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="5" Grid.Column="1">
                 <Grid x:Name="RightHeaderGrid" Margin="10,10,10,10"
-                  RowDefinitions="Auto,20,Auto,20" RowSpacing="5" 
-                  ColumnDefinitions="200,200,200" ColumnSpacing="10">
-                    <Picker x:Name="ClassPicker" 
+                    RowDefinitions="Auto,20,Auto,20" RowSpacing="5" 
+                    ColumnDefinitions="200,200,200" ColumnSpacing="10">
+                    <!--Class and Level-->
+                    <HorizontalStackLayout Grid.Row="0" Grid.Column="0"
+                            BackgroundColor="LightGray">
+                        <Picker x:Name="ClassPicker" 
                             ItemsSource="{Binding ValidClassList}"
                             SelectedItem="{Binding SelectedClass}"
                             Grid.Row="0" Grid.Column="0"
                             HorizontalTextAlignment="Start"
-                            BackgroundColor="LightGray"
-                            FontSize="Body" FontAttributes="Italic"/>
-                    <Label  Text="Class"
-                            Grid.Row="1" Grid.Column="0"
-                            HorizontalTextAlignment="Start"
-                            TextColor="Crimson" FontSize="Body"
-                            FontFamily="monospace"/>
+                            FontSize="Body">
+                            <Picker.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                EventName="SelectedIndexChanged"
+                                    Command="{Binding ClassSelectionChangedCommand}" />
+                            </Picker.Behaviors>
+                        </Picker>
+                        <Grid ColumnDefinitions="Auto,Auto" ColumnSpacing="10">
+                            <Label VerticalTextAlignment="Center" Grid.Column="0"
+                                   Text="Level" HorizontalTextAlignment="Start" />
+                            <Label Text="{Binding Path=Race.Level}" 
+                                    Grid.Column="1" FontSize="Body" 
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End" />
+                        </Grid>
+                    </HorizontalStackLayout>
+                    <!--Character Class & Level Label-->
+                    <Label VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"
+                           Grid.Row="1" Grid.Column="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Class" FontSize="Body"
+                                        TextColor="Blue"
+                                        TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DisplayWebPageCommand}"
+                                              CommandParameter="https://5thsrd.org/character/classes/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text=" &amp; " FontSize="Body" />
+                                <Span Text="Level" FontSize="Body"
+                                        TextColor="Blue"
+                                        TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DisplayWebPageCommand}"
+                                              CommandParameter="https://5thsrd.org/rules/leveling_up/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <!--Character Race-->
                     <Picker x:Name="RacePicker"
                         ItemsSource="{Binding ValidRaceList}"
                             SelectedItem="{Binding SelectedRace}"
@@ -51,27 +93,53 @@
                             Command="{Binding RaceSelectionChangedCommand}" />
                         </Picker.Behaviors>
                     </Picker>
-                    <Label Text="Race"
-                            Grid.Row="2" Grid.Column="1"
-                            HorizontalTextAlignment="Start"
-                            TextColor="Crimson" FontSize="Body"
-                            FontFamily="monospace"/>
+                    <!--Character Race Label-->
+                    <Label VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Start"
+                           Grid.Row="1" Grid.Column="1">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Race" FontSize="Body"
+                                        TextColor="Blue"
+                                        TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DisplayWebPageCommand}"
+                                                CommandParameter="https://5thsrd.org/character/races/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                     <Picker x:Name="AlignmentPicker" 
-                            ItemsSource="{Binding AlignmentList}"
-                            SelectedItem="{Binding SelectedAlignment}"
-                            Grid.Row="0" Grid.Column="2"
-                            BackgroundColor="LightGray"
-                            FontSize="Body" FontAttributes="Italic"/>
-                    <Label Text="Alignment"  
-                           Grid.Row="1" Grid.Column="2"
+                        ItemsSource="{Binding Path=AlignmentTable.Table}"
+                        ItemDisplayBinding="{Binding Path=ProperName}"
+                        SelectedItem="{Binding Path=SelectedAlignment}"
+                        Grid.Row="0" Grid.Column="2"
+                        BackgroundColor="LightGray"
+                        FontSize="Body" FontAttributes="Italic">
+                        <Picker.Behaviors>
+                            <toolkit:EventToCommandBehavior
+                                EventName="SelectedIndexChanged"
+                                Command="{Binding AlignmentSelectionChangedCommand}" />
+                        </Picker.Behaviors>
+                    </Picker>
+                    <!--Character Alignment Label-->
+                    <Label VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Start"
-                           TextColor="Crimson" FontSize="Body"
-                           FontFamily="monospace"/>
-                    <Label Text="Acolyte"  
-                           Grid.Row="2" Grid.Column="0"
-                           HorizontalTextAlignment="Start"
-                           TextColor="Gray" FontSize="Body"
-                           FontFamily="monospace"/>
+                           Grid.Row="1" Grid.Column="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Alignment" FontSize="Body"
+                                        TextColor="Blue"
+                                        TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DisplayWebPageCommand}"
+                                                CommandParameter="https://5thsrd.org/character/alignment/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                     <Label Text="Background"  
                            Grid.Row="3" Grid.Column="0"
                            HorizontalTextAlignment="Start"
@@ -101,87 +169,233 @@
                 </Grid>
             </Border>
         </HorizontalStackLayout>
-        <ScrollView Grid.Row="1">
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
-                  ColumnDefinitions="Auto,Auto,Auto">
-                    <Grid Grid.Column="0" ColumnDefinitions="100,Auto"
-                          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
-                          Margin="10,10,10,10">
-                    <Border StrokeShape="RoundRectangle 20,20,20,20"
-                        StrokeThickness="2" Grid.Column="0" BackgroundColor="LightGray">
-                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="0" Margin="2,2,2,2">
-                                    <Grid RowDefinitions="Auto,Auto" 
-                                                BackgroundColor="AntiqueWhite">
-                                        <Label  Text="{Binding Path=Race.Strength.Name}" 
-                                                HorizontalTextAlignment="Center" />
-                                        <Label  Grid.Row="2" 
-                                                Text="{Binding Path=Race.Strength.Score}"
-                                                FontSize="Large" 
-                                                HorizontalTextAlignment="Center"/>
-                                    </Grid>
-                                </Border>
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="1">
-                                    <Grid RowDefinitions="Auto,Auto" 
-                                                BackgroundColor="AntiqueWhite">
-                                        <Label Text="{Binding Path=Race.Intelligence.Name}" 
-                                               HorizontalTextAlignment="Center" />
-                                        <Label Grid.Row="2" FontSize="Large" 
-                                               Text="{Binding Path=Race.Intelligence.Score}" 
-                                               HorizontalTextAlignment="Center"/>
-                                    </Grid>
-                                </Border>
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="2">
-                                    <Grid RowDefinitions="Auto,Auto" 
+        <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                ColumnDefinitions="Auto,400,Auto,Auto" ColumnSpacing="10">
+            <!--The Abilities Block -->
+            <Grid Grid.Column="0" Grid.Row="0" ColumnDefinitions="100,Auto"
+                        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                        Margin="5,5,5,5" >
+                <Border StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2" Grid.Column="0" BackgroundColor="LightGray">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="0" Margin="2,2,2,2">
+                            <Grid RowDefinitions="Auto,Auto" 
                                             BackgroundColor="AntiqueWhite">
-                                        <Label Text="{Binding Path=Race.Wisdom.Name}" 
-                                               HorizontalTextAlignment="Center" />
-                                        <Label Grid.Row="2" FontSize="Large" 
-                                               Text="{Binding Path=Race.Wisdom.Score}" 
-                                               HorizontalTextAlignment="Center"/>
-                                    </Grid>
-                                </Border>
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="3">
-                                    <Grid   RowDefinitions="Auto,Auto" 
-                                            BackgroundColor="AntiqueWhite">
-                                        <Label Text="{Binding Path=Race.Dexterity.Name}" 
-                                                  HorizontalTextAlignment="Center" />
-                                        <Label Grid.Row="2" FontSize="Large" 
-                                                  Text="{Binding Path=Race.Dexterity.Score}" 
-                                                  HorizontalTextAlignment="Center"/>
-                                    </Grid>
-                                </Border>
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="4">
-                                    <Grid RowDefinitions="Auto,Auto" 
-                                          BackgroundColor="AntiqueWhite">
-                                        <Label Text="{Binding Path=Race.Constitution.Name}" 
+                                <Label  Text="{Binding Path=Race.Strength.Name}" 
                                             HorizontalTextAlignment="Center" />
-                                        <Label Grid.Row="2" FontSize="Large" 
-                                            Text="{Binding Path=Race.Constitution.Score}" 
-                                            HorizontalTextAlignment="Center"/>
-                                </Grid>
-                                </Border>
-                                <Border StrokeShape="RoundRectangle 20,20,20,20"
-                                        StrokeThickness="2" Grid.Row="5">
-                                    <Grid RowDefinitions="Auto,Auto" 
-                                          BackgroundColor="AntiqueWhite">
-                                        <Label Text="{Binding Path=Race.Charisma.Name}" 
+                                <Label  Grid.Row="1" 
+                                            Text="{Binding Path=Race.Strength.Score}"
+                                            FontSize="Large" 
+                                            Margin="0,0,0,15"
                                             HorizontalTextAlignment="Center" />
-                                        <Label Grid.Row="2" FontSize="Large" 
-                                            Text="{Binding Path=Race.Charisma.Score}" 
-                                            HorizontalTextAlignment="Center"/>
-                                </Grid>
-                                </Border>
+                                <!--<Frame  Grid.Row="1" 
+                                            BackgroundColor="LightGray" 
+                                            VerticalOptions="End"
+                                            HorizontalOptions="Center"
+                                            HeightRequest="15"
+                                            WidthRequest="20"
+                                            IsClippedToBounds="True"
+                                            CornerRadius="7">
+                                    -->
+                                <!--Margin="0,10,0,5"-->
+                                <!--
+                                    <Frame.Shadow>
+                                            <Shadow Brush="Black"
+                                                Offset="5,5"
+                                                Radius="40"
+                                                Opacity="0.8" />
+                                        </Frame.Shadow>
+                                        <Label  Text="{Binding Path=Race.Strength.AbilityBonus}"
+                                                TextColor="Crimson" 
+                                                FontSize="Micro"
+                                                HorizontalTextAlignment="Center" 
+                                                VerticalTextAlignment="Center"/>
+                                </Frame>-->
                             </Grid>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="1">
+                            <Grid RowDefinitions="Auto,Auto" 
+                                            BackgroundColor="AntiqueWhite">
+                                <Label Text="{Binding Path=Race.Intelligence.Name}" 
+                                            HorizontalTextAlignment="Center" />
+                                <Label Grid.Row="2" FontSize="Large" 
+                                            Text="{Binding Path=Race.Intelligence.Score}" 
+                                            HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="2">
+                            <Grid RowDefinitions="Auto,Auto" 
+                                        BackgroundColor="AntiqueWhite">
+                                <Label Text="{Binding Path=Race.Wisdom.Name}" 
+                                            HorizontalTextAlignment="Center" />
+                                <Label Grid.Row="2" FontSize="Large" 
+                                            Text="{Binding Path=Race.Wisdom.Score}" 
+                                            HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="3">
+                            <Grid   RowDefinitions="Auto,Auto" 
+                                        BackgroundColor="AntiqueWhite">
+                                <Label Text="{Binding Path=Race.Dexterity.Name}" 
+                                                HorizontalTextAlignment="Center" />
+                                <Label Grid.Row="2" FontSize="Large" 
+                                                Text="{Binding Path=Race.Dexterity.Score}" 
+                                                HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="4">
+                            <Grid RowDefinitions="Auto,Auto" 
+                                        BackgroundColor="AntiqueWhite">
+                                <Label Text="{Binding Path=Race.Constitution.Name}" 
+                                        HorizontalTextAlignment="Center" />
+                                <Label Grid.Row="2" FontSize="Large" 
+                                        Text="{Binding Path=Race.Constitution.Score}" 
+                                        HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Border StrokeShape="RoundRectangle 20,20,20,20"
+                                    StrokeThickness="2" Grid.Row="5">
+                            <Grid   RowDefinitions="Auto,Auto" 
+                                        BackgroundColor="AntiqueWhite">
+                                <Label Text="{Binding Path=Race.Charisma.Name}" 
+                                        HorizontalTextAlignment="Center" />
+                                <Label Grid.Row="2" FontSize="Large" 
+                                        Text="{Binding Path=Race.Charisma.Score}" 
+                                        HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="0" RowDefinitions="40,40,300,Auto"
+                  Margin="5,5,5,5">
+                <!--Inspiration Box-->
+                <Grid Grid.Row="0" Grid.Column="1" ColumnDefinitions="50,200"
+                      ColumnSpacing="10">
+                    <Border StrokeShape="RoundRectangle 10,10,10,10"
+                            StrokeThickness="3" Grid.Column="0">
+                        <Entry Text="0" FontSize="Small" 
+                               TextColor="Black" WidthRequest="50"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Border>
+                    <Border StrokeShape="RoundRectangle 10,10,10,10" 
+                            StrokeThickness="3" Grid.Column="1">
+                        <Label  WidthRequest="200" FontSize="Small"
+                                Text="Inspiration" Margin="5"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                TextColor="Black"/>
                     </Border>
                 </Grid>
+                <!--Proficiency Box-->
+                <Grid Grid.Row="1" Grid.Column="1" ColumnDefinitions="50,200"
+                      ColumnSpacing="10">
+                    <Border StrokeShape="RoundRectangle 10,10,10,10"
+                            StrokeThickness="3" Grid.Row="1" Grid.Column="0">
+                        <Entry Text="0" FontSize="Small"  WidthRequest="50"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="Black" />
+                    </Border>
+                    <Border StrokeShape="RoundRectangle 10,10,10,10" 
+                            StrokeThickness="3" Grid.Row="1" Grid.Column="1">
+                        <Label  WidthRequest="200" Margin="5"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                Text="Proficiency Bonus" FontSize="Small" 
+                                TextColor="Black"/>
+                    </Border>
+                </Grid>
+                <!-- Saving throws -->
+                <Border Grid.Row="2" Grid.Column="1" 
+                        StrokeShape="RoundRectangle 10,10,10,10" StrokeThickness="2"
+                        BackgroundColor="PapayaWhip">
+                    <Grid RowDefinitions="30,30,30,30,30,30,30"
+                          RowSpacing="10">
+                        <HorizontalStackLayout Grid.Row="0">
+                            <RadioButton />
+                            <Entry HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                            <Label Text="{Binding Path=Race.Strength.Name}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="1">
+                            <RadioButton />
+                            <Entry HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                        <Label Text="{Binding Path=Race.Dexterity.Name}" 
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="2">
+                            <RadioButton />
+                            <Entry  HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                            <Label Text="{Binding Path=Race.Constitution.Name}" 
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" 
+                                    FontSize="Body"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="3">
+                            <RadioButton />
+                            <Entry HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" />                                <Label Text="{Binding Path=Race.Intelligence.Name}" 
+                                    FontSize="Body"/>
+                            <Label Text="{Binding Path=Race.Wisdom.Name}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" 
+                                    FontSize="Body"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="4">
+                            <RadioButton />
+                            <Entry HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                        <Label Text="{Binding Path=Race.Intelligence.Name}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center" 
+                                    FontSize="Body"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="5">
+                            <RadioButton />
+                            <Entry HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                            <Label Text="{Binding Path=Race.Charisma.Name}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Body"/>
+                        </HorizontalStackLayout>
+                        <Label Text="Saving Throws" Grid.Row="6" 
+                                FontSize="Body" FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <!-- Short Description -->
+                <Border Grid.Row="3" Grid.Column="1"
+                        StrokeShape="RoundRectangle 10,10,10,10"
+                        StrokeThickness="2"
+                        BackgroundColor="PapayaWhip">
+                    <Label Text="{Binding Race.ShortDescription}" 
+                            Margin="5,5,5,5"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center" />
+                </Border>
             </Grid>
-        </ScrollView>
-        <Button Grid.Row="2" Text="Roll Again" Command="{Binding RerollCommand}" />
+        </Grid>
+        <Button Grid.Row="2" Text="Roll Again" Command="{Binding ReRollCommand}" />
     </Grid>
 </ContentPage>

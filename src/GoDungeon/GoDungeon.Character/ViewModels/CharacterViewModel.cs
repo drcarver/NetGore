@@ -1,14 +1,18 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.ViewModels;
+using GoDungeon.Monsters.ViewModels;
+
+using Microsoft.Extensions.Logging;
+
 
 namespace GoDungeon.Character.ViewModels
 {
-    public partial class CharacterViewModel : CreatureViewModel, ICharacter
+    public partial class CharacterViewModel : CharacterRaceViewModel, ICharacter
     {
         /// <summary>
         /// The character class
@@ -52,10 +56,13 @@ namespace GoDungeon.Character.ViewModels
         [ObservableProperty]
         private ObservableCollection<IInventoryEntry> inventory = new ObservableCollection<IInventoryEntry>();
 
-        /// <summary>
-        /// The character level
-        /// </summary>
-        [ObservableProperty]
-        private int level;
+        public CharacterViewModel
+        (
+            IServiceProvider services,
+            ILoggerFactory logger
+        ) : base(logger, services)
+        {
+
+        }
     }
 }

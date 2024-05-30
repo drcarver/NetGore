@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 
 using GoDungeon.Character.Models;
+using GoDungeon.Character.PC.Barbarian;
 using GoDungeon.Character.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
+using GoDungeon.Monsters.ViewModels;
 
 using Microsoft.Extensions.Logging;
 
@@ -25,16 +28,38 @@ namespace GoDungeon.Character.PC.Bard
         /// Level up the character with this class
         /// </summary>
         /// <param name="character"></param>
-        public override void LevelUp(ICharacterClass character)
+        public override void LevelUp(ICharacterRace character)
         {
             base.LevelUp(character);
+            if (Level == 0)
+            {
+                Initialize(character);
+            }
+        }
+
+        /// <summary>
+        /// Initialize the class
+        /// </summary>
+        /// <param name="character"></param>
+        protected override void Initialize(ICharacterRace character)
+        {
+            base.Initialize(character);
+
+            SavingThrows.Add(new SavingThrowViewModel(character.Strength));
+            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity, true));
+            SavingThrows.Add(new SavingThrowViewModel(character.Constitution));
+            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
+            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom));
+            SavingThrows.Add(new SavingThrowViewModel(character.Charisma, true));
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
         public BardViewModel(
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            IBardLevelTable bardLevelTable,
+            IBardBackgroundTable bardBackgroundTable)
         {
             ClassEnum = Core.Enum.ClassEnum.Bard;
             Name = nameof(Core.Enum.ClassEnum.Bard);
@@ -42,13 +67,10 @@ namespace GoDungeon.Character.PC.Bard
                 "Bards have a talent for song and story, and they come to " +
                 "their careers by developing this talent as they pick up " +
                 "on a smattering of other skills.";
-            classPrerequisites.Add(
-                new ClassPrerequisiteModel
-                {
-                    Ability = AbilityEnum.Charisma,
-                    Score = 13,
-                });
-            LevelUp(this);
+        
+            // The class level table for this class
+            ClassLevelTable = bardLevelTable;
+            BackgroundTable = bardBackgroundTable;
         }
     }
 

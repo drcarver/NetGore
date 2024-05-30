@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoDungeon.MAUI.DungeonMap.Views.PdfViewer"
+             xmlns:local="clr-namespace:GoDungeon.MAUI.DungeonMap.ViewModels"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.PdfViewer;assembly=Syncfusion.Maui.PdfViewer"
+             x:DataType="local:PdfViewerViewModel"
+             Title="Random Dungeon Map">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="Auto, Auto">
+                <syncfusion:SfPdfViewer BackgroundColor="PapayaWhip"
+                   x:Name="SfPdfViewer" Grid.Row="0" ShowScrollHead="False"
+                   DocumentSource="{Binding PdfDocumentStream}" />
+                <Button Text="Save File" Command="{Binding SaveFileCommand}" Grid.Row="1" 
+                        TextColor="White" BackgroundColor="Black"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

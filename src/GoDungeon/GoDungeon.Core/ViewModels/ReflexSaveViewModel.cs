@@ -1,4 +1,6 @@
-﻿namespace GoDungeon.Core.ViewModels
+﻿using GoDungeon.Core.Interfaces;
+
+namespace GoDungeon.Core.ViewModels
 {
     public partial class ReflexSaveViewModel : SavingThrowViewModel
     {
@@ -6,8 +8,8 @@
         /// Reflex Save
         /// </summary>
         /// <param name="creature">The creature the save is for</param>
-        public ReflexSaveViewModel(CreatureViewModel creature)
-            : base(creature, creature.Dexterity)
+        public ReflexSaveViewModel(ICreature creature)
+            : base(creature.Dexterity)
         {
             Name = "Reflex Save";
             Description = "These saves test your ability " +

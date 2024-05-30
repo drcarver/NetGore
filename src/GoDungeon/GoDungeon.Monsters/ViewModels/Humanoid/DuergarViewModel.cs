@@ -1,4 +1,6 @@
 ﻿// Ignore Spelling: Duergar
+using System;
+
 using GoDungeon.Core;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
@@ -17,13 +19,14 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
         /// </summary>
         /// <param name="loggerFactory">The logger factor</param>
         public DuergarViewModel(
-            ILoggerFactory loggerFactory, 
+            ILoggerFactory loggerFactory,
+            IServiceProvider services,
             bool GenerateStats = false) :
-            base()
+            base(services, loggerFactory)
         {
             //Medium  humanoid(dwarf),	lawful evil
             Size = SizeEnum.Medium;
-            RaceType = RaceType.Humanoid;
+            RaceType = RaceTypeEnum.Humanoid;
             RaceSubType.Add(RaceSubTypeEnum.Dwarf);
             Alignment = AlignmentEnum.LawfulEvil;
 

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+	  <RootNamespace>GoDungeon.CommandLineTools</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Syncfusion.DocIO.NET" Version="25.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Background\GoDungeon.Background.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Character\GoDungeon.Character.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Equipment\GoDungeon.Equipment.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Gaming\GoDungeon.Gaming.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.MagicItems\GoDungeon.MagicItems.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Spells\GoDungeon.Spells.csproj" />
+  </ItemGroup>
+
+</Project>

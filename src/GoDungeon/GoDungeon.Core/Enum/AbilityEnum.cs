@@ -1,6 +1,10 @@
-﻿namespace GoDungeon.Core.Enum
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GoDungeon.Core.Enum
 {
-    public enum AbilityEnum
+    public enum AbilityEnum : byte
     {
         Strength,
         Constitution,
