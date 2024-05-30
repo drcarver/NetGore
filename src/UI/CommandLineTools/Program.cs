@@ -1,6 +1,6 @@
 ﻿using GoDungeon.Background;
 using GoDungeon.Character;
-using GoDungeon.CommandLineTools.Models;
+using GoDungeon.CommandLineTools.CodeGen;
 using GoDungeon.Core;
 using GoDungeon.Equipment;
 using GoDungeon.Gaming;
@@ -37,11 +37,6 @@ namespace GoDungeon.CommandLineTools
 
             builder.Build();
 
-            GenerateClasses(builder.Services);
-        }
-
-        private static void GenerateClasses(IServiceCollection services)
-        {
             const string ROOTDIR = @"..\..\..\docs";
             ProcessDirectory(ROOTDIR);
         }
@@ -69,9 +64,8 @@ namespace GoDungeon.CommandLineTools
             // Convert the file to .html
             if (filePath.Contains("monsters") && markDown.Length >= 3)
             {
-                var classInfo = GetClassInfo(markDown);
-
-                if (string.IsNullOrEmpty(classInfo.Name))
+                ParseMarkdown.GetCreature();
+                if (string.IsNullOrEmpty(ParseMarkdown.Creature?.Name))
                 {
                     Console.WriteLine($"Skipping file {filePath}");
                     return;
@@ -82,14 +76,14 @@ namespace GoDungeon.CommandLineTools
                 var htmlFile = filePath.Replace(".md", ".html");
                 using (StreamWriter writer = File.CreateText(htmlFile))
                 {
-                    GenerateHTML(markDown, writer, classInfo);
+                    GenerateHTML(markDown, writer);
                 }
 
                 // Convert the file to a .cs model
-                var classFile = $@"C:\Users\drcarver\Desktop\NetGore\src\monsters\{classInfo.Name}.cs";
+                var classFile = $@"C:\Users\drcarver\Desktop\NetGore\src\monsters\{ParseMarkdown.Creature?.Name}.cs";
                 using (StreamWriter writer = File.CreateText(classFile))
                 {
-                    GenerateClassHeader(classInfo, writer);
+                    GenerateMonster.GenerateClassHeader(writer);
                 }
             }
         }
@@ -101,46 +95,12 @@ namespace GoDungeon.CommandLineTools
         /// <param name="markDown">The markdown file as a series of strings</param>
         /// <param name="writer">The StreamWriter stream</param>
         /// <param name="classInfo">The ClassInfo file</param>
-        private static void GenerateHTML(string[] markDown, StreamWriter writer, ClassInfo classInfo)
+        private static void GenerateHTML(string[] markDown, StreamWriter writer)
         {
             // Convert the MarkDown file to .html
-            GenerateHtmlHeader(classInfo, writer);
-            GenerateHtmlBody(classInfo, markDown, writer);
+            GenerateHtmlHeader(writer);
+            GenerateHtmlBody(markDown, writer);
             GenerateHtmlEnd(writer);
-        }
-
-        /// <summary>
-        /// Decode the classInfo from the start of the file
-        /// </summary>
-        /// <param name="markDown">The lines in the file</param>
-        /// <returns>A ClassInfo</returns>
-        private static ClassInfo GetClassInfo(string[] markDown)
-        {
-            ClassInfo classInfo = new();
-            foreach (string line in markDown)
-            {
-                var fields = line.Split(':');
-                if (fields.Length != 2)
-                {
-                    continue;
-                }
-                if (fields[0].Trim() == "name")
-                {
-                    classInfo.Name = CleanupForCSharp(fields[1].Trim());
-                    continue;
-                }
-                if (fields[0].Trim() == "type")
-                {
-                    classInfo.RaceType = fields[1].Trim();
-                    continue;
-                }
-                if (fields[0].Trim() == "cr")
-                {
-                    classInfo.ChallengeRating = fields[1].Trim();
-                    continue;
-                }
-            }
-            return classInfo;
         }
 
         /// <summary>
@@ -172,81 +132,26 @@ namespace GoDungeon.CommandLineTools
         /// <param name="htmlFile"></param>
         /// <param name="markdown"></param>
         /// <param name="stream"></param>
-        private static void GenerateHtmlBody(ClassInfo classInfo, string[] markdown, TextWriter stream)
+        private static void GenerateHtmlBody(string[] markdown, TextWriter stream)
         {
             stream.WriteLine("\t<BODY>");
             int i = 0;
             do
             {
-                GenerateHtml.GenerateHtmlHeader(markdown[i], stream, classInfo);
+                GenerateHtml.GenerateHtmlHeader(markdown[i], stream);
                 i++;
             } while (i < markdown.Length);
             stream.WriteLine("\t</BODY>");
         }
 
-        private static void GenerateHtmlHeader(ClassInfo htmlFile, TextWriter stream)
+        private static void GenerateHtmlHeader(TextWriter stream)
         {
             stream.WriteLine("<!DOCTYPE html>");
             stream.WriteLine("<html>");
             stream.WriteLine("<head>");
-            stream.WriteLine($"\t<title>{htmlFile.Name}</title>");
+            stream.WriteLine($"\t<title>{ParseMarkdown.Creature?.ProperName}</title>");
             stream.WriteLine("</head>");
         }
         #endregion
-
-        /// <summary>
-        /// Generate the class header
-        /// </summary>
-        /// <param name="filePath">Path to the file</param>
-        private static void GenerateClassHeader(ClassInfo classInfo, TextWriter stream)
-        {
-            stream.WriteLine($"// {classInfo.Name}");
-            stream.WriteLine("//");
-            stream.WriteLine("using GoDungeon.Core.Enum;");
-            stream.WriteLine("using GoDungeon.Core.ViewModels;");
-            stream.WriteLine();
-            stream.WriteLine("using Microsoft.Extensions.Logging;");
-            stream.WriteLine();
-            stream.WriteLine($"namespace GoDungeon.Monsters;");
-            stream.WriteLine();
-            stream.WriteLine($"public partial class {classInfo.Name} : CreatureViewModel");
-            stream.WriteLine("{");
-            stream.WriteLine($"\t/// <summary>");
-            stream.WriteLine($"\t/// Constructor");
-            stream.WriteLine($"\t/// </summary>");
-            stream.WriteLine($"\t/// <param name=\"services\">The collection of services from the DI</param>");
-            stream.WriteLine($"\t/// <param name=\"logger\">The logger factory from the DI</param>");
-            stream.WriteLine($"\tpublic {classInfo.Name}(");
-            stream.WriteLine("\t\tIServiceProvider services,");
-            stream.WriteLine("\t\tILoggerFactory logger)");
-            stream.WriteLine("\t\t: base(services, logger)");
-            stream.WriteLine("\t{");
-            stream.WriteLine($"\t\tName = nameof({classInfo.Name});");
-            stream.WriteLine($"\t\tRaceType = RaceTypeEnum.{classInfo.RaceType};");
-            stream.WriteLine($"\t\tChallengeRating = {classInfo.ChallengeRating};");
-            //stream.WriteLine($"\t\tExperiencePoints = {classInfo.ExperiencePoints}");
-            stream.WriteLine("\t}");
-            stream.WriteLine("}");
-        }
     }
 }
-//static void Main(string[] args)
-//{
-
-//    static void ConvertFile(string filePath, WordDocument doc)
-//    {
-//        var md = File.ReadAllText(filePath);
-//        // Convert to .md
-//        string fileName = filePath.Replace(".md", ".html");
-//        using (var stream = File.OpenWrite(fileName))
-//        {
-//            doc.Save(stream, FormatType.Html);
-//        }
-//        fileName = filePath.Replace(".md", ".wml");
-//        using (var stream = File.OpenWrite(fileName))
-//        {
-//            doc.Save(stream, FormatType.WordML);
-//        }
-//        //var creature = new CreatureViewModel()
-//    }
-

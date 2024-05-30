@@ -4,7 +4,7 @@ using GoDungeon.Core.Enum;
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface ICreature
+    public interface ICreature : IStandardTableEntry
     {
         ///// <summary>
         /// The creatures gender
