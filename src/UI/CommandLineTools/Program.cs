@@ -2,6 +2,8 @@
 using GoDungeon.Character;
 using GoDungeon.CommandLineTools.CodeGen;
 using GoDungeon.Core;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Equipment;
 using GoDungeon.Gaming;
 using GoDungeon.MagicItems;
@@ -16,6 +18,9 @@ namespace GoDungeon.CommandLineTools
 {
     internal class Program
     {
+        internal static IServiceCollection Services {get; set; }
+        internal static ICreature Creature { get; set; }
+
         static async Task Main(string[] args)
         {
             // Syncfusion License
@@ -37,10 +42,27 @@ namespace GoDungeon.CommandLineTools
 
             builder.Build();
 
+            Services = builder.Services;
+            
+            // Creature view model
+            Creature = new CreatureViewModel();
+
+            GenerateClasses();
+        }
+
+        /// <summary>
+        /// Generate the c# classes
+        /// </summary>
+        private static void GenerateClasses()
+        {
             const string ROOTDIR = @"..\..\..\docs";
             ProcessDirectory(ROOTDIR);
         }
 
+        /// <summary>
+        /// Process a directory
+        /// </summary>
+        /// <param name="rootDir">The rootdir of the directory</param>
         private static void ProcessDirectory(string rootDir)
         {
             foreach (var dir in Directory.EnumerateDirectories(rootDir))
@@ -57,15 +79,19 @@ namespace GoDungeon.CommandLineTools
             }
         }
 
+        /// <summary>
+        /// Process a file
+        /// </summary>
+        /// <param name="filePath">The filePath to create the file</param>
         private static void ProcessFile(string filePath)
         {
-            var markDown = File.ReadAllLines(filePath);
+            var markDown = File.ReadAllLines(filePath).ToList();
 
             // Convert the file to .html
-            if (filePath.Contains("monsters") && markDown.Length >= 3)
+            if (filePath.Contains("monsters") && markDown.Count >= 3)
             {
-                ParseMarkdown.GetCreature();
-                if (string.IsNullOrEmpty(ParseMarkdown.Creature?.Name))
+                ParseMarkdown.ParseMonster(markDown);
+                if (string.IsNullOrEmpty(Creature.Name))
                 {
                     Console.WriteLine($"Skipping file {filePath}");
                     return;
@@ -76,82 +102,16 @@ namespace GoDungeon.CommandLineTools
                 var htmlFile = filePath.Replace(".md", ".html");
                 using (StreamWriter writer = File.CreateText(htmlFile))
                 {
-                    GenerateHTML(markDown, writer);
+                    GenerateHtml.GenerateHtmlFile(markDown, writer);
                 }
 
                 // Convert the file to a .cs model
-                var classFile = $@"C:\Users\drcarver\Desktop\NetGore\src\monsters\{ParseMarkdown.Creature?.Name}.cs";
+                var classFile = $@"C:\Users\drcarver\Desktop\monsters\{Creature.Name}.cs";
                 using (StreamWriter writer = File.CreateText(classFile))
                 {
-                    GenerateMonster.GenerateClassHeader(writer);
+                    GenerateMonster.GenerateHeader(writer);
                 }
             }
         }
-
-        #region Generate HTML
-        /// <summary>
-        /// Generate the .html for the class
-        /// </summary>
-        /// <param name="markDown">The markdown file as a series of strings</param>
-        /// <param name="writer">The StreamWriter stream</param>
-        /// <param name="classInfo">The ClassInfo file</param>
-        private static void GenerateHTML(string[] markDown, StreamWriter writer)
-        {
-            // Convert the MarkDown file to .html
-            GenerateHtmlHeader(writer);
-            GenerateHtmlBody(markDown, writer);
-            GenerateHtmlEnd(writer);
-        }
-
-        /// <summary>
-        /// Clean up a string so it can be used as a C# variable
-        /// </summary>
-        /// <param name="name">The name to fix-up</param>
-        /// <returns>The string as a c# variable name</returns>
-        private static string? CleanupForCSharp(string name)
-        {
-            return name
-                .Replace(" ", string.Empty)
-                .Replace("/", string.Empty)
-                .Replace("\\", string.Empty)
-                .Trim();
-        }
-
-        /// <summary>
-        /// Write the end of the .html file
-        /// </summary>
-        /// <param name="stream">The output stream</param>
-        private static void GenerateHtmlEnd(TextWriter stream)
-        {
-            stream.WriteLine("</HTML>");
-        }
-
-        /// <summary>
-        /// Generate the body of the .html file 
-        /// </summary>
-        /// <param name="htmlFile"></param>
-        /// <param name="markdown"></param>
-        /// <param name="stream"></param>
-        private static void GenerateHtmlBody(string[] markdown, TextWriter stream)
-        {
-            stream.WriteLine("\t<BODY>");
-            int i = 0;
-            do
-            {
-                GenerateHtml.GenerateHtmlHeader(markdown[i], stream);
-                i++;
-            } while (i < markdown.Length);
-            stream.WriteLine("\t</BODY>");
-        }
-
-        private static void GenerateHtmlHeader(TextWriter stream)
-        {
-            stream.WriteLine("<!DOCTYPE html>");
-            stream.WriteLine("<html>");
-            stream.WriteLine("<head>");
-            stream.WriteLine($"\t<title>{ParseMarkdown.Creature?.ProperName}</title>");
-            stream.WriteLine("</head>");
-        }
-        #endregion
     }
 }
