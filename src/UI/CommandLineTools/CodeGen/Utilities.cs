@@ -13,12 +13,18 @@ internal static class Utilities
     /// <returns>The string as a c# variable name</returns>
     internal static string? CleanupForCSharp(string name)
     {
-        return name
+        var cleanName = name;
+        if (name.Contains("("))
+        {
+            cleanName = name.Substring(name.IndexOf("(")+1);
+        }
+        return cleanName
             .Replace(" ", string.Empty)
             .Replace("/", string.Empty)
             .Replace("\\", string.Empty)
             .Replace("-", string.Empty)
             .Replace("'", string.Empty)
+            .Replace(")", string.Empty)
             .Trim();
     }
 }

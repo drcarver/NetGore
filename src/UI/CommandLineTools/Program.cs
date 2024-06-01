@@ -20,6 +20,8 @@ namespace GoDungeon.CommandLineTools
     {
         internal static IServiceCollection Services {get; set; }
         internal static ICreature Creature { get; set; }
+        internal const string MONSTERROOT = $@"C:\Users\drcarver\Desktop\monsters\";
+
 
         static async Task Main(string[] args)
         {
@@ -43,9 +45,6 @@ namespace GoDungeon.CommandLineTools
             builder.Build();
 
             Services = builder.Services;
-            
-            // Creature view model
-            Creature = new CreatureViewModel();
 
             GenerateClasses();
         }
@@ -57,6 +56,7 @@ namespace GoDungeon.CommandLineTools
         {
             const string ROOTDIR = @"..\..\..\docs";
             ProcessDirectory(ROOTDIR);
+            GenerateMonster.GenerateLists();
         }
 
         /// <summary>
@@ -106,10 +106,29 @@ namespace GoDungeon.CommandLineTools
                 }
 
                 // Convert the file to a .cs model
-                var classFile = $@"C:\Users\drcarver\Desktop\monsters\{Creature.Name}.cs";
+                var classFile = $@"{MONSTERROOT}Models/{Creature.Name}.cs";
                 using (StreamWriter writer = File.CreateText(classFile))
                 {
                     GenerateMonster.GenerateHeader(writer);
+                }
+                // Convert the file to a .cs interface
+                var interfaceFile = $@"{MONSTERROOT}Interfaces/I{Creature.Name}.cs";
+                using (StreamWriter writer = File.CreateText(interfaceFile))
+                {
+                    writer.WriteLine("//");
+                    writer.WriteLine($"// {Program.Creature.ProperName}.");
+                    writer.WriteLine("//");
+                    writer.WriteLine("using GoDungeon.Core.Interfaces;");
+                    writer.WriteLine();
+                    writer.WriteLine("namespace GoDungeon.Monsters.Interfaces");
+                    writer.WriteLine("{");
+                    writer.WriteLine("\t/// <summary>");
+                    writer.WriteLine($"\t/// {Program.Creature.ProperName}.");
+                    writer.WriteLine($"\t/// </summary>");
+                    writer.WriteLine($"\tpublic interface I{Program.Creature.Name} : ICreature");
+                    writer.WriteLine("\t{");
+                    writer.WriteLine("\t}");
+                    writer.WriteLine("}");
                 }
             }
         }

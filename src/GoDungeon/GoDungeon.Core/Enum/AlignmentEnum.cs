@@ -11,6 +11,14 @@
         ChaoticNeutral,
         NeutralEvil,
         NeutralGood,
-        Neutral
+        Neutral,
+        Any,
+        AnyLawful,
+        AnyEvil,
+        AnyChaotic,
+        AnyNonGood,
+        AnyNonLawful,
+        NeutralGoodOrNeutralEvil,
+        UnAligned,
     }
 }

@@ -3,7 +3,7 @@ type: dragon
 cr: 23
 
 # Ancient Silver Dragon
-_ Gargantuan dragon, lawful good_
+_Gargantuan dragon, lawful good_
 
 **Armor Class** 22 (natural armor)    
 **Hit Points** 487 (25d20 + 225)    
