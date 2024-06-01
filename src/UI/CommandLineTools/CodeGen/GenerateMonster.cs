@@ -70,7 +70,7 @@ internal static class GenerateMonster
     private static void GenerateEnum()
     {
         // Convert the monsterlist to a .cs enum
-        var monsterEnumFile = $@"{{MONSTERROOT/enum/MonsterEnum.cs";
+        var monsterEnumFile = $@"{Program.MONSTERROOT}enum/MonsterEnum.cs";
         using (StreamWriter writer = File.CreateText(monsterEnumFile))
         {
             writer.WriteLine("//");

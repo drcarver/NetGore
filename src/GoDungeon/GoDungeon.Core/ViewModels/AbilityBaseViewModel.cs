@@ -109,6 +109,7 @@ namespace GoDungeon.Core.ViewModels
                 }
                 BaseAbility = Rolls.Sum();
             } while (BaseAbility <= 6);
+
             ModifierTable = new SpellAbilityModifierTable();
             ModifierTable.InitializeTable();
             AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
@@ -124,6 +125,10 @@ namespace GoDungeon.Core.ViewModels
         {
             Rolls = null;
             BaseAbility = baseAbility;
+            if (BaseAbility > 0)
+            {
+                AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
+            }
         }
     }
 }

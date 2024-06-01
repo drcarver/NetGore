@@ -11,14 +11,6 @@ namespace GoDungeon.CommandLineTools.CodeGen;
 internal class ParseMarkdown
 {
     /// <summary>
-    /// Constructor
-    /// </summary>
-    internal ParseMarkdown()
-    {
-        AlignmentTable.InitializeTable();
-    }
-
-    /// <summary>
     /// The monster information
     /// </summary>
     internal static ICreature? Creature { get; set; } = new CreatureViewModel();

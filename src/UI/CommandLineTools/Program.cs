@@ -102,7 +102,7 @@ namespace GoDungeon.CommandLineTools
                 var htmlFile = filePath.Replace(".md", ".html");
                 using (StreamWriter writer = File.CreateText(htmlFile))
                 {
-                    GenerateHtml.GenerateHtmlFile(markDown, writer);
+                    GenerateHtml.GenerateHtmlFile(writer);
                 }
 
                 // Convert the file to a .cs model
