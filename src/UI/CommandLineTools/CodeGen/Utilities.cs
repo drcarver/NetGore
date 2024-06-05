@@ -1,8 +1,4 @@
-﻿using GoDungeon.Core.Abilities;
-using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
-
-namespace GoDungeon.CommandLineTools.CodeGen;
+﻿namespace GoDungeon.CommandLineTools.CodeGen;
 
 internal static class Utilities
 {

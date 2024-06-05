@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-using GoDungeon.Background.Interfaces;
-using GoDungeon.Background.Tables;
-using GoDungeon.Background.Tables.Halfling;
 using GoDungeon.Core.Tables;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.Tables;

@@ -46,10 +46,20 @@ namespace GoDungeon.Core
         public int RollDice(string input)
         {
             // Parsing the input string
-            string[] parts = input.ToLower().Split('d', '+');
-            int numDice = int.Parse(parts[0]);
-            Sides = int.Parse(parts[1]);
-            Modifier = parts.Length > 2 ? int.Parse(parts[2]) : 0;
+            string[] parts;
+            char[] die;
+            if (input.Contains('-'))
+            {
+                die = ['d', '-'];
+            }
+            else
+            {
+                die = ['d', '+'];
+            }
+            parts = input.ToLower().Split(die);
+            int numDice = int.Parse(parts[0].Trim());
+            Sides = int.Parse(parts[1].Trim());
+            Modifier = parts.Length > 2 ? int.Parse(parts[2].Trim()) : 0;
 
             var rolls = new int[numDice];
             using (RandomNumberGenerator rng = RandomNumberGenerator.Create())

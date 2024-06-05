@@ -293,7 +293,7 @@ namespace GoDungeon.Core.ViewModels
         {
             IRandomAlignmentTable alignmentTable = Services.GetRequiredService<IRandomAlignmentTable>();
             alignmentTable.InitializeTable();
-            alignmentTable.AlignmentFilter = AlignmentFilterEnum.GoodOnly;
+            alignmentTable.AlignmentFilter = AlignmentEnum.AnyGood;
             var alignmentVM = (AlignmentTableEntryViewModel)alignmentTable.GetRandomRangeEntry();
             Alignment = alignmentVM.Alignment;
         }
@@ -301,7 +301,7 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        public CreatureViewModel()
+        private CreatureViewModel()
         {
             // Setup some required values
             HitPoints = new HitPointsViewModel(this);

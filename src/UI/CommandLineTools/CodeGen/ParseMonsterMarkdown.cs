@@ -1,39 +1,182 @@
-﻿using System.Diagnostics.Eventing.Reader;
-
+﻿using GoDungeon.CommandLineTools.Interfaces;
+using GoDungeon.CommandLineTools.Models;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
+using GoDungeon.Core.Models;
 using GoDungeon.Core.ViewModels;
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
-internal class ParseMarkdown
+public class ParseMonsterMarkdown : IParseMonsterMarkdown
 {
     /// <summary>
     /// The monster information
     /// </summary>
-    internal static ICreature? Creature { get; set; } = new CreatureViewModel();
-    internal static List<ICreature> CreatureList { get; set; } = new List<ICreature>();
+    public List<ICreature> CreatureList { get; set; } = new List<ICreature>();
+
+    /// <summary>
+    /// A list of monster Info
+    /// </summary>
+    public List<MonsterInfo> MonsterInfoList { get; set; } = new List<MonsterInfo>();
+
+    /// <summary>
+    /// The list of NPC's
+    /// </summary>
+    private List<MonsterInfo> NPCList { get; set; } = new List<MonsterInfo>
+    {
+        new MonsterInfo { Name = "Acolyte" },
+        new MonsterInfo { Name = "Archmage" },
+        new MonsterInfo { Name = "Assassin" },
+        new MonsterInfo { Name = "Commoner" },
+        new MonsterInfo { Name = "CultFanatic" },
+        new MonsterInfo { Name = "Cultist" },
+        new MonsterInfo { Name = "Cultist" },
+    };
+
+    /// <summary>
+    /// The list of services
+    /// </summary>
+    private IServiceProvider ServiceProvider { get; }
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="serviceProvider"></param>
+    public ParseMonsterMarkdown(IServiceProvider serviceProvider)
+    {
+        ServiceProvider = serviceProvider;
+    }
 
     /// <summary>
     /// Get the monster from the markDown file
     /// </summary>
-    internal static void ParseMonster(List<string> markDown)
+    public void ParseMonster(List<string> markDown)
     {
-        Program.Creature = new CreatureViewModel();
-        GetMonsterInfo(markDown);
+        var monsterInfo = GetMonsterInfo(markDown);
+        MonsterInfoList.Add(monsterInfo);
+        var creature = CreateCreature(monsterInfo);
         GetSizeRaceType(markDown);
         GetAbilities(markDown);
-        CreatureList.Add(Program.Creature);
+        GetMonsterArmorClass(markDown);
+        GetMonsterHitPoints(markDown);
+        CreatureList.Add(creature);
+    }
+
+    /// <summary>
+    /// Create a creature based on the monster info
+    /// </summary>
+    /// <param name="monsterInfo"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    private ICreature CreateCreature(MonsterInfo monsterInfo)
+    {
+        return ServiceProvider.GetRequiredService<ICreature>();
+        //IHumanoidRaceFactory humanoidRaceFactory = new RaceFactory(); 
+    }
+
+    /// <summary>
+    /// Get the monster attributes (armor class, hit dice, speed)
+    /// </summary>
+    /// <param name="markDown"></param>
+    private void GetMonsterArmorClass(List<string> markDown)
+    {
+        for (int i = 0; i < markDown.Count(); i++)
+        {
+            if (markDown[i].StartsWith("**Armor Class**"))
+            {
+                string rawArmorClass = markDown[i].Replace("**Armor Class**", string.Empty).Trim();
+                int leftParen = rawArmorClass.IndexOf('(');
+                int rightParen = rawArmorClass.IndexOf(')');
+
+                // Get the armor class
+                int armorClass;
+                if (leftParen > 0)
+                {
+                    int.TryParse(rawArmorClass.Substring(0, leftParen - 1).Trim(), out armorClass);
+                }
+                else
+                {
+                    int.TryParse(rawArmorClass, out armorClass);
+                }
+                string armorType = string.Empty;
+                Program.Creature.ArmorClass = new ArmorClassViewModel();
+                if (leftParen > 0)
+                {
+                    armorType = rawArmorClass.Substring(leftParen + 1, rightParen - leftParen - 1).Trim();
+                    switch (armorType)
+                    {
+                        case "natural armor":
+                            Program.Creature.ArmorClass.NaturalArmorBonus = armorClass - 10;
+                            break;
+                        case "studded leather":
+                            //Program.Creature.Eq.StuddedLeather = armorClass - 10;
+                            break;
+                        default:
+
+                            break;
+                    }
+                }
+                markDown.RemoveAt(i);
+                return;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Get the monster attributes (armor class, hit dice, speed)
+    /// </summary>
+    /// <param name="markDown"></param>
+    private void GetMonsterHitPoints(List<string> markDown)
+    {
+        for (int i = 0; i < markDown.Count(); i++)
+        {
+            if (markDown[i].StartsWith("**Hit Points**"))
+            {
+                string rawHitPoints = markDown[i].Replace("**Hit Points**", string.Empty).Trim();
+                int leftParen = rawHitPoints.IndexOf('(');
+                int rightParen = rawHitPoints.IndexOf(')');
+                int hitPoints;
+                if (leftParen > 0)
+                {
+                    int.TryParse(rawHitPoints.Substring(0, leftParen - 1), out hitPoints);
+                       creature.HitPoints = new HitPointsViewModel(hitPoints, creature);
+                }
+                else
+                {
+                    int.TryParse(rawHitPoints, out hitPoints);
+                    Program.Creature.HitPoints = new HitPointsViewModel(hitPoints, Program.Creature);
+                }
+                string hitDice = string.Empty;
+                if (leftParen > 0)
+                {
+                    hitDice = rawHitPoints.Substring(leftParen + 1, rightParen - leftParen - 1);
+                    Program.Creature.HitPoints = new HitPointsViewModel(hitDice, Program.Creature);
+                    int total = 0;
+                    for (int j = 0; j < Program.Creature.HitPoints.LevelDice.Count(); j++)
+                    {
+                        total += Program.Creature.HitPoints.LevelDice[j];
+                    }
+                    Console.WriteLine($"HitDie Total={total}");
+                }
+                else
+                {
+                    Program.Creature.HitPoints = new HitPointsViewModel(hitPoints, Program.Creature);
+                }
+
+                markDown.RemoveAt(i);
+            }
+        }
     }
 
     /// <summary>
     /// Decode the monsterInfo from the start of the file
     /// </summary>
     /// <param name="markDown">The lines in the file</param>
-    private static void GetMonsterInfo(List<string> markDown)
+    private MonsterInfo GetMonsterInfo(List<string> markDown)
     {
+        MonsterInfo monsterInfo = new MonsterInfo();
         for (int i = 0; i < markDown.Count(); i++)
         {
             var fields = markDown[i].Split(':');
@@ -44,21 +187,21 @@ internal class ParseMarkdown
 
             if (fields[0].Trim() == "name")
             {
-                Program.Creature.Name = Utilities.CleanupForCSharp(fields[1].Trim());
-                Program.Creature.ProperName = fields[1].Trim();
+                monsterInfo.Name = Utilities.CleanupForCSharp(fields[1].Trim());
+                monsterInfo.ProperName = fields[1].Trim();
             }
 
             if (fields[0].Trim() == "type")
             {
                 RaceTypeEnum raceType;
                 Enum.TryParse(fields[1].Trim(), true, out raceType);
-                Program.Creature.RaceType = raceType;
+                monsterInfo.RaceType = raceType;
                 continue;
             }
             
             if (fields[0].Trim() == "cr")
             {
-                Program.Creature.ChallengeRating = Convert.ToDecimal(fields[1].Trim());
+                monsterInfo.ChallengeRating = Convert.ToDecimal(fields[1].Trim());
                 continue;
             }
         }
@@ -73,6 +216,8 @@ internal class ParseMarkdown
         {
             markDown.RemoveAt(0);
         } while (string.IsNullOrEmpty(markDown[0].TrimEnd()));
+
+        return monsterInfo;
     }
 
     /// <summary>
@@ -80,7 +225,7 @@ internal class ParseMarkdown
     /// </summary>
     /// <param name="markDown">The text from the markdown file.</param>
     /// <param name="writer">The TextWriter</param>
-    private static void GetSizeRaceType(List<string> markDown)
+    private void GetSizeRaceType(List<string> markDown)
     {
         for (int i = 0; i < markDown.Count; i++)
         {
@@ -233,7 +378,7 @@ internal class ParseMarkdown
     /// </summary>
     /// <param name="markdownLines">The markdown file</param>
     /// <param name="writer">The TextWriter</param>
-    private static void GetAbilities(List<string> markDown)
+    private void GetAbilities(List<string> markDown)
     {
         for (int i = 0; i < markDown.Count(); i++)
         {

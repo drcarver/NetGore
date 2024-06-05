@@ -1,19 +1,24 @@
-﻿
-using System.Security.Cryptography.X509Certificates;
-
+﻿using GoDungeon.CommandLineTools.Interfaces;
 using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
-internal static class GenerateMonster
+public class GenerateMonster : IGenerateMonster
 {
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    public GenerateMonster() 
+    {
+    }
+
     /// <summary>
     /// Generate the class header
     /// </summary>
     /// <param name="filePath">Path to the file</param>
-    internal static void GenerateHeader(TextWriter stream)
+    private void GenerateHeader(TextWriter stream, ICreature creature)
     {
-        stream.WriteLine($"// {Program.Creature.ProperName}");
+        stream.WriteLine($"// {creature.ProperName}");
         stream.WriteLine("//");
         stream.WriteLine("using GoDungeon.Core.Enum;");
         stream.WriteLine("using GoDungeon.Core.ViewModels;");
@@ -22,35 +27,35 @@ internal static class GenerateMonster
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.Monsters;");
         stream.WriteLine();
-        stream.WriteLine($"public partial class {Program.Creature.Name} : CreatureViewModel");
+        stream.WriteLine($"public partial class {creature.Name} : CreatureViewModel");
         stream.WriteLine("{");
         stream.WriteLine($"\t/// <summary>");
         stream.WriteLine($"\t/// Constructor");
         stream.WriteLine($"\t/// </summary>");
         stream.WriteLine($"\t/// <param name=\"services\">The collection of services from the DI</param>");
         stream.WriteLine($"\t/// <param name=\"logger\">The logger factory from the DI</param>");
-        stream.WriteLine($"\tpublic {Program.Creature.Name}(");
+        stream.WriteLine($"\tpublic {creature.Name}(");
         stream.WriteLine("\t\tIServiceProvider services,");
         stream.WriteLine("\t\tILoggerFactory logger)");
         stream.WriteLine("\t\t: base(services, logger)");
         stream.WriteLine("\t{");
-        stream.WriteLine($"\t\tName = nameof({Program.Creature.Name});");
-        stream.WriteLine($"\t\tProperName = \"{Program.Creature.ProperName}\";");
-        stream.WriteLine($"\t\tRaceType = RaceTypeEnum.{Program.Creature.RaceType};");
-        foreach (var subType in Program.Creature.RaceSubType)
+        stream.WriteLine($"\t\tName = nameof({creature.Name});");
+        stream.WriteLine($"\t\tProperName = \"{creature.ProperName}\";");
+        stream.WriteLine($"\t\tRaceType = RaceTypeEnum.{creature.RaceType};");
+        foreach (var subType in creature.RaceSubType)
         {
             stream.WriteLine($"\t\tRaceSubType.Add(RaceSubTypEnum.{subType});");
         }
-        stream.WriteLine($"\t\tChallengeRating = {Program.Creature.ChallengeRating};");
-        //stream.WriteLine($"\t\tExperiencePoints = {Program.Creature.ExperiencePoints}");
+        stream.WriteLine($"\t\tChallengeRating = {creature.ChallengeRating};");
+        //stream.WriteLine($"\t\tExperiencePoints = {creature.ExperiencePoints}");
         stream.WriteLine();
         stream.WriteLine("\t\t// Abilities");
-        stream.WriteLine($"\t\tStrength = new Strength(this, {Program.Creature.Strength.Score});");
-        stream.WriteLine($"\t\tIntelligence = new Intelligence(this, {Program.Creature.Intelligence.Score});");
-        stream.WriteLine($"\t\tWisdom = new Wisdom(this, {Program.Creature.Wisdom.Score});");
-        stream.WriteLine($"\t\tDexterity = new Dexterity(this, {Program.Creature.Dexterity.Score});");
-        stream.WriteLine($"\t\tConstitution = new Constitution(this, {Program.Creature.Constitution.Score});");
-        stream.WriteLine($"\t\tCharisma = new Charisma(this, {Program.Creature.Charisma.Score});");
+        stream.WriteLine($"\t\tStrength = new Strength(this, {creature.Strength.Score});");
+        stream.WriteLine($"\t\tIntelligence = new Intelligence(this, {creature.Intelligence.Score});");
+        stream.WriteLine($"\t\tWisdom = new Wisdom(this, {creature.Wisdom.Score});");
+        stream.WriteLine($"\t\tDexterity = new Dexterity(this, {creature.Dexterity.Score});");
+        stream.WriteLine($"\t\tConstitution = new Constitution(this, {creature.Constitution.Score});");
+        stream.WriteLine($"\t\tCharisma = new Charisma(this, {creature.Charisma.Score});");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
     }
@@ -59,7 +64,7 @@ internal static class GenerateMonster
     /// Generate the associated enums and lists from the full creature lists
     /// </summary>
     /// <exception cref="NotImplementedException"></exception>
-    internal static void GenerateLists()
+    private void GenerateLists()
     {
         GenerateEnum();
     }
@@ -82,10 +87,10 @@ internal static class GenerateMonster
             writer.WriteLine();
             writer.WriteLine("public enum MonsterEnum : int");
             writer.WriteLine("{");
-            for (int i = 0; i < ParseMarkdown.CreatureList.Count; i++)
-            {
-                writer.WriteLine($"\t{ParseMarkdown.CreatureList[i].Name} = {i},");
-            }
+            //for (int i = 0; i < ParseMarkdown.CreatureList.Count; i++)
+            //{
+            //    writer.WriteLine($"\t{ParseMarkdown.CreatureList[i].Name} = {i},");
+            //}
             writer.WriteLine("}");
         }
     }
