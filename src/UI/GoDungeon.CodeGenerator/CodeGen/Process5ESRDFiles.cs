@@ -76,15 +76,15 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             }
 
             // Convert the file to .html
-            var htmlFile = filePath.Replace(".md", ".html");
-            Console.WriteLine($"Generating .html file {filePath}");
+            var htmlFile = $@"{outputDir}Html\{creature.Name}.html";
+            Console.WriteLine($"Generating .html file {htmlFile}");
             using (StreamWriter writer = File.CreateText(htmlFile))
             {
                 GenerateHtml.GenerateHtmlFiles(writer, creature);
             }
 
             // Convert the file to a .cs interface
-            var classFile = $@"{outputDir}Models/{creature.Name}.cs";
+            var classFile = $@"{outputDir}Models\{creature.Name}.cs";
             using (StreamWriter writer = File.CreateText(classFile))
             {
                 GenerateMonster.GenerateMonsterClass(writer, creature, outputDir);

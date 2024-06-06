@@ -26,13 +26,27 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// </summary>
     private List<MonsterInfo> NPCList { get; set; } = new List<MonsterInfo>
     {
-        new MonsterInfo { Name = "Acolyte" },
-        new MonsterInfo { Name = "Archmage" },
-        new MonsterInfo { Name = "Assassin" },
-        new MonsterInfo { Name = "Commoner" },
-        new MonsterInfo { Name = "CultFanatic" },
-        new MonsterInfo { Name = "Cultist" },
-        new MonsterInfo { Name = "Cultist" },
+        new MonsterInfo { Name = nameof(MonsterEnum.Acolyte) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Archmage) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Assassin) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Bandit) },
+        new MonsterInfo { Name = nameof(MonsterEnum.BanditCaptain) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Berserker) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Commoner) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Cultist) },
+        new MonsterInfo { Name = nameof(MonsterEnum.CultFanatic) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Druid) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Gladiator) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Guard) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Knight) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Mage) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Noble) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Priest) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Scout) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Spy) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Thug) },
+        new MonsterInfo { Name = nameof(MonsterEnum.TribalWarrior) },
+        new MonsterInfo { Name = nameof(MonsterEnum.Veteran) },
     };
 
     /// <summary>
