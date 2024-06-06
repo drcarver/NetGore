@@ -26,11 +26,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Charisma(int baseAbility, ICreature creature)
-            : base(baseAbility, creature)
+            : base(creature)
         {
-            Name = "Charisma";
-            Description = "Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence, and it can represent a charming or commanding personality.";
-            Abbreviation = "CHA";
+            SetBaseAbility(baseAbility);
         }
     }
 }

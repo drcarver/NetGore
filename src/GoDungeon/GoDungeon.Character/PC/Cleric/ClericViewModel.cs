@@ -70,12 +70,8 @@ namespace GoDungeon.Character.PC.Cleric
             character.HitPoints = new HitPointsViewModel("1d8", character);
 
             //Saving  Throws:	Wisdom,	Charisma
-            SavingThrows.Add(new SavingThrowViewModel(character.Strength));
-            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity));
-            SavingThrows.Add(new SavingThrowViewModel(character.Constitution));
-            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
-            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom, true));
-            SavingThrows.Add(new SavingThrowViewModel(character.Charisma, true));
+            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom));
+            SavingThrows.Add(new SavingThrowViewModel(character.Charisma));
 
             //Armor: Light armor, medium  armor, shields
             var armorList = ClericBackgroundTable?.Table?.Cast<IEquipmentTableEntry>()

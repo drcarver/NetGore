@@ -24,11 +24,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Intelligence(int baseAbility, ICreature parent)
-            : base(baseAbility, parent)
+            : this(parent)
         {
-            Name = "Intelligence";
-            Description = "Intelligence measures mental acuity, accuracy of recall, and the ability to reason.";
-            Abbreviation = "INT";
+            SetBaseAbility(baseAbility);
         }
     }
 }

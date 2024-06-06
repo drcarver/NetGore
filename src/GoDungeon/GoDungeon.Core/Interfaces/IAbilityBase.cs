@@ -10,6 +10,12 @@ namespace GoDungeon.Core.Interfaces
         int BaseAbility { get; }
 
         /// <summary>
+        /// Set the ability base (for monsters primarily)
+        /// </summary>
+        /// <param name="ability"></param>
+        public void SetBaseAbility(int ability);
+
+        /// <summary>
         /// The separate dice rolls
         /// </summary>
         int[]? Rolls { get; }

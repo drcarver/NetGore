@@ -23,11 +23,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Dexterity(int baseAbility, ICreature parent)
-            : base(baseAbility, parent)
+            : this(parent)
         {
-            Name = "Dexterity";
-            Description = "Dexterity measures agility, reflexes, and balance.";
-            Abbreviation = "DEX";
+            SetBaseAbility(baseAbility);
         }
     }
 }

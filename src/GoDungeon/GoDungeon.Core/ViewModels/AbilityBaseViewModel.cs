@@ -24,6 +24,20 @@ namespace GoDungeon.Core.ViewModels
         private int baseAbility;
 
         /// <summary>
+        /// Set the ability base (for monsters primarily)
+        /// </summary>
+        /// <param name="ability"></param>
+        public void SetBaseAbility(int ability)
+        {
+            Rolls = null;
+            BaseAbility = ability;
+            if (BaseAbility > 0)
+            {
+                AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
+            }
+        }
+
+        /// <summary>
         /// The separate dice rolls
         /// </summary>
         [ObservableProperty]
@@ -113,22 +127,6 @@ namespace GoDungeon.Core.ViewModels
             ModifierTable = new SpellAbilityModifierTable();
             ModifierTable.InitializeTable();
             AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
-        }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="baseAbility">The ability score.  We are not randomly generating it</param>
-        /// <param name="creature">The creature that has this ability</param>
-        protected AbilityBaseViewModel(int baseAbility, ICreature creature)
-            : this(creature)
-        {
-            Rolls = null;
-            BaseAbility = baseAbility;
-            if (BaseAbility > 0)
-            {
-                AbilityBonus = ModifierTable.GetModifierByScore(BaseAbility);
-            }
         }
     }
 }

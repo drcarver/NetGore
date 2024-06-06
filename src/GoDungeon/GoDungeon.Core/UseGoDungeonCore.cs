@@ -35,17 +35,19 @@ namespace GoDungeon.Core
         {
             //collection
             // Add all the game table types as transient
+            //collection.AddTransient<IAbilityBase, AbilityBaseViewModel>();
             collection.AddTransient<IAbilityBonusSpellEntry, AbilityBonusSpellEntryViewModel>();
             collection.AddTransient<IAcrobaticsModifiersTableEntry, AcrobaticsModifierViewModel>();
             collection.AddTransient<IAlignmentEntry, AlignmentTableEntryViewModel>();
             collection.AddTransient<IBaseObject, BaseObjectViewModel>();
+            collection.AddTransient<ICreature, CreatureViewModel>();
             collection.AddTransient<IDataObject, DataObjectViewModel>();
             collection.AddTransient<IGameTableEntry, GameTableEntryViewModel>();
             collection.AddTransient<IGameTable, GameTable>();
             collection.AddTransient<INamedTableEntry, NamedTableEntryViewModel>();
             collection.AddTransient<IRandomTableEntry, RandomTableEntryViewModel>();
             collection.AddTransient<IRandomTable, RandomTable>();
-            collection.AddTransient<ISavingThrow, SavingThrowViewModel>();
+            //collection.AddTransient<ISavingThrow, SavingThrowViewModel>();
             collection.AddTransient<ISkillTableEntry, SkillTableEntryViewModel>();
             collection.AddTransient<IStandardTableEntry, StandardTableEntryViewModel>();
 

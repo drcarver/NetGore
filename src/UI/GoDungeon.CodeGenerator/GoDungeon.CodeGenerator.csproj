@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <PublishAot>true</PublishAot>
+    <UserSecretsId>dotnet-GoDungeon.CodeGenerator-9ad693cc-f193-4d68-9f11-d8b5411d355f</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Background\GoDungeon.Background.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Character\GoDungeon.Character.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Equipment\GoDungeon.Equipment.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Gaming\GoDungeon.Gaming.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.MagicItems\GoDungeon.MagicItems.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Monsters\GoDungeon.Monsters.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
+    <ProjectReference Include="..\..\GoDungeon\GoDungeon.Spells\GoDungeon.Spells.csproj" />
+  </ItemGroup>
+</Project>
