@@ -1,6 +1,8 @@
 ﻿namespace GoDungeon.Core.Enum;
 
-public enum MovementEnum
+public enum MovementEnum : byte
 {
-    Normal
+    Normal,
+    Fly,
+    Swim
 }

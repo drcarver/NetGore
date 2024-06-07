@@ -24,4 +24,8 @@
     <ProjectReference Include="..\..\GoDungeon\GoDungeon.RandomDungeon\GoDungeon.RandomDungeon.csproj" />
     <ProjectReference Include="..\..\GoDungeon\GoDungeon.Spells\GoDungeon.Spells.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>

@@ -40,6 +40,7 @@ namespace GoDungeon.Monsters
                 .AddTransient<IHuman, HumanViewModel>()
                 .AddTransient<ITiefling, TieflingViewModel>()
                 .AddSingleton<IHumanoidRaceFactory, HumanoidRaceFactory>()
+                .AddSingleton<IMonsterLists, MonsterLists>()
             ;
             return collection;
         }

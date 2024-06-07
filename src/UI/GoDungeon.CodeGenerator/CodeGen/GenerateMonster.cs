@@ -1,6 +1,6 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
-using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -112,7 +112,7 @@ public class GenerateMonster : IGenerateMonster
     /// <summary>
     /// Generate the MonsterEnum
     /// </summary>
-    private void GenerateEnum(List<MonsterInfo> monsterInfoList, string rootdir)
+    private void GenerateEnum(List<MonsterInfoViewModel> monsterInfoList, string rootdir)
     {
         // Convert the monster list to a .cs enum
         var monsterEnumFile = $@"{rootdir}enum/MonsterEnum.cs";

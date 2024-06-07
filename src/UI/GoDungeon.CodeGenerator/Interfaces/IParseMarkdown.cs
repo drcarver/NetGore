@@ -1,5 +1,5 @@
-﻿using GoDungeon.CodeGenerator.Models;
-using GoDungeon.Core.Interfaces;
+﻿using GoDungeon.Core.Interfaces;
+using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 
@@ -18,5 +18,5 @@ public interface IParseMonsterMarkdown
     /// <summary>
     /// A list of monster Info
     /// </summary>
-    public List<MonsterInfo> MonsterInfoList { get; }
+    public List<MonsterInfoViewModel> MonsterInfoList { get; }
 }

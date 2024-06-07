@@ -1,11 +1,11 @@
 ﻿using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
-using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Models;
 using GoDungeon.Core.ViewModels;
+using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
@@ -19,35 +19,7 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// <summary>
     /// A list of monster Info
     /// </summary>
-    public List<MonsterInfo> MonsterInfoList { get; set; } = new List<MonsterInfo>();
-
-    /// <summary>
-    /// The list of NPC's
-    /// </summary>
-    private List<MonsterInfo> NPCList { get; set; } = new List<MonsterInfo>
-    {
-        new MonsterInfo { Name = nameof(MonsterEnum.Acolyte) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Archmage) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Assassin) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Bandit) },
-        new MonsterInfo { Name = nameof(MonsterEnum.BanditCaptain) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Berserker) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Commoner) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Cultist) },
-        new MonsterInfo { Name = nameof(MonsterEnum.CultFanatic) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Druid) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Gladiator) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Guard) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Knight) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Mage) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Noble) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Priest) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Scout) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Spy) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Thug) },
-        new MonsterInfo { Name = nameof(MonsterEnum.TribalWarrior) },
-        new MonsterInfo { Name = nameof(MonsterEnum.Veteran) },
-    };
+    public List<MonsterInfoViewModel> MonsterInfoList { get; set; } = new List<MonsterInfoViewModel>();
 
     /// <summary>
     /// The list of services
@@ -93,7 +65,7 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// Create a creature based on the monster info
     /// </summary>
     /// <param name="The monster info to create the creature from."></param>
-    private ICreature CreateCreature(MonsterInfo monsterInfo)
+    private ICreature CreateCreature(MonsterInfoViewModel monsterInfo)
     {
         return ServiceProvider.GetRequiredService<ICreature>();
         //IHumanoidRaceFactory humanoidRaceFactory = new RaceFactory(); 
@@ -198,9 +170,9 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// Decode the monsterInfo from the start of the file
     /// </summary>
     /// <param name="markDown">The markdown file for the monster</param>
-    private MonsterInfo GetMonsterInfo(List<string> markDown)
+    private MonsterInfoViewModel GetMonsterInfo(List<string> markDown)
     {
-        MonsterInfo monsterInfo = new MonsterInfo();
+        MonsterInfoViewModel monsterInfo = new MonsterInfoViewModel();
         for (int i = 0; i < markDown.Count(); i++)
         {
             var fields = markDown[i].Split(':');
