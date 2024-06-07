@@ -111,7 +111,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             Age = 20;
 
             // Speed. Your base walking speed is 25 feet.
-            Speed = 25;
+            Speed.Add(new MovementViewModel { Speed = 25, MovementType = MovementEnum.Normal });
 
             //Languages. You can speak, read, and write 
             //Common and Halfling. The Halfling language isn’t 

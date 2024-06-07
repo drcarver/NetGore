@@ -37,12 +37,19 @@ public class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t<BODY>");
         stream.WriteLine($"\t<h1>{creature.ProperName}</h1>");
         GenerateOverview(stream, creature);
-        stream.WriteLine($"<p>");
-        stream.WriteLine($"<br><b>Armor Class<b>{creature.ArmorClass.AC(Core.Enum.AttackTypeEnum.Mele)}<br>");
-        stream.WriteLine($"<br><b>Hit Points<b>{creature.HitPoints.HP()}<br>");
-        stream.WriteLine($"</p>");
+        GenerateACandHP(stream, creature);
         GenerateAbilities(stream, creature);
         stream.WriteLine("\t</BODY>");
+    }
+
+    private void GenerateACandHP(TextWriter stream, ICreature creature)
+    {
+        stream.WriteLine("\t\t<p>");
+        stream.WriteLine("\t\t<table>");
+        stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Armor Class</td><td>{creature.ArmorClass.AC(Core.Enum.AttackTypeEnum.Mele)}<b></td></tr>");
+        stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Hit Points</td><td>{creature.HitPoints.HP()} ({creature.HitPoints.HitDice})<b></td></tr>");
+        stream.WriteLine("\t\t</table>");
+        stream.WriteLine("\t\t</p>");
     }
 
     /// <summary>
@@ -65,7 +72,6 @@ public class GenerateHtml : IGenerateHtml
         stream.WriteLine("\tth, td {");
         stream.WriteLine("\t\tborder-color: black;");
         stream.WriteLine("\t\tbackground-color: bisque;");
-        stream.WriteLine("\t\ttext-align: center;");
         stream.WriteLine("\t}");
         stream.WriteLine();
         stream.WriteLine("\tbody {");
@@ -86,48 +92,48 @@ public class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t<h3>Abilities</h3>");
         stream.WriteLine("\t\t<table>");
         stream.WriteLine("\t\t\t<col />");
-        stream.WriteLine("\t\t\t<colgroup span=\"2\"></colgroup>");
+        stream.WriteLine("\t\t\t<colgroup colspan=\"2\"></colgroup>");
         stream.WriteLine("\t\t\t<tr>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Strength.Name}</th>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Intelligence.Name}</th>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Wisdom.Name}</th>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Dexterity.Name} </th>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Constitution.Name} </th>");
-        stream.WriteLine($"\t\t\t<th colspan=\"2\" scope=\"colgroup\">{creature.Charisma.Name} </th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Strength.Name}</th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Intelligence.Name}</th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Wisdom.Name}</th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Dexterity.Name}</th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Constitution.Name}</th>");
+        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Charisma.Name}</th>");
         stream.WriteLine("\t\t\t</tr>");
         stream.WriteLine("\t\t\t<tr>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\"scope=\" col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
+        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
         stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
         stream.WriteLine("\t\t\t</tr>");
         stream.WriteLine("\t\t\t<tr>");
         var plusSign = creature.Strength.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Strength.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Strength.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Strength.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Strength.AbilityBonus}</td>");
         plusSign = creature.Intelligence.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Intelligence.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Intelligence.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Intelligence.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Intelligence.AbilityBonus}</td>");
         plusSign = creature.Wisdom.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Wisdom.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Wisdom.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Wisdom.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Wisdom.AbilityBonus}</td>");
         plusSign = creature.Dexterity.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Dexterity.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Dexterity.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Dexterity.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Dexterity.AbilityBonus}</td>");
         plusSign = creature.Constitution.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Constitution.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Constitution.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Constitution.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Constitution.AbilityBonus}</td>");
         plusSign = creature.Charisma.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td>{creature.Charisma.Score}</td>");
-        stream.WriteLine($"\t\t\t<td>{plusSign}{creature.Charisma.AbilityBonus}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Charisma.Score}</td>");
+        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Charisma.AbilityBonus}</td>");
         stream.WriteLine("\t\t\t</tr>");
         stream.WriteLine("\t\t</table>");
     }

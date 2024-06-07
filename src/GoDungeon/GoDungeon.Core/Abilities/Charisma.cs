@@ -26,7 +26,7 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Charisma(int baseAbility, ICreature creature)
-            : base(creature)
+            : this(creature)
         {
             SetBaseAbility(baseAbility);
         }

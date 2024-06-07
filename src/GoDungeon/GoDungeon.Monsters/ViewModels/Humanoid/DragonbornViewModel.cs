@@ -79,7 +79,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             Size = SizeEnum.Small;
 
             // Speed. Your base walking speed is 25 feet.
-            Speed = 25;
+            Speed.Add(new MovementViewModel { Speed = 25, MovementType = MovementEnum.Normal });
         }
 
         //Table: Random Height and Weight

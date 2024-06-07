@@ -52,7 +52,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Base Speed: Humans have a base speed of 30
             //feet.
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
 
             //Type: Humans are humanoids with the
             //human subtype.

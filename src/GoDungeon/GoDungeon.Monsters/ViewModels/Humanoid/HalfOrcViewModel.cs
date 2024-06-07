@@ -2,6 +2,7 @@
 
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -56,7 +57,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Base Speed: Half - orcs have a base
             //speed of 30 feet.
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
 
             //Languages: Half - orcs begin play speaking
             //Common and Orc. Half - orcs with high

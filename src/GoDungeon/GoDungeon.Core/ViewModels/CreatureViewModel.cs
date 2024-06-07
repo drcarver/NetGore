@@ -128,7 +128,7 @@ namespace GoDungeon.Core.ViewModels
         /// The creature's speed in feet
         /// </summary>
         [ObservableProperty]
-        private int speed;
+        private ObservableCollection<MovementViewModel> speed = new ObservableCollection<MovementViewModel>();
         //{
         //    get
         //    {

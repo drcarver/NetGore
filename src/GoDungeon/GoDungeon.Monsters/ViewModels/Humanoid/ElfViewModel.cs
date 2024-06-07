@@ -2,6 +2,7 @@
 
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -51,7 +52,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Base Speed: Elves have a base speed of
             //30 feet.
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
 
             //Languages: Elves begin play speaking Common
             //and Elven .Elves with high Intelligence

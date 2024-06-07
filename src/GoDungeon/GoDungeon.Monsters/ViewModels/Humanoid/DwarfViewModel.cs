@@ -2,6 +2,7 @@
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -63,7 +64,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             //Base Speed: (Slow and Steady) Dwarves have
             //a base speed of 20 feet, but their speed
             //is never modified by armor or encumbrance.
-            Speed = 20;
+            Speed.Add(new MovementViewModel { Speed = 20, MovementType = MovementEnum.Normal });
 
             //Languages: Dwarves begin play speaking
             //Common and Dwarven. Dwarves with high

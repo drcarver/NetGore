@@ -75,15 +75,24 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
         GetAbilities(markDown, creature);
         GetMonsterArmorClass(markDown, creature);
         GetMonsterHitPoints(markDown, creature);
+        GetMonsterSpeed(markDown, creature);
         CreatureList.Add(creature);
         return creature;
     }
 
     /// <summary>
+    /// Get the monster speed
+    /// </summary>
+    /// <param name="markDown">The markdown file for the monster</param>
+    /// <param name="creature">The creature being created from the markdown</param>
+    private void GetMonsterSpeed(List<string> markDown, ICreature creature)
+    {
+    }
+
+    /// <summary>
     /// Create a creature based on the monster info
     /// </summary>
-    /// <param name="monsterInfo"></param>
-    /// <exception cref="NotImplementedException"></exception>
+    /// <param name="The monster info to create the creature from."></param>
     private ICreature CreateCreature(MonsterInfo monsterInfo)
     {
         return ServiceProvider.GetRequiredService<ICreature>();
@@ -91,9 +100,10 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     }
 
     /// <summary>
-    /// Get the monster attributes (armor class, hit dice, speed)
+    /// Get the monster armor class
     /// </summary>
-    /// <param name="markDown"></param>
+    /// <param name="markDown">The markdown file for the monster</param>
+    /// <param name="creature">The creature being created from the markdown</param>
     private void GetMonsterArmorClass(List<string> markDown, ICreature creature)
     {
         for (int i = 0; i < markDown.Count(); i++)
@@ -139,9 +149,10 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     }
 
     /// <summary>
-    /// Get the monster attributes (armor class, hit dice, speed)
+    /// Get the monster hit points
     /// </summary>
-    /// <param name="markDown"></param>
+    /// <param name="markDown">The markdown file for the monster</param>
+    /// <param name="creature">The creature being created from the markdown</param>
     private void GetMonsterHitPoints(List<string> markDown, ICreature creature)
     {
         for (int i = 0; i < markDown.Count(); i++)
@@ -172,7 +183,6 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
                     {
                         total += creature.HitPoints.LevelDice[j];
                     }
-                    Console.WriteLine($"HitDie Total={total}");
                 }
                 else
                 {
@@ -187,7 +197,7 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// <summary>
     /// Decode the monsterInfo from the start of the file
     /// </summary>
-    /// <param name="markDown">The lines in the file</param>
+    /// <param name="markDown">The markdown file for the monster</param>
     private MonsterInfo GetMonsterInfo(List<string> markDown)
     {
         MonsterInfo monsterInfo = new MonsterInfo();
@@ -237,8 +247,8 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// <summary>
     /// Get  the size, race type, race sub type and alignment
     /// </summary>
-    /// <param name="markDown">The text from the markdown file.</param>
-    /// <param name="writer">The TextWriter</param>
+    /// <param name="markDown">The markdown file for the monster</param>
+    /// <param name="creature">The creature being created from the markdown</param>
     private void GetSizeRaceType(List<string> markDown, ICreature creature)
     {
         for (int i = 0; i < markDown.Count; i++)
@@ -391,8 +401,8 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// <summary>
     /// Generate abilities
     /// </summary>
-    /// <param name="markdownLines">The markdown file</param>
-    /// <param name="writer">The TextWriter</param>
+    /// <param name="markDown">The markdown file for the monster</param>
+    /// <param name="creature">The creature being created from the markdown</param>
     private void GetAbilities(List<string> markDown, ICreature creature)
     {
         for (int i = 0; i < markDown.Count(); i++)
