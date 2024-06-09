@@ -16,6 +16,7 @@
         Chainmail,
         Splint,
         Plate,
+        Natural,
         #endregion    
     }
 }

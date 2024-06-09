@@ -5,7 +5,22 @@ public interface IProcess5ESRDFiles
     /// <summary>
     /// The root directory to generate the .html and class files in
     /// </summary>
-    public string? MonsterRootDirectory { get; set; }
+    string? RootDirectory { get; set; }
+
+    /// <summary>
+    /// Process monster files from the SRD
+    /// </summary>
+    IParseMarkdown ParseMarkdown { get; }
+
+    /// <summary>
+    /// Generate the C# files for the monster
+    /// </summary>
+    IGenerateModel GenerateModel { get; }
+
+    /// <summary>
+    /// Generate the .html file for the monster
+    /// </summary>
+    IGenerateHtml GenerateHtml { get; }
 
     /// <summary>
     /// Process a directory

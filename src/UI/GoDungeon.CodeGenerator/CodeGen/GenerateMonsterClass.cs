@@ -4,15 +4,8 @@ using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
-public class GenerateMonster : IGenerateMonster
+public partial class GenerateModel : IGenerateModel
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public GenerateMonster() 
-    {
-    }
-
     /// <summary>
     /// Generate the .cs class for the monster
     /// </summary>
@@ -82,10 +75,10 @@ public class GenerateMonster : IGenerateMonster
     }
 
     /// <summary>
-    /// 
+    /// Generate interface files
     /// </summary>
-    /// <param name="stream"></param>
-    /// <param name="creature"></param>
+    /// <param name="stream">The output stream</param>
+    /// <param name="creature">The creature the file is being generated for</param>
     private void GenerateInterfaceFile(TextWriter stream, ICreature creature, string rootdir)
     {
         // Convert the file to a .cs interface

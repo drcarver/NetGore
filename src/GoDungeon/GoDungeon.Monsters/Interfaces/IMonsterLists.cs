@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using GoDungeon.Core.Enum;
 using GoDungeon.Monsters.ViewModels;
@@ -22,4 +23,18 @@ public interface IMonsterLists
     /// The list of NPC's
     /// </summary>
     public ObservableCollection<MonsterInfoViewModel> NPCList { get; }
+
+    /// <summary>
+    /// Returns true if the monster is a Were beast
+    /// </summary>
+    /// <param name="monsterInfo">The monster info</param>
+    /// <returns>True if the monster is a NPC</returns>
+    bool IsWere(MonsterInfoViewModel monsterInfo);
+
+    /// <summary>
+    /// Returns true if the monster is a NPC
+    /// </summary>
+    /// <param name="monsterInfo">The monster info</param>
+    /// <returns>True if the monster is a NPC</returns>
+    bool IsNPC(MonsterInfoViewModel monsterInfo);
 }

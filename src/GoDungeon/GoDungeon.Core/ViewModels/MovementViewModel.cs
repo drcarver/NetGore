@@ -24,5 +24,17 @@ namespace GoDungeon.Core.ViewModels
         /// </summary>
         [ObservableProperty]
         private int speed;
+
+        /// <summary>
+        /// The rate (usually in ft per round)
+        /// </summary>
+        [ObservableProperty]
+        private MovementRateEnum movementRate;
+
+        /// <summary>
+        /// The movement modifier
+        /// </summary>
+        [ObservableProperty]
+        private string? movementModifier;
     }
 }

@@ -1,5 +1,6 @@
-﻿using GoDungeon.CodeGenerator.CodeGen;
-using GoDungeon.CodeGenerator.Interfaces;
+﻿using System.Diagnostics;
+
+using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
@@ -9,42 +10,22 @@ using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
-public class ParseMonsterMarkdown : IParseMonsterMarkdown
+public partial class ParseMarkdown
 {
-    /// <summary>
-    /// The monster information
-    /// </summary>
-    public List<ICreature> CreatureList { get; set; } = new List<ICreature>();
-
-    /// <summary>
-    /// A list of monster Info
-    /// </summary>
-    public List<MonsterInfoViewModel> MonsterInfoList { get; set; } = new List<MonsterInfoViewModel>();
-
-    /// <summary>
-    /// The list of services
-    /// </summary>
-    private IServiceProvider ServiceProvider { get; }
-
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    /// <param name="serviceProvider"></param>
-    public ParseMonsterMarkdown(IServiceProvider serviceProvider)
-    {
-        ServiceProvider = serviceProvider;
-    }
-
     /// <summary>
     /// Get the monster from the markDown file
     /// </summary>
-    public ICreature ParseMonster(List<string> markDown)
+    public ICreature? ParseMonster(List<string> markDown)
     {
         var monsterInfo = GetMonsterInfo(markDown);
         MonsterInfoList.Add(monsterInfo);
+        if (MonsterLists.IsWere(monsterInfo))
+        {
+            return null;
+        }
         var creature = CreateCreature(monsterInfo);
         GetSizeRaceType(markDown, creature);
-        GetAbilities(markDown, creature);
+        GetMonsterAbilities(markDown, creature);
         GetMonsterArmorClass(markDown, creature);
         GetMonsterHitPoints(markDown, creature);
         GetMonsterSpeed(markDown, creature);
@@ -59,6 +40,93 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// <param name="creature">The creature being created from the markdown</param>
     private void GetMonsterSpeed(List<string> markDown, ICreature creature)
     {
+        for (int i = 0; i < markDown.Count(); i++)
+        {
+            if (markDown[i].StartsWith("**Speed**"))
+            {
+                string rawSpeed = markDown[i].Replace("**Speed**", string.Empty).Replace("ft", " ft").Trim();
+                string[] movements = rawSpeed.Split(',');
+
+                // Get the movement speeds
+                for (int s = 0; s < movements.Length; s++)
+                {
+                    int speed = 0;
+                    int lparens = movements[s].Trim().IndexOf('(');
+                    int rparens = movements[s].Trim().IndexOf(')');
+                    string[] rawMovementWithSpace;
+                    string modifier = string.Empty;
+                    if (lparens > 0 && rparens > 0)
+                    {
+                        int modifierLength = rparens - lparens + 2;
+                        if (modifierLength + lparens > movements[s].Length)
+                        {
+                            modifierLength -= 1;
+                        }
+                        modifier = movements[s].Substring(lparens, modifierLength);
+                        movements[s] = movements[s].Substring(0, lparens - 1);
+                    }
+                    rawMovementWithSpace = movements[s].Trim().Split(' ');
+                    List<string> rawMovement = new List<string>();
+                    for (int r = 0; r < rawMovementWithSpace.Length; r++)
+                    {
+                        if (!string.IsNullOrEmpty(rawMovementWithSpace[r].Trim()))
+                        {
+                            rawMovement.Add(rawMovementWithSpace[r].Trim());
+                        }
+                    }
+                    if (rawMovement.Count() == 2)
+                    {
+                        MovementRateEnum movementRateEnum;
+                        if (!Enum.TryParse(rawMovement[1].Replace(".", string.Empty).Trim(), true, out movementRateEnum))
+                        {
+                            Debug.WriteLine($"Unknown MovementRateEnum {rawMovement[1]}");
+                        }
+                        if (int.TryParse(rawMovement[0].Trim(), out speed))
+                        {
+                            creature.Speed.Add(new MovementViewModel
+                            {
+                                Speed = speed,
+                                MovementType = MovementEnum.Normal,
+                                MovementRate = movementRateEnum,
+                                MovementModifier = modifier
+                            });
+                        }
+                    }
+                    if (rawMovement.Count() == 3)
+                    {
+                        MovementEnum movementEnum;
+                        MovementRateEnum movementRateEnum;
+                        if (!Enum.TryParse<MovementEnum>(rawMovement[0], true, out movementEnum))
+                        {
+                            Debug.WriteLine($"Unknown MovementEnum {rawMovement[0]}");
+                        }
+                        if (!Enum.TryParse<MovementRateEnum>(rawMovement[2].Replace(".", string.Empty).Trim(), true, out movementRateEnum))
+                        {
+                            Debug.WriteLine($"Unknown MovementRateEnum {rawMovement[2]}");
+                        }
+                        if (int.TryParse(rawMovement[1], out speed))
+                        {
+                            creature.Speed.Add(new MovementViewModel
+                            {
+                                Speed = speed,
+                                MovementType = movementEnum,
+                                MovementRate = movementRateEnum,
+                                MovementModifier = modifier
+                            });
+                        }
+                        if (modifier != string.Empty && speed == 0)
+                        {
+                            creature.Speed.Add(new MovementViewModel
+                            {
+                                MovementModifier = modifier
+                            });
+                        }
+                    }
+                }
+                markDown.RemoveAt(i);
+                return;
+            }
+        }
     }
 
     /// <summary>
@@ -85,6 +153,12 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
                 string rawArmorClass = markDown[i].Replace("**Armor Class**", string.Empty).Trim();
                 int leftParen = rawArmorClass.IndexOf('(');
                 int rightParen = rawArmorClass.IndexOf(')');
+                string armorType = string.Empty;
+
+                if (creature.Name.ToLower().Trim().StartsWith("were"))
+                {
+                    return;
+                }
 
                 // Get the armor class
                 int armorClass;
@@ -96,21 +170,44 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
                 {
                     int.TryParse(rawArmorClass, out armorClass);
                 }
-                string armorType = string.Empty;
                 creature.ArmorClass = new ArmorClassViewModel();
                 if (leftParen > 0)
                 {
                     armorType = rawArmorClass.Substring(leftParen + 1, rightParen - leftParen - 1).Trim();
+                }
+                if (armorType != string.Empty)
+                {
                     switch (armorType)
                     {
                         case "natural armor":
-                            creature.ArmorClass.NaturalArmorBonus = armorClass - 10;
+                            creature.ArmorClass.ArmorAndShield = (int)ArmorAndShieldEnum.Natural;
                             break;
+                        case "scale mail":
+                        case "splint":
+                        case "breastplate":
+                        case "patchwork armor":
+                        case "scale mail, shield":
+                        case "barding scraps":
+                        case "chain mail, shield":
+                        case "chain mail":
+                        case "chain shirt":
+                        case "chain shirt, shield":
+                        case "hide armor":
+                        case "hide armor, shield":
+                        case "plate":
+                        case "leather armor":
+                        case "leather armor, shield":
                         case "studded leather":
-                            //creature.Eq.StuddedLeather = armorClass - 10;
+                        case "studded leather, shield":
+                        case "16 with barkskin":
+                        case "15 with mage armor":
+                        case "armor scraps":
+                            break;
+                        case "natural armor, shield":
+                            creature.ArmorClass.ArmorAndShield = (int) ArmorAndShieldEnum.Natural;
+                            creature.ArmorClass.ShieldBonus = 1;
                             break;
                         default:
-
                             break;
                     }
                 }
@@ -375,7 +472,7 @@ public class ParseMonsterMarkdown : IParseMonsterMarkdown
     /// </summary>
     /// <param name="markDown">The markdown file for the monster</param>
     /// <param name="creature">The creature being created from the markdown</param>
-    private void GetAbilities(List<string> markDown, ICreature creature)
+    private void GetMonsterAbilities(List<string> markDown, ICreature creature)
     {
         for (int i = 0; i < markDown.Count(); i++)
         {

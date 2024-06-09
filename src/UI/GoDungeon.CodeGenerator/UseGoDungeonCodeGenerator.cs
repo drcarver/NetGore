@@ -16,8 +16,8 @@ namespace GoDungeon.CodeGenerator
             //collection
             collection
                 .AddSingleton<IGenerateHtml, GenerateHtml>()
-                .AddSingleton<IGenerateMonster, GenerateMonster>()
-                .AddSingleton<IParseMonsterMarkdown, ParseMonsterMarkdown>()
+                .AddSingleton<IGenerateModel, GenerateModel>()
+                .AddSingleton<IParseMarkdown, ParseMarkdown>()
                 .AddSingleton<IProcess5ESRDFiles, Process5ESRDFiles>()
                 ;
             return collection;

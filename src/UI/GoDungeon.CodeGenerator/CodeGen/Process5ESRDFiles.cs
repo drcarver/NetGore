@@ -4,27 +4,33 @@ namespace GoDungeon.CodeGenerator.CodeGen;
 
 public class Process5ESRDFiles : IProcess5ESRDFiles
 {
+    /// <summary>
+    /// Process the 5th edition SRD files
+    /// </summary>
+    /// <param name="parseMonsterMarkdown">The parser file</param>
+    /// <param name="generateMonster">The class generator</param>
+    /// <param name="generateHtml">The .html generator</param>
     public Process5ESRDFiles
     (
-        IParseMonsterMarkdown parseMonsterMarkdown,
-        IGenerateMonster generateMonster,
+        IParseMarkdown parseMarkdown,
+        IGenerateModel generateMonster,
         IGenerateHtml generateHtml
     )
     {
-        ParseMonsterMarkdown = parseMonsterMarkdown;
-        GenerateMonster = generateMonster;
+        ParseMarkdown = parseMarkdown;
+        GenerateModel = generateMonster;
         GenerateHtml = generateHtml;
     }
 
     /// <summary>
     /// Process monster files from the SRD
     /// </summary>
-    public IParseMonsterMarkdown ParseMonsterMarkdown { get; }
+    public IParseMarkdown ParseMarkdown { get; }
 
     /// <summary>
     /// Generate the C# files for the monster
     /// </summary>
-    public IGenerateMonster GenerateMonster { get; }
+    public IGenerateModel GenerateModel { get; }
 
     /// <summary>
     /// Generate the .html file for the monster
@@ -34,7 +40,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <summary>
     /// The root directory to generate the .html and class files in
     /// </summary>
-    public string? MonsterRootDirectory { get; set; }
+    public string? RootDirectory { get; set; }
 
     /// <summary>
     /// Process a directory
@@ -42,7 +48,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="rootDir">The root directory</param>
     public void ProcessDirectory(string inputDir, string outputdir)
     {
-        MonsterRootDirectory = inputDir;
+        RootDirectory = inputDir;
         foreach (var dir in Directory.EnumerateDirectories(inputDir))
         {
             ProcessDirectory(dir, outputdir);
@@ -50,9 +56,14 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
 
         foreach (string filePath in Directory.EnumerateFiles(inputDir))
         {
+            if (filePath.Contains("spells") && filePath.EndsWith(".md"))
+            {
+                ProcessSpellFile(filePath, outputdir);
+            }
+
             if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
             {
-                ProcessFile(filePath, outputdir);
+                ProcessMonsterFile(filePath, outputdir);
             }
         }
     }
@@ -61,33 +72,68 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// Process a file
     /// </summary>
     /// <param name="filePath">The filePath to create the file</param>
-    private void ProcessFile(string filePath, string outputDir)
+    private void ProcessSpellFile(string filePath, string outputDir)
     {
         var markDown = File.ReadAllLines(filePath).ToList();
 
         // Convert the file to .html
         if (markDown.Count >= 3)
         {
-            var creature = ParseMonsterMarkdown.ParseMonster(markDown);
-            if (string.IsNullOrEmpty(creature.Name))
+            var spell = ParseMarkdown.ParseSpell(markDown);
+            if (spell == null || string.IsNullOrEmpty(spell.Name))
             {
                 Console.WriteLine($"Skipping file {filePath}");
                 return;
             }
 
             // Convert the file to .html
-            var htmlFile = $@"{outputDir}Html\{creature.Name}.html";
-            Console.WriteLine($"Generating .html file {htmlFile}");
+            var htmlFile = $@"{outputDir}html\spells\{spell.Name}.html";
+            Console.WriteLine($"Generating .html spell file {htmlFile}");
             using (StreamWriter writer = File.CreateText(htmlFile))
             {
-                GenerateHtml.GenerateHtmlFiles(writer, creature);
+                GenerateHtml.GenerateSpellHtmlFiles(writer, spell);
             }
 
             // Convert the file to a .cs interface
-            var classFile = $@"{outputDir}Models\{creature.Name}.cs";
+            var classFile = $@"{outputDir}models\spells\{spell.Name}.cs";
             using (StreamWriter writer = File.CreateText(classFile))
             {
-                GenerateMonster.GenerateMonsterClass(writer, creature, outputDir);
+                GenerateModel.GenerateSpellClass(writer, spell, outputDir);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Process a file
+    /// </summary>
+    /// <param name="filePath">The filePath to create the file</param>
+    private void ProcessMonsterFile(string filePath, string outputDir)
+    {
+        var markDown = File.ReadAllLines(filePath).ToList();
+
+        // Convert the file to .html
+        if (markDown.Count >= 3)
+        {
+            var creature = ParseMarkdown.ParseMonster(markDown);
+            if (creature == null || string.IsNullOrEmpty(creature.Name))
+            {
+                Console.WriteLine($"Skipping file {filePath}");
+                return;
+            }
+
+            // Convert the file to .html
+            var htmlFile = $@"{outputDir}Html\monsters\{creature.Name}.html";
+            Console.WriteLine($"Generating .html file {htmlFile}");
+            using (StreamWriter writer = File.CreateText(htmlFile))
+            {
+                GenerateHtml.GenerateMonsterHtmlFiles(writer, creature);
+            }
+
+            // Convert the file to a .cs interface
+            var classFile = $@"{outputDir}Models\monsters\{creature.Name}.cs";
+            using (StreamWriter writer = File.CreateText(classFile))
+            {
+                GenerateModel.GenerateMonsterClass(writer, creature, outputDir);
             }
         }
     }

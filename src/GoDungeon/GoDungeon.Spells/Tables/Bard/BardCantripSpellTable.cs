@@ -4,7 +4,6 @@ using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 using GoDungeon.Core.ViewModels;
-using GoDungeon.Spells.Enum;
 
 namespace GoDungeon.Spells.Tables.Bard
 {

@@ -1,22 +1,39 @@
 ﻿using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.ViewModels;
+using GoDungeon.Spells.Interfaces;
+using GoDungeon.Spells.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 
-public interface IParseMonsterMarkdown
+public interface IParseMarkdown
 {
     /// <summary>
     /// Get the monster from the markDown file
     /// </summary>
-    public ICreature ParseMonster(List<string> markDown);
+    ICreature? ParseMonster(List<string> markDown);
+
+    /// <summary>
+    /// Get the spell from the markDown file
+    /// </summary>
+    ISpell ParseSpell(List<string> markDown);
 
     /// <summary>
     /// The monster information
     /// </summary>
-    public List<ICreature> CreatureList { get; }
+    List<ICreature> CreatureList { get; }
 
     /// <summary>
     /// A list of monster Info
     /// </summary>
-    public List<MonsterInfoViewModel> MonsterInfoList { get; }
+    List<MonsterInfoViewModel> MonsterInfoList { get; }
+
+    /// <summary>
+    /// The spell list
+    /// </summary>
+    List<SpellInfoViewModel> SpellInfoList { get; set; }
+
+    /// <summary>
+    /// The root directory to generate the .html and class files in
+    /// </summary>
+    string? RootDirectory { get; set; }
 }

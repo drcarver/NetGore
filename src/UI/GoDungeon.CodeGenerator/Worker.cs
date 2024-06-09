@@ -17,7 +17,7 @@ public class Worker : BackgroundService
     /// <summary>
     /// Const for the monster directory
     /// </summary>
-    public const string outputDir = $@"C:\Users\drcarver\Desktop\monsters\";
+    public const string outputDir = $@"C:\Users\drcarver\Desktop\Srd5E\";
 
     /// <summary>
     /// Const for the monster directory
@@ -46,5 +46,7 @@ public class Worker : BackgroundService
             _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
         }
         process5ESRDFiles.ProcessDirectory(inputDir, outputDir);
+        process5ESRDFiles.GenerateModel.GenerateSpellLists(
+            process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir);
     }
 }

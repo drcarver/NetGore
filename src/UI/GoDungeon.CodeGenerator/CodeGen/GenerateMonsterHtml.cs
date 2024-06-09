@@ -1,28 +1,29 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
-public class GenerateHtml : IGenerateHtml
+public partial class GenerateHtml : IGenerateHtml
 {
     /// <summary>
     /// Generate the .html for the class
     /// </summary>
     /// <param name="writer">The StreamWriter stream</param>
     /// <param name="creature">The creature</param>
-    public void GenerateHtmlFiles(StreamWriter writer, ICreature creature)
+    public void GenerateMonsterHtmlFiles(StreamWriter writer, ICreature creature)
     {
         // Convert the MarkDown file to .html
-        GenerateHtmlHeader(writer, creature);
-        GenerateHtmlBody(writer, creature);
-        GenerateHtmlEnd(writer, creature);
+        GenerateMonsterHtmlHeader(writer, creature);
+        GenerateMonsterHtmlBody(writer, creature);
+        GenerateMonsterHtmlEnd(writer, creature);
     }
 
     /// <summary>
     /// Write the end of the .html file
     /// </summary>
     /// <param name="stream">The output stream</param>
-    private void GenerateHtmlEnd(TextWriter stream, ICreature creature)
+    private void GenerateMonsterHtmlEnd(TextWriter stream, ICreature creature)
     {
         stream.WriteLine("</HTML>");
     }
@@ -32,22 +33,40 @@ public class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream">The .html file</param>
     /// <param name="stream">The creature</param>
-    private void GenerateHtmlBody(TextWriter stream, ICreature creature)
+    private void GenerateMonsterHtmlBody(TextWriter stream, ICreature creature)
     {
         stream.WriteLine("\t<BODY>");
         stream.WriteLine($"\t<h1>{creature.ProperName}</h1>");
-        GenerateOverview(stream, creature);
-        GenerateACandHP(stream, creature);
-        GenerateAbilities(stream, creature);
+        GenerateMonsterOverview(stream, creature);
+        GenerateMonsterMainStats(stream, creature);
+        GenerateMonsterAbilities(stream, creature);
         stream.WriteLine("\t</BODY>");
     }
 
-    private void GenerateACandHP(TextWriter stream, ICreature creature)
+    private void GenerateMonsterMainStats(TextWriter stream, ICreature creature)
     {
         stream.WriteLine("\t\t<p>");
         stream.WriteLine("\t\t<table>");
         stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Armor Class</td><td>{creature.ArmorClass.AC(Core.Enum.AttackTypeEnum.Mele)}<b></td></tr>");
         stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Hit Points</td><td>{creature.HitPoints.HP()} ({creature.HitPoints.HitDice})<b></td></tr>");
+        stream.Write($"\t\t\t<tr><td style=\"text-align: left;\"><b>Speed</td><td>");
+        for (int i = 0; i < creature.Speed.Count(); i++)
+        {
+            if (creature.Speed[i].MovementType != MovementEnum.Normal)
+            {
+                stream.Write($"{creature.Speed[i].MovementType} ");
+            }
+            stream.Write($"{creature.Speed[i].Speed} {creature.Speed[i].MovementRate} ");
+            if (creature.Speed[i].MovementModifier != string.Empty)
+            {
+                stream.Write($"{creature.Speed[i].MovementModifier}");
+            }
+            if (i != creature.Speed.Count() - 1)
+            {
+                stream.Write(", ");
+            }
+        }
+        stream.WriteLine($"</td></tr>");
         stream.WriteLine("\t\t</table>");
         stream.WriteLine("\t\t</p>");
     }
@@ -56,7 +75,7 @@ public class GenerateHtml : IGenerateHtml
     /// The .html header
     /// </summary>
     /// <param name="stream">The TextWriter</param>
-    private void GenerateHtmlHeader(TextWriter stream, ICreature creature)
+    private void GenerateMonsterHtmlHeader(TextWriter stream, ICreature creature)
     {
         stream.WriteLine("<!DOCTYPE html>");
         stream.WriteLine("<html>");
@@ -85,7 +104,7 @@ public class GenerateHtml : IGenerateHtml
     /// Generate the abilities table
     /// </summary>
     /// <param name="stream"></param>
-    private void GenerateAbilities(TextWriter stream, ICreature creature)
+    private void GenerateMonsterAbilities(TextWriter stream, ICreature creature)
     {
         stream.WriteLine();
         stream.WriteLine("\t\t<!-- Abilities Table --->");
@@ -142,7 +161,7 @@ public class GenerateHtml : IGenerateHtml
     /// Generate the overview section at the top of the file
     /// </summary>
     /// <param name="stream"></param>
-    private void GenerateOverview(TextWriter stream, ICreature creature)
+    private void GenerateMonsterOverview(TextWriter stream, ICreature creature)
     {
         stream.WriteLine();
         stream.Write($"<i>{creature.Size}");

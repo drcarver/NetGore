@@ -4,5 +4,7 @@ public enum MovementEnum : byte
 {
     Normal,
     Fly,
-    Swim
+    Swim,
+    Burrow,
+    Climb
 }

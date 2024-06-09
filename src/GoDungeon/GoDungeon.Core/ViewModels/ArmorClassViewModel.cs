@@ -127,7 +127,7 @@ namespace GoDungeon.Core.Models
         /// against touch attacks.
         /// </summary>
         [ObservableProperty]
-        private int naturalArmorBonus = 0;
+        private int armorAndShield = (int) ArmorAndShieldEnum.Natural;
 
         /// <summary>
         /// A profane bonus (or penalty) stems from the 
@@ -190,13 +190,13 @@ namespace GoDungeon.Core.Models
         private int sizeBonus = 0;
 
         /// <summary>
-        /// Spell bonus from using a shield
+        /// Spell bonus
         /// </summary>
         [ObservableProperty]
         private int spellBonus = 0;
 
         /// <summary>
-        /// Spell bonus from using a shield
+        /// Armor bonus from a magic Item
         /// </summary>
         [ObservableProperty]
         private ObservableCollection<int> magicItemBonus = new ObservableCollection<int>();
@@ -239,7 +239,7 @@ namespace GoDungeon.Core.Models
                 ACBonus += ArmorBonus
                     + ClassBonus
                     + EnhancementBonus
-                    + NaturalArmorBonus
+                    //+ NaturalArmorBonus
                     + ShieldBonus;
             }
 
