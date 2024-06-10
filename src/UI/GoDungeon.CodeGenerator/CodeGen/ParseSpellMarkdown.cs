@@ -63,20 +63,24 @@ public partial class ParseMarkdown : IParseMarkdown
                     Debug.WriteLine($"Magic School is {school}");
                 }
             }
-            if (markDown[i].StartsWith("classes:"))
+            if (markDown[i].StartsWith("classes: "))
             {
                 markDown[i] = markDown[i].Replace("classes:", string.Empty).Trim();
                 ClassEnum classEnum;
                 do
                 {
                     var classes = markDown[i].Trim();
-                    if (!string.IsNullOrEmpty(classes))
+                    if (string.IsNullOrEmpty(classes))
                     {
                         break;
                     }
                     if (!Enum.TryParse<ClassEnum>(classes, true, out classEnum))
                     {
                         Debug.WriteLine($"Class is {classes}");
+                    }
+                    else
+                    {
+                        spell.Casters.Add(classEnum);
                     }
                     i++;
                 }

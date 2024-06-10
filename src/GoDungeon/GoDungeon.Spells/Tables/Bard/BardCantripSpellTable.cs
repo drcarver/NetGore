@@ -38,7 +38,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Dancing Lights
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.DancingLights),
+                        Name = nameof(SpellNameEnum.DancingLights),
                         ProperName = "Dancing Lights",
                     },
                     #endregion
@@ -46,7 +46,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Light
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.Light),
+                        Name = nameof(SpellNameEnum.Light),
                         ProperName = "Light",
                     },
                     #endregion
@@ -54,7 +54,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Mage Hand
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.MageHand),
+                        Name = nameof(SpellNameEnum.MageHand),
                         ProperName = "Mage Hand",
                     },
                     #endregion
@@ -62,7 +62,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Mending
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.Mending),
+                        Name = nameof(SpellNameEnum.Mending),
                         ProperName = "Mending",
                     },
                     #endregion
@@ -70,7 +70,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Message
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.Message),
+                        Name = nameof(SpellNameEnum.Message),
                         ProperName = "Message",
                     },
                     #endregion
@@ -78,7 +78,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Minor Illusion
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.MinorIllusion),
+                        Name = nameof(SpellNameEnum.MinorIllusion),
                         ProperName = "Minor Illusion",
                     },
                     #endregion
@@ -86,7 +86,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Prestidigitation
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.Prestidigitation),
+                        Name = nameof(SpellNameEnum.Prestidigitation),
                         ProperName = "Prestidigitation",
                     },
                     #endregion
@@ -94,7 +94,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region True Strike
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.TrueStrike),
+                        Name = nameof(SpellNameEnum.TrueStrike),
                         ProperName = "True Strike",
                     },
                     #endregion
@@ -102,7 +102,7 @@ namespace GoDungeon.Spells.Tables.Bard
                     #region Vicious Mockery
                     new StandardTableEntryViewModel
                     {
-                        Name = nameof(SpellEnum.ViciousMockery),
+                        Name = nameof(SpellNameEnum.ViciousMockery),
                         ProperName = "Vicious Mockery",
                     },
                     #endregion

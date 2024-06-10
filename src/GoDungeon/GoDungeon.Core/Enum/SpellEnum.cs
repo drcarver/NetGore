@@ -3,7 +3,7 @@
 //
 namespace GoDungeon.Core.Enum
 {
-    public enum SpellEnum : int
+    public enum SpellNameEnum : int
     {
         AcidArrow = 0,
         AcidSplash = 1,

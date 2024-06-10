@@ -11,7 +11,7 @@ public interface ISpell : IStandardTableEntry
     /// <summary>
     /// 1st to 9th level spells
     /// </summary>
-    Core.Enum.SpellEnum SpellEnum { get; set; }
+    SpellNameEnum SpellType { get; set; }
 
     /// <summary>
     /// The Spell Level
@@ -26,5 +26,5 @@ public interface ISpell : IStandardTableEntry
     /// <summary>
     /// The classes that can use the spell
     /// </summary>
-    ObservableCollection<ClassEnum>? SpellCasterClasses { get; set; }
+    ObservableCollection<ClassEnum>? Casters { get; set; }
 }

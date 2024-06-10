@@ -13,8 +13,8 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="creature">THe creature to generate</param>
     public void GenerateMonsterClass(TextWriter stream, ICreature creature, string rootdir)
     {
-        GenerateHeader(stream, creature);
-        GenerateInterfaceFile(stream, creature, rootdir);
+        GenerateMonsterHeader(stream, creature);
+        GenerateMonsterInterfaceFile(stream, creature, rootdir);
         GenerateLists();
     }
 
@@ -22,8 +22,8 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the class header
     /// </summary>
     /// <param name="stream">The monster file stream</param>
-    /// <param name="creature">THe creature to generate</param>
-    private void GenerateHeader(TextWriter stream, ICreature creature)
+    /// <param name="creature">The creature to generate</param>
+    private void GenerateMonsterHeader(TextWriter stream, ICreature creature)
     {
         stream.WriteLine($"// {creature.ProperName}");
         stream.WriteLine("//");
@@ -79,10 +79,10 @@ public partial class GenerateModel : IGenerateModel
     /// </summary>
     /// <param name="stream">The output stream</param>
     /// <param name="creature">The creature the file is being generated for</param>
-    private void GenerateInterfaceFile(TextWriter stream, ICreature creature, string rootdir)
+    private void GenerateMonsterInterfaceFile(TextWriter stream, ICreature creature, string rootdir)
     {
         // Convert the file to a .cs interface
-        var interfaceFile = $@"{rootdir}Interfaces/I{creature.Name}.cs";
+        var interfaceFile = $@"{rootdir}Interfaces/monsters/I{creature.Name}.cs";
         using (StreamWriter writer = File.CreateText(interfaceFile))
         {
             writer.WriteLine("//");

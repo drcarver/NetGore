@@ -40,7 +40,7 @@ namespace GoDungeon.Spells.Tables
                     #region Acid Arrow
                     new SpellTableEntryViewModel
                     {
-                        Name = nameof(Core.Enum.SpellEnum.AcidArrow),
+                        Name = nameof(SpellNameEnum.AcidArrow),
                         ProperName = "Acid Arrow",
                         Level = SpellLevelEnum.SecondLevel,
                         SpellType = "evocation",
@@ -54,7 +54,7 @@ namespace GoDungeon.Spells.Tables
                     #region Acid Splash
                     new SpellTableEntryViewModel
                     {
-                        Name = nameof(Core.Enum.SpellEnum.AcidSplash),
+                        Name = nameof(SpellNameEnum.AcidSplash),
                         ProperName = "Acid Splash",
                         Level = SpellLevelEnum.Cantrip,
                         SpellType = "Conjuration",
@@ -68,7 +68,7 @@ namespace GoDungeon.Spells.Tables
                     #region Aid
                     new SpellTableEntryViewModel
                     {
-                        Name = nameof(Core.Enum.SpellEnum.Aid),
+                        Name = nameof(SpellNameEnum.Aid),
                         ProperName = "Aid",
                         Level = SpellLevelEnum.SecondLevel,
                         SpellType = "abjuration",
@@ -82,7 +82,7 @@ namespace GoDungeon.Spells.Tables
                     #region Alarm
                     new SpellTableEntryViewModel
                     {
-                        Name = nameof(Core.Enum.SpellEnum.Alarm),
+                        Name = nameof(SpellNameEnum.Alarm),
                         ProperName = "Alarm",
                         Level = SpellLevelEnum.FirstLevel,
                         SpellType = "abjuration (ritual)",
@@ -96,7 +96,7 @@ namespace GoDungeon.Spells.Tables
                     #region Alter Self
                     new SpellTableEntryViewModel
                     {
-                        Name = nameof(Core.Enum.SpellEnum.AlterSelf),
+                        Name = nameof(SpellNameEnum.AlterSelf),
                         ProperName = "Alter Self",
                         Level = SpellLevelEnum.SecondLevel,
                         SpellType = "transmutation",

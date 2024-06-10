@@ -15,7 +15,7 @@ namespace GoDungeon.Spells.ViewModels
         /// 1st to 9th level spells
         /// </summary>
         [ObservableProperty]
-        private Core.Enum.SpellEnum spellEnum;
+        private SpellNameEnum spellType;
 
         /// <summary>
         /// The Spell Level
@@ -33,6 +33,6 @@ namespace GoDungeon.Spells.ViewModels
         /// The classes that can use the spell
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<ClassEnum>? spellCasterClasses;
+        private ObservableCollection<ClassEnum>? casters = new ObservableCollection<ClassEnum>();
     }
 }

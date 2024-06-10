@@ -30,10 +30,65 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the associated enum and lists from the full spell lists
     /// </summary>
     /// <param name="spellInfoList">The spell info list</param>
-    /// <param name="rootdir">The rootdir</param>
+    /// <param name="rootdir">The root dir</param>
     public void GenerateSpellLists(List<SpellInfoViewModel> spellInfoList, string rootdir)
     {
         GenerateSpellEnum(spellInfoList, rootdir);
+        GenerateSpellInfoList(spellInfoList, rootdir);
+    }
+
+    /// <summary>
+    /// Generate the spell info list
+    /// </summary>
+    /// <param name="spellInfoList"></param>
+    /// <param name="rootdir"></param>
+    private void GenerateSpellInfoList(List<SpellInfoViewModel> spellInfoList, string rootdir)
+    {
+        // Convert the file to a .cs interface
+        var interfaceFile = $@"{rootdir}tables/spells/SpellInfoTable.cs";
+        using (StreamWriter stream = File.CreateText(interfaceFile))
+        {
+            stream.WriteLine("//");
+            stream.WriteLine("// The spell lists.");
+            stream.WriteLine("//");
+            stream.WriteLine("using System.Collections.ObjectModel;");
+            stream.WriteLine();
+            stream.WriteLine("using GoDungeon.Core.Enum;");
+            stream.WriteLine("using GoDungeon.Core.ViewModels;");
+            stream.WriteLine("using GoDungeon.Spells.Enum;");
+            stream.WriteLine("using GoDungeon.Spells.Interfaces;");
+            stream.WriteLine("using GoDungeon.Spells.ViewModels;");
+            stream.WriteLine();
+            stream.WriteLine("using Microsoft.Extensions.Logging;");
+            stream.WriteLine();
+            stream.WriteLine($"namespace GoDungeon.Spells.Tables;");
+            stream.WriteLine();
+            stream.WriteLine("public partial class SpellList");
+            stream.WriteLine("{");
+            stream.WriteLine($"\t/// <summary>");
+            stream.WriteLine($"\t/// The spell info list");
+            stream.WriteLine($"\t/// </summary>");
+            stream.WriteLine($"\tpublic ObservableCollection<ISpell> SpellInfoList {{ get; }} = new ObservableCollection<ISpell>");
+            stream.WriteLine("\t{");
+            foreach (var spell in spellInfoList)
+            {
+                if (String.IsNullOrEmpty(spell.Name.Trim()))
+                {
+                    continue;
+                }
+                stream.Write($"\t\tnew SpellInfoViewModel {{ SpellType = SpellNameEnum.{spell.Name}, ");
+                stream.Write($"Level = {spell.Level}, ");
+                stream.Write($"MagicSchool = MagicSchoolEnum.{spell.MagicSchool}, ");
+                stream.Write($"Casters = new ObservableCollection<ClassEnum> {{");
+                foreach (var caster in spell.Casters)
+                {
+                    stream.Write($" ClassEnum.{caster},");
+                }
+                stream.WriteLine(" } },");
+            }
+            stream.WriteLine("\t};");
+            stream.WriteLine("}");
+        }
     }
 
     /// <summary>
@@ -74,7 +129,7 @@ public partial class GenerateModel : IGenerateModel
         using (StreamWriter writer = File.CreateText(spellEnumFile))
         {
             writer.WriteLine("//");
-            writer.WriteLine($"// The spell enumeration");
+            writer.WriteLine("// The spell enumeration");
             writer.WriteLine("//");
             writer.WriteLine();
             writer.WriteLine("namespace GoDungeon.Spells.Enum");
