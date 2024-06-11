@@ -4,7 +4,6 @@ using System.Net.WebSockets;
 using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Spells.Enum;
 using GoDungeon.Spells.Interfaces;
@@ -52,29 +51,140 @@ public partial class ParseMarkdown : IParseMarkdown
     /// Compute the range of the spell
     /// </summary>
     /// <returns>The height (range) of the spell</returns>
-    private IDistance GetSpellRange(List<string> markDown, ISpellTableEntry spell)
+    private ISpellRange GetSpellRange(List<string> markDown, ISpellTableEntry spell)
     {
         int i = 0;
-        var distance = new DistanceViewModel();
+        var spellRange = new SpellRangeViewModel();
         foreach (var line in markDown)
         {
             if (line.StartsWith("**Range:**"))
             {
-                var fullDuration = line.Replace("**Range:**", string.Empty).Trim().Split(' ');
-                if (fullDuration.Length == 2)
+                var rawSpellRange = line.Replace("**Range:**", string.Empty).Trim();
+                spellRange.RangeType = SpellDistanceTypeEnum.Ranged;
+                switch (rawSpellRange.Trim())
                 {
-                    int range;
-                    if (!int.TryParse(fullDuration[0], out range))
-                    {
-                        Debug.WriteLine($"Invalid casting time={fullDuration[0]}");
-                    }
-                    distance.Unit = range;
-                    DistanceEnum distanceType;
-                    if (!Enum.TryParse<DistanceEnum>(fullDuration[1], true, out distanceType))
-                    {
-                        Debug.WriteLine($"Invalid casting duration={fullDuration[1]}");
-                    }
-                    distance.DistanceType = distanceType;
+                    case "Self (10-foot radius)":
+                        spellRange.Unit = 10;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Radius;
+                        break;
+                    case "Self (10-foot-radius sphere)":
+                        spellRange.Unit = 10;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Sphere;
+                        break;
+                    case "Self (15-foot cone)":
+                        spellRange.Unit = 15;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Cone;
+                        break;
+                    case "Self (60-foot cone)":
+                        spellRange.Unit = 60;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Cone;
+                        break;
+                    case "Self (30-foot cone)":
+                        spellRange.Unit = 30;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Cone;
+                        break;
+                    case "Self (5-mile radius)":
+                        spellRange.Unit = 5;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Mile;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Radius;
+                        break;
+                    case "Self (30-foot radius)":
+                        spellRange.Unit = 30;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Radius;
+                        break;
+                    case "Self (15-foot radius)":
+                        spellRange.Unit = 15;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Radius;
+                        break;
+                    case "Self (60-foot line)":
+                        spellRange.Unit = 60;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Line;
+                        break;
+                    case "Self (100-foot line)":
+                        spellRange.Unit = 100;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Line;
+                        break;
+                    case "Self (15-foot cube)":
+                        spellRange.Unit = 15;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Cube;
+                        break;
+                    case "Self (10-foot-radius hemisphere)":
+                        spellRange.Unit = 10;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Hemisphere;
+                        break;
+                    case "Special":
+                        spellRange.Unit = 0;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Special;
+                        spellRange.DistanceType = SpellDistanceEnum.Special;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Special;
+                        break;
+                    case "Sight":
+                        spellRange.Unit = 0;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Sight;
+                        spellRange.DistanceType = SpellDistanceEnum.Sight;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Sight;
+                        break;
+                    case "Unlimited":
+                        spellRange.Unit = 0;
+                        spellRange.RangeType = SpellDistanceTypeEnum.Unlimited;
+                        spellRange.DistanceType = SpellDistanceEnum.Unlimited;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Unlimited;
+                        break;
+                    case "Self":
+                    case "Touch":
+                        spellRange.Unit = 0;
+                        if (rawSpellRange == "Touch")
+                        {
+                            spellRange.RangeType = SpellDistanceTypeEnum.Touch;
+                        }
+                        else
+                        {
+                            spellRange.RangeType = SpellDistanceTypeEnum.Self;
+                        }
+                        spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        spellRange.SpellEffectType = SpellEffectTypeEnum.Creature;
+                        break;
+                    default:
+                        int unit;
+                        string[] spellRangeSplit = rawSpellRange.Split(' ');
+                        if (spellRangeSplit.Length == 2)
+                        {
+                            if (int.TryParse(spellRangeSplit[0], out unit))
+                            {
+                                spellRange.Unit = unit;
+                            }
+                            SpellDistanceEnum spellDistance;
+                            if (Enum.TryParse(spellRangeSplit[1], true, out spellDistance))
+                            {
+                                spellRange.DistanceType = spellDistance;
+                            }
+                            spellRange.SpellEffectType = SpellEffectTypeEnum.Location;
+                            spellRange.DistanceType = SpellDistanceEnum.Feet;
+                        }
+                        break;
                 }
                 break;
             }
@@ -88,7 +198,7 @@ public partial class ParseMarkdown : IParseMarkdown
         {
             Debug.WriteLine($"Invalid markDown position");
         }
-        return distance;
+        return spellRange;
     }
 
     /// <summary>

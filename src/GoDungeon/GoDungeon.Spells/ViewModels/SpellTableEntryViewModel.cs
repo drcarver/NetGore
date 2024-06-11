@@ -3,7 +3,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Spells.Enum;
 using GoDungeon.Spells.Interfaces;
@@ -46,7 +45,7 @@ namespace GoDungeon.Spells.ViewModels
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private IDistance? spellRange;
+        private ISpellRange? spellRange;
 
         /// <summary>
         /// The range of the Spell

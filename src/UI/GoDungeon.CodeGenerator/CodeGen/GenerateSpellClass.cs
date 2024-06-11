@@ -128,8 +128,13 @@ public partial class GenerateModel : IGenerateModel
                 stream.WriteLine($"\t\t\t\t\tLevel = {spell.Level},");
                 stream.WriteLine($"\t\t\t\t\tMagicSchool = MagicSchoolEnum.{spell.MagicSchool},");
                 stream.WriteLine($"\t\t\t\t\tCastingTime = new CastingTimeViewModel({spell.CastingTime.CastingTime}, DurationEnum.{spell.CastingTime.Duration}),");
-                stream.WriteLine($"\t\t\t\t\tSpellRange = mew DistanceViewModel {{ Unit = {spell.SpellRange.Unit}, DistanceType = DistanceEnum.{spell.SpellRange.DistanceType} }},");
-                stream.WriteLine($"\t\t\t\t\tSpellDuration = string.Empty,");
+                stream.WriteLine($"\t\t\t\t\tSpellRange = new SpellRangeViewModel");
+                stream.WriteLine("\t\t\t\t\t{");
+                stream.WriteLine($"\t\t\t\t\t\tUnit = {spell.SpellRange.Unit},");
+                stream.WriteLine($"\t\t\t\t\t\tDistanceType = SpellDistanceEnum.{spell.SpellRange.DistanceType},");
+                stream.WriteLine($"\t\t\t\t\t\tSpellEffectType = SpellEffectTypeEnum.{spell.SpellRange.SpellEffectType},");
+                stream.WriteLine($"\t\t\t\t\t\tRangeType = SpellDistanceTypeEnum.{spell.SpellRange.RangeType}");
+                stream.WriteLine("\t\t\t\t\t},");
                 stream.WriteLine($"\t\t\t\t\tSpellComponents = new ObservableCollection<string>(),");
                 stream.Write($"\t\t\t\t\tCasters = new ObservableCollection<ClassEnum> {{");
                 foreach (var caster in spell.Casters)

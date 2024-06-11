@@ -38,7 +38,7 @@ namespace GoDungeon.Spells.Interfaces
         /// <summary>
         /// The range of the Spell
         /// </summary>
-        IDistance? SpellRange { get; set; }
+        ISpellRange? SpellRange { get; set; }
 
         /// <summary>
         /// The components of the Spell
