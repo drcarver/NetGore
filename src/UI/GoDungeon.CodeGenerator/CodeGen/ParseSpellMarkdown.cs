@@ -26,21 +26,9 @@ public partial class ParseMarkdown : IParseMarkdown
     /// </summary>
     public ISpellTableEntry? ParseSpell(List<string> markDown)
     {
-        ISpellTableEntry? spell = null;
-        foreach (var line in markDown)
-        {
-            if (line.StartsWith("**Casting Time:**"))
-            {
-                spell = new SpellTableEntryViewModel();
-            }
-        }
-        if (spell == null)
-        {
-            return null;
-        }
-        GetSpellInfo(markDown, spell);
-        spell.CastingTime = GetSpellDuration(markDown, spell);
-        spell.SpellRange = GetSpellRange(markDown, spell);
+        ISpellTableEntry? spell = GetSpellInfo(markDown);
+        spell.CastingTime = GetSpellDuration(markDown);
+        spell.SpellRange = GetSpellRange(markDown);
         SpellInfoList.Add(spell);
         return spell;
     }
@@ -48,8 +36,8 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Compute the range of the spell
     /// </summary>
-    /// <returns>The height (range) of the spell</returns>
-    private ISpellRange GetSpellRange(List<string> markDown, ISpellTableEntry spell)
+    /// <returns>The range of the spell</returns>
+    private ISpellRange GetSpellRange(List<string> markDown)
     {
         int i = 0;
         var spellRange = new SpellRangeViewModel();
@@ -204,7 +192,7 @@ public partial class ParseMarkdown : IParseMarkdown
     /// </summary>
     /// <param name="markDown">The markDown file for the spell</param>
     /// <param name="spell">The spellInfo</param>
-    private ICastingTime GetSpellDuration(List<string> markDown, ISpellTableEntry? spell)
+    private ICastingTime GetSpellDuration(List<string> markDown)
     {
         int i = 0;
         CastingTimeViewModel castingTimeVM = new CastingTimeViewModel();
@@ -253,9 +241,9 @@ public partial class ParseMarkdown : IParseMarkdown
     /// Get Spell Info
     /// </summary>
     /// <param name="markDown">The markDown file for the spell</param>
-    /// <param name="spell">The spellInfo</param>
-    private void GetSpellInfo(List<string> markDown, ISpellTableEntry? spell)
+    private ISpellTableEntry GetSpellInfo(List<string> markDown)
     {
+        var spell = new SpellTableEntryViewModel();
         for (int i = 0; i < markDown.Count; i++)
         {
             if (markDown[i].StartsWith("name:"))
@@ -267,9 +255,9 @@ public partial class ParseMarkdown : IParseMarkdown
             if (markDown[i].StartsWith("level:"))
             {
                 var level = markDown[i].Replace("level:", string.Empty).Trim();
-                int levelnum = 0;
-                int.TryParse(level, out levelnum);
-                spell.Level = levelnum;
+                int levelNum = 0;
+                int.TryParse(level, out levelNum);
+                spell.Level = levelNum;
             }
             if (markDown[i].StartsWith("school:"))
             {
@@ -315,5 +303,6 @@ public partial class ParseMarkdown : IParseMarkdown
             markDown.RemoveAt(0);
             j++;
         } while (j < markDown.Count());
+        return spell;
     }
 }
