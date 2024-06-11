@@ -1,7 +1,6 @@
 ﻿using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.ViewModels;
 using GoDungeon.Spells.Interfaces;
-using GoDungeon.Spells.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 

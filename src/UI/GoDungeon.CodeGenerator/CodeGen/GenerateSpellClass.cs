@@ -1,14 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using System.Reflection.Metadata;
-using System.Xml.Linq;
-
-using GoDungeon.CodeGenerator.Interfaces;
-using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
-using GoDungeon.Core.Tables;
-using GoDungeon.Spells.Enum;
+﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Spells.Interfaces;
-using GoDungeon.Spells.ViewModels;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -122,9 +113,9 @@ public partial class GenerateModel : IGenerateModel
                 stream.WriteLine($"\t\t\t\t#region {spell.ProperName}");
                 stream.WriteLine($"\t\t\t\tnew SpellTableEntryViewModel");
                 stream.WriteLine("\t\t\t\t{");
-                stream.WriteLine($"\t\t\t\t\tName=nameof(SpellNameEnum.{spell.Name}),");
-                stream.WriteLine($"\t\t\t\t\tProperName=\"{spell.ProperName}\",");
-                stream.WriteLine($"\t\t\t\t\tSpellType=SpellNameEnum.{spell.Name},");
+                stream.WriteLine($"\t\t\t\t\tName = nameof(SpellNameEnum.{spell.Name}),");
+                stream.WriteLine($"\t\t\t\t\tProperName = \"{spell.ProperName}\",");
+                stream.WriteLine($"\t\t\t\t\tSpellType = SpellNameEnum.{spell.Name},");
                 stream.WriteLine($"\t\t\t\t\tLevel = {spell.Level},");
                 stream.WriteLine($"\t\t\t\t\tMagicSchool = MagicSchoolEnum.{spell.MagicSchool},");
                 stream.WriteLine($"\t\t\t\t\tCastingTime = new CastingTimeViewModel({spell.CastingTime.CastingTime}, DurationEnum.{spell.CastingTime.Duration}),");
@@ -136,12 +127,12 @@ public partial class GenerateModel : IGenerateModel
                 stream.WriteLine($"\t\t\t\t\t\tRangeType = SpellDistanceTypeEnum.{spell.SpellRange.RangeType}");
                 stream.WriteLine("\t\t\t\t\t},");
                 stream.WriteLine($"\t\t\t\t\tSpellComponents = new ObservableCollection<string>(),");
-                stream.Write($"\t\t\t\t\tCasters = new ObservableCollection<ClassEnum> {{");
+                stream.Write($"\t\t\t\t\tCasters = new ObservableCollection<ClassEnum> {{ ");
                 foreach (var caster in spell.Casters)
                 {
                     stream.Write($"ClassEnum.{caster}, ");
                 }
-                stream.WriteLine(" },");
+                stream.WriteLine("},");
                 stream.WriteLine("\t\t\t\t},");
                 stream.WriteLine("\t\t\t\t#endregion");
                 stream.WriteLine();

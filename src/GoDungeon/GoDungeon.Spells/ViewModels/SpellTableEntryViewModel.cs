@@ -51,7 +51,7 @@ namespace GoDungeon.Spells.ViewModels
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<string>? spellComponents;
+        private ISpellComponent spellComponents;
 
         /// <summary>
         /// The range of the Spell

@@ -43,7 +43,7 @@ namespace GoDungeon.Spells.Interfaces
         /// <summary>
         /// The components of the Spell
         /// </summary>
-        ObservableCollection<string>? SpellComponents { get; set; }
+        ISpellComponent? SpellComponents { get; set; }
 
         /// <summary>
         /// The duration of the Spell
