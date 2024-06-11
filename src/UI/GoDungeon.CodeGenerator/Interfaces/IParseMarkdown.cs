@@ -15,7 +15,7 @@ public interface IParseMarkdown
     /// <summary>
     /// Get the spell from the markDown file
     /// </summary>
-    ISpell ParseSpell(List<string> markDown);
+    ISpellTableEntry? ParseSpell(List<string> markDown);
 
     /// <summary>
     /// The monster information
@@ -30,7 +30,7 @@ public interface IParseMarkdown
     /// <summary>
     /// The spell list
     /// </summary>
-    List<SpellInfoViewModel> SpellInfoList { get; set; }
+    List<ISpellTableEntry> SpellInfoList { get; set; }
 
     /// <summary>
     /// The root directory to generate the .html and class files in

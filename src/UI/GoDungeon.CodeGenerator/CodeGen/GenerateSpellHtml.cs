@@ -1,5 +1,6 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Spells.Interfaces;
+using GoDungeon.Spells.ViewModels;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -10,7 +11,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="writer">The StreamWriter stream</param>
     /// <param name="spell">The spell info file</param>
-    public void GenerateSpellHtmlFiles(StreamWriter writer, ISpell spell)
+    public void GenerateSpellHtmlFiles(StreamWriter writer, ISpellTableEntry spell)
     {
         // Convert the MarkDown file to .html
         GenerateSpellHtmlHeader(writer, spell);
@@ -22,7 +23,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// Write the end of the .html file
     /// </summary>
     /// <param name="stream">The output stream</param>
-    private void GenerateSpellHtmlEnd(TextWriter stream, ISpell spell)
+    private void GenerateSpellHtmlEnd(TextWriter stream, ISpellTableEntry spell)
     {
         stream.WriteLine("</HTML>");
     }
@@ -32,7 +33,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream">The .html file</param>
     /// <param name="stream">The creature</param>
-    private void GenerateSpellHtmlBody(TextWriter stream, ISpell spell)
+    private void GenerateSpellHtmlBody(TextWriter stream, ISpellTableEntry spell)
     {
         stream.WriteLine("\t<BODY>");
         stream.WriteLine($"\t<h1>{spell.ProperName}</h1>");
@@ -46,7 +47,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream"></param>
     /// <param name="spell"></param>
-    private void GenerateSpellMainStats(TextWriter stream, ISpell spell)
+    private void GenerateSpellMainStats(TextWriter stream, ISpellTableEntry spell)
     {
         stream.WriteLine("\t\t<p>");
         stream.WriteLine("\t\t<table>");
@@ -60,7 +61,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// The .html header
     /// </summary>
     /// <param name="stream">The TextWriter</param>
-    private void GenerateSpellHtmlHeader(TextWriter stream, ISpell spell)
+    private void GenerateSpellHtmlHeader(TextWriter stream, ISpellTableEntry spell)
     {
         stream.WriteLine("<!DOCTYPE html>");
         stream.WriteLine("<html>");
@@ -89,7 +90,7 @@ public partial class GenerateHtml : IGenerateHtml
     /// Generate the overview section at the top of the file
     /// </summary>
     /// <param name="stream"></param>
-    private void GenerateSpellOverview(TextWriter stream, ISpell spell)
+    private void GenerateSpellOverview(TextWriter stream, ISpellTableEntry spell)
     {
     }
 }

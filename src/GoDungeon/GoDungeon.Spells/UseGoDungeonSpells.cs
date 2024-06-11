@@ -31,7 +31,6 @@ namespace GoDungeon.Spells
             collection
                 .AddTransient<IBardCantripSpellTable, BardCantripSpellTable>()
                 .AddTransient<IBardFirstLevelSpellTable, BardFirstLevelSpellTable>()
-                .AddTransient<ISpellsBeggingWithATable, SpellsBeggingWithATable>()
                 ;
 
             return collection;

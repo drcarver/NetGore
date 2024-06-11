@@ -1,8 +1,11 @@
 ﻿using System.Diagnostics;
+using System.Net.WebSockets;
 
 using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Spells.Enum;
 using GoDungeon.Spells.Interfaces;
 using GoDungeon.Spells.ViewModels;
@@ -14,7 +17,7 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// The spell list
     /// </summary>
-    public List<SpellInfoViewModel> SpellInfoList { get; set; } = new List<SpellInfoViewModel>();
+    public List<ISpellTableEntry> SpellInfoList { get; set; } = new List<ISpellTableEntry>();
 
     /// <summary>
     /// The input root directory
@@ -24,12 +27,118 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Get the spell from the markDown file
     /// </summary>
-    public ISpell ParseSpell(List<string> markDown)
+    public ISpellTableEntry? ParseSpell(List<string> markDown)
     {
-        var spell = new SpellInfoViewModel();
+        ISpellTableEntry? spell = null;
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("**Casting Time:**"))
+            {
+                spell = new SpellTableEntryViewModel();
+            }
+        }
+        if (spell == null)
+        {
+            return null;
+        }
         GetSpellInfo(markDown, spell);
+        spell.CastingTime = GetSpellDuration(markDown, spell);
+        spell.SpellRange = GetSpellRange(markDown, spell);
         SpellInfoList.Add(spell);
         return spell;
+    }
+
+    /// <summary>
+    /// Compute the range of the spell
+    /// </summary>
+    /// <returns>The height (range) of the spell</returns>
+    private IDistance GetSpellRange(List<string> markDown, ISpellTableEntry spell)
+    {
+        int i = 0;
+        var distance = new DistanceViewModel();
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("**Range:**"))
+            {
+                var fullDuration = line.Replace("**Range:**", string.Empty).Trim().Split(' ');
+                if (fullDuration.Length == 2)
+                {
+                    int range;
+                    if (!int.TryParse(fullDuration[0], out range))
+                    {
+                        Debug.WriteLine($"Invalid casting time={fullDuration[0]}");
+                    }
+                    distance.Unit = range;
+                    DistanceEnum distanceType;
+                    if (!Enum.TryParse<DistanceEnum>(fullDuration[1], true, out distanceType))
+                    {
+                        Debug.WriteLine($"Invalid casting duration={fullDuration[1]}");
+                    }
+                    distance.DistanceType = distanceType;
+                }
+                break;
+            }
+            i++;
+        }
+        if (i < markDown.Count())
+        {
+            markDown.RemoveAt(i);
+        }
+        else
+        {
+            Debug.WriteLine($"Invalid markDown position");
+        }
+        return distance;
+    }
+
+    /// <summary>
+    /// Get Spell duration
+    /// </summary>
+    /// <param name="markDown">The markDown file for the spell</param>
+    /// <param name="spell">The spellInfo</param>
+    private ICastingTime GetSpellDuration(List<string> markDown, ISpellTableEntry? spell)
+    {
+        int i = 0;
+        CastingTimeViewModel castingTimeVM = new CastingTimeViewModel();
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("**Casting Time:**"))
+            {
+                var fullDuration = line.Replace("**Casting Time:**", string.Empty).Trim().Split(' ');
+                if (fullDuration.Length == 2)
+                {
+                    int time;
+                    if (!int.TryParse(fullDuration[0], out time))
+                    {
+                        Debug.WriteLine($"Invalid casting time={fullDuration[0]}");
+                    }
+                    else
+                    {
+                        castingTimeVM.CastingTime = time;
+                    }
+                    DurationEnum durationType;
+                    if (!Enum.TryParse<DurationEnum>(fullDuration[1], true, out durationType))
+                    {
+                        Debug.WriteLine($"Invalid casting duration={fullDuration[1]}");
+                    }
+                    else
+                    {
+                        castingTimeVM.Duration = durationType;
+                    }
+                }
+                break;
+            }
+            i++;
+        }
+        if (i < markDown.Count())
+        {
+            markDown.RemoveAt(i);
+        }
+        else
+        {
+            Debug.WriteLine($"Invalid markDown position");
+        }
+        return castingTimeVM;
     }
 
     /// <summary>
@@ -37,7 +146,7 @@ public partial class ParseMarkdown : IParseMarkdown
     /// </summary>
     /// <param name="markDown">The markDown file for the spell</param>
     /// <param name="spell">The spellInfo</param>
-    private void GetSpellInfo(List<string> markDown, SpellInfoViewModel spell)
+    private void GetSpellInfo(List<string> markDown, ISpellTableEntry? spell)
     {
         for (int i = 0; i < markDown.Count; i++)
         {

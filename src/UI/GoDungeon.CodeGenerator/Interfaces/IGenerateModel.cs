@@ -20,12 +20,12 @@ public interface IGenerateModel
     /// <param name="stream">The text stream to write the main monster file to</param>
     /// <param name="spell">The spell to create a .cs class for</param>
     /// <param name="rootDir">The root dir for the spell file</param>
-    void GenerateSpellClass(TextWriter stream, ISpell spell, string rootDir);
+    void GenerateSpellClass(TextWriter stream, ISpellTableEntry spell, string rootDir);
 
     /// <summary>
     /// Generate the list files
     /// </summary>
     /// <param name="spellInfoList">The spell info list</param>
     /// <param name="rootdir">The rootdir</param>
-    void GenerateSpellLists(List<SpellInfoViewModel> spellInfoList, string rootdir);
+    void GenerateSpellLists(List<ISpellTableEntry> spellInfoList, string rootdir);
 }
