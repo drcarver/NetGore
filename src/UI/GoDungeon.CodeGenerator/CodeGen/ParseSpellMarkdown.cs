@@ -29,8 +29,68 @@ public partial class ParseMarkdown : IParseMarkdown
         ISpellTableEntry? spell = GetSpellInfo(markDown);
         spell.CastingTime = GetSpellDuration(markDown);
         spell.SpellRange = GetSpellRange(markDown);
+        spell.SpellComponents = GetSpellComponents(markDown);
         SpellInfoList.Add(spell);
         return spell;
+    }
+
+    /// <summary>
+    /// Get the spell component
+    /// </summary>
+    /// <param name="markDown">The markdown rows</param>
+    /// <returns>return the spell component</returns>
+    private ISpellComponent? GetSpellComponents(List<string> markDown)
+    {
+        int i = 0;
+        ISpellComponent? spellComponent = new SpellComponentViewModel();
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("**Components:**"))
+            {
+                var cleanedString = line.Replace("**Components:**", string.Empty).Trim();
+                int lParen = cleanedString.IndexOf('(');
+                int rParen = cleanedString.IndexOf(')');
+                string[] rawSpellComponent;
+                if (lParen > 0)
+                {
+                    var substring = cleanedString.Substring(0,lParen);
+                    rawSpellComponent = substring.Split(',');
+                }
+                else
+                {
+                    rawSpellComponent = line.Replace("**Components:**", string.Empty).Trim().Split(',');
+                }
+                for (i = 0; i < rawSpellComponent.Length; i++)
+                {
+                    switch (rawSpellComponent[i].Trim())
+                    {
+                        case "V":
+                            spellComponent.Verbal = true;
+                            break;
+                        case "S":
+                            spellComponent.Somatic = true;
+                            break;
+                        case "M":
+                            spellComponent.Material = true;
+                            if (lParen >= 0 && rParen >= 0)
+                            {
+                                spellComponent.Materials = cleanedString.Substring(lParen + 1, rParen - lParen - 1).Trim();
+                            }
+                            break;
+                    }
+                }
+            }
+            i++;
+        }
+        if (i < markDown.Count())
+        {
+            markDown.RemoveAt(i);
+        }
+        else
+        {
+            Debug.WriteLine($"Invalid markDown position");
+        }
+        return spellComponent;
     }
 
     /// <summary>

@@ -22,7 +22,7 @@ public partial class SpellComponentViewModel : ObservableObject, ISpellComponent
     /// the silence spell, can’t cast a spell with a verbal component.
     /// </summary>
     [ObservableProperty]
-    private bool verbal;
+    private bool verbal = false;
 
     /// <summary>
     /// Spell casting gestures might include a forceful gesticulation or an intricate 
@@ -30,7 +30,7 @@ public partial class SpellComponentViewModel : ObservableObject, ISpellComponent
     /// free use of at least one hand to perform these gestures.
     /// </summary>
     [ObservableProperty]
-    private bool somatic;
+    private bool somatic = false;
 
     /// <summary>
     /// Casting some spells requires particular objects, specified in parentheses in 
@@ -49,11 +49,11 @@ public partial class SpellComponentViewModel : ObservableObject, ISpellComponent
     /// </para>
     /// </summary>
     [ObservableProperty]
-    private bool material;
+    private bool material = false;
 
     /// <summary>
     /// The material components of the spell
     /// </summary>
     [ObservableProperty]
-    private ObservableCollection<string> materials = new ObservableCollection<string>();
+    string materials;
 }

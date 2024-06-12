@@ -42,5 +42,5 @@ public interface ISpellComponent
     /// <summary>
     /// The material components of the spell
     /// </summary>
-    ObservableCollection<string> Materials { get; set; }
+    string Materials { get; set; }
 }
