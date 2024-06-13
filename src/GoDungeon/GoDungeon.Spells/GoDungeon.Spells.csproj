@@ -13,8 +13,4 @@
     <ProjectReference Include="..\GoDungeon.Core\GoDungeon.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Tables\" />
-  </ItemGroup>
-
 </Project>

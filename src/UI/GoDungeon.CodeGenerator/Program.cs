@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 using GoDungeon.Background;
 using GoDungeon.Character;
 using GoDungeon.Core;
@@ -15,7 +17,8 @@ public class Program
     public static void Main(string[] args)
     {
         // Syncfusion License
-        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWXpcdXVURWNdVk13W0Q=");
+        var lic = Environment.GetEnvironmentVariable("SyncfusionLicense");
+        Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Environment.GetEnvironmentVariable("SyncfusionLicense"));
 
         var builder = Host.CreateApplicationBuilder(args);
 

@@ -9,6 +9,11 @@ public interface IParseMarkdown
     /// <summary>
     /// Get the monster from the markDown file
     /// </summary>
+    IMarkDownTableModel? ParseMarkDownTable(List<string> markDown);
+
+    /// <summary>
+    /// Get the monster from the markDown file
+    /// </summary>
     ICreature? ParseMonster(List<string> markDown);
 
     /// <summary>

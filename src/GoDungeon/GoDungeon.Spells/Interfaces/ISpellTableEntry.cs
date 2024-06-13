@@ -48,6 +48,11 @@ namespace GoDungeon.Spells.Interfaces
         /// <summary>
         /// The duration of the Spell
         /// </summary>
-        string? SpellDuration { get; set; }
+        ISpellDuration SpellDuration { get; set; }
+
+        /// <summary>
+        /// The description of the spell
+        /// </summary>
+        ObservableCollection<string> SpellDescriptions { get; set; }
     }
 }

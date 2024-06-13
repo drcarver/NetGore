@@ -57,6 +57,12 @@ namespace GoDungeon.Spells.ViewModels
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private string? spellDuration;
+        private ISpellDuration? spellDuration;
+        
+        /// <summary>
+        /// The description of the spell
+        /// </summary>
+        [ObservableProperty]
+        private ObservableCollection<string> spellDescriptions = new ObservableCollection<string>();
     }
 }

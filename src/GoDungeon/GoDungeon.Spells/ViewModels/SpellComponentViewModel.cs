@@ -55,5 +55,5 @@ public partial class SpellComponentViewModel : ObservableObject, ISpellComponent
     /// The material components of the spell
     /// </summary>
     [ObservableProperty]
-    string materials;
+    string materialComponents = string.Empty;
 }

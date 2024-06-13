@@ -1,4 +1,5 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.ViewModels;
@@ -37,5 +38,30 @@ public partial class ParseMarkdown : IParseMarkdown
     {
         ServiceProvider = serviceProvider;
         MonsterLists = monsterLists;
+    }
+
+    /// <summary>
+    /// Parse any tables
+    /// </summary>
+    /// <param name="markDown">The markdown file</param>
+    /// <returns>A markdown table</returns>
+    public IMarkDownTableModel? ParseMarkDownTable(List<string> markDown)
+    {
+        IMarkDownTableModel markDownTable = null;
+        foreach (var line in markDown)
+        {
+            if (line.Trim().StartsWith("|"))
+            {
+                markDownTable = new MarkDownTableModel();
+                var lineChar = line.Trim().ToCharArray();
+
+                // parse the header first
+                for (var i = 1; i < lineChar.Length; i++)
+                {
+
+                }
+            }
+        }
+        return markDownTable;
     }
 }

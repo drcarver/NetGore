@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
@@ -27,11 +28,103 @@ public partial class ParseMarkdown : IParseMarkdown
     public ISpellTableEntry? ParseSpell(List<string> markDown)
     {
         ISpellTableEntry? spell = GetSpellInfo(markDown);
-        spell.CastingTime = GetSpellDuration(markDown);
+        spell.CastingTime = GetSpellCastingTime(markDown);
         spell.SpellRange = GetSpellRange(markDown);
         spell.SpellComponents = GetSpellComponents(markDown);
+        spell.SpellDuration = GetSpellDuration(markDown);
+        spell.SpellDescriptions = GetSpellDescriptions(markDown);
         SpellInfoList.Add(spell);
         return spell;
+    }
+
+    /// <summary>
+    /// The descriptions of the spell
+    /// </summary>
+    /// <param name="markDown">The markdown rows</param>
+    /// <returns>The collection spell description</returns>
+    private ObservableCollection<string> GetSpellDescriptions(List<string> markDown)
+    {
+        ObservableCollection<string> spellDescriptions = new ObservableCollection<string>();
+        foreach (string line in markDown)
+        {
+            if (string.IsNullOrEmpty(line.Trim()))
+            {
+                continue;   
+            }
+            while (line.Trim().Contains("**"))
+            {
+
+            }
+
+            spellDescriptions.Add(line.Trim());
+        }
+        return spellDescriptions;
+    }
+
+    /// <summary>
+    /// Get the spell duration
+    /// </summary>
+    /// <param name="markDown">The markdown rows</param>
+    /// <returns>return the spell duration</returns>
+    private ISpellDuration GetSpellDuration(List<string> markDown)
+    {
+        ISpellDuration spellDuration = new SpellDurationViewModel();
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("**Duration:**"))
+            {
+                var cleanedString = line.Replace("**Duration:**", string.Empty).ToLower().Trim();
+                if (cleanedString.StartsWith("concentration,"))
+                {
+                    spellDuration.Concentration = true;
+                    cleanedString = cleanedString.Replace("concentration,", string.Empty).Trim();
+                }
+                if (cleanedString.Contains("up to"))
+                {
+                    spellDuration.UpToo = true;
+                    cleanedString = cleanedString.Replace("up to", string.Empty).Trim();
+                }
+                switch (cleanedString.Trim())
+                {
+                    case "instantaneous":
+                        spellDuration.SpellDurationUnits = SpellDurationUnitsEnum.Instantaneous;
+                        break;
+                    case "until dispelled":
+                        spellDuration.SpellDurationUnits = SpellDurationUnitsEnum.UntilDispelled;
+                        break;
+                    case "until dispelled or triggered":
+                        spellDuration.SpellDurationUnits = SpellDurationUnitsEnum.UntilDispelledorTriggered;
+                        break;
+                    case "special":
+                        spellDuration.SpellDurationUnits = SpellDurationUnitsEnum.Special;
+                        break;
+                    default:
+                        string[] hours = cleanedString.Split(' ');
+                        if (hours.Length != 2)
+                        {
+                            break;
+                        }
+                        int timescale;
+                        if (int.TryParse(hours[0], out timescale))
+                        {
+                            spellDuration.SpellDuration = timescale;
+                        }
+                        SpellDurationUnitsEnum duration;
+                        if (Enum.TryParse(hours[1], true, out duration))
+                        {
+                            spellDuration.SpellDurationUnits = duration;
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"Unknown duration unit {hours[1]}");
+                        }
+                        break;
+                }
+                markDown.RemoveAt(0);
+                break;
+            }
+        }
+        return spellDuration;
     }
 
     /// <summary>
@@ -41,7 +134,6 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <returns>return the spell component</returns>
     private ISpellComponent? GetSpellComponents(List<string> markDown)
     {
-        int i = 0;
         ISpellComponent? spellComponent = new SpellComponentViewModel();
         foreach (var line in markDown)
         {
@@ -53,14 +145,14 @@ public partial class ParseMarkdown : IParseMarkdown
                 string[] rawSpellComponent;
                 if (lParen > 0)
                 {
-                    var substring = cleanedString.Substring(0,lParen);
+                    var substring = cleanedString.Substring(0, lParen);
                     rawSpellComponent = substring.Split(',');
                 }
                 else
                 {
                     rawSpellComponent = line.Replace("**Components:**", string.Empty).Trim().Split(',');
                 }
-                for (i = 0; i < rawSpellComponent.Length; i++)
+                for (int i = 0; i < rawSpellComponent.Length; i++)
                 {
                     switch (rawSpellComponent[i].Trim())
                     {
@@ -74,21 +166,14 @@ public partial class ParseMarkdown : IParseMarkdown
                             spellComponent.Material = true;
                             if (lParen >= 0 && rParen >= 0)
                             {
-                                spellComponent.Materials = cleanedString.Substring(lParen + 1, rParen - lParen - 1).Trim();
+                                spellComponent.MaterialComponents = cleanedString.Substring(lParen + 1, rParen - lParen - 1).Trim();
                             }
                             break;
                     }
                 }
+                markDown.RemoveAt(0);
             }
-            i++;
-        }
-        if (i < markDown.Count())
-        {
-            markDown.RemoveAt(i);
-        }
-        else
-        {
-            Debug.WriteLine($"Invalid markDown position");
+            break;
         }
         return spellComponent;
     }
@@ -252,7 +337,7 @@ public partial class ParseMarkdown : IParseMarkdown
     /// </summary>
     /// <param name="markDown">The markDown file for the spell</param>
     /// <param name="spell">The spellInfo</param>
-    private ICastingTime GetSpellDuration(List<string> markDown)
+    private ICastingTime GetSpellCastingTime(List<string> markDown)
     {
         int i = 0;
         CastingTimeViewModel castingTimeVM = new CastingTimeViewModel();
@@ -304,21 +389,69 @@ public partial class ParseMarkdown : IParseMarkdown
     private ISpellTableEntry GetSpellInfo(List<string> markDown)
     {
         var spell = new SpellTableEntryViewModel();
-        for (int i = 0; i < markDown.Count; i++)
+        GetSpellName(markDown, spell);
+        GetSpellLevel(markDown, spell);
+        GetSpellSchool(markDown, spell);
+        GetSpellLevel(markDown, spell);
+        GetSpellClasses(markDown, spell);
+
+        // Skip forward to the casting time
+        do
         {
-            if (markDown[i].StartsWith("name:"))
+            if (markDown[0].StartsWith("**Casting Time:**"))
             {
-                var name = markDown[i].Replace("name:", string.Empty).Trim();
-                spell.ProperName = name;
-                spell.Name = Utilities.CleanupForCSharp(name);
+                break;
             }
-            if (markDown[i].StartsWith("level:"))
+            markDown.RemoveAt(0);
+        } while (markDown.Count() > 0);
+
+        return spell;
+    }
+
+    /// <summary>
+    /// Get the Spell school
+    /// </summary>
+    /// <param name="markDown">The markdown file</param>
+    /// <param name="spell">The spell view model</param>
+    private void GetSpellClasses(List<string> markDown, SpellTableEntryViewModel spell)
+    {
+        int i = 0;
+        if (markDown[i].StartsWith("classes: "))
+        {
+            markDown[i] = markDown[i].Replace("classes:", string.Empty).Trim();
+            ClassEnum classEnum;
+            do
             {
-                var level = markDown[i].Replace("level:", string.Empty).Trim();
-                int levelNum = 0;
-                int.TryParse(level, out levelNum);
-                spell.Level = levelNum;
+                var classes = markDown[i].Trim();
+                if (string.IsNullOrEmpty(classes))
+                {
+                    break;
+                }
+                if (!Enum.TryParse<ClassEnum>(classes, true, out classEnum))
+                {
+                    Debug.WriteLine($"Class is {classes}");
+                }
+                else
+                {
+                    spell.Casters.Add(classEnum);
+                }
+                i++;
+                markDown.RemoveAt(0);
             }
+            while (!markDown[i].Trim().StartsWith("**Casting Time:**"));
+        }
+    }
+
+    /// <summary>
+    /// Get the Spell school
+    /// </summary>
+    /// <param name="markDown">The markdown file</param>
+    /// <param name="spell">The spell view model</param>
+    private void GetSpellSchool(List<string> markDown, SpellTableEntryViewModel spell)
+    {
+        int i = 0;
+        do
+        {
             if (markDown[i].StartsWith("school:"))
             {
                 var school = markDown[i].Replace("school:", string.Empty).Trim();
@@ -327,42 +460,60 @@ public partial class ParseMarkdown : IParseMarkdown
                 {
                     Debug.WriteLine($"Magic School is {school}");
                 }
+                markDown.RemoveAt(i);
+                return;
             }
-            if (markDown[i].StartsWith("classes: "))
-            {
-                markDown[i] = markDown[i].Replace("classes:", string.Empty).Trim();
-                ClassEnum classEnum;
-                do
-                {
-                    var classes = markDown[i].Trim();
-                    if (string.IsNullOrEmpty(classes))
-                    {
-                        break;
-                    }
-                    if (!Enum.TryParse<ClassEnum>(classes, true, out classEnum))
-                    {
-                        Debug.WriteLine($"Class is {classes}");
-                    }
-                    else
-                    {
-                        spell.Casters.Add(classEnum);
-                    }
-                    i++;
-                }
-                while (!markDown[i].Trim().StartsWith("**Casting Time:**"));
-                break;
-            }
+            i++;
         }
-        int j = 0;
+        while (i < markDown.Count());
+    }
+
+    /// <summary>
+    /// Get the Spell Level
+    /// </summary>
+    /// <param name="markDown">The markdown file</param>
+    /// <param name="spell">The spell view model</param>
+    private void GetSpellLevel(List<string> markDown, SpellTableEntryViewModel spell)
+    {
+        int i = 0;
         do
         {
-            if (markDown[0].Trim().StartsWith("**Casting Time:**"))
+            if (markDown[i].StartsWith("level:"))
             {
-                break;
+                var level = markDown[i].Replace("level:", string.Empty).Trim();
+                int intLevel;
+                if (int.TryParse(level, out intLevel))
+                {
+                    spell.Level = intLevel;
+                }
+                markDown.RemoveAt(i);
+                return;
             }
-            markDown.RemoveAt(0);
-            j++;
-        } while (j < markDown.Count());
-        return spell;
+            i++;
+        }
+        while (i < markDown.Count());
+    }
+
+    /// <summary>
+    /// Get the Spell Name
+    /// </summary>
+    /// <param name="markDown">The markdown file</param>
+    /// <param name="spell">The spell view model</param>
+    private void GetSpellName(List<string> markDown, SpellTableEntryViewModel spell)
+    {
+        int i = 0;
+        do
+        {
+            if (markDown[i].StartsWith("name:"))
+            {
+                var name = markDown[i].Replace("name:", string.Empty).Trim();
+                spell.ProperName = name;
+                spell.Name = Utilities.CleanupForCSharp(name);
+                markDown.RemoveAt(i);
+                return;
+            }
+            i++;
+        }
+        while (i < markDown.Count());
     }
 }

@@ -42,5 +42,5 @@ public interface ISpellComponent
     /// <summary>
     /// The material components of the spell
     /// </summary>
-    string Materials { get; set; }
+    string? MaterialComponents { get; set; }
 }

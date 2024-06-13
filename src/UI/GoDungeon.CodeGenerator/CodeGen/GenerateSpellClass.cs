@@ -126,13 +126,23 @@ public partial class GenerateModel : IGenerateModel
                 stream.WriteLine($"\t\t\t\t\t\tSpellEffectType = SpellEffectTypeEnum.{spell.SpellRange.SpellEffectType},");
                 stream.WriteLine($"\t\t\t\t\t\tRangeType = SpellDistanceTypeEnum.{spell.SpellRange.RangeType}");
                 stream.WriteLine("\t\t\t\t\t},");
-                stream.WriteLine($"\t\t\t\t\tSpellComponents = new ObservableCollection<string>(),");
-                stream.Write($"\t\t\t\t\tCasters = new ObservableCollection<ClassEnum> {{ ");
-                foreach (var caster in spell.Casters)
+                stream.WriteLine($"\t\t\t\t\tSpellComponents = new SpellComponentViewModel");
+                stream.WriteLine("\t\t\t\t\t{");
+                stream.WriteLine($"\t\t\t\t\t\tVerbal = {spell.SpellComponents.Verbal.ToString().ToLower()},");
+                stream.WriteLine($"\t\t\t\t\t\tSomatic = {spell.SpellComponents.Somatic.ToString().ToLower()},");
+                stream.WriteLine($"\t\t\t\t\t\tMaterial = {spell.SpellComponents.Material.ToString().ToLower()},");
+                if (!string.IsNullOrEmpty(spell.SpellComponents.MaterialComponents.Trim()))
                 {
-                    stream.Write($"ClassEnum.{caster}, ");
+                    stream.WriteLine($"\t\t\t\t\t\tMaterialComponents = \"{spell.SpellComponents.MaterialComponents}\"");
                 }
-                stream.WriteLine("},");
+                stream.WriteLine("\t\t\t\t\t},");
+                stream.WriteLine($"\t\t\t\t\tSpellDuration = new SpellDurationViewModel");
+                stream.WriteLine("\t\t\t\t\t{");
+                stream.WriteLine($"\t\t\t\t\t\tConcentration = {spell.SpellDuration.Concentration.ToString().ToLower()},");
+                stream.WriteLine($"\t\t\t\t\t\tUpToo = {spell.SpellDuration.UpToo.ToString().ToLower()},");
+                stream.WriteLine($"\t\t\t\t\t\tSpellDuration = {spell.SpellDuration.SpellDuration},");
+                stream.WriteLine($"\t\t\t\t\t\tSpellDurationUnits = SpellDurationUnitsEnum.{spell.SpellDuration.SpellDurationUnits},");
+                stream.WriteLine("\t\t\t\t\t},");
                 stream.WriteLine("\t\t\t\t},");
                 stream.WriteLine("\t\t\t\t#endregion");
                 stream.WriteLine();
