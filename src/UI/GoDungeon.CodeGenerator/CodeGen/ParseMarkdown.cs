@@ -47,21 +47,56 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <returns>A markdown table</returns>
     public IMarkDownTableModel? ParseMarkDownTable(List<string> markDown)
     {
-        IMarkDownTableModel markDownTable = null;
-        foreach (var line in markDown)
+        var markDownTable = new MarkDownTableModel();
+        int t = 0;
+        do
         {
-            if (line.Trim().StartsWith("|"))
+            if (!markDown.Any(m => m.Trim().StartsWith("|")))
             {
-                markDownTable = new MarkDownTableModel();
-                var lineChar = line.Trim().ToCharArray();
-
-                // parse the header first
-                for (var i = 1; i < lineChar.Length; i++)
-                {
-
-                }
+                return markDownTable;
             }
-        }
+
+            // Get the table caption
+            int tableCount = 0;
+            var tableCaption = string.Empty;
+            int pos = 0;
+            do
+            {
+                if (markDown[t].Trim().StartsWith("#"))
+                {
+                    tableCaption = markDown[t].Replace("#", string.Empty).Trim();
+                    pos = t;
+                }
+                if (markDown[t].Trim().StartsWith('|'))
+                {
+                    break;
+                }
+                t++;
+            } while (t < markDown.Count);
+
+            markDownTable.TableCaption?.Add(tableCaption);
+            markDown[pos] = string.Empty;
+
+            // Get the table
+            List<string> table = new List<string>();
+            do
+            {
+                if (markDown[t].Trim().StartsWith("|"))
+                {
+                    table.Add(markDown[t].Trim());
+                    markDown[t] = string.Empty;
+                    t++;
+                }
+                else
+                {
+                    break;
+                }
+
+            } while (t < markDown.Count);
+            markDownTable.TableRows.Add(table);
+
+        } while (t < markDown.Count);
+
         return markDownTable;
     }
 }

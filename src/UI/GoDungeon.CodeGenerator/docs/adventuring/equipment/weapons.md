@@ -57,8 +57,7 @@ Weapons with special rules are described here.
 
 When you use an action, bonus action, or reaction to attack with a net, you can make only one attack regardless of the number of attacks you can normally make.
 
-
-## Weapons Table
+## Simple Melee Weapons
 
 | Simple Melee Weapons  | Cost | Damage          | Weight | Properties                            |
 |-----------------------|------|-----------------|--------|---------------------------------------|
@@ -73,12 +72,16 @@ When you use an action, bonus action, or reaction to attack with a net, you can 
 | Sickle                | 1 gp | 1d4 slashing    | 2 lb.  | Light                                 |
 | Spear                 | 1 gp | 1d6 piercing    | 3 lb.  | Thrown (range 20/60), versatile (1d8) |
 
+## Simple Ranged Weapons
+
 | Simple Ranged Weapons | Cost  | Damage          | Weight  | Properties                                     |
 |-----------------------|-------|-----------------|---------|------------------------------------------------|
 | Crossbow, light       | 25 gp | 1d8 piercing    | 5 lb.   | Ammunition (range 80/320), loading, two-handed |
 | Dart                  | 5 cp  | 1d4 piercing    | 1/4 lb. | Finesse, thrown (range 20/60)                  |
 | Shortbow              | 25 gp | 1d6 piercing    | 2 lb.   | Ammunition (range 80/320), two-handed          |
 | Sling                 | 1 sp  | 1d4 bludgeoning | -       | Ammunition (range 30/120)                      |
+
+## Martial Melee Weapons
 
 | Martial Melee Weapons | Cost  | Damage          | Weight | Properties                            |
 |-----------------------|-------|-----------------|--------|---------------------------------------|
@@ -100,6 +103,8 @@ When you use an action, bonus action, or reaction to attack with a net, you can 
 | War pick              | 5 gp  | 1d8 piercing    | 2 lb.  | -                                     |
 | Warhammer             | 15 gp | 1d8 bludgeoning | 2 lb.  | Versatile (1d10)                      |
 | Whip                  | 2 gp  | 1d4 slashing    | 3 lb.  | Finesse, reach                        |
+
+## Martial Ranged Weapons
 
 | Martial Ranged Weapons | Cost  | Damage          | Weight  | Properties                                             |
 |------------------------|-------|-----------------|---------|--------------------------------------------------------|

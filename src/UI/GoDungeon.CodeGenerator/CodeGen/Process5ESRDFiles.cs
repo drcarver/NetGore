@@ -23,6 +23,11 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     }
 
     /// <summary>
+    /// the list of MarkDownTables.
+    /// </summary>
+    public List<IMarkDownTableModel> MarkDownTableModels = new List<IMarkDownTableModel>();
+
+    /// <summary>
     /// Process monster files from the SRD
     /// </summary>
     public IParseMarkdown ParseMarkdown { get; }
@@ -48,28 +53,56 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="rootDir">The root directory</param>
     public void ProcessDirectory(string inputDir, string outputdir)
     {
+        ProcessDirectoryRecursive(inputDir, outputdir);
+    }
+
+    /// <summary>
+    /// Process a directory recursively
+    /// </summary>
+    /// <param name="rootDir">The root directory</param>
+    private void ProcessDirectoryRecursive(string inputDir, string outputdir)
+    {
         RootDirectory = inputDir;
         foreach (var dir in Directory.EnumerateDirectories(inputDir))
         {
-            ProcessDirectory(dir, outputdir);
+            ProcessDirectoryRecursive(dir, outputdir);
         }
 
         foreach (string filePath in Directory.EnumerateFiles(inputDir))
         {
-            if (filePath.Contains("spells") && filePath.EndsWith(".md"))
-            {
-                ProcessSpellFile(filePath, outputdir);
-            }
+            ProcessTables(filePath);
 
-            if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
-            {
-                ProcessMonsterFile(filePath, outputdir);
-            }
+            //if (filePath.Contains("spells") && filePath.EndsWith(".md"))
+            //{
+            //    ProcessSpellFile(filePath, outputdir);
+            //}
+
+            //if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
+            //{
+            //    ProcessMonsterFile(filePath, outputdir);
+            //}
         }
     }
 
     /// <summary>
-    /// Process a file
+    /// Process tables in the file
+    /// </summary>
+    /// <param name="filePath">The filePath to create the file</param>
+    private void ProcessTables(string filePath)
+    {
+        var markDown = File.ReadAllLines(filePath).ToList();
+        
+        IMarkDownTableModel model = ParseMarkdown?.ParseMarkDownTable(markDown);
+
+        if (model != null && model.TableCaption.Any())
+        {
+            model.FilePath = filePath;
+            MarkDownTableModels.Add(model);
+        }
+    }
+
+    /// <summary>
+    /// Process a spell file
     /// </summary>
     /// <param name="filePath">The filePath to create the file</param>
     private void ProcessSpellFile(string filePath, string outputDir)
@@ -79,7 +112,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         // Convert the file to .html
         if (markDown.Count >= 3)
         {
-            var spell = ParseMarkdown.ParseSpell(markDown);
+            var spell = ParseMarkdown?.ParseSpell(markDown);
             if (spell == null || string.IsNullOrEmpty(spell.Name))
             {
                 Console.WriteLine($"Skipping file {filePath}");
@@ -104,7 +137,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     }
 
     /// <summary>
-    /// Process a file
+    /// Process a monster file
     /// </summary>
     /// <param name="filePath">The filePath to create the file</param>
     private void ProcessMonsterFile(string filePath, string outputDir)

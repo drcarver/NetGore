@@ -3,12 +3,18 @@
 public interface IMarkDownTableModel
 {
     /// <summary>
-    /// The table header
+    /// The table caption
     /// </summary>
-    List<string> TableHeader { get; }
+    List<string>? TableCaption { get; set; }
 
     /// <summary>
     /// The table rows
     /// </summary>
-    List<string> TableRows { get; }
+    List<List<string>> TableRows { get; }
+
+    /// <summary>
+    /// The markdown file that contains the table
+    /// </summary>
+    string FilePath { get; set; }
+
 }

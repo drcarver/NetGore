@@ -23,6 +23,7 @@ A tool helps you to do something you couldn't otherwise do, such as craft or rep
 
 
 ## Tools Tables
+
 ### Artisan's tools
 | Item                    | Cost  | Weight |
 |-------------------------|-------|--------|

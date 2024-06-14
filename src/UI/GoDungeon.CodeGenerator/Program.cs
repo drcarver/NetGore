@@ -17,7 +17,6 @@ public class Program
     public static void Main(string[] args)
     {
         // Syncfusion License
-        var lic = Environment.GetEnvironmentVariable("SyncfusionLicense");
         Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Environment.GetEnvironmentVariable("SyncfusionLicense"));
 
         var builder = Host.CreateApplicationBuilder(args);
