@@ -3,9 +3,14 @@
 public interface IProcess5ESRDFiles
 {
     /// <summary>
+    /// The root directory to the input markdown files
+    /// </summary>
+    string? RootMarkDownDirectory { get; set; }
+
+    /// <summary>
     /// The root directory to generate the .html and class files in
     /// </summary>
-    string? RootDirectory { get; set; }
+    string? RootOutputDirectory { get; set; }
 
     /// <summary>
     /// Process monster files from the SRD

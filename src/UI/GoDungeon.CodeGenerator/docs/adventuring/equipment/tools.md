@@ -25,6 +25,7 @@ A tool helps you to do something you couldn't otherwise do, such as craft or rep
 ## Tools Tables
 
 ### Artisan's tools
+
 | Item                    | Cost  | Weight |
 |-------------------------|-------|--------|
 | Alchemist's supplies    | 50 gp | 8 lb.  |
@@ -48,12 +49,14 @@ A tool helps you to do something you couldn't otherwise do, such as craft or rep
 | Forgery kit             | 15 gp | 5 lb.  |
 
 ## Gaming set
+
 | Item             | Cost  | Weight |
 |------------------|-------|--------|
 | Dice set         | 1 sp  | -      |
 | Playing card set | 5 sp  | -      |
 
 ## Musical instrument
+
 | Item      | Cost  | Weight |
 |-----------|-------|--------|
 | Bagpipes  | 30 gp | 6 lb.  |
@@ -68,6 +71,7 @@ A tool helps you to do something you couldn't otherwise do, such as craft or rep
 | Viol      | 30 gp | 1 lb.  |
 
 ## Other tools
+
 | Item              | Cost  | Weight |
 |-------------------|-------|--------|
 | Herbalism kit     | 5 gp  | 3 lb.  |

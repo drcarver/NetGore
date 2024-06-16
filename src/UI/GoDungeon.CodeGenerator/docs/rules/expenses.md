@@ -42,7 +42,7 @@ Maintaining this kind of lifestyle doesn't require you to spend any coin, but it
 ## Food, Drink, and Lodging 
 The Food, Drink, and Lodging table gives prices for individual food items and a single night's lodging. These prices are included in your total lifestyle expenses.
 
-**Food and Drink**
+## Food and Drink
 
 | Item                   | Cost  |
 |------------------------|------:|
@@ -55,7 +55,7 @@ The Food, Drink, and Lodging table gives prices for individual food items and a 
 | Wine, common (pitcher) | 2 sp  |
 | Wine, fine (bottle)    | 10 gp |
 
-**Meals and Lodging (per day)**
+## Meals and Lodging (per day)
 
 | Item         | Meals Cost | Lodging Cost |
 |--------------|-----------:|-------------:|
@@ -72,6 +72,8 @@ Adventurers can pay nonplayer characters to assist them or act on their behalf i
 Some of the most basic types of hirelings appear on the Services table. Other common hirelings include any of the wide variety of people who inhabit a typical town or city, when the adventurers pay them to perform a specific task. For example, a wizard might pay a carpenter to construct an elaborate chest (and its miniature replica) for use in the secret chest spell. A fighter might commission a blacksmith to forge a special sword. A bard might pay a tailor to make exquisite clothing for an upcoming performance in front of the duke.
 
 Other hirelings provide more expert or dangerous services. Mercenary soldiers paid to help the adventurers take on a hobgoblin army are hirelings, as are sages hired to research ancient or esoteric lore. If a high-level adventurer establishes a stronghold of some kind, he or she might hire a whole staff of servants and agents to run the place, from a castellan or steward to menial laborers to keep the stables clean. These hirelings often enjoy a long-term contract that includes a place to live within the stronghold as part of the offered compensation.
+
+## Services Expenses
 
 | Service                   | Pay           |
 |---------------------------|---------------|

@@ -21,6 +21,8 @@ internal static class Utilities
             .Replace("-", string.Empty)
             .Replace("'", string.Empty)
             .Replace(")", string.Empty)
+            .Replace(",", string.Empty)
+            .Replace(".", string.Empty)
             .Trim();
     }
 }

@@ -10,6 +10,8 @@ You can use an action to press one of the cube's faces, expending a number of ch
 
 If your movement causes the barrier to come into contact with a solid object that can't pass through the cube, you can't move any closer to that object as long as the barrier remains. 
 
+# Cube of Force Effect
+
 | Face | Charges | Effect                                                                                                            |
 |------|---------|-------------------------------------------------------------------------------------------------------------------|
 | 1    | 1       | Gases, wind, and fog can't pass through the barrier.                                                              |
@@ -20,6 +22,8 @@ If your movement causes the barrier to come into contact with a solid object tha
 | 6    | 0       | The barrier deactivates.                                                                                          |
 
 The cube loses charges when the barrier is targeted by certain spells or comes into contact with certain spell or magic item effects, as shown in the table below. 
+
+# Cube of Force Spell
 
 | Spell or item       | Charges Lost |
 |---------------------|--------------|

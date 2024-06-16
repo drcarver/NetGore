@@ -28,6 +28,7 @@ Mounts other than those listed here are available in fantasy gaming worlds, but 
 | Warhorse       | 400 gp | 60 ft. | 540 lb.           |
 
 ## Tack, Harness, and Drawn Vehicles
+
 | Item                | Cost   | Weight  |
 |---------------------|-------:|--------:|
 | Barding             | x4     | x2      |

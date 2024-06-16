@@ -40,6 +40,8 @@ You might also have ties to a specific temple dedicated to your chosen deity or 
 ### Suggested Characteristics 
 Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, or hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.
 
+### Acolytes Personality Trait
+
 | d8 | Personality Trait                                                                                                  |
 |----|--------------------------------------------------------------------------------------------------------------------|
 | 1  | I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.                  |
@@ -51,6 +53,8 @@ Acolytes are shaped by their experience in temples or other religious communitie
 | 7  | I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.                |
 | 8  | I've spent so long in the temple that I have little practical experience dealing with people in the outside world. |
 
+### Acolytes Ideal
+
 | d6 | Ideal                                                                                                                  |
 |----|------------------------------------------------------------------------------------------------------------------------|
 | 1  | Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)                      |
@@ -59,6 +63,8 @@ Acolytes are shaped by their experience in temples or other religious communitie
 | 4  | Power. I hope to one day rise to the top of my faith's religious hierarchy. (Lawful)                                   |
 | 5  | Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well. (Lawful)    |
 | 6  | Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings. (Any) |
+
+### Acolytes Bond
 
 | d6 | Bond                                                                                     |
 |----|------------------------------------------------------------------------------------------|
@@ -69,6 +75,8 @@ Acolytes are shaped by their experience in temples or other religious communitie
 | 5  | I will do anything to protect the temple where I served.                                 |
 | 6  | I seek to preserve a sacred text that my enemies consider heretical and seek to destroy. |
 
+### Acolytes Flaw
+
 | d6 | Flaw                                                                                          |
 |----|-----------------------------------------------------------------------------------------------|
 | 1  | I judge others harshly, and myself even more severely.                                        |
@@ -77,3 +85,4 @@ Acolytes are shaped by their experience in temples or other religious communitie
 | 4  | I am inflexible in my thinking.                                                               |
 | 5  | I am suspicious of strangers and expect the worst of them.                                    |
 | 6  | Once I pick a goal, I become obsessed with it to the detriment of everything else in my life. |
+

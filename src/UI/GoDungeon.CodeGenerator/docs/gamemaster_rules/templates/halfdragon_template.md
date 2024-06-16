@@ -5,6 +5,8 @@ A beast, humanoid, giant, or monstrosity can become a half-dragon. It keeps its 
 **Senses**. The half-dragon gains blindsight with a radius of 10 feet and darkvision with a radius of 60 feet.    
 **Resistances.** The half-dragon gains resistance to a type of damage based on its color. 
 
+## Half-Dragon Damage Resistance
+
 | Color               | Damage Resistance |
 |---------------------|-------------------|
 | Black or copper     | Acid              |
@@ -15,6 +17,8 @@ A beast, humanoid, giant, or monstrosity can become a half-dragon. It keeps its 
 
 **Languages**. The half-dragon speaks Draconic in addition to any other languages it knows.    
 **New Action: Breath Weapon.** The half-dragon has the breath weapon of its dragon half. The half-dragon's size determines how this action functions.
+
+## Half-Dragon Breath Weapon
 
 | Size             | Breath Weapon      | Optional Prerequisite |
 |------------------|--------------------|-----------------------|

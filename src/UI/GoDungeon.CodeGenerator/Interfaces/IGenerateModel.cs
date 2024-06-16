@@ -22,9 +22,19 @@ public interface IGenerateModel
     void GenerateSpellClass(TextWriter stream, ISpellTableEntry spell, string rootDir);
 
     /// <summary>
+    /// Generate the .cs class for the spell
+    /// </summary>
+    /// <param name="dirPath">The directory path for the table</param>
+    /// <param name="tableName">The name of the table to generate</param>
+    /// <param name="properties">The list of properties for the view model</param>
+    /// <param name="rows">The rows of the table</param>
+    /// <param name="nameSpace">The nameSPace for the table</param>
+    public void GenerateTable(string dirPath, string tableName, List<string> properties, List<string> rows, string nameSpace);
+
+    /// <summary>
     /// Generate the list files
     /// </summary>
     /// <param name="spellInfoList">The spell info list</param>
-    /// <param name="rootdir">The rootdir</param>
-    void GenerateSpellLists(List<ISpellTableEntry> spellInfoList, string rootdir);
+    /// <param name="rootdir">The rootDir</param>
+    void GenerateSpellLists(List<ISpellTableEntry> spellInfoList, string rootDir);
 }

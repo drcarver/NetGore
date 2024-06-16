@@ -23,6 +23,8 @@ Characters in wagons, carriages, or other land vehicles choose a pace as normal.
 
 Certain special mounts, such as a pegasus or griffon, or special vehicles, such as a _carpet of flying_, allow you to travel more swiftly.
 
+## Mounts and Vehicles.
+
 | Pace   | Distance per Minute | Distance per Hour | Distance per day | Effect                                           |
 |--------|---------------------|-------------------|------------------|--------------------------------------------------|
 | Fast   | 400 feet            | 4 miles           | 30 miles         | -5 penalty to passive Wisdom (Perception) scores |
