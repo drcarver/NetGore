@@ -1,4 +1,8 @@
-﻿using GoDungeon.Core.Interfaces;
+﻿using System.IO;
+
+using GoDungeon.CodeGenerator.Models;
+using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.Tables;
 using GoDungeon.Spells.Interfaces;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
@@ -29,7 +33,7 @@ public interface IGenerateModel
     /// <param name="properties">The list of properties for the view model</param>
     /// <param name="rows">The rows of the table</param>
     /// <param name="nameSpace">The nameSPace for the table</param>
-    public void GenerateTable(string dirPath, string tableName, List<string> properties, List<string> rows, string nameSpace);
+    public void GenerateTable(string dirPath, string tableName, List<PropertyModel> properties, List<List<string>> rows, string nameSpace);
 
     /// <summary>
     /// Generate the list files

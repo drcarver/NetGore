@@ -42,10 +42,10 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="tableName">The name of the table</param>
     /// <param name="tableDescription">The description of the table</param>
     /// <param name="properName">The proper name of the table</param>
-    private void GenerateTableHeading(TextWriter stream, string tableName, string tableDescription, string properName)
+    private void GenerateSpellTableHeading(TextWriter stream, string tableName)
     {
         stream.WriteLine("//");
-        stream.WriteLine($"// {tableDescription}");
+        stream.WriteLine($"// {tableName}");
         stream.WriteLine("//");
         stream.WriteLine("using System.Collections.ObjectModel;");
         stream.WriteLine();
@@ -63,9 +63,9 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("namespace GoDungeon.Spells.Tables;");
         stream.WriteLine();
         stream.WriteLine("/// <summary>");
-        stream.WriteLine($"/// {tableDescription}");
+        stream.WriteLine($"/// {tableName}");
         stream.WriteLine("/// </summary>");
-        stream.WriteLine($"public partial class {tableName} : NamedTable, I{tableName}");
+        stream.WriteLine($"public partial class {Utilities.CleanupForCSharp(tableName)}Table : NamedTable, I{Utilities.CleanupForCSharp(tableName)}");
         stream.WriteLine("{");
         stream.WriteLine("\t/// <summary>");
         stream.WriteLine("\t/// Constructor");
@@ -73,9 +73,9 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\tpublic {tableName}()");
         stream.WriteLine("\t{");
         stream.WriteLine($"\t\tName = nameof({tableName});");
-        stream.WriteLine($"\t\tProperName = \"{properName}\";");
+        stream.WriteLine($"\t\tProperName = \"{tableName}\";");
         stream.WriteLine($"\t\tTableType = TableTypeEnum.SpellTable;");
-        stream.WriteLine($"\t\tDescription = \"{tableDescription}\";");
+        stream.WriteLine($"\t\tDescription = \"{tableName}\";");
         stream.WriteLine("\t}");
         stream.WriteLine();
         stream.WriteLine("\t/// <summary>");
@@ -101,7 +101,7 @@ public partial class GenerateModel : IGenerateModel
         var tableFileName = $@"{rootdir}tables/spells/SpellInformationTable.cs";
         using (StreamWriter stream = File.CreateText(tableFileName))
         {
-            GenerateTableHeading(stream, "SpellInfoTable", "The Spell Information Table", "Spell Information Table");
+            GenerateSpellTableHeading(stream, "SpellInfoTable");
             stream.WriteLine($"\t\t\tTable = new ObservableCollection<IGameTableEntry>");
             stream.WriteLine("\t\t\t{");
             foreach (var spell in spellInfoList)

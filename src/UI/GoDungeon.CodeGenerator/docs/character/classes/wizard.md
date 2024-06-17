@@ -1,28 +1,28 @@
 description: Rules and information for the Wizard class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Wizard
+# Wizard
 | Level | Proficiency Bonus | Cantrips Known | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | Features                         |
 |-------|-------------------|----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|----------------------------------|
-| 1st   | +2                | 3              | 2   | -   | -   | -   | -   | -   | -   | -   | -   | Spellcasting, Arcane Recovery    |
-| 2nd   | +2                | 3              | 3   | -   | -   | -   | -   | -   | -   | -   | -   | Arcane Tradition                 |
-| 3nd   | +2                | 3              | 4   | 2   | -   | -   | -   | -   | -   | -   | -   | -                                |
-| 4th   | +2                | 4              | 4   | 3   | -   | -   | -   | -   | -   | -   | -   | Ability Score Improvement        |
-| 5th   | +3                | 4              | 4   | 3   | 2   | -   | -   | -   | -   | -   | -   | -                                |
-| 6th   | +3                | 4              | 4   | 3   | 3   | -   | -   | -   | -   | -   | -   | Arcane Tradition feature         |
-| 7th   | +3                | 4              | 4   | 3   | 3   | 1   | -   | -   | -   | -   | -   | -                                |
-| 8th   | +3                | 4              | 4   | 3   | 3   | 2   | -   | -   | -   | -   | -   | Ability Score Improvement        |
-| 9th   | +4                | 4              | 4   | 3   | 3   | 3   | 1   | -   | -   | -   | -   | -                                |
-| 10th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | -   | -   | -   | -   | Arcane Tradition feature         |
-| 11th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | -                                |
-| 12th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Ability Score Improvement        |
-| 13th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | -                                |
-| 14th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Arcane Tradition feature         |
-| 15th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | -                                |
-| 16th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Ability Score Improvement        |
-| 17th  | +6                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | -                                |
-| 18th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Spell Mastery                    |
-| 19th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement        |
-| 20th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Signature Spell                  |
+| 1   | +2                | 3              | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Spellcasting, Arcane Recovery    |
+| 2   | +2                | 3              | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Arcane Tradition                 |
+| 3   | +2                | 3              | 4   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0                               |
+| 4 | +2                | 4              | 4   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement        |
+| 5 | +3                | 4              | 4   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0                               |
+| 6 | +3                | 4              | 4   | 3   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | Arcane Tradition feature         |
+| 7 | +3                | 4              | 4   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0  | 0                               |
+| 8 | +3                | 4              | 4   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement        |
+| 9 | +4                | 4              | 4   | 3   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0                               |
+| 10| +4                | 5              | 4   | 3   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | Arcane Tradition feature         |
+| 11| +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | 0                               |
+| 12| +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Ability Score Improvement        |
+| 13| +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | 0                               |
+| 14| +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Arcane Tradition feature         |
+| 15| +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | 0                               |
+| 16| +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Ability Score Improvement        |
+| 17| +6                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | 0                               |
+| 18| +6                | 5              | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Spell Mastery                    |
+| 19| +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement        |
+| 20| +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Signature Spell                  |
 
 ## Class Features
 As a wizard, you gain the following class features.

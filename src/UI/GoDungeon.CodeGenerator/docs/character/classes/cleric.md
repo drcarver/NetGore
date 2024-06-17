@@ -1,28 +1,28 @@
 description: Rules and information for the Cleric class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Cleric
+# Cleric
 | Level | Proficiency Bonus | Cantrips Known | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | Features                                               |
 |-------|-------------------|----------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------------------------------------------------------|
-| 1st   | +2                | 3              | 2   | -   | -   | -   | -   | -   | -   | -   | -   | Spellcasting, Divine Domain                            |
-| 2nd   | +2                | 3              | 3   | -   | -   | -   | -   | -   | -   | -   | -   | Channel Divinity (1/rest), Divine Domain feature       |
-| 3rd   | +2                | 3              | 4   | 2   | -   | -   | -   | -   | -   | -   | -   | -                                                      |
-| 4th   | +2                | 4              | 4   | 3   | -   | -   | -   | -   | -   | -   | -   | Ability Score Improvement                              |
-| 5th   | +3                | 4              | 4   | 3   | 2   | -   | -   | -   | -   | -   | -   | Destroy Undead (CR 1/2)                                |
-| 6th   | +3                | 4              | 4   | 3   | 3   | -   | -   | -   | -   | -   | -   | Channel Divinity (2/rest), Divine Domain feature       |
-| 7th   | +3                | 4              | 4   | 3   | 3   | 1   | -   | -   | -   | -   | -   | -                                                      |
-| 8th   | +3                | 4              | 4   | 3   | 3   | 2   | -   | -   | -   | -   | -   | Ability Score Improvement, Destroy Undead (CR 1), Divine Domain feature |
-| 9th   | +4                | 4              | 4   | 3   | 3   | 3   | 1   | -   | -   | -   | -   | -                                                      |
-| 10th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | -   | -   | -   | -   | Divine Intervention                                    |
-| 11th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Destroy Undead (CR 2)                                  |
-| 12th  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Ability Score Improvement                              |
-| 13th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | -                                                      |
-| 14th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Destroy Undead (CR 3)                                  |
-| 15th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | -                                                      |
-| 16th  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Ability Score Improvement                              |
-| 17th  | +6                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Destroy Undead (CR 4), Divine Domain feature           |
-| 18th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Channel Divinity (3/rest)                              |
-| 19th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
-| 20th  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Divine Intervention improvement                        | 
+| 1   | +2                | 3              | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Spellcasting, Divine Domain                            |
+| 2  | +2                | 3              | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Channel Divinity (1/rest), Divine Domain feature       |
+| 3  | +2                | 3              | 4   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 4   | +2                | 4              | 4   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement                              |
+| 5   | +3                | 4              | 4   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | Destroy Undead (CR 1/2)                                |
+| 6   | +3                | 4              | 4   | 3   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | Channel Divinity (2/rest), Divine Domain feature       |
+| 7   | +3                | 4              | 4   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 8   | +3                | 4              | 4   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement, Destroy Undead (CR 1), Divine Domain feature |
+| 9   | +4                | 4              | 4   | 3   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0                                                     |
+| 10  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | Divine Intervention                                    |
+| 11  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Destroy Undead (CR 2)                                  |
+| 12  | +4                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Ability Score Improvement                              |
+| 13  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | 0                                                     |
+| 14  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Destroy Undead (CR 3)                                  |
+| 15  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | 0                                                     |
+| 16  | +5                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Ability Score Improvement                              |
+| 17  | +6                | 5              | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Destroy Undead (CR 4), Divine Domain feature           |
+| 18  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Channel Divinity (3/rest)                              |
+| 19  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
+| 20  | +6                | 5              | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Divine Intervention improvement                        | 
 
 ## Class Features
 As a cleric, you gain the following class features.
@@ -101,11 +101,11 @@ Starting at 5th level, when an undead fails its saving throw against your Turn U
 
 | Cleric Level | Destroys Undead of CR... |
 |--------------|--------------------------|
-| 5th          | 1/2 or lower             |
-| 8th          | 1 or lower               |
-| 11th         | 2 or lower               |
-| 14th         | 3 or lower               |
-| 17th         | 4 or lower               |
+| 5          | 1/2 or lower             |
+| 8          | 1 or lower               |
+| 11         | 2 or lower               |
+| 14         | 3 or lower               |
+| 17         | 4 or lower               |
 
 ### Divine Intervention
 - - -
@@ -121,11 +121,11 @@ The Life domain focuses on the vibrant positive energy, one of the fundamental f
 #### Life Domain Spells
 | Cleric Level | Spells                                 |
 |--------------|----------------------------------------|
-| 1st          | _bless, cure wounds_                   |
-| 3rd          | _lesser restoration, spiritual weapon_ |
-| 5th          | _beacon of hope, revivify_             |
-| 7th          | _death ward, guardian of faith_        |
-| 9th          | _mass cure wounds, raise dead_         |
+| 1          | _bless, cure wounds_                   |
+| 3          | _lesser restoration, spiritual weapon_ |
+| 5          | _beacon of hope, revivify_             |
+| 7          | _dea ward, guardian of fai_        |
+| 9          | _mass cure wounds, raise dead_         |
 
 #### Bonus Proficiency 
 When you choose this domain at 1st level, you gain proficiency with heavy armor. 

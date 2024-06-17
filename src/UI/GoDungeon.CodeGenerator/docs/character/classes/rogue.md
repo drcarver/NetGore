@@ -1,28 +1,28 @@
 description: Rules and information for the Rogue class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Rogue
+# Rogue
 | Level | Proficiency Bonus | Sneak Attack  | Features                               |
 |-------|------------------ |---------------|----------------------------------------|
-| 1st   | +2                | 1d6           | Expertise, Sneak Attack, Thieves' Cant |
-| 2nd   | +2                | 1d6           | Cunning Action                         |
-| 3rd   | +2                | 2d6           | Roguish Archetype                      |
-| 4th   | +2                | 2d6           | Ability Score Improvement              |
-| 5th   | +3                | 3d6           | Uncanny Dodge                          |
-| 6th   | +3                | 3d6           | Expertise                              |
-| 7th   | +3                | 4d6           | Evasion                                |
-| 8th   | +3                | 4d6           | Ability Score Improvement              |
-| 9th   | +4                | 5d6           | Roguish Archetype feature              |
-| 10th  | +4                | 5d6           | Ability Score Improvement              |
-| 11th  | +4                | 6d6           | Reliable Talent                        |
-| 12th  | +4                | 6d6           | Ability Score Improvement              |
-| 13th  | +5                | 7d6           | Roguish Archetype Feature              |
-| 14th  | +5                | 7d6           | Blindsense                             |
-| 15th  | +5                | 8d6           | Slippery Mind                          |
-| 16th  | +5                | 8d6           | Ability Score Improvement              |
-| 17th  | +6                | 9d6           | Roguish Archetype feature              |
-| 18th  | +6                | 9d6           | Elusive                                |
-| 19th  | +6                | 10d6          | Ability Score Improvement              |
-| 20th  | +6                | 10d6          | Stroke of Luck                         |
+| 1  | +2                | 1d6           | Expertise, Sneak Attack, Thieves' Cant |
+| 2  | +2                | 1d6           | Cunning Action                         |
+| 3   | +2                | 2d6           | Roguish Archetype                      |
+| 4 | +2                | 2d6           | Ability Score Improvement              |
+| 5 | +3                | 3d6           | Uncanny Dodge                          |
+| 6 | +3                | 3d6           | Expertise                              |
+| 7 | +3                | 4d6           | Evasion                                |
+| 8 | +3                | 4d6           | Ability Score Improvement              |
+| 9 | +4                | 5d6           | Roguish Archetype feature              |
+| 10| +4                | 5d6           | Ability Score Improvement              |
+| 11| +4                | 6d6           | Reliable Talent                        |
+| 12| +4                | 6d6           | Ability Score Improvement              |
+| 13| +5                | 7d6           | Roguish Archetype Feature              |
+| 14| +5                | 7d6           | Blindsense                             |
+| 15| +5                | 8d6           | Slippery Mind                          |
+| 16| +5                | 8d6           | Ability Score Improvement              |
+| 17| +6                | 9d6           | Roguish Archetype feature              |
+| 18| +6                | 9d6           | Elusive                                |
+| 19| +6                | 10d6          | Ability Score Improvement              |
+| 20| +6                | 10d6          | Stroke of Luck                         |
 
 ## Class Features
 As a rogue, you gain the following class features.
@@ -37,7 +37,7 @@ As a rogue, you gain the following class features.
 **Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords  
 **Tools:** Thieves' tools    
 **Saving Throws:** Dexterity, Intelligence   
-**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth  
+**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Steal
 
 ### Equipment
 You start with the following equipment, in addition to the equipment granted by your background:

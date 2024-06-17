@@ -1,7 +1,11 @@
 ﻿using System.Diagnostics;
 using System.Security.AccessControl;
+using System.Security.Cryptography;
+
+using BitMiracle.LibTiff.Classic;
 
 using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Spells.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
@@ -93,6 +97,8 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             //    ProcessMonsterFile(filePath, outputdir);
             //}
         }
+        Debug.WriteLine("Table Generation Complete");
+
     }
     /// <summary>
     /// Process tables in the file
@@ -116,39 +122,62 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         {
             var CSName = $"{Utilities.CleanupForCSharp(model.TableCaption[i])}";
             var tableName = model.TableCaption[i];
-            var VMProperties = new List<string>();
+            var VMProperties = new List<PropertyModel>();
             var propNames = model.TableRows[i][0].Split("|");
-            foreach (var prop in propNames)
+            if (i >= model.TableRows.Count() || i < 0 || model.TableRows[i].Count() < 3)
             {
-                var fieldName = Utilities.CleanupForCSharp(prop.Replace("|", string.Empty).Trim());
+                continue;
+            }
+            var propValues = model.TableRows[i][2].Split("|");
+            for (int propcnt = 0; propcnt < propNames.Length; propcnt++)
+            {
+                var fieldName = Utilities.CleanupForCSharp(propNames[propcnt].Replace("|", string.Empty).Trim());
+                var fieldVal = Utilities.CleanupForCSharp(propValues[propcnt].Replace("|", string.Empty).Trim());
                 if (fieldName == string.Empty)
                 {
                     continue;
                 }
-                VMProperties.Add(fieldName);
+                VMProperties.Add(new PropertyModel 
+                    {
+                        FilePath = filePath,
+                        Name = fieldName, 
+                        Value = "string" 
+                    });
+                int intvalue;
+                Decimal decvalue;
+                if (int.TryParse(fieldVal, out intvalue))
+                {
+                    VMProperties[VMProperties.Count-1].Value = "int";
+                }
+                else if (Decimal.TryParse(fieldVal, out decvalue))
+                {
+                    VMProperties[VMProperties.Count - 1].Value = "decimal";
+                }
             }
 
-            var row = new List<string>();
+            var rows = new List<List<string>>();
             for (int j = 2; j < model.TableRows[i].Count(); j++)
             {
                 var cols = model.TableRows[i][j].Split("|");
-                foreach (var col in cols)
+                var row = new List<string>();
+                for (int colno = 0; colno < cols.Length; colno++)
                 {
-                    if (col == string.Empty)
+                    if (cols[colno] == string.Empty)
                     {
                         continue;
                     }
-                    var cleancol = Utilities.CleanupForCSharp(col?.Replace("|", string.Empty).Trim());
+                    var cleancol = Utilities.CleanupForCSharp(cols[colno]?.Replace("|", string.Empty).Trim());
                     if (!string.IsNullOrEmpty(cleancol))
                     {
                         row.Add(cleancol);
                     }
                 }
-
-                // process the table
-                GenerateModel.GenerateTable(outputDir, tableName, VMProperties, row, directories[directories.Length - 1]);
-                row.Clear();
+                rows.Add(row);
             }
+
+            // process the table
+            GenerateModel.GenerateTable(outputDir, tableName, VMProperties, rows, directories[directories.Length - 1]);
+            rows.Clear();
         }
         return;
     }

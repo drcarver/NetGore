@@ -1,28 +1,28 @@
 description: Rules and information for the Druid class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Druid
+# Druid
 | Level | Proficiency Bonus | Cantrips Known |1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | Features                                               |
 |-------|-------------------|----------------|----|-----|-----|-----|-----|-----|-----|-----|-----|--------------------------------------------------------|
-| 1st   | +2                | 2              |2   | -   | -   | -   | -   | -   | -   | -   | -   | Druidic, Spellcasting                                  |
-| 2nd   | +2                | 2              |3   | -   | -   | -   | -   | -   | -   | -   | -   | Wild Shape, Druid Circle                               |
-| 3nd   | +2                | 2              |4   | 2   | -   | -   | -   | -   | -   | -   | -   | -                                                      |
-| 4th   | +2                | 3              |4   | 3   | -   | -   | -   | -   | -   | -   | -   | Wild Shape Improvement, Ability Score Improvement      |
-| 5th   | +3                | 3              |4   | 3   | 2   | -   | -   | -   | -   | -   | -   | -                                                      |
-| 6th   | +3                | 3              |4   | 3   | 3   | -   | -   | -   | -   | -   | -   | Druid Circle feature                                   |
-| 7th   | +3                | 3              |4   | 3   | 3   | 1   | -   | -   | -   | -   | -   | -                                                      |
-| 8th   | +3                | 3              |4   | 3   | 3   | 2   | -   | -   | -   | -   | -   | Wild Shape Improvement, Ability Score Improvement      |
-| 9th   | +4                | 3              |4   | 3   | 3   | 3   | 1   | -   | -   | -   | -   | -                                                      |
-| 10th  | +4                | 4              |4   | 3   | 3   | 3   | 2   | -   | -   | -   | -   | Druid Circle feature                                   |
-| 11th  | +4                | 4              |4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | -                                                      |
-| 12th  | +4                | 4              |4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Ability Score Improvement                              |
-| 13th  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | -                                                      |
-| 14th  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Druid Circle feature                                   |
-| 15th  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | -                                                      |
-| 16th  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Ability Score Improvement                              |
-| 17th  | +6                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | -                                                      |
-| 18th  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Timeless Body, Beast Spells                            |
-| 19th  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
-| 20th  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Archdruid                                              |
+| 1   | +2                | 2              |2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Druidic, Spellcasting                                  |
+| 2   | +2                | 2              |3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Wild Shape, Druid Circle                               |
+| 3   | +2                | 2              |4   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 4   | +2                | 3              |4   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Wild Shape Improvement, Ability Score Improvement      |
+| 5   | +3                | 3              |4   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 6   | +3                | 3              |4   | 3   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | Druid Circle feature                                   |
+| 7   | +3                | 3              |4   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 8   | +3                | 3              |4   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | Wild Shape Improvement, Ability Score Improvement      |
+| 9   | +4                | 3              |4   | 3   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0                                                     |
+| 10  | +4                | 4              |4   | 3   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | Druid Circle feature                                   |
+| 11  | +4                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | 0                                                     |
+| 12  | +4                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Ability Score Improvement                              |
+| 13  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | 0                                                     |
+| 14  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Druid Circle feature                                   |
+| 15  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | 0                                                     |
+| 16  | +5                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Ability Score Improvement                              |
+| 17  | +6                | 4              |4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | 0                                                     |
+| 18  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Timeless Body, Beast Spells                            |
+| 19  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
+| 20  | +6                | 4              |4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Archdruid                                              |
 
 ## Class Features
 As a druid, you gain the following class features.
@@ -84,9 +84,9 @@ Your druid level determines the beasts you can transform into, as shown in the B
 #### Beast Shapes
 | Level | Max. CR | Limitations                       | Example     |
 |-------|---------|-----------------------------------|-------------|
-| 2nd   | 1/4     | No flying or swimming speed       | Wolf        |
-| 4th   | 1/2     | No flying speed                   | Crocodile   |
-| 8th   | 1       | -                                 | Giant Eagle |
+| 2   | 1/4     | No flying or swimming speed       | Wolf        |
+| 4   | 1/2     | No flying speed                   | Crocodile   |
+| 8   | 1       | -                                 | Giant Eagle |
 
 You can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.   
 While you are transformed, the following rules apply:  
@@ -136,58 +136,58 @@ Once you gain access to a circle spell, you always have it prepared, and it does
 #### Arctic
 | Druid Level | Circle Spells                        |
 |-------------|--------------------------------------|
-| 3rd         | _hold person, spike growth_          |
-| 5th         | _sleet storm, slow_                  |
-| 7th         | _freedom of movement, ice storm_     |
-| 9th         | _commune with nature, cone of cold_  |
+| 3         | _hold person, spike growth_          |
+| 5         | _sleet storm, slow_                  |
+| 7        | _freedom of movement, ice storm_     |
+| 9        | _commune with nature, cone of cold_  |
 
 #### Coast
 | Druid Level | Circle Spells                         |
 |-------------|---------------------------------------|
-| 3rd         | _mirror image, misty step_            |
-| 5th         | _water breathing, water walk_         |
-| 7th         | _control water, freedom of movement_  |
-| 9th         | _conjure elemental, scrying_          |
+| 3        | _mirror image, misty step_            |
+| 5        | _water breathing, water walk_         |
+| 7        | _control water, freedom of movement_  |
+| 9        | _conjure elemental, scrying_          |
 
 #### Desert
 | Druid Level | Circle Spells                                  |
 |-------------|------------------------------------------------|
-| 3rd         | _blur, silence_                                |
-| 5th         | _create food and water, protection from energy_|
-| 7th         | _blight, hallucinatory terrain_                |
-| 9th         | _insect plague, wall of stone_                 |
+| 3        | _blur, silence_                                |
+| 5        | _create food and water, protection from energy_|
+| 7        | _blight, hallucinatory terrain_                |
+| 9         | _insect plague, wall of stone_                 |
 
 #### Forest
 | Druid Level | Circle Spells                      |
 |-------------|------------------------------------|
-| 3rd         | _barkskin, spider climb_           |
-| 5th         | _call lightning, plant growth_    |
-| 7th         | _divination, freedom of movement_  |
-| 9th         | _commune with nature, tree stride_ |
+| 3        | _barkskin, spider climb_           |
+| 5        | _call lightning, plant growth_    |
+| 7       | _divination, freedom of movement_  |
+| 9        | _commune with nature, tree stride_ |
 
 #### Grassland
 | Druid Level | Circle Spells                                  |
 |-------------|------------------------------------------------|
-| 3rd         | _invisibility, pass without trace_             |
-| 5th         | _daylight, haste_                              |
-| 7th         | _divination, freedom of movement_              |
-| 9th         | _dream, insect plague_                         |
+| 3        | _invisibility, pass without trace_             |
+| 5        | _daylight, haste_                              |
+| 7        | _divination, freedom of movement_              |
+| 9        | _dream, insect plague_                         |
 
 #### Mountain
 | Druid Level | Circle Spells                                  |
 |-------------|------------------------------------------------|
-| 3rd         | _spider climb, spike growth_                   |
-| 5th         | _lightning bolt, meld into stone_              |
-| 7th         | _stone shape, stoneskin_                       |
-| 9th         | _passwall, wall of stone_                      |
+| 3         | _spider climb, spike growth_                   |
+| 5        | _lightning bolt, meld into stone_              |
+| 7        | _stone shape, stoneskin_                       |
+| 9        | _passwall, wall of stone_                      |
 
 #### Swamp
 | Druid Level | Circle Spells                                  |
 |-------------|------------------------------------------------|
-| 3rd         | _acid arrow, darkness_                         |
-| 5th         | _water walk, stinking cloud_                   |
-| 7th         | _freedom of movement, locate creature          |
-| 9th         | _insect plague, scrying_                       |
+| 3        | _acid arrow, darkness_                         |
+| 5        | _water walk, stinking cloud_                   |
+| 7        | _freedom of movement, locate creature          |
+| 9        | _insect plague, scrying_                       |
 
 #### Land’s Stride
 Starting at 6th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.   

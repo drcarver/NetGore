@@ -1,28 +1,28 @@
 description: Rules and information for the Ranger class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Ranger
+# Ranger
 | Level | Proficiency Bonus | Spells Known | 1st | 2nd | 3rd | 4th | 5th | Features                                   |
 |-------|-------------------|--------------|-----|-----|-----|-----|-----|--------------------------------------------|
-| 1st   | +2                | -            | -   | -   | -   | -   | -   | Favored Enemy, Natural Explorer            |
-| 2nd   | +2                | 2            | 2   | -   | -   | -   | -   | Fighting Style, Spellcasting               |
-| 3rd   | +2                | 3            | 3   | -   | -   | -   | -   | Ranger Archetype, Primeval Awareness       |
-| 4th   | +2                | 3            | 3   | -   | -   | -   | -   | Ability Score Improvement                  |
-| 5th   | +3                | 4            | 4   | 2   | -   | -   | -   | Extra Attack                               |
-| 6th   | +3                | 4            | 4   | 2   | -   | -   | -   | Favored Enemy and Natural Explorer improvements |
-| 7th   | +3                | 5            | 4   | 3   | -   | -   | -   | Ranger Archetype feature                   |
-| 8th   | +3                | 5            | 4   | 3   | -   | -   | -   | Ability Score Improvement, Land's Stride   |
-| 9th   | +4                | 6            | 4   | 3   | 2   | -   | -   | -                                          |
-| 10th  | +4                | 6            | 4   | 3   | 2   | -   | -   | Natural Explorer Improvement, Hide in Plain Sight |
-| 11th  | +4                | 7            | 4   | 3   | 3   | -   | -   | Ranger Archetype feature                   |
-| 12th  | +4                | 7            | 4   | 3   | 3   | -   | -   | Ability Score Improvement                  |
-| 13th  | +5                | 8            | 4   | 3   | 3   | 1   | -   | -                                          |
-| 14th  | +5                | 8            | 4   | 3   | 3   | 1   | -   | Favored Enemy improvement, Vanish          |
-| 15th  | +5                | 9            | 4   | 3   | 3   | 2   | -   | Ranger Archetype feature                   |
-| 16th  | +5                | 9            | 4   | 3   | 3   | 2   | -   | Ability Score Improvement                  |
-| 17th  | +6                | 10           | 4   | 3   | 3   | 3   | 1   | -                                          |
-| 18th  | +6                | 10           | 4   | 3   | 3   | 3   | 1   | Feral Senses                               |
-| 19th  | +6                | 11           | 4   | 3   | 3   | 3   | 2   | Ability Score Improvement                  |
-| 20th  | +6                | 11           | 4   | 3   | 3   | 3   | 2   | Foe Slayer                                 |
+| 1   | +2                | 0           | 0  | 0  | 0  | 0  | 0  | Favored Enemy, Natural Explorer            |
+| 2   | +2                | 2            | 2   | 0  | 0  | 0  | 0  | Fighting Style, Spellcasting               |
+| 3   | +2                | 3            | 3   | 0  | 0  | 0  | 0  | Ranger Archetype, Primeval Awareness       |
+| 4 | +2                | 3            | 3   | 0  | 0  | 0  | 0  | Ability Score Improvement                  |
+| 5 | +3                | 4            | 4   | 2   | 0  | 0  | 0  | Extra Attack                               |
+| 6 | +3                | 4            | 4   | 2   | 0  | 0  | 0  | Favored Enemy and Natural Explorer improvements |
+| 7 | +3                | 5            | 4   | 3   | 0  | 0  | 0  | Ranger Archetype feature                   |
+| 8 | +3                | 5            | 4   | 3   | 0  | 0  | 0  | Ability Score Improvement, Land's Stride   |
+| 9 | +4                | 6            | 4   | 3   | 2   | 0  | 0  | 0                                         |
+| 10| +4                | 6            | 4   | 3   | 2   | 0  | 0  | Natural Explorer Improvement, Hide in Plain Sight |
+| 11| +4                | 7            | 4   | 3   | 3   | 0  | 0  | Ranger Archetype feature                   |
+| 12| +4                | 7            | 4   | 3   | 3   | 0  | 0  | Ability Score Improvement                  |
+| 13| +5                | 8            | 4   | 3   | 3   | 1   | 0  | 0                                         |
+| 14| +5                | 8            | 4   | 3   | 3   | 1   | 0  | Favored Enemy improvement, Vanish          |
+| 15| +5                | 9            | 4   | 3   | 3   | 2   | 0  | Ranger Archetype feature                   |
+| 16| +5                | 9            | 4   | 3   | 3   | 2   | 0  | Ability Score Improvement                  |
+| 17| +6                | 10           | 4   | 3   | 3   | 3   | 1   | 0                                         |
+| 18| +6                | 10           | 4   | 3   | 3   | 3   | 1   | Feral Senses                               |
+| 19| +6                | 11           | 4   | 3   | 3   | 3   | 2   | Ability Score Improvement                  |
+| 20| +6                | 11           | 4   | 3   | 3   | 3   | 2   | Foe Slayer                                 |
 
 ## Class Features
 As a ranger, you gain the following class features.

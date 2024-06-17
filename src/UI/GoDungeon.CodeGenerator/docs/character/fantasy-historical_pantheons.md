@@ -22,84 +22,84 @@ Where the land plummets from the snowy hills into the icy fjords below, where th
 The Norse pantheon includes two main families, the Aesir (deities of war and destiny) and the Vanir (gods of fertility and prosperity). Once enemies, these two families are now closely allied against their common enemies, the giants (including the gods Surtur and Thrym).
 
 ### Celtic Deities
-| Deity                                             | Alignment  | Suggested Domains       | Symbol                                |
+| Deity      | Domain                               | Alignment  | Suggested Domains       | Symbol                                |
 |---------------------------------------------------|------------|-------------------------|---------------------------------------|
-| The Daghdha, god of weather and crops             | CG         | Nature, Trickery        | Bubbling cauldron or shield           |
-| Arawn, god of life and death                      | NE         | Life, Death             | Black star on gray background         |
-| Belenus, god of sun, light, and warmth            | NG         | Light                   | Solar disk and standing stones        |
-| Brigantia, goddess of rivers and livestock        | NG         | Life                    | Footbridge                            |
-| Diancecht, god of medicine and healing            | LG         | Life                    | Crossed oak and mistletoe branches    |
-| Dunatis, god of mountains and peaks               | N          | Nature                  | Red sun-capped mountain peak          |
-| Goibhniu, god of smiths and healing               | NG         | Knowledge, Life         | Giant mallet over sword               |
-| Lugh, god of arts, travel, and commerce           | CN         | Knowledge, Life         | Pair of long hands                    |
-| Manannan mac Lir, god of oceans and sea creatures | LN         | Nature, Tempest         | Wave of white water on green          |
-| Math Mathonwy, god of magic                       | NE         | Knowledge               | Staff                                 |
-| Morrigan, goddess of battle                       | CE         | War                     | Two crossed spears                    |
-| Nuada, god of war and warriors                    | N          | War                     | Silver hand on black background       |
-| Oghma, god of speech and writing                  | NG         | Knowledge               | Unfurled scroll                       |
-| Silvanus, god of nature and forests               | N          | Nature                  | Summer oak tree                       |
+| The Daghdha| God of weather and crops             | CG         | Nature, Trickery        | Bubbling cauldron or shield           |
+| Arawn      | God of life and death                | NE         | Life, Death             | Black star on gray background         |
+| Belenus    | God of sun, light, and warmth        | NG         | Light                   | Solar disk and standing stones        |
+| Brigantia	 | Goddess of rivers and livestock      | NG         | Life                    | Footbridge                            |
+| Diancecht  | God of medicine and healing          | LG         | Life                    | Crossed oak and mistletoe branches    |
+| Dunatis    | God of mountains and peaks           | N          | Nature                  | Red sun-capped mountain peak          |
+| Goibhniu   | God of smiths and healing            | NG         | Knowledge, Life         | Giant mallet over sword               |
+| Lugh       | god of arts, travel, and commerce    | CN         | Knowledge, Life         | Pair of long hands                    |
+| Manannan mac Lir | God of oceans and sea creatures | LN         | Nature, Tempest         | Wave of white water on green          |
+| Math Mathonwy | God of magic                       | NE         | Knowledge               | Staff                                 |
+| Morrigan | Goddess of battle                       | CE         | War                     | Two crossed spears                    |
+| Nuada    | God of war and warriors                    | N          | War                     | Silver hand on black background       |
+| Oghma    | God of speech and writing                  | NG         | Knowledge               | Unfurled scroll                       |
+| Silvanus | God of nature and forests               | N          | Nature                  | Summer oak tree                       |
 
 ### Greek Deities
-| Deity                                             | Alignment  | Suggested Domains       | Symbol                                |
+| Deity   | Domain                                          | Alignment  | Suggested Domains       | Symbol                                |
 |---------------------------------------------------|------------|-------------------------|---------------------------------------|
-| Zeus, god of the sky, ruler of the gods           | N          | Tempest                 | Fist full of lightning bolts          |
-| Aphrodite, goddess of love and beauty             | CG         | Light                   | Sea shell                             |
-| Apollo, god of light, music, and healing          | CG         | Knowledge, Life, Light  | Lyre                                  |
-| Ares, god of war and strife                       | CE         | War                     | Spear                                 |
-| Artemis, goddess of hunting and childbirth        | NG         | Life, Nature            | Bow and arrow on lunar disk           |
-| Athena, goddess of wisdom and civilization        | LG         | Knowledge, War          | Owl                                   |
-| Demeter, goddess of agriculture                   | NG         | Life                    | Mare's head                           |
-| Dionysus, god of mirth and wine                   | CN         | Life                    | Thyrsus (staff tipped with pine cone) |
-| Hades, god of the underworld                      | LE         | Death                   | Black ram                             |
-| Hecate, goddess of magic and the moon             | CE         | Knowledge, Trickery     | Setting moon                          |
-| Hephaestus, god of smithing and craft             | NG         | Knowledge               | Hammer and anvil                      |
-| Hera, goddess of marriage and intrigue            | CN         | Trickery                | Fan of peacock feathers               |
-| Hercules, god of strength and adventure           | CG         | Tempest, War            | Lion's head                           |
-| Hermes, god of travel and commerce                | CG         | Trickery                | Caduceus (winged staff and serpents)  |
-| Hestia, goddess of home and family                | NG         | Life                    | Hearth                                |
-| Nike, goddess of victory                          | LN         | War                     | Winged woman                          |
-| Pan, god of nature                                | CN         | Nature                  | Syrinx (pan pipes)                    |
-| Poseidon, god of the sea and earthquakes          | CN         | Tempest                 | Trident                               |
-| Tyche, goddess of good fortune                    | N          | Trickery                | Red pentagram                         |
+| Zeus | God of the sky, ruler of the gods           | N          | Tempest                 | Fist full of lightning bolts          |
+| Aphrodite | Goddess of love and beauty             | CG         | Light                   | Sea shell                             |
+| Apollo | God of light, music, and healing          | CG         | Knowledge, Life, Light  | Lyre                                  |
+| Ares | God of war and strife                       | CE         | War                     | Spear                                 |
+| Artemis | Goddess of hunting and childbirth        | NG         | Life, Nature            | Bow and arrow on lunar disk           |
+| Athena | Goddess of wisdom and civilization        | LG         | Knowledge, War          | Owl                                   |
+| Demeter | Goddess of agriculture                   | NG         | Life                    | Mare's head                           |
+| Dionysus | God of mirth and wine                   | CN         | Life                    | Thyrsus (staff tipped with pine cone) |
+| Hades | God of the underworld                      | LE         | Death                   | Black ram                             |
+| Hecate | Goddess of magic and the moon             | CE         | Knowledge, Trickery     | Setting moon                          |
+| Hephaestus | God of smithing and craft             | NG         | Knowledge               | Hammer and anvil                      |
+| Hera | Goddess of marriage and intrigue            | CN         | Trickery                | Fan of peacock feathers               |
+| Hercules | God of strength and adventure           | CG         | Tempest, War            | Lion's head                           |
+| Hermes | God of travel and commerce                | CG         | Trickery                | Caduceus (winged staff and serpents)  |
+| Hestia | Goddess of home and family                | NG         | Life                    | Hearth                                |
+| Nike | Goddess of victory                          | LN         | War                     | Winged woman                          |
+| Pan | God of nature                                | CN         | Nature                  | Syrinx (pan pipes)                    |
+| Poseidon | God of the sea and earthquakes          | CN         | Tempest                 | Trident                               |
+| Tyche | Goddess of good fortune                    | N          | Trickery                | Red pentagram                         |
 
 ### Egyptian Deities
-| Deity                                             | Alignment  | Suggested Domains        | Symbol                                |
+| Deity    | Domain                                         | Alignment  | Suggested Domains        | Symbol                                |
 |---------------------------------------------------|------------|--------------------------|---------------------------------------|
-| Re-Horakhty, god of the sun, ruler of the gods    | LG         | Life, Light              | Solar disk encircled by serpent       |
-| Anubis, god of judgment and death                 | LN         | Death                    | Black jackal                          |
-| Apep, god of evil, fire, and serpents             | NE         | Trickery                 | Flaming snake                         |
-| Bast, goddess of cats and vengeance               | CG         | War                      | Cat                                   |
-| Bes, god of luck and music                        | CN         | Trickery                 | Image of the misshapen deity          |
-| Hathor, goddess of love, music, and motherhood    | NG         | Life, Light              | Horned cow's head with lunar disk     |
-| Imhotep, god of crafts and medicine               | NG         | Knowledge                | Step pyramid                          |
-| Isis, goddess of fertility and magic              | NG         | Knowledge, Life          | Ankh and star                         |
-| Nephthys, goddess of death and grief              | CG         | Death                    | Horns around a lunar disk             |
-| Osiris, god of nature and the underworld          | LG         | Life, Nature             | Crook and flail                       |
-| Ptah, god of crafts, knowledge, and secrets       | LN         | Knowledge                | Bull                                  |
-| Set, god of darkness and desert storms            | CE         | Death, Tempest, Trickery | Coiled cobra                          |
-| Sobek, god of water and crocodiles                | LE         | Nature, Tempest          | Crocodile head with horns and plumes  |
-| Thoth, god of knowledge and wisdom                | N          | Knowledge                | Ibis                                  |
+| Re-Horakhty | God of the sun, ruler of the gods    | LG         | Life, Light              | Solar disk encircled by serpent       |
+| Anubis | God of judgment and death                 | LN         | Death                    | Black jackal                          |
+| Apep | God of evil, fire, and serpents             | NE         | Trickery                 | Flaming snake                         |
+| Bast | Goddess of cats and vengeance               | CG         | War                      | Cat                                   |
+| Bes | God of luck and music                        | CN         | Trickery                 | Image of the misshapen deity          |
+| Hathor | Goddess of love, music, and motherhood    | NG         | Life, Light              | Horned cow's head with lunar disk     |
+| Imhotep | God of crafts and medicine               | NG         | Knowledge                | Step pyramid                          |
+| Isis | Goddess of fertility and magic              | NG         | Knowledge, Life          | Ankh and star                         |
+| Nephthys | Goddess of death and grief              | CG         | Death                    | Horns around a lunar disk             |
+| Osiris | God of nature and the underworld          | LG         | Life, Nature             | Crook and flail                       |
+| Ptah | God of crafts, knowledge, and secrets       | LN         | Knowledge                | Bull                                  |
+| Set | God of darkness and desert storms            | CE         | Death, Tempest, Trickery | Coiled cobra                          |
+| Sobek | God of water and crocodiles                | LE         | Nature, Tempest          | Crocodile head with horns and plumes  |
+| Thoth | God of knowledge and wisdom                | N          | Knowledge                | Ibis                                  |
 
 ### Norse Deities
-| Deity                                             | Alignment  | Suggested Domains        | Symbol                                |
+| Deity    | Domain                                         | Alignment  | Suggested Domains        | Symbol                                |
 |---------------------------------------------------|------------|--------------------------|---------------------------------------|
-| Odin, god of knowledge and war                    | NG         | Knowledge, War           | Watching blue eye                     |
-| Aegir, god of the sea and storms                  | NE         | Tempest                  | Rough ocean waves                     |
-| Balder, god of beauty and poetry                  | NG         | Life, Light              | Gem-encrusted silver chalice          |
-| Forseti, god of justice and law                   | N          | Light                    | Head of a bearded man                 |
-| Frey, god of fertility and the sun                | NG         | Life, Light              | Ice‐blue greatsword                   |
-| Freya, goddess of fertility and love              | NG         | Life                     | Falcon                                |
-| Frigga, goddess of birth and fertility            | N          | Life, Light              | Cat                                   |
-| Heimdall, god of watchfulness and loyalty         | LG         | Light, War               | Curling musical horn                  |
-| Hel, goddess of the underworld                    | NE         | Death                    | Woman's face, rotting on one side     |
-| Hermod, god of luck                               | CN         | Trickery                 | Winged scroll                         |
-| Loki, god of thieves and trickery                 | CE         | Trickery                 | Flame                                 |
-| Njord, god of sea and wind                        | NG         | Nature, Tempest          | Gold coin                             |
-| Odur, god of light and the sun                    | CG         | Light                    | Solar disk                            |
-| Sif, goddess of war                               | CG         | War                      | Upraised sword                        |
-| Skadi, god of earth and mountains                 | N          | Nature                   | Mountain peak                         |
-| Surtur, god of fire giants and war                | LE         | War                      | Flaming sword                         |
-| Thor, god of storms and thunder                   | CG         | Tempest, War             | Hammer                                |
-| Thrym, god of frost giants and cold               | CE         | War                      | White double-bladed axe               |
-| Tyr, god of courage and strategy                  | LN         | Knowledge, War           | Sword                                 |
-| Uller, god of hunting and winter                  | CN         | Nature                   | Longbow                               |
+| Odin | God of knowledge and war                    | NG         | Knowledge, War           | Watching blue eye                     |
+| Aegir | God of the sea and storms                  | NE         | Tempest                  | Rough ocean waves                     |
+| Balder | God of beauty and poetry                  | NG         | Life, Light              | Gem-encrusted silver chalice          |
+| Forseti | God of justice and law                   | N          | Light                    | Head of a bearded man                 |
+| Frey | God of fertility and the sun                | NG         | Life, Light              | Ice‐blue greatsword                   |
+| Freya | Goddess of fertility and love              | NG         | Life                     | Falcon                                |
+| Frigga | Goddess of birth and fertility            | N          | Life, Light              | Cat                                   |
+| Heimdall | God of watchfulness and loyalty         | LG         | Light, War               | Curling musical horn                  |
+| Hel | Goddess of the underworld                    | NE         | Death                    | Woman's face, rotting on one side     |
+| Hermod | God of luck                               | CN         | Trickery                 | Winged scroll                         |
+| Loki | God of thieves and trickery                 | CE         | Trickery                 | Flame                                 |
+| Njord | God of sea and wind                        | NG         | Nature, Tempest          | Gold coin                             |
+| Odur | God of light and the sun                    | CG         | Light                    | Solar disk                            |
+| Sif | Goddess of war                               | CG         | War                      | Upraised sword                        |
+| Skadi | God of earth and mountains                 | N          | Nature                   | Mountain peak                         |
+| Surtur | God of fire giants and war                | LE         | War                      | Flaming sword                         |
+| Thor | God of storms and thunder                   | CG         | Tempest, War             | Hammer                                |
+| Thrym | God of frost giants and cold               | CE         | War                      | White double-bladed axe               |
+| Tyr | God of courage and strategy                  | LN         | Knowledge, War           | Sword                                 |
+| Uller | God of hunting and winter                  | CN         | Nature                   | Longbow                               |

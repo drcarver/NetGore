@@ -1,28 +1,28 @@
 description: Rules and information for the Sorcerer class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Sorcerer
+# Sorcerer
 | Level | Proficiency Bonus | Sorcery Points | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | Features                           |
 |-------|-------------------|----------------|----------------|--------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|------------------------------------|
-| 1st   | +2                | -              | 4              | 2            | 2   | -   | -   | -   | -   | -   | -   | -   | -   | Spellcasting, Sorcerous Origin     |
-| 2nd   | +2                | 2              | 4              | 3            | 3   | -   | -   | -   | -   | -   | -   | -   | -   | Font of Magic                      |
-| 3rd   | +2                | 3              | 4              | 4            | 4   | 2   | -   | -   | -   | -   | -   | -   | -   | Metamagic                          |
-| 4th   | +2                | 4              | 5              | 5            | 4   | 3   | -   | -   | -   | -   | -   | -   | -   | Ability Score Improvement          |
-| 5th   | +3                | 5              | 5              | 6            | 4   | 3   | 2   | -   | -   | -   | -   | -   | -   | -                                  |
-| 6th   | +3                | 6              | 5              | 7            | 4   | 3   | 3   | -   | -   | -   | -   | -   | -   | Sorcerous Origin feature           |
-| 7th   | +3                | 7              | 5              | 8            | 4   | 3   | 3   | 1   | -   | -   | -   | -   | -   | -                                  |
-| 8th   | +3                | 8              | 5              | 9            | 4   | 3   | 3   | 2   | -   | -   | -   | -   | -   | Ability Score Improvement          |
-| 9th   | +4                | 9              | 5              | 10           | 4   | 3   | 3   | 3   | 1   | -   | -   | -   | -   | -                                  |
-| 10th  | +4                | 10             | 6              | 11           | 4   | 3   | 3   | 3   | 2   | -   | -   | -   | -   | Metamagic                          |
-| 11th  | +4                | 11             | 6              | 12           | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | -                                  |
-| 12th  | +4                | 12             | 6              | 12           | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Ability Score Improvement          |
-| 13th  | +5                | 13             | 6              | 13           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | -                                  |
-| 14th  | +5                | 14             | 6              | 13           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Sorcerous Origin feature           |
-| 15th  | +5                | 15             | 6              | 14           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | -                                  |
-| 16th  | +5                | 16             | 6              | 14           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Ability Score Improvement          |
-| 17th  | +6                | 17             | 6              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Metamagic                          |
-| 18th  | +6                | 18             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Sorcerous Origin feature           |
-| 19th  | +6                | 19             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement          |
-| 20th  | +6                | 20             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Sorcerous Restoration              |
+| 1   | +2                | 0             | 4              | 2            | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Spellcasting, Sorcerous Origin     |
+| 2  | +2                | 2              | 4              | 3            | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Font of Magic                      |
+| 3   | +2                | 3              | 4              | 4            | 4   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Metamagic                          |
+| 4 | +2                | 4              | 5              | 5            | 4   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement          |
+| 5 | +3                | 5              | 5              | 6            | 4   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0                                 |
+| 6 | +3                | 6              | 5              | 7            | 4   | 3   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | Sorcerous Origin feature           |
+| 7 | +3                | 7              | 5              | 8            | 4   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0  | 0                                 |
+| 8 | +3                | 8              | 5              | 9            | 4   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement          |
+| 9 | +4                | 9              | 5              | 10           | 4   | 3   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0                                 |
+| 10| +4                | 10             | 6              | 11           | 4   | 3   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | Metamagic                          |
+| 11| +4                | 11             | 6              | 12           | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | 0                                 |
+| 12| +4                | 12             | 6              | 12           | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Ability Score Improvement          |
+| 13| +5                | 13             | 6              | 13           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | 0                                 |
+| 14| +5                | 14             | 6              | 13           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Sorcerous Origin feature           |
+| 15| +5                | 15             | 6              | 14           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | 0                                 |
+| 16| +5                | 16             | 6              | 14           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Ability Score Improvement          |
+| 17| +6                | 17             | 6              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Metamagic                          |
+| 18| +6                | 18             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Sorcerous Origin feature           |
+| 19| +6                | 19             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement          |
+| 20| +6                | 20             | 6              | 15           | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Sorcerous Restoration              |
                 
 ## Class Features
 As a sorcerer, you gain the following class features.
@@ -95,8 +95,8 @@ Any spell slot you create with this feature vanishes when you finish a long rest
 | 1st              | 2                  |
 | 2nd              | 3                  |
 | 3rd              | 5                  |
-| 4th              | 6                  |
-| 5th              | 7                  |
+| 4            | 6                  |
+| 5            | 7                  |
 
 **Converting a Spell Slot to Sorcery Points.** As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level. 
 

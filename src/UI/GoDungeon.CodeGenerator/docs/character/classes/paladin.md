@@ -1,28 +1,28 @@
 description: Rules and information for the Paladin class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Paladin
+# Paladin
 | Level | Proficiency Bonus | 1st | 2nd | 3rd | 4th | 5th | Features                                   |
 |-------|-------------------|-----|-----|-----|-----|-----|--------------------------------------------|
-| 1st   | +2                | -   | -   | -   | -   | -   | Divine Sense, Lay on Hands                 |
-| 2nd   | +2                | 2   | -   | -   | -   | -   | Fighting Style, Spellcasting, Divine Smite |
-| 3rd   | +2                | 3   | -   | -   | -   | -   | Divine Health, Sacred Oath                 |
-| 4th   | +2                | 3   | -   | -   | -   | -   | Ability Score Improvement                  |
-| 5th   | +3                | 4   | 2   | -   | -   | -   | Extra Attack                               |
-| 6th   | +3                | 4   | 2   | -   | -   | -   | Aura of Protection                         |
-| 7th   | +3                | 4   | 3   | -   | -   | -   | Sacred Oath feature                        |
-| 8th   | +3                | 4   | 3   | -   | -   | -   | Ability Score Improvement                  |
-| 9th   | +4                | 4   | 3   | 2   | -   | -   | -                                          |
-| 10th  | +4                | 4   | 3   | 2   | -   | -   | Aura of Courage                            |
-| 11th  | +4                | 4   | 3   | 3   | -   | -   | Improved Divine Smite                      |
-| 12th  | +4                | 4   | 3   | 3   | -   | -   | Ability Score Improvement                  |
-| 13th  | +5                | 4   | 3   | 3   | 1   | -   | -                                          |
-| 14th  | +5                | 4   | 3   | 3   | 1   | -   | Cleansing Touch                            |
-| 15th  | +5                | 4   | 3   | 3   | 2   | -   | Sacred Oath feature                        |
-| 16th  | +5                | 4   | 3   | 3   | 2   | -   | Ability Score Improvement                  |
-| 17th  | +6                | 4   | 3   | 3   | 3   | 1   | -                                          |
-| 18th  | +6                | 4   | 3   | 3   | 3   | 1   | Aura improvements                          |
-| 19th  | +6                | 4   | 3   | 3   | 3   | 2   | Ability Score Improvement                  |
-| 20th  | +6                | 4   | 3   | 3   | 3   | 2   | Sacred Oath feature                        |
+| 1   | +2                | 0  | 0  | 0  | 0  | 0  | Divine Sense, Lay on Hands                 |
+| 2   | +2                | 2   | 0  | 0  | 0  | 0  | Fighting Style, Spellcasting, Divine Smite |
+| 3   | +2                | 3   | 0  | 0  | 0  | 0  | Divine Health, Sacred Oath               |
+| 4 | +2                | 3   | 0  | 0  | 0  | 0  | Ability Score Improvement                  |
+| 5 | +3                | 4   | 2   | 0  | 0  | 0  | Extra Attack                               |
+| 6 | +3                | 4   | 2   | 0  | 0  | 0  | Aura of Protection                         |
+| 7 | +3                | 4   | 3   | 0  | 0  | 0  | Sacred Oath feature                        |
+| 8 | +3                | 4   | 3   | 0  | 0  | 0  | Ability Score Improvement                  |
+| 9 | +4                | 4   | 3   | 2   | 0  | 0  | 0                                         |
+| 10| +4                | 4   | 3   | 2   | 0  | 0  | Aura of Courage                            |
+| 11| +4                | 4   | 3   | 3   | 0  | 0  | Improved Divine Smite                      |
+| 12| +4                | 4   | 3   | 3   | 0  | 0  | Ability Score Improvement                  |
+| 13| +5                | 4   | 3   | 3   | 1   | 0  | 0                                         |
+| 14| +5                | 4   | 3   | 3   | 1   | 0  | Cleansing Touch                            |
+| 15| +5                | 4   | 3   | 3   | 2   | 0  | Sacred Oath feature                        |
+| 16| +5                | 4   | 3   | 3   | 2   | 0  | Ability Score Improvement                  |
+| 17| +6                | 4   | 3   | 3   | 3   | 1   | 0                                         |
+| 18| +6                | 4   | 3   | 3   | 3   | 1   | Aura improvements                          |
+| 19| +6                | 4   | 3   | 3   | 3   | 2   | Ability Score Improvement                  |
+| 20| +6                | 4   | 3   | 3   | 3   | 2   | Sacred Oath feature                        |
 
 ## Class Features
 As a paladin, you gain the following class features.
@@ -165,10 +165,10 @@ You gain oath spells at the paladin levels listed.
 | Paladin Level | Spells                                           |
 |---------------|--------------------------------------------------|
 | 3rd           | _protection from evil and good, sanctuary_       |
-| 5th           | _lesser restoration, zone of truth_              |
-| 9th           | _beacon of hope, dispel magic_                   |
-| 13th          | _freedom of movement, guardian of faith_         |
-| 17th          | _commune, flame strike_                          |
+| 5         | _lesser restoration, zone of truth_              |
+| 9         | _beacon of hope, dispel magic_                   |
+| 13        | _freedom of movement, guardian of faith_         |
+| 17        | _commune, flame strike_                          |
 
 #### Channel Divinity 
 When you take this oath at 3rd level, you gain the following two Channel Divinity options.    

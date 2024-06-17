@@ -1,28 +1,28 @@
 description: Rules and information for the Bard class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Bard
+# Bard
 | Level | Proficiency Bonus | Cantrips Known | Spells Known | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th | Features                                               |
 |-------|-------------------|----------------|--------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------------------------------------------------------|
-| 1st   | +2                | 2              | 4            | 2   | -   | -   | -   | -   | -   | -   | -   | -   | Spellcasting, Bardic Inspiration (d6)                  |
-| 2nd   | +2                | 2              | 5            | 3   | -   | -   | -   | -   | -   | -   | -   | -   | Jack of All Trades, Song of Rest (d6)                  |
-| 3nd   | +2                | 2              | 6            | 4   | 2   | -   | -   | -   | -   | -   | -   | -   | Bard College, Expertise                                |
-| 4th   | +2                | 3              | 7            | 4   | 3   | -   | -   | -   | -   | -   | -   | -   | Ability Score Improvement                              |
-| 5th   | +3                | 3              | 8            | 4   | 3   | 2   | -   | -   | -   | -   | -   | -   | Bardic Inspiration (d8), Font of Inspiration           |
-| 6th   | +3                | 3              | 9            | 4   | 3   | 3   | -   | -   | -   | -   | -   | -   | Countercharm, Bard College feature                     |
-| 7th   | +3                | 3              | 10           | 4   | 3   | 3   | 1   | -   | -   | -   | -   | -   | -                                                      |
-| 8th   | +3                | 3              | 11           | 4   | 3   | 3   | 2   | -   | -   | -   | -   | -   | Ability Score Improvement                              |
-| 9th   | +4                | 3              | 12           | 4   | 3   | 3   | 3   | 1   | -   | -   | -   | -   | Song of Rest (d8)                                      |
-| 10th  | +4                | 4              | 14           | 4   | 3   | 3   | 3   | 2   | -   | -   | -   | -   | Bardic Inspiration (d10), Expertise, Magical Secrets   |
-| 11th  | +4                | 4              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | -                                                      |
-| 12th  | +4                | 4              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | -   | -   | -   | Ability Score Improvement                              |
-| 13th  | +5                | 4              | 16           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Song of Rest (d10)                                     |
-| 14th  | +5                | 4              | 18           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | -   | -   | Magical Secrets, Bard College feature                  |
-| 15th  | +5                | 4              | 19           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Bardic Inspiration (d12)                               |
-| 16th  | +5                | 4              | 19           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | -   | Ability Score Improvement                              |
-| 17th  | +6                | 4              | 20           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Song of Rest (d12)                                     |
-| 18th  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Magical Secrets                                        |
-| 19th  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
-| 20th  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Superior Inspiration                                   |
+| 1  | +2                | 2              | 4            | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Spellcasting, Bardic Inspiration (d6)                  |
+| 2  | +2                | 2              | 5            | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Jack of All Trades, Song of Rest (d6)                  |
+| 3   | +2                | 2              | 6            | 4   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Bard College, Expertise                                |
+| 4   | +2                | 3              | 7            | 4   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement                              |
+| 5   | +3                | 3              | 8            | 4   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | 0  | Bardic Inspiration (d8), Font of Inspiration           |
+| 6   | +3                | 3              | 9            | 4   | 3   | 3   | 0  | 0  | 0  | 0  | 0  | 0  | Countercharm, Bard College feature                     |
+| 7   | +3                | 3              | 10           | 4   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | 0  | 0                                                     |
+| 8   | +3                | 3              | 11           | 4   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | 0  | Ability Score Improvement                              |
+| 9   | +4                | 3              | 12           | 4   | 3   | 3   | 3   | 1   | 0  | 0  | 0  | 0  | Song of Rest (d8)                                      |
+| 10  | +4                | 4              | 14           | 4   | 3   | 3   | 3   | 2   | 0  | 0  | 0  | 0  | Bardic Inspiration (d10), Expertise, Magical Secrets   |
+| 11  | +4                | 4              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | 0                                                     |
+| 12  | +4                | 4              | 15           | 4   | 3   | 3   | 3   | 2   | 1   | 0  | 0  | 0  | Ability Score Improvement                              |
+| 13  | +5                | 4              | 16           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Song of Rest (d10)                                     |
+| 14  | +5                | 4              | 18           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 0  | 0  | Magical Secrets, Bard College feature                  |
+| 15  | +5                | 4              | 19           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Bardic Inspiration (d12)                               |
+| 16  | +5                | 4              | 19           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 0  | Ability Score Improvement                              |
+| 17  | +6                | 4              | 20           | 4   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | 1   | Song of Rest (d12)                                     |
+| 18  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 1   | 1   | 1   | 1   | Magical Secrets                                        |
+| 19  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 2   | 1   | 1   | 1   | Ability Score Improvement                              |
+| 20  | +6                | 4              | 22           | 4   | 3   | 3   | 3   | 3   | 2   | 2   | 1   | 1   | Superior Inspiration                                   |
 
 ## Class Features
 As a bard, you gain the following class features.

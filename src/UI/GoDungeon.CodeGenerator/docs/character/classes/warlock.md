@@ -1,28 +1,28 @@
 description: Rules and information for the Warlock class from the 5th Edition (5e) SRD (System Reference Document).
 
-# The Warlock
+# Warlock
 | Level | Proficiency Bonus | Cantrips Known | Spells Known | Spell Slots | Slot Level | Invocations Known | Features                           |
 |-------|-------------------|----------------|--------------|-------------|------------|-------------------|------------------------------------|
-| 1st   | +2                | 2              | 2            | 1           | 1st        | -                 | Otherworldly Patron, Pact Magic    |
-| 2nd   | +2                | 2              | 3            | 2           | 1st        | 2                 | Eldritch Invocations               |
-| 3nd   | +2                | 2              | 4            | 2           | 2nd        | 2                 | Pact Boon                          |
-| 4th   | +2                | 3              | 5            | 2           | 2nd        | 2                 | Ability Score Improvement          |
-| 5th   | +3                | 3              | 6            | 2           | 3rd        | 3                 | -                                  |
-| 6th   | +3                | 3              | 7            | 2           | 3rd        | 3                 | Otherworldly Patron feature        |
-| 7th   | +3                | 3              | 8            | 2           | 4th        | 4                 | -                                  |
-| 8th   | +3                | 3              | 9            | 2           | 4th        | 4                 | Ability Score Improvement          |
-| 9th   | +4                | 3              | 10           | 2           | 5th        | 5                 | -                                  |
-| 10th  | +4                | 4              | 10           | 2           | 5th        | 5                 | Otherworldly Patron feature        |
-| 11th  | +4                | 4              | 11           | 3           | 5th        | 5                 | Mystic Arcanum (6th level)         |
-| 12th  | +4                | 4              | 11           | 3           | 5th        | 6                 | Ability Score Improvement          |
-| 13th  | +5                | 4              | 12           | 3           | 5th        | 6                 | Mystic Arcanum (7th level)         |
-| 14th  | +5                | 4              | 12           | 3           | 5th        | 6                 | Otherworldly Patron feature        |
-| 15th  | +5                | 4              | 13           | 3           | 5th        | 7                 | Mystic Arcanum (8th level)         |
-| 16th  | +5                | 4              | 13           | 3           | 5th        | 7                 | Ability Score Improvement          |
-| 17th  | +6                | 4              | 14           | 4           | 5th        | 7                 | Mystic Arcanum (9th level)         |
-| 18th  | +6                | 4              | 14           | 4           | 5th        | 8                 | -                                  |
-| 19th  | +6                | 4              | 15           | 4           | 5th        | 8                 | Ability Score Improvement          |
-| 20th  | +6                | 4              | 15           | 4           | 5th        | 8                 | Eldritch Master                    |
+| 1  | +2                | 2              | 2            | 1           | 1        | -                 | Otherworldly Patron, Pact Magic    |
+| 2  | +2                | 2              | 3            | 2           | 1        | 2                 | Eldritch Invocations               |
+| 3   | +2                | 2              | 4            | 2           | 2      | 2                 | Pact Boon                          |
+| 4 | +2                | 3              | 5            | 2           | 2        | 2                 | Ability Score Improvement          |
+| 5 | +3                | 3              | 6            | 2           | 3        | 3                 | -                                  |
+| 6 | +3                | 3              | 7            | 2           | 3        | 3                 | Otherworldly Patron feature        |
+| 7 | +3                | 3              | 8            | 2           | 4      | 4                 | -                                  |
+| 8 | +3                | 3              | 9            | 2           | 4      | 4                 | Ability Score Improvement          |
+| 9 | +4                | 3              | 10           | 2           | 5      | 5                 | -                                  |
+| 10| +4                | 4              | 10           | 2           | 5      | 5                 | Otherworldly Patron feature        |
+| 11| +4                | 4              | 11           | 3           | 5      | 5                 | Mystic Arcanum (6th level)         |
+| 12| +4                | 4              | 11           | 3           | 5      | 6                 | Ability Score Improvement          |
+| 13| +5                | 4              | 12           | 3           | 5      | 6                 | Mystic Arcanum (7th level)         |
+| 14| +5                | 4              | 12           | 3           | 5      | 6                 | Otherworldly Patron feature        |
+| 15| +5                | 4              | 13           | 3           | 5      | 7                 | Mystic Arcanum (8th level)         |
+| 16| +5                | 4              | 13           | 3           | 5      | 7                 | Ability Score Improvement          |
+| 17| +6                | 4              | 14           | 4           | 5      | 7                 | Mystic Arcanum (9th level)         |
+| 18| +6                | 4              | 14           | 4           | 5      | 8                 | -                                  |
+| 19| +6                | 4              | 15           | 4           | 5      | 8                 | Ability Score Improvement          |
+| 20| +6                | 4              | 15           | 4           | 5      | 8                 | Eldritch Master                    |
                 
 ## Class Features
 As a warlock, you gain the following class features.
@@ -265,8 +265,8 @@ The Fiend lets you choose from an expanded list of spells when you learn a warlo
 | 1st         | _burning hands, command_            |
 | 2nd         | _blindness/deafness, scorching ray_ |
 | 3rd         | _fireball, stinking cloud_          |
-| 4th         | _fire shield, wall of fire_         |
-| 5th         | _flame strike, hallow_              |
+| 4       | _fire shield, wall of fire_         |
+| 5       | _flame strike, hallow_              |
 
 #### Dark One's Blessing 
 Starting at 1st level, when you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum of 1). 
