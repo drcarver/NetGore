@@ -3,11 +3,6 @@
 public class PropertyModel
 {
     /// <summary>
-    /// The file the table is in
-    /// </summary>
-    public string FilePath { get; set; }
-
-    /// <summary>
     /// The name of the property
     /// </summary>
     public string? Name { get; set; }

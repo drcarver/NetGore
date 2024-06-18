@@ -1,6 +1,7 @@
 //
 // Typical Difficulty Classes view model interface
 //
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GoDungeon.Core.Interfaces;
 

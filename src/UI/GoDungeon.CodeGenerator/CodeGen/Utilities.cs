@@ -42,6 +42,20 @@ internal static class Utilities
         {
             cleanName = name.Substring(name.IndexOf("(")+1);
         }
+
+        // Cleanup spell levels
+        cleanName = cleanName
+            .Replace("1st", "First")
+            .Replace("2nd", "Second")
+            .Replace("3rd", "Third")
+            .Replace("4th", "Fourth")
+            .Replace("5th", "Fifth")
+            .Replace("6th", "Sixth")
+            .Replace("7th", "Seventh")
+            .Replace("8th", "Eighth")
+            .Replace("9th", "Ninth");
+
+        // Clean up for the c# variable name
         return cleanName
             .Replace(" ", string.Empty)
             .Replace("/", string.Empty)

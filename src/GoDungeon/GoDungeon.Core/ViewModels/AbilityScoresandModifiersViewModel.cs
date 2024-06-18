@@ -1,8 +1,6 @@
 //
 // Ability Scores and Modifiers view model
-// File=C:\Users\drcarver\Desktop\NetGore\src\UI\GoDungeon.CodeGenerator\docs\rules\abilities\ability_scores.md
 //
-
 using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.Core.Interfaces;

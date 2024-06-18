@@ -120,8 +120,10 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             return;
         }
 
+        // Generate the tables and all supporting files
         string[] directories = fileInfo.DirectoryName.Split("\\");
         var OutputDir = $"{RootOutputDirectory}{filePath.Replace(RootMarkDownDirectory, string.Empty).Replace(Path.GetFileName(filePath), string.Empty)}";
+        model.FilePath = filePath;
         for (int i = 0; i < model.TableCaption.Count; i++)
         {
             var CSName = $"{Utilities.CleanupForCSharp(model.TableCaption[i])}";
@@ -143,7 +145,6 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                 }
                 VMProperties.Add(new PropertyModel 
                     {
-                        FilePath = filePath,
                         Name = fieldName, 
                         Value = "string" 
                     });
@@ -180,10 +181,9 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             }
 
             // process the table
-            GenerateModel.GenerateTable(outputDir, tableName, VMProperties, rows, directories[directories.Length - 1]);
+            GenerateModel.GenerateTable(outputDir, filePath, tableName, VMProperties, rows, directories[directories.Length - 1]);
             rows.Clear();
         }
-        return;
     }
 
     /// <summary>

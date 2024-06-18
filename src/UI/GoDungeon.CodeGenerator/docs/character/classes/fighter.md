@@ -19,7 +19,7 @@ description: Rules and information for the Fighter class from the 5th Edition (5
 | 14  | +5                | Ability Score Improvement   |
 | 15  | +5                | Martial Archetype feature   |
 | 16  | +5                | Ability Score Improvement   |
-| 17  | +6                | Action Surge (two uses), Indomitable (ree uses) |
+| 17  | +6                | Action Surge (two uses), Indomitable (three uses) |
 | 18  | +6                | Martial Archetype Feature   |
 | 19  | +6                | Ability Score Improvement   |
 | 20  | +6                | Extra Attack (3)            |

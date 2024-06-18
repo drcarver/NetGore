@@ -9,14 +9,16 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the .cs model class for the table
     /// </summary>
     /// <param name="dirPath">The directory for the table</param>
+    /// <param name="filePath">The path to the markdown file</param>
     /// <param name="tableName">The name of the table to generate</param>
     /// <param name="properties">The list of properties for the view model</param>
     /// <param name="rows">The rows for the table</param>
     /// <param name="nameSpace">The namespace for the table</param>
-    public void GenerateTable(string dirPath, string tableName, List<PropertyModel> properties, List<List<string>> rows, string nameSpace)
+    public void GenerateTable(string dirPath, string filePath, string tableName, List<PropertyModel> properties, List<List<string>> rows, string nameSpace)
     {
         int sides = 0;
         string dirName;
+        nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
         if (properties[0].Name.Trim().ToLower().StartsWith("d"))
         {
             switch (properties[0].Name)
@@ -39,17 +41,17 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/table";
+        dirName = @$"{dirPath}/{nameSpace}/Tables";
         Directory.CreateDirectory(dirName);
         string fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}Table.cs";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateTableHeading(stream, tableName, nameSpace, sides);
+            GenerateTableHeading(stream, filePath, tableName, nameSpace, sides);
             GenerateTableBody(stream, tableName, properties, rows, sides);
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/enum";
+        dirName = @$"{dirPath}/{nameSpace}/Enum";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}Enum.cs";
         using (var stream = File.CreateText(fileName))
@@ -60,14 +62,14 @@ public partial class GenerateModel : IGenerateModel
         // The directory and file name
         dirName = @$"{dirPath}/{nameSpace}/Interfaces";
         Directory.CreateDirectory(dirName);
-        fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}.cs";
+        fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}Table.cs";
         using (var stream = File.CreateText(fileName))
         {
             GenerateTableInterface(stream, tableName, nameSpace, sides);
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/viewmodels";
+        dirName = @$"{dirPath}/{nameSpace}/ViewModels";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}ViewModel.cs";
         using (var stream = File.CreateText(fileName))
@@ -146,8 +148,14 @@ public partial class GenerateModel : IGenerateModel
 
         stream.WriteLine("//");
         stream.WriteLine($"// {tableName} view model");
-        stream.WriteLine($"// File={properties[0].FilePath}");
         stream.WriteLine("//");
+        stream.WriteLine($"using CommunityToolkit.Mvvm.ComponentModel;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.Core.Interfaces;");
+        stream.WriteLine($"using GoDungeon.Core.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Interface;");
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
@@ -195,11 +203,12 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("//");
         stream.WriteLine($"// {tableName}");
         stream.WriteLine("//");
+        stream.WriteLine($"using GoDungeon.Core.Interfaces;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interfaces;");
         stream.WriteLine();
         stream.WriteLine("/// <summary>");
-        stream.WriteLine($"/// {tableName}");
+        stream.WriteLine($"/// {tableName} Table Interface");
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
@@ -301,27 +310,29 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the table heading
     /// </summary>
     /// <param name="stream">The output stream for the table</param>
+    /// <param name="filePath">The file containing the table</param>
     /// <param name="tableName">The name of the table</param>
     /// <param name="rows">The rows in the table</param>
     /// <param name="nameSpace">The namespace of the table</param>
     /// <param name="randomTable">Is it a random table?</param>
-    private void GenerateTableHeading(TextWriter stream, string tableName, string nameSpace, int sides)
+    private void GenerateTableHeading(TextWriter stream, string filePath, string tableName, string nameSpace, int sides)
     {
         var csName = Utilities.CleanupForCSharp(tableName);
 
         stream.WriteLine("//");
         stream.WriteLine($"// {tableName}");
+        stream.WriteLine($"// Containing file {filePath.Replace("C:\\Users\\drcarver\\Desktop\\NetGore\\src\\UI\\GoDungeon.CodeGenerator\\docs\\", string.Empty)}");
         stream.WriteLine("//");
         stream.WriteLine("using System.Collections.ObjectModel;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
+        stream.WriteLine($"using GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
         stream.WriteLine("using GoDungeon.Core.Enum;");
         stream.WriteLine("using GoDungeon.Core.Interfaces;");
         stream.WriteLine("using GoDungeon.Core.Tables;");
         stream.WriteLine("using GoDungeon.Core.ViewModels;");
-        stream.WriteLine();
-        stream.WriteLine("using GoDungeon.Spells.Enum;");
-        stream.WriteLine("using GoDungeon.Spells.Interfaces;");
-        stream.WriteLine("using GoDungeon.Spells.ViewModels;");
         stream.WriteLine();
         stream.WriteLine("using Microsoft.Extensions.Logging;");
         stream.WriteLine();
@@ -332,11 +343,11 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
-            stream.WriteLine($"public partial class {csName}Table : RandomTable, I{csName}");
+            stream.WriteLine($"public partial class {csName}Table : RandomTable, I{csName}Table");
         }
         else
         {
-            stream.WriteLine($"public partial class {csName}Table : NamedTable, I{csName}");
+            stream.WriteLine($"public partial class {csName}Table : NamedTable, I{csName}Table");
         }
         stream.WriteLine("{");
         stream.WriteLine("\t/// <summary>");
@@ -350,7 +361,6 @@ public partial class GenerateModel : IGenerateModel
         {
             stream.WriteLine($"\t\tSides = {sides};");
         }
-        stream.WriteLine($"\t\tTableType = TableTypeEnum.GamingTable;");
         stream.WriteLine($"\t\tDescription = \"{tableName}\";");
         stream.WriteLine("\t}");
         stream.WriteLine();
@@ -385,8 +395,7 @@ public partial class GenerateModel : IGenerateModel
             writer.WriteLine($"// The {tableName} enumeration");
             writer.WriteLine("//");
             writer.WriteLine();
-            writer.WriteLine("namespace GoDungeon.Tables.Enum");
-            writer.WriteLine("{");
+            writer.WriteLine("namespace GoDungeon.Tables.Enum;");
             writer.WriteLine();
             writer.WriteLine($"public enum {csName} Enum : int");
             writer.WriteLine("{");

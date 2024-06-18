@@ -1,6 +1,7 @@
 //
 // Ability Scores and Modifiers view model interface
 //
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GoDungeon.Core.Interfaces;
 

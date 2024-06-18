@@ -1,9 +1,9 @@
 //
 // Ability Scores and Modifiers
+// Containing file rules\abilities\ability_scores.md
 //
 using System.Collections.ObjectModel;
 
-using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 
@@ -12,7 +12,7 @@ namespace GoDungeon.Core.Tables;
 /// <summary>
 /// Ability Scores and Modifiers
 /// </summary>
-public partial class AbilityScoresandModifiersTable : NamedTable
+public partial class AbilityScoresandModifiersTable : NamedTable, IAbilityScoresandModifiersTable
 {
     /// <summary>
     /// Constructor
@@ -21,7 +21,6 @@ public partial class AbilityScoresandModifiersTable : NamedTable
     {
         Name = nameof(AbilityScoresandModifiersTable);
         ProperName = "Ability Scores and Modifiers Table";
-        TableType = TableTypeEnum.GamingTable;
         Description = "Ability Scores and Modifiers";
     }
 

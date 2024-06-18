@@ -51,7 +51,7 @@ Heavy armor doesn't let you add your Dexterity modifier to your Armor Class, but
 **Plate.** Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body.
 
 
-## Light Armor Table
+## Light Armor
 
 | Light Armor     | Cost   | Armor Class (AC)  | Strength  | Stealth       | Weight |
 |-----------------|--------|-------------------|-----------|---------------|--------|
@@ -59,7 +59,7 @@ Heavy armor doesn't let you add your Dexterity modifier to your Armor Class, but
 | Leather         | 10 gp  | 11 + Dex modifier | -         | -             | 10 lb. |
 | Studded leather | 45 gp  | 12 + Dex modifier | -         | -             | 13 lb. |
 
-## Medium Armor Table
+## Medium Armor
 
 | Medium Armor    | Cost   | Armor Class (AC)          | Strength  | Stealth       | Weight |
 |-----------------|--------|---------------------------|-----------|---------------|--------|
@@ -69,7 +69,7 @@ Heavy armor doesn't let you add your Dexterity modifier to your Armor Class, but
 | Breastplate     | 400 gp | 14 + Dex modifier (max 2) | -         | -             | 20 lb. |
 | Half plate      | 750 gp | 15 + Dex modifier (max 2) | -         | Disadvantage  | 40 lb. |
 
-## Heavy Armor Table
+## Heavy Armor
 
 | Heavy  Armor    | Cost     | Armor Class (AC) | Strength  | Stealth       | Weight |
 |-----------------|----------|------------------|-----------|---------------|--------|
@@ -78,7 +78,7 @@ Heavy armor doesn't let you add your Dexterity modifier to your Armor Class, but
 | Splint          | 200 gp   | 17               | Str 15    | Disadvantage  | 60 lb. |
 | Plate           | 1,500 gp | 18               | Str 15    | Disadvantage  | 65 lb. |
 
-## Shield Table
+## Shield
 
 | Shield          | Cost     | Armor Class (AC) | Strength  | Stealth       | Weight |
 |-----------------|----------|------------------|-----------|---------------|--------|
