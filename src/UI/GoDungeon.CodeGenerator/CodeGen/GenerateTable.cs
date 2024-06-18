@@ -100,6 +100,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("//");
         stream.WriteLine($"// {tableName} view model interface");
         stream.WriteLine("//");
+        stream.WriteLine("using CommunityToolkit.Mvvm.ComponentModel;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interface;");
         stream.WriteLine();
@@ -108,11 +109,11 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
-            stream.WriteLine($"public interface I{csName}TableEntry : IRandomTableEntry");
+            stream.WriteLine($"public interface I{csName} : IRandomTableEntry");
         }
         else
         {
-            stream.WriteLine($"public interface I{csName}TableEntry : IStandardTableEntry");
+            stream.WriteLine($"public interface I{csName} : IStandardTableEntry");
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -155,11 +156,11 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
-            stream.WriteLine($"public partial class {csName}ViewModel : RandomTableEntry, I{csName}");
+            stream.WriteLine($"public partial class {csName}ViewModel : RandomTableEntryViewModel, I{csName}");
         }
         else
         {
-            stream.WriteLine($"public partial class {csName}ViewModels : NamedTable, I{csName}");
+            stream.WriteLine($"public partial class {csName}ViewModel : StandardTableEntryViewModel, I{csName}");
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -254,9 +255,9 @@ public partial class GenerateModel : IGenerateModel
     {
         for (int k = 0;  k < rows.Count(); k++) 
         {
-            stream.WriteLine($"\t\t\t#region {rows[k][0]}");
-            stream.WriteLine($"\t\t\tnew {Utilities.CleanupForCSharp(tableName)}ViewModel");
-            stream.WriteLine($"\t\t\t{{");
+            stream.WriteLine($"\t\t\t\t#region {rows[k][0]}");
+            stream.WriteLine($"\t\t\t\tnew {Utilities.CleanupForCSharp(tableName)}ViewModel");
+            stream.WriteLine($"\t\t\t\t{{");
             for (int i = 0; i < properties.Count(); i++)
             {
                 // handle range in column 0
@@ -273,23 +274,24 @@ public partial class GenerateModel : IGenerateModel
                             startRange = fullRange[0];
                             endRange = fullRange[1];
                         }
-                        stream.WriteLine($"\t\t\t\tRange = new Range({startRange}, {endRange});");
+                        stream.WriteLine($"\t\t\t\t\tRange = new Range({startRange}, {endRange}),");
                         continue;
                     }
                 }
                 if (properties[i].Value != "string")
                 {
-                    stream.WriteLine($"\t\t\t\t{properties[i].Name} = {rows[k][i]};");
+                    stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = {rows[k][i]},");
                 }
                 else
                 {
-                    stream.WriteLine($"\t\t\t\t{properties[i].Name} = \"{rows[k][i]}\";");
+                    stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = \"{rows[k][i]}\",");
                 }
             }
-            stream.WriteLine($"\t\t\t}},");
-            stream.WriteLine($"\t\t\t#endregion");
+            stream.WriteLine($"\t\t\t\t}},");
+            stream.WriteLine($"\t\t\t\t#endregion");
             stream.WriteLine();
         }
+        stream.WriteLine("\t\t\t};");
         stream.WriteLine("\t\t}");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
@@ -362,6 +364,8 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("\t{");
         stream.WriteLine("\t\tif (Table == null || Table.Count == 0)");
         stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tTable = new ObservableCollection<IGameTableEntry>()");
+        stream.WriteLine("\t\t\t{");
     }
 
     /// <summary>

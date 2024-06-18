@@ -47,6 +47,6 @@ public class Worker : BackgroundService
         }
         process5ESRDFiles.ProcessDirectory(inputDir, outputDir);
         process5ESRDFiles.GenerateModel.GenerateSpellLists(
-            process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir);
+            process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir); 
     }
 }
