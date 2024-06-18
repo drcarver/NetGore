@@ -45,7 +45,7 @@ public partial class GenerateModel : IGenerateModel
         using (var stream = File.CreateText(fileName))
         {
             GenerateTableHeading(stream, tableName, nameSpace, sides);
-            GenerateTableBody(stream, properties, rows, sides);
+            GenerateTableBody(stream, tableName, properties, rows, sides);
         }
 
         // The directory and file name
@@ -123,7 +123,7 @@ public partial class GenerateModel : IGenerateModel
         for (int i = propertiesStart; i < properties.Count(); i++)
         {
             stream.WriteLine("\t/// <summary>");
-            stream.WriteLine($"\t/// The {properties[i].Name}");
+            stream.WriteLine($"\t/// {properties[i].Name}");
             stream.WriteLine("\t/// </summary>");
             stream.WriteLine($"\tpublic {properties[i].Value} {Utilities.CleanupForCSharp(properties[i].Name)} {{ get; set; }}");
             stream.WriteLine();
@@ -170,7 +170,7 @@ public partial class GenerateModel : IGenerateModel
         for (int i = propertiesStart; i < properties.Count(); i++)
         {
             stream.WriteLine("\t/// <summary>");
-            stream.WriteLine($"\t/// The {properties[i].Name}");
+            stream.WriteLine($"\t/// {properties[i].Name}");
             stream.WriteLine("\t/// </summary>");
             stream.WriteLine("\t[ObservableProperty]");
             string fieldname = Utilities.CleanupForCSharp(properties[i].Name);
@@ -236,7 +236,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("{");
         for (int i = 0; i < rows.Count(); i++)
         {
-            var fieldName = Utilities.CleanupForCSharp(rows[i][0]);
+            var fieldName = Utilities.CleanupForCSharp(char.ToUpper(rows[i][0][0]) + rows[i][0].Substring(1));
             stream.WriteLine($"\t{fieldName} = {i},");
         }
         stream.WriteLine("}");
@@ -246,11 +246,50 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the rest of the .cs class for the table
     /// </summary>
     /// <param name="stream">The output stream for the table</param>
+    /// <param name="tableName">The name of the table</param>
     /// <param name="properties">The property fields to generate</param>
     /// <param name="rows">The rows for the table</param>
     /// <param name="randomTable">Is it a random table?</param>
-    private void GenerateTableBody(StreamWriter stream, List<PropertyModel> properties, List<List<string>> rows, int sides)
-    {                               
+    private void GenerateTableBody(StreamWriter stream, string tableName, List<PropertyModel> properties, List<List<string>> rows, int sides)
+    {
+        for (int k = 0;  k < rows.Count(); k++) 
+        {
+            stream.WriteLine($"\t\t\t#region {rows[k][0]}");
+            stream.WriteLine($"\t\t\tnew {Utilities.CleanupForCSharp(tableName)}ViewModel");
+            stream.WriteLine($"\t\t\t{{");
+            for (int i = 0; i < properties.Count(); i++)
+            {
+                // handle range in column 0
+                if (i == 0 && sides > 0)
+                {
+                    if (sides > 0)
+                    {
+                        // get the range
+                        var startRange = rows[k][0];
+                        var endRange = rows[k][0];
+                        if (rows[k][0].Contains("-"))
+                        {
+                            var fullRange = rows[k][0].Split('-');
+                            startRange = fullRange[0];
+                            endRange = fullRange[1];
+                        }
+                        stream.WriteLine($"\t\t\t\tRange = new Range({startRange}, {endRange});");
+                        continue;
+                    }
+                }
+                if (properties[i].Value != "string")
+                {
+                    stream.WriteLine($"\t\t\t\t{properties[i].Name} = {rows[k][i]};");
+                }
+                else
+                {
+                    stream.WriteLine($"\t\t\t\t{properties[i].Name} = \"{rows[k][i]}\";");
+                }
+            }
+            stream.WriteLine($"\t\t\t}},");
+            stream.WriteLine($"\t\t\t#endregion");
+            stream.WriteLine();
+        }
         stream.WriteLine("\t\t}");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
@@ -259,6 +298,7 @@ public partial class GenerateModel : IGenerateModel
     /// <summary>
     /// Generate the table heading
     /// </summary>
+    /// <param name="stream">The output stream for the table</param>
     /// <param name="tableName">The name of the table</param>
     /// <param name="rows">The rows in the table</param>
     /// <param name="nameSpace">The namespace of the table</param>

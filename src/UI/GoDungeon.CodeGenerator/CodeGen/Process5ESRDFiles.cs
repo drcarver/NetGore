@@ -107,15 +107,19 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="outputDir">The filePath to create the files</param>
     private void ProcessTables(string filePath, string outputDir)
     {
-        var markDown = File.ReadAllLines(filePath).ToList();
+        var fileInfo = new FileInfo(filePath);
+        if (fileInfo.Name == "index.md")
+        {
+            return;
+        }
 
+        var markDown = File.ReadAllLines(filePath).ToList();
         IMarkDownTableModel model = ParseMarkdown?.ParseMarkDownTable(markDown);
         if (model == null || !model.TableCaption.Any())
         {
             return;
         }
 
-        var fileInfo = new FileInfo(filePath);
         string[] directories = fileInfo.DirectoryName.Split("\\");
         var OutputDir = $"{RootOutputDirectory}{filePath.Replace(RootMarkDownDirectory, string.Empty).Replace(Path.GetFileName(filePath), string.Empty)}";
         for (int i = 0; i < model.TableCaption.Count; i++)
@@ -132,7 +136,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             for (int propcnt = 0; propcnt < propNames.Length; propcnt++)
             {
                 var fieldName = Utilities.CleanupForCSharp(propNames[propcnt].Replace("|", string.Empty).Trim());
-                var fieldVal = Utilities.CleanupForCSharp(propValues[propcnt].Replace("|", string.Empty).Trim());
+                var fieldVal = propValues[propcnt].Replace("|", string.Empty).Trim();
                 if (fieldName == string.Empty)
                 {
                     continue;
@@ -162,11 +166,11 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                 var row = new List<string>();
                 for (int colno = 0; colno < cols.Length; colno++)
                 {
-                    if (cols[colno] == string.Empty)
+                    if (cols[colno].Trim() == string.Empty)
                     {
                         continue;
                     }
-                    var cleancol = Utilities.CleanupForCSharp(cols[colno]?.Replace("|", string.Empty).Trim());
+                    var cleancol = cols[colno]?.Replace("|", string.Empty).Trim();
                     if (!string.IsNullOrEmpty(cleancol))
                     {
                         row.Add(cleancol);
