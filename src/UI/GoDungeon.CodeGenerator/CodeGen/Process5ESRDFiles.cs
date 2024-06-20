@@ -181,9 +181,12 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             }
 
             // process the table
-            GenerateModel.GenerateTable(outputDir, filePath, tableName, VMProperties, rows, directories[directories.Length - 1]);
+            GenerateModel.GenerateTable(outputDir, filePath, tableName, VMProperties, rows, Utilities.CleanupForCSharp(directories[directories.Length - 1]));
             rows.Clear();
         }
+
+        // Generate the constructor for the main view model
+        GenerateModel.GenerateConstructor(outputDir, model, filePath);
     }
 
     /// <summary>

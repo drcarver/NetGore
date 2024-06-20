@@ -42,7 +42,8 @@ namespace GoDungeon.Character.PC.Barbarian
         /// <summary>
         /// Constructor
         /// </summary>
-        public BarbarianViewModel(ILoggerFactory loggerFactory,
+        public BarbarianViewModel(
+            ILoggerFactory loggerFactory,
             IBarbarianLevelTable barbarianLevelTable)
         {
             ClassEnum = Core.Enum.ClassEnum.Barbarian;

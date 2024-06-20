@@ -12,7 +12,7 @@ using Syncfusion.Pdf;
 
 namespace GoDungeon.RandomDungeon.Models
 {
-    public class RandomDungeonModel : BaseObjectModel, IRandomDungeonModel
+    public class RandomDungeonModel : BaseObjectViewModel, IRandomDungeonModel
     {
         /// <summary>
         /// Constructor

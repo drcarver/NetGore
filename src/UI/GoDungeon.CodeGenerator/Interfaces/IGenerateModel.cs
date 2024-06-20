@@ -42,4 +42,12 @@ public interface IGenerateModel
     /// <param name="spellInfoList">The spell info list</param>
     /// <param name="rootdir">The rootDir</param>
     void GenerateSpellLists(List<ISpellTableEntry> spellInfoList, string rootDir);
+
+    /// <summary>
+    /// Generate the constructor for the main view model
+    /// </summary>
+    /// <param name="outputDir">The output directory</param>
+    /// <param name="model">The mark down table model</param>
+    /// <param name="filePath">The path to the output file</param>
+    void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath);
 }

@@ -12,7 +12,7 @@ namespace GoDungeon.Character.Models
     /// The class prerequisites.  The abilities required 
     /// for the class
     /// </summary>
-    public partial class ClassPrerequisiteModel : BaseObjectModel, IClassPrerequisite
+    public partial class ClassPrerequisiteModel : BaseObjectViewModel, IClassPrerequisite
     {
         /// <summary>
         /// The Abbreviation for the ability

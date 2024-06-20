@@ -10,12 +10,11 @@ public partial class GenerateModel : IGenerateModel
     /// Generate the .cs class for the monster
     /// </summary>
     /// <param name="stream">The monster file stream</param>
-    /// <param name="creature">THe creature to generate</param>
+    /// <param name="creature">The creature to generate</param>
     public void GenerateMonsterClass(TextWriter stream, ICreature creature, string rootdir)
     {
         GenerateMonsterHeader(stream, creature);
         GenerateMonsterInterfaceFile(stream, creature, rootdir);
-        GenerateLists();
     }
 
     /// <summary>
@@ -65,13 +64,6 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t\tCharisma = new Charisma(this, {creature.Charisma.Score});");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
-    }
-
-    /// <summary>
-    /// Generate the associated enum and lists from the full creature lists
-    /// </summary>
-    private void GenerateLists()
-    {
     }
 
     /// <summary>

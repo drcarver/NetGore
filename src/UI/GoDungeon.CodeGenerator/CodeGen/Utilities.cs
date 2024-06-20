@@ -37,6 +37,10 @@ internal static class Utilities
     /// <returns>The string as a c# variable name</returns>
     internal static string? CleanupForCSharp(string name)
     {
+        if (string.IsNullOrEmpty(name.Trim()))
+        {
+            return null;
+        }
         var cleanName = name;
         if (name.Contains("("))
         {
@@ -61,6 +65,7 @@ internal static class Utilities
             .Replace("/", string.Empty)
             .Replace("\\", string.Empty)
             .Replace("-", string.Empty)
+            .Replace("_", string.Empty)
             .Replace("'", string.Empty)
             .Replace(")", string.Empty)
             .Replace(",", string.Empty)

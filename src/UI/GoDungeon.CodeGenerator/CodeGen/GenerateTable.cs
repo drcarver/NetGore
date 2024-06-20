@@ -19,7 +19,11 @@ public partial class GenerateModel : IGenerateModel
         int sides = 0;
         string dirName;
         nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
-        if (properties[0].Name.Trim().ToLower().StartsWith("d"))
+        if (string.IsNullOrEmpty(properties[0].Name))
+        {
+            return;
+        }
+        if (properties[0].Name.Trim().StartsWith("d", StringComparison.OrdinalIgnoreCase))
         {
             switch (properties[0].Name)
             {
@@ -30,7 +34,7 @@ public partial class GenerateModel : IGenerateModel
                 case "d8":
                 case "d6":
                 case "d4":
-                    sides = Convert.ToInt32(properties[0].Name.Replace("d", string.Empty));
+                    sides = Convert.ToInt32(properties[0].Name.ToLower().Replace("d", string.Empty));
                     properties[0].Name = "Range";
                     properties[0].Value = "Range";
                     break;
@@ -71,7 +75,7 @@ public partial class GenerateModel : IGenerateModel
         // The directory and file name
         dirName = @$"{dirPath}/{nameSpace}/ViewModels";
         Directory.CreateDirectory(dirName);
-        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}ViewModel.cs";
+        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableEntryViewModel.cs";
         using (var stream = File.CreateText(fileName))
         {
             GenerateViewModel(stream, tableName, nameSpace, properties, sides);
