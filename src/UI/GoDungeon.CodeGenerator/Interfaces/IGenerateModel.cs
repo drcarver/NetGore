@@ -10,6 +10,11 @@ namespace GoDungeon.CodeGenerator.Interfaces;
 public interface IGenerateModel
 {
     /// <summary>
+    /// the list of MarkDownTables.
+    /// </summary>
+    List<UseGoDungeonModel> GoDungeonModelList { get; }
+
+    /// <summary>
     /// Generate the .cs class for the monster
     /// </summary>
     /// <param name="stream">The text stream to write the main monster file to</param>
@@ -50,4 +55,11 @@ public interface IGenerateModel
     /// <param name="model">The mark down table model</param>
     /// <param name="filePath">The path to the output file</param>
     void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath);
+
+    /// <summary>
+    /// Generate the Service Collection extension for the namespace
+    /// </summary>
+    /// <param name="stream">The output stream</param>
+    /// <param name="model">The GoDungeon model file</param>
+    void GenerateServicesCollectionExtension(TextWriter stream, UseGoDungeonModel model);
 }

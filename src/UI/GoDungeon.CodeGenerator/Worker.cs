@@ -46,7 +46,17 @@ public class Worker : BackgroundService
             _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
         }
         process5ESRDFiles.ProcessDirectory(inputDir, outputDir);
-        process5ESRDFiles.GenerateModel.GenerateSpellLists(
-            process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir); 
+
+        // process the GoDungeon files
+        foreach (var model in process5ESRDFiles.GenerateModel.GoDungeonModelList)
+        {
+            using (var stream = File.CreateText(model.FileName))
+            {
+                process5ESRDFiles.GenerateModel.GenerateServicesCollectionExtension(stream, model);
+            }
+        }
+
+        //process5ESRDFiles.GenerateModel.GenerateSpellLists(
+        //    process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir); 
     }
 }

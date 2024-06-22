@@ -26,11 +26,6 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     }
 
     /// <summary>
-    /// the list of MarkDownTables.
-    /// </summary>
-    public List<IMarkDownTableModel> MarkDownTableModels = new List<IMarkDownTableModel>();
-
-    /// <summary>
     /// Process monster files from the SRD
     /// </summary>
     public IParseMarkdown ParseMarkdown { get; }
@@ -89,13 +84,13 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                 ProcessMonsterFile(filePath, outputDir);
             }
 
-            //if (filePath.Contains("spells") && filePath.EndsWith(".md"))
-            //{
-            //    ProcessSpellFile(filePath, outputDir);
-            //}
+            // Process the spells
+            if (filePath.Contains("spells") && filePath.EndsWith(".md"))
+            {
+                //ProcessSpellFile(filePath, outputDir);
+            }
         }
         Debug.WriteLine("Table Generation Complete");
-
     }
 
     /// <summary>

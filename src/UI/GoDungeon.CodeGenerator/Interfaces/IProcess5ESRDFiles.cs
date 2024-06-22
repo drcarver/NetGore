@@ -1,4 +1,6 @@
-﻿namespace GoDungeon.CodeGenerator.Interfaces;
+﻿using GoDungeon.CodeGenerator.Models;
+
+namespace GoDungeon.CodeGenerator.Interfaces;
 
 public interface IProcess5ESRDFiles
 {
@@ -32,5 +34,5 @@ public interface IProcess5ESRDFiles
     /// </summary>
     /// <param name="rootDir">The root directory</param>
     /// <param name="outputDir">The output directory</param>
-    public void ProcessDirectory(string rootDir, string outputDir);
+    void ProcessDirectory(string rootDir, string outputDir);
 }

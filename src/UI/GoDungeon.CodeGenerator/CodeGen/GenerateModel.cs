@@ -1,9 +1,15 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.CodeGenerator.Models;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
 public partial class GenerateModel : IGenerateModel
 {
+    /// <summary>
+    /// The list of models and tables for the name space
+    /// </summary>
+    public List<UseGoDungeonModel> GoDungeonModelList { get; } = [];
+
     /// <summary>
     /// Generate the constructor for the main view model
     /// </summary>
@@ -14,20 +20,52 @@ public partial class GenerateModel : IGenerateModel
     {
         var fileInfo = new FileInfo(filePath);
         var nameSpace = Utilities.CleanupForCSharp(fileInfo.DirectoryName.Split('\\').LastOrDefault());
-        if (nameSpace == null)
+        if (nameSpace == null || model == null)
         {
             return;
         }
 
+        // Create the output directory and get the base file name
         nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
-        var fileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
-        fileName = char.ToUpper(fileName[0]) + fileName.Substring(1) + "Constructor";
         Directory.CreateDirectory($"{outputDir}\\{nameSpace}\\ViewModels");
-        if (model != null)
+        var baseFileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
+
+        // Get the base file name
+        var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1) + "Constructor";
+        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}" + ".cs"))
         {
-            using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}" + ".cs"))
+            GenerateViewModelConstructor(stream, fileName, model, nameSpace);
+        }
+
+        // Copy off the file information for later
+        var goDungeonFileName = $"{outputDir}\\{nameSpace}\\UseGoDungeon{nameSpace}Generated.cs";
+        var item = GoDungeonModelList.FirstOrDefault(m => m.FileName == goDungeonFileName);
+        if (item == null)
+        {
+            item = new UseGoDungeonModel
             {
-                GenerateViewModelConstructor(stream, fileName, model, nameSpace);
+                OutputDirectory = outputDir,
+                NameSpace = nameSpace,
+                FileName = goDungeonFileName,
+                DIObjects = new List<string>()
+            };
+            GoDungeonModelList.Add(item);
+        }
+
+        // build up the list of items to add to the DI
+        var fname = $"{baseFileName}ViewModel";
+        fname = Char.ToUpper(fname[0]) + fname.Substring(1);
+        var tableName = Utilities.CleanupForCSharp(fname);
+        if (! item.DIObjects.Contains(tableName))
+        {
+            item.DIObjects.Add(tableName);
+        }
+        foreach (var table in model.TableCaption)
+        {
+            tableName = Utilities.CleanupForCSharp($"{table}Table");
+            if (! item.DIObjects.Contains(tableName))
+            {
+                item.DIObjects.Add(tableName);
             }
         }
     }
@@ -126,6 +164,53 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t\t// Initialize the view model");
         stream.WriteLine($"\t\tInitialize();");
         stream.WriteLine("\t\t#endregion");
+        stream.WriteLine("\t}");
+        stream.WriteLine("}");
+    }
+
+    /// <summary>
+    /// Generate the Service Collection extension for the namespace
+    /// </summary>
+    /// <param name="stream">The output stream</param>
+    /// <param name="model">The GoDungeon model file</param>
+    public void GenerateServicesCollectionExtension(TextWriter stream, UseGoDungeonModel model)
+    {
+        stream.WriteLine("//");
+        stream.WriteLine($"// {model.FileName}");
+        stream.WriteLine("//");
+        stream.WriteLine($"using GoDungeon.{model.NameSpace}.Interfaces;");
+        stream.WriteLine($"using GoDungeon.{model.NameSpace}.Tables;");
+        stream.WriteLine($"using GoDungeon.{model.NameSpace}.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine($"using Microsoft.Extensions.Logging;");
+        stream.WriteLine();
+        stream.WriteLine($"namespace GoDungeon.{model.NameSpace};");
+        stream.WriteLine();
+        stream.WriteLine($"public static class DataService");
+        stream.WriteLine("{");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\t/// DI tables and view models");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\tpublic static IServiceCollection UseGoDungeon{model.NameSpace}Generated(this IServiceCollection collection)");
+        stream.WriteLine("\t{");
+        stream.WriteLine("\t\t// Add tables to the service collection");
+        stream.WriteLine("\t\tcollection");
+        string paramName;
+        stream.WriteLine("\t\t\t// Tables");
+        foreach (var item in model.DIObjects.Where(o => o.EndsWith("Table")).OrderBy(o => o))
+        {
+            paramName = $"{Utilities.CleanupForCSharp(item)}";
+            stream.WriteLine($"\t\t\t.AddSingleton<I{paramName}, {paramName}>()");
+        }
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t// View Models");
+        foreach (var item in model.DIObjects.Where(o => o.EndsWith("ViewModel")).OrderBy(o => o))
+        {
+            paramName = $"{Utilities.CleanupForCSharp(item)}";
+            stream.WriteLine($"\t\t\t.AddTransient<I{paramName}, {paramName}>()");
+        }
+        stream.WriteLine("\t\t;");
+        stream.WriteLine("\t\treturn collection");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
     }
