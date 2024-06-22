@@ -26,42 +26,40 @@ public partial class GenerateModel : IGenerateModel
     {
         stream.WriteLine($"// {creature.ProperName}");
         stream.WriteLine("//");
+        stream.WriteLine("using GoDungeon.Core.Abilities;");
         stream.WriteLine("using GoDungeon.Core.Enum;");
         stream.WriteLine("using GoDungeon.Core.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.Monsters.Interfaces;");
         stream.WriteLine();
         stream.WriteLine("using Microsoft.Extensions.Logging;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.Monsters;");
         stream.WriteLine();
-        stream.WriteLine($"public partial class {creature.Name} : CreatureViewModel");
+        stream.WriteLine($"public partial class {creature.Name}ViewModel : CreatureViewModel, I{creature.Name}");
         stream.WriteLine("{");
         stream.WriteLine($"\t/// <summary>");
-        stream.WriteLine($"\t/// Constructor");
+        stream.WriteLine($"\t/// Initialize the view model");
         stream.WriteLine($"\t/// </summary>");
-        stream.WriteLine($"\t/// <param name=\"services\">The collection of services from the DI</param>");
-        stream.WriteLine($"\t/// <param name=\"logger\">The logger factory from the DI</param>");
-        stream.WriteLine($"\tpublic {creature.Name}(");
-        stream.WriteLine("\t\tIServiceProvider services,");
-        stream.WriteLine("\t\tILoggerFactory logger)");
-        stream.WriteLine("\t\t: base(services, logger)");
+        stream.WriteLine($"\tprivate void Initialize()");
         stream.WriteLine("\t{");
-        stream.WriteLine($"\t\tName = nameof({creature.Name});");
+        stream.WriteLine($"\t\tName = \"{creature.Name}\";");
         stream.WriteLine($"\t\tProperName = \"{creature.ProperName}\";");
         stream.WriteLine($"\t\tRaceType = RaceTypeEnum.{creature.RaceType};");
         foreach (var subType in creature.RaceSubType)
         {
-            stream.WriteLine($"\t\tRaceSubType.Add(RaceSubTypEnum.{subType});");
+            stream.WriteLine($"\t\tRaceSubType.Add(RaceSubTypeEnum.{subType});");
         }
         stream.WriteLine($"\t\tChallengeRating = {creature.ChallengeRating};");
         //stream.WriteLine($"\t\tExperiencePoints = {creature.ExperiencePoints}");
         stream.WriteLine();
         stream.WriteLine("\t\t// Abilities");
-        stream.WriteLine($"\t\tStrength = new Strength(this, {creature.Strength.Score});");
-        stream.WriteLine($"\t\tIntelligence = new Intelligence(this, {creature.Intelligence.Score});");
-        stream.WriteLine($"\t\tWisdom = new Wisdom(this, {creature.Wisdom.Score});");
-        stream.WriteLine($"\t\tDexterity = new Dexterity(this, {creature.Dexterity.Score});");
-        stream.WriteLine($"\t\tConstitution = new Constitution(this, {creature.Constitution.Score});");
-        stream.WriteLine($"\t\tCharisma = new Charisma(this, {creature.Charisma.Score});");
+        stream.WriteLine($"\t\tStrength = new Strength({creature.Strength.Score}, this);");
+        stream.WriteLine($"\t\tIntelligence = new Intelligence({creature.Intelligence.Score}, this);");
+        stream.WriteLine($"\t\tWisdom = new Wisdom({creature.Wisdom.Score}, this);");
+        stream.WriteLine($"\t\tDexterity = new Dexterity({creature.Dexterity.Score}, this);");
+        stream.WriteLine($"\t\tConstitution = new Constitution({creature.Constitution.Score}, this);");
+        stream.WriteLine($"\t\tCharisma = new Charisma({creature.Charisma.Score}, this);");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
     }
@@ -74,7 +72,7 @@ public partial class GenerateModel : IGenerateModel
     private void GenerateMonsterInterfaceFile(TextWriter stream, ICreature creature, string rootdir)
     {
         // Convert the file to a .cs interface
-        var interfaceFile = $@"{rootdir}Interfaces/monsters/I{creature.Name}.cs";
+        var interfaceFile = $@"{rootdir}monsters/Interfaces/I{creature.Name}.cs";
         using (StreamWriter writer = File.CreateText(interfaceFile))
         {
             writer.WriteLine("//");

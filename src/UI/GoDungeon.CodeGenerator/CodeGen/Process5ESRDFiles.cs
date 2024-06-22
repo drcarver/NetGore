@@ -1,12 +1,7 @@
 ﻿using System.Diagnostics;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
-
-using BitMiracle.LibTiff.Classic;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
-using GoDungeon.Spells.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -85,21 +80,24 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
 
         foreach (string filePath in Directory.EnumerateFiles(inputDir))
         {
+            // Process all the tables in the SRD
             ProcessTables(filePath, outputDir);
+
+            // Process the monsters
+            if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
+            {
+                ProcessMonsterFile(filePath, outputDir);
+            }
 
             //if (filePath.Contains("spells") && filePath.EndsWith(".md"))
             //{
-            //    ProcessSpellFile(filePath, outputdir);
-            //}
-
-            //if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
-            //{
-            //    ProcessMonsterFile(filePath, outputdir);
+            //    ProcessSpellFile(filePath, outputDir);
             //}
         }
         Debug.WriteLine("Table Generation Complete");
 
     }
+
     /// <summary>
     /// Process tables in the file
     /// </summary>
@@ -139,7 +137,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             {
                 var fieldName = Utilities.CleanupForCSharp(propNames[propcnt].Replace("|", string.Empty).Trim());
                 var fieldVal = propValues[propcnt].Replace("|", string.Empty).Trim();
-                if (fieldName == string.Empty)
+                if (string.IsNullOrEmpty(fieldName?.Trim()))
                 {
                     continue;
                 }
@@ -245,7 +243,12 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             }
 
             // Convert the file to .html
-            var htmlFile = $@"{outputDir}Html\monsters\{creature.Name}.html";
+            var htmlFile = $@"{outputDir}\monsters\html\{creature.Name}.html";
+            var fileInfo = new FileInfo(htmlFile);
+            if (fileInfo != null)
+            {
+                Directory.CreateDirectory(fileInfo.DirectoryName);
+            }
             Console.WriteLine($"Generating .html file {htmlFile}");
             using (StreamWriter writer = File.CreateText(htmlFile))
             {
@@ -253,7 +256,13 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             }
 
             // Convert the file to a .cs interface
-            var classFile = $@"{outputDir}Models\monsters\{creature.Name}.cs";
+            var classFile = $@"{outputDir}monsters\ViewModels\{creature.Name}.cs";
+            fileInfo = new FileInfo(classFile);
+            if (fileInfo != null)
+            {
+                Directory.CreateDirectory(fileInfo.DirectoryName);
+            }
+            Console.WriteLine($"Generating .cs file {classFile}");
             using (StreamWriter writer = File.CreateText(classFile))
             {
                 GenerateModel.GenerateMonsterClass(writer, creature, outputDir);

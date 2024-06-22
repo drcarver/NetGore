@@ -301,7 +301,7 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        private CreatureViewModel()
+        public CreatureViewModel()
         {
             // Setup some required values
             HitPoints = new HitPointsViewModel(this);

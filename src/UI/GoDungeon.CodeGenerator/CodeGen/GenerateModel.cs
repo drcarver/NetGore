@@ -18,13 +18,14 @@ public partial class GenerateModel : IGenerateModel
         {
             return;
         }
+
         nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
         var fileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
-        fileName = char.ToUpper(fileName[0]) + fileName.Substring(1);
-        Directory.CreateDirectory($"{outputDir}\\{nameSpace}");
+        fileName = char.ToUpper(fileName[0]) + fileName.Substring(1) + "Constructor";
+        Directory.CreateDirectory($"{outputDir}\\{nameSpace}\\ViewModels");
         if (model != null)
         {
-            using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\{fileName}" + ".cs"))
+            using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}" + ".cs"))
             {
                 GenerateViewModelConstructor(stream, fileName, model, nameSpace);
             }
@@ -43,21 +44,17 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("//");
         stream.WriteLine($"// {fileName}");
         stream.WriteLine("//");
-        stream.WriteLine("using System.ComponentModel.Design;");
+        stream.WriteLine("using System;");
         stream.WriteLine();
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
+        stream.WriteLine($"using GoDungeon.Core.ViewModels;");
+        stream.WriteLine();
         stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Tables;");
-        stream.WriteLine($"using GoDungeon.{nameSpace}.ViewModels;");
-        stream.WriteLine();
-        stream.WriteLine($"using GoDungeon.Core.Enum;");
-        stream.WriteLine($"using GoDungeon.Core.ViewModels");
         stream.WriteLine();
         stream.WriteLine($"using Microsoft.Extensions.Logging;");
         stream.WriteLine();
-        stream.WriteLine($"namespace GoDungeon.{nameSpace}");
+        stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
-        stream.WriteLine($"public partial class {fileName}ViewModel : I{fileName}");
+        stream.WriteLine($"public partial class {fileName.Replace("Constructor", string.Empty)}ViewModel  : CreatureViewModel, I{fileName.Replace("Constructor", string.Empty)}");
         stream.WriteLine("{");
         stream.WriteLine("\t#region Constructor Parameters");
         string paramName;
@@ -67,13 +64,23 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine("\t/// <Summary>");
             stream.WriteLine($"\t/// {item}");
             stream.WriteLine("\t/// <Summary>");
-            stream.WriteLine($"\tprivate I{paramName} {paramName}Table {{ get; }}");
+            stream.WriteLine($"\tprivate I{paramName}Table {paramName}Table {{ get; }}");
             stream.WriteLine();
         }
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// Logger");
         stream.WriteLine("\t/// <Summary>");
-        stream.WriteLine($"\t/// ILogger Logger {{ get; set; }}");
+        stream.WriteLine($"\tILogger Logger {{ get; }}");
+        stream.WriteLine();
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\t/// The service provider");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\tIServiceProvider Services {{ get; }}");
+        stream.WriteLine();
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\t/// Initialize the view model");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\tpartial void Initialize();");
         stream.WriteLine("\t#endregion");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
@@ -85,7 +92,8 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine($"\t/// <param name=\"{paramName}Table\">{item}</param>");
         }
         stream.WriteLine("\t/// <param name=\"loggerFactory\">The logger factory</param>");
-        stream.WriteLine($"\tpublic {fileName}ViewModel");
+        stream.WriteLine("\t/// <param name=\"services\">The service provider</param>");
+        stream.WriteLine($"\tpublic {fileName.Replace("Constructor", string.Empty)}ViewModel");
         stream.WriteLine($"\t(");
         foreach (var item in model.TableCaption)
         {
@@ -93,8 +101,9 @@ public partial class GenerateModel : IGenerateModel
             var paramValue = $"{Utilities.CleanupForCSharp(char.ToLower(item[0]) + item.Substring(1))}Table";
             stream.WriteLine($"\t\t{paramName} {paramValue},");
         }
+        stream.WriteLine($"\t\tIServiceProvider services,");
         stream.WriteLine($"\t\tILoggerFactory loggerFactory");
-        stream.WriteLine($"\t)");
+        stream.WriteLine($"\t) : base(services, loggerFactory)");
         stream.WriteLine("\t{");
         stream.WriteLine("\t\t#region Save off the constructor parameters");
         foreach (var item in model.TableCaption)
@@ -108,8 +117,14 @@ public partial class GenerateModel : IGenerateModel
         }
 
         paramName = $"{Utilities.CleanupForCSharp(fileName)}Table";
+        stream.WriteLine($"\t\t// The service provider from the DI");
+        stream.WriteLine($"\t\tServices = services;");
+        stream.WriteLine();
         stream.WriteLine($"\t\t// The Logger from the DI factory");
-        stream.WriteLine($"\t\tLogger = loggerFactory.CreateLogger(nameof({paramName}));");
+        stream.WriteLine($"\t\tLogger = loggerFactory.CreateLogger(nameof({fileName.Replace("Constructor", string.Empty)}ViewModel));");
+        stream.WriteLine();
+        stream.WriteLine($"\t\t// Initialize the view model");
+        stream.WriteLine($"\t\tInitialize();");
         stream.WriteLine("\t\t#endregion");
         stream.WriteLine("\t}");
         stream.WriteLine("}");

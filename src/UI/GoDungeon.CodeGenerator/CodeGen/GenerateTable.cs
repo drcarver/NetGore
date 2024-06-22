@@ -78,16 +78,16 @@ public partial class GenerateModel : IGenerateModel
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableEntryViewModel.cs";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateViewModel(stream, tableName, nameSpace, properties, sides);
+            GenerateTableEntryViewModel(stream, tableName, nameSpace, properties, sides);
         }
 
         // The directory and file name
         dirName = @$"{dirPath}/{nameSpace}/Interfaces";
         Directory.CreateDirectory(dirName);
-        fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}.cs";
+        fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}TableEntry.cs";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateViewModelInterface(stream, tableName, nameSpace, properties, sides);
+            GenerateTableEntryViewModelInterface(stream, tableName, nameSpace, properties, sides);
         }
     }
 
@@ -99,7 +99,7 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="nameSpace">The namespace for the table</param>
     /// <param name="properties">The properties for the view model</param>
     /// <param name="randomTable">Is it a random table?</param>
-    private void GenerateViewModelInterface(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
+    private void GenerateTableEntryViewModelInterface(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
     {
         var csName = Utilities.CleanupForCSharp(tableName);
 
@@ -108,18 +108,20 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("//");
         stream.WriteLine("using CommunityToolkit.Mvvm.ComponentModel;");
         stream.WriteLine();
-        stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interface;");
+        stream.WriteLine("using GoDungeon.Core.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interfaces;");
         stream.WriteLine();
         stream.WriteLine("/// <summary>");
         stream.WriteLine($"/// I{tableName}");
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
-            stream.WriteLine($"public interface I{csName} : IRandomTableEntry");
+            stream.WriteLine($"public interface I{csName}TableEntry : IRandomTableEntry");
         }
         else
         {
-            stream.WriteLine($"public interface I{csName} : IStandardTableEntry");
+            stream.WriteLine($"public interface I{csName}TableEntry : IStandardTableEntry");
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -146,7 +148,7 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="nameSpace">The namespace for the table</param>
     /// <param name="properties">The properties for the view model</param>
     /// <param name="sides">the number of sides to the dice in a random table?</param>
-    private void GenerateViewModel(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
+    private void GenerateTableEntryViewModel(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
     {
         var csName = Utilities.CleanupForCSharp(tableName);
 
@@ -158,8 +160,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"using GoDungeon.Core.Interfaces;");
         stream.WriteLine($"using GoDungeon.Core.ViewModels;");
         stream.WriteLine();
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Interface;");
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
@@ -168,11 +169,11 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
-            stream.WriteLine($"public partial class {csName}ViewModel : RandomTableEntryViewModel, I{csName}");
+            stream.WriteLine($"public partial class {csName}TableEntryViewModel : RandomTableEntryViewModel, I{csName}TableEntry");
         }
         else
         {
-            stream.WriteLine($"public partial class {csName}ViewModel : StandardTableEntryViewModel, I{csName}");
+            stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -269,7 +270,7 @@ public partial class GenerateModel : IGenerateModel
         for (int k = 0;  k < rows.Count(); k++) 
         {
             stream.WriteLine($"\t\t\t\t#region {rows[k][0]}");
-            stream.WriteLine($"\t\t\t\tnew {Utilities.CleanupForCSharp(tableName)}ViewModel");
+            stream.WriteLine($"\t\t\t\tnew {Utilities.CleanupForCSharp(tableName)}TableEntryViewModel");
             stream.WriteLine($"\t\t\t\t{{");
             for (int i = 0; i < properties.Count(); i++)
             {
@@ -329,14 +330,11 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("//");
         stream.WriteLine("using System.Collections.ObjectModel;");
         stream.WriteLine();
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
-        stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
-        stream.WriteLine($"using GoDungeon.{nameSpace}.ViewModels;");
-        stream.WriteLine();
-        stream.WriteLine("using GoDungeon.Core.Enum;");
         stream.WriteLine("using GoDungeon.Core.Interfaces;");
         stream.WriteLine("using GoDungeon.Core.Tables;");
-        stream.WriteLine("using GoDungeon.Core.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
+        stream.WriteLine($"using GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
         stream.WriteLine("using Microsoft.Extensions.Logging;");
         stream.WriteLine();
