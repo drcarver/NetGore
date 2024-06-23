@@ -1,5 +1,6 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
+using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -31,10 +32,16 @@ public partial class GenerateModel : IGenerateModel
         var baseFileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
 
         // Get the base file name
-        var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1) + "Constructor";
-        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}" + ".cs"))
+        var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1);
+        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}ViewModel.cs"))
         {
-            GenerateViewModelConstructor(stream, fileName, model, nameSpace);
+            GenerateViewModel(stream, fileName, model, nameSpace);
+        }
+
+        // Get the base file name
+        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\Interfaces\\I{fileName}.cs"))
+        {
+            GenerateViewModelInterface(stream, fileName, nameSpace);
         }
 
         // Copy off the file information for later
@@ -77,7 +84,7 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="fileInfo">The output file info</param>
     /// <param name="model">The markdown file</param>
     /// <param name="nameSpace">The namespace fir the file</param>
-    private void GenerateViewModelConstructor(TextWriter stream, string fileName, IMarkDownTableModel model, string nameSpace)
+    private void GenerateViewModel(TextWriter stream, string fileName, IMarkDownTableModel model, string nameSpace)
     {
         stream.WriteLine("//");
         stream.WriteLine($"// {fileName}");
@@ -92,7 +99,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
-        stream.WriteLine($"public partial class {fileName.Replace("Constructor", string.Empty)}ViewModel  : CreatureViewModel, I{fileName.Replace("Constructor", string.Empty)}");
+        stream.WriteLine($"public partial class {fileName}ViewModel  : BaseObjectViewModel, I{fileName}");
         stream.WriteLine("{");
         stream.WriteLine("\t#region Constructor Parameters");
         string paramName;
@@ -131,7 +138,7 @@ public partial class GenerateModel : IGenerateModel
         }
         stream.WriteLine("\t/// <param name=\"loggerFactory\">The logger factory</param>");
         stream.WriteLine("\t/// <param name=\"services\">The service provider</param>");
-        stream.WriteLine($"\tpublic {fileName.Replace("Constructor", string.Empty)}ViewModel");
+        stream.WriteLine($"\tpublic {fileName}ViewModel");
         stream.WriteLine($"\t(");
         foreach (var item in model.TableCaption)
         {
@@ -141,7 +148,7 @@ public partial class GenerateModel : IGenerateModel
         }
         stream.WriteLine($"\t\tIServiceProvider services,");
         stream.WriteLine($"\t\tILoggerFactory loggerFactory");
-        stream.WriteLine($"\t) : base(services, loggerFactory)");
+        stream.WriteLine($"\t)");
         stream.WriteLine("\t{");
         stream.WriteLine("\t\t#region Save off the constructor parameters");
         foreach (var item in model.TableCaption)
@@ -165,6 +172,30 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t\tInitialize();");
         stream.WriteLine("\t\t#endregion");
         stream.WriteLine("\t}");
+        stream.WriteLine("}");
+    }
+
+    /// <summary>
+    /// Generate the view model constructor as a partial class
+    /// </summary>
+    /// <param name="stream">The output stream</param>
+    /// <param name="fileName">The output file name</param>
+    /// <param name="nameSpace">The namespace fir the file</param>
+    private void GenerateViewModelInterface(TextWriter stream, string fileName, string nameSpace)
+    {
+        stream.WriteLine("//");
+        stream.WriteLine($"// {fileName}");
+        stream.WriteLine("//");
+        stream.WriteLine("using System;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.Core.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine($"using Microsoft.Extensions.Logging;");
+        stream.WriteLine();
+        stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine($"public interface I{fileName}  : IBaseObject");
+        stream.WriteLine("{");
         stream.WriteLine("}");
     }
 
@@ -210,7 +241,7 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine($"\t\t\t.AddTransient<I{paramName}, {paramName}>()");
         }
         stream.WriteLine("\t\t;");
-        stream.WriteLine("\t\treturn collection");
+        stream.WriteLine("\t\treturn collection;");
         stream.WriteLine("\t}");
         stream.WriteLine("}");
     }

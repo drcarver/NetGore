@@ -52,7 +52,7 @@ public static class MauiProgram
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
             .UseGoDungeonCore()
-            .UseGoDungeonEquipment()
+            //.UseGoDungeonEquipment()
             .UseGoDungeonGaming()
             .UseGoDungeonMagicItems()
             .UseGoDungeonMonsters()

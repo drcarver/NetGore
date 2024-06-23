@@ -27,7 +27,7 @@ public class Program
             .UseGoDungeonCore()
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
-            .UseGoDungeonEquipment()
+            //.UseGoDungeonEquipment()
             .UseGoDungeonGaming()
             .UseGoDungeonMagicItems()
             .UseGoDungeonMonsters()
