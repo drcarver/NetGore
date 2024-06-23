@@ -9,8 +9,8 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum HeavyArmorEnum : int
 {
-	Ringmail = 0,
-	Chainmail = 1,
-	Splint = 2,
-	Plate = 3,
+    Ringmail = 0,
+    Chainmail = 1,
+    Splint = 2,
+    Plate = 3,
 }

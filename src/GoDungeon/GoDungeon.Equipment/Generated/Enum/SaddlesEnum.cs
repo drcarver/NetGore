@@ -9,8 +9,8 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum SaddlesEnum : int
 {
-	Exotic = 0,
-	Military = 1,
-	Pack = 2,
-	Riding = 3,
+    Exotic = 0,
+    Military = 1,
+    Pack = 2,
+    Riding = 3,
 }

@@ -9,6 +9,6 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum GamingsetEnum : int
 {
-	Diceset = 0,
-	Playingcardset = 1,
+    Diceset = 0,
+    Playingcardset = 1,
 }

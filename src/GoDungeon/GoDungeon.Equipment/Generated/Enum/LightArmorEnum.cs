@@ -9,7 +9,7 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum LightArmorEnum : int
 {
-	Padded = 0,
-	Leather = 1,
-	Studdedleather = 2,
+    Padded = 0,
+    Leather = 1,
+    Studdedleather = 2,
 }

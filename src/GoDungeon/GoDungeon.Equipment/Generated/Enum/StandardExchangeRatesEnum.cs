@@ -9,9 +9,9 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum StandardExchangeRatesEnum : int
 {
-	cp = 0,
-	sp = 1,
-	ep = 2,
-	gp = 3,
-	pp = 4,
+    cp = 0,
+    sp = 1,
+    ep = 2,
+    gp = 3,
+    pp = 4,
 }

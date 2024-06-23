@@ -9,9 +9,9 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum MediumArmorEnum : int
 {
-	Hide = 0,
-	Chainshirt = 1,
-	Scalemail = 2,
-	Breastplate = 3,
-	Halfplate = 4,
+    Hide = 0,
+    Chainshirt = 1,
+    Scalemail = 2,
+    Breastplate = 3,
+    Halfplate = 4,
 }

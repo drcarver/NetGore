@@ -9,7 +9,7 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum HolySymbolEnum : int
 {
-	Amulet = 0,
-	Emblem = 1,
-	Reliquary = 2,
+    Amulet = 0,
+    Emblem = 1,
+    Reliquary = 2,
 }

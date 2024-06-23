@@ -44,8 +44,9 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Abacus
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Abacus",
-					Cost = "2 gp",
+					Name = nameof(AdventuringGearEnum.Abacus),
+                    ProperName = "Abacus",
+                    Cost = "2 gp",
 					Weight = "2 lb.",
 				},
 				#endregion
