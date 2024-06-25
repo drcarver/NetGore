@@ -137,10 +137,10 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                     continue;
                 }
                 VMProperties.Add(new PropertyModel 
-                    {
-                        Name = fieldName, 
-                        Value = "string" 
-                    });
+                {
+                    Name = fieldName, 
+                    Value = "string" 
+                });
                 int intvalue;
                 Decimal decvalue;
                 if (int.TryParse(fieldVal, out intvalue))

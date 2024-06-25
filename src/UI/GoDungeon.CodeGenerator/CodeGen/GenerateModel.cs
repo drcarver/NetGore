@@ -238,9 +238,10 @@ public partial class GenerateModel : IGenerateModel
         foreach (var item in model.DIObjects.Where(o => o.EndsWith("ViewModel")).OrderBy(o => o))
         {
             paramName = $"{Utilities.CleanupForCSharp(item)}";
-            stream.WriteLine($"\t\t\t.AddTransient<I{paramName}, {paramName}>()");
+            stream.WriteLine($"\t\t\t.AddTransient<I{paramName.Replace("ViewModel", string.Empty)}, {paramName}>()");
         }
         stream.WriteLine("\t\t;");
+        stream.WriteLine();
         stream.WriteLine("\t\treturn collection;");
         stream.WriteLine("\t}");
         stream.WriteLine("}");

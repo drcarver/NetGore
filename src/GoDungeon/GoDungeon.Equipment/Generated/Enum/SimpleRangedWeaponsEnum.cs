@@ -9,8 +9,8 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum SimpleRangedWeaponsEnum : int
 {
-    Crossbowlight = 0,
-    Dart = 1,
-    Shortbow = 2,
-    Sling = 3,
+	Crossbowlight = 0,
+	Dart = 1,
+	Shortbow = 2,
+	Sling = 3,
 }

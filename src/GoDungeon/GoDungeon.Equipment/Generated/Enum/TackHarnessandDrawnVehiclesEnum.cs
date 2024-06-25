@@ -9,13 +9,14 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum TackHarnessandDrawnVehiclesEnum : int
 {
-    Barding = 0,
-    Bitandbridle = 1,
-    Carriage = 2,
-    Cart = 3,
-    Chariot = 4,
-    perday = 5,
-    Saddlebags = 6,
-    Sled = 7,
-    Wagon = 8,
+	Barding = 0,
+	Bitandbridle = 1,
+	Carriage = 2,
+	Cart = 3,
+	Chariot = 4,
+	Feedperday = 5,
+	Saddlebags = 6,
+	Sled = 7,
+	Stablingperday = 8,
+	Wagon = 9,
 }

@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
-
+using GoDungeon.Equipment.Enum;
 using GoDungeon.Equipment.Interfaces;
 using GoDungeon.Equipment.ViewModels;
 
@@ -45,8 +45,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				new AdventuringGearTableEntryViewModel
 				{
 					Name = nameof(AdventuringGearEnum.Abacus),
-                    ProperName = "Abacus",
-                    Cost = "2 gp",
+					ProperName = "Abacus",
+					Cost = "2 gp",
 					Weight = "2 lb.",
 				},
 				#endregion
@@ -54,7 +54,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Acid (vial)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Acid (vial)",
+					Name = nameof(AdventuringGearEnum.Acidvial),
+					ProperName = "Acid (vial)",
 					Cost = "25 gp",
 					Weight = "1 lb.",
 				},
@@ -63,7 +64,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Alchemist's fire (flask)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Alchemist's fire (flask)",
+					Name = nameof(AdventuringGearEnum.Alchemistsfireflask),
+					ProperName = "Alchemist's fire (flask)",
 					Cost = "50 gp",
 					Weight = "1 lb.",
 				},
@@ -72,7 +74,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Antitoxin (vial)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Antitoxin (vial)",
+					Name = nameof(AdventuringGearEnum.Antitoxinvial),
+					ProperName = "Antitoxin (vial)",
 					Cost = "50 gp",
 					Weight = "-",
 				},
@@ -81,7 +84,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Backpack
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Backpack",
+					Name = nameof(AdventuringGearEnum.Backpack),
+					ProperName = "Backpack",
 					Cost = "2 gp",
 					Weight = "5 lb.",
 				},
@@ -90,7 +94,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Ball bearings (bag of 1,000)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Ball bearings (bag of 1,000)",
+					Name = nameof(AdventuringGearEnum.Ballbearingsbagof1000),
+					ProperName = "Ball bearings (bag of 1,000)",
 					Cost = "1 gp",
 					Weight = "2 lb.",
 				},
@@ -99,7 +104,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Barrel
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Barrel",
+					Name = nameof(AdventuringGearEnum.Barrel),
+					ProperName = "Barrel",
 					Cost = "2 gp",
 					Weight = "70 lb.",
 				},
@@ -108,7 +114,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Basket
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Basket",
+					Name = nameof(AdventuringGearEnum.Basket),
+					ProperName = "Basket",
 					Cost = "4 sp",
 					Weight = "2 lb.",
 				},
@@ -117,7 +124,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Bedroll
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Bedroll",
+					Name = nameof(AdventuringGearEnum.Bedroll),
+					ProperName = "Bedroll",
 					Cost = "1 gp",
 					Weight = "7 lb.",
 				},
@@ -126,7 +134,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Bell
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Bell",
+					Name = nameof(AdventuringGearEnum.Bell),
+					ProperName = "Bell",
 					Cost = "1 gp",
 					Weight = "-",
 				},
@@ -135,7 +144,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Blanket
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Blanket",
+					Name = nameof(AdventuringGearEnum.Blanket),
+					ProperName = "Blanket",
 					Cost = "5 sp",
 					Weight = "3 lb.",
 				},
@@ -144,7 +154,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Block and tackle
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Block and tackle",
+					Name = nameof(AdventuringGearEnum.Blockandtackle),
+					ProperName = "Block and tackle",
 					Cost = "1 gp",
 					Weight = "5 lb.",
 				},
@@ -153,7 +164,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Book
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Book",
+					Name = nameof(AdventuringGearEnum.Book),
+					ProperName = "Book",
 					Cost = "25 gp",
 					Weight = "5 lb.",
 				},
@@ -162,7 +174,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Bottle, glass
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Bottle, glass",
+					Name = nameof(AdventuringGearEnum.Bottleglass),
+					ProperName = "Bottle, glass",
 					Cost = "2 gp",
 					Weight = "2 lb.",
 				},
@@ -171,7 +184,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Bucket
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Bucket",
+					Name = nameof(AdventuringGearEnum.Bucket),
+					ProperName = "Bucket",
 					Cost = "5 cp",
 					Weight = "2 lb.",
 				},
@@ -180,7 +194,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Caltrops (bag of 20)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Caltrops (bag of 20)",
+					Name = nameof(AdventuringGearEnum.Caltropsbagof20),
+					ProperName = "Caltrops (bag of 20)",
 					Cost = "1 gp",
 					Weight = "2 lb.",
 				},
@@ -189,7 +204,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Candle
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Candle",
+					Name = nameof(AdventuringGearEnum.Candle),
+					ProperName = "Candle",
 					Cost = "1 cp",
 					Weight = "-",
 				},
@@ -198,7 +214,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Case, crossbow bolt
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Case, crossbow bolt",
+					Name = nameof(AdventuringGearEnum.Casecrossbowbolt),
+					ProperName = "Case, crossbow bolt",
 					Cost = "1 gp",
 					Weight = "1 lb.",
 				},
@@ -207,7 +224,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Case, map or scroll
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Case, map or scroll",
+					Name = nameof(AdventuringGearEnum.Casemaporscroll),
+					ProperName = "Case, map or scroll",
 					Cost = "1 gp",
 					Weight = "1 lb.",
 				},
@@ -216,7 +234,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Chain (10 feet)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Chain (10 feet)",
+					Name = nameof(AdventuringGearEnum.Chain10feet),
+					ProperName = "Chain (10 feet)",
 					Cost = "5 gp",
 					Weight = "10 lb.",
 				},
@@ -225,7 +244,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Chalk (1 piece)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Chalk (1 piece)",
+					Name = nameof(AdventuringGearEnum.Chalk1piece),
+					ProperName = "Chalk (1 piece)",
 					Cost = "1 cp",
 					Weight = "-",
 				},
@@ -234,7 +254,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Chest
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Chest",
+					Name = nameof(AdventuringGearEnum.Chest),
+					ProperName = "Chest",
 					Cost = "5 gp",
 					Weight = "25 lb.",
 				},
@@ -243,7 +264,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Climber's kit
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Climber's kit",
+					Name = nameof(AdventuringGearEnum.Climberskit),
+					ProperName = "Climber's kit",
 					Cost = "25 gp",
 					Weight = "12 lb.",
 				},
@@ -252,7 +274,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Clothes, common
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Clothes, common",
+					Name = nameof(AdventuringGearEnum.Clothescommon),
+					ProperName = "Clothes, common",
 					Cost = "5 sp",
 					Weight = "3 lb.",
 				},
@@ -261,7 +284,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Clothes, costume
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Clothes, costume",
+					Name = nameof(AdventuringGearEnum.Clothescostume),
+					ProperName = "Clothes, costume",
 					Cost = "5 gp",
 					Weight = "4 lb.",
 				},
@@ -270,7 +294,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Clothes, fine
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Clothes, fine",
+					Name = nameof(AdventuringGearEnum.Clothesfine),
+					ProperName = "Clothes, fine",
 					Cost = "15 gp",
 					Weight = "6 lb.",
 				},
@@ -279,7 +304,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Clothes, traveler's
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Clothes, traveler's",
+					Name = nameof(AdventuringGearEnum.Clothestravelers),
+					ProperName = "Clothes, traveler's",
 					Cost = "2 gp",
 					Weight = "4 lb.",
 				},
@@ -288,7 +314,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Component pouch
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Component pouch",
+					Name = nameof(AdventuringGearEnum.Componentpouch),
+					ProperName = "Component pouch",
 					Cost = "25 gp",
 					Weight = "2 lb.",
 				},
@@ -297,7 +324,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Crowbar
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Crowbar",
+					Name = nameof(AdventuringGearEnum.Crowbar),
+					ProperName = "Crowbar",
 					Cost = "2 gp",
 					Weight = "5 lb.",
 				},
@@ -306,7 +334,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Fishing tackle
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Fishing tackle",
+					Name = nameof(AdventuringGearEnum.Fishingtackle),
+					ProperName = "Fishing tackle",
 					Cost = "1 gp",
 					Weight = "4 lb.",
 				},
@@ -315,7 +344,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Flask or tankard
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Flask or tankard",
+					Name = nameof(AdventuringGearEnum.Flaskortankard),
+					ProperName = "Flask or tankard",
 					Cost = "2 cp",
 					Weight = "1 lb.",
 				},
@@ -324,7 +354,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Grappling hook
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Grappling hook",
+					Name = nameof(AdventuringGearEnum.Grapplinghook),
+					ProperName = "Grappling hook",
 					Cost = "2 gp",
 					Weight = "4 lb.",
 				},
@@ -333,7 +364,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Hammer
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Hammer",
+					Name = nameof(AdventuringGearEnum.Hammer),
+					ProperName = "Hammer",
 					Cost = "1 gp",
 					Weight = "3 lb.",
 				},
@@ -342,7 +374,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Hammer, sledge
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Hammer, sledge",
+					Name = nameof(AdventuringGearEnum.Hammersledge),
+					ProperName = "Hammer, sledge",
 					Cost = "2 gp",
 					Weight = "10 lb.",
 				},
@@ -351,7 +384,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Healer's kit
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Healer's kit",
+					Name = nameof(AdventuringGearEnum.Healerskit),
+					ProperName = "Healer's kit",
 					Cost = "5 gp",
 					Weight = "3 lb.",
 				},
@@ -360,7 +394,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Holy water (flask)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Holy water (flask)",
+					Name = nameof(AdventuringGearEnum.Holywaterflask),
+					ProperName = "Holy water (flask)",
 					Cost = "25 gp",
 					Weight = "1 lb.",
 				},
@@ -369,7 +404,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Hourglass
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Hourglass",
+					Name = nameof(AdventuringGearEnum.Hourglass),
+					ProperName = "Hourglass",
 					Cost = "25 gp",
 					Weight = "1 lb.",
 				},
@@ -378,7 +414,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Hunting trap
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Hunting trap",
+					Name = nameof(AdventuringGearEnum.Huntingtrap),
+					ProperName = "Hunting trap",
 					Cost = "5 gp",
 					Weight = "25 lb.",
 				},
@@ -387,7 +424,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Ink (1 ounce bottle)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Ink (1 ounce bottle)",
+					Name = nameof(AdventuringGearEnum.Ink1ouncebottle),
+					ProperName = "Ink (1 ounce bottle)",
 					Cost = "10 gp",
 					Weight = "-",
 				},
@@ -396,7 +434,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Ink pen
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Ink pen",
+					Name = nameof(AdventuringGearEnum.Inkpen),
+					ProperName = "Ink pen",
 					Cost = "2 cp",
 					Weight = "-",
 				},
@@ -405,7 +444,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Jug or pitcher
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Jug or pitcher",
+					Name = nameof(AdventuringGearEnum.Jugorpitcher),
+					ProperName = "Jug or pitcher",
 					Cost = "2 cp",
 					Weight = "4 lb.",
 				},
@@ -414,7 +454,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Ladder (10 foot)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Ladder (10 foot)",
+					Name = nameof(AdventuringGearEnum.Ladder10foot),
+					ProperName = "Ladder (10 foot)",
 					Cost = "1 sp",
 					Weight = "25 lb.",
 				},
@@ -423,7 +464,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Lamp
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Lamp",
+					Name = nameof(AdventuringGearEnum.Lamp),
+					ProperName = "Lamp",
 					Cost = "5 sp",
 					Weight = "1 lb.",
 				},
@@ -432,7 +474,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Lantern, bullseye
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Lantern, bullseye",
+					Name = nameof(AdventuringGearEnum.Lanternbullseye),
+					ProperName = "Lantern, bullseye",
 					Cost = "10 gp",
 					Weight = "2 lb.",
 				},
@@ -441,7 +484,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Lantern, hooded
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Lantern, hooded",
+					Name = nameof(AdventuringGearEnum.Lanternhooded),
+					ProperName = "Lantern, hooded",
 					Cost = "5 gp",
 					Weight = "2 lb.",
 				},
@@ -450,7 +494,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Lock
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Lock",
+					Name = nameof(AdventuringGearEnum.Lock),
+					ProperName = "Lock",
 					Cost = "10 gp",
 					Weight = "1 lb.",
 				},
@@ -459,7 +504,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Magnifying glass
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Magnifying glass",
+					Name = nameof(AdventuringGearEnum.Magnifyingglass),
+					ProperName = "Magnifying glass",
 					Cost = "100 gp",
 					Weight = "-",
 				},
@@ -468,7 +514,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Manacles
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Manacles",
+					Name = nameof(AdventuringGearEnum.Manacles),
+					ProperName = "Manacles",
 					Cost = "2 gp",
 					Weight = "6 lb.",
 				},
@@ -477,7 +524,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Mess kit
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Mess kit",
+					Name = nameof(AdventuringGearEnum.Messkit),
+					ProperName = "Mess kit",
 					Cost = "2 sp",
 					Weight = "1 lb.",
 				},
@@ -486,7 +534,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Mirror, steel
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Mirror, steel",
+					Name = nameof(AdventuringGearEnum.Mirrorsteel),
+					ProperName = "Mirror, steel",
 					Cost = "5 gp",
 					Weight = "1/2 lb.",
 				},
@@ -495,7 +544,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Oil (flask)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Oil (flask)",
+					Name = nameof(AdventuringGearEnum.Oilflask),
+					ProperName = "Oil (flask)",
 					Cost = "1 sp",
 					Weight = "1 lb.",
 				},
@@ -504,7 +554,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Paper (one sheet)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Paper (one sheet)",
+					Name = nameof(AdventuringGearEnum.Paperonesheet),
+					ProperName = "Paper (one sheet)",
 					Cost = "2 sp",
 					Weight = "-",
 				},
@@ -513,7 +564,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Parchment (one sheet)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Parchment (one sheet)",
+					Name = nameof(AdventuringGearEnum.Parchmentonesheet),
+					ProperName = "Parchment (one sheet)",
 					Cost = "1 sp",
 					Weight = "-",
 				},
@@ -522,7 +574,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Perfume (vial)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Perfume (vial)",
+					Name = nameof(AdventuringGearEnum.Perfumevial),
+					ProperName = "Perfume (vial)",
 					Cost = "5 gp",
 					Weight = "-",
 				},
@@ -531,7 +584,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Pick, miner's
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Pick, miner's",
+					Name = nameof(AdventuringGearEnum.Pickminers),
+					ProperName = "Pick, miner's",
 					Cost = "2 gp",
 					Weight = "10 lb.",
 				},
@@ -540,7 +594,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Piton
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Piton",
+					Name = nameof(AdventuringGearEnum.Piton),
+					ProperName = "Piton",
 					Cost = "5 cp",
 					Weight = "1/4 lb.",
 				},
@@ -549,7 +604,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Poison, basic (vial)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Poison, basic (vial)",
+					Name = nameof(AdventuringGearEnum.Poisonbasicvial),
+					ProperName = "Poison, basic (vial)",
 					Cost = "100 gp",
 					Weight = "-",
 				},
@@ -558,7 +614,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Pole (10-foot)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Pole (10-foot)",
+					Name = nameof(AdventuringGearEnum.Pole10foot),
+					ProperName = "Pole (10-foot)",
 					Cost = "5 cp",
 					Weight = "7 lb.",
 				},
@@ -567,7 +624,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Pot, iron
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Pot, iron",
+					Name = nameof(AdventuringGearEnum.Potiron),
+					ProperName = "Pot, iron",
 					Cost = "2 gp",
 					Weight = "10 lb.",
 				},
@@ -576,7 +634,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Potion of healing
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Potion of healing",
+					Name = nameof(AdventuringGearEnum.Potionofhealing),
+					ProperName = "Potion of healing",
 					Cost = "50 gp",
 					Weight = "1/2 lb.",
 				},
@@ -585,7 +644,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Pouch
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Pouch",
+					Name = nameof(AdventuringGearEnum.Pouch),
+					ProperName = "Pouch",
 					Cost = "5 sp",
 					Weight = "1 lb.",
 				},
@@ -594,7 +654,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Quiver
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Quiver",
+					Name = nameof(AdventuringGearEnum.Quiver),
+					ProperName = "Quiver",
 					Cost = "1 gp",
 					Weight = "1 lb.",
 				},
@@ -603,7 +664,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Ram, portable
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Ram, portable",
+					Name = nameof(AdventuringGearEnum.Ramportable),
+					ProperName = "Ram, portable",
 					Cost = "4 gp",
 					Weight = "35 lb.",
 				},
@@ -612,7 +674,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Rations (1 day)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Rations (1 day)",
+					Name = nameof(AdventuringGearEnum.Rations1day),
+					ProperName = "Rations (1 day)",
 					Cost = "5 sp",
 					Weight = "2 lb.",
 				},
@@ -621,7 +684,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Robes
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Robes",
+					Name = nameof(AdventuringGearEnum.Robes),
+					ProperName = "Robes",
 					Cost = "1 gp",
 					Weight = "4 lb.",
 				},
@@ -630,7 +694,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Rope, hempen (50 feet)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Rope, hempen (50 feet)",
+					Name = nameof(AdventuringGearEnum.Ropehempen50feet),
+					ProperName = "Rope, hempen (50 feet)",
 					Cost = "1 gp",
 					Weight = "10 lb.",
 				},
@@ -639,7 +704,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Rope, silk (50 feet)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Rope, silk (50 feet)",
+					Name = nameof(AdventuringGearEnum.Ropesilk50feet),
+					ProperName = "Rope, silk (50 feet)",
 					Cost = "10 gp",
 					Weight = "5 lb.",
 				},
@@ -648,7 +714,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Sack
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Sack",
+					Name = nameof(AdventuringGearEnum.Sack),
+					ProperName = "Sack",
 					Cost = "1 cp",
 					Weight = "1/2 lb.",
 				},
@@ -657,7 +724,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Scale, merchant's
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Scale, merchant's",
+					Name = nameof(AdventuringGearEnum.Scalemerchants),
+					ProperName = "Scale, merchant's",
 					Cost = "5 gp",
 					Weight = "3 lb.",
 				},
@@ -666,7 +734,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Sealing wax
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Sealing wax",
+					Name = nameof(AdventuringGearEnum.Sealingwax),
+					ProperName = "Sealing wax",
 					Cost = "5 sp",
 					Weight = "-",
 				},
@@ -675,7 +744,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Shovel
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Shovel",
+					Name = nameof(AdventuringGearEnum.Shovel),
+					ProperName = "Shovel",
 					Cost = "2 gp",
 					Weight = "5 lb.",
 				},
@@ -684,7 +754,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Signal whistle
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Signal whistle",
+					Name = nameof(AdventuringGearEnum.Signalwhistle),
+					ProperName = "Signal whistle",
 					Cost = "5 cp",
 					Weight = "-",
 				},
@@ -693,7 +764,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Signet ring
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Signet ring",
+					Name = nameof(AdventuringGearEnum.Signetring),
+					ProperName = "Signet ring",
 					Cost = "5 gp",
 					Weight = "-",
 				},
@@ -702,7 +774,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Soap
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Soap",
+					Name = nameof(AdventuringGearEnum.Soap),
+					ProperName = "Soap",
 					Cost = "2 cp",
 					Weight = "-",
 				},
@@ -711,7 +784,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Spellbook
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Spellbook",
+					Name = nameof(AdventuringGearEnum.Spellbook),
+					ProperName = "Spellbook",
 					Cost = "50 gp",
 					Weight = "3 lb.",
 				},
@@ -720,7 +794,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Spikes, iron (10)
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Spikes, iron (10)",
+					Name = nameof(AdventuringGearEnum.Spikesiron10),
+					ProperName = "Spikes, iron (10)",
 					Cost = "1 gp",
 					Weight = "5 lb.",
 				},
@@ -729,7 +804,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Spyglass
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Spyglass",
+					Name = nameof(AdventuringGearEnum.Spyglass),
+					ProperName = "Spyglass",
 					Cost = "1,000 gp",
 					Weight = "1 lb.",
 				},
@@ -738,7 +814,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Tent, two-person
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Tent, two-person",
+					Name = nameof(AdventuringGearEnum.Tenttwoperson),
+					ProperName = "Tent, two-person",
 					Cost = "2 gp",
 					Weight = "20 lb.",
 				},
@@ -747,7 +824,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Tinderbox
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Tinderbox",
+					Name = nameof(AdventuringGearEnum.Tinderbox),
+					ProperName = "Tinderbox",
 					Cost = "5 sp",
 					Weight = "1 lb.",
 				},
@@ -756,7 +834,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Torch
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Torch",
+					Name = nameof(AdventuringGearEnum.Torch),
+					ProperName = "Torch",
 					Cost = "1 cp",
 					Weight = "1 lb.",
 				},
@@ -765,7 +844,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Vial
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Vial",
+					Name = nameof(AdventuringGearEnum.Vial),
+					ProperName = "Vial",
 					Cost = "1 gp",
 					Weight = "-",
 				},
@@ -774,7 +854,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Waterskin
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Waterskin",
+					Name = nameof(AdventuringGearEnum.Waterskin),
+					ProperName = "Waterskin",
 					Cost = "2 sp",
 					Weight = "5 lb. (full)",
 				},
@@ -783,7 +864,8 @@ public partial class AdventuringGearTable : NamedTable, IAdventuringGearTable
 				#region Whetstone
 				new AdventuringGearTableEntryViewModel
 				{
-					Item = "Whetstone",
+					Name = nameof(AdventuringGearEnum.Whetstone),
+					ProperName = "Whetstone",
 					Cost = "1 cp",
 					Weight = "1 lb.",
 				},

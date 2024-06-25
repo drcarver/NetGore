@@ -41,14 +41,9 @@ internal static class Utilities
         {
             return null;
         }
-        var cleanName = name;
-        if (name.Contains("("))
-        {
-            cleanName = name.Substring(name.IndexOf("(")+1);
-        }
 
         // Cleanup spell levels
-        cleanName = cleanName
+        var cleanName = name
             .Replace("1st", "First")
             .Replace("2nd", "Second")
             .Replace("3rd", "Third")
@@ -68,9 +63,11 @@ internal static class Utilities
             .Replace("_", string.Empty)
             .Replace(":", string.Empty)
             .Replace("'", string.Empty)
+            .Replace("(", string.Empty)
             .Replace(")", string.Empty)
             .Replace(",", string.Empty)
             .Replace(".", string.Empty)
+            .Replace("*", string.Empty)
             .Trim();
     }  
 

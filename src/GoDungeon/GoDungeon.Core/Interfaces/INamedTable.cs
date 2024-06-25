@@ -8,7 +8,7 @@
         /// <summary>
         /// Get a entry from the table by it's name
         /// </summary>
-        /// <returns>The selected RandomTableEntry.</returns>
+        /// <returns>The selected INamedTableEntry.</returns>
         INamedTableEntry GetEntryByName(string Name);
     }
 }

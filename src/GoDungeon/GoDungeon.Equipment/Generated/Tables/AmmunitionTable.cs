@@ -7,10 +7,9 @@ using System.Collections.ObjectModel;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 
+using GoDungeon.Equipment.Enum;
 using GoDungeon.Equipment.Interfaces;
 using GoDungeon.Equipment.ViewModels;
-
-using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Equipment.Tables;
 
@@ -44,7 +43,8 @@ public partial class AmmunitionTable : NamedTable, IAmmunitionTable
 				#region Arrows (20)
 				new AmmunitionTableEntryViewModel
 				{
-					Item = "Arrows (20)",
+                    Name = nameof(AmmunitionEnum.Arrows20),
+					ProperName = "Arrows (20)",
 					Cost = "1 gp",
 					Weight = "1 lb.",
 				},
@@ -53,7 +53,8 @@ public partial class AmmunitionTable : NamedTable, IAmmunitionTable
 				#region Blowgun needles (50)
 				new AmmunitionTableEntryViewModel
 				{
-					Item = "Blowgun needles (50)",
+					Name = nameof(AmmunitionEnum.Blowgunneedles50),
+					ProperName = "Blowgun needles (50)",
 					Cost = "1 gp",
 					Weight = "1 lb.",
 				},
@@ -62,7 +63,8 @@ public partial class AmmunitionTable : NamedTable, IAmmunitionTable
 				#region Crossbow bolts (20)
 				new AmmunitionTableEntryViewModel
 				{
-					Item = "Crossbow bolts (20)",
+					Name = nameof(AmmunitionEnum.Crossbowbolts20),
+					ProperName = "Crossbow bolts (20)",
 					Cost = "1 gp",
 					Weight = "1 1/2 lb.",
 				},
@@ -71,7 +73,8 @@ public partial class AmmunitionTable : NamedTable, IAmmunitionTable
 				#region Sling bullets (20)
 				new AmmunitionTableEntryViewModel
 				{
-					Item = "Sling bullets (20)",
+					Name = nameof(AmmunitionEnum.Slingbullets20),
+					ProperName = "Sling bullets (20)",
 					Cost = "4 cp",
 					Weight = "1 1/2 lb.",
 				},

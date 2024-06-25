@@ -9,5 +9,5 @@ namespace GoDungeon.Equipment.Enum;
 /// </summary>
 public enum ShieldEnum : int
 {
-    Shield = 0,
+	Shield = 0,
 }
