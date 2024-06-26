@@ -48,6 +48,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{58AB0460
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.Equipment.Tests", "GoDungeon\GoDungeon.Equipment.Tests\GoDungeon.Equipment.Tests.csproj", "{B309FB66-2C79-4E02-8286-270FA287B4FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json", "json", "{596C0283-51E1-4888-981E-837ED2178519}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Srd5E\AdventuringGearTable.json = ..\..\Srd5E\AdventuringGearTable.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

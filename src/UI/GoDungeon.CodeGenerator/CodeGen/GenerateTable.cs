@@ -28,9 +28,9 @@ public partial class GenerateModel : IGenerateModel
         {
             return;
         }
-        if (properties[0].Name.Trim().StartsWith("d", StringComparison.OrdinalIgnoreCase))
+        for (int i = 0; i < properties.Count; i++)
         {
-            switch (properties[0].Name)
+            switch (properties[i].Name.ToLower().Trim())
             {
                 case "d100":
                 case "d20":
@@ -39,12 +39,23 @@ public partial class GenerateModel : IGenerateModel
                 case "d8":
                 case "d6":
                 case "d4":
-                    sides = Convert.ToInt32(properties[0].Name.ToLower().Replace("d", string.Empty));
-                    properties[0].Name = "Range";
-                    properties[0].Value = "Range";
+                    sides = Convert.ToInt32(properties[i].Name.ToLower().Replace("d", string.Empty));
+                    properties[i].Name = "Range";
+                    properties[i].Value = "Range";
+                    break;
+                case "cost":
+                    properties[i].Name = "Cost";
+                    properties[i].Value = "CostViewModel";
+                    break;
+                case "weight":
+                    properties[i].Name = "Weight";
+                    properties[i].Value = "WeightViewModel";
+                    break;
+                case "damage":
+                    properties[i].Name = "Damage";
+                    properties[i].Value = "WeaponDamageViewModel";
                     break;
                 default:
-                    sides = 0;
                     break;
             }
         }
@@ -260,13 +271,24 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// <summary>");
         stream.WriteLine($"/// {tableName}");
         stream.WriteLine("/// </summary>");
+        stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
             stream.WriteLine($"public partial class {csName}TableEntryViewModel : RandomTableEntryViewModel, I{csName}TableEntry");
         }
         else
         {
-            stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
+            if (csName.ToLower().StartsWith("adventuringgear"))
+            {
+                stream.WriteLine($"public partial class {csName}TableEntryViewModel : EquipmentTableEntryViewModel, I{csName}TableEntry");
+                stream.WriteLine("{");
+                stream.WriteLine("}");
+                return;
+            }
+            else
+            {
+                stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
+            }
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -284,13 +306,29 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine($"\tprivate {properties[i].Value} {char.ToLower(fieldname[0]) + fieldname.Substring(1)};");
             stream.WriteLine();
         }
-        stream.WriteLine($"\tpublic {csName}TableEntryViewModel");
+        stream.WriteLine("\t/// <summary>");
+        stream.WriteLine($"\t/// {tableName} Table Entry View Model Constructor");
+        stream.WriteLine("\t/// </summary>");
+        stream.WriteLine($"\tpublic {csName}TableEntryViewModel()");
+        stream.WriteLine("\t{");
+        stream.WriteLine("\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t/// <summary>");
+        stream.WriteLine($"\t/// {tableName} Table Entry View Model Constructor allowing all properties to be set");
+        stream.WriteLine("\t/// </summary>");
+        for (int i = propertiesStart; i < properties.Count(); i++)
+        {
+            string paramName = Utilities.CleanupForCSharp(properties[i].Name);
+            paramName = char.ToLower(paramName[0]) + paramName.Substring(1);
+            stream.WriteLine($"\t/// <param name=\"{paramName}\">{properties[i].Name}</param>");
+        }
         stream.WriteLine("\t(");
         for (int i = propertiesStart; i < properties.Count(); i++)
         {
             string paramName = Utilities.CleanupForCSharp(properties[i].Name);
-            stream.WriteLine($"\t\t{paramName} {char.ToLower(paramName[0]) + paramName.Substring(1)},");
-            stream.WriteLine();
+            stream.Write($"\t\t{properties[0].Value} ");
+            paramName = char.ToLower(paramName[0]) + paramName.Substring(1);
+            stream.WriteLine($"{paramName},");
         }
         stream.WriteLine("\t)");
         stream.WriteLine("\t{");
@@ -416,20 +454,20 @@ public partial class GenerateModel : IGenerateModel
                     }
                     continue;
                 }
-                if (properties[i].Value == "string")
+                switch (properties[i].Value)
                 {
-                    stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = \"{rows[k][i]}\",");
-                }
-                else
-                {
-                    if (properties[i].Value == "int")
-                    {
+                    case "string":
+                        stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = \"{rows[k][i]}\",");
+                        break;
+                    case "int":
                         stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = Convert.ToInt32({rows[k][i]}),");
-                    }
-                    else
-                    {
+                        break;
+                    case "decimal":
                         stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = Convert.ToDecimal({rows[k][i]}),");
-                    }
+                        break;
+                    default:
+                        stream.WriteLine($"\t\t\t\t\t{properties[i].Name} = new {properties[i].Value}(\"{rows[k][i]}\"),");
+                        break;
                 }
             }
             stream.WriteLine($"\t\t\t\t}},");
