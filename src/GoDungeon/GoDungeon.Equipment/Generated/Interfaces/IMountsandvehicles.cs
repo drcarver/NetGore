@@ -1,5 +1,5 @@
 //
-// Adventuring Gear
+// Mountsandvehicles
 //
 using System;
 
@@ -9,6 +9,6 @@ using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Equipment.Interfaces;
 
-public interface IAdventuringGearTableEntry  : IEquipmentTableEntry, IBaseObject
+public interface IMountsandvehicles  : IBaseObject
 {
 }

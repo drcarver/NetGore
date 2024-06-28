@@ -11,7 +11,7 @@ public partial class CostViewModel : ObservableObject, ICost
     /// The type of Coin
     /// </summary>
     [ObservableProperty]
-    private CoinType? coin = CoinType.Gold;
+    private CoinTypeEnum? coin = CoinTypeEnum.Gold;
 
     /// <summary>
     /// The amount of coins
@@ -52,20 +52,20 @@ public partial class CostViewModel : ObservableObject, ICost
             switch (cost[1].ToLower().Trim())
             {
                 case "cp":
-                    Coin = CoinType.Copper;
+                    Coin = CoinTypeEnum.Copper;
                     break;
                 case "sp":
-                    Coin = CoinType.Silver;
+                    Coin = CoinTypeEnum.Silver;
                     break;
                 case "ep":
-                    Coin = CoinType.Electrum;
+                    Coin = CoinTypeEnum.Electrum;
                     break;
                 case "pp":
-                    Coin = CoinType.Platinum;
+                    Coin = CoinTypeEnum.Platinum;
                     break;
                 case "gp":
                 default:
-                    Coin = CoinType.Gold;
+                    Coin = CoinTypeEnum.Gold;
                     break;
             }
         }

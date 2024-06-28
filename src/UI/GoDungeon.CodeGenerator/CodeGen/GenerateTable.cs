@@ -1,10 +1,5 @@
-﻿using System;
-
-using GoDungeon.CodeGenerator.Interfaces;
+﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
-using GoDungeon.Equipment.Enum;
-
-using Syncfusion.DocIO.DLS;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -28,37 +23,7 @@ public partial class GenerateModel : IGenerateModel
         {
             return;
         }
-        for (int i = 0; i < properties.Count; i++)
-        {
-            switch (properties[i].Name.ToLower().Trim())
-            {
-                case "d100":
-                case "d20":
-                case "d12":
-                case "d10":
-                case "d8":
-                case "d6":
-                case "d4":
-                    sides = Convert.ToInt32(properties[i].Name.ToLower().Replace("d", string.Empty));
-                    properties[i].Name = "Range";
-                    properties[i].Value = "Range";
-                    break;
-                case "cost":
-                    properties[i].Name = "Cost";
-                    properties[i].Value = "CostViewModel";
-                    break;
-                case "weight":
-                    properties[i].Name = "Weight";
-                    properties[i].Value = "WeightViewModel";
-                    break;
-                case "damage":
-                    properties[i].Name = "Damage";
-                    properties[i].Value = "WeaponDamageViewModel";
-                    break;
-                default:
-                    break;
-            }
-        }
+        sides = SetProperties(properties);
 
         // The directory and file name
         dirName = @$"{dirPath}/{nameSpace}/Tables";
@@ -94,7 +59,15 @@ public partial class GenerateModel : IGenerateModel
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableEntryViewModel.cs";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateTableEntryViewModel(stream, tableName, nameSpace, properties, sides);
+            switch (nameSpace)
+            {
+                case "Equipment":
+                    GenerateEquipmentTableEntryViewModel(stream, tableName, nameSpace, properties, sides);
+                    break;
+                default:
+                    GenerateTableEntryViewModel(stream, tableName, nameSpace, properties, sides);
+                    break;
+            }
         }
 
         // The directory and file name
@@ -103,7 +76,15 @@ public partial class GenerateModel : IGenerateModel
         fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}TableEntry.cs";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateTableEntryViewModelInterface(stream, tableName, nameSpace, properties, sides);
+            switch (nameSpace)
+            {
+                case "Equipment":
+                    GenerateEquipmentTableEntryViewModelInterface(stream, tableName, nameSpace, properties, sides);
+                    break;
+                default:
+                    GenerateTableEntryViewModelInterface(stream, tableName, nameSpace, properties, sides);
+                    break;
+            }
         }
 
         // The directory and file name
@@ -114,6 +95,47 @@ public partial class GenerateModel : IGenerateModel
         {
             GenerateTableTest(stream, tableName, nameSpace, properties, rows, sides);
         }
+    }
+
+    /// <summary>
+    /// Set the properties to accommodate the types of the different table entries
+    /// </summary>
+    /// <param name="properties">The properties (headers) for the table</param>
+    private int SetProperties(List<PropertyModel> properties)
+    {
+        int sides = 0;
+        for (int i = 0; i < properties.Count; i++)
+        {
+            switch (properties[i].Name.ToLower().Trim())
+            {
+                case "d100":
+                case "d20":
+                case "d12":
+                case "d10":
+                case "d8":
+                case "d6":
+                case "d4":
+                    sides = Convert.ToInt32(properties[i].Name.ToLower().Replace("d", string.Empty));
+                    properties[i].Name = "Range";
+                    properties[i].Value = "Range";
+                    break;
+                case "cost":
+                    properties[i].Name = "Cost";
+                    properties[i].Value = "CostViewModel";
+                    break;
+                case "weight":
+                    properties[i].Name = "Weight";
+                    properties[i].Value = "WeightViewModel";
+                    break;
+                case "damage":
+                    properties[i].Name = "Damage";
+                    properties[i].Value = "WeaponDamageViewModel";
+                    break;
+                default:
+                    break;
+            }
+        }
+        return sides;
     }
 
     /// <summary>
@@ -156,42 +178,94 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t\tAssert.IsTrue(testTable.ProperName == \"{tableName} Table\");");
         stream.WriteLine($"\t\tAssert.IsTrue(testTable.Description == \"{tableName}\");");
         stream.WriteLine($"\t\tAssert.IsTrue(testTable.Table.Count() == {rows.Count()});");
-        stream.WriteLine($"\t\tforeach (var item in System.Enum.GetValues(typeof({tableName}Enum)))");
+        stream.WriteLine($"\t\tforeach (var item in System.Enum.GetValues(typeof({csTableName}Enum)))");
         stream.WriteLine("\t\t{");
-        stream.WriteLine($"\t\t\tI{tableName}TableEntry entry = (I{tableName}TableEntry) testTable.GetEntryByName(item.ToString());");
-        stream.WriteLine($"\t\t\tAssert.IsNotNull(entry, $\"The {tableName} table has no entry for {{item.ToString()}}\");");
-        stream.WriteLine($"\t\t\tvar verify = Verify{tableName}TableEntry(item.ToString(), entry);");
+        stream.WriteLine($"\t\t\tI{csTableName}TableEntry entry = (I{tableName}TableEntry) testTable.GetEntryByName(item.ToString());");
+        stream.WriteLine($"\t\t\tAssert.IsNotNull(entry, $\"The {csTableName} table has no entry for {{item.ToString()}}\");");
+        stream.WriteLine($"\t\t\tvar verify = Verify{csTableName}TableEntry(item.ToString(), entry);");
         stream.WriteLine($"\t\t\tAssert.IsTrue(verify == string.Empty, verify);");
         stream.WriteLine("\t\t}");
         stream.WriteLine("\t}");
         stream.WriteLine();
         stream.WriteLine("\t/// <summary>");
-        stream.WriteLine($"\t/// Verify a entry in the I{tableName}Table");
+        stream.WriteLine($"\t/// Verify a entry in the I{csTableName}Table");
         stream.WriteLine("\t/// </summary>");
         stream.WriteLine("\t/// <param name=\"enumString\">The name of the entry as a string</param>");
-        stream.WriteLine($"\t/// <param name=\"entry\">The I{tableName}TableEntry entry</param>");
+        stream.WriteLine($"\t/// <param name=\"entry\">The I{csTableName}TableEntry entry</param>");
         stream.WriteLine($"\t/// <returns>Empty when no test fails, otherwise a failure string.</returns>");
-        stream.WriteLine($"\tprivate string Verify{tableName}TableEntry(string enumString, I{tableName}TableEntry entry)");
+        stream.WriteLine($"\tprivate string Verify{csTableName}TableEntry(string enumString, I{csTableName}TableEntry entry)");
         stream.WriteLine("\t{");
-        stream.WriteLine($"\t\t{tableName}Enum enumValue;");
+        stream.WriteLine($"\t\t{csTableName}Enum enumValue;");
         stream.WriteLine($"\t\tif (!System.Enum.TryParse(enumString, out enumValue))");
         stream.WriteLine("\t\t{");
-        stream.WriteLine($"\t\t\treturn $\"Unable to convert {{enumString}} to a {tableName}TableEnum\";");
+        stream.WriteLine($"\t\t\treturn $\"Unable to convert {{enumString}} to a {csTableName}TableEnum\";");
         stream.WriteLine("\t\t}");
-        stream.WriteLine($"\t\tvar testBase = new {tableName}TableEntryViewModel();");
+        stream.WriteLine($"\t\tvar testBase = new {csTableName}TableEntryViewModel();");
         stream.WriteLine("\t\tswitch (enumValue)");
         stream.WriteLine("\t\t{");
         foreach (var row in rows)
         {
             for (int i = 0; i < properties.Count(); i++)
             {
-                stream.WriteLine($"\t\t\ttestBase.Name = {row[i][0]}");
+                stream.WriteLine($"\t\t\ttestBase.Name = {row[i]}");
             }
         }
         stream.WriteLine("\t\t\tdefault:");
         stream.WriteLine("\t\t\t\treturn $\"No Case for entry named {entry.Name}\";");
         stream.WriteLine("\t\t}");
         stream.WriteLine("\t}");
+        stream.WriteLine("}");
+    }
+
+    /// <summary>
+    /// Generate the .cs class for the table enum
+    /// </summary>
+    /// <param name="stream">The stream for the enum</param>
+    /// <param name="tableName">The name of the table to generate</param>
+    /// <param name="nameSpace">The namespace for the table</param>
+    /// <param name="properties">The properties for the view model</param>
+    /// <param name="randomTable">Is it a random table?</param>
+    private void GenerateEquipmentTableEntryViewModelInterface(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
+    {
+        var csName = Utilities.CleanupForCSharp(tableName);
+
+        stream.WriteLine("//");
+        stream.WriteLine($"// {tableName} view model interface");
+        stream.WriteLine("//");
+        stream.WriteLine("using CommunityToolkit.Mvvm.ComponentModel;");
+        stream.WriteLine();
+        stream.WriteLine("using GoDungeon.Core.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine($"namespace GoDungeon.{nameSpace}.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine("/// <summary>");
+        stream.WriteLine($"/// I{tableName}");
+        stream.WriteLine("/// </summary>");
+        if (sides > 0)
+        {
+            stream.WriteLine($"public interface I{csName}TableEntry : IRandomTableEntry");
+        }
+        else
+        {
+            stream.WriteLine($"public interface I{csName}TableEntry : IEquipmentTableEntry");
+            stream.WriteLine("{");
+            stream.WriteLine("}");
+            return;
+        }
+        stream.WriteLine("{");
+        int propertiesStart = 0;
+        if (sides > 0)
+        {
+            propertiesStart = 1;
+        }
+        for (int i = propertiesStart; i < properties.Count(); i++)
+        {
+            stream.WriteLine("\t/// <summary>");
+            stream.WriteLine($"\t/// {properties[i].Name}");
+            stream.WriteLine("\t/// </summary>");
+            stream.WriteLine($"\tpublic {properties[i].Value} {Utilities.CleanupForCSharp(properties[i].Name)} {{ get; set; }}");
+            stream.WriteLine();
+        }
         stream.WriteLine("}");
     }
 
@@ -271,24 +345,13 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("/// <summary>");
         stream.WriteLine($"/// {tableName}");
         stream.WriteLine("/// </summary>");
-        stream.WriteLine("/// </summary>");
         if (sides > 0)
         {
             stream.WriteLine($"public partial class {csName}TableEntryViewModel : RandomTableEntryViewModel, I{csName}TableEntry");
         }
         else
         {
-            if (csName.ToLower().StartsWith("adventuringgear"))
-            {
-                stream.WriteLine($"public partial class {csName}TableEntryViewModel : EquipmentTableEntryViewModel, I{csName}TableEntry");
-                stream.WriteLine("{");
-                stream.WriteLine("}");
-                return;
-            }
-            else
-            {
-                stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
-            }
+            stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
         }
         stream.WriteLine("{");
         int propertiesStart = 0;
@@ -306,33 +369,69 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine($"\tprivate {properties[i].Value} {char.ToLower(fieldname[0]) + fieldname.Substring(1)};");
             stream.WriteLine();
         }
-        stream.WriteLine("\t/// <summary>");
-        stream.WriteLine($"\t/// {tableName} Table Entry View Model Constructor");
-        stream.WriteLine("\t/// </summary>");
-        stream.WriteLine($"\tpublic {csName}TableEntryViewModel()");
-        stream.WriteLine("\t{");
-        stream.WriteLine("\t}");
+        stream.WriteLine("}");
+    }
+
+    /// <summary>
+    /// Generate the .cs class for the table enum
+    /// </summary>
+    /// <param name="stream">The stream for the enum</param>
+    /// <param name="tableName">The name of the table to generate</param>
+    /// <param name="nameSpace">The namespace for the table</param>
+    /// <param name="properties">The properties for the view model</param>
+    /// <param name="sides">the number of sides to the dice in a random table?</param>
+    private void GenerateEquipmentTableEntryViewModel(TextWriter stream, string tableName, string nameSpace, List<PropertyModel> properties, int sides)
+    {
+        var csName = Utilities.CleanupForCSharp(tableName);
+
+        stream.WriteLine("//");
+        stream.WriteLine($"// {tableName} view model");
+        stream.WriteLine("//");
+        stream.WriteLine($"using CommunityToolkit.Mvvm.ComponentModel;");
         stream.WriteLine();
-        stream.WriteLine("\t/// <summary>");
-        stream.WriteLine($"\t/// {tableName} Table Entry View Model Constructor allowing all properties to be set");
-        stream.WriteLine("\t/// </summary>");
-        for (int i = propertiesStart; i < properties.Count(); i++)
+        stream.WriteLine($"using GoDungeon.Core.Interfaces;");
+        stream.WriteLine($"using GoDungeon.Core.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
+        stream.WriteLine();
+        stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
+        stream.WriteLine();
+        stream.WriteLine("/// <summary>");
+        stream.WriteLine($"/// {tableName}");
+        stream.WriteLine("/// </summary>");
+        switch (csName)
         {
-            string paramName = Utilities.CleanupForCSharp(properties[i].Name);
-            paramName = char.ToLower(paramName[0]) + paramName.Substring(1);
-            stream.WriteLine($"\t/// <param name=\"{paramName}\">{properties[i].Name}</param>");
+            case "AdventuringGear":
+            case "Ammunition":
+            case "Arcanefocus":
+            case "Artisanstools":
+            case "Druidicfocus":
+            case "Gamingset":
+            case "HolySymbol":
+            case "Musicalinstrument":
+            case "Othertools":
+            case "Saddles":
+            case "TackHarnessandDrawnVehicles":
+                stream.WriteLine($"public partial class {csName}TableEntryViewModel : EquipmentTableEntryViewModel, I{csName}TableEntry");
+                stream.WriteLine("{");
+                stream.WriteLine("}");
+                return;
+                break;
+            default:
+                stream.WriteLine($"public partial class {csName}TableEntryViewModel : StandardTableEntryViewModel, I{csName}TableEntry");
+                break;
         }
-        stream.WriteLine("\t(");
-        for (int i = propertiesStart; i < properties.Count(); i++)
+        stream.WriteLine("{");
+        for (int i = 0; i < properties.Count(); i++)
         {
-            string paramName = Utilities.CleanupForCSharp(properties[i].Name);
-            stream.Write($"\t\t{properties[0].Value} ");
-            paramName = char.ToLower(paramName[0]) + paramName.Substring(1);
-            stream.WriteLine($"{paramName},");
+            stream.WriteLine("\t/// <summary>");
+            stream.WriteLine($"\t/// {properties[i].Name}");
+            stream.WriteLine("\t/// </summary>");
+            stream.WriteLine("\t[ObservableProperty]");
+            string fieldname = Utilities.CleanupForCSharp(properties[i].Name);
+            stream.WriteLine($"\tprivate {properties[i].Value} {char.ToLower(fieldname[0]) + fieldname.Substring(1)};");
+            stream.WriteLine();
         }
-        stream.WriteLine("\t)");
-        stream.WriteLine("\t{");
-        stream.WriteLine("\t}");
         stream.WriteLine("}");
     }
 
@@ -502,6 +601,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("using GoDungeon.Core.Interfaces;");
         stream.WriteLine("using GoDungeon.Core.Tables;");
         stream.WriteLine();
+        stream.WriteLine($"using GoDungeon.{nameSpace}.Enum;");
         stream.WriteLine($"using GoDungeon.{nameSpace}.Interfaces;");
         stream.WriteLine($"using GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();

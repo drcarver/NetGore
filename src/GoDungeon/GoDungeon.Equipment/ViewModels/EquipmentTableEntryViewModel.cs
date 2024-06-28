@@ -10,7 +10,7 @@ using GoDungeon.Equipment.Interfaces;
 namespace GoDungeon.Equipment.ViewModels;
 
 /// <summary>
-/// Adventuring Gear
+/// Equipment tables
 /// </summary>
 public partial class EquipmentTableEntryViewModel : StandardTableEntryViewModel, IEquipmentTableEntry
 {

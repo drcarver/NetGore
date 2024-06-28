@@ -213,6 +213,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"using GoDungeon.{model.NameSpace}.Tables;");
         stream.WriteLine($"using GoDungeon.{model.NameSpace}.ViewModels;");
         stream.WriteLine();
+        stream.WriteLine($"using Microsoft.Extensions.DependencyInjection;");
         stream.WriteLine($"using Microsoft.Extensions.Logging;");
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{model.NameSpace};");

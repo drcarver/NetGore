@@ -8,7 +8,7 @@ public interface ICost
     /// <summary>
     /// The type of Coin
     /// </summary>
-    CoinType? Coin { get; set; }
+    CoinTypeEnum? Coin { get; set; }
 
     /// <summary>
     /// The amount of coins

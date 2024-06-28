@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoDungeon.Equipment.Enum;
 
-public enum CoinType : int
+public enum CoinTypeEnum : int
 {
     Copper = 1,
     Silver = 2,
