@@ -16,4 +16,9 @@ public interface IWeight
     /// The units of weight (lb, o, etc.)
     /// </summary>
     WeightEnum Weight { get; set; }
+
+    /// <summary>
+    /// The original string parsed
+    /// </summary>
+    string OriginalString { get; set; }
 }

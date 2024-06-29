@@ -13,6 +13,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="parseMonsterMarkdown">The parser file</param>
     /// <param name="generateMonster">The class generator</param>
     /// <param name="generateHtml">The .html generator</param>
+    /// <param name="generateView">The .maui view generator</param>
     public Process5ESRDFiles
     (
         IParseMarkdown parseMarkdown,

@@ -46,12 +46,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Equipment", "GoDu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{58AB0460-5069-4A1B-8326-DDE510AB04EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.Equipment.Tests", "GoDungeon\GoDungeon.Equipment.Tests\GoDungeon.Equipment.Tests.csproj", "{B309FB66-2C79-4E02-8286-270FA287B4FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoDungeon.Equipment.Tests", "GoDungeon\GoDungeon.Equipment.Tests\GoDungeon.Equipment.Tests.csproj", "{B309FB66-2C79-4E02-8286-270FA287B4FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json", "json", "{596C0283-51E1-4888-981E-837ED2178519}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\Srd5E\AdventuringGearTable.json = ..\..\Srd5E\AdventuringGearTable.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDungeon.MAUI.Equipment", "UI\MAUI\GoDungeon.MAUI.Equipment\GoDungeon.MAUI.Equipment.csproj", "{A13ED2F7-A6E6-465F-ABFB-1980EC39A117}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,10 @@ Global
 		{B309FB66-2C79-4E02-8286-270FA287B4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B309FB66-2C79-4E02-8286-270FA287B4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B309FB66-2C79-4E02-8286-270FA287B4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A13ED2F7-A6E6-465F-ABFB-1980EC39A117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A13ED2F7-A6E6-465F-ABFB-1980EC39A117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A13ED2F7-A6E6-465F-ABFB-1980EC39A117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A13ED2F7-A6E6-465F-ABFB-1980EC39A117}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +154,7 @@ Global
 		{C48133ED-7006-46C1-AB24-D4E16896FAA5} = {AAB070AA-9377-4229-8BAA-30BE03A46034}
 		{49070620-EC68-4D4E-988C-2B7298B4EF5E} = {8991D626-24A7-4FCE-BF65-11E53EDAF4E1}
 		{B309FB66-2C79-4E02-8286-270FA287B4FA} = {58AB0460-5069-4A1B-8326-DDE510AB04EB}
+		{A13ED2F7-A6E6-465F-ABFB-1980EC39A117} = {2A7B5D2C-68B2-49CD-B23E-1311DE5FD0BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {327517B2-8B9C-4CA3-AC89-441B0FCE5B94}

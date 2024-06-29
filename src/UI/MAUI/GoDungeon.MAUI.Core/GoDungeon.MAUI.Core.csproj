@@ -25,11 +25,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Enum\" />
-	  <Folder Include="ViewModels\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Background\GoDungeon.Background.csproj" />
 	  <ProjectReference Include="..\..\..\GoDungeon\GoDungeon.Core\GoDungeon.Core.csproj" />
 	</ItemGroup>
@@ -53,6 +48,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\TableView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AcrobaticsModifierTablePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

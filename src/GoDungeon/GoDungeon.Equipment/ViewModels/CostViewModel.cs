@@ -20,6 +20,12 @@ public partial class CostViewModel : ObservableObject, ICost
     private decimal amount = 0;
 
     /// <summary>
+    /// The original string parsed
+    /// </summary>
+    [ObservableProperty]
+    private string originalString;
+
+    /// <summary>
     /// Override to convert to a string
     /// </summary>
     /// <returns>The weight as a string</returns>
@@ -42,6 +48,7 @@ public partial class CostViewModel : ObservableObject, ICost
     /// <param name="value">The value to be converted to a cost view model</param>
     public CostViewModel(string  value)
     {
+        OriginalString = value;
         string[] cost = value.Split(' ');
         if (cost.Length == 2)
         {

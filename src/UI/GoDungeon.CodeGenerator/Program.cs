@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 using GoDungeon.Background;
 using GoDungeon.Character;
 using GoDungeon.Core;
@@ -25,7 +23,7 @@ public class Program
             .UseGoDungeonCore()
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
-             //.UseGoDungeonEquipmentGenerated()
+            .UseGoDungeonEquipmentGenerated()
              //.UseGoDungeonEquipment()
             .UseGoDungeonGaming()
             .UseGoDungeonMagicItems()

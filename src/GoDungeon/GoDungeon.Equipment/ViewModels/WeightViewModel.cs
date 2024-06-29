@@ -9,7 +9,7 @@ using GoDungeon.Equipment.Interfaces;
 
 namespace GoDungeon.Equipment.ViewModels;
 
-public partial class WeightViewModel : BaseObjectViewModel, IWeight
+public partial class WeightViewModel : ObservableObject, IWeight
 {
     /// <summary>
     /// Weight of the item
@@ -24,6 +24,12 @@ public partial class WeightViewModel : BaseObjectViewModel, IWeight
     private WeightEnum weight = WeightEnum.lb;
 
     /// <summary>
+    /// The original string parsed
+    /// </summary>
+    [ObservableProperty]
+    private string originalString;
+
+    /// <summary>
     /// Override to convert to a string
     /// </summary>
     /// <returns>The weight as a string</returns>
@@ -35,7 +41,7 @@ public partial class WeightViewModel : BaseObjectViewModel, IWeight
         }
         if (Amount == 1)
         {
-            return $"{Amount} {Weight.ToString()}s.";
+            return $"{Amount} {Weight.ToString()}.";
         }
         return $"{Amount} {Weight.ToString()}s.";
     }
@@ -46,6 +52,7 @@ public partial class WeightViewModel : BaseObjectViewModel, IWeight
     /// <param name="value">The value to be converted to a weight view model</param>
     public WeightViewModel(string value)
     {
+        OriginalString = value;
         string[] weight = value.Split(' ');
         if (weight.Length == 2)
         {

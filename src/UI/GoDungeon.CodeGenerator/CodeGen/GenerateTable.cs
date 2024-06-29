@@ -95,6 +95,15 @@ public partial class GenerateModel : IGenerateModel
         {
             GenerateTableTest(stream, tableName, nameSpace, properties, rows, sides);
         }
+
+        // The table view
+        dirName = @$"{dirPath}/{nameSpace}/Views";
+        Directory.CreateDirectory(dirName);
+        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableView.xaml";
+        using (var stream = File.CreateText(fileName))
+        {
+            GenerateTableViewXAML(stream, tableName, properties, rows, nameSpace);
+        }
     }
 
     /// <summary>

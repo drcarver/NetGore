@@ -1,4 +1,5 @@
 using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.Equipment.Tables;
 
 namespace GoDungeon.CodeGenerator;
 
@@ -56,10 +57,10 @@ public class Worker : BackgroundService
             }
         }
 
-        //var table = new AdventuringGearTable();
-        //table.InitializeTable();
-        //var json = Newtonsoft.Json.JsonConvert.SerializeObject(table);
-        //File.WriteAllText($"{outputDir}/AdventuringGearTable.json", json);
+        var table = new AdventuringGearTable();
+        table.InitializeTable();
+        var json = Newtonsoft.Json.JsonConvert.SerializeObject(table);
+        File.WriteAllText($"{outputDir}/AdventuringGearTable.json", json);
 
         //process5ESRDFiles.GenerateModel.GenerateSpellLists(
         //    process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir); 

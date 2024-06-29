@@ -39,7 +39,7 @@ public interface IGenerateModel
     /// <param name="properties">The list of properties for the view model</param>
     /// <param name="rows">The rows of the table</param>
     /// <param name="nameSpace">The nameSPace for the table</param>
-    public void GenerateTable(string dirPath, string filePath, string tableName, List<PropertyModel> properties, List<List<string>> rows, string nameSpace);
+    void GenerateTable(string dirPath, string filePath, string tableName, List<PropertyModel> properties, List<List<string>> rows, string nameSpace);
 
     /// <summary>
     /// Generate the list files
