@@ -1,13 +1,17 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Interfaces;
-using GoDungeon.Monsters.Interfaces;
 using GoDungeon.Monsters.ViewModels;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
 public partial class ParseMarkdown : IParseMarkdown
 {
+    /// <summary>
+    /// The logger
+    /// </summary>
+    private readonly ILogger<ParseMarkdown> logger;
+
     /// <summary>
     /// The monster information
     /// </summary>
@@ -17,27 +21,19 @@ public partial class ParseMarkdown : IParseMarkdown
     /// A list of monster Info
     /// </summary>
     public List<MonsterInfoViewModel> MonsterInfoList { get; set; } = new List<MonsterInfoViewModel>();
-
-    /// <summary>
-    /// The list of services
-    /// </summary>
-    private IServiceProvider ServiceProvider { get; }
-
-    /// <summary>
-    /// THe list of monsters
-    /// </summary>
-    public IMonsterLists MonsterLists { get; }
+    public IServiceProvider Services { get; }
 
     /// <summary>
     /// Constructor
     /// </summary>
-    /// <param name="monsterLists">The monster lists</param>
+    /// <param name="services">The DI service provider</param>
+    /// <param name="loggerFactory">The logger factory</param>
     public ParseMarkdown(
-        IMonsterLists monsterLists,
-        IServiceProvider serviceProvider)
+        ILoggerFactory loggerFactory,
+        IServiceProvider services)
     {
-        ServiceProvider = serviceProvider;
-        MonsterLists = monsterLists;
+        logger = loggerFactory.CreateLogger<ParseMarkdown>();
+        Services = services;
     }
 
     /// <summary>

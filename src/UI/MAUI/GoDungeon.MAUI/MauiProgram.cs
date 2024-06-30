@@ -18,6 +18,7 @@ using GoDungeon.Spells;
 using Microsoft.Extensions.Logging;
 using GoDungeon.MAUI.DungeonMap;
 using Syncfusion.Maui.Core.Hosting;
+using GoDungeon.MAUI.ViewModels;
 
 namespace GoDungeon.MAUI;
 
@@ -47,8 +48,8 @@ public static class MauiProgram
 
         // Services
         builder.Services
-            .AddTransient<IMainMenuTable, MainMenuTable>()
-            .AddSingletonWithShellRoute<MainPage, MainMenuTable>(nameof(MainPage))
+            .AddTransient<IMainViewModel, MainViewModel>()
+            .AddSingletonWithShellRoute<MainPage, MainViewModel>(nameof(MainPage))
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
             .UseGoDungeonCore()

@@ -57,6 +57,14 @@ public interface IGenerateModel
     void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath);
 
     /// <summary>
+    /// Generate the xaml for the markdown file
+    /// </summary>
+    /// <param name="outputDir">The output directory for the xaml file</param>
+    /// <param name="inputDir">The input directory for the markdown files</param>
+    /// <param name="fileList">The list of the files</param>
+    void GenerateXAMLFromMarkdown(string outputDir, List<string> fileList, string inputDir);
+
+    /// <summary>
     /// Generate the Service Collection extension for the namespace
     /// </summary>
     /// <param name="stream">The output stream</param>

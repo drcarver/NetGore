@@ -19,10 +19,6 @@ public partial class ParseMarkdown
     {
         var monsterInfo = GetMonsterInfo(markDown);
         MonsterInfoList.Add(monsterInfo);
-        if (MonsterLists.IsWere(monsterInfo))
-        {
-            return null;
-        }
         var creature = CreateCreature(monsterInfo);
         GetSizeRaceType(markDown, creature);
         GetMonsterAbilities(markDown, creature);
@@ -135,7 +131,7 @@ public partial class ParseMarkdown
     /// <param name="The monster info to create the creature from."></param>
     private ICreature CreateCreature(MonsterInfoViewModel monsterInfo)
     {
-        return ServiceProvider.GetRequiredService<ICreature>();
+        return Services.GetRequiredService<ICreature>();
         //IHumanoidRaceFactory humanoidRaceFactory = new RaceFactory(); 
     }
 

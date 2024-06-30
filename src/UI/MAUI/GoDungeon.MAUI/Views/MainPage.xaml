@@ -3,24 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
              xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
-             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.ViewModels;assembly=GoDungeon.MAUI"
              xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
              xmlns:enum="clr-namespace:GoDungeon.Core.Enum;assembly=GoDungeon.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="viewmodel:MenuTable"
-             Title="{Binding ProperName}">
+             x:DataType="viewmodel:MainViewModel"
+             Title="{Binding Title}">
 
-    <CollectionView ItemsSource="{Binding Table}"
-                    SelectedItem="{Binding SelectedItem}"
-                    SelectionMode="Single"
-                    SelectionChangedCommand="{Binding SelectionChangedCommand}"
-                    x:DataType="tables:MainMenuTable">
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
-                <HorizontalStackLayout>
-                    <Label Text="{Binding Description}" Margin="10,10,0,0" />
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <VerticalStackLayout x:Name="MainPageDocument">
+        <!--  left, top, right, and bottom --> 
+        <Label Text="{Binding PageDescription}" Margin="10,0,0,0" 
+               LineBreakMode="WordWrap" FontAttributes="Italic" />
+        <Label Text="{Binding PageHeader}" Margin="10,0,0,0" 
+               FontSize="Medium" FontAttributes="Bold" />
+        <Label Text="{Binding PageBody}" Margin="10,0,0,0" 
+               FontSize="Body" />
+    </VerticalStackLayout>
 </ContentPage>

@@ -1,11 +1,24 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
-using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
 public partial class GenerateModel : IGenerateModel
 {
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="loggerFactory">The logger factory</param>
+    public GenerateModel(ILoggerFactory loggerFactory)
+    {
+        logger = loggerFactory.CreateLogger<GenerateModel>();
+    }
+
+    /// <summary>
+    /// The logger for this model
+    /// </summary>
+    private readonly ILogger<GenerateModel> logger;
+
     /// <summary>
     /// The list of models and tables for the name space
     /// </summary>

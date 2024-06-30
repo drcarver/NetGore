@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
@@ -18,13 +19,20 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     (
         IParseMarkdown parseMarkdown,
         IGenerateModel generateMonster,
-        IGenerateHtml generateHtml
+        IGenerateHtml generateHtml,
+        ILoggerFactory loggerFactory
     )
     {
         ParseMarkdown = parseMarkdown;
         GenerateModel = generateMonster;
         GenerateHtml = generateHtml;
+        Logger = loggerFactory.CreateLogger<Process5ESRDFiles>();
     }
+
+    /// <summary>
+    /// The diagnostic logger
+    /// </summary>
+    private ILogger Logger { get; set; }
 
     /// <summary>
     /// Process monster files from the SRD
@@ -54,44 +62,97 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <summary>
     /// Process a directory
     /// </summary>
-    /// <param name="rootDir">The root directory</param>
-    public void ProcessDirectory(string inputDir, string outputdir)
+    /// <param name="inputDir">The root directory</param>
+    /// <param name="outputDir">The root directory</param>
+    public void ProcessDirectory(string inputDir, string outputDir)
     {
         RootMarkDownDirectory = inputDir;
-        RootOutputDirectory = outputdir;
-        ProcessDirectoryRecursive(inputDir, outputdir);
+        RootOutputDirectory = outputDir;
+        Logger.LogInformation($"Source={inputDir} Destination={outputDir}");
+        var fileList = new List<string>();
+        GetMarKDownFileListRecursive(inputDir, fileList);
+        //ProcessFileList(outputDir, fileList, inputDir);
+        GenerateModel.GenerateXAMLFromMarkdown(outputDir, fileList, inputDir);
     }
 
     /// <summary>
-    /// Process a directory recursively
+    /// Get the fileList for the markdown
     /// </summary>
-    /// <param name="inputDir">The path to the input directory</param>
-    /// <param name="outputDir">The path to the output directory</param>
-    private void ProcessDirectoryRecursive(string inputDir, string outputDir)
+    /// <param name="inputDir">The input directory</param>
+    /// <param name="fileList">The list of all files in the input directory structure</param>
+    private void GetMarKDownFileListRecursive(string inputDir, List<string> fileList)
     {
+        // Process each directory recursively 
         foreach (var dir in Directory.EnumerateDirectories(inputDir))
         {
-            ProcessDirectoryRecursive(dir, outputDir);
+            GetMarKDownFileListRecursive(dir, fileList);
         }
 
+        // get a list of the files in the directory
         foreach (string filePath in Directory.EnumerateFiles(inputDir))
         {
+            FileInfo fileInfo = new FileInfo(filePath);
+            var outputFile = fileInfo.FullName.Replace(RootMarkDownDirectory, string.Empty);
+            if (fileInfo.DirectoryName != RootMarkDownDirectory)
+            {
+                fileList.Add(outputFile);
+            }
+        }
+        Logger.LogInformation($"Processing of {inputDir} Complete");
+    }
+
+    /// <summary>
+    /// Generate all the files from the file list
+    /// </summary>
+    /// <param name="outputDir">The path to the output directory</param>
+    /// <param name="fileList">The list of files</param>
+    /// <param name="inputDir">The path to the input directory</param>
+    private void ProcessFileList(string outputDir, List<string> fileList, string inputDir)
+    {
+        foreach (string filePath in fileList)
+        {
             // Process all the tables in the SRD
-            ProcessTables(filePath, outputDir);
+            var inputFilePath = Path.Combine(inputDir, filePath);
+            ProcessTables(inputFilePath, outputDir);
 
             // Process the monsters
             if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
             {
-                ProcessMonsterFile(filePath, outputDir);
+                ProcessMonsterFile(inputFilePath, outputDir);
             }
 
             // Process the spells
             if (filePath.Contains("spells") && filePath.EndsWith(".md"))
             {
-                //ProcessSpellFile(filePath, outputDir);
+                //ProcessSpellFile(inputFilePath, outputDir);
             }
+
+            ProcessMarkDownFiles(inputFilePath, outputDir);
+
+            Logger.LogInformation($"Completed processing of {filePath}");
         }
-        Debug.WriteLine("Table Generation Complete");
+    }
+
+    /// <summary>
+    /// Convert all markdown files into xaml
+    /// </summary>
+    /// <param name="filePath">The input file</param>
+    /// <param name="outputDir">The output directory root</param>
+    private void ProcessMarkDownFiles(string filePath, string outputDir)
+    {
+        var fileInfo = new FileInfo(filePath);
+        if (fileInfo.Name == "index.md")
+        {
+            return;
+        }
+
+        // Create the directory structure to match the file location
+        outputDir = $@"{outputDir}\Markdown";
+        Directory.CreateDirectory(outputDir);
+        var markDown = File.ReadAllLines(filePath).ToList();
+
+        // Generate the equivalent xaml for the markdown file
+        GenerateModel.GenerateXAMLFromMarkdown(outputDir, markDown, filePath);
     }
 
     /// <summary>

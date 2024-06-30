@@ -1,10 +1,35 @@
-﻿using GoDungeon.CodeGenerator.Interfaces;
+﻿using System.Diagnostics;
+using System.Reflection.Emit;
+
+using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
 public partial class GenerateModel : IGenerateModel
 {
+    /// <summary>
+    /// Given a markdown file, generate the equivalent xaml
+    /// <param name="outputDir">The output directory root</param>
+    /// <param name="fileList">The list of markdown files</param>
+    /// <param name="inputDir">The input directory root</param>
+    /// </summary>
+    public void GenerateXAMLFromMarkdown(string outputDir, List<string> fileList, string filePath)
+    {
+        FileInfo fileInfo = new FileInfo(filePath);
+        GenerateMarkDownViewModel(fileList, outputDir, filePath);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="markdown"></param>
+    /// <param name="outputDir"></param>
+    /// <param name="filePath"></param>
+    private void GenerateMarkDownViewModel(List<string> fileList, string outputDir, string filePath)
+    {
+    }
+
     /// <summary>
     /// Generate the .xaml file for the table
     /// </summary>
