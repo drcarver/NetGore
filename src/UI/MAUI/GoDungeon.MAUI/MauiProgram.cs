@@ -7,18 +7,19 @@ using GoDungeon.Equipment;
 using GoDungeon.Gaming;
 using GoDungeon.MagicItems;
 using GoDungeon.MAUI.Core;
-using GoDungeon.MAUI.PlayerCharacter;
+using GoDungeon.MAUI.DungeonMap;
+using GoDungeon.MAUI.Equipment;
 using GoDungeon.MAUI.Interfaces;
-using GoDungeon.MAUI.Tables;
+using GoDungeon.MAUI.PlayerCharacter;
+using GoDungeon.MAUI.ViewModels;
 using GoDungeon.MAUI.Views;
 using GoDungeon.Monsters;
 using GoDungeon.RandomDungeon;
 using GoDungeon.Spells;
 
 using Microsoft.Extensions.Logging;
-using GoDungeon.MAUI.DungeonMap;
+
 using Syncfusion.Maui.Core.Hosting;
-using GoDungeon.MAUI.ViewModels;
 
 namespace GoDungeon.MAUI;
 
@@ -53,7 +54,7 @@ public static class MauiProgram
             .UseGoDungeonBackground()
             .UseGoDungeonCharacter()
             .UseGoDungeonCore()
-            //.UseGoDungeonEquipment()
+            .UseGoDungeonEquipmentGenerated()
             .UseGoDungeonGaming()
             .UseGoDungeonMagicItems()
             .UseGoDungeonMonsters()
@@ -64,6 +65,7 @@ public static class MauiProgram
             .UseGoDungeonMAUICore()
             .UseGoDungeonMAUIPlayerCharacter()
             .UseGoDungeonMAUIDungeonMap()
+            .UseGoDungeonMAUIEquipment()
             .BuildServiceProvider();
 
         return builder.Build();

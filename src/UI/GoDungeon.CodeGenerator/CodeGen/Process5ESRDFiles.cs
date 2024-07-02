@@ -50,12 +50,12 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     public IGenerateHtml GenerateHtml { get; }
 
     /// <summary>
-    /// The root directory to generate the .html and class files in
+    /// The root directory for the source .md files
     /// </summary>
     public string? RootMarkDownDirectory { get; set; }
 
     /// <summary>
-    /// The root directory to generate the .html and class files in
+    /// The root directory to create the .html and class files
     /// </summary>
     public string? RootOutputDirectory { get; set; }
 
@@ -71,7 +71,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         Logger.LogInformation($"Source={inputDir} Destination={outputDir}");
         var fileList = new List<string>();
         GetMarKDownFileListRecursive(inputDir, fileList);
-        //ProcessFileList(outputDir, fileList, inputDir);
+        ProcessFileList(outputDir, fileList, inputDir);
         GenerateModel.GenerateXAMLFromMarkdown(outputDir, fileList, inputDir);
     }
 
@@ -112,7 +112,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         foreach (string filePath in fileList)
         {
             // Process all the tables in the SRD
-            var inputFilePath = Path.Combine(inputDir, filePath);
+            var inputFilePath = Path.Combine(inputDir, filePath.Substring(1));
             ProcessTables(inputFilePath, outputDir);
 
             // Process the monsters
@@ -241,7 +241,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         }
 
         // Generate the constructor for the main view model
-        GenerateModel.GenerateConstructor(outputDir, model, filePath);
+        GenerateModel.GenerateConstructor(outputDir, model, filePath, markDown);
     }
 
     /// <summary>

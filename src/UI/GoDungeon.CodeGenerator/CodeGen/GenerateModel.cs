@@ -30,7 +30,8 @@ public partial class GenerateModel : IGenerateModel
     /// <param name="outputDir">The output directory</param>
     /// <param name="model">The mark down table model</param>
     /// <param name="filePath">The path to the markdown file</param>
-    public void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath)
+    /// <param name="filePath">The contents of the markdown file</param>
+    public void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath, List<string> markDown)
     {
         var fileInfo = new FileInfo(filePath);
         var nameSpace = Utilities.CleanupForCSharp(fileInfo.DirectoryName.Split('\\').LastOrDefault());
@@ -48,7 +49,7 @@ public partial class GenerateModel : IGenerateModel
         var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1);
         using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}ViewModel.cs"))
         {
-            GenerateViewModel(stream, fileName, model, nameSpace);
+            GenerateViewModel(stream, fileName, model, nameSpace, markDown);
         }
 
         // Get the base file name
@@ -95,9 +96,10 @@ public partial class GenerateModel : IGenerateModel
     /// </summary>
     /// <param name="stream">The output stream</param>
     /// <param name="fileInfo">The output file info</param>
-    /// <param name="model">The markdown file</param>
-    /// <param name="nameSpace">The namespace fir the file</param>
-    private void GenerateViewModel(TextWriter stream, string fileName, IMarkDownTableModel model, string nameSpace)
+    /// <param name="model">The markdown table model</param>
+    /// <param name="nameSpace">The namespace for the file</param>
+    /// <param name="nameSpace">The markDown file contents</param>
+    private void GenerateViewModel(TextWriter stream, string fileName, IMarkDownTableModel model, string nameSpace, List<string> markDown)
     {
         stream.WriteLine("//");
         stream.WriteLine($"// {fileName}");
@@ -112,6 +114,9 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine();
         stream.WriteLine($"namespace GoDungeon.{nameSpace}.ViewModels;");
         stream.WriteLine();
+        stream.WriteLine("/// <Summary>");
+        stream.WriteLine($"/// View Model for {fileName}View");
+        stream.WriteLine("/// <Summary>");
         stream.WriteLine($"public partial class {fileName}ViewModel  : BaseObjectViewModel, I{fileName}");
         stream.WriteLine("{");
         stream.WriteLine("\t#region Constructor Parameters");
@@ -134,6 +139,12 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t/// The service provider");
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\tIServiceProvider Services {{ get; }}");
+        stream.WriteLine();
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\t/// The formatted text for the view model body");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t[ObservableProperty]");
+        stream.WriteLine($"\tFormattedString formattedBodyText;");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// Initialize the view model");
@@ -184,8 +195,40 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"\t\t// Initialize the view model");
         stream.WriteLine($"\t\tInitialize();");
         stream.WriteLine("\t\t#endregion");
+        stream.WriteLine();
+        stream.WriteLine("\t\t// Generate the body text from the markdown");
+        stream.WriteLine($"\t\tformattedBodyText = new FormattedString();");
+        stream.WriteLine("\t\tBodyText();");
         stream.WriteLine("\t}");
+        GenerateViewModelBody(stream, model, markDown);
         stream.WriteLine("}");
+    }
+
+    /// <summary>
+    /// Generate the view model body for a View from the markDown
+    /// </summary>
+    /// <param name="stream">THe view model stream</param>
+    /// <param name="model"></param>
+    /// <param name="markDown"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    private void GenerateViewModelBody(TextWriter stream, IMarkDownTableModel model, List<string> markDown)
+    {
+        stream.WriteLine();
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// The formatted text body of the view model");
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\tprivate void BodyText()");
+        stream.WriteLine("\t{");
+        foreach (var line in markDown)
+        {
+            if (string.IsNullOrEmpty(line.Trim()))
+            {
+                continue;
+            }
+            // formattedString.Spans.Add (new Span { Text = "Red bold, ", TextColor = Colors.Red, FontAttributes = FontAttributes.Bold });
+            stream.WriteLine($"\t\tformattedBodyText.Spans.Add(new span {{ Text = \"{line.Replace("\"", "\\\"")}\\n\\n\" }});");                                               
+        }
+        stream.WriteLine("\t}");
     }
 
     /// <summary>

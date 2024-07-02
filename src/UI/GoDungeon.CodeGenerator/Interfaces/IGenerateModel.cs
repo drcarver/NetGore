@@ -54,7 +54,8 @@ public interface IGenerateModel
     /// <param name="outputDir">The output directory</param>
     /// <param name="model">The mark down table model</param>
     /// <param name="filePath">The path to the output file</param>
-    void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath);
+    /// <param name="markDown">The contexts of the mark down file</param>
+    void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath, List<string> markDown);
 
     /// <summary>
     /// Generate the xaml for the markdown file

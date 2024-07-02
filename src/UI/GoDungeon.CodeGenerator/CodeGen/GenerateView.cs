@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Reflection.Emit;
+using System.Text;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
@@ -11,23 +12,38 @@ public partial class GenerateModel : IGenerateModel
     /// <summary>
     /// Given a markdown file, generate the equivalent xaml
     /// <param name="outputDir">The output directory root</param>
-    /// <param name="fileList">The list of markdown files</param>
+    /// <param name="markDown">The list of markdown files</param>
     /// <param name="inputDir">The input directory root</param>
     /// </summary>
-    public void GenerateXAMLFromMarkdown(string outputDir, List<string> fileList, string filePath)
+    public void GenerateXAMLFromMarkdown(string outputDir, List<string> markDown, string filePath)
     {
         FileInfo fileInfo = new FileInfo(filePath);
-        GenerateMarkDownViewModel(fileList, outputDir, filePath);
+        //GenerateMarkDownViewModel(markDown, outputDir, fileInfo);
     }
 
     /// <summary>
-    /// 
+    /// Generate the .xaml.cs file for the files
     /// </summary>
     /// <param name="markdown"></param>
     /// <param name="outputDir"></param>
     /// <param name="filePath"></param>
-    private void GenerateMarkDownViewModel(List<string> fileList, string outputDir, string filePath)
+    private void GenerateMarkDownViewModel(List<string> markDown, string outputDir, FileInfo fileInfo)
     {
+        string lastDir = fileInfo.DirectoryName.Split('\\').Last();
+        string nameSpace = char.ToUpper(lastDir[0]) + lastDir.Substring(1);
+        StringBuilder formattedText = new StringBuilder();
+        foreach (var line in markDown)
+        {
+            if (line.StartsWith("# "))
+            {
+                formattedText.AppendLine();
+            }
+        }
+        //var route = filePath.Replace()
+        //foreach (var file in fileList)
+        //{
+
+        //}
     }
 
     /// <summary>

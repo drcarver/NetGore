@@ -2,21 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
-             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
              xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.ViewModels;assembly=GoDungeon.MAUI"
-             xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
-             xmlns:enum="clr-namespace:GoDungeon.Core.Enum;assembly=GoDungeon.Core"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType="viewmodel:MainViewModel"
-             Title="{Binding Title}">
+             BackgroundColor="AntiqueWhite">
 
-    <VerticalStackLayout x:Name="MainPageDocument">
-        <!--  left, top, right, and bottom --> 
-        <Label Text="{Binding PageDescription}" Margin="10,0,0,0" 
-               LineBreakMode="WordWrap" FontAttributes="Italic" />
-        <Label Text="{Binding PageHeader}" Margin="10,0,0,0" 
-               FontSize="Medium" FontAttributes="Bold" />
-        <Label Text="{Binding PageBody}" Margin="10,0,0,0" 
-               FontSize="Body" />
-    </VerticalStackLayout>
+    <TableView Intent="Menu" Margin="10,0,0,0">
+        <TableRoot>
+            <TableSection>
+                <TextCell Text="Adventuring"
+                      Detail="Rules and information governing player equipment and downtime." 
+                      Command="{Binding AdventuringCommand}" />
+                <TextCell Text="Character"
+                      Detail="Rules for managing movement and travel" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

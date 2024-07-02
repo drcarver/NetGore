@@ -19,16 +19,39 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="Enum\" />
-	  <Folder Include="Interfaces\" />
 	  <Folder Include="Models\" />
-	  <Folder Include="Views\" />
-	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\AdventuringTableView.xaml.cs">
+	    <DependentUpon>AdventuringTableView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MovementView.xaml.cs">
+	    <DependentUpon>MovementView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BetweenAdventuresView.xaml.cs">
+	    <DependentUpon>BetweenAdventuresView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\AdventuringTableView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MovementView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BetweenAdventuresView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
