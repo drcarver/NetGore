@@ -1,7 +1,6 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
-using GoDungeon.Core.Interfaces;
-using GoDungeon.Monsters.ViewModels;
+using GoDungeon.CodeGenerator.ViewModels;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
@@ -13,86 +12,100 @@ public partial class ParseMarkdown : IParseMarkdown
     private readonly ILogger<ParseMarkdown> logger;
 
     /// <summary>
-    /// The monster information
+    /// The parse models for the website
     /// </summary>
-    public List<ICreature> CreatureList { get; set; } = new List<ICreature>();
+    public List<ParseModel> ParseModels { get; } = [];
 
     /// <summary>
-    /// A list of monster Info
+    /// The rules files (text only)
     /// </summary>
-    public List<MonsterInfoViewModel> MonsterInfoList { get; set; } = new List<MonsterInfoViewModel>();
-    public IServiceProvider Services { get; }
+    public List<RulesViewModel> RulesModels { get; } = [];
+
+    /// <summary>
+    /// The magic item files
+    /// </summary>
+    public List<MagicItemViewModel> MagicItemsModels { get; } = [];
+
+    /// <summary>
+    /// The list of monsters
+    /// </summary>
+    public List<MonsterViewModel> MonsterModels { get; } = [];
+
+    /// <summary>
+    /// The list of spells
+    /// </summary>
+    public List<SpellViewModel> SpellModels { get; } = [];
 
     /// <summary>
     /// Constructor
     /// </summary>
-    /// <param name="services">The DI service provider</param>
     /// <param name="loggerFactory">The logger factory</param>
-    public ParseMarkdown(
-        ILoggerFactory loggerFactory,
-        IServiceProvider services)
+    public ParseMarkdown(ILoggerFactory loggerFactory)
     {
         logger = loggerFactory.CreateLogger<ParseMarkdown>();
-        Services = services;
+    }
+
+    /// <summary>
+    /// Parse the markdown to .html
+    /// </summary>
+    /// <param name="parseModel">The parse model for the markdown</param>
+    /// <returns></returns>
+    public List<string> ParseMarkdownToHTML(ParseModel parseModel)
+    {
+        List<string> html = [];
+        foreach (var line in parseModel.Markdown)
+        {
+        }
+        return html;
     }
 
     /// <summary>
     /// Parse any tables
     /// </summary>
-    /// <param name="markDown">The markdown file</param>
-    /// <returns>A markdown table</returns>
-    public IMarkDownTableModel? ParseMarkDownTable(List<string> markDown)
+    /// <param name="parseModel">The parse model for the file</param>
+    public void ParseMarkDownTable(ParseModel parseModel)
     {
-        var markDownTable = new MarkDownTableModel();
+        // Are there any tables in the file
+        if (!parseModel.Markdown.Any(m => m.TrimStart().StartsWith("|")))
+        {
+            return;
+        }
+
+        var markDownTableModel = new MarkDownTableModel();
         int t = 0;
+        int tableCount = 0;
         do
         {
-            if (!markDown.Any(m => m.Trim().StartsWith("|")))
-            {
-                return markDownTable;
-            }
-
-            // Get the table caption
-            int tableCount = 0;
+            // Get the caption for the table
             var tableCaption = string.Empty;
-            int pos = 0;
             do
             {
-                if (markDown[t].Trim().StartsWith("#"))
+                if (parseModel.Markdown[t].StartsWith("#"))
                 {
-                    tableCaption = markDown[t].Replace("#", string.Empty).Trim();
-                    pos = t;
+                    tableCaption = parseModel.Markdown[t].Replace("#", string.Empty).Trim();
                 }
-                if (markDown[t].Trim().StartsWith('|'))
+                if (parseModel.Markdown[t].StartsWith('|'))
                 {
                     break;
                 }
                 t++;
-            } while (t < markDown.Count);
+            } while (t < parseModel.Markdown.Length);
 
-            markDownTable.TableCaption?.Add(tableCaption);
-            markDown[pos] = string.Empty;
-
-            // Get the table
-            List<string> table = new List<string>();
-            do
+            // Are we at the end of the file
+            if (t == parseModel.Markdown.Length)
             {
-                if (markDown[t].Trim().StartsWith("|"))
-                {
-                    table.Add(markDown[t].Trim());
-                    markDown[t] = string.Empty;
-                    t++;
-                }
-                else
-                {
-                    break;
-                }
+                break;
+            }
 
-            } while (t < markDown.Count);
-            markDownTable.TableRows.Add(table);
-
-        } while (t < markDown.Count);
-
-        return markDownTable;
+            // Parse the next table in the file
+            parseModel.MarkDownTableModels.Add(new MarkDownTableModel());
+            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption?.Add(tableCaption);
+            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].MarkdownLine = t;
+            while (t < parseModel.Markdown.Length && parseModel.Markdown[t].StartsWith("|"))
+            {
+                parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableRows.Add(parseModel.Markdown[t]);
+                t++;
+            }
+        } while (t < parseModel.Markdown.Length);
     }
 }

@@ -11,17 +11,17 @@ namespace GoDungeon.CodeGenerator.Models;
 public class MarkDownTableModel : IMarkDownTableModel
 {
     /// <summary>
+    /// The line in the markdown file where the table starts
+    /// </summary>
+    public int MarkdownLine { get; set; } = 0;
+
+    /// <summary>
     /// The table caption
     /// </summary>
-    public List<string>? TableCaption { get; set; } = new List<string>();
+    public List<string>? TableCaption { get; set; } = [];
 
     /// <summary>
     /// The table rows
     /// </summary>
-    public List<List<string>> TableRows { get;  } = new List<List<string>>();
-
-    /// <summary>
-    /// The markdown file that contains the table
-    /// </summary>
-    public string? FilePath { get; set; }
+    public List<string> TableRows { get;  } = [];
 }

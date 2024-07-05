@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿using System.Collections.Immutable;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
+using GoDungeon.CodeGenerator.ViewModels;
+using GoDungeon.Core.Enum;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -71,8 +72,8 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         Logger.LogInformation($"Source={inputDir} Destination={outputDir}");
         var fileList = new List<string>();
         GetMarKDownFileListRecursive(inputDir, fileList);
-        ProcessFileList(outputDir, fileList, inputDir);
-        GenerateModel.GenerateXAMLFromMarkdown(outputDir, fileList, inputDir);
+        ProcessFileList(outputDir, fileList);
+        //GenerateModel.GenerateXAMLFromMarkdown(outputDir, fileList, inputDir);
     }
 
     /// <summary>
@@ -107,141 +108,134 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="outputDir">The path to the output directory</param>
     /// <param name="fileList">The list of files</param>
     /// <param name="inputDir">The path to the input directory</param>
-    private void ProcessFileList(string outputDir, List<string> fileList, string inputDir)
+    private void ProcessFileList(string outputDir, List<string> fileList)
     {
         foreach (string filePath in fileList)
         {
-            // Process all the tables in the SRD
-            var inputFilePath = Path.Combine(inputDir, filePath.Substring(1));
-            ProcessTables(inputFilePath, outputDir);
+            // Parse markdown file
+            ProcessMarkDownFile(filePath);
 
-            // Process the monsters
-            if (filePath.Contains("monsters") && filePath.EndsWith(".md"))
-            {
-                ProcessMonsterFile(inputFilePath, outputDir);
-            }
-
-            // Process the spells
-            if (filePath.Contains("spells") && filePath.EndsWith(".md"))
-            {
-                //ProcessSpellFile(inputFilePath, outputDir);
-            }
-
-            ProcessMarkDownFiles(inputFilePath, outputDir);
-
-            Logger.LogInformation($"Completed processing of {filePath}");
+            Logger.LogInformation($"Completed parse of {filePath}");
         }
     }
 
     /// <summary>
     /// Convert all markdown files into xaml
     /// </summary>
-    /// <param name="filePath">The input file</param>
-    /// <param name="outputDir">The output directory root</param>
-    private void ProcessMarkDownFiles(string filePath, string outputDir)
+    /// <param name="filePath">The file containing the markdown</param>
+    private void ProcessMarkDownFile(string filePath)
     {
-        var fileInfo = new FileInfo(filePath);
-        if (fileInfo.Name == "index.md")
+        var markdown = ConvertMarkdownToHTML(filePath);
+        switch (markdown.FileHeaders.Count)
         {
-            return;
+            case 0:
+                break;
+            case 1:
+                ParseMarkdown.RulesModels.Add(new RulesViewModel(markdown));
+                break;
+            case 2:
+                ParseMarkdown.MagicItemsModels.Add(new MagicItemViewModel(markdown));
+                break;
+            case 3:
+                ParseMarkdown.MonsterModels.Add(new MonsterViewModel(markdown));
+                break;
+            case 4:
+                ParseMarkdown.SpellModels.Add(new SpellViewModel(markdown));
+                break;
         }
+    }
 
-        // Create the directory structure to match the file location
-        outputDir = $@"{outputDir}\Markdown";
-        Directory.CreateDirectory(outputDir);
-        var markDown = File.ReadAllLines(filePath).ToList();
+    /// <summary>
+    /// Convert a markdown to .html
+    /// </summary>
+    /// <param name="filePath">The input file path</param>
+    /// <returns>The parse model for the file</returns>
+    private ParseModel ConvertMarkdownToHTML(string filePath)
+    {
+        // Initialize the parse model
+        var fullPath = $"{RootMarkDownDirectory}{filePath}";
+        var parseModel = new ParseModel(filePath, File.ReadLines(fullPath).ToImmutableArray<string>());
 
-        // Generate the equivalent xaml for the markdown file
-        GenerateModel.GenerateXAMLFromMarkdown(outputDir, markDown, filePath);
+        // process the tables in the markdown
+        ParseMarkdown?.ParseMarkDownTable(parseModel);
+
+        //// Generate the constructor for the main view model
+        //GenerateModel.GenerateConstructor(outputDir, model, filePath, markDown);
+
+        return parseModel;
     }
 
     /// <summary>
     /// Process tables in the file
     /// </summary>
     /// <param name="filePath">The filePath to the markdown file</param>
-    /// <param name="outputDir">The filePath to create the files</param>
-    private void ProcessTables(string filePath, string outputDir)
+    private void ProcessTables(ParseModel parseModel)
     {
-        var fileInfo = new FileInfo(filePath);
-        if (fileInfo.Name == "index.md")
-        {
-            return;
-        }
+        //var fileInfo = new FileInfo(filePath);
+        //if (fileInfo.Name == "index.md")
+        //{
+        //    return;
+        //}
 
-        var markDown = File.ReadAllLines(filePath).ToList();
-        IMarkDownTableModel model = ParseMarkdown?.ParseMarkDownTable(markDown);
-        if (model == null || !model.TableCaption.Any())
-        {
-            return;
-        }
+        //// Generate the tables and all supporting files
+        //string[] directories = fileInfo.DirectoryName.Split("\\");
+        //var OutputDir = $"{RootOutputDirectory}{filePath.Replace(RootMarkDownDirectory, string.Empty).Replace(Path.GetFileName(filePath), string.Empty)}";
+        //for (int i = 0; i < model.TableCaption.Count; i++)
+        //{
+        //    var CSName = $"{Utilities.CleanupForCSharp(model.TableCaption[i])}";
+        //    var tableName = model.TableCaption[i];
+        //    var VMProperties = new List<PropertyModel>();
+        //    var propNames = model.TableRows[i][0].Split("|");
+        //    if (i >= model.TableRows.Count() || i < 0 || model.TableRows[i].Count() < 3)
+        //    {
+        //        continue;
+        //    }
+        //    var propValues = model.TableRows[i][2].Split("|");
+        //    for (int propcnt = 0; propcnt < propNames.Length; propcnt++)
+        //    {
+        //        var fieldName = Utilities.CleanupForCSharp(propNames[propcnt].Replace("|", string.Empty).Trim());
+        //        var fieldVal = propValues[propcnt].Replace("|", string.Empty).Trim();
+        //        if (string.IsNullOrEmpty(fieldName?.Trim()))
+        //        {
+        //            continue;
+        //        }
+        //        VMProperties.Add(new PropertyModel
+        //        {
+        //            Name = fieldName,
+        //            Value = "string"
+        //        });
+        //        int intvalue;
+        //        Decimal decvalue;
+        //        if (int.TryParse(fieldVal, out intvalue))
+        //        {
+        //            VMProperties[VMProperties.Count - 1].Value = "int";
+        //        }
+        //        else if (Decimal.TryParse(fieldVal, out decvalue))
+        //        {
+        //            VMProperties[VMProperties.Count - 1].Value = "decimal";
+        //        }
+        //    }
 
-        // Generate the tables and all supporting files
-        string[] directories = fileInfo.DirectoryName.Split("\\");
-        var OutputDir = $"{RootOutputDirectory}{filePath.Replace(RootMarkDownDirectory, string.Empty).Replace(Path.GetFileName(filePath), string.Empty)}";
-        model.FilePath = filePath;
-        for (int i = 0; i < model.TableCaption.Count; i++)
-        {
-            var CSName = $"{Utilities.CleanupForCSharp(model.TableCaption[i])}";
-            var tableName = model.TableCaption[i];
-            var VMProperties = new List<PropertyModel>();
-            var propNames = model.TableRows[i][0].Split("|");
-            if (i >= model.TableRows.Count() || i < 0 || model.TableRows[i].Count() < 3)
-            {
-                continue;
-            }
-            var propValues = model.TableRows[i][2].Split("|");
-            for (int propcnt = 0; propcnt < propNames.Length; propcnt++)
-            {
-                var fieldName = Utilities.CleanupForCSharp(propNames[propcnt].Replace("|", string.Empty).Trim());
-                var fieldVal = propValues[propcnt].Replace("|", string.Empty).Trim();
-                if (string.IsNullOrEmpty(fieldName?.Trim()))
-                {
-                    continue;
-                }
-                VMProperties.Add(new PropertyModel 
-                {
-                    Name = fieldName, 
-                    Value = "string" 
-                });
-                int intvalue;
-                Decimal decvalue;
-                if (int.TryParse(fieldVal, out intvalue))
-                {
-                    VMProperties[VMProperties.Count-1].Value = "int";
-                }
-                else if (Decimal.TryParse(fieldVal, out decvalue))
-                {
-                    VMProperties[VMProperties.Count - 1].Value = "decimal";
-                }
-            }
-
-            var rows = new List<List<string>>();
-            for (int j = 2; j < model.TableRows[i].Count(); j++)
-            {
-                var cols = model.TableRows[i][j].Split("|");
-                var row = new List<string>();
-                for (int colno = 0; colno < cols.Length; colno++)
-                {
-                    if (cols[colno].Trim() == string.Empty)
-                    {
-                        continue;
-                    }
-                    var cleancol = cols[colno]?.Replace("|", string.Empty).Trim();
-                    if (!string.IsNullOrEmpty(cleancol))
-                    {
-                        row.Add(cleancol);
-                    }
-                }
-                rows.Add(row);
-            }
-
-            // process the table
-            GenerateModel.GenerateTable(outputDir, filePath, tableName, VMProperties, rows, Utilities.CleanupForCSharp(directories[directories.Length - 1]));
-            rows.Clear();
-        }
-
-        // Generate the constructor for the main view model
-        GenerateModel.GenerateConstructor(outputDir, model, filePath, markDown);
+        //    var rows = new List<List<string>>();
+        //    for (int j = 2; j < model.TableRows[i].Count(); j++)
+        //    {
+        //        var cols = model.TableRows[i][j].Split("|");
+        //        var row = new List<string>();
+        //        for (int colno = 0; colno < cols.Length; colno++)
+        //        {
+        //            if (cols[colno].Trim() == string.Empty)
+        //            {
+        //                continue;
+        //            }
+        //            var cleancol = cols[colno]?.Replace("|", string.Empty).Trim();
+        //            if (!string.IsNullOrEmpty(cleancol))
+        //            {
+        //                row.Add(cleancol);
+        //            }
+        //        }
+        //        rows.Add(row);
+        //    }
+        //}
     }
 
     /// <summary>
@@ -251,33 +245,33 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="outputDir">The filePath to create the files</param>
     private void ProcessSpellFile(string filePath, string outputDir)
     {
-        var markDown = File.ReadAllLines(filePath).ToList();
+        //var markDown = File.ReadAllLines(filePath).ToList();
 
-        // Convert the file to .html
-        if (markDown.Count >= 3)
-        {
-            var spell = ParseMarkdown?.ParseSpell(markDown);
-            if (spell == null || string.IsNullOrEmpty(spell.Name))
-            {
-                Console.WriteLine($"Skipping file {filePath}");
-                return;
-            }
+        //// Convert the file to .html
+        //if (markDown.Count >= 3)
+        //{
+        //    var spell = ParseMarkdown?.ParseSpell(markDown);
+        //    if (spell == null || string.IsNullOrEmpty(spell.Name))
+        //    {
+        //        Console.WriteLine($"Skipping file {filePath}");
+        //        return;
+        //    }
 
-            // Convert the file to .html
-            var htmlFile = $@"{outputDir}html\spells\{spell.Name}.html";
-            Console.WriteLine($"Generating .html spell file {htmlFile}");
-            using (StreamWriter writer = File.CreateText(htmlFile))
-            {
-                GenerateHtml.GenerateSpellHtmlFiles(writer, spell);
-            }
+        //    // Convert the file to .html
+        //    var htmlFile = $@"{outputDir}html\spells\{spell.Name}.html";
+        //    Console.WriteLine($"Generating .html spell file {htmlFile}");
+        //    using (StreamWriter writer = File.CreateText(htmlFile))
+        //    {
+        //        GenerateHtml.GenerateSpellHtmlFiles(writer, spell);
+        //    }
 
-            // Convert the file to a .cs interface
-            var classFile = $@"{outputDir}models\spells\{spell.Name}.cs";
-            using (StreamWriter writer = File.CreateText(classFile))
-            {
-                GenerateModel.GenerateSpellClass(writer, spell, outputDir);
-            }
-        }
+        //    // Convert the file to a .cs interface
+        //    var classFile = $@"{outputDir}models\spells\{spell.Name}.cs";
+        //    using (StreamWriter writer = File.CreateText(classFile))
+        //    {
+        //        GenerateModel.GenerateSpellClass(writer, spell, outputDir);
+        //    }
+        //}
     }
 
     /// <summary>
@@ -287,43 +281,43 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="outputDir">The filePath to create the files</param>
     private void ProcessMonsterFile(string filePath, string outputDir)
     {
-        var markDown = File.ReadAllLines(filePath).ToList();
+        //var markDown = File.ReadAllLines(filePath).ToList();
 
-        // Convert the file to .html
-        if (markDown.Count >= 3)
-        {
-            var creature = ParseMarkdown.ParseMonster(markDown);
-            if (creature == null || string.IsNullOrEmpty(creature.Name))
-            {
-                Console.WriteLine($"Skipping file {filePath}");
-                return;
-            }
+        //// Convert the file to .html
+        //if (markDown.Count >= 3)
+        //{
+        //    var creature = ParseMarkdown.ParseMonster(markDown);
+        //    if (creature == null || string.IsNullOrEmpty(creature.Name))
+        //    {
+        //        Console.WriteLine($"Skipping file {filePath}");
+        //        return;
+        //    }
 
-            // Convert the file to .html
-            var htmlFile = $@"{outputDir}\monsters\html\{creature.Name}.html";
-            var fileInfo = new FileInfo(htmlFile);
-            if (fileInfo != null)
-            {
-                Directory.CreateDirectory(fileInfo.DirectoryName);
-            }
-            Console.WriteLine($"Generating .html file {htmlFile}");
-            using (StreamWriter writer = File.CreateText(htmlFile))
-            {
-                GenerateHtml.GenerateMonsterHtmlFiles(writer, creature);
-            }
+        //    // Convert the file to .html
+        //    var htmlFile = $@"{outputDir}/html/monsters/{creature.Name}.html";
+        //    var fileInfo = new FileInfo(htmlFile);
+        //    if (fileInfo != null)
+        //    {
+        //        Directory.CreateDirectory(fileInfo.DirectoryName);
+        //    }
+        //    Console.WriteLine($"Generating .html file {htmlFile}");
+        //    using (StreamWriter writer = File.CreateText(htmlFile))
+        //    {
+        //        GenerateHtml.GenerateMonsterHtmlFiles(writer, creature);
+        //    }
 
-            // Convert the file to a .cs interface
-            var classFile = $@"{outputDir}monsters\ViewModels\{creature.Name}.cs";
-            fileInfo = new FileInfo(classFile);
-            if (fileInfo != null)
-            {
-                Directory.CreateDirectory(fileInfo.DirectoryName);
-            }
-            Console.WriteLine($"Generating .cs file {classFile}");
-            using (StreamWriter writer = File.CreateText(classFile))
-            {
-                GenerateModel.GenerateMonsterClass(writer, creature, outputDir);
-            }
-        }
+        //    // Convert the file to a .cs interface
+        //    var classFile = $@"{outputDir}/netstandard/monsters/ViewModels/{creature.Name}.cs";
+        //    fileInfo = new FileInfo(classFile);
+        //    if (fileInfo != null)
+        //    {
+        //        Directory.CreateDirectory(fileInfo.DirectoryName);
+        //    }
+        //    Console.WriteLine($"Generating .cs file {classFile}");
+        //    using (StreamWriter writer = File.CreateText(classFile))
+        //    {
+        //        GenerateModel.GenerateMonsterClass(writer, creature, outputDir);
+        //    }
+        //}
     }
 }

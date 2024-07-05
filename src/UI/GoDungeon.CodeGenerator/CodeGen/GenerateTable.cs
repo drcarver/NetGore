@@ -26,7 +26,7 @@ public partial class GenerateModel : IGenerateModel
         sides = SetProperties(properties);
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/Tables";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/Tables";
         Directory.CreateDirectory(dirName);
         string fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}Table.cs";
         using (var stream = File.CreateText(fileName))
@@ -36,7 +36,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/Enum";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/Enum";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}Enum.cs";
         using (var stream = File.CreateText(fileName))
@@ -45,7 +45,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/Interfaces";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/Interfaces";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}Table.cs";
         using (var stream = File.CreateText(fileName))
@@ -54,7 +54,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/ViewModels";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/ViewModels";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableEntryViewModel.cs";
         using (var stream = File.CreateText(fileName))
@@ -71,7 +71,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/Interfaces";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/Interfaces";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/I{Utilities.CleanupForCSharp(tableName)}TableEntry.cs";
         using (var stream = File.CreateText(fileName))
@@ -88,7 +88,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // The directory and file name
-        dirName = @$"{dirPath}/{nameSpace}/Tests";
+        dirName = @$"{dirPath}/NetStandard/{nameSpace}/Tests";
         Directory.CreateDirectory(dirName);
         fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableTest.cs";
         using (var stream = File.CreateText(fileName))
@@ -96,13 +96,18 @@ public partial class GenerateModel : IGenerateModel
             GenerateTableTest(stream, tableName, nameSpace, properties, rows, sides);
         }
 
-        // The table view
-        dirName = @$"{dirPath}/{nameSpace}/Views";
+        // The markdown view
+        dirName = @$"{dirPath}/MAUI/{nameSpace}/Views";
         Directory.CreateDirectory(dirName);
-        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}TableView.xaml";
+        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}View.xaml";
         using (var stream = File.CreateText(fileName))
         {
-            GenerateTableViewXAML(stream, tableName, properties, rows, nameSpace);
+            GenerateMAUIXAMLFromMarkdown(stream, tableName, nameSpace);
+        }
+        fileName = $"{dirName}/{Utilities.CleanupForCSharp(tableName)}View.xaml.cs";
+        using (var stream = File.CreateText(fileName))
+        {
+            GenerateMAUIXAMLCSFromMarkdown(stream, tableName, nameSpace);
         }
     }
 

@@ -3,6 +3,11 @@
 public interface IMarkDownTableModel
 {
     /// <summary>
+    /// The line in the markdown file where the table starts
+    /// </summary>
+    int MarkdownLine { get; set; }
+
+    /// <summary>
     /// The table caption
     /// </summary>
     List<string>? TableCaption { get; set; }
@@ -10,11 +15,5 @@ public interface IMarkDownTableModel
     /// <summary>
     /// The table rows
     /// </summary>
-    List<List<string>> TableRows { get; }
-
-    /// <summary>
-    /// The markdown file that contains the table
-    /// </summary>
-    string FilePath { get; set; }
-
+    List<string> TableRows { get; }
 }

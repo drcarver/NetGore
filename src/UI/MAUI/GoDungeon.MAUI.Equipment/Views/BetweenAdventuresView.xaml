@@ -8,15 +8,15 @@
 
     <ScrollView BackgroundColor="PapayaWhip">
         <VerticalStackLayout>
-            <!--  left, top, right, and bottom --> 
-            <Label Text="{Binding PageDescription}" Margin="10,0,0,0" 
-                   LineBreakMode="WordWrap" FontAttributes="Italic" />
-            <Label Text="{Binding BetweenAdventuresHeader}" Margin="10,0,0,0" 
-                   FontSize="Header" />
-            <Label Text="{Binding BetweenAdventuresBody}" Margin="10,0,0,0" 
-                   LineBreakMode="WordWrap" FontSize="Body" />
-            <Label Text="{Binding LifestyleExpensesHeading}" Margin="10,0,0,0" 
-                   FontSize="Subtitle" FontAttributes="Bold" />
+            <!--  left, top, right, and bottom -->
+            <Label Text="{Binding PageDescription}" TextType="Html"
+                   LineBreakMode="WordWrap" Margin="10,0,0,0" />
+            <Label Text="{Binding BetweenAdventuresHeader}" TextType="Html" 
+                   LineBreakMode="WordWrap" Margin="10,0,0,0" />
+            <Label Text="{Binding BetweenAdventuresBody}" TextType="Html"
+                   Margin="10,0,0,0" LineBreakMode="WordWrap" />
+            <Label Text="{Binding LifestyleExpensesHeading}" TextType="Html" 
+                   Margin="10,0,0,0" LineBreakMode="WordWrap" />
             <Label Text="{Binding LifestyleExpensesBody}" Margin="10,0,0,0" 
                    LineBreakMode="WordWrap" FontSize="Body" />
             <Label Text="{Binding DowntimeActivitiesHeading}" Margin="10,0,0,0" 

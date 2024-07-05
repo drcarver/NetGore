@@ -5,6 +5,8 @@ using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Tables;
 using GoDungeon.Spells.Interfaces;
 
+using SkiaSharp;
+
 namespace GoDungeon.CodeGenerator.Interfaces;
 
 public interface IGenerateModel
@@ -60,10 +62,10 @@ public interface IGenerateModel
     /// <summary>
     /// Generate the xaml for the markdown file
     /// </summary>
-    /// <param name="outputDir">The output directory for the xaml file</param>
-    /// <param name="inputDir">The input directory for the markdown files</param>
-    /// <param name="fileList">The list of the files</param>
-    void GenerateXAMLFromMarkdown(string outputDir, List<string> fileList, string inputDir);
+    /// <param name="stream">The output file stream</param>
+    /// <param name="tableName">The table name</param>
+    /// <param name="nameSpace">The List of property models</param>
+    void GenerateMAUIXAMLFromMarkdown(TextWriter stream, string tableName, string nameSpace);
 
     /// <summary>
     /// Generate the Service Collection extension for the namespace

@@ -1,4 +1,6 @@
-﻿using GoDungeon.CodeGenerator.Interfaces;
+﻿using System.IO;
+
+using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
@@ -42,7 +44,8 @@ public partial class GenerateModel : IGenerateModel
 
         // Create the output directory and get the base file name
         nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
-        Directory.CreateDirectory($"{outputDir}\\{nameSpace}\\ViewModels");
+        outputDir = $"{outputDir}\\MAUI\\";
+        Directory.CreateDirectory($"{outputDir}{nameSpace}\\ViewModels");
         var baseFileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
 
         // Get the base file name
@@ -53,6 +56,7 @@ public partial class GenerateModel : IGenerateModel
         }
 
         // Get the base file name
+        Directory.CreateDirectory($"{outputDir}{nameSpace}\\Interfaces");
         using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\Interfaces\\I{fileName}.cs"))
         {
             GenerateViewModelInterface(stream, fileName, nameSpace);
@@ -116,7 +120,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine();
         stream.WriteLine("/// <Summary>");
         stream.WriteLine($"/// View Model for {fileName}View");
-        stream.WriteLine("/// <Summary>");
+        stream.WriteLine("/// </Summary>");
         stream.WriteLine($"public partial class {fileName}ViewModel  : BaseObjectViewModel, I{fileName}");
         stream.WriteLine("{");
         stream.WriteLine("\t#region Constructor Parameters");
@@ -126,35 +130,35 @@ public partial class GenerateModel : IGenerateModel
             paramName = $"{Utilities.CleanupForCSharp(item)}";
             stream.WriteLine("\t/// <Summary>");
             stream.WriteLine($"\t/// {item}");
-            stream.WriteLine("\t/// <Summary>");
+            stream.WriteLine("\t/// </Summary>");
             stream.WriteLine($"\tprivate I{paramName}Table {paramName}Table {{ get; }}");
             stream.WriteLine();
         }
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// Logger");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine($"\tILogger Logger {{ get; }}");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// The service provider");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine($"\tIServiceProvider Services {{ get; }}");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// The formatted text for the view model body");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine("\t[ObservableProperty]");
         stream.WriteLine($"\tFormattedString formattedBodyText;");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// Initialize the view model");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine($"\tpartial void Initialize();");
         stream.WriteLine("\t#endregion");
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine("\t/// Constructor");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         foreach (var item in model.TableCaption)
         {
             paramName = $"{Utilities.CleanupForCSharp(char.ToLower(item[0]) + item.Substring(1))}";
@@ -207,16 +211,18 @@ public partial class GenerateModel : IGenerateModel
     /// <summary>
     /// Generate the view model body for a View from the markDown
     /// </summary>
-    /// <param name="stream">THe view model stream</param>
+    /// <param name="stream">The view model stream</param>
     /// <param name="model"></param>
     /// <param name="markDown"></param>
-    /// <exception cref="NotImplementedException"></exception>
     private void GenerateViewModelBody(TextWriter stream, IMarkDownTableModel model, List<string> markDown)
     {
+        // Did we add the description
+        bool addDescription = false;
+
         stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
-        stream.WriteLine("\t/// The formatted text body of the view model");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// The formatted text for the body of the view model");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine("\tprivate void BodyText()");
         stream.WriteLine("\t{");
         foreach (var line in markDown)
@@ -225,10 +231,43 @@ public partial class GenerateModel : IGenerateModel
             {
                 continue;
             }
-            // formattedString.Spans.Add (new Span { Text = "Red bold, ", TextColor = Colors.Red, FontAttributes = FontAttributes.Bold });
-            stream.WriteLine($"\t\tformattedBodyText.Spans.Add(new span {{ Text = \"{line.Replace("\"", "\\\"")}\\n\\n\" }});");                                               
+            var txt = line.Trim().Replace("\"", "\\\"");
+            if (line.Trim().StartsWith("description: "))
+            {
+                txt = txt
+                    .Replace(" from the 5th Edition (5e) SRD (System Reference Document)", String.Empty)
+                    .Replace("description: ", string.Empty);
+                addDescription = true;
+                stream.WriteLine($"\t\tPageDescription.Spans.Add(new span {{ Text = \"{txt}\\n\\n\" Font=\"10\", FontAttribute=\"Italic\" }});");
+                continue;
+            }
+            else
+            {
+                stream.WriteLine($"\t\tFormattedBodyText.Spans.Add(new span {{ Text = \"{txt}\\n\\n\" }});");
+            }
         }
         stream.WriteLine("\t}");
+
+        // Add the various properties
+        AddDescriptionProperty(stream, addDescription);
+    }
+
+    /// <summary>
+    /// The output stream
+    /// </summary>
+    /// <param name="stream">The text stream</param>
+    /// <param name="adddescription">do we add add a description</param>
+    private void AddDescriptionProperty(TextWriter stream, bool addDescription)
+    {
+        if (addDescription)
+        {
+            stream.WriteLine();
+            stream.WriteLine("\t/// <Summary>");
+            stream.WriteLine($"\t/// The formatted text for the view model body");
+            stream.WriteLine("\t/// </Summary>");
+            stream.WriteLine("\t[ObservableProperty]");
+            stream.WriteLine($"\tFormattedString pageDescription = new FormattedString();");
+        }
     }
 
     /// <summary>
@@ -278,7 +317,7 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("{");
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// DI tables and view models");
-        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine("\t/// </Summary>");
         stream.WriteLine($"\tpublic static IServiceCollection UseGoDungeon{model.NameSpace}Generated(this IServiceCollection collection)");
         stream.WriteLine("\t{");
         stream.WriteLine("\t\t// Add tables to the service collection");
@@ -291,11 +330,17 @@ public partial class GenerateModel : IGenerateModel
             stream.WriteLine($"\t\t\t.AddSingleton<I{paramName}, {paramName}>()");
         }
         stream.WriteLine();
-        stream.WriteLine("\t\t\t// View Models");
+        stream.WriteLine("\t\t\t// ViewModels");
         foreach (var item in model.DIObjects.Where(o => o.EndsWith("ViewModel")).OrderBy(o => o))
         {
             paramName = $"{Utilities.CleanupForCSharp(item)}";
             stream.WriteLine($"\t\t\t.AddTransient<I{paramName.Replace("ViewModel", string.Empty)}, {paramName}>()");
+        }
+        stream.WriteLine("\t\t\t// Routes");
+        foreach (var item in model.DIObjects.Where(o => o.EndsWith("ViewModel")).OrderBy(o => o))
+        {
+            paramName = $"{Utilities.CleanupForCSharp(item)}";
+            stream.WriteLine($"\t\t\t.AddTransientWithShellRoute<{paramName.Replace("ViewModel", "View")}, {paramName}>({paramName.Replace("ViewModel", "View")})");
         }
         stream.WriteLine("\t\t;");
         stream.WriteLine();

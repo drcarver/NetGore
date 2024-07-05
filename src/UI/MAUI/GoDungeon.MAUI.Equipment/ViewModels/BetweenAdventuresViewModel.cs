@@ -7,16 +7,16 @@ namespace GoDungeon.MAUI.Equipment.ViewModels;
 public partial class BetweenAdventuresViewModel : ObservableObject, IBetweenAdventuresViewModel
 {
     [ObservableProperty]
-    private FormattedString pageDescription = new FormattedString();
+    private string pageDescription;
 
     [ObservableProperty]
-    private FormattedString betweenAdventuresHeader = new FormattedString();
+    private string betweenAdventuresHeader;
 
     [ObservableProperty]
-    private FormattedString betweenAdventuresBody = new FormattedString();
+    private string betweenAdventuresBody;
 
     [ObservableProperty]
-    private FormattedString lifestyleExpensesHeading = new FormattedString();
+    private string lifestyleExpensesHeading;
 
     [ObservableProperty]
     private FormattedString lifestyleExpensesBody = new FormattedString();
@@ -62,31 +62,12 @@ public partial class BetweenAdventuresViewModel : ObservableObject, IBetweenAdve
 
     public BetweenAdventuresViewModel()
     {
-        PageDescription.Spans.Add(new Span
-        {
-            Text = "Rules and information governing player time between adventures (downtime) from the 5th Edition (5e) SRD (System Reference Document).\n"
-        });
+        PageDescription = "<p><i>Rules and information governing player time between adventures (downtime).</i><br></p>";
+        BetweenAdventuresHeader = "<h1>Between Adventures</h1>";
+        BetweenAdventuresBody = "<p>Between trips to dungeons and battles against ancient evils, adventurers need time to rest, recuperate, and prepare for their next adventure. Many adventurers also use this time to perform other tasks, such as crafting arms and armor, performing research, or spending their hard-earned gold.<br><br></p>";
+        BetweenAdventuresBody += "<p>In some cases, the passage of time is something that occurs with little fanfare or description. When starting a new adventure, the GM might simply declare that a certain amount of time has passed and allow you to describe in general terms what your character has been doing. At other times, the GM might want to keep track of just how much time is passing as events beyond your perception stay in motion.<br></p>";
+        LifestyleExpensesHeading = "<h2>Lifestyle Expenses</h2>";
 
-        #region Between Adventures
-        BetweenAdventuresHeader.Spans.Add(new Span
-        {
-            Text = "Between Adventures"
-        });
-        BetweenAdventuresBody.Spans.Add(new Span
-        {
-            Text = "Between trips to dungeons and battles against ancient evils, adventurers need time to rest, recuperate, and prepare for their next adventure. Many adventurers also use this time to perform other tasks, such as crafting arms and armor, performing research, or spending their hard-earned gold.\n\n"
-        });
-        BetweenAdventuresBody.Spans.Add(new Span
-        {
-            Text = "In some cases, the passage of time is something that occurs with little fanfare or description. When starting a new adventure, the GM might simply declare that a certain amount of time has passed and allow you to describe in general terms what your character has been doing. At other times, the GM might want to keep track of just how much time is passing as events beyond your perception stay in motion.\n"
-        });
-        #endregion
-
-        #region Lifestyle Expenses
-        LifestyleExpensesHeading.Spans.Add(new Span
-        {
-            Text = "Lifestyle Expenses"
-        });
         LifestyleExpensesBody.Spans.Add(new Span
         {
             Text = "Between adventures, you choose a particular quality of life and pay the cost of maintaining that lifestyle.\n\n"
@@ -95,8 +76,7 @@ public partial class BetweenAdventuresViewModel : ObservableObject, IBetweenAdve
         {
             Text = "Living a particular lifestyle doesn't have a huge effect on your character, but your lifestyle can affect the way other individuals and groups react to you. For example, when you lead an aristocratic lifestyle, it might be easier for you to influence the nobles of the city than if you live in poverty.\n"
         });
-        #endregion
-
+ 
         #region Downtime Activities
         DowntimeActivitiesHeading.Spans.Add(new Span
         {

@@ -17,16 +17,16 @@ public partial class ParseMarkdown
     /// </summary>
     public ICreature? ParseMonster(List<string> markDown)
     {
-        var monsterInfo = GetMonsterInfo(markDown);
-        MonsterInfoList.Add(monsterInfo);
-        var creature = CreateCreature(monsterInfo);
-        GetSizeRaceType(markDown, creature);
-        GetMonsterAbilities(markDown, creature);
-        GetMonsterArmorClass(markDown, creature);
-        GetMonsterHitPoints(markDown, creature);
-        GetMonsterSpeed(markDown, creature);
-        CreatureList.Add(creature);
-        return creature;
+        //var monsterInfo = GetMonsterInfo(markDown);
+        //MonsterInfoList.Add(monsterInfo);
+        //var creature = CreateCreature(monsterInfo);
+        //GetSizeRaceType(markDown, creature);
+        //GetMonsterAbilities(markDown, creature);
+        //GetMonsterArmorClass(markDown, creature);
+        //GetMonsterHitPoints(markDown, creature);
+        //GetMonsterSpeed(markDown, creature);
+        //CreatureList.Add(creature);
+        return new CreatureViewModel();
     }
 
     /// <summary>
@@ -125,15 +125,6 @@ public partial class ParseMarkdown
         }
     }
 
-    /// <summary>
-    /// Create a creature based on the monster info
-    /// </summary>
-    /// <param name="The monster info to create the creature from."></param>
-    private ICreature CreateCreature(MonsterInfoViewModel monsterInfo)
-    {
-        return Services.GetRequiredService<ICreature>();
-        //IHumanoidRaceFactory humanoidRaceFactory = new RaceFactory(); 
-    }
 
     /// <summary>
     /// Get the monster armor class

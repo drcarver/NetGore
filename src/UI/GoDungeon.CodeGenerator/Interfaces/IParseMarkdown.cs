@@ -1,40 +1,34 @@
-﻿using GoDungeon.Core.Interfaces;
-using GoDungeon.Monsters.ViewModels;
-using GoDungeon.Spells.Interfaces;
+﻿using GoDungeon.CodeGenerator.Models;
+using GoDungeon.CodeGenerator.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 
 public interface IParseMarkdown
 {
     /// <summary>
-    /// Get the monster from the markDown file
+    /// The parse models for all the markdown models
     /// </summary>
-    IMarkDownTableModel? ParseMarkDownTable(List<string> markDown);
+    public List<SpellViewModel> SpellModels { get; }
 
     /// <summary>
-    /// Get the monster from the markDown file
+    /// The parse models for all the rules models
     /// </summary>
-    ICreature? ParseMonster(List<string> markDown);
+    public List<RulesViewModel> RulesModels { get; }
 
     /// <summary>
-    /// Get the spell from the markDown file
+    /// The parse models for all the magic item models
     /// </summary>
-    ISpellTableEntry? ParseSpell(List<string> markDown);
+    public List<MagicItemViewModel> MagicItemsModels { get; }
 
     /// <summary>
-    /// The monster information
+    /// The parse models for all the monsters
     /// </summary>
-    List<ICreature> CreatureList { get; }
+    public List<MonsterViewModel> MonsterModels { get; }
 
     /// <summary>
-    /// A list of monster Info
+    /// Get the tables in the markdown file
     /// </summary>
-    List<MonsterInfoViewModel> MonsterInfoList { get; }
-
-    /// <summary>
-    /// The spell list
-    /// </summary>
-    List<ISpellTableEntry> SpellInfoList { get; set; }
+    void ParseMarkDownTable(ParseModel markDown);
 
     /// <summary>
     /// The root directory to generate the .html and class files in

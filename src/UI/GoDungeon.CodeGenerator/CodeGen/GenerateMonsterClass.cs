@@ -72,7 +72,9 @@ public partial class GenerateModel : IGenerateModel
     private void GenerateMonsterInterfaceFile(TextWriter stream, ICreature creature, string rootdir)
     {
         // Convert the file to a .cs interface
-        var interfaceFile = $@"{rootdir}monsters/Interfaces/I{creature.Name}.cs";
+        var dirPath = $@"{rootdir}/netstandard/monsters/Interfaces";
+        Directory.CreateDirectory(dirPath);
+        var interfaceFile = $@"{dirPath}/I{creature.Name}.cs";
         using (StreamWriter writer = File.CreateText(interfaceFile))
         {
             writer.WriteLine("//");
@@ -98,7 +100,9 @@ public partial class GenerateModel : IGenerateModel
     private void GenerateEnum(List<MonsterInfoViewModel> monsterInfoList, string rootdir)
     {
         // Convert the monster list to a .cs enum
-        var monsterEnumFile = $@"{rootdir}enum/MonsterEnum.cs";
+        var dirPath = $@"{rootdir}/netstandard/monsters/enum";
+        Directory.CreateDirectory(dirPath);
+        var monsterEnumFile = $@"{dirPath}/MonsterEnum.cs";
         using (StreamWriter writer = File.CreateText(monsterEnumFile))
         {
             writer.WriteLine("//");
