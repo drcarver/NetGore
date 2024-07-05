@@ -7,16 +7,12 @@ namespace GoDungeon.CodeGenerator.CodeGen;
 public partial class GenerateHtml : IGenerateHtml
 {
     /// <summary>
-    /// Generate the .html for the class
+    /// Generate the .html for the for the parse models
     /// </summary>
-    /// <param name="writer">The StreamWriter stream</param>
-    /// <param name="creature">The creature</param>
-    public void GenerateMonsterHtmlFiles(StreamWriter writer, ICreature creature)
+    /// <param name="outputDir">The output directory</param>
+    /// <param name="parseMarkdown">The Parse models</param>
+    public void GenerateHtmlFiles(string outputDir, IParseMarkdown parseMarkdown)
     {
-        // Convert the MarkDown file to .html
-        GenerateMonsterHtmlHeader(writer, creature);
-        GenerateMonsterHtmlBody(writer, creature);
-        GenerateMonsterHtmlEnd(writer, creature);
     }
 
     /// <summary>

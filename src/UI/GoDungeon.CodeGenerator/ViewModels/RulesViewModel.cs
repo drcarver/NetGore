@@ -22,7 +22,7 @@ public partial class RulesViewModel : NamedTableEntryViewModel
     public RulesViewModel(ParseModel parseModel) 
     {
         ParseModel = parseModel;
-        var fileInfo = new FileInfo(ParseModel?.FilePath);
+        var fileInfo = new FileInfo(ParseModel?.Route);
         description = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty);
         Name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
     }

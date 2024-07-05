@@ -68,6 +68,5 @@ public partial class SpellViewModel : StandardTableEntryViewModel
                     break;
             }
         }
-        //Enum.TryParse<MagicItemTypeEnum>(itemTypeString, true, out itemType);
     }
 }

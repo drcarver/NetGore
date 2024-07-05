@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-using GoDungeon.CodeGenerator.Interfaces;
+﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
@@ -22,77 +20,80 @@ public partial class GenerateModel : IGenerateModel
     private readonly ILogger<GenerateModel> logger;
 
     /// <summary>
-    /// The list of models and tables for the name space
-    /// </summary>
-    public List<UseGoDungeonModel> GoDungeonModelList { get; } = [];
-
-    /// <summary>
     /// Generate the constructor for the main view model
     /// </summary>
     /// <param name="outputDir">The output directory</param>
-    /// <param name="model">The mark down table model</param>
-    /// <param name="filePath">The path to the markdown file</param>
-    /// <param name="filePath">The contents of the markdown file</param>
-    public void GenerateConstructor(string outputDir, IMarkDownTableModel model, string filePath, List<string> markDown)
+    /// <param name="parseMarkdown">The mark down parse models</param>
+    public void GenerateNetStandardModel(string outputDir, IParseMarkdown parseMarkdown)
     {
-        var fileInfo = new FileInfo(filePath);
-        var nameSpace = Utilities.CleanupForCSharp(fileInfo.DirectoryName.Split('\\').LastOrDefault());
-        if (nameSpace == null || model == null)
-        {
-            return;
-        }
+        //var fileInfo = new FileInfo(filePath);
+        //var nameSpace = Utilities.CleanupForCSharp(fileInfo.DirectoryName.Split('\\').LastOrDefault());
+        //if (nameSpace == null || model == null)
+        //{
+        //    return;
+        //}
 
-        // Create the output directory and get the base file name
-        nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
-        outputDir = $"{outputDir}\\MAUI\\";
-        Directory.CreateDirectory($"{outputDir}{nameSpace}\\ViewModels");
-        var baseFileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
+        //// Create the output directory and get the base file name
+        //nameSpace = char.ToUpper(nameSpace[0]) + nameSpace.Substring(1);
+        //outputDir = $"{outputDir}\\MAUI\\";
+        //Directory.CreateDirectory($"{outputDir}{nameSpace}\\ViewModels");
+        //var baseFileName = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
 
-        // Get the base file name
-        var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1);
-        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}ViewModel.cs"))
-        {
-            GenerateViewModel(stream, fileName, model, nameSpace, markDown);
-        }
+        //// Get the base file name
+        //var fileName = char.ToUpper(baseFileName[0]) + baseFileName.Substring(1);
+        //using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\ViewModels\\{fileName}ViewModel.cs"))
+        //{
+        //    GenerateViewModel(stream, fileName, model, nameSpace, markDown);
+        //}
 
-        // Get the base file name
-        Directory.CreateDirectory($"{outputDir}{nameSpace}\\Interfaces");
-        using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\Interfaces\\I{fileName}.cs"))
-        {
-            GenerateViewModelInterface(stream, fileName, nameSpace);
-        }
+        //// Get the base file name
+        //Directory.CreateDirectory($"{outputDir}{nameSpace}\\Interfaces");
+        //using (var stream = File.CreateText($"{outputDir}\\{nameSpace}\\Interfaces\\I{fileName}.cs"))
+        //{
+        //    GenerateViewModelInterface(stream, fileName, nameSpace);
+        //}
 
-        // Copy off the file information for later
-        var goDungeonFileName = $"{outputDir}\\{nameSpace}\\UseGoDungeon{nameSpace}Generated.cs";
-        var item = GoDungeonModelList.FirstOrDefault(m => m.FileName == goDungeonFileName);
-        if (item == null)
-        {
-            item = new UseGoDungeonModel
-            {
-                OutputDirectory = outputDir,
-                NameSpace = nameSpace,
-                FileName = goDungeonFileName,
-                DIObjects = new List<string>()
-            };
-            GoDungeonModelList.Add(item);
-        }
+        //// Copy off the file information for later
+        //var goDungeonFileName = $"{outputDir}\\{nameSpace}\\UseGoDungeon{nameSpace}Generated.cs";
+        //var item = GoDungeonModelList.FirstOrDefault(m => m.FileName == goDungeonFileName);
+        //if (item == null)
+        //{
+        //    item = new UseGoDungeonModel
+        //    {
+        //        OutputDirectory = outputDir,
+        //        NameSpace = nameSpace,
+        //        FileName = goDungeonFileName,
+        //        DIObjects = new List<string>()
+        //    };
+        //    GoDungeonModelList.Add(item);
+        //}
 
-        // build up the list of items to add to the DI
-        var fname = $"{baseFileName}ViewModel";
-        fname = Char.ToUpper(fname[0]) + fname.Substring(1);
-        var tableName = Utilities.CleanupForCSharp(fname);
-        if (! item.DIObjects.Contains(tableName))
-        {
-            item.DIObjects.Add(tableName);
-        }
-        foreach (var table in model.TableCaption)
-        {
-            tableName = Utilities.CleanupForCSharp($"{table}Table");
-            if (! item.DIObjects.Contains(tableName))
-            {
-                item.DIObjects.Add(tableName);
-            }
-        }
+        //// build up the list of items to add to the DI
+        //var fname = $"{baseFileName}ViewModel";
+        //fname = Char.ToUpper(fname[0]) + fname.Substring(1);
+        //var tableName = Utilities.CleanupForCSharp(fname);
+        //if (! item.DIObjects.Contains(tableName))
+        //{
+        //    item.DIObjects.Add(tableName);
+        //}
+        //foreach (var table in model.TableCaption)
+        //{
+        //    tableName = Utilities.CleanupForCSharp($"{table}Table");
+        //    if (! item.DIObjects.Contains(tableName))
+        //    {
+        //        item.DIObjects.Add(tableName);
+        //    }
+        //}
+    }
+
+    /// <summary>
+    /// Generate the xaml for the markdown file
+    /// </summary>
+    /// <param name="outputDir">The output directory</param>
+    /// <param name="parseMarkdown">The parse models</param>
+    public void GenerateMAUIModel(string outputDir, IParseMarkdown parseMarkdown)
+    {
+
     }
 
     /// <summary>

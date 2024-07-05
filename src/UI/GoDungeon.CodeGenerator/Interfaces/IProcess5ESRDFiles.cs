@@ -10,11 +10,6 @@ public interface IProcess5ESRDFiles
     string? RootMarkDownDirectory { get; set; }
 
     /// <summary>
-    /// The root directory to generate the .html and class files in
-    /// </summary>
-    string? RootOutputDirectory { get; set; }
-
-    /// <summary>
     /// Process monster files from the SRD
     /// </summary>
     IParseMarkdown ParseMarkdown { get; }
@@ -30,9 +25,8 @@ public interface IProcess5ESRDFiles
     IGenerateHtml GenerateHtml { get; }
 
     /// <summary>
-    /// Process a directory
+    /// Parse a markdown directory into a parse model
     /// </summary>
-    /// <param name="rootDir">The root directory</param>
-    /// <param name="outputDir">The output directory</param>
-    void ProcessDirectory(string rootDir, string outputDir);
+    /// <param name="rootDir">The root directory for the markdown files</param>
+    void ParseMarkdownDirectory(string inputDir);
 }

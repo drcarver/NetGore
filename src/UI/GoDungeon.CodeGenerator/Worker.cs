@@ -46,23 +46,14 @@ public class Worker : BackgroundService
         {
             _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
         }
-        process5ESRDFiles.ProcessDirectory(inputDir, outputDir);
+        process5ESRDFiles.ParseMarkdownDirectory(inputDir);
+        process5ESRDFiles.GenerateModel.GenerateNetStandardModel(outputDir, process5ESRDFiles.ParseMarkdown);
+        process5ESRDFiles.GenerateModel.GenerateMAUIModel(outputDir, process5ESRDFiles.ParseMarkdown);
+        process5ESRDFiles.GenerateHtml.GenerateHtmlFiles(outputDir, process5ESRDFiles.ParseMarkdown);
 
-        // process the GoDungeon files
-        foreach (var model in process5ESRDFiles.GenerateModel.GoDungeonModelList)
-        {
-            using (var stream = File.CreateText(model.FileName))
-            {
-                process5ESRDFiles.GenerateModel.GenerateServicesCollectionExtension(stream, model);
-            }
-        }
-
-        var table = new AdventuringGearTable();
-        table.InitializeTable();
-        var json = Newtonsoft.Json.JsonConvert.SerializeObject(table);
-        File.WriteAllText($"{outputDir}/AdventuringGearTable.json", json);
-
-        //process5ESRDFiles.GenerateModel.GenerateSpellLists(
-        //    process5ESRDFiles.ParseMarkdown.SpellInfoList, outputDir); 
+        //var table = new AdventuringGearTable();
+        //table.InitializeTable();
+        //var json = Newtonsoft.Json.JsonConvert.SerializeObject(table);
+        //File.WriteAllText($"{outputDir}/AdventuringGearTable.json", json);
     }
 }

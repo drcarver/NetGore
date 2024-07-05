@@ -6,18 +6,9 @@ namespace GoDungeon.CodeGenerator.Interfaces;
 public interface IGenerateHtml
 {
     /// <summary>
-    /// Generate the .html for the class
+    /// Generate the .html for the for the parse models
     /// </summary>
-    /// <param name="markDown">The markdown file as a series of strings</param>
-    /// <param name="writer">The StreamWriter stream</param>
-    /// <param name="classInfo">The creature</param>
-    void GenerateMonsterHtmlFiles(StreamWriter writer, ICreature creature);
-
-    /// <summary>
-    /// Generate the .html for the class
-    /// </summary>
-    /// <param name="markDown">The markdown file as a series of strings</param>
-    /// <param name="writer">The StreamWriter stream</param>
-    /// <param name="classInfo">The creature</param>
-    void GenerateSpellHtmlFiles(StreamWriter writer, ISpellTableEntry creature);
+    /// <param name="outputDir">The output directory</param>
+    /// <param name="parseMarkdown">The Parse models</param>
+    public void GenerateHtmlFiles(string outputDir, IParseMarkdown parseMarkdown);
 }

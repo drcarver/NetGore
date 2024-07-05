@@ -8,7 +8,7 @@ public class ParseModel
     /// <summary>
     /// The file path for the markdown file
     /// </summary>
-    public string? FilePath { get; }
+    public string? Route { get; }
 
     /// <summary>
     /// The file headers
@@ -33,11 +33,11 @@ public class ParseModel
     /// <summary>
     /// Set the readonly properties
     /// </summary>
-    /// <param name="filePath"></param>
-    /// <param name="markdown"></param>
-    public ParseModel(string filePath, ImmutableArray<string> markdown)
+    /// <param name="route">The route to the markdown</param>
+    /// <param name="markdown">The markdown data</param>
+    public ParseModel(string route, ImmutableArray<string> markdown)
     {
-        FilePath = filePath;
+        Route = route;
         Markdown = markdown;
         MarkDownTableModels = [];
 
