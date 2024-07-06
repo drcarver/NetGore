@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
-using System.Runtime.CompilerServices;
+
+using GoDungeon.CodeGenerator.Interfaces;
 
 namespace GoDungeon.CodeGenerator.Models;
 
-public class ParseModel
+public class ParseModel : IParseModel
 {
     /// <summary>
     /// The file path for the markdown file

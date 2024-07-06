@@ -1,6 +1,5 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
-using GoDungeon.CodeGenerator.ViewModels;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
