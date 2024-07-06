@@ -1,4 +1,5 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
+using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
@@ -13,15 +14,20 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="parseMarkdown">The Parse models</param>
     public void GenerateHtmlFiles(string outputDir, IParseMarkdown parseMarkdown)
     {
-    }
-
-    /// <summary>
-    /// Write the end of the .html file
-    /// </summary>
-    /// <param name="stream">The output stream</param>
-    private void GenerateMonsterHtmlEnd(TextWriter stream, ICreature creature)
-    {
-        stream.WriteLine("</HTML>");
+        foreach (var rulesModel in parseMarkdown.CodeGenModels)
+        {
+            var parseModel = rulesModel.ParseModel;
+            var routeInfo = new FileInfo(parseModel.Route);
+            var fPath = $@"{outputDir}html\{routeInfo.DirectoryName.Replace("C:", string.Empty)}\{Utilities.CleanupForCSharp(routeInfo.Name.Replace(".md", string.Empty))}.html";
+            var fileInfo = new FileInfo(fPath);
+            Directory.CreateDirectory(fileInfo.DirectoryName);
+            using (var stream = File.CreateText(fPath))
+            {
+                GenerateHtmlHeader(stream, parseModel);
+                GenerateHtmlBody(stream, parseModel);
+                stream.WriteLine("</HTML>");
+            }
+        }
     }
 
     /// <summary>
@@ -29,14 +35,44 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream">The .html file</param>
     /// <param name="stream">The creature</param>
-    private void GenerateMonsterHtmlBody(TextWriter stream, ICreature creature)
+    private void GenerateHtmlBody(TextWriter stream, ParseModel parseModel)
     {
         stream.WriteLine("\t<BODY>");
-        stream.WriteLine($"\t<h1>{creature.ProperName}</h1>");
-        GenerateMonsterOverview(stream, creature);
-        GenerateMonsterMainStats(stream, creature);
-        GenerateMonsterAbilities(stream, creature);
+        foreach (var line in parseModel.MarkDownHtml)
+        {
+            stream.WriteLine(line);
+        }
         stream.WriteLine("\t</BODY>");
+    }
+
+    /// <summary>
+    /// The .html header
+    /// </summary>
+    /// <param name="stream">The TextWriter</param>
+    private void GenerateHtmlHeader(TextWriter stream, ParseModel parseModel)
+    {
+        stream.WriteLine("<!DOCTYPE html>");
+        stream.WriteLine("<html>");
+        stream.WriteLine("<head>");
+        stream.WriteLine($"\t<title>{parseModel.FileHeaders[0]}</title>");
+        stream.WriteLine();
+        stream.WriteLine($"\t<style>");
+        stream.WriteLine($"\t/* Separate border for the table */");
+        stream.WriteLine("\ttable {");
+        stream.WriteLine($"\t\tborder-collapse: separate; /* Separate borders */");
+        stream.WriteLine("\t}");
+        stream.WriteLine();
+        stream.WriteLine("\tth, td {");
+        stream.WriteLine("\t\tborder-color: black;");
+        stream.WriteLine("\t\tbackground-color: bisque;");
+        stream.WriteLine("\t\ttext-align: left;");
+        stream.WriteLine("\t}");
+        stream.WriteLine();
+        stream.WriteLine("\tbody {");
+        stream.WriteLine("\t\tbackground-color: antiquewhite;");
+        stream.WriteLine("\t}");
+        stream.WriteLine("\t</style>");
+        stream.WriteLine("</head>");
     }
 
     private void GenerateMonsterMainStats(TextWriter stream, ICreature creature)
@@ -65,35 +101,6 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine($"</td></tr>");
         stream.WriteLine("\t\t</table>");
         stream.WriteLine("\t\t</p>");
-    }
-
-    /// <summary>
-    /// The .html header
-    /// </summary>
-    /// <param name="stream">The TextWriter</param>
-    private void GenerateMonsterHtmlHeader(TextWriter stream, ICreature creature)
-    {
-        stream.WriteLine("<!DOCTYPE html>");
-        stream.WriteLine("<html>");
-        stream.WriteLine("<head>");
-        stream.WriteLine($"\t<title>{creature.ProperName}</title>");
-        stream.WriteLine();
-        stream.WriteLine($"\t<style>");
-        stream.WriteLine($"\t/* Separate border for the table */");
-        stream.WriteLine("\ttable {");
-        stream.WriteLine($"\t\tborder-collapse: separate; /* Separate borders */");
-        stream.WriteLine("\t}");
-        stream.WriteLine();
-        stream.WriteLine("\tth, td {");
-        stream.WriteLine("\t\tborder-color: black;");
-        stream.WriteLine("\t\tbackground-color: bisque;");
-        stream.WriteLine("\t}");
-        stream.WriteLine();
-        stream.WriteLine("\tbody {");
-        stream.WriteLine("\t\tbackground-color: antiquewhite;");
-        stream.WriteLine("\t}");
-        stream.WriteLine("\t</style>");
-        stream.WriteLine("</head>");
     }
 
     /// <summary>

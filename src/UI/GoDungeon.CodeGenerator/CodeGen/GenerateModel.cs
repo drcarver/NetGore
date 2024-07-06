@@ -1,6 +1,8 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
+using Syncfusion.DocIO.DLS;
+
 namespace GoDungeon.CodeGenerator.CodeGen;
 
 public partial class GenerateModel : IGenerateModel
@@ -125,16 +127,12 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine($"public partial class {fileName}ViewModel  : BaseObjectViewModel, I{fileName}");
         stream.WriteLine("{");
         stream.WriteLine("\t#region Constructor Parameters");
-        string paramName;
-        foreach (var item in model.TableCaption)
-        {
-            paramName = $"{Utilities.CleanupForCSharp(item)}";
-            stream.WriteLine("\t/// <Summary>");
-            stream.WriteLine($"\t/// {item}");
-            stream.WriteLine("\t/// </Summary>");
-            stream.WriteLine($"\tprivate I{paramName}Table {paramName}Table {{ get; }}");
-            stream.WriteLine();
-        }
+        string paramName = $"{Utilities.CleanupForCSharp(model.TableCaption)}";
+        stream.WriteLine("\t/// <Summary>");
+        stream.WriteLine($"\t/// {Utilities.CleanupForCSharp(model.TableCaption)}");
+        stream.WriteLine("\t/// </Summary>");
+        stream.WriteLine($"\tprivate I{paramName}Table {paramName}Table {{ get; }}");
+        stream.WriteLine();
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine($"\t/// Logger");
         stream.WriteLine("\t/// </Summary>");
@@ -160,36 +158,21 @@ public partial class GenerateModel : IGenerateModel
         stream.WriteLine("\t/// <Summary>");
         stream.WriteLine("\t/// Constructor");
         stream.WriteLine("\t/// </Summary>");
-        foreach (var item in model.TableCaption)
-        {
-            paramName = $"{Utilities.CleanupForCSharp(char.ToLower(item[0]) + item.Substring(1))}";
-            stream.WriteLine($"\t/// <param name=\"{paramName}Table\">{item}</param>");
-        }
+        stream.WriteLine($"\t/// <param name=\"{paramName}Table\">{model.TableCaption}</param>");
         stream.WriteLine("\t/// <param name=\"loggerFactory\">The logger factory</param>");
         stream.WriteLine("\t/// <param name=\"services\">The service provider</param>");
         stream.WriteLine($"\tpublic {fileName}ViewModel");
         stream.WriteLine($"\t(");
-        foreach (var item in model.TableCaption)
-        {
-            paramName = $"I{Utilities.CleanupForCSharp(item)}Table";
-            var paramValue = $"{Utilities.CleanupForCSharp(char.ToLower(item[0]) + item.Substring(1))}Table";
-            stream.WriteLine($"\t\t{paramName} {paramValue},");
-        }
+        stream.WriteLine($"\t\t{paramName} {model.TableCaption},");
         stream.WriteLine($"\t\tIServiceProvider services,");
         stream.WriteLine($"\t\tILoggerFactory loggerFactory");
         stream.WriteLine($"\t)");
         stream.WriteLine("\t{");
         stream.WriteLine("\t\t#region Save off the constructor parameters");
-        foreach (var item in model.TableCaption)
-        {
-            paramName = $"{Utilities.CleanupForCSharp(item)}Table";
-            var paramValue = $"{Utilities.CleanupForCSharp(char.ToLower(item[0]) + item.Substring(1))}Table";
-            stream.WriteLine($"\t\t// {item}");
-            stream.WriteLine($"\t\t{paramName} = {paramValue};");
-            stream.WriteLine($"\t\t{paramName}.InitializeTable();");
-            stream.WriteLine();
-        }
-
+        stream.WriteLine($"\t\t// {model.TableCaption}");
+        stream.WriteLine($"\t\t{paramName} = {model.TableCaption};");
+        stream.WriteLine($"\t\t{paramName}.InitializeTable();");
+        stream.WriteLine();
         paramName = $"{Utilities.CleanupForCSharp(fileName)}Table";
         stream.WriteLine($"\t\t// The service provider from the DI");
         stream.WriteLine($"\t\tServices = services;");

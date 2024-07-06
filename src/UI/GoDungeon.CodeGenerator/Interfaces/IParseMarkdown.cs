@@ -8,22 +8,7 @@ public interface IParseMarkdown
     /// <summary>
     /// The parse models for all the markdown models
     /// </summary>
-    public List<SpellViewModel> SpellModels { get; }
-
-    /// <summary>
-    /// The parse models for all the rules models
-    /// </summary>
-    public List<RulesViewModel> RulesModels { get; }
-
-    /// <summary>
-    /// The parse models for all the magic item models
-    /// </summary>
-    public List<MagicItemViewModel> MagicItemsModels { get; }
-
-    /// <summary>
-    /// The parse models for all the monsters
-    /// </summary>
-    public List<MonsterViewModel> MonsterModels { get; }
+    public List<ICodeGen> CodeGenModels { get; }
 
     /// <summary>
     /// Get the tables in the markdown file
@@ -31,7 +16,8 @@ public interface IParseMarkdown
     void ParseMarkDownTable(ParseModel markDown);
 
     /// <summary>
-    /// The root directory to generate the .html and class files in
+    /// Parse the markdown to .html
     /// </summary>
-    string? RootDirectory { get; set; }
+    /// <param name="parseModel">The parse model for the markdown</param>
+    void ParseMarkdownToHTML(ParseModel parseModel);
 }

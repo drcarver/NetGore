@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 using GoDungeon.CodeGenerator.CodeGen;
+using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
@@ -8,7 +9,7 @@ using GoDungeon.Spells.Enum;
 
 namespace GoDungeon.CodeGenerator.ViewModels;
 
-public partial class SpellViewModel : StandardTableEntryViewModel
+public partial class SpellViewModel : StandardTableEntryViewModel, ISpell
 {
     /// <summary>
     /// The level of the spell
@@ -25,7 +26,7 @@ public partial class SpellViewModel : StandardTableEntryViewModel
     /// <summary>
     /// The list of character classes for the spell
     /// </summary>
-    private List<ClassEnum> characterClassList = [];
+    public List<ClassEnum> CharacterClassList { get; } = [];
  
     /// <summary>
     /// The parse model for this magic item
@@ -61,7 +62,7 @@ public partial class SpellViewModel : StandardTableEntryViewModel
                     {
                         ClassEnum spellClass;
                         Enum.TryParse<ClassEnum>(fh, true, out spellClass);
-                        characterClassList.Add(spellClass);
+                        CharacterClassList.Add(spellClass);
                         spellLineNumber++;
                         fh = ParseModel.Markdown[spellLineNumber].Trim();
                     } while (fh != string.Empty);

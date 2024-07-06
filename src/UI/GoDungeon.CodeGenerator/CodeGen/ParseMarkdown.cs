@@ -12,29 +12,9 @@ public partial class ParseMarkdown : IParseMarkdown
     private readonly ILogger<ParseMarkdown> logger;
 
     /// <summary>
-    /// The parse models for the website
-    /// </summary>
-    public List<ParseModel> ParseModels { get; } = [];
-
-    /// <summary>
     /// The rules files (text only)
     /// </summary>
-    public List<RulesViewModel> RulesModels { get; } = [];
-
-    /// <summary>
-    /// The magic item files
-    /// </summary>
-    public List<MagicItemViewModel> MagicItemsModels { get; } = [];
-
-    /// <summary>
-    /// The list of monsters
-    /// </summary>
-    public List<MonsterViewModel> MonsterModels { get; } = [];
-
-    /// <summary>
-    /// The list of spells
-    /// </summary>
-    public List<SpellViewModel> SpellModels { get; } = [];
+    public List<ICodeGen> CodeGenModels { get; } = [];
 
     /// <summary>
     /// Constructor
@@ -49,14 +29,176 @@ public partial class ParseMarkdown : IParseMarkdown
     /// Parse the markdown to .html
     /// </summary>
     /// <param name="parseModel">The parse model for the markdown</param>
-    /// <returns></returns>
-    public List<string> ParseMarkdownToHTML(ParseModel parseModel)
+    public void ParseMarkdownToHTML(ParseModel parseModel)
     {
-        List<string> html = [];
-        foreach (var line in parseModel.Markdown)
+        int startPos = 0;
+        for (int i = 0; i < parseModel.Markdown.Length; i++)
         {
+            if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim()))
+            {
+                startPos = i+1;
+                break;
+            }
         }
-        return html;
+
+        for (int i = startPos; i < parseModel.Markdown.Length; i++)
+        {
+            if (parseModel.Markdown[i].Trim() == string.Empty)
+            {
+                continue;
+            }
+            switch (parseModel.Markdown[i][0])
+            {
+                case '#':
+                    parseModel.MarkDownHtml.Add(ParseToHTMLHeader(parseModel.Markdown[i]));
+                    break;
+                case '|':
+                    var table = parseModel.MarkDownTableModels.FirstOrDefault(t => t.MarkdownLine == i);
+                    if (table != null)
+                    {
+                        ParseMarkdownToHTMLTable(parseModel, table);
+                        i += table.TableRows.Count;
+                    }
+                    break;
+                default:
+                    parseModel.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(parseModel.Markdown[i])}</p>");
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Parse the markdown table to .html
+    /// </summary>
+    /// <param name="parseModel">THe parse model containing the table</param>
+    /// <param name="table">The markdown table to parse to ..html</param>
+    private void ParseMarkdownToHTMLTable(ParseModel parseModel, MarkDownTableModel table)
+    {
+        parseModel.MarkDownHtml.Add("<table>");
+        parseModel.MarkDownHtml.Add($"\t<caption>{table.TableCaption}</caption>");
+
+        // Now the table header
+        parseModel.MarkDownHtml.Add($"\t<tr>");
+        var headers = table.TableRows[0].Split("|");
+        foreach (var header in headers)
+        {
+            var hName = header.Replace("|", string.Empty).Trim();
+            if (hName != string.Empty)
+            {
+                parseModel.MarkDownHtml.Add($"\t\t<th>{hName}<th>");
+            }
+        }
+        parseModel.MarkDownHtml.Add($"\t</tr>");
+
+        // Next the table body
+        for (int i = 2; i < table.TableRows.Count; i++)
+        {
+            parseModel.MarkDownHtml.Add($"\t<tr>");
+            foreach (var row in table.TableRows[i].Split("|"))
+            {
+                parseModel.MarkDownHtml.Add($"\t\t<td>{row.Replace("|", string.Empty).Trim()}</td>");
+            }
+            parseModel.MarkDownHtml.Add($"\t</tr>");
+        }
+
+        // close out the table
+        parseModel.MarkDownHtml.Add($"</table>");
+    }
+
+    /// <summary>
+    /// Parse the bold and italic in a markdown line
+    /// </summary>
+    /// <param name="line">The line to parse</param>
+    /// <returns>The line with bold and italics added</returns>
+    private string ParseMarkdownToHtmlBold(string line)
+    {
+        if (line.IndexOf("__*") != -1)
+        {
+            line = ReplaceFirst(line, "__*", "<em><strong>");
+            line = ReplaceFirst(line, "*__", "</strong></em>");
+        }
+        if (line.IndexOf("**_") != -1)
+        {
+            line = ReplaceFirst(line, "**_", "<em><strong>");
+            line = ReplaceFirst(line, "_**", "</strong></em>");
+        }
+        if (line.IndexOf("***") != -1)
+        {
+            line = ReplaceFirst(line, "***", "<em><strong>");
+            line = ReplaceFirst(line, "***", "</strong></em>");
+        }
+        if (line.IndexOf("__") != -1)
+        {
+            line = ReplaceFirst(line, "___", "<em><strong>");
+            line = ReplaceFirst(line, "___", "</strong></em>");
+        }
+        if (line.IndexOf("**") != -1)
+        {
+            line = ReplaceFirst(line, "**", "<strong>");
+            line = ReplaceFirst(line, "**", "</strong>");
+        }
+        if (line.IndexOf("*") != -1)
+        {
+            line = ReplaceFirst(line, "*", "<strong>");
+            line = ReplaceFirst(line, "*", "</strong>");
+        }
+        if (line.IndexOf("_") != -1)
+        {
+            line = ReplaceFirst(line, "_", "<em>");
+            line = ReplaceFirst(line, "_", "</em>");
+        }
+        return line;
+    }
+
+    /// <summary>
+    /// Replace the first instance of a string
+    /// </summary>
+    /// <param name="text">The text holding the element to replace</param>
+    /// <param name="search">The string to search for</param>
+    /// <param name="replace">The string to replace with</param>
+    /// <returns>The new string</returns>
+    private string ReplaceFirst(string text, string search, string replace)
+    {
+        int pos = text.IndexOf(search);
+        if (pos < 0)
+        {
+            return text;
+        }
+        return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+    }
+
+    /// <summary>
+    /// Parse a markdown header to a .html header
+    /// </summary>
+    /// <param name="line">THe line to parse</param>
+    /// <returns>The .html header string</returns>
+    private string ParseToHTMLHeader(string line)
+    {
+        if (line.StartsWith("# "))
+        {
+            return $"<h1>{line.Replace("# ", string.Empty)}</h1>";
+        }
+        if (line.StartsWith("## "))
+        {
+            return $"<h2>{line.Replace("## ", string.Empty)}</h2>";
+        }
+        if (line.StartsWith("### "))
+        {
+            return $"<h3>{line.Replace("### ", string.Empty)}</h3>";
+        }
+        if (line.StartsWith("#### "))
+        {
+            return $"<h4>{line.Replace("#### ", string.Empty)}</h4>";
+        }
+        if (line.StartsWith("##### "))
+        {
+            return $"<h5>{line.Replace("##### ", string.Empty)}</h5>";
+        }
+        if (line.StartsWith("###### "))
+        {
+            return $"<h6>{line.Replace("###### ", string.Empty)}</h6>";
+        }
+        return string.Empty;
     }
 
     /// <summary>
@@ -99,7 +241,7 @@ public partial class ParseMarkdown : IParseMarkdown
 
             // Parse the next table in the file
             parseModel.MarkDownTableModels.Add(new MarkDownTableModel());
-            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption?.Add(tableCaption);
+            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption = tableCaption;
             parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].MarkdownLine = t;
             while (t < parseModel.Markdown.Length && parseModel.Markdown[t].StartsWith("|"))
             {

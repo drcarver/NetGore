@@ -18,7 +18,7 @@ public class MarkDownTableModel : IMarkDownTableModel
     /// <summary>
     /// The table caption
     /// </summary>
-    public List<string>? TableCaption { get; set; } = [];
+    public string? TableCaption { get; set; }
 
     /// <summary>
     /// The table rows

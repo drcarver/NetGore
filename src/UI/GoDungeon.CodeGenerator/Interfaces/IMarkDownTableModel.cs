@@ -10,7 +10,7 @@ public interface IMarkDownTableModel
     /// <summary>
     /// The table caption
     /// </summary>
-    List<string>? TableCaption { get; set; }
+    string? TableCaption { get; set; }
 
     /// <summary>
     /// The table rows

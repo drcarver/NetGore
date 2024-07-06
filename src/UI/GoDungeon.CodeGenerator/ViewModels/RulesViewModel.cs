@@ -1,15 +1,11 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-using GoDungeon.CodeGenerator.CodeGen;
+﻿using GoDungeon.CodeGenerator.CodeGen;
+using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Models;
 
-public partial class RulesViewModel : NamedTableEntryViewModel
+public partial class RulesViewModel : StandardTableEntryViewModel, IRules
 {
-    [ObservableProperty]
-    private string? description;
-
     /// <summary>
     /// The ParseModel for this rule file
     /// </summary>
@@ -23,7 +19,15 @@ public partial class RulesViewModel : NamedTableEntryViewModel
     {
         ParseModel = parseModel;
         var fileInfo = new FileInfo(ParseModel?.Route);
-        description = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty);
+        Description = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Replace("description:", string.Empty).Trim();
         Name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
+        foreach (var line in ParseModel.Markdown)
+        {
+            if (line.StartsWith("# "))
+            {
+                ProperName = line.Replace("# ", string.Empty);
+                break;
+            }
+        }
     }
 }

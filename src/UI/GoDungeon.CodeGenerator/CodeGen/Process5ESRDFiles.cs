@@ -3,7 +3,6 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
-using GoDungeon.Core.Enum;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -104,13 +103,12 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         {
             // Parse markdown file
             ProcessMarkDownFile(filePath);
-
             Logger.LogDebug($"Completed parse of {filePath}");
         }
     }
 
     /// <summary>
-    /// Convert all markdown files into xaml
+    /// Convert all markdown files into a Parse Model
     /// </summary>
     /// <param name="filePath">The file containing the markdown</param>
     private void ProcessMarkDownFile(string filePath)
@@ -126,22 +124,30 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             // Rules files have just a description line in the header
             case 1:
                 Logger.LogDebug($"Converting markdown rules file {filePath} to ParseModel");
-                ParseMarkdown.RulesModels.Add(new RulesViewModel(markdown));
+                var rvm = new RulesViewModel(markdown);
+                ParseMarkdown.CodeGenModels.Add(rvm);
+                ParseMarkdown.ParseMarkdownToHTML(rvm.ParseModel);
                 break;
             // Magic Items have two header entries.  Name and type.
             case 2:
                 Logger.LogDebug($"Converting markdown magic item file {filePath} to ParseModel");
-                ParseMarkdown.MagicItemsModels.Add(new MagicItemViewModel(markdown));
+                var miVM = new MagicItemViewModel(markdown);
+                ParseMarkdown.CodeGenModels.Add(miVM);
+                ParseMarkdown.ParseMarkdownToHTML(miVM.ParseModel);
                 break;
             // Monsters have three header entries.  Name, type and challenge rating.
             case 3:
                 Logger.LogDebug($"Converting markdown monster file {filePath} to ParseModel");
-                ParseMarkdown.MonsterModels.Add(new MonsterViewModel(markdown));
+                var mVM = new MonsterViewModel(markdown);
+                ParseMarkdown.CodeGenModels.Add(mVM);
+                ParseMarkdown.ParseMarkdownToHTML(mVM.ParseModel);
                 break;
             // spells have four header entries.  Name, school, level and character classes that can cast the spell.
             case 4:
                 Logger.LogDebug($"Converting markdown spell file {filePath} to ParseModel");
-                ParseMarkdown.SpellModels.Add(new SpellViewModel(markdown));
+                var sVM = new SpellViewModel(markdown);
+                ParseMarkdown.CodeGenModels.Add(new SpellViewModel(markdown));
+                ParseMarkdown.ParseMarkdownToHTML(sVM.ParseModel);
                 break;
         }
     }
