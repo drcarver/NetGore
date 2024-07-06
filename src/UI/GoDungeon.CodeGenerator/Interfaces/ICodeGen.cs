@@ -8,7 +8,7 @@ namespace GoDungeon.CodeGenerator.Interfaces;
 public interface ICodeGen : IStandardTableEntry
 {
     /// <summary>
-    /// The ParseModel for this rule file
+    /// The ParseModel for this markdown file
     /// </summary>
     public ParseModel ParseModel { get; }
 }

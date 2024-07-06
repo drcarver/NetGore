@@ -2,6 +2,7 @@
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
+using GoDungeon.CodeGenerator.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 
@@ -16,18 +17,16 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="parseMarkdown">The Parse models</param>
     public void GenerateHtmlFiles(string outputDir, IParseMarkdown parseMarkdown)
     {
-        foreach (var rulesModel in parseMarkdown.CodeGenModels)
+        foreach (var codeGenModel in parseMarkdown.CodeGenModels)
         {
-            var parseModel = rulesModel.ParseModel;
-            var routeInfo = new FileInfo(parseModel.Route);
+            var routeInfo = new FileInfo(codeGenModel.ParseModel.Route);
             var fPath = $@"{outputDir}html\{routeInfo.DirectoryName.Replace("C:", string.Empty)}\{Utilities.CleanupForCSharp(routeInfo.Name.Replace(".md", string.Empty))}.html";
             var fileInfo = new FileInfo(fPath);
             Directory.CreateDirectory(fileInfo.DirectoryName);
             using (var stream = File.CreateText(fPath))
             {
-                GenerateHtmlHeader(stream, parseModel);
-                GenerateHtmlBody(stream, parseModel);
-                stream.WriteLine("</HTML>");
+                GenerateHtmlHeader(stream, codeGenModel);
+                GenerateHtmlBody(stream, codeGenModel);
             }
         }
     }
@@ -37,29 +36,84 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream">The .html file</param>
     /// <param name="stream">The creature</param>
-    private void GenerateHtmlBody(TextWriter stream, ParseModel parseModel)
+    private void GenerateHtmlBody(TextWriter stream, ICodeGen codeGenModel)
     {
         stream.WriteLine("\t<BODY>");
-        foreach (var line in parseModel.MarkDownHtml)
+        foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
             stream.WriteLine(line);
         }
+        stream.WriteLine("\t\t<footer>");
+        stream.WriteLine("\t\t\t<hr>");
+        stream.WriteLine("\t\t\t<div style=\"text-align: center; padding-left: 1em; padding-right: 1em;\">");
+        stream.WriteLine("\t\t\t\t<p>This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available <a href=\"https://dnd.wizards.com/resources/systems-reference-document\">here</a>. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>.</p>");
+        stream.WriteLine("\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a>.");
+        stream.WriteLine("\t\t\t\t<p>View our <a href=\"/privacy_policy/\">privacy policy</a>.</p>");
+        stream.WriteLine("\t\t\t</div>");
+        stream.WriteLine("\t\t</footer>");
         stream.WriteLine("\t</BODY>");
+        stream.WriteLine("</HTML>");
     }
 
     /// <summary>
     /// The .html header
     /// </summary>
     /// <param name="stream">The TextWriter</param>
-    private void GenerateHtmlHeader(TextWriter stream, ParseModel parseModel)
+    /// <param name="codeGenModel">The code gen model</param>
+    private void GenerateHtmlHeader(TextWriter stream, ICodeGen codeGenModel)
     {
-        var fileInfo = new FileInfo(parseModel?.Route);
+        var fileInfo = new FileInfo(codeGenModel.ParseModel?.Route);
         var name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
 
         stream.WriteLine("<!DOCTYPE html>");
         stream.WriteLine("<html lang=\"en\">");
         stream.WriteLine("<head>");
-        stream.WriteLine($"\t<title>{name}</title>");
+        stream.WriteLine();
+
+        // Meta data links
+        var spellCasters = string.Empty;
+        if (codeGenModel.ParseModel.FileHeaders.Count == 4)
+        {
+            var spellvm = (SpellViewModel)codeGenModel;
+            foreach (var caster in spellvm.CharacterClassList)
+            {
+                spellCasters += caster + ",";
+            }
+            spellCasters = spellCasters.Substring(0, spellCasters.LastIndexOf(","));
+        }
+        string description = string.Empty;
+        for (var i = 0; i < codeGenModel.ParseModel.FileHeaders.Count; i++) 
+        {
+            var meta = codeGenModel.ParseModel.FileHeaders[i];
+            if (meta.StartsWith("description:"))
+            {
+                var rulesVM = (RulesViewModel) codeGenModel;
+                meta = meta.Replace(" from the 5th Edition (5e) SRD (System Reference Document)", string.Empty);
+                description = meta.Replace("description:", string.Empty).Trim();
+                rulesVM.Description = description;
+                codeGenModel.ParseModel.FileHeaders[i] = $"description: {meta}";
+            }
+            stream.Write("\t<metadata ");
+            if (spellCasters != string.Empty && meta.StartsWith("classes:"))
+            {
+                stream.Write($"name=\"classses\" ");
+                stream.Write($"content=\"{spellCasters}\"");
+            }
+            else
+            {
+                stream.Write($"name=\"{meta.Substring(0, meta.IndexOf(":"))}\" ");
+                stream.Write($"content=\"{meta.Substring(meta.IndexOf(":") + 1).Trim()}\"");
+            }
+            stream.WriteLine(">");
+        }
+        stream.WriteLine();
+        if (description != string.Empty)
+        {
+            stream.WriteLine($"\t<meta name=\"og:description\" content=\"{description}\">");
+        }
+        stream.WriteLine("");
+        stream.WriteLine();
+        stream.WriteLine($"\t<title>{codeGenModel.ProperName.Trim()}</title>");
         stream.WriteLine();
         stream.WriteLine($"\t<style>");
         stream.WriteLine($"\t/* Separate border for the table */");
