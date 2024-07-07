@@ -113,7 +113,7 @@ namespace GoDungeon.Core.Interfaces
         /// class. A natural armor bonus doesn’t apply 
         /// against touch attacks.
         /// </summary>
-        public int NaturalArmorBonus { get; set; }
+        int ArmorAndShield { get; set; }
 
         /// <summary>
         /// A profane bonus (or penalty) stems from the 

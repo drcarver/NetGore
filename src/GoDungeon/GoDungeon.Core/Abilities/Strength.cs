@@ -25,11 +25,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Strength(int baseAbility, ICreature parent)
-            : base(baseAbility, parent)
+            : this(parent)
         {
-            Name = "Strength";
-            Description = "Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force.";
-            Abbreviation = "STR";
+            SetBaseAbility(baseAbility);
         }
     }
 }

@@ -45,12 +45,9 @@ namespace GoDungeon.Character.PC.Bard
         {
             base.Initialize(character);
 
-            SavingThrows.Add(new SavingThrowViewModel(character.Strength));
-            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity, true));
-            SavingThrows.Add(new SavingThrowViewModel(character.Constitution));
-            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
-            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom));
-            SavingThrows.Add(new SavingThrowViewModel(character.Charisma, true));
+            // class saving throws
+            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity));
+            SavingThrows.Add(new SavingThrowViewModel(character.Charisma));
         }
 
         /// <summary>

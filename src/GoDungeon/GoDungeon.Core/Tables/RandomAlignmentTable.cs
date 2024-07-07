@@ -27,7 +27,7 @@ namespace GoDungeon.Core.Tables
         /// <summary>
         /// The allowed alignments
         /// </summary>
-        public AlignmentFilterEnum AlignmentFilter { get; set; } = AlignmentFilterEnum.NonEvil;
+        public AlignmentEnum AlignmentFilter { get; set; } = AlignmentEnum.AnyNonEvil;
 
         /// <summary>
         /// Get the random range based on the alignment filter
@@ -40,41 +40,41 @@ namespace GoDungeon.Core.Tables
             int modifier = 1;
             switch (AlignmentFilter)
             {
-                case AlignmentFilterEnum.EvilOnly:
+                case AlignmentEnum.AnyEvil:
                     dice = 6;
                     break;
-                case AlignmentFilterEnum.GoodOnly:
+                case AlignmentEnum.AnyGood:
                     dice = 8;
                     modifier = 13;
                     break;
-                case AlignmentFilterEnum.NonGood:
+                case AlignmentEnum.AnyNonGood:
                     dice = 12;
                     break;
-                case AlignmentFilterEnum.NonEvil:
+                case AlignmentEnum.AnyNonEvil:
                     dice = 12;
                     modifier = 6;
                     break;
-                case AlignmentFilterEnum.NeutralOnly:
+                case AlignmentEnum.AnyNeutral:
                     dice = 6;
                     modifier = 6;
                     break;
-                case AlignmentFilterEnum.AnyChaotic:
+                case AlignmentEnum.AnyChaotic:
                     dice = 6;
                     modifier = 20;
                     break;
-                case AlignmentFilterEnum.NonEvilChaotic:
+                case AlignmentEnum.NonEvilChaotic:
                     dice = 4;
                     modifier = 20;
                     break;
-                case AlignmentFilterEnum.AnyLawful:
+                case AlignmentEnum.AnyLawful:
                     dice = 6;
                     modifier = 26;
                     break;
-                case AlignmentFilterEnum.NonEvilLawful:
+                case AlignmentEnum.NonEvilLawful:
                     dice = 4;
                     modifier = 26;
                     break;
-                case AlignmentFilterEnum.Any:
+                case AlignmentEnum.Any:
                     dice = 20;
                     break;
             }

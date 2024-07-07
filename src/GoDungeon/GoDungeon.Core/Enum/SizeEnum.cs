@@ -14,6 +14,7 @@
         Large = 1,
         Huge = 2,
         Gargantuan = 3,
-        Colossal = 4
+        Colossal = 4,
     }
 }
+

@@ -8,31 +8,34 @@
              x:DataType="tables:AlignmentTable"
              Title="{Binding ProperName}">
 
-    <CollectionView ItemsSource="{Binding Table}"
-                    SelectionMode="None">
-        <CollectionView.Header>
-            <Grid RowDefinitions="Auto,Auto" 
-                  ColumnDefinitions="200,300">
-                <Label Text="{Binding Description}" Margin="10,10,0,0" 
-                       HorizontalOptions="Start" 
-                       Grid.ColumnSpan="2" />
-                <Label Text="Alignment" Margin="10,10,0,0" 
-                       HorizontalOptions="Start" 
-                       Grid.Row="1" Grid.Column="0" />
-                <Label Text="Description" Margin="10,10,0,0"
-                       HorizontalOptions="Start" 
-                       Grid.Row="1" Grid.Column="1" />
-            </Grid>
-        </CollectionView.Header>
+    <CollectionView ItemsSource="{Binding Table}" SelectionMode="None">
+        <CollectionView.HeaderTemplate>
+            <DataTemplate>
+                <Grid RowDefinitions="Auto,Auto" 
+                      ColumnDefinitions="200,300">
+                    <Label Text="{Binding Description}" Margin="10,10,0,0" 
+                           HorizontalOptions="Start" 
+                           Grid.ColumnSpan="2" />
+                    <Label Text="Alignment" Margin="10,10,0,0" 
+                           HorizontalOptions="Start" 
+                           Grid.Row="1" Grid.Column="0" />
+                    <Label Text="Description" Margin="10,10,0,0"
+                           HorizontalOptions="Start" 
+                           Grid.Row="1" Grid.Column="1" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.HeaderTemplate>
         <!--This footer is for 5E SRD Content-->
-        <CollectionView.Footer> 
-            <Grid RowDefinitions="Auto,Auto,Auto">
-                <Label Grid.Row="0" Text="" Margin="10,10,0,0" />
-                <Label Grid.Row="1" Text="This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available from the URL below. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 " 
-                       Margin="10,10,0,0" />
-                <Label Grid.Row="2" Text="https://dnd.wizards.com/resources/systems-reference-document" Margin="10,10,0,0" />
-            </Grid>
-        </CollectionView.Footer>
+        <CollectionView.FooterTemplate>
+            <DataTemplate>
+                <Grid RowDefinitions="Auto,Auto,Auto">
+                    <Label Grid.Row="0" Text="" Margin="10,10,0,0" />
+                    <Label Grid.Row="1" Text="This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available from the URL below. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 " 
+                           Margin="10,10,0,0" />
+                    <Label Grid.Row="2" Text="https://dnd.wizards.com/resources/systems-reference-document" Margin="10,10,0,0" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.FooterTemplate>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="coreviewmodel:AlignmentTableEntryViewModel">
                 <Grid BackgroundColor="PapayaWhip" 

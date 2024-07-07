@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Core.Abilities;
 using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.Core.ViewModels
@@ -59,13 +58,9 @@ namespace GoDungeon.Core.ViewModels
         /// Constructor
         /// </summary>
         /// <param name="ability">The ability for the saving throw</param>
-        /// <param name="isClassSavingThrow">Is this a class saving throw</param>
-        public SavingThrowViewModel(
-            IAbilityBase ability,
-            bool isClassSavingThrow = false)
+        public SavingThrowViewModel(IAbilityBase ability)
         {
             Ability = ability;
-            IsClassSavingThrow = isClassSavingThrow;
         }
     }
 }

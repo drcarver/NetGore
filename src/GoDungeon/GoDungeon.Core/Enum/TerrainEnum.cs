@@ -51,5 +51,6 @@ namespace GoDungeon.Core.Enum
         Underground = 25,
         Urban = 26,
         WarmMountains = 27,
+        Arctic = 28,
     }
 }

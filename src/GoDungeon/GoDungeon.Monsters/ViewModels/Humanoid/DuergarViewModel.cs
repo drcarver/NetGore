@@ -49,7 +49,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             }
 
             //Speed 25	ft.
-            Speed = 25;
+            Speed.Add(new MovementViewModel { Speed = 25, MovementType = MovementEnum.Normal });
 
             //STR DEX CON INT WIS CHA
             //14 (+2) 11 (+0) 14 (+2) 11 (+0) 10 (+0) 9	(−1)

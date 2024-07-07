@@ -78,7 +78,7 @@ namespace GoDungeon.Core.ViewModels
                 {
                     hitPoints += hitPoint;
                 }
-                hitPoints += LevelDice.Count() * Constitution.Score;
+                hitPoints += LevelDice.Count() * Constitution.AbilityBonus;
             }
             else
             {
@@ -130,7 +130,18 @@ namespace GoDungeon.Core.ViewModels
             HitDice = hitDie;
 
             // First level is max hit die
-            LevelDice.Add(new Dice(hitDie).Sides);
+            var hitDice = new Dice(hitDie);
+            if (hitDice.Rolls.Count() == 1)
+            {
+                LevelDice.Add(hitDice.Sides);
+            }
+            else
+            {
+                foreach (var diceSide in hitDice.Rolls)
+                {
+                    LevelDice.Add(diceSide);
+                }
+            }
         }
 
         /// <summary>

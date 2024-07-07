@@ -19,13 +19,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
-		<PackageReference Include="Syncfusion.DocIO.NET" Version="25.2.4" />
-		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="25.2.4" />
-		<PackageReference Include="Syncfusion.Maui.PdfViewer" Version="25.2.4" />
-		<PackageReference Include="Syncfusion.Pdf.NET" Version="25.2.4" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
+		<PackageReference Include="Syncfusion.DocIO.NET" Version="26.1.39" />
+		<PackageReference Include="Syncfusion.DocIORenderer.NET" Version="26.1.39" />
+		<PackageReference Include="Syncfusion.Maui.PdfViewer" Version="26.1.39" />
+		<PackageReference Include="Syncfusion.Pdf.NET" Version="26.1.39" />
 	</ItemGroup>
 
 	<ItemGroup>

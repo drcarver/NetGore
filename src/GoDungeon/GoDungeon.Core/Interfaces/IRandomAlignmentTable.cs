@@ -7,6 +7,6 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// The allowed alignments
         /// </summary>
-        public AlignmentFilterEnum AlignmentFilter { get; set; }
+        public AlignmentEnum AlignmentFilter { get; set; }
     }
 }

@@ -2,25 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GoDungeon.MAUI.Views.MainPage"
-             xmlns:coreviewmodel="clr-namespace:GoDungeon.Core.ViewModels;assembly=GoDungeon.Core"
-             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.Core.ViewModels;assembly=GoDungeon.MAUI.Core"
-             xmlns:tables="clr-namespace:GoDungeon.MAUI.Tables;assembly=GoDungeon.MAUI"
-             xmlns:enum="clr-namespace:GoDungeon.Core.Enum;assembly=GoDungeon.Core"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.ViewModels;assembly=GoDungeon.MAUI"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="viewmodel:MenuTable"
-             Title="{Binding ProperName}">
+             x:DataType="viewmodel:MainViewModel"
+             BackgroundColor="AntiqueWhite">
 
-    <CollectionView ItemsSource="{Binding Table}"
-                    SelectedItem="{Binding SelectedItem}"
-                    SelectionMode="Single"
-                    SelectionChangedCommand="{Binding SelectionChangedCommand}"
-                    x:DataType="tables:MainMenuTable">
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="coreviewmodel:GameNavigationEntryViewModel">
-                <HorizontalStackLayout>
-                    <Label Text="{Binding Description}" Margin="10,10,0,0" />
-                </HorizontalStackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <TableView Intent="Menu" Margin="10,0,0,0">
+        <TableRoot>
+            <TableSection>
+                <TextCell Text="Adventuring"
+                      Detail="Rules and information governing player equipment and downtime." 
+                      Command="{Binding AdventuringCommand}" />
+                <TextCell Text="Character"
+                      Detail="Rules for managing movement and travel" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

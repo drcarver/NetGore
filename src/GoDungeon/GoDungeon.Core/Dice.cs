@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace GoDungeon.Core
 {
@@ -46,18 +48,48 @@ namespace GoDungeon.Core
         public int RollDice(string input)
         {
             // Parsing the input string
-            string[] parts = input.ToLower().Split('d', '+');
-            int numDice = int.Parse(parts[0]);
-            Sides = int.Parse(parts[1]);
-            Modifier = parts.Length > 2 ? int.Parse(parts[2]) : 0;
-
-            var rolls = new int[numDice];
-            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            string[] rawDie = input.ToLower().Replace(" ", string.Empty).Split('d');
+            string[] die;
+            string[] parts;
+            if (rawDie.Length != 2)
             {
-                for (int i = 0; i < numDice; i++)
+                return 0;
+            }
+            if (rawDie[1].Contains("-"))
+            {
+                parts = rawDie[1].Split('-');
+            }
+            else
+            {
+                parts = rawDie[1].Split('+');
+            }
+
+            int numDice;
+            int sides;
+            int modifier = 0;
+            int.TryParse(rawDie[0].Trim(), out numDice);
+            int.TryParse(parts[0].Trim(), out sides);
+            if (parts.Length == 2)
+            {
+                int.TryParse(parts[1].Trim(), out modifier);
+            }
+            
+            Sides = sides;
+            Modifier = modifier;
+            var rolls = new int[numDice];
+            if (sides > 0)
+            {
+                using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
                 {
-                    rolls[i] = RandomNumberGenerator.GetInt32(Sides)+1;
+                    for (int i = 0; i < numDice; i++)
+                    {
+                        rolls[i] = RandomNumberGenerator.GetInt32(Sides) + 1;
+                    }
                 }
+            }
+            else
+            {
+                return 0;
             }
 
             Rolls = rolls.OrderByDescending(i => i).ToArray();

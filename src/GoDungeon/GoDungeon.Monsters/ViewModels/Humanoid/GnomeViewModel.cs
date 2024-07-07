@@ -3,6 +3,7 @@
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -54,7 +55,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
 
             //Base Speed: (Slow Speed) Gnomes have a
             //base speed of 20 feet.
-            Speed = 20;
+            Speed.Add(new MovementViewModel { Speed = 20, MovementType = MovementEnum.Normal });
 
             //Languages: Gnomes begin play speaking
             //Common, Gnome, and Sylvan. Gnomes with

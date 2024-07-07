@@ -81,7 +81,7 @@ namespace GoDungeon.Monsters.ViewModels
             ShortDescription = string.Empty;
             string highAbilities = string.Empty;
             string lowAbilities = string.Empty;
-            foreach (var enumMember in Enum.GetValues(typeof(AbilityEnum)))
+            foreach (var enumMember in System.Enum.GetValues(typeof(AbilityEnum)))
             {
                 // Ability
                 var highEntry = (IRandomTableEntry)NPCHighAbilitiesTable.GetEntryByName(enumMember.ToString());

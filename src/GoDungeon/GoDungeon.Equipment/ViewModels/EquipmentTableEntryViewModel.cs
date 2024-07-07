@@ -1,35 +1,29 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+//
+// Adventuring Gear view model
+//
+using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.ViewModels;
 
-namespace GoDungeon.Equipment.ViewModels
+using GoDungeon.Equipment.Interfaces;
+
+namespace GoDungeon.Equipment.ViewModels;
+
+/// <summary>
+/// Equipment tables
+/// </summary>
+public partial class EquipmentTableEntryViewModel : StandardTableEntryViewModel, IEquipmentTableEntry
 {
-    public partial class EquipmentTableEntryViewModel : StandardTableEntryViewModel, IEquipmentTableEntry
-    {
-        /// <summary>
-        /// The equipment type
-        /// </summary>
-        [ObservableProperty]
-        private EquipmentCategoryEnum equipmentCategory;
+	/// <summary>
+	/// Cost
+	/// </summary>
+	[ObservableProperty]
+	private CostViewModel? cost;
 
-        /// <summary>
-        /// The equipment type
-        /// </summary>
-        [ObservableProperty]
-        private int equipment;
+	/// <summary>
+	/// Weight
+	/// </summary>
+	[ObservableProperty]
+	private WeightViewModel? weight;
 
-        /// <summary>
-        /// The cost of the good
-        /// </summary>
-        [ObservableProperty]
-        private IEquipmentCost? cost;
-
-        /// <summary>
-        /// The weight of the equipment
-        /// </summary>
-        [ObservableProperty]
-        private decimal weight;
-    }
 }

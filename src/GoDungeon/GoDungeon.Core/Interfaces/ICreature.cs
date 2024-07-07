@@ -1,10 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 
 using GoDungeon.Core.Enum;
+using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.Core.Interfaces
 {
-    public interface ICreature
+    public interface ICreature : IStandardTableEntry
     {
         ///// <summary>
         /// The creatures gender
@@ -95,7 +96,7 @@ namespace GoDungeon.Core.Interfaces
         /// <summary>
         /// The creature speed in feet
         /// </summary>
-        int Speed { get; set; }
+        ObservableCollection<MovementViewModel> Speed { get; set; }
 
         /// <summary>
         /// Wealth in gold pieces

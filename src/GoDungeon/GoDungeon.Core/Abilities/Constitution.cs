@@ -24,11 +24,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Constitution(int baseAbility, ICreature parent)
-            : base(baseAbility, parent)
+            : this(parent)
         {
-            Name = "Constitution";
-            Description = "Constitution measures health, stamina, and vital force.";
-            Abbreviation = "CON";
+            SetBaseAbility(baseAbility);
         }
     }
 }

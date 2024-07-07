@@ -74,7 +74,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             SetHeightAndWeight();
 
             //Speed: Tieflings have a base speed of 30 feet.
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
 
             //Languages: Tieflings begin play speaking
             //Common and either Abyssal or Infernal.

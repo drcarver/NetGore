@@ -25,11 +25,9 @@ namespace GoDungeon.Core.Abilities
         /// Constructor
         /// </summary>
         public Wisdom(int baseAbility, ICreature parent)
-            : base(baseAbility, parent)
+            : this(parent)
         {
-            Name = "Wisdom";
-            Description = "Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition.";
-            Abbreviation = "WIS";
+            SetBaseAbility(baseAbility);
         }
     }
 }

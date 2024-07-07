@@ -57,7 +57,7 @@ namespace GoDungeon.Character
             collection.AddTransient<IBardLevelTable, BardLevelTable>();
 
             // Now add the Cleric Class
-            collection.AddTransient<ICleric, ClericViewModel>();
+            //collection.AddTransient<ICleric, ClericViewModel>();
             collection.AddTransient<IClericBackgroundTable, ClericBackgroundTable>();
             collection.AddTransient<IClericLevelTable, ClericLevelTable>();
 

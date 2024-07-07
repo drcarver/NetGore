@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoDungeon.MAUI.Equipment.Views.MovementView"
+             xmlns:viewmodel="clr-namespace:GoDungeon.MAUI.Equipment.ViewModels;assembly=GoDungeon.MAUI.Equipment"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="viewmodel:MovementViewModel">
+
+    <ScrollView BackgroundColor="PapayaWhip">
+        <VerticalStackLayout>
+            <!--  left, top, right, and bottom --> 
+            <Label Text="{Binding PageDescription}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontAttributes="Italic" />
+            <Label Text="{Binding MovementHeader}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Title" />
+            <Label Text="{Binding MovementBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            <Label Text="{Binding SpeedHeader}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Subtitle" />
+            <Label Text="{Binding SpeedBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            <Label Text="{Binding TravelPaceHeader}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Micro" />
+            <Label Text="{Binding TravelPaceBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            <HorizontalStackLayout>
+                <Label Text="{Binding ForcedMarchBoldHeader}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" FontAttributes="Bold" />
+                <Label Text="{Binding ForcedMarchBoldBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            </HorizontalStackLayout>
+            <Label Text="{Binding ForcedMarchBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            <HorizontalStackLayout>
+                <Label Text="{Binding MountsandVehiclesBoldHeader}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" FontAttributes="Bold" />
+                <Label Text="{Binding MountsandVehiclesBoldBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="{Binding MountsandVehiclesItalicHeader}" Margin="10,0,0,0" 
+                       LineBreakMode="WordWrap" FontSize="Body" />
+                <Label Text="{Binding MountsandVehiclesItalic}" Margin="10,0,0,0" 
+                       LineBreakMode="WordWrap" FontSize="Body" FontAttributes="Italic" />
+                <Label Text="{Binding MountsandVehiclesItalicBody}" Margin="10,0,0,0" 
+                   LineBreakMode="WordWrap" FontSize="Body" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

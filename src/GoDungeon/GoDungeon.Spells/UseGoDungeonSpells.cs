@@ -6,7 +6,7 @@ using System.Reflection;
 using GoDungeon.Core.Tables;
 using GoDungeon.Spells.Interfaces;
 using GoDungeon.Spells.Tables;
-using GoDungeon.Spells.Tables.Bard;
+using GoDungeon.Spells.ViewModels;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,9 +29,11 @@ namespace GoDungeon.Spells
             //collection
             // Add all the game table types as transient
             collection
-                .AddTransient<IBardCantripSpellTable, BardCantripSpellTable>()
-                .AddTransient<IBardFirstLevelSpellTable, BardFirstLevelSpellTable>()
-                .AddTransient<ISpellsBeggingWithATable, SpellsBeggingWithATable>()
+                .AddTransient<ISpellInfoTable, SpellInfoTable>()
+                .AddTransient<ICastingTime, CastingTimeViewModel>()
+                .AddTransient<ISpellComponent, SpellComponentViewModel>()
+                .AddTransient<ISpellRange, SpellRangeViewModel>()
+                .AddTransient<ISpellDuration, SpellDurationViewModel>()
                 ;
 
             return collection;

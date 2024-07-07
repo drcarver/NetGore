@@ -8,13 +8,14 @@ using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
 using GoDungeon.Core.Models;
 using GoDungeon.Core.Tables;
+using GoDungeon.Core.ViewModels;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace GoDungeon.Core.ViewModels
 {
-    public partial class CreatureViewModel : DataObjectViewModel, ICreature
+    public partial class CreatureViewModel : StandardTableEntryViewModel, ICreature
     {
         ///// <summary>
         /// The creatures gender
@@ -127,7 +128,7 @@ namespace GoDungeon.Core.ViewModels
         /// The creature's speed in feet
         /// </summary>
         [ObservableProperty]
-        private int speed;
+        private ObservableCollection<MovementViewModel> speed = new ObservableCollection<MovementViewModel>();
         //{
         //    get
         //    {
@@ -292,7 +293,7 @@ namespace GoDungeon.Core.ViewModels
         {
             IRandomAlignmentTable alignmentTable = Services.GetRequiredService<IRandomAlignmentTable>();
             alignmentTable.InitializeTable();
-            alignmentTable.AlignmentFilter = AlignmentFilterEnum.GoodOnly;
+            alignmentTable.AlignmentFilter = AlignmentEnum.AnyGood;
             var alignmentVM = (AlignmentTableEntryViewModel)alignmentTable.GetRandomRangeEntry();
             Alignment = alignmentVM.Alignment;
         }
@@ -300,17 +301,11 @@ namespace GoDungeon.Core.ViewModels
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="services"></param>
-        /// <param name="logger"></param>
-        public CreatureViewModel(
-            IServiceProvider services,
-            ILoggerFactory logger)
+        public CreatureViewModel()
         {
-            Services = services;
-
             // Setup some required values
             HitPoints = new HitPointsViewModel(this);
-       
+
             // Generate the abilities
             Strength = new Strength(this);
             Intelligence = new Intelligence(this);
@@ -327,6 +322,19 @@ namespace GoDungeon.Core.ViewModels
             WillSave = new WillSaveViewModel(this);
             FortitudeSave = new FortitudeSaveViewModel(this);
             ReflexSave = new ReflexSaveViewModel(this);
+        }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="logger"></param>
+        public CreatureViewModel(
+            IServiceProvider services,
+            ILoggerFactory logger)
+            : this()
+        {
+            Services = services;
 
             // Alignment
             SetAlignment(AlignmentFilterEnum.NonEvil);

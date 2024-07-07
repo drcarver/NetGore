@@ -2,6 +2,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
+using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 using GoDungeon.Spells.Enum;
 using GoDungeon.Spells.Interfaces;
@@ -14,42 +15,54 @@ namespace GoDungeon.Spells.ViewModels
         /// 1st to 9th level spells
         /// </summary>
         [ObservableProperty]
-        private SpellEnum spellEnum;
+        private SpellNameEnum spellType;
 
         /// <summary>
         /// The Spell Level
         /// </summary>
         [ObservableProperty]
-        private SpellLevelEnum level;
+        private int level;
 
         /// <summary>
-        /// The Type of Spell
+        /// The magic school
         /// </summary>
         [ObservableProperty]
-        private string? spellType;
+        private MagicSchoolEnum magicSchool;
+
+        /// <summary>
+        /// The classes that can use the spell
+        /// </summary>
+        [ObservableProperty]
+        private ObservableCollection<ClassEnum>? casters = new ObservableCollection<ClassEnum>();
 
         /// <summary>
         /// The Casting Time of the Spell
         /// </summary>
         [ObservableProperty]
-        private string? castingTime;
+        private ICastingTime? castingTime;
 
         /// <summary>
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private string? spellRange;
+        private ISpellRange? spellRange;
 
         /// <summary>
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private ObservableCollection<string>? spellComponents;
+        private ISpellComponent? spellComponents;
 
         /// <summary>
         /// The range of the Spell
         /// </summary>
         [ObservableProperty]
-        private string? spellDuration;
+        private ISpellDuration? spellDuration;
+        
+        /// <summary>
+        /// The description of the spell
+        /// </summary>
+        [ObservableProperty]
+        private ObservableCollection<string> spellDescriptions = new ObservableCollection<string>();
     }
 }

@@ -34,18 +34,16 @@ namespace GoDungeon.Character.PC.Barbarian
         {
             base.Initialize(character);
 
-            SavingThrows.Add(new SavingThrowViewModel(character.Strength, true));
-            SavingThrows.Add(new SavingThrowViewModel(character.Dexterity));
-            SavingThrows.Add(new SavingThrowViewModel(character.Constitution, true));
-            SavingThrows.Add(new SavingThrowViewModel(character.Intelligence));
-            SavingThrows.Add(new SavingThrowViewModel(character.Wisdom));
-            SavingThrows.Add(new SavingThrowViewModel(character.Charisma));
+            // Class Saving throws
+            SavingThrows.Add(new SavingThrowViewModel(character.Strength));
+            SavingThrows.Add(new SavingThrowViewModel(character.Constitution));
         }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public BarbarianViewModel(ILoggerFactory loggerFactory,
+        public BarbarianViewModel(
+            ILoggerFactory loggerFactory,
             IBarbarianLevelTable barbarianLevelTable)
         {
             ClassEnum = Core.Enum.ClassEnum.Barbarian;

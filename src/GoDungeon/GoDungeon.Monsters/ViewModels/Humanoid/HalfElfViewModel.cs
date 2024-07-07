@@ -3,6 +3,7 @@
 using GoDungeon.Core;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+using GoDungeon.Core.ViewModels;
 using GoDungeon.Monsters.Interfaces;
 
 using Microsoft.Extensions.Logging;
@@ -54,7 +55,7 @@ namespace GoDungeon.Monsters.ViewModels.Humanoid
             // Speed.Your base walking speed is 25 feet.
             // Your speed is not reduced by wearing
             // heavy armor
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
         }
 
         //Table: Random Height and Weight

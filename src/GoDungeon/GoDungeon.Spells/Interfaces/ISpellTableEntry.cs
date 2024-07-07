@@ -1,44 +1,58 @@
 ﻿using System.Collections.ObjectModel;
 
+using CommunityToolkit.Mvvm.ComponentModel;
+
+using GoDungeon.Core.Enum;
+using GoDungeon.Core.Interfaces;
 using GoDungeon.Spells.Enum;
 
 namespace GoDungeon.Spells.Interfaces
 {
-    public interface ISpellTableEntry
+    public interface ISpellTableEntry : IStandardTableEntry
     {
         /// <summary>
         /// 1st to 9th level spells
         /// </summary>
-        public SpellEnum SpellEnum { get; set; }
+        SpellNameEnum SpellType { get; set; }
 
         /// <summary>
         /// The Spell Level
         /// </summary>
-        public SpellLevelEnum Level { get; set; }
+        int Level { get; set; }
 
         /// <summary>
-        /// The Type of Spell
+        /// The magic school
         /// </summary>
-        public string? SpellType { get; set; }
+        MagicSchoolEnum MagicSchool { get; set; }
+
+        /// <summary>
+        /// The classes that can use the spell
+        /// </summary>
+        ObservableCollection<ClassEnum>? Casters { get; set; }
 
         /// <summary>
         /// The Casting Time of the Spell
         /// </summary>
-        public string? CastingTime { get; set; }
+        ICastingTime CastingTime { get; set; }
 
         /// <summary>
         /// The range of the Spell
         /// </summary>
-        public string? SpellRange { get; set; }
+        ISpellRange? SpellRange { get; set; }
 
         /// <summary>
-        /// The range of the Spell
+        /// The components of the Spell
         /// </summary>
-        public ObservableCollection<string>? SpellComponents { get; set; }
+        ISpellComponent? SpellComponents { get; set; }
 
         /// <summary>
-        /// The range of the Spell
+        /// The duration of the Spell
         /// </summary>
-        public string? SpellDuration { get; set; }
+        ISpellDuration SpellDuration { get; set; }
+
+        /// <summary>
+        /// The description of the spell
+        /// </summary>
+        ObservableCollection<string> SpellDescriptions { get; set; }
     }
 }

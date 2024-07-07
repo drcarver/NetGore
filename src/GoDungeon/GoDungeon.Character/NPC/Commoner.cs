@@ -57,7 +57,7 @@ namespace GoDungeon.Character.NPC
             // The rest of the NPC values
             HitPoints = new HitPointsViewModel(HitDice, this);
             Size = SizeEnum.Medium;
-            Speed = 30;
+            Speed.Add(new MovementViewModel { Speed = 30, MovementType = MovementEnum.Normal });
             //IRaceService.SetRace(this);
 
             //Commoner
