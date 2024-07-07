@@ -30,4 +30,9 @@ public interface IParseModel
     /// The markdown file as .html
     /// </summary>
     List<string> MarkDownHtml { get; set; }
+
+    /// <summary>
+    /// The headers in the .html file
+    /// </summary>
+    List<HeaderModel> Headers { get; set; }
 }

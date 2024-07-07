@@ -1,10 +1,15 @@
-﻿using System.Xml.Linq;
+﻿using System.Threading;
+using System.Xml.Linq;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
+
+using Syncfusion.DocIO.DLS;
+
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -35,20 +40,21 @@ public partial class GenerateHtml : IGenerateHtml
     /// Generate the body of the .html file 
     /// </summary>
     /// <param name="stream">The .html file</param>
-    /// <param name="stream">The creature</param>
+    /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlBody(TextWriter stream, ICodeGen codeGenModel)
     {
         stream.WriteLine("\t<BODY>");
+        stream.WriteLine("\t<div id=\"page-content\">");
         foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
-            stream.WriteLine(line);
+            stream.WriteLine($"\t\t{line}");
         }
+        stream.WriteLine("\t</div>");
         stream.WriteLine("\t\t<footer>");
         stream.WriteLine("\t\t\t<hr>");
         stream.WriteLine("\t\t\t<div style=\"text-align: center; padding-left: 1em; padding-right: 1em;\">");
         stream.WriteLine("\t\t\t\t<p>This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available <a href=\"https://dnd.wizards.com/resources/systems-reference-document\">here</a>. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>.</p>");
-        stream.WriteLine("\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a>.");
-        stream.WriteLine("\t\t\t\t<p>View our <a href=\"/privacy_policy/\">privacy policy</a>.</p>");
+        stream.WriteLine("\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a> this code is based on.");
         stream.WriteLine("\t\t\t</div>");
         stream.WriteLine("\t\t</footer>");
         stream.WriteLine("\t</BODY>");
@@ -58,8 +64,8 @@ public partial class GenerateHtml : IGenerateHtml
     /// <summary>
     /// The .html header
     /// </summary>
-    /// <param name="stream">The TextWriter</param>
-    /// <param name="codeGenModel">The code gen model</param>
+    /// <param name="stream">The .html file</param>
+    /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlHeader(TextWriter stream, ICodeGen codeGenModel)
     {
         var fileInfo = new FileInfo(codeGenModel.ParseModel?.Route);
@@ -115,17 +121,37 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine();
         stream.WriteLine($"\t<title>{codeGenModel.ProperName.Trim()}</title>");
         stream.WriteLine();
-        stream.WriteLine($"\t<style>");
-        stream.WriteLine($"\t/* Separate border for the table */");
-        stream.WriteLine("\ttable {");
-        stream.WriteLine($"\t\tborder-collapse: separate; /* Separate borders */");
-        stream.WriteLine("\t}");
+        stream.WriteLine("\t<style>");
+        stream.WriteLine("\t\t.pure-table");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tborder-collapse: collapse;");
+        stream.WriteLine("\t\t\tborder-spacing: 0;");
+        stream.WriteLine("\t\t\tempty-cells: hide");
+        stream.WriteLine("\t\t\tborder: 1px solid #cbcbcb");
+        stream.WriteLine("\t\t}");
         stream.WriteLine();
-        stream.WriteLine("\tth, td {");
-        stream.WriteLine("\t\tborder-color: black;");
-        stream.WriteLine("\t\tbackground-color: bisque;");
-        stream.WriteLine("\t\ttext-align: left;");
-        stream.WriteLine("\t}");
+        stream.WriteLine("\t\t.pure-table td, .pure-table th");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tborder-left: 1px solid #cbcbcb;");
+        stream.WriteLine("\t\t\tborder-width: 0 0 0 1px;");
+        stream.WriteLine("\t\t\tfont-size: inherit;");
+        stream.WriteLine("\t\t\tmargin: 0;");
+        stream.WriteLine("\t\t\toverflow: hidden;");
+        stream.WriteLine("\t\t\tpadding: .5em 1em");
+        stream.WriteLine("\t\t}");
+         stream.WriteLine();
+        stream.WriteLine("\t\t.pure-table thead ");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tbackground-color: #e0e0e0;");
+        stream.WriteLine("\t\t\tcolor: #000;");
+        stream.WriteLine("\t\t\ttext-align: left;");
+        stream.WriteLine("\t\t\tvertical-align: bottom");
+        stream.WriteLine("\t\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t\t.pure-table td");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tbackground-color: antiquewhite");
+        stream.WriteLine("\t\t}");
         stream.WriteLine();
         stream.WriteLine("\tbody {");
         stream.WriteLine("\t\tbackground-color: antiquewhite;");

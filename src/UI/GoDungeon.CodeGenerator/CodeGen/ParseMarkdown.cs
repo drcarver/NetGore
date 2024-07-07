@@ -1,4 +1,5 @@
-﻿using GoDungeon.CodeGenerator.Interfaces;
+﻿using GoDungeon.CodeGenerator.CodeGen;
+using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
@@ -49,7 +50,7 @@ public partial class ParseMarkdown : IParseMarkdown
             switch (parseModel.Markdown[i][0])
             {
                 case '#':
-                    parseModel.MarkDownHtml.Add(ParseToHTMLHeader(parseModel.Markdown[i]));
+                    ParseToHTMLHeader(parseModel, i);
                     break;
                 case '|':
                     var table = parseModel.MarkDownTableModels.FirstOrDefault(t => t.MarkdownLine == i);
@@ -69,36 +70,45 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Parse the markdown table to .html
     /// </summary>
-    /// <param name="parseModel">THe parse model containing the table</param>
+    /// <param name="parseModel">The parse model containing the table</param>
     /// <param name="table">The markdown table to parse to ..html</param>
     private void ParseMarkdownToHTMLTable(ParseModel parseModel, MarkDownTableModel table)
     {
-        parseModel.MarkDownHtml.Add("<table>");
-        parseModel.MarkDownHtml.Add($"\t<caption>{table.TableCaption}</caption>");
+        parseModel.MarkDownHtml.Add("<div class=\"responsive-table\"><table class=\"pure-table\">");
+        //parseModel.MarkDownHtml.Add($"\t<caption>{table.TableCaption}</caption>");
 
         // Now the table header
-        parseModel.MarkDownHtml.Add($"\t<tr>");
+        parseModel.MarkDownHtml.Add($"\t<thead>");
+        parseModel.MarkDownHtml.Add($"\t\t<tr>");
         var headers = table.TableRows[0].Split("|");
         foreach (var header in headers)
         {
-            var hName = header.Replace("|", string.Empty).Trim();
-            if (hName != string.Empty)
+            if (header.Trim() == "|" || header.Trim() == string.Empty)
             {
-                parseModel.MarkDownHtml.Add($"\t\t<th>{hName}<th>");
+                continue; 
             }
+            var hName = header.Replace("|", string.Empty).Trim();
+            parseModel.MarkDownHtml.Add($"\t\t\t<th>{hName}</th>");
         }
-        parseModel.MarkDownHtml.Add($"\t</tr>");
+        parseModel.MarkDownHtml.Add($"\t\t</tr>");
+        parseModel.MarkDownHtml.Add($"\t</thead>");
 
         // Next the table body
+        parseModel.MarkDownHtml.Add($"\t<tbody>");
         for (int i = 2; i < table.TableRows.Count; i++)
         {
-            parseModel.MarkDownHtml.Add($"\t<tr>");
+            parseModel.MarkDownHtml.Add($"\t\t<tr>");
             foreach (var row in table.TableRows[i].Split("|"))
             {
-                parseModel.MarkDownHtml.Add($"\t\t<td>{row.Replace("|", string.Empty).Trim()}</td>");
+                if (row.Trim() == "|" || row.Trim() == string.Empty)
+                {
+                    continue;
+                }
+                parseModel.MarkDownHtml.Add($"\t\t\t<td>{row.Replace("|", string.Empty).Trim()}</td>");
             }
-            parseModel.MarkDownHtml.Add($"\t</tr>");
+            parseModel.MarkDownHtml.Add($"\t\t</tr>");
         }
+        parseModel.MarkDownHtml.Add($"\t</tbody>");
 
         // close out the table
         parseModel.MarkDownHtml.Add($"</table>");
@@ -169,35 +179,31 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Parse a markdown header to a .html header
     /// </summary>
-    /// <param name="line">THe line to parse</param>
-    /// <returns>The .html header string</returns>
-    private string ParseToHTMLHeader(string line)
+    /// <param name="parseModel">The parse model</param>
+    /// <param name="line">The line to parse</param>
+    /// <param name="lineNo">The line number in the file</param>
+    private void ParseToHTMLHeader(ParseModel parseModel, int lineNo)
     {
-        if (line.StartsWith("# "))
+        string content = parseModel.Markdown[lineNo];
+        int level = 0;
+
+        // determine the header level
+        while (content.Substring(level).StartsWith("#"))
         {
-            return $"<h1>{line.Replace("# ", string.Empty)}</h1>";
+            level++;
         }
-        if (line.StartsWith("## "))
+
+        // build the header model
+        content = content.Substring(level).Trim();
+        var header = new HeaderModel
         {
-            return $"<h2>{line.Replace("## ", string.Empty)}</h2>";
-        }
-        if (line.StartsWith("### "))
-        {
-            return $"<h3>{line.Replace("### ", string.Empty)}</h3>";
-        }
-        if (line.StartsWith("#### "))
-        {
-            return $"<h4>{line.Replace("#### ", string.Empty)}</h4>";
-        }
-        if (line.StartsWith("##### "))
-        {
-            return $"<h5>{line.Replace("##### ", string.Empty)}</h5>";
-        }
-        if (line.StartsWith("###### "))
-        {
-            return $"<h6>{line.Replace("###### ", string.Empty)}</h6>";
-        }
-        return string.Empty;
+            Level = level,
+            LineNumber = lineNo,
+            Id = Utilities.CleanupForCSharp(content)
+        };
+        header.Content = $"<h{header.Level} id=\"{header.Id}\">{content}</h{header.Level}>";
+        parseModel.Headers.Add(header);
+        parseModel.MarkDownHtml.Add(header.Content);
     }
 
     /// <summary>

@@ -7,7 +7,7 @@ namespace GoDungeon.CodeGenerator.Models;
 public class ParseModel : IParseModel
 {
     /// <summary>
-    /// The file path for the markdown file
+    /// The route (the same as the directory in the system)
     /// </summary>
     public string? Route { get; }
 
@@ -30,6 +30,11 @@ public class ParseModel : IParseModel
     /// The markdown file as .html
     /// </summary>
     public List<string> MarkDownHtml { get; set; } = [];
+
+    /// <summary>
+    /// The headers in the .html file
+    /// </summary>
+    public List<HeaderModel> Headers { get; set; } = [];
 
     /// <summary>
     /// Set the readonly properties
