@@ -61,10 +61,93 @@ public partial class ParseMarkdown : IParseMarkdown
                     }
                     break;
                 default:
+                    if (parseModel.Markdown[i].Trim() =="- - -" ||
+                        parseModel.Markdown[i].Trim() == "* * *" ||
+                        parseModel.Markdown[i].Trim() == "_ _ _")
+                    {
+                        parseModel.MarkDownHtml.Add("<hr>");
+                        break;
+                    }
+                    if (char.IsAsciiDigit(parseModel.Markdown[i][0]))
+                    {
+                        i += ParseMarkdownToOrderedHtmlList(parseModel, i);
+                        break;
+                    }
+                    if (parseModel.Markdown[i].StartsWith("* ") ||
+                        parseModel.Markdown[i].StartsWith("+ ") ||
+                        parseModel.Markdown[i].StartsWith("- "))
+                    {
+                        i += ParseMarkdownToHtmlUnorderedList(parseModel, i);
+                        break;
+                    }
                     parseModel.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(parseModel.Markdown[i])}</p>");
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// Parse the markdown to a ordered list
+    /// </summary>
+    /// <param name="parseModel">The model to parse</param>
+    /// <param name="i">The line that starts the list</param>
+    /// <returns></returns>
+    private int ParseMarkdownToOrderedHtmlList(ParseModel parseModel, int i)
+    {
+        parseModel.MarkDownHtml.Add("<ol>");
+        while (i < parseModel.Markdown.Length)
+        {
+            string listElement = parseModel.Markdown[i].Substring(parseModel.Markdown[i].IndexOf(" "));
+            parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
+            i++;
+            if (i >= parseModel.Markdown.Length
+                || string.IsNullOrEmpty(parseModel.Markdown[i].Trim())
+                || !Char.IsAsciiDigit(parseModel.Markdown[i][0]))
+            {
+                break;
+            }
+        }
+        parseModel.MarkDownHtml.Add("</ol>");
+        return i;
+    }
+
+    /// <summary>
+    /// Create a unordered list from the mark down
+    /// </summary>
+    /// <param name="parseModel">The Parse Model</param>
+    /// <param name="i">The line where the list starts</param>
+    /// <returns></returns>
+    private int ParseMarkdownToHtmlUnorderedList(ParseModel parseModel, int i)
+    {
+        parseModel.MarkDownHtml.Add("<ul>");
+        while (i < parseModel.Markdown.Length) 
+        {
+            string listElement = string.Empty;
+            if (parseModel.Markdown[i].StartsWith("* "))
+            {
+                listElement = parseModel.Markdown[i].Replace("* ", string.Empty);
+            }
+            if (parseModel.Markdown[i].StartsWith("+ "))
+            {
+                listElement = parseModel.Markdown[i].Replace("+ ", string.Empty);
+            }
+            if (parseModel.Markdown[i].StartsWith("- "))
+            {
+                listElement = parseModel.Markdown[i].Replace("- ", string.Empty);
+            }
+            parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
+            i++;
+            if (i >= parseModel.Markdown.Length || 
+                string.IsNullOrEmpty(parseModel.Markdown[i].Trim()) ||
+                (!parseModel.Markdown[i].StartsWith("* ") &&
+                !parseModel.Markdown[i].StartsWith("- ") &&
+                !parseModel.Markdown[i].StartsWith("+ ")))
+            {
+                break;
+            }
+        }
+        parseModel.MarkDownHtml.Add("</ul>");
+        return i;
     }
 
     /// <summary>
