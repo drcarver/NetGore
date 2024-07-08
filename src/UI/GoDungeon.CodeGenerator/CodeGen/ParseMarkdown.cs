@@ -14,7 +14,7 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// The rules files (text only)
     /// </summary>
-    public List<ICodeGen> CodeGenModels { get; } = [];
+    public Dictionary<string, List<ICodeGen>> CodeGenModels { get; } = [];
 
     /// <summary>
     /// Constructor
@@ -70,14 +70,14 @@ public partial class ParseMarkdown : IParseMarkdown
                     }
                     if (char.IsAsciiDigit(parseModel.Markdown[i][0]))
                     {
-                        i += ParseMarkdownToOrderedHtmlList(parseModel, i);
+                        i = ParseMarkdownToOrderedHtmlList(parseModel, i);
                         break;
                     }
                     if (parseModel.Markdown[i].StartsWith("* ") ||
                         parseModel.Markdown[i].StartsWith("+ ") ||
                         parseModel.Markdown[i].StartsWith("- "))
                     {
-                        i += ParseMarkdownToHtmlUnorderedList(parseModel, i);
+                        i = ParseMarkdownToHtmlUnorderedList(parseModel, i);
                         break;
                     }
                     parseModel.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(parseModel.Markdown[i])}</p>");
@@ -100,9 +100,11 @@ public partial class ParseMarkdown : IParseMarkdown
             string listElement = parseModel.Markdown[i].Substring(parseModel.Markdown[i].IndexOf(" "));
             parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
             i++;
-            if (i >= parseModel.Markdown.Length
-                || string.IsNullOrEmpty(parseModel.Markdown[i].Trim())
-                || !Char.IsAsciiDigit(parseModel.Markdown[i][0]))
+            if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim()))
+            {
+                break;
+            }
+            if (i >= parseModel.Markdown.Length || !Char.IsAsciiDigit(parseModel.Markdown[i][0]))
             {
                 break;
             }
@@ -137,11 +139,8 @@ public partial class ParseMarkdown : IParseMarkdown
             }
             parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
             i++;
-            if (i >= parseModel.Markdown.Length || 
-                string.IsNullOrEmpty(parseModel.Markdown[i].Trim()) ||
-                (!parseModel.Markdown[i].StartsWith("* ") &&
-                !parseModel.Markdown[i].StartsWith("- ") &&
-                !parseModel.Markdown[i].StartsWith("+ ")))
+            if (i == parseModel.Markdown.Length ||
+                string.IsNullOrEmpty(parseModel.Markdown[i].Trim()))
             {
                 break;
             }
@@ -228,16 +227,6 @@ public partial class ParseMarkdown : IParseMarkdown
         {
             line = ReplaceFirst(line, "**", "<strong>");
             line = ReplaceFirst(line, "**", "</strong>");
-        }
-        if (line.IndexOf("*") != -1)
-        {
-            line = ReplaceFirst(line, "*", "<strong>");
-            line = ReplaceFirst(line, "*", "</strong>");
-        }
-        if (line.IndexOf("_") != -1)
-        {
-            line = ReplaceFirst(line, "_", "<em>");
-            line = ReplaceFirst(line, "_", "</em>");
         }
         return line;
     }

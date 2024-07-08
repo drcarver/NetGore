@@ -8,7 +8,7 @@ public interface IParseMarkdown
     /// <summary>
     /// The parse models for all the markdown models
     /// </summary>
-    public List<ICodeGen> CodeGenModels { get; }
+    Dictionary<string, List<ICodeGen>> CodeGenModels { get; }
 
     /// <summary>
     /// Get the tables in the markdown file

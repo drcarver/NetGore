@@ -21,6 +21,7 @@ public partial class RulesViewModel : StandardTableEntryViewModel, IRules
         var fileInfo = new FileInfo(ParseModel?.Route);
 
         Name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
+        ProperName = Name;
         Description = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Replace("description:", string.Empty).Trim();
 
         foreach (var line in ParseModel.Markdown)

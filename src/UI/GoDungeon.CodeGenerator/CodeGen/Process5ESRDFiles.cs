@@ -114,6 +114,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     private void ProcessMarkDownFile(string filePath)
     {
         var markdown = ConvertMarkdownToParseModel(filePath);
+        ICodeGen vm = null;
         switch (markdown.FileHeaders.Count)
         {
             // index files are ignored.  The will be replaced by TableViews
@@ -124,31 +125,36 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             // Rules files have just a description line in the header
             case 1:
                 Logger.LogDebug($"Converting markdown rules file {filePath} to ParseModel");
-                var rvm = new RulesViewModel(markdown);
-                ParseMarkdown.CodeGenModels.Add(rvm);
-                ParseMarkdown.ParseMarkdownToHTML(rvm.ParseModel);
+                vm = new RulesViewModel(markdown);
                 break;
             // Magic Items have two header entries.  Name and type.
             case 2:
                 Logger.LogDebug($"Converting markdown magic item file {filePath} to ParseModel");
-                var miVM = new MagicItemViewModel(markdown);
-                ParseMarkdown.CodeGenModels.Add(miVM);
-                ParseMarkdown.ParseMarkdownToHTML(miVM.ParseModel);
+                vm = new MagicItemViewModel(markdown);
                 break;
             // Monsters have three header entries.  Name, type and challenge rating.
             case 3:
                 Logger.LogDebug($"Converting markdown monster file {filePath} to ParseModel");
-                var mVM = new MonsterViewModel(markdown);
-                ParseMarkdown.CodeGenModels.Add(mVM);
-                ParseMarkdown.ParseMarkdownToHTML(mVM.ParseModel);
+                vm = new MonsterViewModel(markdown);
                 break;
             // spells have four header entries.  Name, school, level and character classes that can cast the spell.
             case 4:
                 Logger.LogDebug($"Converting markdown spell file {filePath} to ParseModel");
-                var sVM = new SpellViewModel(markdown);
-                ParseMarkdown.CodeGenModels.Add(new SpellViewModel(markdown));
-                ParseMarkdown.ParseMarkdownToHTML(sVM.ParseModel);
+                vm = new SpellViewModel(markdown);
                 break;
+        }
+        if (vm != null)
+        {
+            ParseMarkdown.ParseMarkdownToHTML(vm.ParseModel);
+            var fileInfo = new FileInfo(filePath);
+            if (!string.IsNullOrEmpty(fileInfo.DirectoryName))
+            {
+                if (!ParseMarkdown.CodeGenModels.ContainsKey(fileInfo.DirectoryName))
+                {
+                    ParseMarkdown.CodeGenModels.Add(fileInfo.DirectoryName, []);
+                }
+                ParseMarkdown.CodeGenModels[fileInfo.DirectoryName].Add(vm);
+            }
         }
     }
 

@@ -6,6 +6,8 @@ using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 
+using Syncfusion.DocIO.DLS.XML;
+
 namespace GoDungeon.CodeGenerator.ViewModels;
 
 public partial class MagicItemViewModel : StandardTableEntryViewModel, IMagicItem

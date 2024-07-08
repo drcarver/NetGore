@@ -74,7 +74,7 @@ Wisdom is your spellcasting ability for your druid spells, since your magic draw
 You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared. 
 
 #### Spellcasting Focus 
-You can use a druidic focus (see chapter 5, “Equip- ment”) as a spellcasting focus for your druid spells. 
+You can use a druidic focus (see chapter 5, “Equipment”) as a spellcasting focus for your druid spells. 
 
 ### Wild Shape
 - - -

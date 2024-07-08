@@ -1,15 +1,8 @@
-﻿using System.Threading;
-using System.Xml.Linq;
-
-using GoDungeon.CodeGenerator.Interfaces;
+﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.Interfaces;
-
-using Syncfusion.DocIO.DLS;
-
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -22,16 +15,19 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="parseMarkdown">The Parse models</param>
     public void GenerateHtmlFiles(string outputDir, IParseMarkdown parseMarkdown)
     {
-        foreach (var codeGenModel in parseMarkdown.CodeGenModels)
+        foreach (var models in parseMarkdown.CodeGenModels.Values)
         {
-            var routeInfo = new FileInfo(codeGenModel.ParseModel.Route);
-            var fPath = $@"{outputDir}html\{routeInfo.DirectoryName.Replace("C:", string.Empty)}\{Utilities.CleanupForCSharp(routeInfo.Name.Replace(".md", string.Empty))}.html";
-            var fileInfo = new FileInfo(fPath);
-            Directory.CreateDirectory(fileInfo.DirectoryName);
-            using (var stream = File.CreateText(fPath))
+            foreach (var codeGenModel in models)
             {
-                GenerateHtmlHeader(stream, codeGenModel);
-                GenerateHtmlBody(stream, codeGenModel);
+                var routeInfo = new FileInfo(codeGenModel.ParseModel.Route);
+                var fPath = $@"{outputDir}html\{routeInfo.DirectoryName.Replace("C:", string.Empty)}\{Utilities.CleanupForCSharp(routeInfo.Name.Replace(".md", string.Empty))}.html";
+                var fileInfo = new FileInfo(fPath);
+                Directory.CreateDirectory(fileInfo.DirectoryName);
+                using (var stream = File.CreateText(fPath))
+                {
+                    GenerateHtmlHeader(stream, codeGenModel);
+                    GenerateHtmlBody(stream, codeGenModel);
+                }
             }
         }
     }
@@ -121,7 +117,19 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine();
         stream.WriteLine($"\t<title>{codeGenModel.ProperName.Trim()}</title>");
         stream.WriteLine();
+        GenerateHtmlStyle(stream);
+        stream.WriteLine("</head>");
+    }
+
+    /// <summary>
+    /// Generate the style for the web page
+    /// </summary>
+    /// <param name="stream">Generate the style block for the header</param>
+    private void GenerateHtmlStyle(TextWriter stream)
+    {
         stream.WriteLine("\t<style>");
+
+        #region Table Styles
         stream.WriteLine("\t\t.pure-table");
         stream.WriteLine("\t\t{");
         stream.WriteLine("\t\t\tborder-collapse: collapse;");
@@ -139,7 +147,7 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t\toverflow: hidden;");
         stream.WriteLine("\t\t\tpadding: .5em 1em");
         stream.WriteLine("\t\t}");
-         stream.WriteLine();
+        stream.WriteLine();
         stream.WriteLine("\t\t.pure-table thead ");
         stream.WriteLine("\t\t{");
         stream.WriteLine("\t\t\tbackground-color: #e0e0e0;");
@@ -152,12 +160,25 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t{");
         stream.WriteLine("\t\t\tbackground-color: antiquewhite");
         stream.WriteLine("\t\t}");
+        #endregion
+
+        #region Body Styles
         stream.WriteLine();
-        stream.WriteLine("\tbody {");
+        stream.WriteLine("\t\tbody");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tmargin: 0");
         stream.WriteLine("\t\tbackground-color: antiquewhite;");
-        stream.WriteLine("\t}");
+        stream.WriteLine("\t\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t\thtml");
+        stream.WriteLine("\t\t{");
+        stream.WriteLine("\t\t\tline-height: 1.15;");
+        stream.WriteLine("\t\t\tbackground-color: antiquewhite;");
+        stream.WriteLine("\t\t\t-webkit-text-size-adjust: 100%");
+        stream.WriteLine("\t\t}");
+        #endregion
+
         stream.WriteLine("\t</style>");
-        stream.WriteLine("</head>");
     }
 
     private void GenerateMonsterMainStats(TextWriter stream, ICreature creature)

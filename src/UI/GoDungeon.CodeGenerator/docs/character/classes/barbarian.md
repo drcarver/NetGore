@@ -5,18 +5,18 @@ description: Rules and information for the Barbarian class from the 5th Edition 
 |-------|-------------------|-----------|-------------|-----------------------------------------------|
 | 1  | +2                | 2         | +2          | Rage, Unarmored Defense                       |
 | 2  | +2                | 2         | +2          | Reckless Attack, Danger Sense                 |
-| 3   | +2                | 3         | +2          | Primal Pa                                   |
+| 3   | +2                | 3         | +2          | Primal Path                                   |
 | 4   | +2                | 3         | +2          | Ability Score Improvement                     |
 | 5   | +3                | 3         | +2          | Extra Attack, Fast Movement                   |
-| 6   | +3                | 4         | +2          | Pa feature                                  |
+| 6   | +3                | 4         | +2          | Path feature                                  |
 | 7   | +3                | 4         | +2          | Feral Instinct                                |
 | 8   | +3                | 4         | +2          | Ability Score Improvement                     |
 | 9   | +4                | 4         | +3          | Brutal Critical (1 die)                       |
-| 10  | +4                | 4         | +3          | Pa feature                                  |
+| 10  | +4                | 4         | +3          | Path feature                                  |
 | 11  | +4                | 4         | +3          | Relentless                                    |
 | 12  | +4                | 5         | +3          | Ability Score Improvement                     |
 | 13  | +5                | 5         | +3          | Brutal Critical (2 dice)                      |
-| 14  | +5                | 5         | +3          | Pa Feature                                  |
+| 14  | +5                | 5         | +3          | Path Feature                                  |
 | 15  | +5                | 5         | +3          | Persistent Rage                               |
 | 16  | +5                | 5         | +4          | Ability Score Improvement                     |
 | 17  | +6                | 6         | +4          | Brutal Critical (3 dice)                      |
