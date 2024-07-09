@@ -20,7 +20,7 @@ public partial class GenerateHtml : IGenerateHtml
             foreach (var codeGenModel in models)
             {
                 var routeInfo = new FileInfo(codeGenModel.ParseModel.Route);
-                var fPath = $@"{outputDir}html\{routeInfo.DirectoryName.Replace("C:", string.Empty)}\{Utilities.CleanupForCSharp(routeInfo.Name.Replace(".md", string.Empty))}.html";
+                var fPath = $@"{outputDir}html/{codeGenModel.ParseModel.Route}.html";
                 var fileInfo = new FileInfo(fPath);
                 Directory.CreateDirectory(fileInfo.DirectoryName);
                 using (var stream = File.CreateText(fPath))
@@ -39,13 +39,13 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlBody(TextWriter stream, ICodeGen codeGenModel)
     {
-        stream.WriteLine("\t<BODY>");
-        stream.WriteLine("\t<div id=\"page-content\">");
+        stream.WriteLine("\t<body>");
+        stream.WriteLine("\t\t<div id=\"page-content\">");
         foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
-            stream.WriteLine($"\t\t{line}");
+            stream.WriteLine($"\t\t\t{line}");
         }
-        stream.WriteLine("\t</div>");
+        stream.WriteLine("\t\t</div>");
         stream.WriteLine("\t\t<footer>");
         stream.WriteLine("\t\t\t<hr>");
         stream.WriteLine("\t\t\t<div style=\"text-align: center; padding-left: 1em; padding-right: 1em;\">");
@@ -53,8 +53,8 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a> this code is based on.");
         stream.WriteLine("\t\t\t</div>");
         stream.WriteLine("\t\t</footer>");
-        stream.WriteLine("\t</BODY>");
-        stream.WriteLine("</HTML>");
+        stream.WriteLine("\t</body>");
+        stream.WriteLine("</html>");
     }
 
     /// <summary>
@@ -64,13 +64,9 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlHeader(TextWriter stream, ICodeGen codeGenModel)
     {
-        var fileInfo = new FileInfo(codeGenModel.ParseModel?.Route);
-        var name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
-
         stream.WriteLine("<!DOCTYPE html>");
         stream.WriteLine("<html lang=\"en\">");
-        stream.WriteLine("<head>");
-        stream.WriteLine();
+        stream.WriteLine("\t<head>");
 
         // Meta data links
         var spellCasters = string.Empty;
@@ -90,12 +86,11 @@ public partial class GenerateHtml : IGenerateHtml
             if (meta.StartsWith("description:"))
             {
                 var rulesVM = (RulesViewModel) codeGenModel;
-                meta = meta.Replace(" from the 5th Edition (5e) SRD (System Reference Document)", string.Empty);
                 description = meta.Replace("description:", string.Empty).Trim();
                 rulesVM.Description = description;
                 codeGenModel.ParseModel.FileHeaders[i] = $"description: {meta}";
             }
-            stream.Write("\t<metadata ");
+            stream.Write("\t\t<metadata ");
             if (spellCasters != string.Empty && meta.StartsWith("classes:"))
             {
                 stream.Write($"name=\"classses\" ");
@@ -109,16 +104,21 @@ public partial class GenerateHtml : IGenerateHtml
             stream.WriteLine(">");
         }
         stream.WriteLine();
+        stream.WriteLine($"\t\t<meta name=\"og:title\" content=\"{codeGenModel.ProperName.Trim()}\">");
+        stream.WriteLine($"\t\t<meta name=\"og:url\" content=\"{codeGenModel.ParseModel.Route.Replace("md", "html").Trim()}\">");
         if (description != string.Empty)
         {
-            stream.WriteLine($"\t<meta name=\"og:description\" content=\"{description}\">");
+            stream.WriteLine($"\t\t<meta name=\"og:description\" content=\"{description}\">");
         }
-        stream.WriteLine("");
+        if (codeGenModel is MagicItemViewModel)
+        {
+            stream.WriteLine($"\t\t<meta name=\"og:type\" content=\"{((MagicItemViewModel)codeGenModel).ItemType}\">");
+        }
         stream.WriteLine();
-        stream.WriteLine($"\t<title>{codeGenModel.ProperName.Trim()}</title>");
+        stream.WriteLine($"\t\t<title>{codeGenModel.ProperName.Trim()}</title>");
         stream.WriteLine();
         GenerateHtmlStyle(stream);
-        stream.WriteLine("</head>");
+        stream.WriteLine("\t</head>");
     }
 
     /// <summary>
@@ -127,58 +127,58 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="stream">Generate the style block for the header</param>
     private void GenerateHtmlStyle(TextWriter stream)
     {
-        stream.WriteLine("\t<style>");
+        stream.WriteLine("\t\t<style>");
 
         #region Table Styles
-        stream.WriteLine("\t\t.pure-table");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tborder-collapse: collapse;");
-        stream.WriteLine("\t\t\tborder-spacing: 0;");
-        stream.WriteLine("\t\t\tempty-cells: hide");
-        stream.WriteLine("\t\t\tborder: 1px solid #cbcbcb");
-        stream.WriteLine("\t\t}");
+        stream.WriteLine("\t\t\t.pure-table");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tborder-collapse: collapse;");
+        stream.WriteLine("\t\t\t\tborder-spacing: 0;");
+        stream.WriteLine("\t\t\t\tempty-cells: hide");
+        stream.WriteLine("\t\t\t\tborder: 1px solid #cbcbcb");
+        stream.WriteLine("\t\t\t}");
         stream.WriteLine();
-        stream.WriteLine("\t\t.pure-table td, .pure-table th");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tborder-left: 1px solid #cbcbcb;");
-        stream.WriteLine("\t\t\tborder-width: 0 0 0 1px;");
-        stream.WriteLine("\t\t\tfont-size: inherit;");
-        stream.WriteLine("\t\t\tmargin: 0;");
-        stream.WriteLine("\t\t\toverflow: hidden;");
-        stream.WriteLine("\t\t\tpadding: .5em 1em");
-        stream.WriteLine("\t\t}");
+        stream.WriteLine("\t\t\t.pure-table td, .pure-table th");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tborder-left: 1px solid #cbcbcb;");
+        stream.WriteLine("\t\t\t\tborder-width: 0 0 0 1px;");
+        stream.WriteLine("\t\t\t\tfont-size: inherit;");
+        stream.WriteLine("\t\t\t\tmargin: 0;");
+        stream.WriteLine("\t\t\t\toverflow: hidden;");
+        stream.WriteLine("\t\t\t\tpadding: .5em 1em");
+        stream.WriteLine("\t\t\t}");
         stream.WriteLine();
-        stream.WriteLine("\t\t.pure-table thead ");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tbackground-color: #e0e0e0;");
-        stream.WriteLine("\t\t\tcolor: #000;");
-        stream.WriteLine("\t\t\ttext-align: left;");
-        stream.WriteLine("\t\t\tvertical-align: bottom");
-        stream.WriteLine("\t\t}");
+        stream.WriteLine("\t\t\t.pure-table thead ");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tbackground-color: #e0e0e0;");
+        stream.WriteLine("\t\t\t\tcolor: #000;");
+        stream.WriteLine("\t\t\t\ttext-align: left;");
+        stream.WriteLine("\t\t\t\tvertical-align: bottom");
+        stream.WriteLine("\t\t\t}");
         stream.WriteLine();
-        stream.WriteLine("\t\t.pure-table td");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tbackground-color: antiquewhite");
-        stream.WriteLine("\t\t}");
+        stream.WriteLine("\t\t\t.pure-table td");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tbackground-color: antiquewhite");
+        stream.WriteLine("\t\t\t}");
         #endregion
 
         #region Body Styles
         stream.WriteLine();
-        stream.WriteLine("\t\tbody");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tmargin: 0");
-        stream.WriteLine("\t\tbackground-color: antiquewhite;");
-        stream.WriteLine("\t\t}");
-        stream.WriteLine();
-        stream.WriteLine("\t\thtml");
-        stream.WriteLine("\t\t{");
-        stream.WriteLine("\t\t\tline-height: 1.15;");
+        stream.WriteLine("\t\t\tbody");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tmargin: 0");
         stream.WriteLine("\t\t\tbackground-color: antiquewhite;");
-        stream.WriteLine("\t\t\t-webkit-text-size-adjust: 100%");
-        stream.WriteLine("\t\t}");
+        stream.WriteLine("\t\t\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t\t\thtml");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tline-height: 1.15;");
+        stream.WriteLine("\t\t\t\tbackground-color: antiquewhite;");
+        stream.WriteLine("\t\t\t\t-webkit-text-size-adjust: 100%");
+        stream.WriteLine("\t\t\t}");
         #endregion
 
-        stream.WriteLine("\t</style>");
+        stream.WriteLine("\t\t</style>");
     }
 
     private void GenerateMonsterMainStats(TextWriter stream, ICreature creature)

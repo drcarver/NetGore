@@ -6,8 +6,6 @@ using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
 using GoDungeon.Core.ViewModels;
 
-using Syncfusion.DocIO.DLS.XML;
-
 namespace GoDungeon.CodeGenerator.ViewModels;
 
 public partial class MagicItemViewModel : StandardTableEntryViewModel, IMagicItem
@@ -23,6 +21,10 @@ public partial class MagicItemViewModel : StandardTableEntryViewModel, IMagicIte
     /// </summary>
     public ParseModel ParseModel { get; }
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="parseModel">The magi item's parse model</param>
     public MagicItemViewModel(ParseModel parseModel)
     {
         ParseModel = parseModel;

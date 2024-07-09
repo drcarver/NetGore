@@ -18,12 +18,12 @@ public partial class RulesViewModel : StandardTableEntryViewModel, IRules
     public RulesViewModel(ParseModel parseModel) 
     {
         ParseModel = parseModel;
-        var fileInfo = new FileInfo(ParseModel?.Route);
+        var fileInfo = new FileInfo($"{ParseModel?.Route}.md");
 
         Name = Utilities.CleanupForCSharp(fileInfo.Name.Replace(fileInfo.Extension, string.Empty));
         ProperName = Name;
-        Description = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Replace("description:", string.Empty).Trim();
-
+        parseModel.FileHeaders[0] = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Trim();
+        Description = parseModel.FileHeaders[0];
         foreach (var line in ParseModel.Markdown)
         {
             if (line.StartsWith("# "))
