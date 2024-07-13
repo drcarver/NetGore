@@ -1,8 +1,6 @@
 ﻿using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
-using GoDungeon.Core.Enum;
-using GoDungeon.Core.Interfaces;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -27,8 +25,26 @@ public partial class GenerateHtml : IGenerateHtml
                 {
                     GenerateHtmlHeader(stream, codeGenModel);
                     GenerateHtmlBody(stream, codeGenModel);
+                    GenerateHtmlMonsterIndex(models);
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// Generate the monster indexes
+    /// </summary>
+    /// <param name="models">The list of code generation models</param>
+    private void GenerateHtmlMonsterIndex(List<ICodeGen> models)
+    {
+        foreach (var model in models)
+        {
+            if (!(model is MonsterViewModel))
+            {
+                return;
+            }
+
+            var monster = (MonsterViewModel)model;
         }
     }
 
@@ -39,8 +55,42 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlBody(TextWriter stream, ICodeGen codeGenModel)
     {
+        #region main menu setup
         stream.WriteLine("\t<body>");
-        stream.WriteLine("\t\t<div id=\"page-content\">");
+        stream.WriteLine("\t\t<div id=\"content\" class=\"pure-g\">");
+        stream.WriteLine("\t\t\t<div id=\"top-nav\" class=\"pure-menu pure-u-1 pure-u-lg-1-6\">");
+        stream.WriteLine("\t\t\t\t<span class=\"pure-menu-heading pure-g\">");
+        stream.WriteLine("\t\t\t\t\t<div class=\"pure-u-2-3\" id=\"menu-toggle\">");
+        stream.WriteLine("\t\t\t\t\t\t<a class=\"pure-button button-small\" href=\"javascript:void(0);\" onclick=\"toggleMainNav()\">");
+        stream.WriteLine("\t\t\t\t\t\t\t<svg viewBox=\"0 0 100 80\" width=\"15\" height=\"15\">");
+        stream.WriteLine("\t\t\t\t\t\t\t\t<rect width=\"100\" height=\"20\" fill=\"white\"></rect>");
+        stream.WriteLine("\t\t\t\t\t\t\t\t<rect y=\"30\" width=\"100\" height=\"20\" fill=\"white\"></rect>");
+        stream.WriteLine("\t\t\t\t\t\t\t\t<rect y=\"60\" width=\"100\" height=\"20\" fill=\"white\"></rect>");
+        stream.WriteLine("\t\t\t\t\t\t\t</svg>");
+        stream.WriteLine("\t\t\t\t\t\t</a>");
+        stream.WriteLine("\t\t\t\t\t</div>");
+        stream.WriteLine("\t\t\t\t</span>");
+        #endregion
+
+        #region main menu
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t\t<h1 style=\"text-align: center;\">System Reference Document</h1>");
+        stream.WriteLine("\t\t\t\t<div style=\"text-align: center;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: center;\" class=\"pure-table\">");
+        stream.WriteLine("\t\t\t\t\t\t<thead>");
+        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: center;\">Sections</th>");
+        stream.WriteLine("\t\t\t\t\t\t</thead>");
+        stream.WriteLine("\t\t\t\t\t\t<tbody>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"character/index.html\">Character</a></td></tr>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"combat/index.html\">Combat</a></td></tr>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"gamemasterRules/index.html\">Game Master Rules</a></td></tr>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"rules/index.html\">Rules</a>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"spellcasting/index.html\">Spellcasting</a>");
+        stream.WriteLine("\t\t\t\t\t\t</tbody>");
+        stream.WriteLine("\t\t\t\t\t</table>");
+        stream.WriteLine("\t\t\t\t</div>");
+        #endregion
+
         foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
             stream.WriteLine($"\t\t\t{line}");
@@ -104,6 +154,11 @@ public partial class GenerateHtml : IGenerateHtml
             stream.WriteLine(">");
         }
         stream.WriteLine();
+        stream.WriteLine($"\t\t<meta charset=\"utf-8\" >");
+        stream.WriteLine($"\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" >");
+        stream.WriteLine($"\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+        stream.WriteLine();
+        stream.WriteLine();
         stream.WriteLine($"\t\t<meta name=\"og:title\" content=\"{codeGenModel.ProperName.Trim()}\">");
         stream.WriteLine($"\t\t<meta name=\"og:url\" content=\"{codeGenModel.ParseModel.Route.Replace("md", "html").Trim()}\">");
         if (description != string.Empty)
@@ -132,16 +187,25 @@ public partial class GenerateHtml : IGenerateHtml
         #region Table Styles
         stream.WriteLine("\t\t\t.pure-table");
         stream.WriteLine("\t\t\t{");
-        stream.WriteLine("\t\t\t\tborder-collapse: collapse;");
+        stream.WriteLine("\t\t\t\tborder-collapse: separate;");
         stream.WriteLine("\t\t\t\tborder-spacing: 0;");
-        stream.WriteLine("\t\t\t\tempty-cells: hide");
-        stream.WriteLine("\t\t\t\tborder: 1px solid #cbcbcb");
+        stream.WriteLine("\t\t\t\tempty-cells: show");
+        stream.WriteLine("\t\t\t\tborder: 2px solid black");
         stream.WriteLine("\t\t\t}");
         stream.WriteLine();
-        stream.WriteLine("\t\t\t.pure-table td, .pure-table th");
+        stream.WriteLine("\t\t\t.pure-table th");
         stream.WriteLine("\t\t\t{");
-        stream.WriteLine("\t\t\t\tborder-left: 1px solid #cbcbcb;");
-        stream.WriteLine("\t\t\t\tborder-width: 0 0 0 1px;");
+        stream.WriteLine("\t\t\t\tborder-style: solid;");
+        stream.WriteLine("\t\t\t\tfont-size: inherit;");
+        stream.WriteLine("\t\t\t\tmargin: 0;");
+        stream.WriteLine("\t\t\t\toverflow: hidden;");
+        stream.WriteLine("\t\t\t\tpadding: .5em 1em");
+        stream.WriteLine("\t\t\t}");
+        stream.WriteLine("\t\t\t.pure-table td");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\tborder-style: none;");
+        stream.WriteLine("\t\t\t\tborder-bottom: 0 none antiquewhite;");
+        stream.WriteLine("\t\t\t\tborder-top: 0 none antiquewhite;");
         stream.WriteLine("\t\t\t\tfont-size: inherit;");
         stream.WriteLine("\t\t\t\tmargin: 0;");
         stream.WriteLine("\t\t\t\toverflow: hidden;");
@@ -179,173 +243,5 @@ public partial class GenerateHtml : IGenerateHtml
         #endregion
 
         stream.WriteLine("\t\t</style>");
-    }
-
-    private void GenerateMonsterMainStats(TextWriter stream, ICreature creature)
-    {
-        stream.WriteLine("\t\t<p>");
-        stream.WriteLine("\t\t<table>");
-        stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Armor Class</td><td>{creature.ArmorClass.AC(Core.Enum.AttackTypeEnum.Mele)}<b></td></tr>");
-        stream.WriteLine($"\t\t\t<tr><td style=\"text-align: left;\"><b>Hit Points</td><td>{creature.HitPoints.HP()} ({creature.HitPoints.HitDice})<b></td></tr>");
-        stream.Write($"\t\t\t<tr><td style=\"text-align: left;\"><b>Speed</td><td>");
-        for (int i = 0; i < creature.Speed.Count(); i++)
-        {
-            if (creature.Speed[i].MovementType != MovementEnum.Normal)
-            {
-                stream.Write($"{creature.Speed[i].MovementType} ");
-            }
-            stream.Write($"{creature.Speed[i].Speed} {creature.Speed[i].MovementRate} ");
-            if (creature.Speed[i].MovementModifier != string.Empty)
-            {
-                stream.Write($"{creature.Speed[i].MovementModifier}");
-            }
-            if (i != creature.Speed.Count() - 1)
-            {
-                stream.Write(", ");
-            }
-        }
-        stream.WriteLine($"</td></tr>");
-        stream.WriteLine("\t\t</table>");
-        stream.WriteLine("\t\t</p>");
-    }
-
-    /// <summary>
-    /// Generate the abilities table
-    /// </summary>
-    /// <param name="stream"></param>
-    private void GenerateMonsterAbilities(TextWriter stream, ICreature creature)
-    {
-        stream.WriteLine();
-        stream.WriteLine("\t\t<!-- Abilities Table --->");
-        stream.WriteLine("\t\t<h3>Abilities</h3>");
-        stream.WriteLine("\t\t<table>");
-        stream.WriteLine("\t\t\t<col />");
-        stream.WriteLine("\t\t\t<colgroup colspan=\"2\"></colgroup>");
-        stream.WriteLine("\t\t\t<tr>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Strength.Name}</th>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Intelligence.Name}</th>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Wisdom.Name}</th>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Dexterity.Name}</th>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Constitution.Name}</th>");
-        stream.WriteLine($"\t\t\t<th style=\"text-align: center;\" colspan=\"2\" scope=\"colgroup\">{creature.Charisma.Name}</th>");
-        stream.WriteLine("\t\t\t</tr>");
-        stream.WriteLine("\t\t\t<tr>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\"scope=\" col\">Score</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t<th style=\"text-align: center;\" scope=\"col\">Score</th>");
-        stream.WriteLine("\t\t\t<th scope=\"col\">Modifier</th>");
-        stream.WriteLine("\t\t\t</tr>");
-        stream.WriteLine("\t\t\t<tr>");
-        var plusSign = creature.Strength.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Strength.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Strength.AbilityBonus}</td>");
-        plusSign = creature.Intelligence.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Intelligence.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Intelligence.AbilityBonus}</td>");
-        plusSign = creature.Wisdom.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Wisdom.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Wisdom.AbilityBonus}</td>");
-        plusSign = creature.Dexterity.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Dexterity.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Dexterity.AbilityBonus}</td>");
-        plusSign = creature.Constitution.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Constitution.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Constitution.AbilityBonus}</td>");
-        plusSign = creature.Charisma.AbilityBonus > 0 ? "+" : string.Empty;
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{creature.Charisma.Score}</td>");
-        stream.WriteLine($"\t\t\t<td style=\"text-align: center;\">{plusSign}{creature.Charisma.AbilityBonus}</td>");
-        stream.WriteLine("\t\t\t</tr>");
-        stream.WriteLine("\t\t</table>");
-    }
-
-    /// <summary>
-    /// Generate the overview section at the top of the file
-    /// </summary>
-    /// <param name="stream"></param>
-    private void GenerateMonsterOverview(TextWriter stream, ICreature creature)
-    {
-        stream.WriteLine();
-        stream.Write($"<i>{creature.Size}");
-        stream.Write($" {creature.RaceType}");
-        if (creature.RaceSubType != null && creature.RaceSubType.Any())
-        {
-            stream.Write($" (");
-            string rawRaceSubtype = string.Empty;
-            foreach (var raceSubType in creature.RaceSubType)
-            {
-                if (rawRaceSubtype != string.Empty)
-                {
-                    rawRaceSubtype += ", ";
-                }
-                rawRaceSubtype += raceSubType.ToString();
-            }
-            stream.Write($"{rawRaceSubtype})");
-        }
-        switch (creature.Alignment)
-        {
-            case Core.Enum.AlignmentEnum.UnAligned:
-                stream.Write($", Unaligned");
-                break;
-            case Core.Enum.AlignmentEnum.NonAligned:
-                stream.Write($", Non aligned");
-                break;
-            case Core.Enum.AlignmentEnum.Any:
-                stream.Write($", Any Alignment");
-                break;
-            case Core.Enum.AlignmentEnum.AnyChaotic:
-                stream.Write($", Any chaotic");
-                break;
-            case Core.Enum.AlignmentEnum.AnyEvil:
-                stream.Write($", Any evil");
-                break;
-            case Core.Enum.AlignmentEnum.AnyLawful:
-                stream.Write($", Any lawful");
-                break;
-            case Core.Enum.AlignmentEnum.AnyNonGood:
-                stream.Write($", Any non good");
-                break;
-            case Core.Enum.AlignmentEnum.AnyNonLawful:
-                stream.Write($", Any non lawful");
-                break;
-            case Core.Enum.AlignmentEnum.NeutralGoodOrNeutralEvil:
-                stream.Write($", Neutral good (50%) or Neutral Evil (50%)");
-                break;
-            case Core.Enum.AlignmentEnum.NeutralEvil:
-                stream.Write($", Neutral Evil (NE)");
-                break;
-            case Core.Enum.AlignmentEnum.ChaoticEvil:
-                stream.Write($", Chaotic Evil (CE)");
-                break;
-            case Core.Enum.AlignmentEnum.LawfulEvil:
-                stream.Write($", Lawful Evil (LE)");
-                break;
-            case Core.Enum.AlignmentEnum.ChaoticNeutral:
-                stream.Write($", Chaotic Neutral (CN)");
-                break;
-            case Core.Enum.AlignmentEnum.LawfulNeutral:
-                stream.Write($", Lawful Neutral (LN)");
-                break;
-            case Core.Enum.AlignmentEnum.Neutral:
-                stream.Write($", Neutral (N)");
-                break;
-            case Core.Enum.AlignmentEnum.ChaoticGood:
-                stream.Write($", Chaotic Good (CG)");
-                break;
-            case Core.Enum.AlignmentEnum.LawfulGood:
-                stream.Write($", Lawful Good (LG)");
-                break;
-            case Core.Enum.AlignmentEnum.NeutralGood:
-                stream.Write($", Neutral Good (NG)");
-                break;
-        }
-        stream.WriteLine("</i>");
     }
 }

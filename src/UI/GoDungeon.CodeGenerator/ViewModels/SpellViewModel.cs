@@ -1,15 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.ViewModels;
 using GoDungeon.Spells.Enum;
 
 namespace GoDungeon.CodeGenerator.ViewModels;
 
-public partial class SpellViewModel : StandardTableEntryViewModel, ISpell
+public partial class SpellViewModel : CodeGenerationModel, ISpell
 {
     /// <summary>
     /// The level of the spell
@@ -27,26 +25,23 @@ public partial class SpellViewModel : StandardTableEntryViewModel, ISpell
     /// The list of character classes for the spell
     /// </summary>
     public List<ClassEnum> CharacterClassList { get; } = [];
- 
-    /// <summary>
-    /// The parse model for this magic item
-    /// </summary>
-    public ParseModel ParseModel { get; }
 
     /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="parseModel">The parse model for a spell</param>
     public SpellViewModel(ParseModel parseModel)
+        : base(parseModel)
     {
-        ParseModel = parseModel;
-        ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
-        Name = Utilities.CleanupForCSharp(ProperName);
         foreach (var item in parseModel.FileHeaders)
         {
             var fh = item.Substring(0, item.IndexOf(":"));
             switch (item.Substring(0, item.IndexOf(":")))
             {
+                case "name":
+                    //ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
+                    //Name = Utilities.CleanupForCSharp(ProperName);
+                    break;
                 case "level":
                     level = int.Parse(item.Replace("level:", string.Empty).Trim());
                     break;

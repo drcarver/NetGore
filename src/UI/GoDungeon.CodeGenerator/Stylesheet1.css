@@ -28,7 +28,8 @@ b, strong {
     font-weight: bolder
 }
 
-.pure-g {
+.pure-g 
+{
     letter-spacing: -.31em;
     text-rendering: optimizespeed;
     display: -webkit-box;

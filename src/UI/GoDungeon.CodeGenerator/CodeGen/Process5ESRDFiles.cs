@@ -85,10 +85,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         {
             FileInfo fileInfo = new FileInfo(filePath);
             var outputFile = fileInfo.FullName.Replace(RootMarkDownDirectory, string.Empty);
-            if (fileInfo.DirectoryName != RootMarkDownDirectory)
-            {
-                fileList.Add(outputFile);
-            }
+            fileList.Add(outputFile);
         }
         Logger.LogInformation($"Processing of {inputDir} Complete");
     }
@@ -120,40 +117,41 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
             // index files are ignored.  The will be replaced by TableViews
             // with Menu intent on all nodes that have a markdown file
             case 0:
-                Logger.LogDebug($"Ignoring index file {filePath}");
+                Logger.LogDebug($"Converting markdown file {markdown.Route} to ParseModel");
+                vm = new CodeGenerationModel(markdown);
                 break;
             // Rules files have just a description line in the header
             case 1:
-                Logger.LogDebug($"Converting markdown rules file {filePath} to ParseModel");
+                Logger.LogDebug($"Converting markdown rules file {markdown.Route} to ParseModel");
                 vm = new RulesViewModel(markdown);
                 break;
             // Magic Items have two header entries.  Name and type.
             case 2:
-                Logger.LogDebug($"Converting markdown magic item file {filePath} to ParseModel");
+                Logger.LogDebug($"Converting markdown magic item file {markdown.Route} to ParseModel");
                 vm = new MagicItemViewModel(markdown);
                 break;
             // Monsters have three header entries.  Name, type and challenge rating.
             case 3:
-                Logger.LogDebug($"Converting markdown monster file {filePath} to ParseModel");
+                Logger.LogDebug($"Converting markdown monster file {markdown.Route} to ParseModel");
                 vm = new MonsterViewModel(markdown);
                 break;
             // spells have four header entries.  Name, school, level and character classes that can cast the spell.
             case 4:
-                Logger.LogDebug($"Converting markdown spell file {filePath} to ParseModel");
+                Logger.LogDebug($"Converting markdown spell file {markdown.Route} to ParseModel");
                 vm = new SpellViewModel(markdown);
                 break;
         }
         if (vm != null)
         {
             ParseMarkdown.ParseMarkdownToHTML(vm.ParseModel);
-            var fileInfo = new FileInfo(filePath);
-            if (!string.IsNullOrEmpty(fileInfo.DirectoryName))
+            var dirName = vm.ParseModel.Route.Substring(0, vm.ParseModel.Route.LastIndexOf("/"));
+            if (!string.IsNullOrEmpty(dirName))
             {
-                if (!ParseMarkdown.CodeGenModels.ContainsKey(fileInfo.DirectoryName))
+                if (!ParseMarkdown.CodeGenModels.ContainsKey(dirName))
                 {
-                    ParseMarkdown.CodeGenModels.Add(fileInfo.DirectoryName, []);
+                    ParseMarkdown.CodeGenModels.Add(dirName, []);
                 }
-                ParseMarkdown.CodeGenModels[fileInfo.DirectoryName].Add(vm);
+                ParseMarkdown.CodeGenModels[dirName].Add(vm);
             }
         }
     }

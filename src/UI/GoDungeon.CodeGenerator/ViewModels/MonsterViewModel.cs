@@ -8,7 +8,7 @@ using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.CodeGenerator.ViewModels;
 
-public partial class MonsterViewModel : StandardTableEntryViewModel, IMonster
+public partial class MonsterViewModel : CodeGenerationModel, IMonster
 {
     /// <summary>
     /// The type of monster
@@ -29,19 +29,14 @@ public partial class MonsterViewModel : StandardTableEntryViewModel, IMonster
     private double challengeRating;
 
     /// <summary>
-    /// The parse model for this magic item
-    /// </summary>
-    public ParseModel ParseModel { get; }
-
-    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="parseModel">The parse model for the monster</param>
     public MonsterViewModel(ParseModel parseModel)
+        : base(parseModel)
     {
-        ParseModel = parseModel;
-        ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
-        Name = Utilities.CleanupForCSharp(ProperName);
+        //ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
+        //Name = Utilities.CleanupForCSharp(ProperName);
         foreach (var item in parseModel.FileHeaders)
         {
             var fh = item.Substring(0, item.IndexOf(":"));

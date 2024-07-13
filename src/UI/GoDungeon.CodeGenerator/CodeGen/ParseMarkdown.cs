@@ -42,6 +42,15 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
 
+        // Add the description if available
+        foreach (var header in parseModel.FileHeaders)
+        {
+            if (header.StartsWith("description:"))
+            {
+                parseModel.MarkDownHtml.Add($"<br><em>{header.Replace("description:", string.Empty).Trim()}</em><br>");
+            }
+        }
+
         // iterate through the rest of the markdown and convert it to .html
         for (int i = startPos; i < parseModel.Markdown.Length; i++)
         {
@@ -135,7 +144,7 @@ public partial class ParseMarkdown : IParseMarkdown
         parseModel.MarkDownHtml.Add("<ol>");
         while (i < parseModel.Markdown.Length)
         {
-            string listElement = parseModel.Markdown[i];
+            string listElement = ParseMarkdownToHtmlBold(parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
@@ -166,22 +175,22 @@ public partial class ParseMarkdown : IParseMarkdown
         parseModel.MarkDownHtml.Add("<ul>");
         while (i < parseModel.Markdown.Length) 
         {
-            string listElement = parseModel.Markdown[i];
+            string listElement = ParseMarkdownToHtmlBold(parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
             }
-            if (listElement.StartsWith("* "))
+            if (listElement.StartsWith("*"))
             {
-                listElement = listElement.Replace("* ", string.Empty);
+                listElement = listElement.Replace("*", string.Empty);
             }
             if (listElement.StartsWith("+ "))
             {
-                listElement = listElement.Replace("+ ", string.Empty);
+                listElement = listElement.Replace("+", string.Empty);
             }
-            if (listElement.StartsWith("- "))
+            if (listElement.StartsWith("+"))
             {
-                listElement = listElement.Replace("- ", string.Empty);
+                listElement = listElement.Replace("-", string.Empty);
             }
             parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
             i++;
@@ -216,7 +225,7 @@ public partial class ParseMarkdown : IParseMarkdown
             {
                 continue; 
             }
-            var hName = header.Replace("|", string.Empty).Trim();
+            var hName = ParseMarkdownToHtmlBold(header.Replace("|", string.Empty).Trim());
             parseModel.MarkDownHtml.Add($"\t\t\t\t<th>{hName}</th>");
         }
         parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
@@ -233,7 +242,8 @@ public partial class ParseMarkdown : IParseMarkdown
                 {
                     continue;
                 }
-                parseModel.MarkDownHtml.Add($"\t\t\t\t<td>{row.Replace("|", string.Empty).Trim()}</td>");
+                var rowHtml = ParseMarkdownToHtmlBold(row.Replace("|", string.Empty).Trim());
+                parseModel.MarkDownHtml.Add($"\t\t\t\t<td>{rowHtml}</td>");
             }
             parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
         }
@@ -280,6 +290,28 @@ public partial class ParseMarkdown : IParseMarkdown
         {
             line = ReplaceFirst(line, "_", "<em>");
             line = ReplaceFirst(line, "_", "</em>");
+        }
+        if (line.IndexOf("[") != -1)
+        {
+            string linkString = line.Substring(line.IndexOf("["));
+            while (linkString.IndexOf("[") > -1)
+            {
+                int linkStart = linkString.IndexOf("[");
+                int linkEnd = linkString.IndexOf(")");
+                string link = linkString.Substring(linkStart, linkEnd - linkStart + 1);
+                string htmlLink = $"<a href=\"{link.Substring(link.IndexOf("(") + 1).Replace("<em>", string.Empty).Replace("</em>", string.Empty).Replace("-", string.Empty)}\">";
+                string anchorLink = $"{htmlLink}{link.Substring(1, link.IndexOf("]")- 1)}</a>";
+                line = line.Replace(link, ReplaceFirst(anchorLink, ")", string.Empty)).Trim();
+                if (line.IndexOf("[") > -1)
+                {
+                    linkString = line.Substring(line.IndexOf("["));
+                }
+                else
+                {
+                    linkString = string.Empty;
+                }
+            }
+            line = line.Replace("</a>)", "</a>");       
         }
         return line;
     }
