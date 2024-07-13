@@ -188,7 +188,7 @@ public partial class ParseMarkdown : IParseMarkdown
             {
                 listElement = listElement.Replace("+", string.Empty);
             }
-            if (listElement.StartsWith("+"))
+            if (listElement.StartsWith("- "))
             {
                 listElement = listElement.Replace("-", string.Empty);
             }
@@ -299,7 +299,7 @@ public partial class ParseMarkdown : IParseMarkdown
                 int linkStart = linkString.IndexOf("[");
                 int linkEnd = linkString.IndexOf(")");
                 string link = linkString.Substring(linkStart, linkEnd - linkStart + 1);
-                string htmlLink = $"<a href=\"{link.Substring(link.IndexOf("(") + 1).Replace("<em>", string.Empty).Replace("</em>", string.Empty).Replace("-", string.Empty)}\">";
+                string htmlLink = $"<a href=\"{link.Substring(link.IndexOf("(") + 1).Replace("<em>", string.Empty).Replace("</em>", string.Empty)}\">";
                 string anchorLink = $"{htmlLink}{link.Substring(1, link.IndexOf("]")- 1)}</a>";
                 line = line.Replace(link, ReplaceFirst(anchorLink, ")", string.Empty)).Trim();
                 if (line.IndexOf("[") > -1)

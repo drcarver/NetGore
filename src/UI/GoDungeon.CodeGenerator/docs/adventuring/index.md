@@ -1,20 +1,20 @@
 # Adventuring
 ## General Adventuring
 
-* [Between Adventures](betweenadventures/)  
-* [Movement](movement/)                      
-* [Planes of Existence](planesofexistence/)
-* [Resting](resting/)                        
-* [The Environment](theenvironment/)        
-* [Time](time/)                              
+* [Between Adventures](betweenadventures.html)  
+* [Movement](movement.html)                      
+* [Planes of Existence](planesofexistence.html)
+* [Resting](resting.html)                        
+* [The Environment](theenvironment.html)        
+* [Time](time.html)                              
 
 ## Equipment
 
-* [Adventuring Gear](equipment/adventuringgear/)      
-* [Armor](equipment/armor/)                            
-* [Coins](equipment/coins/)                            
-* [Equipment Packs](equipment/equipmentpacks/)        
-* [Mounts and Vehicles](equipment/mountsandvehicles/)
-* [Tools](equipment/tools/)                            
-* [Trade Goods](equipment/tradegoods/)                
-* [Weapons](equipment/weapons/)                        
+* [Adventuring Gear](equipment/adventuringgear.html)      
+* [Armor](equipment/armor.html)                            
+* [Coins](equipment/coins.html)                            
+* [Equipment Packs](equipment/equipmentpacks.html)        
+* [Mounts and Vehicles](equipment/mountsandvehicles.html)
+* [Tools](equipment/tools.html)                            
+* [Trade Goods](equipment/tradegoods.html)                
+* [Weapons](equipment/weapons.html)                        

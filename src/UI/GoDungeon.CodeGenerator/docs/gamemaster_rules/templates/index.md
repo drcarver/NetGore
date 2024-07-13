@@ -1,3 +1,3 @@
 # Templates
 
-* [Halfdragon Template](halfdragontemplate)
+* [Halfdragon Template](halfdragontemplate.html)

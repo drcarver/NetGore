@@ -1,5 +1,5 @@
 # Spells
 
-* [Spells by Level](../spellindexes/spellsbylevel)
-* [Spells by Name](../spellindexes/spellsbyname)
-* [Spells by School](../spellindexes/spellsbyschool)
+* [Spells by Level](../spellindexes/spellsbylevel.html)
+* [Spells by Name](../spellindexes/spellsbyname.html)
+* [Spells by School](../spellindexes/spellsbyschool.html)

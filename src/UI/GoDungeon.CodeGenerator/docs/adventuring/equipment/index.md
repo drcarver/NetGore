@@ -1,10 +1,10 @@
 # Equipment
 
-* [Adventuring Gear](adventuringgear)      
-* [Armor](armor)                            
-* [Coins](coins)                            
-* [Equipment Packs](equipmentpacks)        
-* [Mounts and Vehicles](mountsandvehicles)
-* [Tools](tools)                            
-* [Trade Goods](tradegoods)                
-* [Weapons](weapons)     
+* [Adventuring Gear](adventuringgear.html)      
+* [Armor](armor.html)                            
+* [Coins](coins.html)                            
+* [Equipment Packs](equipmentpacks.html)        
+* [Mounts and Vehicles](mountsandvehicles.html)
+* [Tools](tools.html)                            
+* [Trade Goods](tradegoods.html)                
+* [Weapons](weapons.html)     

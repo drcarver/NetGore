@@ -55,41 +55,9 @@ public partial class GenerateHtml : IGenerateHtml
     /// <param name="codeGenModel">The code generation model</param>
     private void GenerateHtmlBody(TextWriter stream, ICodeGen codeGenModel)
     {
-        #region main menu setup
         stream.WriteLine("\t<body>");
-        stream.WriteLine("\t\t<div id=\"content\" class=\"pure-g\">");
-        stream.WriteLine("\t\t\t<div id=\"top-nav\" class=\"pure-menu pure-u-1 pure-u-lg-1-6\">");
-        stream.WriteLine("\t\t\t\t<span class=\"pure-menu-heading pure-g\">");
-        stream.WriteLine("\t\t\t\t\t<div class=\"pure-u-2-3\" id=\"menu-toggle\">");
-        stream.WriteLine("\t\t\t\t\t\t<a class=\"pure-button button-small\" href=\"javascript:void(0);\" onclick=\"toggleMainNav()\">");
-        stream.WriteLine("\t\t\t\t\t\t\t<svg viewBox=\"0 0 100 80\" width=\"15\" height=\"15\">");
-        stream.WriteLine("\t\t\t\t\t\t\t\t<rect width=\"100\" height=\"20\" fill=\"white\"></rect>");
-        stream.WriteLine("\t\t\t\t\t\t\t\t<rect y=\"30\" width=\"100\" height=\"20\" fill=\"white\"></rect>");
-        stream.WriteLine("\t\t\t\t\t\t\t\t<rect y=\"60\" width=\"100\" height=\"20\" fill=\"white\"></rect>");
-        stream.WriteLine("\t\t\t\t\t\t\t</svg>");
-        stream.WriteLine("\t\t\t\t\t\t</a>");
-        stream.WriteLine("\t\t\t\t\t</div>");
-        stream.WriteLine("\t\t\t\t</span>");
-        #endregion
 
-        #region main menu
-        stream.WriteLine();
-        stream.WriteLine("\t\t\t\t<h1 style=\"text-align: center;\">System Reference Document</h1>");
-        stream.WriteLine("\t\t\t\t<div style=\"text-align: center;\" class=\"responsive-table\">");
-        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: center;\" class=\"pure-table\">");
-        stream.WriteLine("\t\t\t\t\t\t<thead>");
-        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: center;\">Sections</th>");
-        stream.WriteLine("\t\t\t\t\t\t</thead>");
-        stream.WriteLine("\t\t\t\t\t\t<tbody>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"character/index.html\">Character</a></td></tr>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"combat/index.html\">Combat</a></td></tr>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"gamemasterRules/index.html\">Game Master Rules</a></td></tr>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"rules/index.html\">Rules</a>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"spellcasting/index.html\">Spellcasting</a>");
-        stream.WriteLine("\t\t\t\t\t\t</tbody>");
-        stream.WriteLine("\t\t\t\t\t</table>");
-        stream.WriteLine("\t\t\t\t</div>");
-        #endregion
+        GenerateSectionHeader(stream, codeGenModel);
 
         foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
@@ -105,6 +73,49 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t</footer>");
         stream.WriteLine("\t</body>");
         stream.WriteLine("</html>");
+    }
+
+    /// <summary>
+    /// Generate the section header table
+    /// </summary>
+    /// <param name="stream">The output text stream</param>
+    /// <param name="codeGenModel">The code generation model</param>
+    private void GenerateSectionHeader(TextWriter stream, ICodeGen codeGenModel)
+    {
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t\t<h1 style=\"text-align: center;\">System Reference Document</h1>");
+        stream.WriteLine("\t\t\t\t<div style=\"text-align: center;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: center;\" class=\"pure-table\">");
+        stream.WriteLine("\t\t\t\t\t\t<thead>");
+        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: center;\">Sections</th>");
+        stream.WriteLine("\t\t\t\t\t\t</thead>");
+        stream.WriteLine("\t\t\t\t\t\t<tbody>");
+        List<string>? dirList = codeGenModel.ParseModel?.Route?.Split("/").Where(d => !string.IsNullOrEmpty(d)).ToList();
+        string path = string.Empty;
+        switch (dirList.Count)
+        {
+            case 1:
+                path = "./";
+                break;
+            case 2:
+                path = "../";
+                break;
+            case 3:
+                path = "../../";
+                break;
+            default:
+                break;
+        }
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}index.html\">Main Menu</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}Adventuring/index.html\">Adventuring</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}character/index.html\">Character</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}combat/index.html\">Combat</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}GameMasterRules/index.html\">Game Master Rules</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}rules/index.html\">Rules</a>");
+        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}spellcasting/index.html\">Spellcasting</a>");
+        stream.WriteLine("\t\t\t\t\t\t</tbody>");
+        stream.WriteLine("\t\t\t\t\t</table>");
+        stream.WriteLine("\t\t\t\t</div>");
     }
 
     /// <summary>

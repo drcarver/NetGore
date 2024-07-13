@@ -1,5 +1,5 @@
 # Monster Indexes
 
-* [Monsters by CR](monstersbycr)
-* [Monsters by Name](monstersbyname)
-* [Monsters by Type](monstersbytype)
+* [Monsters by CR](monstersbycr.html)
+* [Monsters by Name](monstersbyname.html)
+* [Monsters by Type](monstersbytype.html)

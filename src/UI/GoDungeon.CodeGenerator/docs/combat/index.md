@@ -1,10 +1,10 @@
 # Combat
 
-* [Actions in Combat](actionsincombat)
-* [Cover](cover)
-* [Damage and Healing](damageandhealing)
-* [Making an Attack](makinganattack)
-* [Mounted Combat](mountedcombat)
-* [Movement and Position](movementandposition)
-* [Order of Combat](orderofcombat)
-* [Underwater Combat](underwatercombat)
+* [Actions in Combat](actionsincombat.html)
+* [Cover](cover.html)
+* [Damage and Healing](damageandhealing.html)
+* [Making an Attack](makinganattack.html)
+* [Mounted Combat](mountedcombat.html)
+* [Movement and Position](movementandposition.html)
+* [Order of Combat](orderofcombat.html)
+* [Underwater Combat](underwatercombat.html)
