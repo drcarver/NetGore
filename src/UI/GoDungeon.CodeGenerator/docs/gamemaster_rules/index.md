@@ -1,28 +1,28 @@
 # Gamemaster Rules
 ## General Gamemaster Rules
 
-* [Diseases](/gamemaster_rules/diseases/)
-* [Legendary Creatures](/gamemaster_rules/legendary_creatures/)
-* [Madness](/gamemaster_rules/madness/)
-* [Magic Items](/gamemaster_rules/magic_items/)
-* [Monsters](/gamemaster_rules/monsters/)
-* [Nonplayer Characters](/gamemaster_rules/nonplayer_characters/)
-* [Objects](/gamemaster_rules/objects/)
-* [Poisons](/gamemaster_rules/poisons/)
-* [Sentient Magical Items](/gamemaster_rules/sentient_magical_items/)
-* [Traps](/gamemaster_rules/traps/)
+* [Diseases](diseases)
+* [Legendary Creatures](legendarycreatures)
+* [Madness](madness)
+* [Magic Items](magicitems)
+* [Monsters](monsters)
+* [Nonplayer Characters](nonplayercharacters)
+* [Objects](objects)
+* [Poisons](poisons)
+* [Sentient Magical Items](sentientmagicalitems)
+* [Traps](traps)
 
 ## Magic Item Indexes
 
-* [Items by Name](/gamemaster_rules/magic_item_indexes/items_by_name/)
-* [Items by Type](/gamemaster_rules/magic_item_indexes/items_by_type/)
+* [Items by Name](../magicitemindexes/itemsbyname)
+* [Items by Type](../magicitemindexes/itemsbytype)
 
 ## Monster Indexes
 
-* [Monsters by Name](/gamemaster_rules/monster_indexes/monsters_by_name/)
-* [Monsters by Type](/gamemaster_rules/monster_indexes/monsters_by_type/)
-* [Monsters by CR](/gamemaster_rules/monster_indexes/monsters_by_cr/)
+* [Monsters by Name](../monsterindexes/monstersbyname)
+* [Monsters by Type](../monsterindexes/monstersbytype)
+* [Monsters by CR](../monsterindexes/monstersbycr)
 
 ## Templates
 
-* [Halfdragon Template](/gamemaster_rules/templates/halfdragon_template/)
+* [Halfdragon Template](../templates/halfdragontemplate)

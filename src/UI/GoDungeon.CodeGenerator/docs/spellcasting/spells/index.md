@@ -1,5 +1,5 @@
 # Spells
 
-* [Spells by Level](/spellcasting/spell_indexes/spells_by_level/)
-* [Spells by Name](/spellcasting/spell_indexes/spells_by_name/)
-* [Spells by School](/spellcasting/spell_indexes/spells_by_school)
+* [Spells by Level](../spellindexes/spellsbylevel)
+* [Spells by Name](../spellindexes/spellsbyname)
+* [Spells by School](../spellindexes/spellsbyschool)
