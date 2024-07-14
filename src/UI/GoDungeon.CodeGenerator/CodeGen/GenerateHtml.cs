@@ -43,10 +43,18 @@ public partial class GenerateHtml : IGenerateHtml
         GenerateTableOfContentsColumn(stream, codeGenModel);
 
         stream.WriteLine("\t\t\t<div id=\"Column2\">");
-        stream.WriteLine($"\t\t\t\t<h1 style=\"text-align: left;\">{codeGenModel.ProperName}</h1>");
-        foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
+        //stream.WriteLine($"\t\t\t\t<h1 style=\"text-align: left;\">{codeGenModel.ProperName}</h1>");
+        int startPos = 0;
+        if (codeGenModel.ParseModel.MarkDownHtml[0].StartsWith("<br>"))
         {
-            stream.WriteLine($"\t\t\t\t{line}");
+            var desc = codeGenModel.ParseModel.MarkDownHtml[0].Replace("<br>", string.Empty).Replace("</br>", string.Empty);
+            stream.WriteLine($"\t\t\t\t{codeGenModel.ParseModel.MarkDownHtml[1]}");
+            stream.WriteLine(desc);
+            startPos = 2;
+        }
+        for (int i = startPos; i < codeGenModel.ParseModel.MarkDownHtml.Count; i++)
+        {
+            stream.WriteLine($"\t\t\t\t{codeGenModel.ParseModel.MarkDownHtml[i]}");
         }
         stream.WriteLine("\t\t\t</div>");
         stream.WriteLine("\t\t</div>");
@@ -70,12 +78,11 @@ public partial class GenerateHtml : IGenerateHtml
     {
         stream.WriteLine();
         stream.WriteLine("\t\t\t\t<div id=\"Column1\">");
-        stream.WriteLine("<br><br>");
 
         #region Section Table
         stream.WriteLine("\t\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t\t\t<h1 style=\"text-align: left;\">5th SRD</h1>");
         stream.WriteLine("\t\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
-        stream.WriteLine("\t\t\t\t\t\t\t<caption>5th SRD</caption>");
         stream.WriteLine("\t\t\t\t\t\t\t<thead>");
         stream.WriteLine("\t\t\t\t\t\t\t\t<th style=\"text-align: left;\">Sections</th>");
         stream.WriteLine("\t\t\t\t\t\t\t</thead>");

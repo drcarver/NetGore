@@ -62,7 +62,7 @@ public partial class ParseMarkdown : IParseMarkdown
             }
             if (line.StartsWith(">"))
             {
-                line = line.Substring(1);
+                line = ParseMarkdownToHtmlBold(parseModel, line.Substring(1));
                 if (!inBlockQuote)
                 {
                     parseModel.MarkDownHtml.Add("<blockquote>");
@@ -106,7 +106,7 @@ public partial class ParseMarkdown : IParseMarkdown
         switch (line[0])
         {
             case '#':
-                var header = ParseToHTMLHeader(line, lineNo);
+                var header = ParseToHTMLHeader(line);
                 model.MarkDownHtml.Add(header.Content);
                 model.Headers.Add(header);
                 return lineNo;
@@ -128,7 +128,7 @@ public partial class ParseMarkdown : IParseMarkdown
                     lineNo = ParseMarkdownToHtmlUnorderedList(model, lineNo);
                     return lineNo;
                 }
-                model.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(line)}</p>");
+                model.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(model, line)}</p>");
                 return lineNo;
         }
     }
@@ -144,7 +144,7 @@ public partial class ParseMarkdown : IParseMarkdown
         parseModel.MarkDownHtml.Add("<ol>");
         while (i < parseModel.Markdown.Length)
         {
-            string listElement = ParseMarkdownToHtmlBold(parseModel.Markdown[i]);
+            string listElement = ParseMarkdownToHtmlBold(parseModel, parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
@@ -175,7 +175,7 @@ public partial class ParseMarkdown : IParseMarkdown
         parseModel.MarkDownHtml.Add("<ul>");
         while (i < parseModel.Markdown.Length) 
         {
-            string listElement = ParseMarkdownToHtmlBold(parseModel.Markdown[i]);
+            string listElement = ParseMarkdownToHtmlBold(parseModel, parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
@@ -213,7 +213,6 @@ public partial class ParseMarkdown : IParseMarkdown
     {
         parseModel.MarkDownHtml.Add("<div class=\"responsive-table\">");
         parseModel.MarkDownHtml.Add("\t<table class=\"pure-table\">");
-        //parseModel.MarkDownHtml.Add($"\t<caption>{table.TableCaption}</caption>");
 
         // Now the table header
         parseModel.MarkDownHtml.Add($"\t\t<thead>");
@@ -225,7 +224,7 @@ public partial class ParseMarkdown : IParseMarkdown
             {
                 continue; 
             }
-            var hName = ParseMarkdownToHtmlBold(header.Replace("|", string.Empty).Trim());
+            var hName = ParseMarkdownToHtmlBold(parseModel, header);
             parseModel.MarkDownHtml.Add($"\t\t\t\t<th>{hName}</th>");
         }
         parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
@@ -242,7 +241,7 @@ public partial class ParseMarkdown : IParseMarkdown
                 {
                     continue;
                 }
-                var rowHtml = ParseMarkdownToHtmlBold(row.Replace("|", string.Empty).Trim());
+                var rowHtml = ParseMarkdownToHtmlBold(parseModel, row);
                 parseModel.MarkDownHtml.Add($"\t\t\t\t<td>{rowHtml}</td>");
             }
             parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
@@ -257,9 +256,10 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Parse the bold and italic in a markdown line
     /// </summary>
-    /// <param name="line">The line to parse</param>
+    /// <param name="parseModel">The parse model for the markdown</param>
+    /// <param name="line">The line to be parsed</param>
     /// <returns>The line with bold and italics added</returns>
-    private string ParseMarkdownToHtmlBold(string line)
+    private string ParseMarkdownToHtmlBold(ParseModel model, string line)
     {
         while (line.IndexOf("__*") != -1)
         {
@@ -290,6 +290,12 @@ public partial class ParseMarkdown : IParseMarkdown
         {
             line = ReplaceFirst(line, "_", "<em>");
             line = ReplaceFirst(line, "_", "</em>");
+        }
+        if (line.TrimStart().StartsWith("#"))
+        {
+            var header = ParseToHTMLHeader(line);
+            model.Headers.Add(header);
+            line = header.Content;
         }
         if (line.IndexOf("[") != -1)
         {
@@ -340,9 +346,9 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <param name="line">The line to parse</param>
     /// <param name="lineNo">The line number in the file</param>
     /// <returns>The header model for the current header</returns></remarks>
-    private HeaderModel ParseToHTMLHeader(string line, int lineNo)
+    private HeaderModel ParseToHTMLHeader(string line)
     {
-        string content = line;
+        string content = line.TrimStart();
         int level = 0;
 
         // determine the header level
@@ -356,10 +362,12 @@ public partial class ParseMarkdown : IParseMarkdown
         var header = new HeaderModel
         {
             Level = level,
-            LineNumber = lineNo,
             Id = Utilities.CleanupForCSharp(content),
         };
-        header.Content = $"<h{header.Level} id=\"{header.Id}\">{content}</h{header.Level}>";
+        if (level > 0)
+        {
+            header.Content = $"<h{header.Level} id=\"{header.Id}\">{content}</h{header.Level}>";
+        }
         return header;
     }
 
