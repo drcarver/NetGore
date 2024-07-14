@@ -35,7 +35,8 @@ public partial class ParseMarkdown : IParseMarkdown
         int startPos = 0;
         for (int i = 0; i < parseModel.Markdown.Length; i++)
         {
-            if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim()))
+            if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim())
+                || !parseModel.Markdown[i].Contains(":"))
             {
                 startPos = i+1;
                 break;

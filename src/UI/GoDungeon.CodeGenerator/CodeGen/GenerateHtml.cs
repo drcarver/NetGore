@@ -341,13 +341,13 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine();
         stream.WriteLine("\t\t\t#Column1");
         stream.WriteLine("\t\t\t{");
-        stream.WriteLine("\t\t\t\twidth: 15%;");
+        stream.WriteLine("\t\t\t\twidth: 20%;");
         stream.WriteLine("\t\t\t\tfloat: left;");
         stream.WriteLine("\t\t\t}");
         stream.WriteLine();
         stream.WriteLine("\t\t\t#Column2");
         stream.WriteLine("\t\t\t{");
-        stream.WriteLine("\t\t\t\twidth: 85%;");
+        stream.WriteLine("\t\t\t\twidth: 80%;");
         stream.WriteLine("\t\t\t\tfloat: left;");
         stream.WriteLine("\t\t\t}");
         #endregion
