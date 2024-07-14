@@ -32,23 +32,6 @@ public partial class GenerateHtml : IGenerateHtml
     }
 
     /// <summary>
-    /// Generate the monster indexes
-    /// </summary>
-    /// <param name="models">The list of code generation models</param>
-    private void GenerateHtmlMonsterIndex(List<ICodeGen> models)
-    {
-        foreach (var model in models)
-        {
-            if (!(model is MonsterViewModel))
-            {
-                return;
-            }
-
-            var monster = (MonsterViewModel)model;
-        }
-    }
-
-    /// <summary>
     /// Generate the body of the .html file 
     /// </summary>
     /// <param name="stream">The .html file</param>
@@ -57,12 +40,15 @@ public partial class GenerateHtml : IGenerateHtml
     {
         stream.WriteLine("\t<body>");
 
-        GenerateSectionHeader(stream, codeGenModel);
+        GenerateTableOfContentsColumn(stream, codeGenModel);
 
+        stream.WriteLine("\t\t\t<div id=\"Column2\">");
+        stream.WriteLine($"\t\t\t\t<h1 style=\"text-align: left;\">{codeGenModel.ProperName}</h1>");
         foreach (var line in codeGenModel.ParseModel.MarkDownHtml)
         {
-            stream.WriteLine($"\t\t\t{line}");
+            stream.WriteLine($"\t\t\t\t{line}");
         }
+        stream.WriteLine("\t\t\t</div>");
         stream.WriteLine("\t\t</div>");
         stream.WriteLine("\t\t<footer>");
         stream.WriteLine("\t\t\t<hr>");
@@ -80,14 +66,100 @@ public partial class GenerateHtml : IGenerateHtml
     /// </summary>
     /// <param name="stream">The output text stream</param>
     /// <param name="codeGenModel">The code generation model</param>
-    private void GenerateSectionHeader(TextWriter stream, ICodeGen codeGenModel)
+    private void GenerateTableOfContentsColumn(TextWriter stream, ICodeGen codeGenModel)
     {
         stream.WriteLine();
-        stream.WriteLine("\t\t\t\t<h1 style=\"text-align: center;\">System Reference Document</h1>");
-        stream.WriteLine("\t\t\t\t<div style=\"text-align: center;\" class=\"responsive-table\">");
-        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: center;\" class=\"pure-table\">");
+        stream.WriteLine("\t\t\t\t<div id=\"Column1\">");
+        stream.WriteLine("<br><br>");
+
+        #region Section Table
+        stream.WriteLine("\t\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
+        stream.WriteLine("\t\t\t\t\t\t\t<caption>5th SRD</caption>");
+        stream.WriteLine("\t\t\t\t\t\t\t<thead>");
+        stream.WriteLine("\t\t\t\t\t\t\t\t<th style=\"text-align: left;\">Sections</th>");
+        stream.WriteLine("\t\t\t\t\t\t\t</thead>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tbody>");
+        List<string>? dirList = codeGenModel.ParseModel?.Route?.Split("/").Where(d => !string.IsNullOrEmpty(d)).ToList();
+        string path = string.Empty;
+        switch (dirList.Count)
+        {
+            case 1:
+                path = "./";
+                break;
+            case 2:
+                path = "../";
+                break;
+            case 3:
+                path = "../../";
+                break;
+            default:
+                break;
+        }
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}index.html\">Main Menu</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}Adventuring/index.html\">Adventuring</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}character/index.html\">Character</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}combat/index.html\">Combat</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}GameMasterRules/index.html\">Game Master Rules</a></td></tr>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}rules/index.html\">Rules</a>");
+        stream.WriteLine($"\t\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}spellcasting/index.html\">Spellcasting</a>");
+        stream.WriteLine("\t\t\t\t\t\t\t</tbody>");
+        stream.WriteLine("\t\t\t\t\t\t</table>");
+        stream.WriteLine("\t\t\t\t\t</div>");
+        #endregion
+
+        #region Table of Contents for this page
+        stream.WriteLine("<br><br>");
+        stream.WriteLine("\t\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
+        stream.WriteLine("\t\t\t\t\t\t\t<thead>");
+        stream.WriteLine("\t\t\t\t\t\t\t\t<th style=\"text-align: left;\">Chapters</th>");
+        stream.WriteLine("\t\t\t\t\t\t\t<tbody>");
+
+        foreach (var chapter in codeGenModel.ParseModel.Headers.Where(h => h.Level == 2).OrderBy(o => o.LineNumber).ToList())
+        {
+            var content = chapter.Content.Substring(chapter.Content.IndexOf(">") + 1).Replace("</h2>", string.Empty);
+            var tr = $"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"#{chapter.Id}\">{content}</td></tr>";
+            stream.WriteLine(tr);
+        }
+        stream.WriteLine("\t\t\t\t\t\t\t</tbody>");
+        stream.WriteLine("\t\t\t\t\t\t</table>");
+        stream.WriteLine("\t\t\t\t\t</div>");
+        #endregion
+
+        stream.WriteLine("\t\t\t\t</div>");
+    }
+
+    /// <summary>
+    /// Generate the monster indexes
+    /// </summary>
+    /// <param name="models">The list of code generation models</param>
+    private void GenerateHtmlMonsterIndex(List<ICodeGen> models)
+    {
+        foreach (var model in models)
+        {
+            if (!(model is MonsterViewModel))
+            {
+                return;
+            }
+
+            var monster = (MonsterViewModel)model;
+        }
+    }
+
+    /// <summary>
+    /// Generate the monster index by type
+    /// </summary>
+    /// <param name="stream">The output text stream</param>
+    /// <param name="codeGenModel">The code generation models</param>
+    private void GenerateMonsterIndexByCR(TextWriter stream, ICodeGen codeGenModel)
+    {
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t\t<h2 style=\"text-align: left;\">System Reference Document</h2>");
+        stream.WriteLine("\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
+        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
         stream.WriteLine("\t\t\t\t\t\t<thead>");
-        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: center;\">Sections</th>");
+        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: cleft;\">Sections</th>");
         stream.WriteLine("\t\t\t\t\t\t</thead>");
         stream.WriteLine("\t\t\t\t\t\t<tbody>");
         List<string>? dirList = codeGenModel.ParseModel?.Route?.Split("/").Where(d => !string.IsNullOrEmpty(d)).ToList();
@@ -250,6 +322,26 @@ public partial class GenerateHtml : IGenerateHtml
         stream.WriteLine("\t\t\t\tline-height: 1.15;");
         stream.WriteLine("\t\t\t\tbackground-color: antiquewhite;");
         stream.WriteLine("\t\t\t\t-webkit-text-size-adjust: 100%");
+        stream.WriteLine("\t\t\t}");
+        #endregion
+
+        #region Columns
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t#Content");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\twidth: 100%;");
+        stream.WriteLine("\t\t\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t#Column1");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\twidth: 15%;");
+        stream.WriteLine("\t\t\t\tfloat: left;");
+        stream.WriteLine("\t\t\t}");
+        stream.WriteLine();
+        stream.WriteLine("\t\t\t#Column2");
+        stream.WriteLine("\t\t\t{");
+        stream.WriteLine("\t\t\t\twidth: 85%;");
+        stream.WriteLine("\t\t\t\tfloat: left;");
         stream.WriteLine("\t\t\t}");
         #endregion
 
