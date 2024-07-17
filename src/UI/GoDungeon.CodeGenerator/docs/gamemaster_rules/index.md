@@ -14,15 +14,15 @@
 
 ## Magic Item Indexes
 
-* [Items by Name](../magicitemindexes/itemsbyname.html)
-* [Items by Type](../magicitemindexes/itemsbytype.html)
+* [Items by Name](itemsbyname.html)
+* [Items by Type](itemsbytype.html)
 
 ## Monster Indexes
 
-* [Monsters by Name](../monsterindexes/monstersbyname.html)
-* [Monsters by Type](../monsterindexes/monstersbytype.html)
-* [Monsters by CR](../monsterindexes/monstersbycr.html)
+* [Monsters by Name](monstersbyname.html)
+* [Monsters by Type](monstersbytype.html)
+* [Monsters by CR](monstersbycr.html)
 
 ## Templates
 
-* [Halfdragon Template](../templates/halfdragontemplate.html)
+* [Halfdragon Template](halfdragontemplate.html)
