@@ -13,6 +13,11 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
     public ParseModel ParseModel { get; internal set; }
 
     /// <summary>
+    /// The file headers
+    /// </summary>
+    public List<string> FileHeaders { get; } = [];
+
+    /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="parseModel">The code generation parse model.</param>
@@ -29,6 +34,28 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
             {
                 ProperName = line.Replace("# ", string.Empty);
                 Name = Utilities.CleanupForCSharp(ProperName);
+                break;
+            }
+        }
+
+        // Add the description if available
+        foreach (var header in FileHeaders)
+        {
+            if (header.StartsWith("description:"))
+            {
+                parseModel.MarkDownHtml.Add($"<br><em>{header.Replace("description:", string.Empty).Trim()}</em><br>");
+            }
+        }
+
+        /// The file headers for the parse model
+        foreach (var line in parseModel.Markdown)
+        {
+            if (line.Contains(":"))
+            {
+                FileHeaders.Add(line);
+            }
+            else
+            {
                 break;
             }
         }

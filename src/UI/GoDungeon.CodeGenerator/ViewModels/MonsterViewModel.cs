@@ -35,9 +35,7 @@ public partial class MonsterViewModel : CodeGenerationModel, IMonster
     public MonsterViewModel(ParseModel parseModel)
         : base(parseModel)
     {
-        //ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
-        //Name = Utilities.CleanupForCSharp(ProperName);
-        foreach (var item in parseModel.FileHeaders)
+        foreach (var item in FileHeaders)
         {
             var fh = item.Substring(0, item.IndexOf(":"));
             switch (item.Substring(0, item.IndexOf(":")))

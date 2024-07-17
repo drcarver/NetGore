@@ -75,51 +75,46 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="fileList">THe input dir for the indexes</param>
     private void GenerateIndexFiles(List<string> fileList)
     {
-        (string fileName, ParseModel? parseModel)[] indexFileNames =
-        [
-            ("itemsbyname.md", null),
-            ("itemsbytype.md", null),
-            ("monstersbycr.md", null),
-            ("monstersbytype.md", null),
-            ("monstersbyname.md", null),
-            ("spellsbylevel.md", null),
-            ("spellsbyname.md", null),
-            ("spellsbyschool.md", null),
-        ];
-
-        var indexes = fileList.Where(i => i.Contains("_indexes") || i.Contains("spell_lists")).ToArray();
+        var indexes = fileList
+            .Where(i => (i.Contains("GamemasterRules") || i.Contains("spellcasting"))
+                && i.EndsWith("index.md")).ToArray();
         for (int i = 0; i < indexes.Length; i++)
         {
             string fRoute = indexes[i].Replace("_", string.Empty);
-            indexFileNames[i].parseModel = CreateIndex(indexFileNames[i].fileName);
-            ICodeGen cgm = new CodeGenerationModel(indexFileNames[i].parseModel);
-            if (!ParseMarkdown.CodeGenModels.ContainsKey(indexFileNames[i].parseModel.Route))
-            {
-                ParseMarkdown.CodeGenModels.Add(indexFileNames[i].parseModel.Route, []);
-                ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
-            }
-            else
-            {
-                ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
-            }
+            var parseModel = CreateIndex(fRoute);
+            //ICodeGen cgm = new CodeGenerationModel(indexFileNames[i].parseModel);
+            //if (!ParseMarkdown.CodeGenModels.ContainsKey(indexFileNames[i].parseModel.Route))
+            //{
+            //    ParseMarkdown.CodeGenModels.Add(indexFileNames[i].parseModel.Route, []);
+            //    ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
+            //}
+            //else
+            //{
+            //    ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
+            //}
         }
     }
 
     /// <summary>
     /// Create the index parse model
     /// </summary>
-    /// <param name="index">The tuple for the index</param>
-    /// <returns>The ParseModel for the tuple</returns>
-    private ParseModel? CreateIndex(string index)
+    /// <param name="route">route to the index</param>
+    /// <returns>The ParseModel for the index</returns>
+    private ParseModel? CreateIndex(string route)
     {
-        ParseModel parseModel = null;
+        route = route.Replace("/index.md", string.Empty);
+        if (!ParseMarkdown.CodeGenModels.Keys.Contains(route))
+        {
+            ParseMarkdown.CodeGenModels.Add(route.Replace("/index.md", string.Empty), []);
+        }
         List<string> markdown = [];
         Dictionary<string, List<ICodeGen>> dictionaryIndex = new();
-        switch (index)
+        ParseModel? parseModel = null;
+        switch (route)
         {
             case "itemsbyname.md":
             case "itemsbytype.md":
-                bool indexByName = index == "itemsbyname.md";
+                bool indexByName = route == "itemsbyname.md";
                 if (indexByName)
                 {
                     markdown.Add("description: List of Magic Items by Name");
@@ -136,7 +131,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                     foreach (var vm in vmList)
                     {
                         // find the view models that are magic items
-                        if (vm.ParseModel.FileHeaders.Count == 2)
+                        if (vm.FileHeaders.Count == 2)
                         {
                             string key = $"{((MagicItemViewModel)vm).Name[0]}".ToUpper();
                             if (!indexByName)
@@ -178,7 +173,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                     }
                     markdown.Add(string.Empty);
                 }
-                return parseModel = new ParseModel(index, markdown.ToImmutableArray());
+                return parseModel = new ParseModel(route, markdown.ToImmutableArray());
             default:
                 break;
         }
@@ -229,49 +224,50 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="filePath">The file containing the markdown</param>
     private void ProcessMarkDownFile(string filePath)
     {
-        var markdown = ConvertMarkdownToParseModel(filePath);
-        ICodeGen vm = null;
-        switch (markdown.FileHeaders.Count)
+        ParseModel parseModel = ConvertMarkdownToParseModel(filePath);
+        ParseMarkdown.ParseMarkdownToHTML(parseModel);
+
+        // Create the initial CodeGeneration Model
+        Logger.LogDebug($"Converting markdown file {parseModel.Route} to ParseModel");
+        ICodeGen vm = new CodeGenerationModel(parseModel);
+
+        // Convert to a specific version of the model
+        if (vm.FileHeaders.Count > 0)
         {
-            // index files are ignored.  The will be replaced by TableViews
-            // with Menu intent on all nodes that have a markdown file
-            case 0:
-                Logger.LogDebug($"Converting markdown file {markdown.Route} to ParseModel");
-                vm = new CodeGenerationModel(markdown);
-                break;
-            // Rules files have just a description line in the header
-            case 1:
-                Logger.LogDebug($"Converting markdown rules file {markdown.Route} to ParseModel");
-                vm = new RulesViewModel(markdown);
-                break;
-            // Magic Items have two header entries.  Name and type.
-            case 2:
-                Logger.LogDebug($"Converting markdown magic item file {markdown.Route} to ParseModel");
-                vm = new MagicItemViewModel(markdown);
-                break;
-            // Monsters have three header entries.  Name, type and challenge rating.
-            case 3:
-                Logger.LogDebug($"Converting markdown monster file {markdown.Route} to ParseModel");
-                vm = new MonsterViewModel(markdown);
-                break;
-            // spells have four header entries.  Name, school, level and character classes that can cast the spell.
-            case 4:
-                Logger.LogDebug($"Converting markdown spell file {markdown.Route} to ParseModel");
-                vm = new SpellViewModel(markdown);
-                break;
-        }
-        if (vm != null)
-        {
-            ParseMarkdown.ParseMarkdownToHTML(vm.ParseModel);
-            var dirName = vm.ParseModel.Route.Substring(0, vm.ParseModel.Route.LastIndexOf("/"));
-            if (!string.IsNullOrEmpty(dirName))
+            switch (vm.FileHeaders.Count)
             {
-                if (!ParseMarkdown.CodeGenModels.ContainsKey(dirName))
-                {
-                    ParseMarkdown.CodeGenModels.Add(dirName, []);
-                }
-                ParseMarkdown.CodeGenModels[dirName].Add(vm);
+                // Rules files have just a description line in the header
+                case 1:
+                    Logger.LogDebug($"Converting markdown rules file {parseModel.Route} to ParseModel");
+                    vm = new RulesViewModel(parseModel);
+                    break;
+                // Magic Items have two header entries.  Name and type.
+                case 2:
+                    Logger.LogDebug($"Converting markdown magic item file {parseModel.Route} to ParseModel");
+                    vm = new MagicItemViewModel(parseModel);
+                    break;
+                // Monsters have three header entries.  Name, type and challenge rating.
+                case 3:
+                    Logger.LogDebug($"Converting markdown monster file {parseModel.Route} to ParseModel");
+                    vm = new MonsterViewModel(parseModel);
+                    break;
+                // spells have four header entries.  Name, school, level and character classes that can cast the spell.
+                case 4:
+                    Logger.LogDebug($"Converting markdown spell file {parseModel.Route} to ParseModel");
+                    vm = new SpellViewModel(parseModel);
+                    break;
             }
+        }
+
+        // Get the route for the code generation model
+        var dirName = vm.ParseModel.Route?.Substring(0, vm.ParseModel.Route.LastIndexOf("/"));
+        if (!string.IsNullOrEmpty(dirName))
+        {
+            if (!ParseMarkdown.CodeGenModels.ContainsKey(dirName))
+            {
+                ParseMarkdown.CodeGenModels.Add(dirName, []);
+            }
+            ParseMarkdown.CodeGenModels[dirName].Add(vm);
         }
     }
 

@@ -210,7 +210,7 @@ public partial class GenerateHtml : IGenerateHtml
 
         // Meta data links
         var spellCasters = string.Empty;
-        if (codeGenModel.ParseModel.FileHeaders.Count == 4)
+        if (codeGenModel.FileHeaders.Count == 4)
         {
             var spellvm = (SpellViewModel)codeGenModel;
             foreach (var caster in spellvm.CharacterClassList)
@@ -220,15 +220,15 @@ public partial class GenerateHtml : IGenerateHtml
             spellCasters = spellCasters.Substring(0, spellCasters.LastIndexOf(","));
         }
         string description = string.Empty;
-        for (var i = 0; i < codeGenModel.ParseModel.FileHeaders.Count; i++) 
+        for (var i = 0; i < codeGenModel.FileHeaders.Count; i++) 
         {
-            var meta = codeGenModel.ParseModel.FileHeaders[i];
+            var meta = codeGenModel.FileHeaders[i];
             if (meta.StartsWith("description:"))
             {
                 var rulesVM = (RulesViewModel) codeGenModel;
                 description = meta.Replace("description:", string.Empty).Trim();
                 rulesVM.Description = description;
-                codeGenModel.ParseModel.FileHeaders[i] = $"description: {meta}";
+                codeGenModel.FileHeaders[i] = $"description: {meta}";
             }
             stream.Write("\t\t<metadata ");
             if (spellCasters != string.Empty && meta.StartsWith("classes:"))

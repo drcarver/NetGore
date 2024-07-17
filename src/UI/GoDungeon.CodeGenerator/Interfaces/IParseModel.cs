@@ -12,11 +12,6 @@ public interface IParseModel
     string? Route { get; }
 
     /// <summary>
-    /// The file headers
-    /// </summary>
-    List<string> FileHeaders { get; }
-
-    /// <summary>
     /// The tables in the markdown file
     /// </summary>
     List<MarkDownTableModel> MarkDownTableModels { get; }

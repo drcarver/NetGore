@@ -12,11 +12,6 @@ public class ParseModel : IParseModel
     public string? Route { get; }
 
     /// <summary>
-    /// The file headers
-    /// </summary>
-    public List<string> FileHeaders { get; } = [];
-
-    /// <summary>
     /// The tables in the markdown file
     /// </summary>
     public List<MarkDownTableModel> MarkDownTableModels { get; }
@@ -74,17 +69,5 @@ public class ParseModel : IParseModel
         Route = "/" + newRoute;
         Markdown = markdown;
         MarkDownTableModels = [];
-
-        foreach (var line in Markdown)
-        {
-            if (line.Contains(":"))
-            {
-                FileHeaders.Add(line);
-            }
-            else
-            {
-                break;
-            }
-        }
     }
 }

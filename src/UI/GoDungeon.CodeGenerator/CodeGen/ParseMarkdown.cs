@@ -43,15 +43,6 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
 
-        // Add the description if available
-        foreach (var header in parseModel.FileHeaders)
-        {
-            if (header.StartsWith("description:"))
-            {
-                parseModel.MarkDownHtml.Add($"<br><em>{header.Replace("description:", string.Empty).Trim()}</em><br>");
-            }
-        }
-
         // iterate through the rest of the markdown and convert it to .html
         for (int i = startPos; i < parseModel.Markdown.Length; i++)
         {

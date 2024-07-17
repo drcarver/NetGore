@@ -33,17 +33,15 @@ public partial class SpellViewModel : CodeGenerationModel, ISpell
     public SpellViewModel(ParseModel parseModel)
         : base(parseModel)
     {
-        foreach (var item in parseModel.FileHeaders)
+        foreach (var item in FileHeaders)
         {
             var fh = item.Substring(0, item.IndexOf(":"));
             switch (item.Substring(0, item.IndexOf(":")))
             {
                 case "name":
-                    //ProperName = parseModel.FileHeaders[0].Replace("name: ", string.Empty);
-                    //Name = Utilities.CleanupForCSharp(ProperName);
                     break;
                 case "level":
-                    level = int.Parse(item.Replace("level:", string.Empty).Trim());
+                    level = int.Parse(item.Replace("level:", string.Empty));
                     break;
                 case "school":
                     Enum.TryParse<MagicSchoolEnum>(fh, true, out magicSchool);

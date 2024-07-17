@@ -2,6 +2,7 @@
 ## General Gamemaster Rules
 
 * [Diseases](diseases.html)
+* [Halfdragon Template](halfdragontemplate.html)
 * [Legendary Creatures](legendarycreatures.html)
 * [Madness](madness.html)
 * [Magic Items](magicitems.html)
@@ -22,7 +23,3 @@
 * [Monsters by Name](monstersbyname.html)
 * [Monsters by Type](monstersbytype.html)
 * [Monsters by CR](monstersbycr.html)
-
-## Templates
-
-* [Halfdragon Template](halfdragontemplate.html)

@@ -96,41 +96,23 @@
 ## GM Rules
 | **GM Rules**
 |:---:|
-| [Diseases](./gamemasterrules/diseases.html)                            |
+| [Diseases](./gamemasterrules/diseases.html)                           |
+| [Halfdragon Template](./gamemasterrules/halfdragontemplate.html)                        |
 | [Legendary Creatures](./gamemasterrules/legendarycreatures.html)      |
-| [Madness](./gamemasterrules/madness.html)                              |
+| [Madness](./gamemasterrules/madness.html)                             |
 | [Magic Items](./gamemasterrules/magicitems.html)                      |
 | [Monster Rules](./gamemasterrules/monsterrules.html)                  |
 | [Nonplayer Characters](./gamemasterrules/nonplayercharacters.html)    |
-| [Objects](./gamemasterrules/objects.html)                              |
-| [Poisons](./gamemasterrules/poisons.html)                              |
-| [Sentient Magical Items](./gamemasterrules/sentientmagicalitems.html)|
-| [Traps](./gamemasterrules/traps.html)                                  |
-
-| **Magic Item Indexes**                                      |   
-|:---:|
-| [Items by Name](./gamemasterrules/indexes/itemsbyname.html) |
-| [Items by Type](./gamemasterrules/indexes/itemsbytype.html) |
-
-
-| **Monster Indexes**                                                |
-|:---:|:---:|
-| [Monsters by Name](./gamemasterrules/indexes/monstersbyname.html) |
-| [Monsters by Type](./gamemasterrules/indexes/monstersbytype.html) |
-| [Monsters by CR](./gamemasterrules/indexes/monstersbycr.html)     |
-
+| [Objects](./gamemasterrules/objects.html)                             |
+| [Poisons](./gamemasterrules/poisons.html)                             |
+| [Sentient Magical Items](./gamemasterrules/sentientmagicalitems.html) |
+| [Traps](./gamemasterrules/traps.html)                                 |
 
 ## Spellcasting
 | **Spellcasting**                                         |
 |:---:|
 | [Casting a Spell](./spellcasting/castingaspell.html)  |
 | [What is a Spell?](./spellcasting/whatisaspell.html) |
-
-| **Spell Indexes**                                        |
-|:---:|
-| [Spells by Level](./spellcasting/spellsbylevel.html)   |
-| [Spells by Name](./spellcasting/spellsbyname.html)     |
-| [Spells by School](./spellcasting/spellsbyschool.html) |
 
 | **Spell Lists**                               |
 |:---:|
@@ -142,3 +124,15 @@
 | [Sorcerer](./spellcasting/sorcererspells.html) |
 | [Warlock](./spellcasting/warlockspells.html)   |
 | [Wizard](./spellcasting/wizardspells.html)     |
+
+## Indexes
+| **Indexes**                                      |   
+|:---:|
+| [Items by Name](./gamemasterrules/itemsbyname.html) |
+| [Items by Type](./gamemasterrules/itemsbytype.html) |
+| [Monsters by Name](./gamemasterrules/monstersbyname.html) |
+| [Monsters by Type](./gamemasterrules/monstersbytype.html) |
+| [Monsters by CR](./gamemasterrules/monstersbycr.html)     |
+| [Spells by Level](./spellcasting/spellsbylevel.html)   |
+| [Spells by Name](./spellcasting/spellsbyname.html)     |
+| [Spells by School](./spellcasting/spellsbyschool.html) |
