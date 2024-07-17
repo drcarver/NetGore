@@ -13,8 +13,6 @@ public partial class RulesViewModel : CodeGenerationModel, IRules
         : base(parseModel)
     {
         ParseModel = parseModel;
-        //var fileInfo = new FileInfo($"{ParseModel?.Route}.md");
-        //ProperName = Name;
         parseModel.FileHeaders[0] = parseModel.FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Trim();
         Description = parseModel.FileHeaders[0];
     }

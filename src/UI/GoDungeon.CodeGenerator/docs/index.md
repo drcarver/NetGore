@@ -109,15 +109,15 @@
 
 | **Magic Item Indexes**                                      |   
 |:---:|
-| [Items by Name](./gamemasterrules/magicitemindexes/itemsbyname.html) |
-| [Items by Type](./gamemasterrules/magicitemindexes/itemsbytype.html) |
+| [Items by Name](./gamemasterrules/indexes/itemsbyname.html) |
+| [Items by Type](./gamemasterrules/indexes/itemsbytype.html) |
 
 
 | **Monster Indexes**                                                |
 |:---:|:---:|
-| [Monsters by Name](./gamemasterrules/monsterindexes/monstersbyname.html) |
-| [Monsters by Type](./gamemasterrules/monsterindexes/monstersbytype.html) |
-| [Monsters by CR](./gamemasterrules/monsterindexes/monstersbycr.html)     |
+| [Monsters by Name](./gamemasterrules/indexes/monstersbyname.html) |
+| [Monsters by Type](./gamemasterrules/indexes/monstersbytype.html) |
+| [Monsters by CR](./gamemasterrules/indexes/monstersbycr.html)     |
 
 
 ## Spellcasting
@@ -128,17 +128,17 @@
 
 | **Spell Indexes**                                        |
 |:---:|
-| [Spells by Level](./spellcasting/spellindexes/spellsbylevel.html)   |
-| [Spells by Name](./spellcasting/spellindexes/spellsbyname.html)     |
-| [Spells by School](./spellcasting/spellindexes/spellsbyschool.html) |
+| [Spells by Level](./spellcasting/spellsbylevel.html)   |
+| [Spells by Name](./spellcasting/spellsbyname.html)     |
+| [Spells by School](./spellcasting/spellsbyschool.html) |
 
 | **Spell Lists**                               |
 |:---:|
-| [Bard](./spellcasting/spelllists/bardspells.html)         |
-| [Cleric](./spellcasting/spelllists/clericspells.html)     |
-| [Druid](./spellcasting/spelllists/druidspells.html)       |
-| [Paladin](./spellcasting/spelllists/paladinspells.html)   |
-| [Ranger](./spellcasting/spelllists/rangerspells.html)     |
-| [Sorcerer](./spellcasting/spelllists/sorcererspells.html) |
-| [Warlock](./spellcasting/spelllists/warlockspells.html)   |
-| [Wizard](./spellcasting/spelllists/wizardspells.html)     |
+| [Bard](./spellcasting/bardspells.html)         |
+| [Cleric](./spellcasting/clericspells.html)     |
+| [Druid](./spellcasting/druidspells.html)       |
+| [Paladin](./spellcasting/paladinspells.html)   |
+| [Ranger](./spellcasting/rangerspells.html)     |
+| [Sorcerer](./spellcasting/sorcererspells.html) |
+| [Warlock](./spellcasting/warlockspells.html)   |
+| [Wizard](./spellcasting/wizardspells.html)     |

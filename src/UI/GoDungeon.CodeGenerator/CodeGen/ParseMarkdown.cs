@@ -93,6 +93,56 @@ public partial class ParseMarkdown : IParseMarkdown
     }
 
     /// <summary>
+    /// Parse any tables
+    /// </summary>
+    /// <param name="parseModel">The parse model for the file</param>
+    public void ParseMarkDownTable(ParseModel parseModel)
+    {
+        // Are there any tables in the file
+        if (!parseModel.Markdown.Any(m => m.TrimStart().StartsWith("|")))
+        {
+            return;
+        }
+
+        var markDownTableModel = new MarkDownTableModel();
+        int t = 0;
+        int tableCount = 0;
+        do
+        {
+            // Get the caption for the table
+            var tableCaption = string.Empty;
+            do
+            {
+                if (parseModel.Markdown[t].StartsWith("#"))
+                {
+                    tableCaption = parseModel.Markdown[t].Replace("#", string.Empty).Trim();
+                }
+                if (parseModel.Markdown[t].StartsWith('|'))
+                {
+                    break;
+                }
+                t++;
+            } while (t < parseModel.Markdown.Length);
+
+            // Are we at the end of the file
+            if (t == parseModel.Markdown.Length)
+            {
+                break;
+            }
+
+            // Parse the next table in the file
+            parseModel.MarkDownTableModels.Add(new MarkDownTableModel());
+            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption = tableCaption;
+            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].MarkdownLine = t;
+            while (t < parseModel.Markdown.Length && parseModel.Markdown[t].StartsWith("|"))
+            {
+                parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableRows.Add(parseModel.Markdown[t]);
+                t++;
+            }
+        } while (t < parseModel.Markdown.Length);
+    }
+
+    /// <summary>
     /// Convert the markdown string to .html
     /// </summary>
     /// <param name="line">The markdown string</param>
@@ -370,55 +420,5 @@ public partial class ParseMarkdown : IParseMarkdown
             header.Content = $"<h{header.Level} id=\"{header.Id}\">{content}</h{header.Level}>";
         }
         return header;
-    }
-
-    /// <summary>
-    /// Parse any tables
-    /// </summary>
-    /// <param name="parseModel">The parse model for the file</param>
-    public void ParseMarkDownTable(ParseModel parseModel)
-    {
-        // Are there any tables in the file
-        if (!parseModel.Markdown.Any(m => m.TrimStart().StartsWith("|")))
-        {
-            return;
-        }
-
-        var markDownTableModel = new MarkDownTableModel();
-        int t = 0;
-        int tableCount = 0;
-        do
-        {
-            // Get the caption for the table
-            var tableCaption = string.Empty;
-            do
-            {
-                if (parseModel.Markdown[t].StartsWith("#"))
-                {
-                    tableCaption = parseModel.Markdown[t].Replace("#", string.Empty).Trim();
-                }
-                if (parseModel.Markdown[t].StartsWith('|'))
-                {
-                    break;
-                }
-                t++;
-            } while (t < parseModel.Markdown.Length);
-
-            // Are we at the end of the file
-            if (t == parseModel.Markdown.Length)
-            {
-                break;
-            }
-
-            // Parse the next table in the file
-            parseModel.MarkDownTableModels.Add(new MarkDownTableModel());
-            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption = tableCaption;
-            parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].MarkdownLine = t;
-            while (t < parseModel.Markdown.Length && parseModel.Markdown[t].StartsWith("|"))
-            {
-                parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableRows.Add(parseModel.Markdown[t]);
-                t++;
-            }
-        } while (t < parseModel.Markdown.Length);
     }
 }

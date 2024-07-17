@@ -3,6 +3,7 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
+using GoDungeon.CommandLineTools.CodeGen;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 
@@ -35,7 +36,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     private ILogger Logger { get; set; }
 
     /// <summary>
-    /// Process monster files from the SRD
+    /// Parse markdown files from the SRD
     /// </summary>
     public IParseMarkdown ParseMarkdown { get; }
 
@@ -65,6 +66,124 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         var fileList = new List<string>();
         GetMarKDownFileListRecursive(inputDir, fileList);
         ProcessFileList(fileList);
+        GenerateIndexFiles(fileList);
+    }
+
+    /// <summary>
+    /// Generate the Index files.
+    /// </summary>
+    /// <param name="fileList">THe input dir for the indexes</param>
+    private void GenerateIndexFiles(List<string> fileList)
+    {
+        (string fileName, ParseModel? parseModel)[] indexFileNames =
+        [
+            ("itemsbyname.md", null),
+            ("itemsbytype.md", null),
+            ("monstersbycr.md", null),
+            ("monstersbytype.md", null),
+            ("monstersbyname.md", null),
+            ("spellsbylevel.md", null),
+            ("spellsbyname.md", null),
+            ("spellsbyschool.md", null),
+        ];
+
+        var indexes = fileList.Where(i => i.Contains("_indexes") || i.Contains("spell_lists")).ToArray();
+        for (int i = 0; i < indexes.Length; i++)
+        {
+            string fRoute = indexes[i].Replace("_", string.Empty);
+            indexFileNames[i].parseModel = CreateIndex(indexFileNames[i].fileName);
+            ICodeGen cgm = new CodeGenerationModel(indexFileNames[i].parseModel);
+            if (!ParseMarkdown.CodeGenModels.ContainsKey(indexFileNames[i].parseModel.Route))
+            {
+                ParseMarkdown.CodeGenModels.Add(indexFileNames[i].parseModel.Route, []);
+                ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
+            }
+            else
+            {
+                ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Create the index parse model
+    /// </summary>
+    /// <param name="index">The tuple for the index</param>
+    /// <returns>The ParseModel for the tuple</returns>
+    private ParseModel? CreateIndex(string index)
+    {
+        ParseModel parseModel = null;
+        List<string> markdown = [];
+        Dictionary<string, List<ICodeGen>> dictionaryIndex = new();
+        switch (index)
+        {
+            case "itemsbyname.md":
+            case "itemsbytype.md":
+                bool indexByName = index == "itemsbyname.md";
+                if (indexByName)
+                {
+                    markdown.Add("description: List of Magic Items by Name");
+                    markdown.Add("# Magic Items by Name");
+                }
+                else
+                {
+                    markdown.Add("description: List of Magic Items by Type");
+                    markdown.Add("# Magic Items by Type");
+                }
+                foreach (var vmList in ParseMarkdown.CodeGenModels.Values)
+                {
+                    // Process all the view models
+                    foreach (var vm in vmList)
+                    {
+                        // find the view models that are magic items
+                        if (vm.ParseModel.FileHeaders.Count == 2)
+                        {
+                            string key = $"{((MagicItemViewModel)vm).Name[0]}".ToUpper();
+                            if (!indexByName)
+                            {
+                                key = $"{((MagicItemViewModel)vm).ItemType.ToString()}".ToLower();
+                            }
+                            if (!dictionaryIndex.ContainsKey(key))
+                            {
+                                dictionaryIndex.Add(key, []);
+                                dictionaryIndex[key].Add(vm);
+                            }
+                            else
+                            {
+                                dictionaryIndex[key].Add(vm);
+                            }
+                        }
+                    }
+                }
+
+                markdown.Add(string.Empty);
+                foreach (var item in dictionaryIndex.Keys.OrderBy(i => i))
+                {
+                    if (indexByName)
+                    {
+                        markdown.Add($"* [Items Beginning with {item}](#{item})");
+                    }
+                    else
+                    {
+                        markdown.Add($"* [{item}](#{item})");
+                    }
+                }
+                markdown.Add(string.Empty);
+                foreach (var item in dictionaryIndex.Keys.OrderBy(i => i))
+                {
+                    markdown.Add($"## [{item}](#{item})");
+                    foreach (var detail in dictionaryIndex[item].OrderBy(o => o.ProperName))
+                    {
+                        markdown.Add($"* [{detail.ProperName}](#../magicitems/{detail.Name}.html)");
+                    }
+                    markdown.Add(string.Empty);
+                }
+                return parseModel = new ParseModel(index, markdown.ToImmutableArray());
+            default:
+                break;
+        }
+
+        return parseModel;
     }
 
     /// <summary>

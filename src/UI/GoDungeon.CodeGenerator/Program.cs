@@ -1,5 +1,8 @@
+using System.Reflection.Emit;
+
 using GoDungeon.Background;
 using GoDungeon.Character;
+using GoDungeon.Character.NPC;
 using GoDungeon.Core;
 using GoDungeon.Equipment;
 using GoDungeon.Gaming;

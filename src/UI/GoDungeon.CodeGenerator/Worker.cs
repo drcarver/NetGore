@@ -1,5 +1,6 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.Equipment.Tables;
+using GoDungeon.MagicItems.Enum;
 
 namespace GoDungeon.CodeGenerator;
 
@@ -46,6 +47,22 @@ public class Worker : BackgroundService
         {
             _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
         }
+
+        for (int level = 1; level <= 20; level++)
+        {
+            var commonTotal = 100 - ((level - 1) * ((int)ItemAvailabilityEnum.Common));// - (level * ((int)ItemAvailabilityEnum.Common));
+            _logger.LogInformation($"level {level}: {ItemAvailabilityEnum.Common.ToString()} = {commonTotal}");
+            //var uncommonTotal = (((int)ItemAvailabilityEnum.Uncommon) * (level - 1)); // - (level * ((int)ItemAvailabilityEnum.Uncommon));
+            //_logger.LogInformation($"level {level}: {ItemAvailabilityEnum.Uncommon.ToString()} = {uncommonTotal}");
+            //var rareTotal = (((int)ItemAvailabilityEnum.Rare) * (level - 1)); // - (level * ((int)ItemAvailabilityEnum.Rare));
+            //_logger.LogInformation($"level {level}: {ItemAvailabilityEnum.Rare.ToString()} = {rareTotal}");
+            //var veryRareTotal = (((int)ItemAvailabilityEnum.VeryRare) * (level - 1)); // - (level * ((int)ItemAvailabilityEnum.VeryRare));
+            //_logger.LogInformation($"level {level}: {ItemAvailabilityEnum.VeryRare.ToString()} = {veryRareTotal}");
+            //var artifactTotal = (((int)ItemAvailabilityEnum.Artifact) * (level - 1)); // - (level * ((int)ItemAvailabilityEnum.Artifact));
+            //_logger.LogInformation($"level {level}: {ItemAvailabilityEnum.Artifact.ToString()} = {artifactTotal}");
+            //_logger.LogInformation($"level Total {commonTotal + uncommonTotal + rareTotal + veryRareTotal + artifactTotal}");
+        }
+
         process5ESRDFiles.ParseMarkdownDirectory(inputDir);
         process5ESRDFiles.GenerateModel.GenerateNetStandardModel(outputDir, process5ESRDFiles.ParseMarkdown);
         process5ESRDFiles.GenerateModel.GenerateMAUIModel(outputDir, process5ESRDFiles.ParseMarkdown);

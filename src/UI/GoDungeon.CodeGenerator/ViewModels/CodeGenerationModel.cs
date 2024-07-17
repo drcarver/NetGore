@@ -19,6 +19,10 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
     public CodeGenerationModel(ParseModel parseModel)
     {
         ParseModel = parseModel;
+        if (parseModel == null || parseModel?.Markdown.Length == 0)
+        {
+            return;
+        }
         foreach (var line in parseModel.Markdown)
         {
             if (line.StartsWith("# "))
