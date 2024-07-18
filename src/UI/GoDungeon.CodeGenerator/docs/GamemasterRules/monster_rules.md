@@ -306,6 +306,6 @@ You can equip monsters with additional gear and trinkets however you like, and y
 
 ## Monster Indexes
 
-* [Monsters by CR](/gamemaster_rules/monster_indexes/monsters_by_cr/)
-* [Monsters by Name](/gamemaster_rules/monster_indexes/monsters_by_name/)
-* [Monsters by Type](/gamemaster_rules/monster_indexes/monsters_by_type)
+* [Monsters by Name](monstersbyname.html)
+* [Monsters by Type](monstersbytype.html)
+* [Monsters by CR](monstersbycr.html)

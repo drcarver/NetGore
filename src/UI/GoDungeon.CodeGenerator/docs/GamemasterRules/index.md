@@ -6,7 +6,7 @@
 * [Legendary Creatures](legendarycreatures.html)
 * [Madness](madness.html)
 * [Magic Items](magicitems.html)
-* [Monsters](monsters.html)
+* [Monster Rules](monsterrules.html)
 * [Nonplayer Characters](nonplayercharacters.html)
 * [Objects](objects.html)
 * [Poisons](poisons.html)

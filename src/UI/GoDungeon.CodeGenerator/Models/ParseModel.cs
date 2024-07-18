@@ -66,7 +66,7 @@ public class ParseModel : IParseModel
             newRoute = newRoute + "/" + char.ToUpper(dir[0]) + dir.Substring(1);
         }
 
-        Route = "/" + newRoute;
+        Route = "/" + newRoute.Replace("-", string.Empty);
         Markdown = markdown;
         MarkDownTableModels = [];
     }

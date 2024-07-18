@@ -1,4 +1,5 @@
 # Spellcasting
+
 ## General Spellcasting
 
 * [Casting a Spell](castingaspell.html)

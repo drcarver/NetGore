@@ -25,7 +25,6 @@ public partial class GenerateHtml : IGenerateHtml
                 {
                     GenerateHtmlHeader(stream, codeGenModel);
                     GenerateHtmlBody(stream, codeGenModel);
-                    GenerateHtmlMonsterIndex(models);
                 }
             }
         }
@@ -131,66 +130,6 @@ public partial class GenerateHtml : IGenerateHtml
         }
         #endregion
 
-        stream.WriteLine("\t\t\t\t</div>");
-    }
-
-    /// <summary>
-    /// Generate the monster indexes
-    /// </summary>
-    /// <param name="models">The list of code generation models</param>
-    private void GenerateHtmlMonsterIndex(List<ICodeGen> models)
-    {
-        foreach (var model in models)
-        {
-            if (!(model is MonsterViewModel))
-            {
-                return;
-            }
-
-            var monster = (MonsterViewModel)model;
-        }
-    }
-
-    /// <summary>
-    /// Generate the monster index by type
-    /// </summary>
-    /// <param name="stream">The output text stream</param>
-    /// <param name="codeGenModel">The code generation models</param>
-    private void GenerateMonsterIndexByCR(TextWriter stream, ICodeGen codeGenModel)
-    {
-        stream.WriteLine();
-        stream.WriteLine("\t\t\t\t<h2 style=\"text-align: left;\">System Reference Document</h2>");
-        stream.WriteLine("\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
-        stream.WriteLine("\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
-        stream.WriteLine("\t\t\t\t\t\t<thead>");
-        stream.WriteLine("\t\t\t\t\t\t\t<th style=\"text-align: cleft;\">Sections</th>");
-        stream.WriteLine("\t\t\t\t\t\t</thead>");
-        stream.WriteLine("\t\t\t\t\t\t<tbody>");
-        List<string>? dirList = codeGenModel.ParseModel?.Route?.Split("/").Where(d => !string.IsNullOrEmpty(d)).ToList();
-        string path = string.Empty;
-        switch (dirList.Count)
-        {
-            case 1:
-                path = "./";
-                break;
-            case 2:
-                path = "../";
-                break;
-            case 3:
-                path = "../../";
-                break;
-            default:
-                break;
-        }
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}index.html\">Main Menu</a></td></tr>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}Adventuring/index.html\">Adventuring</a></td></tr>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}character/index.html\">Character</a></td></tr>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}combat/index.html\">Combat</a></td></tr>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}GameMasterRules/index.html\">Game Master Rules</a></td></tr>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}rules/index.html\">Rules</a>");
-        stream.WriteLine($"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"{path}spellcasting/index.html\">Spellcasting</a>");
-        stream.WriteLine("\t\t\t\t\t\t</tbody>");
-        stream.WriteLine("\t\t\t\t\t</table>");
         stream.WriteLine("\t\t\t\t</div>");
     }
 
