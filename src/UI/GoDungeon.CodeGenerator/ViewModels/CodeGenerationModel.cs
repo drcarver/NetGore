@@ -1,6 +1,4 @@
-﻿using System.Reflection.PortableExecutable;
-
-using GoDungeon.CodeGenerator.CodeGen;
+﻿using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.ViewModels;

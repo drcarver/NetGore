@@ -1,10 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.Enum;
-using GoDungeon.Core.ViewModels;
 
 namespace GoDungeon.CodeGenerator.ViewModels;
 

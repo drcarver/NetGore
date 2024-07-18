@@ -50,13 +50,15 @@ public partial class GenerateHtml : IGenerateHtml
         }
         stream.WriteLine("\t\t\t</div>");
         stream.WriteLine("\t\t</div>");
-        stream.WriteLine("\t\t<footer>");
-        stream.WriteLine("\t\t\t<hr>");
-        stream.WriteLine("\t\t\t<div style=\"text-align: center; padding-left: 1em; padding-right: 1em;\">");
-        stream.WriteLine("\t\t\t\t<p>This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available <a href=\"https://dnd.wizards.com/resources/systems-reference-document\">here</a>. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>.</p>");
-        stream.WriteLine("\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a> this code is based on.");
-        stream.WriteLine("\t\t\t</div>");
-        stream.WriteLine("\t\t</footer>");
+        stream.WriteLine("\t\t<div id=\"Content>\"");
+        stream.WriteLine("\t\t\t<footer>");
+        stream.WriteLine("\t\t\t\t<hr>");
+        stream.WriteLine("\t\t\t\t<div style=\"text-align: center; padding-left: 1em; padding-right: 1em;\">");
+        stream.WriteLine("\t\t\t\t\t<p>This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC which is available <a href=\"https://dnd.wizards.com/resources/systems-reference-document\">here</a>. The SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">CC-BY-4.0</a>.</p>");
+        stream.WriteLine("\t\t\t\t\t<p>Check out the <a href=\"https://github.com/vitusventure/5thSRD/\">GitHub repo</a> this code is based on.");
+        stream.WriteLine("\t\t\t\t</div>");
+        stream.WriteLine("\t\t\t</footer>");
+        stream.WriteLine("\t\t</div>");
         stream.WriteLine("\t</body>");
         stream.WriteLine("</html>");
     }
@@ -108,22 +110,25 @@ public partial class GenerateHtml : IGenerateHtml
         #endregion
 
         #region Table of Contents for this page
-        stream.WriteLine("<br><br>");
-        stream.WriteLine("\t\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
-        stream.WriteLine("\t\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
-        stream.WriteLine("\t\t\t\t\t\t\t<thead>");
-        stream.WriteLine("\t\t\t\t\t\t\t\t<th style=\"text-align: left;\">Chapters</th>");
-        stream.WriteLine("\t\t\t\t\t\t\t<tbody>");
-
-        foreach (var chapter in codeGenModel.ParseModel.Headers.Where(h => h.Level == 2).OrderBy(o => o.LineNumber).ToList())
+        if (codeGenModel.ParseModel.Headers.Count(h => h.Level == 2) > 0)
         {
-            var content = chapter.Content.Substring(chapter.Content.IndexOf(">") + 1).Replace("</h2>", string.Empty);
-            var tr = $"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"#{chapter.Id}\">{content}</td></tr>";
-            stream.WriteLine(tr);
+            stream.WriteLine("<br><br>");
+            stream.WriteLine("\t\t\t\t\t<div style=\"text-align: left;\" class=\"responsive-table\">");
+            stream.WriteLine("\t\t\t\t\t\t<table style=\"text-align: left;\" class=\"pure-table\">");
+            stream.WriteLine("\t\t\t\t\t\t\t<thead>");
+            stream.WriteLine("\t\t\t\t\t\t\t\t<th style=\"text-align: left;\">Chapters</th>");
+            stream.WriteLine("\t\t\t\t\t\t\t<tbody>");
+
+            foreach (var chapter in codeGenModel.ParseModel.Headers.Where(h => h.Level == 2).OrderBy(o => o.LineNumber).ToList())
+            {
+                var content = chapter.Content.Substring(chapter.Content.IndexOf(">") + 1).Replace("</h2>", string.Empty);
+                var tr = $"\t\t\t\t\t\t\t<tr style=\"text-align: left;\"><td><a href=\"#{chapter.Id}\">{content}</td></tr>";
+                stream.WriteLine(tr);
+            }
+            stream.WriteLine("\t\t\t\t\t\t\t</tbody>");
+            stream.WriteLine("\t\t\t\t\t\t</table>");
+            stream.WriteLine("\t\t\t\t\t</div>");
         }
-        stream.WriteLine("\t\t\t\t\t\t\t</tbody>");
-        stream.WriteLine("\t\t\t\t\t\t</table>");
-        stream.WriteLine("\t\t\t\t\t</div>");
         #endregion
 
         stream.WriteLine("\t\t\t\t</div>");

@@ -1,5 +1,4 @@
 using GoDungeon.CodeGenerator.Interfaces;
-using GoDungeon.Equipment.Tables;
 using GoDungeon.MagicItems.Enum;
 
 namespace GoDungeon.CodeGenerator;

@@ -3,7 +3,6 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
-using GoDungeon.CommandLineTools.CodeGen;
 
 namespace GoDungeon.CodeGenerator.CodeGen;
 

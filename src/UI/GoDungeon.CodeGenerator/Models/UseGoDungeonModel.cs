@@ -1,6 +1,4 @@
-﻿using GoDungeon.CodeGenerator.Interfaces;
-
-namespace GoDungeon.CodeGenerator.Models;
+﻿namespace GoDungeon.CodeGenerator.Models;
 
 public class UseGoDungeonModel
 {

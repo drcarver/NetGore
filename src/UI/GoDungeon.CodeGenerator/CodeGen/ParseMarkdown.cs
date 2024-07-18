@@ -1,8 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
-using System.Reflection.PortableExecutable;
-
-using GoDungeon.CodeGenerator.CodeGen;
+﻿using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
@@ -48,12 +44,6 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
 
-        // Add any description
-        if (!string.IsNullOrEmpty(codeGenerationModel.Description))
-        {
-            parseModel.MarkDownHtml.Add($"<em>{codeGenerationModel.Description.Trim()}</em><br>");
-        }
-
         // iterate through the rest of the markdown and convert it to .html
         for (int i = startPos; i < parseModel.Markdown.Length; i++)
         {
@@ -66,12 +56,11 @@ public partial class ParseMarkdown : IParseMarkdown
             switch (line[0])
             {
                 case '#':
-                    var header = ParseToHTMLHeader(line);
-                    parseModel.MarkDownHtml.Add(header.Content);
+                    var header = ParseToHTMLHeader(codeGenerationModel, i);
                     parseModel.Headers.Add(header);
                     break;
                 case '>':
-                    line = ParseMarkdownToHtmlBold(parseModel, line.Substring(1));
+                    line = ParseMarkdownToHtmlBold(codeGenerationModel, i, line);
                     if (!inBlockQuote)
                     {
                         parseModel.MarkDownHtml.Add("<blockquote>");
@@ -82,12 +71,12 @@ public partial class ParseMarkdown : IParseMarkdown
                     var table = parseModel.MarkDownTableModels.FirstOrDefault(t => t.MarkdownLine == i);
                     if (table != null)
                     {
-                        ParseMarkdownToHTMLTable(parseModel, table);
+                        ParseMarkdownToHTMLTable(codeGenerationModel, table);
                         i += table.TableRows.Count;
                     }
                     break;
                 default:
-                    i = ConvertToHTML(parseModel, i);
+                    i = ConvertToHTML(codeGenerationModel, i);
                     break;
             }
             if (inBlockQuote)
@@ -152,10 +141,10 @@ public partial class ParseMarkdown : IParseMarkdown
     /// Convert the markdown string to .html
     /// </summary>
     /// <param name="line">The markdown string</param>
-    private int ConvertToHTML(ParseModel model, int lineNo)
+    private int ConvertToHTML(ICodeGen codeGenerationModel, int lineNo)
     {
         // Convert the markdown string to .html
-        string line = model.Markdown[lineNo];
+        string line =  codeGenerationModel.ParseModel.Markdown[lineNo];
         if (line[0] == '>')
         {
             line = line.Substring(1);
@@ -163,29 +152,28 @@ public partial class ParseMarkdown : IParseMarkdown
         switch (line[0])
         {
             case '#':
-                var header = ParseToHTMLHeader(line);
-                model.MarkDownHtml.Add(header.Content);
-                model.Headers.Add(header);
+                var header = ParseToHTMLHeader(codeGenerationModel, lineNo);
+                codeGenerationModel.ParseModel.Headers.Add(header);
                 return lineNo;
             default:
                 if (line.Trim() == "- - -" ||
                     line.Trim() == "* * *" ||
                     line.Trim() == "_ _ _")
                 {
-                    model.MarkDownHtml.Add("<hr>");
+                    codeGenerationModel.ParseModel.MarkDownHtml.Add("<hr>");
                     return lineNo;
                 }
                 if (char.IsAsciiDigit(line[0]))
                 {
-                    lineNo = ParseMarkdownToOrderedHtmlList(model, lineNo);
+                    lineNo = ParseMarkdownToOrderedHtmlList(codeGenerationModel, lineNo);
                     return lineNo;
                 }
                 if (line.StartsWith("* ") || line.StartsWith("+ ") || line.StartsWith("- "))
                 {
-                    lineNo = ParseMarkdownToHtmlUnorderedList(model, lineNo);
+                    lineNo = ParseMarkdownToHtmlUnorderedList(codeGenerationModel, lineNo);
                     return lineNo;
                 }
-                model.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(model, line)}</p>");
+                codeGenerationModel.ParseModel.MarkDownHtml.Add($"<p>{ParseMarkdownToHtmlBold(codeGenerationModel, lineNo, line)}</p>");
                 return lineNo;
         }
     }
@@ -196,12 +184,13 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <param name="parseModel">The model to parse</param>
     /// <param name="i">The line that starts the list</param>
     /// <returns></returns>
-    private int ParseMarkdownToOrderedHtmlList(ParseModel parseModel, int i)
+    private int ParseMarkdownToOrderedHtmlList(ICodeGen codeGenerationModel, int i)
     {
+        var parseModel = codeGenerationModel.ParseModel;
         parseModel.MarkDownHtml.Add("<ol>");
         while (i < parseModel.Markdown.Length)
         {
-            string listElement = ParseMarkdownToHtmlBold(parseModel, parseModel.Markdown[i]);
+            string listElement = ParseMarkdownToHtmlBold(codeGenerationModel, i, parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
@@ -223,6 +212,7 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
         parseModel.MarkDownHtml.Add("</ol>");
+        parseModel.MarkDownHtml.Add("<br>");
         return i;
     }
 
@@ -232,12 +222,12 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <param name="parseModel">The Parse Model</param>
     /// <param name="i">The line where the list starts</param>
     /// <returns></returns>
-    private int ParseMarkdownToHtmlUnorderedList(ParseModel parseModel, int i)
+    private int ParseMarkdownToHtmlUnorderedList(ICodeGen codeGenerationModel, int i)
     {
-        parseModel.MarkDownHtml.Add("<ul>");
+        ParseModel parseModel = codeGenerationModel.ParseModel;
         while (i < parseModel.Markdown.Length) 
         {
-            string listElement = ParseMarkdownToHtmlBold(parseModel, parseModel.Markdown[i]);
+            string listElement = ParseMarkdownToHtmlBold(codeGenerationModel, i, parseModel.Markdown[i]);
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
@@ -263,6 +253,7 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
         parseModel.MarkDownHtml.Add("</ul>");
+        parseModel.MarkDownHtml.Add("<br>");
         return i;
     }
 
@@ -271,8 +262,9 @@ public partial class ParseMarkdown : IParseMarkdown
     /// </summary>
     /// <param name="parseModel">The parse model containing the table</param>
     /// <param name="table">The markdown table to parse to ..html</param>
-    private void ParseMarkdownToHTMLTable(ParseModel parseModel, MarkDownTableModel table)
+    private void ParseMarkdownToHTMLTable(ICodeGen codeGenerationModel, MarkDownTableModel table)
     {
+        ParseModel parseModel = codeGenerationModel.ParseModel;
         parseModel.MarkDownHtml.Add("<div class=\"responsive-table\">");
         parseModel.MarkDownHtml.Add("\t<table class=\"pure-table\">");
 
@@ -286,7 +278,7 @@ public partial class ParseMarkdown : IParseMarkdown
             {
                 continue; 
             }
-            var hName = ParseMarkdownToHtmlBold(parseModel, header);
+            var hName = ParseMarkdownToHtmlBold(codeGenerationModel, table.MarkdownLine, header);
             parseModel.MarkDownHtml.Add($"\t\t\t\t<th>{hName}</th>");
         }
         parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
@@ -303,7 +295,7 @@ public partial class ParseMarkdown : IParseMarkdown
                 {
                     continue;
                 }
-                var rowHtml = ParseMarkdownToHtmlBold(parseModel, row);
+                var rowHtml = ParseMarkdownToHtmlBold(codeGenerationModel, table.MarkdownLine+i, row);
                 parseModel.MarkDownHtml.Add($"\t\t\t\t<td>{rowHtml}</td>");
             }
             parseModel.MarkDownHtml.Add($"\t\t\t</tr>");
@@ -321,8 +313,12 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <param name="parseModel">The parse model for the markdown</param>
     /// <param name="line">The line to be parsed</param>
     /// <returns>The line with bold and italics added</returns>
-    private string ParseMarkdownToHtmlBold(ParseModel model, string line)
+    private string ParseMarkdownToHtmlBold(ICodeGen codeGenerationModel, int lineNo, string line)
     {
+        if (line.StartsWith(">"))
+        {
+            line = line.Substring(1);
+        }
         while (line.IndexOf("__*") != -1)
         {
             line = ReplaceFirst(line, "__*", "<em><strong>");
@@ -355,11 +351,11 @@ public partial class ParseMarkdown : IParseMarkdown
         }
         if (line.TrimStart().StartsWith("#"))
         {
-            var header = ParseToHTMLHeader(line);
-            model.Headers.Add(header);
+            var header = ParseToHTMLHeader(codeGenerationModel, lineNo);
+            codeGenerationModel.ParseModel.Headers.Add(header);
             line = header.Content;
         }
-        if (line.IndexOf("[") != -1)
+        if (!string.IsNullOrEmpty(line) && line.IndexOf("[") != -1)
         {
             string linkString = line.Substring(line.IndexOf("["));
             while (linkString.IndexOf("[") > -1)
@@ -404,13 +400,12 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Parse a markdown header to a .html header
     /// </summary>
-    /// <param name="parseModel">The parse model</param>
-    /// <param name="line">The line to parse</param>
+    /// <param name="parseModel">The code generation model</param>
     /// <param name="lineNo">The line number in the file</param>
     /// <returns>The header model for the current header</returns></remarks>
-    private HeaderModel ParseToHTMLHeader(string line)
+    private HeaderModel ParseToHTMLHeader(ICodeGen model, int lineNo)
     {
-        string content = line.TrimStart();
+        string content = model.ParseModel.Markdown[lineNo].TrimStart();
         int level = 0;
 
         // determine the header level
@@ -429,6 +424,12 @@ public partial class ParseMarkdown : IParseMarkdown
         if (level > 0)
         {
             header.Content = $"<h{header.Level} id=\"{header.Id}\">{content}</h{header.Level}>";
+            model.ParseModel.MarkDownHtml.Add(header.Content);
+            if (level == 1 && !string.IsNullOrEmpty(model.Description))
+            {
+                model.ParseModel.MarkDownHtml.Add($"<em>{model.Description.Trim()}</em><br>");
+                model.ParseModel.MarkDownHtml.Add($"<br>");
+            }
         }
         return header;
     }
