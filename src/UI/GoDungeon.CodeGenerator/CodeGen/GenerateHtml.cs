@@ -44,15 +44,7 @@ public partial class GenerateHtml : IGenerateHtml
 
         stream.WriteLine("\t\t\t<div id=\"Column2\">");
         //stream.WriteLine($"\t\t\t\t<h1 style=\"text-align: left;\">{codeGenModel.ProperName}</h1>");
-        int startPos = 0;
-        if (codeGenModel.ParseModel.MarkDownHtml[0].StartsWith("<br>"))
-        {
-            var desc = codeGenModel.ParseModel.MarkDownHtml[0].Replace("<br>", string.Empty).Replace("</br>", string.Empty);
-            stream.WriteLine($"\t\t\t\t{codeGenModel.ParseModel.MarkDownHtml[1]}");
-            stream.WriteLine(desc);
-            startPos = 2;
-        }
-        for (int i = startPos; i < codeGenModel.ParseModel.MarkDownHtml.Count; i++)
+        for (int i = 0; i < codeGenModel.ParseModel.MarkDownHtml.Count; i++)
         {
             stream.WriteLine($"\t\t\t\t{codeGenModel.ParseModel.MarkDownHtml[i]}");
         }

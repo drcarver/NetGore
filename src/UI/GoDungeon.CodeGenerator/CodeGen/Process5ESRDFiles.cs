@@ -81,7 +81,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         for (int i = 0; i < indexes.Length; i++)
         {
             string fRoute = indexes[i].Replace("_", string.Empty);
-            var parseModel = CreateIndex(fRoute);
+            //var parseModel = CreateIndex(fRoute);
             //ICodeGen cgm = new CodeGenerationModel(indexFileNames[i].parseModel);
             //if (!ParseMarkdown.CodeGenModels.ContainsKey(indexFileNames[i].parseModel.Route))
             //{
@@ -224,12 +224,11 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <param name="filePath">The file containing the markdown</param>
     private void ProcessMarkDownFile(string filePath)
     {
-        ParseModel parseModel = ConvertMarkdownToParseModel(filePath);
-        ParseMarkdown.ParseMarkdownToHTML(parseModel);
-
         // Create the initial CodeGeneration Model
+        ParseModel parseModel = ConvertMarkdownToParseModel(filePath);
         Logger.LogDebug($"Converting markdown file {parseModel.Route} to ParseModel");
         ICodeGen vm = new CodeGenerationModel(parseModel);
+        ParseMarkdown.ParseMarkdownToHTML(vm);
 
         // Convert to a specific version of the model
         if (vm.FileHeaders.Count > 0)

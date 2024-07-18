@@ -1,4 +1,6 @@
-﻿using GoDungeon.CodeGenerator.CodeGen;
+﻿using System.Reflection.PortableExecutable;
+
+using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.Core.ViewModels;
@@ -32,18 +34,9 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
         {
             if (line.StartsWith("# "))
             {
-                ProperName = line.Replace("# ", string.Empty);
-                Name = Utilities.CleanupForCSharp(ProperName);
+                ProperName = line.Replace("# ", string.Empty).Trim();
+                Name = Utilities.CleanupForCSharp(ProperName)?.Trim();
                 break;
-            }
-        }
-
-        // Add the description if available
-        foreach (var header in FileHeaders)
-        {
-            if (header.StartsWith("description:"))
-            {
-                parseModel.MarkDownHtml.Add($"<br><em>{header.Replace("description:", string.Empty).Trim()}</em><br>");
             }
         }
 
@@ -59,5 +52,14 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
                 break;
             }
         }
+
+        var descString = FileHeaders.FirstOrDefault(s => s.StartsWith("description:"));
+        if (descString != null)
+        {
+            Description = descString.Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty);
+            Description = Description.Replace("description:", string.Empty).Trim();
+
+        }
+
     }
 }

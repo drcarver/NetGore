@@ -18,6 +18,6 @@ public interface IParseMarkdown
     /// <summary>
     /// Parse the markdown to .html
     /// </summary>
-    /// <param name="parseModel">The parse model for the markdown</param>
-    void ParseMarkdownToHTML(ParseModel parseModel);
+    /// <param name="codeGen">The code generation model for the markdown</param>
+    void ParseMarkdownToHTML(ICodeGen codeGen);
 }

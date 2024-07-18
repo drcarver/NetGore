@@ -1,4 +1,8 @@
-﻿using GoDungeon.CodeGenerator.CodeGen;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+using System.Reflection.PortableExecutable;
+
+using GoDungeon.CodeGenerator.CodeGen;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
@@ -28,19 +32,26 @@ public partial class ParseMarkdown : IParseMarkdown
     /// <summary>
     /// Parse the markdown to .html
     /// </summary>
-    /// <param name="parseModel">The parse model for the markdown</param>
-    public void ParseMarkdownToHTML(ParseModel parseModel)
+    /// <param name="codeGenerationModel">The code generation model for the markdown</param>
+    public void ParseMarkdownToHTML(ICodeGen codeGenerationModel)
     {
         // Skip over the file header
+        ParseModel parseModel = codeGenerationModel.ParseModel;
         int startPos = 0;
         for (int i = 0; i < parseModel.Markdown.Length; i++)
         {
             if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim())
                 || !parseModel.Markdown[i].Contains(":"))
             {
-                startPos = i+1;
+                startPos = i;
                 break;
             }
+        }
+
+        // Add any description
+        if (!string.IsNullOrEmpty(codeGenerationModel.Description))
+        {
+            parseModel.MarkDownHtml.Add($"<em>{codeGenerationModel.Description.Trim()}</em><br>");
         }
 
         // iterate through the rest of the markdown and convert it to .html
@@ -48,21 +59,25 @@ public partial class ParseMarkdown : IParseMarkdown
         {
             bool inBlockQuote = false;
             var line = parseModel.Markdown[i];
-            if (line.Trim() == string.Empty)
+            if (string.IsNullOrEmpty(line))
             {
                 continue;
             }
-            if (line.StartsWith(">"))
-            {
-                line = ParseMarkdownToHtmlBold(parseModel, line.Substring(1));
-                if (!inBlockQuote)
-                {
-                    parseModel.MarkDownHtml.Add("<blockquote>");
-                    inBlockQuote = true;
-                }
-            }
             switch (line[0])
             {
+                case '#':
+                    var header = ParseToHTMLHeader(line);
+                    parseModel.MarkDownHtml.Add(header.Content);
+                    parseModel.Headers.Add(header);
+                    break;
+                case '>':
+                    line = ParseMarkdownToHtmlBold(parseModel, line.Substring(1));
+                    if (!inBlockQuote)
+                    {
+                        parseModel.MarkDownHtml.Add("<blockquote>");
+                        inBlockQuote = true;
+                    }
+                    break;
                 case '|':
                     var table = parseModel.MarkDownTableModels.FirstOrDefault(t => t.MarkdownLine == i);
                     if (table != null)
@@ -190,6 +205,11 @@ public partial class ParseMarkdown : IParseMarkdown
             if (listElement[0] == '>')
             {
                 listElement = listElement.Substring(1);
+            }
+            var space = listElement.IndexOf(" ");
+            if (space > 0)
+            {
+                listElement = listElement.Substring(space);
             }
             parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
             i++;

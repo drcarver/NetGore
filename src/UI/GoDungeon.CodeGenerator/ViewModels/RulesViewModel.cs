@@ -13,7 +13,5 @@ public partial class RulesViewModel : CodeGenerationModel, IRules
         : base(parseModel)
     {
         ParseModel = parseModel;
-        FileHeaders[0] = FileHeaders[0].Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty).Trim();
-        Description = FileHeaders[0];
     }
 }
