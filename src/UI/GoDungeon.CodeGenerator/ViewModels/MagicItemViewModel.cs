@@ -17,7 +17,7 @@ public partial class MagicItemViewModel : CodeGenerationModel, IMagicItem
     /// <summary>
     /// Constructor
     /// </summary>
-    /// <param name="parseModel">The magi item's parse model</param>
+    /// <param name="parseModel">The magic item's parse model</param>
     public MagicItemViewModel(ParseModel parseModel)
         : base(parseModel)
     {

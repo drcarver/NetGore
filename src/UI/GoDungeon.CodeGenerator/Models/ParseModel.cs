@@ -63,7 +63,14 @@ public class ParseModel : IParseModel
         string newRoute = string.Empty;
         foreach (var dir in name.Split('/'))
         {
-            newRoute = newRoute + "/" + char.ToUpper(dir[0]) + dir.Substring(1);
+            try
+            {
+                newRoute = newRoute + "/" + char.ToUpper(dir[0]) + dir.Substring(1);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         Route = "/" + newRoute.Replace("-", string.Empty);

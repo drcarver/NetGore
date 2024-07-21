@@ -1,4 +1,6 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
@@ -71,7 +73,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// <summary>
     /// Generate the Index files.
     /// </summary>
-    /// <param name="fileList">THe input dir for the indexes</param>
+    /// <param name="fileList">The input dir for the indexes</param>
     private void GenerateIndexFiles(List<string> fileList)
     {
         var indexes = fileList
@@ -80,105 +82,165 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         for (int i = 0; i < indexes.Length; i++)
         {
             string fRoute = indexes[i].Replace("_", string.Empty);
-            //var parseModel = CreateIndex(fRoute);
-            //ICodeGen cgm = new CodeGenerationModel(indexFileNames[i].parseModel);
-            //if (!ParseMarkdown.CodeGenModels.ContainsKey(indexFileNames[i].parseModel.Route))
-            //{
-            //    ParseMarkdown.CodeGenModels.Add(indexFileNames[i].parseModel.Route, []);
-            //    ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
-            //}
-            //else
-            //{
-            //    ParseMarkdown.CodeGenModels[indexFileNames[i].parseModel.Route].Add(cgm);
-            //}
+            GenerateNameIndexes(fRoute);
+            //CreateTypeIndexes(fRoute);
         }
     }
 
     /// <summary>
-    /// Create the index parse model
+    /// Generate the name index parse and code generation models
     /// </summary>
     /// <param name="route">route to the index</param>
-    /// <returns>The ParseModel for the index</returns>
-    private ParseModel? CreateIndex(string route)
+    private void GenerateNameIndexes(string route)
     {
-        route = route.Replace("/index.md", string.Empty);
-        if (!ParseMarkdown.CodeGenModels.Keys.Contains(route))
-        {
-            ParseMarkdown.CodeGenModels.Add(route.Replace("/index.md", string.Empty), []);
-        }
+        List<ICodeGen> list = [];
         List<string> markdown = [];
-        Dictionary<string, List<ICodeGen>> dictionaryIndex = new();
-        ParseModel? parseModel = null;
-        switch (route)
+        string fRoute = route;
+        bool byName = true;
+
+        // Get the set the index type
+        for (int b = 0; b < 2; b++)
         {
-            case "itemsbyname.md":
-            case "itemsbytype.md":
-                bool indexByName = route == "itemsbyname.md";
-                if (indexByName)
+            if (b == 1)
+            {
+                byName = false;
+            }
+            for (int i = 2; i < 5; i++)
+            {
+                markdown.Clear();
+                switch (i)
                 {
-                    markdown.Add("description: List of Magic Items by Name");
-                    markdown.Add("# Magic Items by Name");
+                    case 2:
+                        if (byName)
+                        {
+                            fRoute = route.Replace("\\index.md", "/itemsbyname.md");
+                            markdown.Add("# Magic Items by Name");
+                        }
+                        else
+                        {
+                            fRoute = route.Replace("\\index.md", "/itemsbytype.md");
+                            markdown.Add("# Magic Items by Type");
+                        }
+                        GetIndexByName(markdown, 2, byName);
+                        break;
+                    case 3:
+                        // the second gamemasterrules route
+                        if (byName)
+                        {
+                            fRoute = route.Replace("\\index.md", "/monstersbyname.md");
+                            markdown.Add("# Monsters by Name");
+                        }
+                        else
+                        {
+                            fRoute = route.Replace("\\index.md", "/monstersbytype.md");
+                            markdown.Add("# Monsters by Race");
+                        }
+                        GetIndexByName(markdown, 3, byName);
+                        break;
+                    case 4:
+                        if (byName)
+                        {
+                            markdown.Add("# Spells by Name");
+                            fRoute = route.Replace("\\index.md", "/spellsbyname.md");
+                        }
+                        else
+                        {
+                            fRoute = route.Replace("\\index.md", "/spellsbylevel.md");
+                            markdown.Add("# Spells by level");
+                        }
+                        GetIndexByName(markdown, 4, byName);
+                        break;
+                }
+                ICodeGen cgm = new CodeGenerationModel(new ParseModel(fRoute, markdown.ToImmutableArray()));
+                ParseMarkdown.ParseMarkdownToHTML(cgm);
+                list.Add(cgm);
+            }
+            ParseMarkdown.CodeGenModels.Add(fRoute, list);
+        }
+    }
+
+    /// <summary>
+    /// Generate the index file by name
+    /// </summary>
+    /// <param name="markdown">The markdown list</param>
+    /// <param name="fieldCount">The number of fields to break out the Code Generation file</param>
+    /// <returns></returns>
+    private void GetIndexByName(List<string> markdown, int fieldCount, bool byName)
+    {
+        Dictionary<string, List<ICodeGen>> fieldDictionary = [];
+
+        // Process all the view models
+        foreach (var vmList in ParseMarkdown.CodeGenModels.Values)
+        {
+            foreach (var codeGenModel in vmList.Where(f => f.FileHeaders.Count == fieldCount).ToList())
+            {
+                string key = codeGenModel.Name.ToUpper()[0].ToString();
+                if (!byName)
+                {
+                    switch (fieldCount)
+                    {
+                        case 2:
+                            key = ((MagicItemViewModel)codeGenModel).ItemType.ToString();
+                            break;
+                        case 3:
+                            key = ((MonsterViewModel)codeGenModel).RaceType.ToString();
+                            break;
+                        case 4:
+                            key = ((SpellViewModel)codeGenModel).Level.ToString();
+                            break;
+                    }
+                }
+
+                // The field dictionary for the model
+                if (!fieldDictionary.ContainsKey(key))
+                {
+                    fieldDictionary.Add(key, []);
+                    fieldDictionary[key].Add(codeGenModel);
+                    markdown.Add($"* [{key}](#{key})");
                 }
                 else
                 {
-                    markdown.Add("description: List of Magic Items by Type");
-                    markdown.Add("# Magic Items by Type");
+                    fieldDictionary[key].Add(codeGenModel);
                 }
-                foreach (var vmList in ParseMarkdown.CodeGenModels.Values)
-                {
-                    // Process all the view models
-                    foreach (var vm in vmList)
-                    {
-                        // find the view models that are magic items
-                        if (vm.FileHeaders.Count == 2)
-                        {
-                            string key = $"{((MagicItemViewModel)vm).Name[0]}".ToUpper();
-                            if (!indexByName)
-                            {
-                                key = $"{((MagicItemViewModel)vm).ItemType.ToString()}".ToLower();
-                            }
-                            if (!dictionaryIndex.ContainsKey(key))
-                            {
-                                dictionaryIndex.Add(key, []);
-                                dictionaryIndex[key].Add(vm);
-                            }
-                            else
-                            {
-                                dictionaryIndex[key].Add(vm);
-                            }
-                        }
-                    }
-                }
-
-                markdown.Add(string.Empty);
-                foreach (var item in dictionaryIndex.Keys.OrderBy(i => i))
-                {
-                    if (indexByName)
-                    {
-                        markdown.Add($"* [Items Beginning with {item}](#{item})");
-                    }
-                    else
-                    {
-                        markdown.Add($"* [{item}](#{item})");
-                    }
-                }
-                markdown.Add(string.Empty);
-                foreach (var item in dictionaryIndex.Keys.OrderBy(i => i))
-                {
-                    markdown.Add($"## [{item}](#{item})");
-                    foreach (var detail in dictionaryIndex[item].OrderBy(o => o.ProperName))
-                    {
-                        markdown.Add($"* [{detail.ProperName}](#../magicitems/{detail.Name}.html)");
-                    }
-                    markdown.Add(string.Empty);
-                }
-                return parseModel = new ParseModel(route, markdown.ToImmutableArray());
-            default:
-                break;
+            }
         }
-
-        return parseModel;
+        CreateIndexDetails(fieldDictionary, markdown);
     }
+
+    /// <summary>
+    /// The index details
+    /// </summary>
+    /// <param name="fieldDictionary">The index dictionary</param>
+    /// <param name="markdown">The Markdown string</param>
+    private void CreateIndexDetails(
+        Dictionary<string, List<ICodeGen>> fieldDictionary,
+        List<string> markdown)
+    {
+        markdown.Add(string.Empty);
+        foreach (var item in fieldDictionary.Keys.OrderBy(i => i))
+        {
+            markdown.Add($"## {item}");
+            foreach (var detail in fieldDictionary[item].OrderBy(o => o.ProperName))
+            {
+                if (detail.FileHeaders.Count == 2)
+                {
+                    markdown.Add($"* [{detail.ProperName}](magicitems/{detail.Name}.html)");
+                    continue;
+                }
+                if (detail.FileHeaders.Count == 3)
+                {
+                    markdown.Add($"* [{detail.ProperName}](monsters/{detail.Name}.html)");
+                    continue;
+                }
+                if (detail.FileHeaders.Count == 4)
+                {
+                    markdown.Add($"* [{detail.ProperName}](spells/{detail.Name}.html)");
+                    continue;
+                }
+            }
+            markdown.Add(string.Empty);
+        }
+    } 
 
     /// <summary>
     /// Get the fileList for the markdown

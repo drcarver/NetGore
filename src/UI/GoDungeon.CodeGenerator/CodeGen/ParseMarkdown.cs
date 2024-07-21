@@ -2,6 +2,8 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
+using Syncfusion.Pdf.Xfa;
+
 namespace GoDungeon.CommandLineTools.CodeGen;
 
 public partial class ParseMarkdown : IParseMarkdown
@@ -355,27 +357,29 @@ public partial class ParseMarkdown : IParseMarkdown
             codeGenerationModel.ParseModel.Headers.Add(header);
             line = header.Content;
         }
-        if (!string.IsNullOrEmpty(line) && line.IndexOf("[") != -1)
+        if (!string.IsNullOrEmpty(line) && line.IndexOf("](") != -1)
         {
-            string linkString = line.Substring(line.IndexOf("["));
-            while (linkString.IndexOf("[") > -1)
+            while (line.IndexOf("](") > -1)
             {
-                int linkStart = linkString.IndexOf("[");
-                int linkEnd = linkString.IndexOf(")");
-                string link = linkString.Substring(linkStart, linkEnd - linkStart + 1);
-                string htmlLink = $"<a href=\"{link.Substring(link.IndexOf("(") + 1).Replace("<em>", string.Empty).Replace("</em>", string.Empty)}\">";
-                string anchorLink = $"{htmlLink}{link.Substring(1, link.IndexOf("]")- 1)}</a>";
-                line = line.Replace(link, ReplaceFirst(anchorLink, ")", string.Empty)).Trim();
-                if (line.IndexOf("[") > -1)
+                string link = line.Substring(line.IndexOf("["));
+                string anchorString = string.Empty;
+                int bracketInt = link.IndexOf("](");
+                int rparenInt = link.Substring(bracketInt).IndexOf(")");
+                if (bracketInt > -1)
                 {
-                    linkString = line.Substring(line.IndexOf("["));
-                }
-                else
-                {
-                    linkString = string.Empty;
+                    try
+                    {
+                        anchorString = link.Substring(1, bracketInt - 1);
+                        string htmlString = link.Substring(bracketInt+2, rparenInt-2);
+                        string anchorLink = $"<a href=\"{htmlString}\">{anchorString}</a>";
+                        line = ReplaceFirst(line, link, anchorLink).Trim();
+                    }
+                    catch (Exception ex)
+                    {
+                        break;
+                    }
                 }
             }
-            line = line.Replace("</a>)", "</a>");       
         }
         return line;
     }
