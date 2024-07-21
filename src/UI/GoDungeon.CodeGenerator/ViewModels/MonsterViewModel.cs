@@ -24,7 +24,7 @@ public partial class MonsterViewModel : CodeGenerationModel, IMonster
     /// The challenge rating of the monster
     /// </summary>
     [ObservableProperty]
-    private double challengeRating;
+    private decimal challengeRating;
 
     /// <summary>
     /// Constructor
@@ -39,7 +39,7 @@ public partial class MonsterViewModel : CodeGenerationModel, IMonster
             switch (item.Substring(0, item.IndexOf(":")))
             {
                 case "cr":
-                    challengeRating = Convert.ToDouble(item.Replace("cr:", string.Empty));
+                    challengeRating = Convert.ToDecimal(item.Replace("cr:", string.Empty));
                     break;
                 case "type":
                     string rType = item.Replace("type:", string.Empty);

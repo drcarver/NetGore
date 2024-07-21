@@ -1,6 +1,4 @@
-﻿using GoDungeon.CodeGenerator.Models;
-
-namespace GoDungeon.CodeGenerator.Interfaces;
+﻿namespace GoDungeon.CodeGenerator.Interfaces;
 
 public interface IProcess5ESRDFiles
 {

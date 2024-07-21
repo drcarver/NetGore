@@ -1,7 +1,4 @@
-﻿using GoDungeon.Core.Interfaces;
-using GoDungeon.Spells.Interfaces;
-
-namespace GoDungeon.CodeGenerator.Interfaces;
+﻿namespace GoDungeon.CodeGenerator.Interfaces;
 
 public interface IGenerateHtml
 {

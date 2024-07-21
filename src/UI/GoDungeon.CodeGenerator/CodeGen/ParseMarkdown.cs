@@ -2,10 +2,6 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
-using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
-
-using Syncfusion.Pdf.Xfa;
-
 namespace GoDungeon.CommandLineTools.CodeGen;
 
 public partial class ParseMarkdown : IParseMarkdown
@@ -326,33 +322,33 @@ public partial class ParseMarkdown : IParseMarkdown
         }
         while (line.IndexOf("__*") != -1)
         {
-            line = ReplaceFirst(line, "__*", "<em><strong>");
-            line = ReplaceFirst(line, "*__", "</strong></em>");
+            line = Utilities.ReplaceFirst(line, "__*", "<em><strong>");
+            line = Utilities.ReplaceFirst(line, "*__", "</strong></em>");
         }
         while (line.IndexOf("**_") != -1)
         {
-            line = ReplaceFirst(line, "**_", "<em><strong>");
-            line = ReplaceFirst(line, "_**", "</strong></em>");
+            line = Utilities.ReplaceFirst(line, "**_", "<em><strong>");
+            line = Utilities.ReplaceFirst(line, "_**", "</strong></em>");
         }
         while (line.IndexOf("***") != -1)
         {
-            line = ReplaceFirst(line, "***", "<em><strong>");
-            line = ReplaceFirst(line, "***", "</strong></em>");
+            line = Utilities.ReplaceFirst(line, "***", "<em><strong>");
+            line = Utilities.ReplaceFirst(line, "***", "</strong></em>");
         }
         while (line.IndexOf("___") != -1)
         {
-            line = ReplaceFirst(line, "___", "<em><strong>");
-            line = ReplaceFirst(line, "___", "</strong></em>");
+            line = Utilities.ReplaceFirst(line, "___", "<em><strong>");
+            line = Utilities.ReplaceFirst(line, "___", "</strong></em>");
         }
         while (line.IndexOf("**") != -1)
         {
-            line = ReplaceFirst(line, "**", "<strong>");
-            line = ReplaceFirst(line, "**", "</strong>");
+            line = Utilities.ReplaceFirst(line, "**", "<strong>");
+            line = Utilities.ReplaceFirst(line, "**", "</strong>");
         }
         while (line.IndexOf("_") != -1)
         {
-            line = ReplaceFirst(line, "_", "<em>");
-            line = ReplaceFirst(line, "_", "</em>");
+            line = Utilities.ReplaceFirst(line, "_", "<em>");
+            line = Utilities.ReplaceFirst(line, "_", "</em>");
         }
         if (line.TrimStart().StartsWith("#"))
         {
@@ -375,7 +371,7 @@ public partial class ParseMarkdown : IParseMarkdown
                         anchorString = link.Substring(1, bracketInt - 1);
                         string htmlString = link.Substring(bracketInt+2, rparenInt-2);
                         string anchorLink = $"<a href=\"{htmlString}\">{anchorString}</a>";
-                        line = ReplaceFirst(line, link, anchorLink).Trim();
+                        line = Utilities.ReplaceFirst(line, link, anchorLink).Trim();
                     }
                     catch (Exception ex)
                     {
@@ -385,23 +381,6 @@ public partial class ParseMarkdown : IParseMarkdown
             }
         }
         return line;
-    }
-
-    /// <summary>
-    /// Replace the first instance of a string
-    /// </summary>
-    /// <param name="text">The text holding the element to replace</param>
-    /// <param name="search">The string to search for</param>
-    /// <param name="replace">The string to replace with</param>
-    /// <returns>The new string</returns>
-    private string ReplaceFirst(string text, string search, string replace)
-    {
-        int pos = text.IndexOf(search);
-        if (pos < 0)
-        {
-            return text;
-        }
-        return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
     }
 
     /// <summary>

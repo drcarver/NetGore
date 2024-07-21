@@ -1,5 +1,4 @@
 ﻿using GoDungeon.CodeGenerator.Models;
-using GoDungeon.CodeGenerator.ViewModels;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 

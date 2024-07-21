@@ -31,6 +31,23 @@ internal static class Utilities
     }
 
     /// <summary>
+    /// Replace the first instance of a string
+    /// </summary>
+    /// <param name="text">The text holding the element to replace</param>
+    /// <param name="search">The string to search for</param>
+    /// <param name="replace">The string to replace with</param>
+    /// <returns>The new string</returns>
+    internal static string ReplaceFirst(string text, string search, string replace)
+    {
+        int pos = text.IndexOf(search);
+        if (pos < 0)
+        {
+            return text;
+        }
+        return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+    }
+
+    /// <summary>
     /// Clean up a string so it can be used as a C# variable
     /// </summary>
     /// <param name="name">The name to fix-up</param>
