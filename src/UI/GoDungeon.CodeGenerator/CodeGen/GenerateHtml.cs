@@ -42,7 +42,6 @@ public partial class GenerateHtml : IGenerateHtml
         GenerateTableOfContentsColumn(stream, codeGenModel);
 
         stream.WriteLine("\t\t\t<div id=\"Column2\">");
-        //stream.WriteLine($"\t\t\t\t<h1 style=\"text-align: left;\">{codeGenModel.ProperName}</h1>");
         for (int i = 0; i < codeGenModel.ParseModel.MarkDownHtml.Count; i++)
         {
             stream.WriteLine($"\t\t\t\t{codeGenModel.ParseModel.MarkDownHtml[i]}");

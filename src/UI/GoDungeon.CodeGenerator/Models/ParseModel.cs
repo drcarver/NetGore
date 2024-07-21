@@ -19,7 +19,7 @@ public class ParseModel : IParseModel
     /// <summary>
     /// The markdown file as a string
     /// </summary>
-    public ImmutableArray<string> Markdown { get; }
+    public List<string> Markdown { get; }
 
     /// <summary>
     /// The markdown file as .html
@@ -36,7 +36,7 @@ public class ParseModel : IParseModel
     /// </summary>
     /// <param name="route">The route to the markdown</param>
     /// <param name="markdown">The markdown data</param>
-    public ParseModel(string route, ImmutableArray<string> markdown)
+    public ParseModel(string route, List<string> markdown)
     {
         Route = $"{route.Replace("\\", "/").Replace(".md", string.Empty).Substring(1)}";
 

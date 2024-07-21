@@ -19,7 +19,7 @@ public interface IParseModel
     /// <summary>
     /// The markdown file as a string
     /// </summary>
-    ImmutableArray<string> Markdown { get; }
+    List<string> Markdown { get; }
 
     /// <summary>
     /// The markdown file as .html

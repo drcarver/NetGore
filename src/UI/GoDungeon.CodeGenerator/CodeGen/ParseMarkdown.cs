@@ -2,6 +2,8 @@
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 
+using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
+
 using Syncfusion.Pdf.Xfa;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
@@ -36,10 +38,11 @@ public partial class ParseMarkdown : IParseMarkdown
         // Skip over the file header
         ParseModel parseModel = codeGenerationModel.ParseModel;
         int startPos = 0;
-        for (int i = 0; i < parseModel.Markdown.Length; i++)
+
+        for (int i = 0; i < parseModel.Markdown.Count; i++)
         {
             if (string.IsNullOrEmpty(parseModel.Markdown[i].Trim())
-                || !parseModel.Markdown[i].Contains(":"))
+                || parseModel.Markdown[i].StartsWith("#"))
             {
                 startPos = i;
                 break;
@@ -47,7 +50,7 @@ public partial class ParseMarkdown : IParseMarkdown
         }
 
         // iterate through the rest of the markdown and convert it to .html
-        for (int i = startPos; i < parseModel.Markdown.Length; i++)
+        for (int i = startPos; i < parseModel.Markdown.Count; i++)
         {
             bool inBlockQuote = false;
             var line = parseModel.Markdown[i];
@@ -119,10 +122,10 @@ public partial class ParseMarkdown : IParseMarkdown
                     break;
                 }
                 t++;
-            } while (t < parseModel.Markdown.Length);
+            } while (t < parseModel.Markdown.Count);
 
             // Are we at the end of the file
-            if (t == parseModel.Markdown.Length)
+            if (t == parseModel.Markdown.Count)
             {
                 break;
             }
@@ -131,12 +134,12 @@ public partial class ParseMarkdown : IParseMarkdown
             parseModel.MarkDownTableModels.Add(new MarkDownTableModel());
             parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableCaption = tableCaption;
             parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].MarkdownLine = t;
-            while (t < parseModel.Markdown.Length && parseModel.Markdown[t].StartsWith("|"))
+            while (t < parseModel.Markdown.Count && parseModel.Markdown[t].StartsWith("|"))
             {
                 parseModel.MarkDownTableModels[parseModel.MarkDownTableModels.Count() - 1].TableRows.Add(parseModel.Markdown[t]);
                 t++;
             }
-        } while (t < parseModel.Markdown.Length);
+        } while (t < parseModel.Markdown.Count);
     }
 
     /// <summary>
@@ -190,7 +193,7 @@ public partial class ParseMarkdown : IParseMarkdown
     {
         var parseModel = codeGenerationModel.ParseModel;
         parseModel.MarkDownHtml.Add("<ol>");
-        while (i < parseModel.Markdown.Length)
+        while (i < parseModel.Markdown.Count)
         {
             string listElement = ParseMarkdownToHtmlBold(codeGenerationModel, i, parseModel.Markdown[i]);
             if (listElement[0] == '>')
@@ -208,7 +211,7 @@ public partial class ParseMarkdown : IParseMarkdown
             {
                 break;
             }
-            if (i >= parseModel.Markdown.Length || !Char.IsAsciiDigit(parseModel.Markdown[i][0]))
+            if (i >= parseModel.Markdown.Count || !Char.IsAsciiDigit(parseModel.Markdown[i][0]))
             {
                 break;
             }
@@ -227,7 +230,7 @@ public partial class ParseMarkdown : IParseMarkdown
     private int ParseMarkdownToHtmlUnorderedList(ICodeGen codeGenerationModel, int i)
     {
         ParseModel parseModel = codeGenerationModel.ParseModel;
-        while (i < parseModel.Markdown.Length) 
+        while (i < parseModel.Markdown.Count) 
         {
             string listElement = ParseMarkdownToHtmlBold(codeGenerationModel, i, parseModel.Markdown[i]);
             if (listElement[0] == '>')
@@ -248,7 +251,7 @@ public partial class ParseMarkdown : IParseMarkdown
             }
             parseModel.MarkDownHtml.Add($"<li>{listElement}</li>");
             i++;
-            if (i == parseModel.Markdown.Length ||
+            if (i == parseModel.Markdown.Count ||
                 string.IsNullOrEmpty(parseModel.Markdown[i].Trim()))
             {
                 break;

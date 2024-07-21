@@ -83,7 +83,6 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         {
             string fRoute = indexes[i].Replace("_", string.Empty);
             GenerateNameIndexes(fRoute);
-            //CreateTypeIndexes(fRoute);
         }
     }
 
@@ -151,7 +150,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                         GetIndexByName(markdown, 4, byName);
                         break;
                 }
-                ICodeGen cgm = new CodeGenerationModel(new ParseModel(fRoute, markdown.ToImmutableArray()));
+                ICodeGen cgm = new CodeGenerationModel(new ParseModel(fRoute, markdown));
                 ParseMarkdown.ParseMarkdownToHTML(cgm);
                 list.Add(cgm);
             }
@@ -183,7 +182,15 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                             key = ((MagicItemViewModel)codeGenModel).ItemType.ToString();
                             break;
                         case 3:
-                            key = ((MonsterViewModel)codeGenModel).RaceType.ToString();
+                            var vm = (MonsterViewModel)codeGenModel;
+                            if (vm.RaceSubType == Core.Enum.RaceSubTypeEnum.Any)
+                            {
+                                key = $"{vm.RaceType.ToString()}";
+                            }
+                            else
+                            {
+                                key = $"{vm.RaceType.ToString()} ({vm.RaceSubType.ToString()})";
+                            }
                             break;
                         case 4:
                             key = ((SpellViewModel)codeGenModel).Level.ToString();
@@ -196,7 +203,6 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
                 {
                     fieldDictionary.Add(key, []);
                     fieldDictionary[key].Add(codeGenModel);
-                    markdown.Add($"* [{key}](#{key})");
                 }
                 else
                 {
@@ -216,6 +222,14 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         Dictionary<string, List<ICodeGen>> fieldDictionary,
         List<string> markdown)
     {
+        // create the key list
+        markdown.Add(string.Empty);
+        foreach (var key in fieldDictionary.Keys.OrderBy(i => i))
+        {
+            markdown.Add($"* [{key}](#{Utilities.CleanupForCSharp(key)})");
+        }
+
+        // Create the detail lists
         markdown.Add(string.Empty);
         foreach (var item in fieldDictionary.Keys.OrderBy(i => i))
         {
@@ -343,7 +357,7 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
         // Initialize the parse model
         var fullPath = $"{RootMarkDownDirectory}{filePath}";
         Logger.LogDebug($"Read all the lines of the markdown file at {filePath} and construct a ParseModel");
-        var parseModel = new ParseModel(filePath, File.ReadLines(fullPath).ToImmutableArray<string>());
+        var parseModel = new ParseModel(filePath, File.ReadLines(fullPath).ToList<string>());
 
         // process the tables in the markdown
         Logger.LogDebug($"Parse all the tables in the markdown file at {filePath}");

@@ -24,7 +24,7 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
     public CodeGenerationModel(ParseModel parseModel)
     {
         ParseModel = parseModel;
-        if (parseModel == null || parseModel?.Markdown.Length == 0)
+        if (parseModel == null || parseModel?.Markdown.Count == 0)
         {
             return;
         }
@@ -56,8 +56,6 @@ public class CodeGenerationModel : StandardTableEntryViewModel, ICodeGen
         {
             Description = descString.Replace(" from the 5th Edition (5e) SRD (System Reference Document).", string.Empty);
             Description = Description.Replace("description:", string.Empty).Trim();
-
         }
-
     }
 }

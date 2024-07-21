@@ -58,6 +58,7 @@ public partial class SpellViewModel : CodeGenerationModel, ISpell
                         CharacterClassList.Add(spellClass);
                         spellLineNumber++;
                         fh = ParseModel.Markdown[spellLineNumber].Trim();
+                        parseModel.Markdown.RemoveAt(spellLineNumber);
                     } while (fh != string.Empty);
                     break;
             }
