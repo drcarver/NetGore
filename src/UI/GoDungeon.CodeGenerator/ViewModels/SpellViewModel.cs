@@ -44,7 +44,7 @@ public partial class SpellViewModel : CodeGenerationModel, ISpell
                     level = int.Parse(item.Replace("level:", string.Empty));
                     break;
                 case "school":
-                    Enum.TryParse<MagicSchoolEnum>(fh, true, out magicSchool);
+                    System.Enum.TryParse<MagicSchoolEnum>(fh, true, out magicSchool);
                     break;
                 case "classes":
                     fh = item.Replace("classes:", string.Empty);
@@ -53,9 +53,10 @@ public partial class SpellViewModel : CodeGenerationModel, ISpell
                     // Process the markdown file until we get all the classes for the spell
                     do
                     {
-                        ClassEnum spellClass;
-                        Enum.TryParse<ClassEnum>(fh, true, out spellClass);
-                        CharacterClassList.Add(spellClass);
+                        if (System.Enum.TryParse<ClassEnum>(fh, true, out ClassEnum spellClass))
+                        {
+                            CharacterClassList.Add(spellClass);
+                        }
                         spellLineNumber++;
                         fh = ParseModel.Markdown[spellLineNumber].Trim();
                         parseModel.Markdown.RemoveAt(spellLineNumber);

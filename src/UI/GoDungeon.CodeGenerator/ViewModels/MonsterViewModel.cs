@@ -50,13 +50,13 @@ public partial class MonsterViewModel : CodeGenerationModel, IMonster
                         rSubType = rSubType.Replace(")", string.Empty).Replace(" race", string.Empty);
                         rType = rType.Substring(1, rType.IndexOf("(")-1).Trim();
                     }
-                    Enum.TryParse<RaceTypeEnum>(rType, true, out raceType);
+                    System.Enum.TryParse<RaceTypeEnum>(rType, true, out raceType);
                     if (rSubType != string.Empty)
                     {
                         if (rSubType.IndexOf(",") != -1)
                         {
                         }
-                        Enum.TryParse<RaceSubTypeEnum>(rSubType, true, out raceSubType);
+                        System.Enum.TryParse<RaceSubTypeEnum>(rSubType, true, out raceSubType);
                     }
                     break;
             }

@@ -23,6 +23,6 @@ public partial class MagicItemViewModel : CodeGenerationModel, IMagicItem
     {
         ParseModel = parseModel;
         var itemTypeString = FileHeaders[1].Replace("type: ", string.Empty);
-        Enum.TryParse<MagicItemTypeEnum>(itemTypeString, true, out itemType);
+        System.Enum.TryParse<MagicItemTypeEnum>(itemTypeString, true, out itemType);
     }
 }

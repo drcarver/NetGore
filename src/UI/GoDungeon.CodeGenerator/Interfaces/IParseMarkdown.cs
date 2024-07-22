@@ -1,4 +1,6 @@
-﻿using GoDungeon.CodeGenerator.Models;
+﻿using GoDungeon.CodeGenerator.Enum;
+using GoDungeon.CodeGenerator.Models;
+using GoDungeon.Core.Enum;
 
 namespace GoDungeon.CodeGenerator.Interfaces;
 
@@ -8,6 +10,16 @@ public interface IParseMarkdown
     /// The parse models for all the markdown models
     /// </summary>
     Dictionary<string, List<ICodeGen>> CodeGenModels { get; }
+
+    /// <summary>
+    /// The index models
+    /// </summary>
+    Dictionary<IndexEnum, List<ICodeGen>> IndexModels { get; }
+
+    /// <summary>
+    /// The spell lists
+    /// </summary>
+    Dictionary<ClassEnum, List<ICodeGen>> SpellLists { get; }
 
     /// <summary>
     /// Get the tables in the markdown file

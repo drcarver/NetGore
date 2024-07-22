@@ -7,9 +7,9 @@
 
 ## Spell Indexes
 
-* [Spells by Level](spellsbylevel.html)
-* [Spells by Name](spellsbyname.html)
-* [Spells by School](spellsbyschool.html)
+* [Spells by Spell Level](SpellsBySpellLevel.html)
+* [Spells by Name](SpellsByName.html)
+* [Spells by Spell School](SpellsBySpellSchool.html)
 
 ## Spell Lists
 

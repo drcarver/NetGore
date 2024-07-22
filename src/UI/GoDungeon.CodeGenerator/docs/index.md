@@ -129,10 +129,10 @@
 | **Indexes**                                      |   
 |:---:|
 | [Items by Name](./gamemasterrules/itemsbyname.html) |
-| [Items by Type](./gamemasterrules/itemsbytype.html) |
+| [Items by Magic Item Type](./gamemasterrules/ItemsByMagicItemType.html) |
 | [Monsters by Name](./gamemasterrules/monstersbyname.html) |
-| [Monsters by Type](./gamemasterrules/monstersbytype.html) |
-| [Monsters by CR](./gamemasterrules/monstersbycr.html)     |
-| [Spells by Level](./spellcasting/spellsbylevel.html)   |
-| [Spells by Name](./spellcasting/spellsbyname.html)     |
-| [Spells by School](./spellcasting/spellsbyschool.html) |
+| [Monsters by Race Type](./gamemasterrules/MonstersByRaceType.html) |
+| [Monsters by Challenge Rating](./gamemasterrules/MonstersByChallengeRating.html)     |
+| [Spells by Spell Level](./spellcasting/SpellsBySpellLevel.html)   |
+| [Spells by Spell Name](./spellcasting/SpellsByName.html)     |
+| [Spells by Spell School](./spellcasting/SpellsBySpellSchool.html) |

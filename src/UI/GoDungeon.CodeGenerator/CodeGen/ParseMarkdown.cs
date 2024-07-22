@@ -1,6 +1,8 @@
 ﻿using GoDungeon.CodeGenerator.CodeGen;
+using GoDungeon.CodeGenerator.Enum;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
+using GoDungeon.Core.Enum;
 
 namespace GoDungeon.CommandLineTools.CodeGen;
 
@@ -12,9 +14,19 @@ public partial class ParseMarkdown : IParseMarkdown
     private readonly ILogger<ParseMarkdown> logger;
 
     /// <summary>
-    /// The rules files (text only)
+    /// The code generation models
     /// </summary>
     public Dictionary<string, List<ICodeGen>> CodeGenModels { get; } = [];
+
+    /// <summary>
+    /// The index models
+    /// </summary>
+    public Dictionary<IndexEnum, List<ICodeGen>> IndexModels { get; } = [];
+
+    /// <summary>
+    /// The spell lists
+    /// </summary>
+    public Dictionary<ClassEnum, List<ICodeGen>> SpellLists { get; } = [];
 
     /// <summary>
     /// Constructor

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Immutable;
-using System.Runtime.CompilerServices;
+﻿using System.Diagnostics.CodeAnalysis;
 
+using GoDungeon.CodeGenerator.Enum;
 using GoDungeon.CodeGenerator.Interfaces;
 using GoDungeon.CodeGenerator.Models;
 using GoDungeon.CodeGenerator.ViewModels;
@@ -74,88 +73,107 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// Generate the Index files.
     /// </summary>
     /// <param name="fileList">The input dir for the indexes</param>
+    [RequiresDynamicCode("Calls System.Enum.GetValues(Type)")]
     private void GenerateIndexFiles(List<string> fileList)
     {
-        var indexes = fileList
-            .Where(i => (i.Contains("GamemasterRules") || i.Contains("spellcasting"))
-                && i.EndsWith("index.md")).ToArray();
-        for (int i = 0; i < indexes.Length; i++)
+        // Generate the models for each index
+        foreach (IndexEnum index in System.Enum.GetValues(typeof(IndexEnum)).Cast<IndexEnum>())
         {
-            string fRoute = indexes[i].Replace("_", string.Empty);
-            GenerateNameIndexes(fRoute);
+            IndexModel indexModel = new IndexModel(index);
+            ParseMarkdown.IndexModels.Add(index, []);
+
+            // All the standard index models
+            foreach (var modelList in ParseMarkdown.CodeGenModels.Values)
+            {
+                foreach (var model in modelList)
+                {
+                    // add to the index models
+                    if (model.FileHeaders.Count == indexModel.FileHeaderCount)
+                    {
+                        ParseMarkdown.IndexModels[index].Add(model);
+                    }
+
+                    // handle spell lists
+                    if (model.FileHeaders.Count == 4)
+                    {
+                        foreach (var classEnum in ((SpellViewModel) model).CharacterClassList)
+                        {
+                            if (!ParseMarkdown.SpellLists.ContainsKey(classEnum))
+                            {
+                                ParseMarkdown.SpellLists.Add(classEnum, []);
+                            }
+                            ParseMarkdown.SpellLists[classEnum].Add(model);
+                        }
+                    }
+                }
+            }
         }
+
+        GenerateIndexes();
     }
 
     /// <summary>
     /// Generate the name index parse and code generation models
     /// </summary>
-    /// <param name="route">route to the index</param>
-    private void GenerateNameIndexes(string route)
+    private void GenerateIndexes()
     {
-        List<ICodeGen> list = [];
-        List<string> markdown = [];
-        string fRoute = route;
-        bool byName = true;
+        //List<ICodeGen> list = [];
+        //List<string> markdown = [];
+        //string fRoute = route;
 
-        // Get the set the index type
-        for (int b = 0; b < 2; b++)
-        {
-            if (b == 1)
-            {
-                byName = false;
-            }
-            for (int i = 2; i < 5; i++)
-            {
-                markdown.Clear();
-                switch (i)
-                {
-                    case 2:
-                        if (byName)
-                        {
-                            fRoute = route.Replace("\\index.md", "/itemsbyname.md");
-                            markdown.Add("# Magic Items by Name");
-                        }
-                        else
-                        {
-                            fRoute = route.Replace("\\index.md", "/itemsbytype.md");
-                            markdown.Add("# Magic Items by Type");
-                        }
-                        GetIndexByName(markdown, 2, byName);
-                        break;
-                    case 3:
-                        // the second gamemasterrules route
-                        if (byName)
-                        {
-                            fRoute = route.Replace("\\index.md", "/monstersbyname.md");
-                            markdown.Add("# Monsters by Name");
-                        }
-                        else
-                        {
-                            fRoute = route.Replace("\\index.md", "/monstersbytype.md");
-                            markdown.Add("# Monsters by Race");
-                        }
-                        GetIndexByName(markdown, 3, byName);
-                        break;
-                    case 4:
-                        if (byName)
-                        {
-                            markdown.Add("# Spells by Name");
-                            fRoute = route.Replace("\\index.md", "/spellsbyname.md");
-                        }
-                        else
-                        {
-                            fRoute = route.Replace("\\index.md", "/spellsbylevel.md");
-                            markdown.Add("# Spells by level");
-                        }
-                        GetIndexByName(markdown, 4, byName);
-                        break;
-                }
-                ICodeGen cgm = new CodeGenerationModel(new ParseModel(fRoute, markdown));
-                ParseMarkdown.ParseMarkdownToHTML(cgm);
-                list.Add(cgm);
-            }
-            ParseMarkdown.CodeGenModels.Add(fRoute, list);
-        }
+        //// Get the set the index type
+        //foreach (IndexEnum indexType in System.Enum.GetValues(typeof(IndexEnum)).Cast<IndexEnum>())
+        //{
+
+        //    for (int i = 2; i < 5; i++)
+        //    {
+        //        markdown.Clear();
+        //        switch (i)
+        //        {
+        //            case 2:
+        //                fRoute = route.Replace("\\index.md", $"/items{indexType.ToString()}.md");
+        //                if (indexType == IndexEnum.ByName)
+        //                {
+        //                    markdown.Add("# Magic Items by Name");
+        //                }
+        //                else
+        //                {
+        //                    markdown.Add("# Magic Items by Type");
+        //                }
+        //                GetIndexByName(markdown, 2, indexType);
+        //                break;
+        //            case 3:
+        //                // the second gamemasterrules route
+        //                fRoute = route.Replace("\\index.md", $"/monsters{indexType.ToString()}.md");
+        //                if (indexType == IndexEnum.ByName)
+        //                {
+        //                    markdown.Add("# Monsters by Name");
+        //                }
+        //                else
+        //                {
+        //                    markdown.Add("# Monsters by Race");
+        //                }
+        //                GetIndexByName(markdown, 3, indexType);
+        //                break;
+        //            case 4:
+        //                fRoute = route.Replace("\\index.md", $"/spells{indexType.ToString()}.md");
+        //                if (indexType == IndexEnum.ByName)
+        //                {
+        //                    markdown.Add("# Spells by Name");
+        //                }
+        //                else
+        //                {
+        //                    markdown.Add("# Spells by level");
+        //                }
+        //                GetIndexByName(markdown, 4, indexType);
+        //                break;
+        //        }
+        //        ICodeGen cgm = new CodeGenerationModel(new ParseModel(fRoute, markdown));
+        //        ParseMarkdown.ParseMarkdownToHTML(cgm);
+        //        list.Add(cgm);
+        //    }
+        //    ParseMarkdown.CodeGenModels.Add(fRoute, list);
+        //}
     }
 
     /// <summary>
@@ -163,51 +181,64 @@ public class Process5ESRDFiles : IProcess5ESRDFiles
     /// </summary>
     /// <param name="markdown">The markdown list</param>
     /// <param name="fieldCount">The number of fields to break out the Code Generation file</param>
+    /// <param name="indexType">The type of index to be created</param>
     /// <returns></returns>
-    private void GetIndexByName(List<string> markdown, int fieldCount, bool byName)
+    private void GetIndexByName(List<string> markdown, int fieldCount, IndexEnum indexType)
     {
         Dictionary<string, List<ICodeGen>> fieldDictionary = [];
+
+        // valid index for each type
 
         // Process all the view models
         foreach (var vmList in ParseMarkdown.CodeGenModels.Values)
         {
             foreach (var codeGenModel in vmList.Where(f => f.FileHeaders.Count == fieldCount).ToList())
             {
-                string key = codeGenModel.Name.ToUpper()[0].ToString();
-                if (!byName)
-                {
-                    switch (fieldCount)
-                    {
-                        case 2:
-                            key = ((MagicItemViewModel)codeGenModel).ItemType.ToString();
-                            break;
-                        case 3:
-                            var vm = (MonsterViewModel)codeGenModel;
-                            if (vm.RaceSubType == Core.Enum.RaceSubTypeEnum.Any)
-                            {
-                                key = $"{vm.RaceType.ToString()}";
-                            }
-                            else
-                            {
-                                key = $"{vm.RaceType.ToString()} ({vm.RaceSubType.ToString()})";
-                            }
-                            break;
-                        case 4:
-                            key = ((SpellViewModel)codeGenModel).Level.ToString();
-                            break;
-                    }
-                }
+                //string key = codeGenModel.Name.ToUpper()[0].ToString();
+                //if (indexType != IndexEnum.ByName)
+                //{
+                //    switch (fieldCount)
+                //    {
+                //        case 2:
+                //            if (indexDictionary.ContainsValue(IndexEnum.ByMagicItemType));
+                //                case IndexEnum.ByMagicItemType:
+                //                    key = ((MagicItemViewModel)codeGenModel).ItemType.ToString();
+                //                    break;
+                //            }
+                //            break;
+                //        case 3:
+                //            var vm = (MonsterViewModel)codeGenModel;
+                //            if (indexType == Enum.IndexEnum.ByRaceType
+                //                || vm.RaceSubType == Core.Enum.RaceSubTypeEnum.Any)
+                //            {
+                //                key = $"{vm.RaceType.ToString()}";
+                //            }
+                //            if (indexType == Enum.IndexEnum.ByRaceType 
+                //                || vm.RaceSubType != Core.Enum.RaceSubTypeEnum.Any)
+                //            {
+                //                key = $"{vm.RaceType.ToString()} ({vm.RaceSubType.ToString()})";
+                //            }
+                //            if (indexType == Enum.IndexEnum.ByChallengeRating)
+                //            {
+                //                key = $"{vm.ChallengeRating.ToString()})";
+                //            }
+                //            break;
+                //        case 4:
+                //            key = ((SpellViewModel)codeGenModel).Level.ToString();
+                //            break;
+                //    }
+                //}
 
-                // The field dictionary for the model
-                if (!fieldDictionary.ContainsKey(key))
-                {
-                    fieldDictionary.Add(key, []);
-                    fieldDictionary[key].Add(codeGenModel);
-                }
-                else
-                {
-                    fieldDictionary[key].Add(codeGenModel);
-                }
+                //// The field dictionary for the model
+                //if (!fieldDictionary.ContainsKey(key))
+                //{
+                //    fieldDictionary.Add(key, []);
+                //    fieldDictionary[key].Add(codeGenModel);
+                //}
+                //else
+                //{
+                //    fieldDictionary[key].Add(codeGenModel);
+                //}
             }
         }
         CreateIndexDetails(fieldDictionary, markdown);

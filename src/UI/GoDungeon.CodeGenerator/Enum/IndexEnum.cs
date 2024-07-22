@@ -2,11 +2,13 @@
 
 public enum IndexEnum : byte
 {
-    ByCharacterClass,
-    ByChallengeRating,
-    BySpellLevel,
+    ByMagicItemName,
     ByMagicItemType,
-    BySpellSchool,
-    ByName,
+    ByMonsterName,
     ByRaceType,
+    ByChallengeRating,
+    BySpellName,
+    BySpellLevel,
+    BySpellSchool,
+    DescriptionFile,
 }

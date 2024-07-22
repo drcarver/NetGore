@@ -16,10 +16,10 @@
 ## Magic Item Indexes
 
 * [Items by Name](itemsbyname.html)
-* [Items by Type](itemsbytype.html)
+* [Items by Type](ItemsByMagicItemType.html)
 
 ## Monster Indexes
 
 * [Monsters by Name](monstersbyname.html)
-* [Monsters by Type](monstersbytype.html)
-* [Monsters by CR](monstersbycr.html)
+* [Monsters by Race Type](MonstersByRaceType.html)
+* [Monsters by Challenge Rating](MonstersByChallengeRating.html)
